@@ -1535,3 +1535,88 @@ a.tag.tag--outline:hover {
   color: var(--mist-dim);
   font-size: 0.88rem;
 }
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+  .container {
+    width: min(1080px, 100% - 1.5rem);
+  }
+
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.7rem;
+    padding: 0.8rem 0;
+  }
+
+  .nav {
+    width: 100%;
+    gap: 0.45rem 0.75rem;
+  }
+
+  .nav a {
+    font-size: 0.94rem;
+    padding: 0.35rem 0.2rem;
+  }
+
+  .hero {
+    padding-top: 2.2rem;
+  }
+
+  .hero-lead {
+    font-size: 1rem;
+  }
+
+  a.tag {
+    min-height: 40px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .insight-row {
+    grid-template-columns: 1fr;
+    gap: 0.45rem;
+    padding: 0.9rem 0.95rem;
+  }
+
+  .insight-arrow {
+    display: none;
+  }
+
+  .contact-email a,
+  .contact-phone a {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 560px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .section-title {
+    font-size: 1.45rem;
+  }
+
+  .section-intro {
+    margin-bottom: 1.3rem;
+  }
+
+  .hero-youtube {
+    padding: 0.65rem;
+  }
+
+  .hero-youtube__title {
+    font-size: 0.72rem;
+  }
+
+  .hero-youtube__name {
+    font-size: 0.82rem;
+  }
+
+  .hero-youtube__latest {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.5rem;
+  }
+}
