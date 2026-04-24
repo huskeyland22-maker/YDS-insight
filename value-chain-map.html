@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 로컬 file:// 열 때 예전 내용이 남는 현상 완화(브라우저마다 다름). 그래도 안 바뀌면 Ctrl+F5 -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>코리아 밸류체인 맵 · Y'ds의 투자 인사이트</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      html {
+        background-color: #0c1222;
+      }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background-color: #0c1222;
+        color: #e4e9f2;
+        font-family: "Noto Sans KR", system-ui, sans-serif;
+      }
+    </style>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-layer" aria-hidden="true"></div>
+    <div class="bg-glow bg-glow--gold" aria-hidden="true"></div>
+    <div class="bg-glow bg-glow--blue" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="logo" href="index.html">Y'ds</a>
+        <nav class="nav" aria-label="주요 메뉴">
+          <a href="index.html">홈</a>
+          <a href="index.html#philosophy">투자 철학</a>
+          <a href="index.html#markets">시장</a>
+          <a href="index.html#contact">연락</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container gvc-page">
+      <header class="gvc-hero">
+        <!-- 도입문은 이 p 태그 안만 수정. 저장 후 브라우저에서 Ctrl+F5 (강력 새로고침). -->
+        <h1>코리아 밸류체인 맵</h1>
+        <p class="lead"></p>
+      </header>
+
+      <nav class="gvc-toc" aria-label="섹터 목차">
+        <h2>섹터 바로가기</h2>
+        <ul>
+          <li><a href="sector-map.html?sector=semiconductor"><span class="gvc-toc-num">1</span> 반도체</a></li>
+          <li><a href="sector-map.html?sector=energy_power"><span class="gvc-toc-num">2</span> 에너지·원전·전력 인프라</a></li>
+          <li><a href="sector-map.html?sector=robotics"><span class="gvc-toc-num">3</span> 로봇</a></li>
+          <li><a href="sector-map.html?sector=electronics"><span class="gvc-toc-num">4</span> 전기전자</a></li>
+          <li><a href="sector-map.html?sector=battery"><span class="gvc-toc-num">5</span> 이차전지</a></li>
+          <li><a href="sector-map.html?sector=defense"><span class="gvc-toc-num">6</span> 방위산업</a></li>
+          <li><a href="sector-map.html?sector=space"><span class="gvc-toc-num">7</span> 우주</a></li>
+          <li><a href="sector-map.html?sector=shipbuilding"><span class="gvc-toc-num">8</span> 조선</a></li>
+          <li><a href="sector-map.html?sector=pharma"><span class="gvc-toc-num">9</span> 제약</a></li>
+          <li><a href="sector-map.html?sector=mobility"><span class="gvc-toc-num">10</span> 모빌리티</a></li>
+          <li><a href="sector-map.html?sector=finance"><span class="gvc-toc-num">11</span> 금융</a></li>
+          <li><a href="sector-map.html?sector=entertainment"><span class="gvc-toc-num">12</span> 엔터테인먼트</a></li>
+          <li><a href="sector-map.html?sector=games"><span class="gvc-toc-num">13</span> 게임</a></li>
+          <li><a href="sector-map.html?sector=transport"><span class="gvc-toc-num">14</span> 운송</a></li>
+          <li><a href="sector-map.html?sector=cosmetics"><span class="gvc-toc-num">15</span> 화장품</a></li>
+          <li><a href="sector-map.html?sector=foodbev"><span class="gvc-toc-num">16</span> 식음료</a></li>
+        </ul>
+      </nav>
+
+      <div class="gvc-sectors">
+        <article id="s-semiconductor" class="gvc-sector">
+          <h2>
+            <a href="sector-map.html?sector=semiconductor" class="gvc-sector-titlelink"
+              ><span class="num">01</span> 반도체</a
+            >
+          </h2>
+          <p>
+            서버와 데이터센터를 중심으로 한 반도체 생태계는 CSP·데이터센터와 네트워크
+            인프라에서 시작해, 서버 OEM·ODM과 파운드리·패키징을 거쳐 GPU·CPU·메모리 등
+            핵심 칩으로 모이고, 다시 소재·장비 층으로 퍼져 나갑니다.
+          </p>
+        </article>
+
+        <article id="s-energy-power" class="gvc-sector">
+          <h2>
+            <a href="sector-map.html?sector=energy_power" class="gvc-sector-titlelink"
+              ><span class="num">02</span> 에너지·원전·전력 인프라</a
+            >
+          </h2>
+          <p>
+            자체 발전소(On-site)·가스·원전(SMR)에서 송변전·그리드·전력 케이블까지 한 장에 묶인 흐름을 볼 수 있습니다.
+          </p>
+        </article>
+
+        <article id="s-robotics" class="gvc-sector">
+          <h2>
+            <a href="sector-map.html?sector=robotics" class="gvc-sector-titlelink"
+              ><span class="num">03</span> 로봇</a
+            >
+          </h2>
+          <p>
+            감속기·서보·센서·비전 등 핵심 부품에서 로봇 본체·제어기로 모이고, 통합 시스템·SI를 거쳐 제조·물류·
+            의료·서비스 응용으로 퍼집니다. <strong>로봇 밀도·노동 대체·안전 규제</strong>가 수요를 좌우하는 축입니다.
+          </p>
+        </article>
+
+        <article id="s-electronics" class="gvc-sector">
+          <h2>
+            <a href="sector-map.html?sector=electronics" class="gvc-sector-titlelink"
+              ><span class="num">04</span> 전기전자</a
+            >
+          </h2>
+          <p>
+            부품·모듈·SMT 조립에서 완제품 OEM·ODM을 거쳐 브랜드·유통·A/S로 연결됩니다. 가전·IT·산업용 전장이
+            한 체인 안에서도 <strong>수명 주기와 마진 구조</strong>가 크게 다릅니다.
+          </p>
+        </article>
+
+        <article id="s-battery" class="gvc-sector">
+          <h2>
+            <a href="sector-map.html?sector=battery" class="gvc-sector-titlelink"
+              ><span class="num">05</span> 이차전지</a
+            >
+          </h2>
+          <p>
+            <strong>광물·정제 → 양극재·음극재·분리막·전해질 → 셀·모듈·팩 → EV·ESS·리사이클</strong> 순으로
+            이어지는 경우가 많습니다. 장비·가동률·원재료 가격과 각국 보조금·규제가 동시에 작용합니다.
+          </p>
+        </article>
+
+        <article id="s-defense" class="gvc-sector">
+          <h2>
+            <a href="sector-map.html?sector=defense" class="gvc-sector-titlelink"
+              ><span class="num">06</span> 방위산업</a
+            >
+          </h2>
+          <p>
+            국가 예산·수출 통제 아래 <strong>체계 통합사–티어1·2 부품–소재·전자</strong>가 맞물립니다. 장기 수주·
+            인도·기술 이전이 실적 변동을 만들고, 민수 겸용(듀얼유즈) 여부도 체인을 넓힙니다.
+          </p>
+        </article>
+
+        <article id="s-space" class="gvc-sector">
+          <h2>
+            <a href="sector-map.html?sector=space" class="gvc-sector-titlelink"
+              ><span class="num">07</span> 우주</a
+            >
+          </h2>
+          <p>
+            위성·발사체·지상국에서 데이터 수집·분석·보안 서비스로 이어집니다. <strong>발사 비용 하락·LEO 상업화·
+            정부·민간 수요</strong>가 성장 축이며, 부품 신뢰성 요구가 진입장벽이 됩니다.
+          </p>
+        </article>
+
+        <article id="s-shipbuilding" class="gvc-sector">
+          <h2>
+            <a href="sector-map.html?sector=shipbuilding" class="gvc-sector-titlelink"
+              ><span class="num">08</span> 조선</a
+            >
+          </h2>
+          <p>
+            설계·엔진·추진·선체 블록·전장·도장까지 협력망이 길고, LNG선·컨선 등 <strong>선종별 핵심 부품</strong>이
+            다릅니다. 수주·인도·환율이 실적과 밸류에이션을 함께 움직입니다.
+          </p>
+        </article>
+
+        <article id="s-pharma" class="gvc-sector">
+          <h2>
+            <a href="sector-map.html?sector=pharma" class="gvc-sector-titlelink"
+              ><span class="num">09</span> 제약</a
+            >
+          </h2>
+          <p>
+            연구·임상·허가에서 CMO·CDMO 생산, 유통·병원·소비자로 이어집니다. <strong>특허·적응증·입찰(제네릭)</strong>이
+            현금흐름을 가르는 경우가 많습니다.
+          </p>
+        </article>
+
+        <article id="s-mobility" class="gvc-sector">
+          <h2>
+            <a href="sector-map.html?sector=mobility" class="gvc-sector-titlelink"
+              ><span class="num">10</span> 모빌리티</a
+            >
+          </h2>
+          <p>
+            완성차·부품에서 충전·배터리 스왑·MaaS·보험·리스까지 확장됩니다. 전동화·자율주행·공유 이동이
+            <strong>부품 수·SW 비중·서비스 매출</strong>을 바꾸는 중입니다.
+          </p>
+        </article>
+
+        <article id="s-finance" class="gvc-sector">
+          <h2>
+            <a href="sector-map.html?sector=finance" class="gvc-sector-titlelink"
+              ><span class="num">11</span> 금융</a
+            >
+          </h2>
+          <p>
+            예대·수수료에서 자산운용·카드·캐피탈·보험·핀테크로 이어지며, <strong>금리·규제·신용 사이클</strong>이
+            전 업종의 마진을 동시에 흔듭니다. 데이터·플랫폼이 새로운 중간 계층이 되기도 합니다.
+          </p>
+        </article>
+
+        <article id="s-entertainment" class="gvc-sector">
+          <h2>
+            <a href="sector-map.html?sector=entertainment" class="gvc-sector-titlelink"
+              ><span class="num">12</span> 엔터테인먼트</a
+            >
+          </h2>
+          <p>
+            IP·기획·제작에서 유통(극장·OTT)·광고·굿즈·라이브까지 연결됩니다. <strong>구독·광고 단가·흥행 편차</strong>가
+            수익 변동성을 키웁니다.
+          </p>
+        </article>
+
+        <article id="s-games" class="gvc-sector">
+          <h2>
+            <a href="sector-map.html?sector=games" class="gvc-sector-titlelink"
+              ><span class="num">13</span> 게임</a
+            >
+          </h2>
+          <p>
+            개발·퍼블리싱에서 플랫폼(콘솔·PC·모바일)·결제·클라우드 인프라, 이스포츠·IP 확장으로 퍼집니다.
+            <strong>히트 의존도·마케팅 비용·규제(확률형 등)</strong>을 같이 봐야 합니다.
+          </p>
+        </article>
+
+        <article id="s-transport" class="gvc-sector">
+          <h2>
+            <a href="sector-map.html?sector=transport" class="gvc-sector-titlelink"
+              ><span class="num">14</span> 운송</a
+            >
+          </h2>
+          <p>
+            항공·해운·철도·트럭에서 물류 허브·창고·마지막 마일, TMS·WMS 등 <strong>물류 IT</strong>로 이어집니다.
+            유가·화물 단가·무역량이 공통 변수입니다.
+          </p>
+        </article>
+
+        <article id="s-cosmetics" class="gvc-sector">
+          <h2>
+            <a href="sector-map.html?sector=cosmetics" class="gvc-sector-titlelink"
+              ><span class="num">15</span> 화장품</a
+            >
+          </h2>
+          <p>
+            원료·조성 R&amp;D에서 ODM·브랜드·온·오프라인 유통, 면세·해외 진출로 확장됩니다. <strong>트렌드 주기·
+            채널 믹스·마케팅 ROI</strong>가 마진을 가릅니다.
+          </p>
+        </article>
+
+        <article id="s-foodbev" class="gvc-sector">
+          <h2>
+            <a href="sector-map.html?sector=foodbev" class="gvc-sector-titlelink"
+              ><span class="num">16</span> 식음료</a
+            >
+          </h2>
+          <p>
+            원료·가공에서 브랜드·유통(대형마트·편의점·배달)·외식 체인으로 이어집니다. <strong>원가(농산·축산·
+            유가연동)·식품 안전·소비 트렌드</strong>가 한꺼번에 작용합니다.
+          </p>
+        </article>
+      </div>
+
+      <p class="gvc-foot">
+        원하시면 부록 지도와 같은 순서로 섹션 제목만 바꾸거나, 각 칸에 <strong>직접 메모</strong>를 덧붙이는 형태로
+        이 HTML을 편집해 나가셔도 됩니다. 홈으로 돌아가려면 상단 <strong>Y'ds</strong> 로고를 누르세요.
+      </p>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p class="footer-brand">
+          <a href="index.html" style="color: inherit; text-decoration: none">Y'ds의 투자 인사이트</a>
+        </p>
+        <p class="footer-note">본 페이지는 투자 권유가 아니며, 학습·정리 목적입니다.</p>
+      </div>
+    </footer>
+
+  </body>
+</html>

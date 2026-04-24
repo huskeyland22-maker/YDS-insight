@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>HOLD AND PICK · Y'ds의 투자 인사이트</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      html {
+        background-color: #0c1222;
+      }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background-color: #0c1222;
+        color: #e4e9f2;
+        font-family: "Noto Sans KR", system-ui, sans-serif;
+      }
+    </style>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-layer" aria-hidden="true"></div>
+    <div class="bg-glow bg-glow--gold" aria-hidden="true"></div>
+    <div class="bg-glow bg-glow--blue" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="logo" href="index.html">Y'ds</a>
+        <nav class="nav" aria-label="주요 메뉴">
+          <a href="index.html">홈</a>
+          <a href="index.html#research-log">리서치 로그</a>
+          <a href="index.html#useful-sites">유용한 사이트</a>
+          <a href="index.html#contact">연락</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container hap-page">
+      <header class="hap-hero">
+        <p class="eyebrow">Portfolio Dashboard</p>
+        <h1>HOLD AND PICK</h1>
+        <p class="lead">
+          현재 보유 종목과 다음 타깃 종목을 분리해 관리하고, 매수 판단 과정까지 기록하는 페이지입니다.
+        </p>
+      </header>
+
+      <section class="hap-kpi" aria-label="요약 지표">
+        <article class="hap-kpi__card">
+          <p class="hap-kpi__label">현재 보유 종목</p>
+          <p class="hap-kpi__value">5개</p>
+        </article>
+        <article class="hap-kpi__card">
+          <p class="hap-kpi__label">현금 비중</p>
+          <p class="hap-kpi__value">26%</p>
+        </article>
+        <article class="hap-kpi__card">
+          <p class="hap-kpi__label">이번 달 목표</p>
+          <p class="hap-kpi__value">신규 1종목 편입</p>
+        </article>
+        <article class="hap-kpi__card">
+          <p class="hap-kpi__label">원칙 준수율</p>
+          <p class="hap-kpi__value">82%</p>
+        </article>
+      </section>
+
+      <section class="hap-section">
+        <div class="hap-section__head">
+          <h2>HOLD · 현재 보유 종목</h2>
+          <p>보유 이유와 깨지는 조건을 함께 기록해서 판단을 늦추지 않도록 관리합니다.</p>
+        </div>
+        <div class="hap-grid">
+          <article class="hap-card">
+            <div class="hap-card__top">
+              <h3>삼성전자</h3>
+              <span class="hap-badge hap-badge--hold">유지</span>
+            </div>
+            <p class="hap-meta hap-meta--editable" data-symbol="삼성전자">
+              비중 <input type="text" data-field="weight" value="14%" placeholder="예: 14%" />
+              · 평균단가 <input type="text" data-field="avg" value="73,200" placeholder="예: 73,200" />
+              · 현재단가 <input type="text" data-field="current" placeholder="예: 79,300" />
+              · 수익률 <input type="text" data-field="return" value="+8.4%" readonly />
+            </p>
+            <p class="hap-note">메모리 업황 회복과 HBM 수요 확대로 실적 개선 흐름 유지 기대.</p>
+            <p class="hap-risk">깨지는 조건: 재고 회전율 둔화 + 수요 가이던스 하향.</p>
+          </article>
+          <article class="hap-card">
+            <div class="hap-card__top">
+              <h3>에스피지</h3>
+              <span class="hap-badge hap-badge--hold">유지</span>
+            </div>
+            <p class="hap-meta hap-meta--editable" data-symbol="에스피지">
+              비중 <input type="text" data-field="weight" placeholder="예: 8%" />
+              · 평균단가 <input type="text" data-field="avg" placeholder="예: 27,500" />
+              · 현재단가 <input type="text" data-field="current" placeholder="예: 28,100" />
+              · 수익률 <input type="text" data-field="return" readonly />
+            </p>
+            <p class="hap-note">로봇 핵심부품(감속기) 수요 확대를 추적하는 중기 보유 포지션.</p>
+            <p class="hap-risk">깨지는 조건: 수주 증가 없이 밸류에이션만 확장되는 흐름 지속.</p>
+          </article>
+          <article class="hap-card">
+            <div class="hap-card__top">
+              <h3>효성중공업</h3>
+              <span class="hap-badge hap-badge--hold">유지</span>
+            </div>
+            <p class="hap-meta hap-meta--editable" data-symbol="효성중공업">
+              비중 <input type="text" data-field="weight" placeholder="예: 10%" />
+              · 평균단가 <input type="text" data-field="avg" placeholder="예: 412,000" />
+              · 현재단가 <input type="text" data-field="current" placeholder="예: 405,000" />
+              · 수익률 <input type="text" data-field="return" readonly />
+            </p>
+            <p class="hap-note">전력기기/인프라 투자 사이클의 구조적 수혜 가능성에 주목.</p>
+            <p class="hap-risk">깨지는 조건: 주요 수주 둔화 + 원가 부담 동반 악화.</p>
+          </article>
+          <article class="hap-card">
+            <div class="hap-card__top">
+              <h3>삼성SDI</h3>
+              <span class="hap-badge hap-badge--watch">점검필요</span>
+            </div>
+            <p class="hap-meta hap-meta--editable" data-symbol="삼성SDI">
+              비중 <input type="text" data-field="weight" placeholder="예: 7%" />
+              · 평균단가 <input type="text" data-field="avg" placeholder="예: 388,000" />
+              · 현재단가 <input type="text" data-field="current" placeholder="예: 369,000" />
+              · 수익률 <input type="text" data-field="return" readonly />
+            </p>
+            <p class="hap-note">배터리 업황 회복 시 탄력은 크지만, 수요 회복 속도 확인이 우선.</p>
+            <p class="hap-risk">깨지는 조건: 고객사 수요 둔화 장기화 및 실적 가이던스 하향.</p>
+          </article>
+          <article class="hap-card">
+            <div class="hap-card__top">
+              <h3>두산에너빌리티</h3>
+              <span class="hap-badge hap-badge--hold">유지</span>
+            </div>
+            <p class="hap-meta hap-meta--editable" data-symbol="두산에너빌리티">
+              비중 <input type="text" data-field="weight" placeholder="예: 11%" />
+              · 평균단가 <input type="text" data-field="avg" placeholder="예: 19,800" />
+              · 현재단가 <input type="text" data-field="current" placeholder="예: 20,830" />
+              · 수익률 <input type="text" data-field="return" readonly />
+            </p>
+            <p class="hap-note">원전·전력 인프라 수주 모멘텀을 기반으로 추적하는 핵심 포지션.</p>
+            <p class="hap-risk">깨지는 조건: 수주 가시성 약화 또는 정책 변수로 CAPEX 지연.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="hap-section">
+        <div class="hap-section__head">
+          <h2>PICK · 다음 타깃 종목</h2>
+          <p>매수 전 대기 리스트입니다. 트리거가 오기 전에는 보류 이유를 명확히 남깁니다.</p>
+        </div>
+        <div class="hap-grid">
+          <article class="hap-card">
+            <div class="hap-card__top">
+              <h3>SK하이닉스</h3>
+              <span class="hap-badge hap-badge--pick">우선순위 A</span>
+            </div>
+            <p class="hap-meta">목표 매수구간 178,000 ~ 185,000 · 목표 비중 5%</p>
+            <p class="hap-note">트리거: HBM ASP 상승 지속 + 가이던스 상향.</p>
+            <p class="hap-risk">지금 안 사는 이유: 밸류에이션 부담 구간 진입 여부 확인 중.</p>
+          </article>
+          <article class="hap-card">
+            <div class="hap-card__top">
+              <h3>한국전력</h3>
+              <span class="hap-badge hap-badge--pick">우선순위 B</span>
+            </div>
+            <p class="hap-meta">목표 매수구간 20,000 ~ 21,500 · 목표 비중 4%</p>
+            <p class="hap-note">트리거: 요금/연료비 정책 가시성 개선 + 적자 축소 흐름 확인.</p>
+            <p class="hap-risk">지금 안 사는 이유: 정책 민감도와 실적 변동성 여전히 큼.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="hap-section">
+        <div class="hap-section__head">
+          <h2>매수 체크리스트</h2>
+          <p>5개 중 4개 이상 체크될 때만 신규 매수 검토 완료로 간주합니다.</p>
+        </div>
+        <div class="hap-checklist">
+          <label><input type="checkbox" /> 실적/현금흐름 개선 근거 확인</label>
+          <label><input type="checkbox" /> 밸류에이션 과열 여부 점검</label>
+          <label><input type="checkbox" /> 이벤트 일정(실적발표/공시) 확인</label>
+          <label><input type="checkbox" /> 손절/비중 계획 사전 정의</label>
+          <label><input type="checkbox" /> 반대 시나리오 1개 이상 작성</label>
+        </div>
+      </section>
+
+      <section class="hap-section">
+        <div class="hap-section__head">
+          <h2>월간 리뷰</h2>
+          <p>수익률보다 판단 과정의 품질을 점검하는 회고 영역입니다.</p>
+        </div>
+        <div class="hap-review">
+          <p><strong>잘한 판단:</strong> 추격 매수 대신 매수구간 도달까지 대기, 비중 분할 원칙 준수.</p>
+          <p><strong>아쉬운 판단:</strong> 뉴스 헤드라인만 보고 섹터 전체를 과하게 일반화.</p>
+          <p><strong>다음 달 개선:</strong> 종목별 `매수 이유 3줄 + 포기 이유 1줄`을 거래 전 필수 작성.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p class="footer-brand">
+          <a href="index.html" style="color: inherit; text-decoration: none">Y'ds의 투자 인사이트</a>
+        </p>
+        <p class="footer-note">본 페이지는 투자 권유가 아니며, 학습·정리 목적입니다.</p>
+      </div>
+    </footer>
+    <script>
+      (function () {
+        function parseNumber(text) {
+          if (!text) return NaN;
+          var normalized = String(text).replace(/,/g, "").trim();
+          var num = Number(normalized);
+          return Number.isFinite(num) ? num : NaN;
+        }
+
+        function formatReturn(rate) {
+          var rounded = Math.round(rate * 10) / 10;
+          if (!Number.isFinite(rounded)) return "";
+          return (rounded > 0 ? "+" : "") + rounded.toFixed(1) + "%";
+        }
+
+        function updateReturn(row) {
+          var avgInput = row.querySelector('input[data-field="avg"]');
+          var currentInput = row.querySelector('input[data-field="current"]');
+          var returnInput = row.querySelector('input[data-field="return"]');
+          if (!avgInput || !currentInput || !returnInput) return;
+
+          var avg = parseNumber(avgInput.value);
+          var current = parseNumber(currentInput.value);
+          if (!Number.isFinite(avg) || avg <= 0 || !Number.isFinite(current)) {
+            returnInput.value = "";
+            return;
+          }
+
+          var rate = ((current - avg) / avg) * 100;
+          returnInput.value = formatReturn(rate);
+        }
+
+        var rows = document.querySelectorAll(".hap-meta--editable");
+
+        function persistReturn(symbol, row) {
+          var returnInput = row.querySelector('input[data-field="return"]');
+          if (!returnInput) return;
+          var returnKey = "hap:" + symbol + ":return";
+          localStorage.setItem(returnKey, returnInput.value);
+        }
+
+        rows.forEach(function (row) {
+          var symbol = row.getAttribute("data-symbol");
+          if (!symbol) return;
+          var inputs = row.querySelectorAll("input[data-field]");
+          inputs.forEach(function (input) {
+            var field = input.getAttribute("data-field");
+            var key = "hap:" + symbol + ":" + field;
+            var saved = localStorage.getItem(key);
+            if (saved !== null) input.value = saved;
+            input.addEventListener("input", function () {
+              if (field === "avg" || field === "current") {
+                updateReturn(row);
+                persistReturn(symbol, row);
+              }
+              localStorage.setItem(key, input.value);
+            });
+          });
+
+          updateReturn(row);
+          persistReturn(symbol, row);
+        });
+      })();
+    </script>
+  </body>
+</html>
