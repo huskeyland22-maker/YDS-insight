@@ -926,15 +926,13 @@ a.tag.tag--outline:hover {
 
 .panic-label--priority {
   color: #ff2b2b !important;
-  font-weight: 900 !important;
 }
 
 .panic-table td.panic-label-cell--priority,
 .panic-table td.panic-label-cell--priority .panic-label,
 .panic-table td.panic-label-cell--priority .panic-label--priority {
   color: #ff2b2b !important;
-  font-weight: 900 !important;
-  text-shadow: 0 0 0.2px #ff2b2b;
+  font-weight: 500 !important;
 }
 
 .panic-delta {

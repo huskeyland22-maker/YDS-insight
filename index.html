@@ -390,7 +390,7 @@
         }
 
         function renderPanicTable(data) {
-          var priorityOrder = ["fng", "skew", "vix", "bofa"]; // 2-4-1-3 우선순위
+          var priorityOrder = ["vix", "fng", "hy", "move"]; // 2-4-1-3 우선순위 (이전 추천 기준)
           var priorityMap = priorityOrder.reduce(function (acc, id, idx) {
             acc[id] = idx;
             return acc;
@@ -418,7 +418,7 @@
               var isPriority = Object.prototype.hasOwnProperty.call(priorityMap, item.id);
               var labelClass = isPriority ? "panic-label panic-label--priority" : "panic-label";
               var labelCellClass = isPriority ? "panic-label-cell panic-label-cell--priority" : "panic-label-cell";
-              var labelStyle = isPriority ? ' style="color:#ff0000;font-weight:900;"' : "";
+              var labelStyle = isPriority ? ' style="color:#ff0000;"' : "";
 
               return (
                 "<tr>" +
