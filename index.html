@@ -151,6 +151,17 @@
               <tbody id="panic-table-body"></tbody>
             </table>
           </section>
+          <div class="panic-risk-strip" aria-label="리스크 신호 요약">
+            <p class="panic-risk-line panic-risk-line--short" id="panic-short-risk-line" aria-live="polite">
+              단기 Risk Signal · 계산 중...
+            </p>
+            <p class="panic-risk-line" id="panic-risk-line" aria-live="polite">
+              중기 Risk Signal · 계산 중...
+            </p>
+            <p class="panic-risk-line panic-risk-line--long" id="panic-long-risk-line" aria-live="polite">
+              장기 위기 신호 · 계산 중...
+            </p>
+          </div>
         </div>
       </section>
 
@@ -390,6 +401,206 @@
         }
 
         function renderPanicTable(data) {
+          var WEIGHTS = { hy: 35, vix: 30, move: 20, fng: 15 };
+          var RISK_HISTORY_KEY = "panic:risk-history:v1";
+
+          function toneRiskScore(tone) {
+            if (tone === "alert") return 100;
+            if (tone === "watch") return 60;
+            return 25; // stable
+          }
+
+          function calcWeightedRisk(items) {
+            var totalWeight = 0;
+            var weighted = 0;
+            items.forEach(function (item) {
+              var w = WEIGHTS[item.id];
+              if (!w) return;
+              totalWeight += w;
+              weighted += toneRiskScore(item.tone) * w;
+            });
+            if (!totalWeight) return null;
+            return Math.round(weighted / totalWeight);
+          }
+
+          function calcShortTermRisk(items) {
+            var SHORT_WEIGHTS = { vix: 35, skew: 25, putcall: 25, vxn: 15 };
+            var totalWeight = 0;
+            var weighted = 0;
+
+            items.forEach(function (item) {
+              var w = SHORT_WEIGHTS[item.id];
+              if (!w) return;
+
+              var score = toneRiskScore(item.tone);
+              if (item.weekTrend === "상승") score += 10;
+              if (String(item.delta || "").indexOf("📈") !== -1) score += 8;
+              if (String(item.delta || "").indexOf("📉") !== -1) score -= 6;
+
+              if (score > 100) score = 100;
+              if (score < 0) score = 0;
+
+              totalWeight += w;
+              weighted += score * w;
+            });
+
+            if (!totalWeight) return null;
+            return Math.round(weighted / totalWeight);
+          }
+
+          // 장기 위기 신호: 금융위기/급락장 전조와 극단 공포(역발상 기회) 포착용
+          function parseValueNumber(text) {
+            var cleaned = String(text || "").replace(/[^0-9.\-]/g, "");
+            var num = parseFloat(cleaned);
+            return Number.isFinite(num) ? num : null;
+          }
+
+          function calcLongTermCrisisSignal(items) {
+            var byId = {};
+            items.forEach(function (item) {
+              byId[item.id] = item;
+            });
+
+            var bofa = parseValueNumber(byId.bofa && byId.bofa.value); // 0에 가까울수록 극단 공포
+            var hy = parseValueNumber(byId.hy && byId.hy.value);
+            var move = parseValueNumber(byId.move && byId.move.value);
+            var vix = parseValueNumber(byId.vix && byId.vix.value);
+            var fng = parseValueNumber(byId.fng && byId.fng.value); // 낮을수록 공포
+
+            var risk = 0;
+            var opportunity = 0;
+
+            if (bofa !== null) {
+              if (bofa <= 1) {
+                risk += 30;
+                opportunity += 40;
+              } else if (bofa <= 2) {
+                risk += 22;
+                opportunity += 26;
+              } else if (bofa <= 3) {
+                risk += 14;
+                opportunity += 12;
+              } else if (bofa >= 8) {
+                risk += 10; // 반대로 과열도 리스크
+              }
+            }
+
+            if (hy !== null) {
+              if (hy >= 5) risk += 24;
+              else if (hy >= 4) risk += 18;
+              else if (hy >= 3.2) risk += 10;
+            }
+
+            if (move !== null) {
+              if (move >= 140) risk += 18;
+              else if (move >= 110) risk += 12;
+              else if (move >= 90) risk += 6;
+            }
+
+            if (vix !== null) {
+              if (vix >= 35) {
+                risk += 20;
+                opportunity += 16;
+              } else if (vix >= 28) {
+                risk += 14;
+                opportunity += 8;
+              } else if (vix >= 22) {
+                risk += 8;
+              }
+            }
+
+            if (fng !== null) {
+              if (fng <= 20) {
+                risk += 12;
+                opportunity += 14;
+              } else if (fng <= 35) {
+                risk += 8;
+                opportunity += 7;
+              } else if (fng >= 80) {
+                risk += 8;
+              }
+            }
+
+            if (risk > 100) risk = 100;
+            if (opportunity > 100) opportunity = 100;
+
+            return { risk: Math.round(risk), opportunity: Math.round(opportunity) };
+          }
+
+          function riskLabel(score) {
+            if (score >= 82) return "매우 높음";
+            if (score >= 67) return "높음";
+            if (score >= 52) return "주의";
+            if (score >= 37) return "낮음";
+            return "매우 낮음";
+          }
+
+          function riskClass(score) {
+            if (score >= 82) return "panic-risk-line panic-risk-line--very-high";
+            if (score >= 67) return "panic-risk-line panic-risk-line--high";
+            if (score >= 52) return "panic-risk-line panic-risk-line--elevated";
+            if (score >= 37) return "panic-risk-line panic-risk-line--low";
+            return "panic-risk-line panic-risk-line--very-low";
+          }
+
+          function longRiskLabel(score) {
+            if (score >= 80) return "위기 임박";
+            if (score >= 62) return "경보";
+            if (score >= 45) return "주의";
+            return "안정";
+          }
+
+          function todayKey() {
+            var now = new Date();
+            var y = now.getFullYear();
+            var m = String(now.getMonth() + 1).padStart(2, "0");
+            var d = String(now.getDate()).padStart(2, "0");
+            return y + "-" + m + "-" + d;
+          }
+
+          function loadRiskHistory() {
+            try {
+              var raw = localStorage.getItem(RISK_HISTORY_KEY);
+              if (!raw) return { short: [], mid: [], long: [] };
+              var parsed = JSON.parse(raw);
+              return {
+                short: Array.isArray(parsed.short) ? parsed.short : [],
+                mid: Array.isArray(parsed.mid) ? parsed.mid : [],
+                long: Array.isArray(parsed.long) ? parsed.long : []
+              };
+            } catch (e) {
+              return { short: [], mid: [], long: [] };
+            }
+          }
+
+          function saveRiskHistory(store) {
+            try {
+              localStorage.setItem(RISK_HISTORY_KEY, JSON.stringify(store));
+            } catch (e) {}
+          }
+
+          function upsertDaily(arr, score, dKey) {
+            var list = Array.isArray(arr) ? arr.slice() : [];
+            if (list.length && list[list.length - 1].d === dKey) {
+              list[list.length - 1].s = score;
+            } else {
+              list.push({ d: dKey, s: score });
+            }
+            if (list.length > 7) list = list.slice(list.length - 7);
+            return list;
+          }
+
+          function trendText(arr) {
+            if (!Array.isArray(arr) || arr.length < 2) return "7D 신규";
+            var first = Number(arr[0].s);
+            var last = Number(arr[arr.length - 1].s);
+            if (!Number.isFinite(first) || !Number.isFinite(last)) return "7D -";
+            var diff = Math.round(last - first);
+            if (diff > 0) return "7D ▲ +" + diff;
+            if (diff < 0) return "7D ▼ " + diff;
+            return "7D → 0";
+          }
+
           var priorityOrder = ["vix", "fng", "hy", "move"]; // 2-4-1-3 우선순위 (이전 추천 기준)
           var priorityMap = priorityOrder.reduce(function (acc, id, idx) {
             acc[id] = idx;
@@ -418,7 +629,7 @@
               var isPriority = Object.prototype.hasOwnProperty.call(priorityMap, item.id);
               var labelClass = isPriority ? "panic-label panic-label--priority" : "panic-label";
               var labelCellClass = isPriority ? "panic-label-cell panic-label-cell--priority" : "panic-label-cell";
-              var labelStyle = isPriority ? ' style="color:#ff0000;"' : "";
+              var labelStyle = isPriority ? ' style="color:#7FBF9F;"' : "";
 
               return (
                 "<tr>" +
@@ -435,6 +646,71 @@
 
           panicBodyEl.innerHTML = rows;
           panicUpdatedAtEl.textContent = "업데이트 기준: " + (data.updatedAt || "-");
+
+          var riskLineEl = document.getElementById("panic-risk-line");
+          var shortRiskLineEl = document.getElementById("panic-short-risk-line");
+          var longRiskLineEl = document.getElementById("panic-long-risk-line");
+          var score = calcWeightedRisk(data.items || []);
+          var shortScore = calcShortTermRisk(data.items || []);
+          var longSignal = calcLongTermCrisisSignal(data.items || []);
+
+          var historyStore = loadRiskHistory();
+          var dKey = todayKey();
+          if (score !== null) historyStore.mid = upsertDaily(historyStore.mid, score, dKey);
+          if (shortScore !== null) historyStore.short = upsertDaily(historyStore.short, shortScore, dKey);
+          historyStore.long = upsertDaily(historyStore.long, longSignal.risk, dKey);
+          saveRiskHistory(historyStore);
+
+          if (riskLineEl) {
+            if (score === null) {
+              riskLineEl.className = "panic-risk-line";
+              riskLineEl.textContent = "중기 · 데이터 부족";
+            } else {
+              riskLineEl.className = riskClass(score);
+              riskLineEl.textContent =
+                "중기 · " +
+                riskLabel(score) +
+                " (" +
+                score +
+                "/100) · HY35 / VIX30 / MOVE20 / F&G15 · " +
+                trendText(historyStore.mid);
+            }
+          }
+
+          if (shortRiskLineEl) {
+            if (shortScore === null) {
+              shortRiskLineEl.className = "panic-risk-line panic-risk-line--short";
+              shortRiskLineEl.textContent = "단기 · 데이터 부족";
+            } else {
+              shortRiskLineEl.className = riskClass(shortScore) + " panic-risk-line--short";
+              shortRiskLineEl.textContent =
+                "단기 · " +
+                riskLabel(shortScore) +
+                " (" +
+                shortScore +
+                "/100) · VIX35 / SKEW25 / 풋콜25 / VXN15 · " +
+                trendText(historyStore.short);
+            }
+          }
+
+          if (longRiskLineEl) {
+            var longCls = riskClass(longSignal.risk) + " panic-risk-line--long";
+            var longLabel = longRiskLabel(longSignal.risk);
+            var isBuyWatch = longSignal.risk >= 80 && longSignal.opportunity >= 70;
+            var actionText = isBuyWatch ? " · 분할매수 관찰구간" : "";
+            longRiskLineEl.className = longCls;
+            longRiskLineEl.textContent =
+              "장기 · " +
+              longLabel +
+              " (" +
+              longSignal.risk +
+              "/100) · 기회온도 " +
+              longSignal.opportunity +
+              "/100 · B&B·HY·MOVE·VIX·F&G" +
+              " · " +
+              trendText(historyStore.long) +
+              actionText;
+          }
         }
 
         if (panicBodyEl && panicUpdatedAtEl) {

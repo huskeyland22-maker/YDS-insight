@@ -886,11 +886,86 @@ a.tag.tag--outline:hover {
   font-size: 0.86rem;
 }
 
+.panic-risk-line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 2rem;
+  margin: 0;
+  padding: 0.2rem 0.56rem;
+  border-radius: 999px;
+  border: 1px solid rgba(232, 236, 244, 0.2);
+  background: rgba(232, 236, 244, 0.06);
+  color: var(--mist-dim);
+  font-size: 0.72rem;
+  letter-spacing: 0.02em;
+  text-align: center;
+}
+
+.panic-risk-line--short {
+  opacity: 0.95;
+}
+
+.panic-risk-line--long {
+  opacity: 0.98;
+  border-style: dashed;
+}
+
+@media (max-width: 640px) {
+  .panic-risk-line--long {
+    display: block;
+  }
+}
+
+.panic-risk-line--high {
+  color: #ff8a8a;
+  border-color: rgba(217, 112, 112, 0.45);
+  background: rgba(217, 112, 112, 0.16);
+}
+
+.panic-risk-line--very-high {
+  color: #ff9ea7;
+  border-color: rgba(232, 120, 133, 0.58);
+  background: rgba(232, 120, 133, 0.24);
+}
+
+.panic-risk-line--elevated {
+  color: #f0d38e;
+  border-color: rgba(198, 163, 90, 0.45);
+  background: rgba(198, 163, 90, 0.15);
+}
+
+.panic-risk-line--low {
+  color: #9ed8ff;
+  border-color: rgba(139, 193, 255, 0.46);
+  background: rgba(139, 193, 255, 0.16);
+}
+
+.panic-risk-line--very-low {
+  color: #8de09a;
+  border-color: rgba(108, 187, 122, 0.45);
+  background: rgba(108, 187, 122, 0.16);
+}
+
 .panic-table-wrap {
   overflow-x: auto;
   border: 1px solid rgba(232, 236, 244, 0.1);
   border-radius: var(--radius);
   background: rgba(20, 28, 47, 0.48);
+}
+
+.panic-risk-strip {
+  margin-top: 0.62rem;
+  display: grid;
+  gap: 0.4rem;
+  align-items: stretch;
+}
+
+@media (min-width: 960px) {
+  .panic-risk-strip {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
 .panic-table {
@@ -925,13 +1000,13 @@ a.tag.tag--outline:hover {
 }
 
 .panic-label--priority {
-  color: #ff2b2b !important;
+  color: #7FBF9F !important;
 }
 
 .panic-table td.panic-label-cell--priority,
 .panic-table td.panic-label-cell--priority .panic-label,
 .panic-table td.panic-label-cell--priority .panic-label--priority {
-  color: #ff2b2b !important;
+  color: #7FBF9F !important;
   font-weight: 500 !important;
 }
 
