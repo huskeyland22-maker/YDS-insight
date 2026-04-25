@@ -919,6 +919,24 @@ a.tag.tag--outline:hover {
   background: rgba(232, 236, 244, 0.03);
 }
 
+.panic-label {
+  color: var(--mist);
+  font-weight: 500;
+}
+
+.panic-label--priority {
+  color: #ff2b2b !important;
+  font-weight: 900 !important;
+}
+
+.panic-table td.panic-label-cell--priority,
+.panic-table td.panic-label-cell--priority .panic-label,
+.panic-table td.panic-label-cell--priority .panic-label--priority {
+  color: #ff2b2b !important;
+  font-weight: 900 !important;
+  text-shadow: 0 0 0.2px #ff2b2b;
+}
+
 .panic-delta {
   white-space: nowrap;
 }
