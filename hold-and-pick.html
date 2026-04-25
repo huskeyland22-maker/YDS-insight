@@ -37,7 +37,7 @@
         <a class="logo" href="index.html">Y'ds</a>
         <nav class="nav" aria-label="주요 메뉴">
           <a href="index.html">홈</a>
-          <a href="index.html#research-log">리서치 로그</a>
+          <a href="index.html#insights">인사이트</a>
           <a href="index.html#useful-sites">유용한 사이트</a>
           <a href="index.html#contact">연락</a>
         </nav>
@@ -49,18 +49,19 @@
         <p class="eyebrow">Portfolio Dashboard</p>
         <h1>HOLD AND PICK</h1>
         <p class="lead">
-          현재 보유 종목과 다음 타깃 종목을 분리해 관리하고, 매수 판단 과정까지 기록하는 페이지입니다.
+          현재 보유 종목과 다음 타깃 종목을 분리해 관리하고, 매수 판단 과정까지 기록하는 페이지입니다. 현재가·수량은
+          본인이 입력한 값으로만 계산되며(브라우저에만 저장), 실시간 시세 API는 연결되어 있지 않습니다.
         </p>
       </header>
 
       <section class="hap-kpi" aria-label="요약 지표">
         <article class="hap-kpi__card">
           <p class="hap-kpi__label">현재 보유 종목</p>
-          <p class="hap-kpi__value">5개</p>
+          <p class="hap-kpi__value" id="hap-kpi-hold-count">5</p>
         </article>
         <article class="hap-kpi__card">
-          <p class="hap-kpi__label">현금 비중</p>
-          <p class="hap-kpi__value">26%</p>
+          <p class="hap-kpi__label">현금 비중 (추정)</p>
+          <p class="hap-kpi__value" id="hap-kpi-cash-pct">—</p>
         </article>
         <article class="hap-kpi__card">
           <p class="hap-kpi__label">이번 달 목표</p>
@@ -72,79 +73,321 @@
         </article>
       </section>
 
+      <section class="hap-section hap-section--cash" aria-label="운용 금액과 현금 추정">
+        <div class="hap-section__head">
+          <h2>운용 요약 · 현금 추정</h2>
+          <p class="hap-cash-intro">
+            <strong>총 운용 금액</strong>은 주식 외 현금·예금까지 포함한 운용 한도 등, 본인이 기준으로 잡은 숫자를
+            적습니다. 아래 HOLD 카드의 평단·현재가·수량이 채워지면 <strong>보유 평가액</strong>과
+            <strong>매수원가(투자비용) 합계</strong>가 자동으로 합산되고, <strong>현금 추정</strong>은
+            「총 운용 금액 − 보유 평가액 합계」로 계산됩니다.
+          </p>
+        </div>
+        <div class="hap-cash-panel">
+          <label class="hap-cash-input">
+            <span class="hap-cash-input__label">총 운용 금액 (원)</span>
+            <input
+              type="text"
+              id="hap-total-aum"
+              class="hap-won-input"
+              inputmode="decimal"
+              placeholder="예: 50,000,000"
+              autocomplete="off"
+            />
+          </label>
+          <div class="hap-cash-grid">
+            <div class="hap-cash-stat">
+              <span class="hap-cash-stat__label">보유 평가액 합계</span>
+              <span class="hap-cash-stat__value" id="hap-sum-eval">—</span>
+            </div>
+            <div class="hap-cash-stat">
+              <span class="hap-cash-stat__label">매수원가(투자비용) 합계</span>
+              <span class="hap-cash-stat__value" id="hap-sum-cost">—</span>
+            </div>
+            <div class="hap-cash-stat hap-cash-stat--highlight">
+              <span class="hap-cash-stat__label">현금 추정 (운용금 − 평가액)</span>
+              <span class="hap-cash-stat__value" id="hap-cash-est">—</span>
+            </div>
+            <div class="hap-cash-stat">
+              <span class="hap-cash-stat__label">현금 비중 (추정)</span>
+              <span class="hap-cash-stat__value" id="hap-cash-pct-detail">—</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section class="hap-section">
         <div class="hap-section__head">
           <h2>HOLD · 현재 보유 종목</h2>
-          <p>보유 이유와 깨지는 조건을 함께 기록해서 판단을 늦추지 않도록 관리합니다.</p>
+          <p>
+            숫자는 평단·현재가·수량으로 자동 계산됩니다. 매입일을 넣으면 <strong>보유 기간(D+)</strong>이 표시되고,
+            수익·손실 금액은 <strong>평가손익</strong>에 나옵니다. 수익률 색은 국내 증시 관성에 맞춰
+            <strong>플러스는 붉은 톤, 마이너스는 푸른 톤</strong>입니다. 아래 문단은 “왜 아직 들고 있는가” 메모입니다.
+          </p>
         </div>
-        <div class="hap-grid">
-          <article class="hap-card">
+        <div class="hap-grid" id="hap-hold-grid">
+          <article class="hap-card hap-card--hold">
             <div class="hap-card__top">
               <h3>삼성전자</h3>
               <span class="hap-badge hap-badge--hold">유지</span>
             </div>
-            <p class="hap-meta hap-meta--editable" data-symbol="삼성전자">
-              비중 <input type="text" data-field="weight" value="14%" placeholder="예: 14%" />
-              · 평균단가 <input type="text" data-field="avg" value="73,200" placeholder="예: 73,200" />
-              · 현재단가 <input type="text" data-field="current" placeholder="예: 79,300" />
-              · 수익률 <input type="text" data-field="return" value="+8.4%" readonly />
-            </p>
+            <div class="hap-pos hap-meta--editable" data-symbol="삼성전자">
+              <div class="hap-pos__strip" aria-hidden="true"></div>
+              <div class="hap-pos__grid">
+                <label class="hap-field">
+                  <span class="hap-field__label">매입일</span>
+                  <input type="date" data-field="buyDate" />
+                </label>
+                <label class="hap-field">
+                  <span class="hap-field__label">보유 수량</span>
+                  <input type="text" data-field="qty" inputmode="decimal" placeholder="예: 10" autocomplete="off" />
+                </label>
+                <label class="hap-field">
+                  <span class="hap-field__label">비중</span>
+                  <input type="text" data-field="weight" value="14%" placeholder="예: 14%" autocomplete="off" />
+                </label>
+                <label class="hap-field">
+                  <span class="hap-field__label">평균단가</span>
+                  <input type="text" class="hap-won-input" data-field="avg" value="73,200" placeholder="예: 73,200" autocomplete="off" />
+                </label>
+                <label class="hap-field">
+                  <span class="hap-field__label">현재가</span>
+                  <input type="text" class="hap-won-input" data-field="current" placeholder="예: 79,300" autocomplete="off" />
+                </label>
+                <div class="hap-field hap-field--readonly">
+                  <span class="hap-field__label">수익률</span>
+                  <span class="hap-field__value hap-field__value--return" data-out="return">—</span>
+                </div>
+                <div class="hap-field hap-field--readonly">
+                  <span class="hap-field__label">평가금액</span>
+                  <span class="hap-field__value" data-out="eval">—</span>
+                </div>
+                <div class="hap-field hap-field--readonly">
+                  <span class="hap-field__label">매수금액 합계</span>
+                  <span class="hap-field__value" data-out="cost">—</span>
+                </div>
+                <div class="hap-field hap-field--readonly">
+                  <span class="hap-field__label">보유 기간</span>
+                  <span class="hap-field__value" data-out="dplus">—</span>
+                </div>
+                <div class="hap-field hap-field--readonly">
+                  <span class="hap-field__label">평가손익</span>
+                  <span class="hap-field__value" data-out="pnl">—</span>
+                </div>
+              </div>
+            </div>
             <p class="hap-note">메모리 업황 회복과 HBM 수요 확대로 실적 개선 흐름 유지 기대.</p>
             <p class="hap-risk">깨지는 조건: 재고 회전율 둔화 + 수요 가이던스 하향.</p>
           </article>
-          <article class="hap-card">
+          <article class="hap-card hap-card--hold">
             <div class="hap-card__top">
               <h3>에스피지</h3>
               <span class="hap-badge hap-badge--hold">유지</span>
             </div>
-            <p class="hap-meta hap-meta--editable" data-symbol="에스피지">
-              비중 <input type="text" data-field="weight" placeholder="예: 8%" />
-              · 평균단가 <input type="text" data-field="avg" placeholder="예: 27,500" />
-              · 현재단가 <input type="text" data-field="current" placeholder="예: 28,100" />
-              · 수익률 <input type="text" data-field="return" readonly />
-            </p>
+            <div class="hap-pos hap-meta--editable" data-symbol="에스피지">
+              <div class="hap-pos__strip" aria-hidden="true"></div>
+              <div class="hap-pos__grid">
+                <label class="hap-field">
+                  <span class="hap-field__label">매입일</span>
+                  <input type="date" data-field="buyDate" />
+                </label>
+                <label class="hap-field">
+                  <span class="hap-field__label">보유 수량</span>
+                  <input type="text" data-field="qty" inputmode="decimal" placeholder="예: 10" autocomplete="off" />
+                </label>
+                <label class="hap-field">
+                  <span class="hap-field__label">비중</span>
+                  <input type="text" data-field="weight" placeholder="예: 8%" autocomplete="off" />
+                </label>
+                <label class="hap-field">
+                  <span class="hap-field__label">평균단가</span>
+                  <input type="text" class="hap-won-input" data-field="avg" placeholder="예: 27,500" autocomplete="off" />
+                </label>
+                <label class="hap-field">
+                  <span class="hap-field__label">현재가</span>
+                  <input type="text" class="hap-won-input" data-field="current" placeholder="예: 28,100" autocomplete="off" />
+                </label>
+                <div class="hap-field hap-field--readonly">
+                  <span class="hap-field__label">수익률</span>
+                  <span class="hap-field__value hap-field__value--return" data-out="return">—</span>
+                </div>
+                <div class="hap-field hap-field--readonly">
+                  <span class="hap-field__label">평가금액</span>
+                  <span class="hap-field__value" data-out="eval">—</span>
+                </div>
+                <div class="hap-field hap-field--readonly">
+                  <span class="hap-field__label">매수금액 합계</span>
+                  <span class="hap-field__value" data-out="cost">—</span>
+                </div>
+                <div class="hap-field hap-field--readonly">
+                  <span class="hap-field__label">보유 기간</span>
+                  <span class="hap-field__value" data-out="dplus">—</span>
+                </div>
+                <div class="hap-field hap-field--readonly">
+                  <span class="hap-field__label">평가손익</span>
+                  <span class="hap-field__value" data-out="pnl">—</span>
+                </div>
+              </div>
+            </div>
             <p class="hap-note">로봇 핵심부품(감속기) 수요 확대를 추적하는 중기 보유 포지션.</p>
             <p class="hap-risk">깨지는 조건: 수주 증가 없이 밸류에이션만 확장되는 흐름 지속.</p>
           </article>
-          <article class="hap-card">
+          <article class="hap-card hap-card--hold">
             <div class="hap-card__top">
               <h3>효성중공업</h3>
               <span class="hap-badge hap-badge--hold">유지</span>
             </div>
-            <p class="hap-meta hap-meta--editable" data-symbol="효성중공업">
-              비중 <input type="text" data-field="weight" placeholder="예: 10%" />
-              · 평균단가 <input type="text" data-field="avg" placeholder="예: 412,000" />
-              · 현재단가 <input type="text" data-field="current" placeholder="예: 405,000" />
-              · 수익률 <input type="text" data-field="return" readonly />
-            </p>
+            <div class="hap-pos hap-meta--editable" data-symbol="효성중공업">
+              <div class="hap-pos__strip" aria-hidden="true"></div>
+              <div class="hap-pos__grid">
+                <label class="hap-field">
+                  <span class="hap-field__label">매입일</span>
+                  <input type="date" data-field="buyDate" />
+                </label>
+                <label class="hap-field">
+                  <span class="hap-field__label">보유 수량</span>
+                  <input type="text" data-field="qty" inputmode="decimal" placeholder="예: 10" autocomplete="off" />
+                </label>
+                <label class="hap-field">
+                  <span class="hap-field__label">비중</span>
+                  <input type="text" data-field="weight" placeholder="예: 10%" autocomplete="off" />
+                </label>
+                <label class="hap-field">
+                  <span class="hap-field__label">평균단가</span>
+                  <input type="text" class="hap-won-input" data-field="avg" placeholder="예: 412,000" autocomplete="off" />
+                </label>
+                <label class="hap-field">
+                  <span class="hap-field__label">현재가</span>
+                  <input type="text" class="hap-won-input" data-field="current" placeholder="예: 405,000" autocomplete="off" />
+                </label>
+                <div class="hap-field hap-field--readonly">
+                  <span class="hap-field__label">수익률</span>
+                  <span class="hap-field__value hap-field__value--return" data-out="return">—</span>
+                </div>
+                <div class="hap-field hap-field--readonly">
+                  <span class="hap-field__label">평가금액</span>
+                  <span class="hap-field__value" data-out="eval">—</span>
+                </div>
+                <div class="hap-field hap-field--readonly">
+                  <span class="hap-field__label">매수금액 합계</span>
+                  <span class="hap-field__value" data-out="cost">—</span>
+                </div>
+                <div class="hap-field hap-field--readonly">
+                  <span class="hap-field__label">보유 기간</span>
+                  <span class="hap-field__value" data-out="dplus">—</span>
+                </div>
+                <div class="hap-field hap-field--readonly">
+                  <span class="hap-field__label">평가손익</span>
+                  <span class="hap-field__value" data-out="pnl">—</span>
+                </div>
+              </div>
+            </div>
             <p class="hap-note">전력기기/인프라 투자 사이클의 구조적 수혜 가능성에 주목.</p>
             <p class="hap-risk">깨지는 조건: 주요 수주 둔화 + 원가 부담 동반 악화.</p>
           </article>
-          <article class="hap-card">
+          <article class="hap-card hap-card--hold">
             <div class="hap-card__top">
               <h3>삼성SDI</h3>
               <span class="hap-badge hap-badge--watch">점검필요</span>
             </div>
-            <p class="hap-meta hap-meta--editable" data-symbol="삼성SDI">
-              비중 <input type="text" data-field="weight" placeholder="예: 7%" />
-              · 평균단가 <input type="text" data-field="avg" placeholder="예: 388,000" />
-              · 현재단가 <input type="text" data-field="current" placeholder="예: 369,000" />
-              · 수익률 <input type="text" data-field="return" readonly />
-            </p>
+            <div class="hap-pos hap-meta--editable" data-symbol="삼성SDI">
+              <div class="hap-pos__strip" aria-hidden="true"></div>
+              <div class="hap-pos__grid">
+                <label class="hap-field">
+                  <span class="hap-field__label">매입일</span>
+                  <input type="date" data-field="buyDate" />
+                </label>
+                <label class="hap-field">
+                  <span class="hap-field__label">보유 수량</span>
+                  <input type="text" data-field="qty" inputmode="decimal" placeholder="예: 10" autocomplete="off" />
+                </label>
+                <label class="hap-field">
+                  <span class="hap-field__label">비중</span>
+                  <input type="text" data-field="weight" placeholder="예: 7%" autocomplete="off" />
+                </label>
+                <label class="hap-field">
+                  <span class="hap-field__label">평균단가</span>
+                  <input type="text" class="hap-won-input" data-field="avg" placeholder="예: 388,000" autocomplete="off" />
+                </label>
+                <label class="hap-field">
+                  <span class="hap-field__label">현재가</span>
+                  <input type="text" class="hap-won-input" data-field="current" placeholder="예: 369,000" autocomplete="off" />
+                </label>
+                <div class="hap-field hap-field--readonly">
+                  <span class="hap-field__label">수익률</span>
+                  <span class="hap-field__value hap-field__value--return" data-out="return">—</span>
+                </div>
+                <div class="hap-field hap-field--readonly">
+                  <span class="hap-field__label">평가금액</span>
+                  <span class="hap-field__value" data-out="eval">—</span>
+                </div>
+                <div class="hap-field hap-field--readonly">
+                  <span class="hap-field__label">매수금액 합계</span>
+                  <span class="hap-field__value" data-out="cost">—</span>
+                </div>
+                <div class="hap-field hap-field--readonly">
+                  <span class="hap-field__label">보유 기간</span>
+                  <span class="hap-field__value" data-out="dplus">—</span>
+                </div>
+                <div class="hap-field hap-field--readonly">
+                  <span class="hap-field__label">평가손익</span>
+                  <span class="hap-field__value" data-out="pnl">—</span>
+                </div>
+              </div>
+            </div>
             <p class="hap-note">배터리 업황 회복 시 탄력은 크지만, 수요 회복 속도 확인이 우선.</p>
             <p class="hap-risk">깨지는 조건: 고객사 수요 둔화 장기화 및 실적 가이던스 하향.</p>
           </article>
-          <article class="hap-card">
+          <article class="hap-card hap-card--hold">
             <div class="hap-card__top">
               <h3>두산에너빌리티</h3>
               <span class="hap-badge hap-badge--hold">유지</span>
             </div>
-            <p class="hap-meta hap-meta--editable" data-symbol="두산에너빌리티">
-              비중 <input type="text" data-field="weight" placeholder="예: 11%" />
-              · 평균단가 <input type="text" data-field="avg" placeholder="예: 19,800" />
-              · 현재단가 <input type="text" data-field="current" placeholder="예: 20,830" />
-              · 수익률 <input type="text" data-field="return" readonly />
-            </p>
+            <div class="hap-pos hap-meta--editable" data-symbol="두산에너빌리티">
+              <div class="hap-pos__strip" aria-hidden="true"></div>
+              <div class="hap-pos__grid">
+                <label class="hap-field">
+                  <span class="hap-field__label">매입일</span>
+                  <input type="date" data-field="buyDate" />
+                </label>
+                <label class="hap-field">
+                  <span class="hap-field__label">보유 수량</span>
+                  <input type="text" data-field="qty" inputmode="decimal" placeholder="예: 10" autocomplete="off" />
+                </label>
+                <label class="hap-field">
+                  <span class="hap-field__label">비중</span>
+                  <input type="text" data-field="weight" placeholder="예: 11%" autocomplete="off" />
+                </label>
+                <label class="hap-field">
+                  <span class="hap-field__label">평균단가</span>
+                  <input type="text" class="hap-won-input" data-field="avg" placeholder="예: 19,800" autocomplete="off" />
+                </label>
+                <label class="hap-field">
+                  <span class="hap-field__label">현재가</span>
+                  <input type="text" class="hap-won-input" data-field="current" placeholder="예: 20,830" autocomplete="off" />
+                </label>
+                <div class="hap-field hap-field--readonly">
+                  <span class="hap-field__label">수익률</span>
+                  <span class="hap-field__value hap-field__value--return" data-out="return">—</span>
+                </div>
+                <div class="hap-field hap-field--readonly">
+                  <span class="hap-field__label">평가금액</span>
+                  <span class="hap-field__value" data-out="eval">—</span>
+                </div>
+                <div class="hap-field hap-field--readonly">
+                  <span class="hap-field__label">매수금액 합계</span>
+                  <span class="hap-field__value" data-out="cost">—</span>
+                </div>
+                <div class="hap-field hap-field--readonly">
+                  <span class="hap-field__label">보유 기간</span>
+                  <span class="hap-field__value" data-out="dplus">—</span>
+                </div>
+                <div class="hap-field hap-field--readonly">
+                  <span class="hap-field__label">평가손익</span>
+                  <span class="hap-field__value" data-out="pnl">—</span>
+                </div>
+              </div>
+            </div>
             <p class="hap-note">원전·전력 인프라 수주 모멘텀을 기반으로 추적하는 핵심 포지션.</p>
             <p class="hap-risk">깨지는 조건: 수주 가시성 약화 또는 정책 변수로 CAPEX 지연.</p>
           </article>
@@ -154,28 +397,45 @@
       <section class="hap-section">
         <div class="hap-section__head">
           <h2>PICK · 다음 타깃 종목</h2>
-          <p>매수 전 대기 리스트입니다. 트리거가 오기 전에는 보류 이유를 명확히 남깁니다.</p>
+          <p>
+            후보군 리스트입니다. 왼쪽 핸들로 순서를 바꾸고, 실제 매수 후에는 <strong>Hold에 반영 (복사)</strong>로 줄 단위
+            메모를 클립보드에 담아 두고 위 HOLD 카드에 옮겨 적을 수 있습니다. Next.js·Vercel로 옮길 때도 같은 데이터 필드를
+            쓰면 됩니다.
+          </p>
         </div>
-        <div class="hap-grid">
-          <article class="hap-card">
-            <div class="hap-card__top">
-              <h3>SK하이닉스</h3>
-              <span class="hap-badge hap-badge--pick">우선순위 A</span>
-            </div>
-            <p class="hap-meta">목표 매수구간 178,000 ~ 185,000 · 목표 비중 5%</p>
-            <p class="hap-note">트리거: HBM ASP 상승 지속 + 가이던스 상향.</p>
-            <p class="hap-risk">지금 안 사는 이유: 밸류에이션 부담 구간 진입 여부 확인 중.</p>
-          </article>
-          <article class="hap-card">
-            <div class="hap-card__top">
-              <h3>한국전력</h3>
-              <span class="hap-badge hap-badge--pick">우선순위 B</span>
-            </div>
-            <p class="hap-meta">목표 매수구간 20,000 ~ 21,500 · 목표 비중 4%</p>
-            <p class="hap-note">트리거: 요금/연료비 정책 가시성 개선 + 적자 축소 흐름 확인.</p>
-            <p class="hap-risk">지금 안 사는 이유: 정책 민감도와 실적 변동성 여전히 큼.</p>
-          </article>
-        </div>
+
+        <ul class="hap-pick-list" id="hap-pick-list" aria-label="픽 후보 목록"></ul>
+
+        <form class="hap-pick-form" id="hap-pick-form" autocomplete="off">
+          <p class="hap-pick-form__title">후보 추가</p>
+          <div class="hap-pick-form__grid">
+            <label class="hap-field">
+              <span class="hap-field__label">종목명</span>
+              <input type="text" id="hap-pick-name" required placeholder="예: SK하이닉스" />
+            </label>
+            <label class="hap-field">
+              <span class="hap-field__label">목표가 하한</span>
+              <input type="text" id="hap-pick-low" class="hap-won-input" placeholder="예: 178,000" />
+            </label>
+            <label class="hap-field">
+              <span class="hap-field__label">목표가 상한</span>
+              <input type="text" id="hap-pick-high" class="hap-won-input" placeholder="예: 185,000" />
+            </label>
+            <label class="hap-field">
+              <span class="hap-field__label">목표 비중</span>
+              <input type="text" id="hap-pick-w" placeholder="예: 5%" />
+            </label>
+            <label class="hap-field hap-field--span2">
+              <span class="hap-field__label">진입 트리거(한 줄)</span>
+              <input type="text" id="hap-pick-trigger" placeholder="예: HBM ASP 상승 지속" />
+            </label>
+            <label class="hap-field hap-field--span2">
+              <span class="hap-field__label">지금 안 사는 이유</span>
+              <input type="text" id="hap-pick-wait" placeholder="예: 밸류 부담 구간 확인 중" />
+            </label>
+          </div>
+          <button type="submit" class="hap-btn hap-btn--primary">리스트에 추가</button>
+        </form>
       </section>
 
       <section class="hap-section">
@@ -215,66 +475,494 @@
     </footer>
     <script>
       (function () {
+        var PICK_LS = "hap-pick-v1";
+
+        function stripWonInputForEdit(raw) {
+          return String(raw || "")
+            .replace(/,/g, "")
+            .replace(/\s/g, "")
+            .replace(/원/g, "")
+            .replace(/₩/g, "")
+            .replace(/Ｗ/g, "")
+            .trim();
+        }
+
         function parseNumber(text) {
           if (!text) return NaN;
-          var normalized = String(text).replace(/,/g, "").trim();
+          var normalized = stripWonInputForEdit(String(text)).replace(/%/g, "").trim();
           var num = Number(normalized);
           return Number.isFinite(num) ? num : NaN;
         }
 
-        function formatReturn(rate) {
+        function formatWonInputThousandsFromRaw(raw) {
+          var s = stripWonInputForEdit(raw);
+          if (s === "") return "";
+          var n = parseNumber(s);
+          if (!Number.isFinite(n)) return s;
+          return Math.round(n).toLocaleString("en-US");
+        }
+
+        function normalizeAllWonInputs() {
+          document.querySelectorAll("input.hap-won-input").forEach(function (el) {
+            var formatted = formatWonInputThousandsFromRaw(el.value);
+            if (formatted !== "") el.value = formatted;
+          });
+        }
+
+        function bindWonMoneyInputs() {
+          document.querySelectorAll("input.hap-won-input").forEach(function (el) {
+            if (el.dataset.wonBound === "1") return;
+            el.dataset.wonBound = "1";
+            el.addEventListener("focus", function () {
+              el.value = stripWonInputForEdit(el.value);
+            });
+            el.addEventListener("blur", function () {
+              var t = stripWonInputForEdit(el.value);
+              if (t === "") return;
+              el.value = formatWonInputThousandsFromRaw(el.value);
+            });
+          });
+        }
+
+        function formatReturnText(rate) {
           var rounded = Math.round(rate * 10) / 10;
-          if (!Number.isFinite(rounded)) return "";
+          if (!Number.isFinite(rounded)) return "—";
           return (rounded > 0 ? "+" : "") + rounded.toFixed(1) + "%";
         }
 
-        function updateReturn(row) {
-          var avgInput = row.querySelector('input[data-field="avg"]');
-          var currentInput = row.querySelector('input[data-field="current"]');
-          var returnInput = row.querySelector('input[data-field="return"]');
-          if (!avgInput || !currentInput || !returnInput) return;
+        function formatWonAmount(absRoundedInt) {
+          return "₩ " + Math.abs(absRoundedInt).toLocaleString("en-US");
+        }
 
-          var avg = parseNumber(avgInput.value);
-          var current = parseNumber(currentInput.value);
-          if (!Number.isFinite(avg) || avg <= 0 || !Number.isFinite(current)) {
-            returnInput.value = "";
+        function formatMoney(n) {
+          if (!Number.isFinite(n)) return "—";
+          return formatWonAmount(Math.round(n)) + " 원";
+        }
+
+        function formatSignedMoney(n) {
+          if (!Number.isFinite(n)) return "—";
+          var rounded = Math.round(n);
+          if (rounded === 0) return "₩ 0 원";
+          return (rounded > 0 ? "+" : "−") + formatWonAmount(rounded) + " 원";
+        }
+
+        function formatDplusLabel(buyDateStr) {
+          if (!buyDateStr || !/^\d{4}-\d{2}-\d{2}$/.test(String(buyDateStr).trim())) return "—";
+          var start = new Date(String(buyDateStr).trim() + "T12:00:00");
+          if (isNaN(start.getTime())) return "—";
+          var dayMs = 86400000;
+          var diff = Math.floor((Date.now() - start.getTime()) / dayMs);
+          if (diff < 0) return "D+0";
+          return "D+" + diff;
+        }
+
+        function setTone(card, strip, tone) {
+          if (card) {
+            card.classList.remove("hap-card--gain", "hap-card--loss", "hap-card--flat", "hap-card--na");
+            card.classList.add("hap-card--" + tone);
+          }
+          if (strip) {
+            strip.className = "hap-pos__strip hap-pos__strip--" + tone;
+          }
+        }
+
+        function updateHoldRow(posEl) {
+          var card = posEl.closest(".hap-card--hold");
+          var avgEl = posEl.querySelector('input[data-field="avg"]');
+          var curEl = posEl.querySelector('input[data-field="current"]');
+          var qtyEl = posEl.querySelector('input[data-field="qty"]');
+          var buyEl = posEl.querySelector('input[data-field="buyDate"]');
+          var strip = posEl.querySelector(".hap-pos__strip");
+          var outReturn = posEl.querySelector('[data-out="return"]');
+          var outEval = posEl.querySelector('[data-out="eval"]');
+          var outCost = posEl.querySelector('[data-out="cost"]');
+          var outDplus = posEl.querySelector('[data-out="dplus"]');
+          var outPnl = posEl.querySelector('[data-out="pnl"]');
+          if (!avgEl || !curEl || !outReturn || !outEval || !outCost) return;
+
+          var avg = parseNumber(avgEl.value);
+          var current = parseNumber(curEl.value);
+          var qty = parseNumber(qtyEl ? qtyEl.value : "");
+
+          var hasAvg = Number.isFinite(avg) && avg > 0;
+          var hasCur = Number.isFinite(current);
+          var hasQty = Number.isFinite(qty) && qty > 0;
+
+          if (outDplus && buyEl) {
+            outDplus.textContent = formatDplusLabel(buyEl.value);
+          }
+
+          if (hasAvg && hasCur) {
+            var rate = ((current - avg) / avg) * 100;
+            outReturn.textContent = formatReturnText(rate);
+            outReturn.classList.remove("hap-field__value--up", "hap-field__value--down", "hap-field__value--flat");
+            if (current > avg) {
+              outReturn.classList.add("hap-field__value--up");
+              setTone(card, strip, "gain");
+            } else if (current < avg) {
+              outReturn.classList.add("hap-field__value--down");
+              setTone(card, strip, "loss");
+            } else {
+              outReturn.classList.add("hap-field__value--flat");
+              setTone(card, strip, "flat");
+            }
+          } else {
+            outReturn.textContent = "—";
+            outReturn.classList.remove("hap-field__value--up", "hap-field__value--down", "hap-field__value--flat");
+            setTone(card, strip, "na");
+          }
+
+          if (hasQty && hasAvg && hasCur) {
+            outEval.textContent = formatMoney(current * qty);
+            outCost.textContent = formatMoney(avg * qty);
+            var pnl = (current - avg) * qty;
+            if (outPnl) {
+              outPnl.classList.remove("hap-field__value--up", "hap-field__value--down", "hap-field__value--flat");
+              outPnl.textContent = formatSignedMoney(pnl);
+              if (pnl > 0) {
+                outPnl.classList.add("hap-field__value--up");
+              } else if (pnl < 0) {
+                outPnl.classList.add("hap-field__value--down");
+              } else {
+                outPnl.classList.add("hap-field__value--flat");
+              }
+            }
+          } else {
+            outEval.textContent = "—";
+            outCost.textContent = "—";
+            if (outPnl) {
+              outPnl.textContent = "—";
+              outPnl.classList.remove("hap-field__value--up", "hap-field__value--down", "hap-field__value--flat");
+            }
+          }
+        }
+
+        var TOTAL_AUM_LS = "hap:summary:totalAum";
+
+        function sumHoldPortfolio() {
+          var sumEval = 0;
+          var sumCost = 0;
+          var nEval = 0;
+          var nCost = 0;
+          document.querySelectorAll(".hap-pos.hap-meta--editable[data-symbol]").forEach(function (row) {
+            var avgEl = row.querySelector('input[data-field="avg"]');
+            var curEl = row.querySelector('input[data-field="current"]');
+            var qtyEl = row.querySelector('input[data-field="qty"]');
+            if (!avgEl || !curEl || !qtyEl) return;
+            var avg = parseNumber(avgEl.value);
+            var current = parseNumber(curEl.value);
+            var qty = parseNumber(qtyEl.value);
+            if (Number.isFinite(qty) && qty > 0 && Number.isFinite(avg) && avg > 0 && Number.isFinite(current)) {
+              sumEval += current * qty;
+              sumCost += avg * qty;
+              nEval += 1;
+              nCost += 1;
+            }
+          });
+          return {
+            sumEval: sumEval,
+            sumCost: sumCost,
+            hasEval: nEval > 0,
+            hasCost: nCost > 0,
+          };
+        }
+
+        function refreshCashSummary() {
+          var totalEl = document.getElementById("hap-total-aum");
+          var outEval = document.getElementById("hap-sum-eval");
+          var outCost = document.getElementById("hap-sum-cost");
+          var outCash = document.getElementById("hap-cash-est");
+          var outPct = document.getElementById("hap-cash-pct-detail");
+          var kpiPct = document.getElementById("hap-kpi-cash-pct");
+          if (!outEval || !outCost || !outCash || !outPct) return;
+
+          var sums = sumHoldPortfolio();
+          outEval.textContent = sums.hasEval ? formatMoney(sums.sumEval) : "—";
+          outCost.textContent = sums.hasCost ? formatMoney(sums.sumCost) : "—";
+
+          var total = totalEl ? parseNumber(totalEl.value) : NaN;
+          if (!Number.isFinite(total) || total <= 0) {
+            outCash.textContent = "—";
+            outPct.textContent = "총 운용 금액 입력 시 계산";
+            if (kpiPct) kpiPct.textContent = "—";
             return;
           }
 
-          var rate = ((current - avg) / avg) * 100;
-          returnInput.value = formatReturn(rate);
+          var cashEst = total - sums.sumEval;
+          outCash.textContent = formatSignedMoney(cashEst);
+          var pct = (cashEst / total) * 100;
+          outPct.textContent = Number.isFinite(pct) ? pct.toFixed(1) + "%" : "—";
+          if (kpiPct) kpiPct.textContent = Number.isFinite(pct) ? pct.toFixed(1) + "%" : "—";
         }
 
-        var rows = document.querySelectorAll(".hap-meta--editable");
+        bindWonMoneyInputs();
 
-        function persistReturn(symbol, row) {
-          var returnInput = row.querySelector('input[data-field="return"]');
-          if (!returnInput) return;
-          var returnKey = "hap:" + symbol + ":return";
-          localStorage.setItem(returnKey, returnInput.value);
-        }
-
-        rows.forEach(function (row) {
+        var holdRows = document.querySelectorAll(".hap-pos.hap-meta--editable");
+        holdRows.forEach(function (row) {
           var symbol = row.getAttribute("data-symbol");
           if (!symbol) return;
-          var inputs = row.querySelectorAll("input[data-field]");
-          inputs.forEach(function (input) {
+          row.querySelectorAll("input[data-field]").forEach(function (input) {
             var field = input.getAttribute("data-field");
             var key = "hap:" + symbol + ":" + field;
             var saved = localStorage.getItem(key);
-            if (saved !== null) input.value = saved;
-            input.addEventListener("input", function () {
-              if (field === "avg" || field === "current") {
-                updateReturn(row);
-                persistReturn(symbol, row);
-              }
+            if (saved !== null && saved !== "") input.value = saved;
+            function onFieldChange() {
               localStorage.setItem(key, input.value);
-            });
+              updateHoldRow(row);
+              refreshCashSummary();
+            }
+            input.addEventListener("input", onFieldChange);
+            input.addEventListener("change", onFieldChange);
           });
-
-          updateReturn(row);
-          persistReturn(symbol, row);
+          updateHoldRow(row);
         });
+
+        var totalAumEl = document.getElementById("hap-total-aum");
+        if (totalAumEl) {
+          var savedAum = localStorage.getItem(TOTAL_AUM_LS);
+          if (savedAum !== null && savedAum !== "") totalAumEl.value = savedAum;
+          function onTotalAumChange() {
+            localStorage.setItem(TOTAL_AUM_LS, totalAumEl.value);
+            refreshCashSummary();
+          }
+          totalAumEl.addEventListener("input", onTotalAumChange);
+          totalAumEl.addEventListener("change", onTotalAumChange);
+        }
+        refreshCashSummary();
+        normalizeAllWonInputs();
+
+        var kpiHold = document.getElementById("hap-kpi-hold-count");
+        if (kpiHold) kpiHold.textContent = String(document.querySelectorAll(".hap-card--hold").length);
+
+        function escapeHtml(text) {
+          return String(text)
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#39;");
+        }
+
+        function buildHoldImportText(it) {
+          var lines = [
+            "[HOLD 입력용 복사]",
+            "종목: " + (it.name || ""),
+            "목표 구간: " + (it.low || "—") + (it.high ? " ~ " + it.high : ""),
+            "목표 비중: " + (it.w || "—"),
+            "트리거/메모: " + (it.trigger || "—"),
+            "보류 이유: " + (it.wait || "—"),
+            "",
+            "→ HOLD 카드의 매입일·평단·수량·비중·한 줄 메모에 맞게 반영하세요.",
+          ];
+          return lines.join("\n");
+        }
+
+        var HAP_PICK_COPY_LABEL = "Hold에 반영 (복사)";
+
+        function copyTextWithFeedback(text, btn) {
+          function done(ok) {
+            if (!btn) return;
+            btn.textContent = ok ? "복사됨" : "복사 실패";
+            btn.disabled = true;
+            setTimeout(function () {
+              btn.textContent = HAP_PICK_COPY_LABEL;
+              btn.disabled = false;
+            }, 1800);
+          }
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard
+              .writeText(text)
+              .then(function () {
+                done(true);
+              })
+              .catch(function () {
+                fallbackCopyText(text);
+                done(true);
+              });
+          } else {
+            fallbackCopyText(text);
+            done(true);
+          }
+        }
+
+        function fallbackCopyText(text) {
+          var ta = document.createElement("textarea");
+          ta.value = text;
+          ta.setAttribute("readonly", "");
+          ta.style.position = "fixed";
+          ta.style.left = "-9999px";
+          document.body.appendChild(ta);
+          ta.select();
+          try {
+            document.execCommand("copy");
+          } catch (err) {
+            window.prompt("복사할 내용:", text);
+          }
+          document.body.removeChild(ta);
+        }
+
+        function defaultPickItems() {
+          return [
+            {
+              id: "seed-hynix",
+              name: "SK하이닉스",
+              low: "178,000",
+              high: "185,000",
+              w: "5%",
+              trigger: "트리거: HBM ASP 상승 지속 + 가이던스 상향.",
+              wait: "지금 안 사는 이유: 밸류에이션 부담 구간 진입 여부 확인 중.",
+            },
+            {
+              id: "seed-kepco",
+              name: "한국전력",
+              low: "20,000",
+              high: "21,500",
+              w: "4%",
+              trigger: "트리거: 요금·연료비 정책 가시성 개선 + 적자 축소 흐름 확인.",
+              wait: "지금 안 사는 이유: 정책 민감도와 실적 변동성 여전히 큼.",
+            },
+          ];
+        }
+
+        function loadPickItems() {
+          try {
+            var raw = localStorage.getItem(PICK_LS);
+            if (raw === null) return defaultPickItems();
+            var parsed = JSON.parse(raw);
+            return Array.isArray(parsed) ? parsed : defaultPickItems();
+          } catch (e) {
+            return defaultPickItems();
+          }
+        }
+
+        function savePickItems(items) {
+          localStorage.setItem(PICK_LS, JSON.stringify(items));
+        }
+
+        var pickItems = loadPickItems();
+        var pickListEl = document.getElementById("hap-pick-list");
+        var dragId = null;
+
+        function renderPickList() {
+          if (!pickListEl) return;
+          pickListEl.innerHTML = "";
+
+          if (!pickItems.length) {
+            pickListEl.innerHTML =
+              '<li class="hap-pick-empty">후보 종목이 없습니다. 아래 양식에서 추가하면 이곳에 표시됩니다.</li>';
+            return;
+          }
+
+          pickItems.forEach(function (item, index) {
+            var li = document.createElement("li");
+            li.className = "hap-pick-item";
+            li.setAttribute("draggable", "true");
+            li.dataset.id = item.id;
+            var pri = index < 26 ? String.fromCharCode(65 + index) : String(index + 1);
+            var range =
+              (item.low || "—") + (item.high ? " ~ " + item.high : "") + (item.w ? " · 목표 비중 " + item.w : "");
+
+            li.innerHTML =
+              '<button type="button" class="hap-pick-drag" aria-label="순서 바꾸기" title="드래그">⠿</button>' +
+              '<div class="hap-pick-item__main">' +
+              '<div class="hap-pick-item__top">' +
+              '<span class="hap-badge hap-badge--pick">우선순위 ' +
+              pri +
+              "</span>" +
+              "<h3>" +
+              escapeHtml(item.name || "(이름 없음)") +
+              "</h3>" +
+              "</div>" +
+              '<p class="hap-pick-item__meta">' +
+              escapeHtml(range) +
+              "</p>" +
+              (item.trigger
+                ? '<p class="hap-note">' + escapeHtml(item.trigger) + "</p>"
+                : "") +
+              (item.wait ? '<p class="hap-risk">' + escapeHtml(item.wait) + "</p>" : "") +
+              "</div>" +
+              '<div class="hap-pick-item__actions">' +
+              '<button type="button" class="hap-pick-copy">Hold에 반영 (복사)</button>' +
+              '<button type="button" class="hap-pick-del" aria-label="이 후보 삭제">삭제</button>' +
+              "</div>";
+
+            li.addEventListener("dragstart", function (e) {
+              dragId = item.id;
+              e.dataTransfer.setData("text/plain", item.id);
+              e.dataTransfer.effectAllowed = "move";
+              li.classList.add("hap-pick-item--drag");
+            });
+            li.addEventListener("dragend", function () {
+              li.classList.remove("hap-pick-item--drag");
+              dragId = null;
+            });
+            li.addEventListener("dragover", function (e) {
+              e.preventDefault();
+              e.dataTransfer.dropEffect = "move";
+            });
+            li.addEventListener("drop", function (e) {
+              e.preventDefault();
+              var fromId = e.dataTransfer.getData("text/plain") || dragId;
+              var toId = item.id;
+              if (!fromId || fromId === toId) return;
+              var fromIdx = pickItems.findIndex(function (x) {
+                return x.id === fromId;
+              });
+              var toIdx = pickItems.findIndex(function (x) {
+                return x.id === toId;
+              });
+              if (fromIdx < 0 || toIdx < 0) return;
+              var moved = pickItems.splice(fromIdx, 1)[0];
+              var insertAt = toIdx > fromIdx ? toIdx - 1 : toIdx;
+              pickItems.splice(insertAt, 0, moved);
+              savePickItems(pickItems);
+              renderPickList();
+            });
+
+            li.querySelector(".hap-pick-copy").addEventListener("click", function () {
+              var btn = li.querySelector(".hap-pick-copy");
+              copyTextWithFeedback(buildHoldImportText(item), btn);
+            });
+
+            li.querySelector(".hap-pick-del").addEventListener("click", function () {
+              pickItems = pickItems.filter(function (x) {
+                return x.id !== item.id;
+              });
+              savePickItems(pickItems);
+              renderPickList();
+            });
+
+            pickListEl.appendChild(li);
+          });
+        }
+
+        renderPickList();
+
+        var pickForm = document.getElementById("hap-pick-form");
+        if (pickForm) {
+          pickForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+            var name = document.getElementById("hap-pick-name");
+            var low = document.getElementById("hap-pick-low");
+            var high = document.getElementById("hap-pick-high");
+            var w = document.getElementById("hap-pick-w");
+            var tr = document.getElementById("hap-pick-trigger");
+            var wa = document.getElementById("hap-pick-wait");
+            if (!name || !name.value.trim()) return;
+            pickItems.push({
+              id: "p-" + Date.now(),
+              name: name.value.trim(),
+              low: low ? low.value.trim() : "",
+              high: high ? high.value.trim() : "",
+              w: w ? w.value.trim() : "",
+              trigger: tr ? tr.value.trim() : "",
+              wait: wa ? wa.value.trim() : "",
+            });
+            savePickItems(pickItems);
+            renderPickList();
+            pickForm.reset();
+          });
+        }
       })();
     </script>
   </body>
