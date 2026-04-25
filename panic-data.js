@@ -8,6 +8,8 @@ window.PANIC_DATA = {
       "delta": "📈 +1.00",
       "status": "🟢 안정",
       "tone": "stable",
+      "weekTrend": "상승",
+      "actionGuide": "관망",
       "trendUrl": "https://www.macrotrends.net/2603/vix-volatility-index-historical-chart",
       "source": "yahoo"
     },
@@ -18,6 +20,8 @@ window.PANIC_DATA = {
       "delta": "➡️ 0",
       "status": "🟢 중립",
       "tone": "stable",
+      "weekTrend": "보합",
+      "actionGuide": "관망",
       "trendUrl": "https://edition.cnn.com/markets/fear-and-greed",
       "source": "cnn"
     },
@@ -28,6 +32,8 @@ window.PANIC_DATA = {
       "delta": "-",
       "status": "🟢 보통",
       "tone": "stable",
+      "weekTrend": "보합",
+      "actionGuide": "관망",
       "trendUrl": "https://www.bofaml.com/",
       "source": "manual"
     },
@@ -38,6 +44,8 @@ window.PANIC_DATA = {
       "delta": "📉 -10.35",
       "status": "🟡 주의",
       "tone": "watch",
+      "weekTrend": "하락",
+      "actionGuide": "분할매수",
       "trendUrl": "https://www.cboe.com/tradable_products/vix/vix_historical_data/",
       "source": "yahoo"
     },
@@ -48,6 +56,8 @@ window.PANIC_DATA = {
       "delta": "📉 -0.01",
       "status": "🔴 과열",
       "tone": "alert",
+      "weekTrend": "상승",
+      "actionGuide": "헤지점검",
       "trendUrl": "https://ycharts.com/indicators/cboe_equity_put_call_ratio",
       "source": "manual"
     },
@@ -58,6 +68,8 @@ window.PANIC_DATA = {
       "delta": "📉 -0.01%",
       "status": "🟢 안정",
       "tone": "stable",
+      "weekTrend": "보합",
+      "actionGuide": "관망",
       "trendUrl": "https://fred.stlouisfed.org/series/BAMLH0A0HYM2",
       "source": "fred"
     },
@@ -68,6 +80,8 @@ window.PANIC_DATA = {
       "delta": "📈 +1%",
       "status": "🟡 주의",
       "tone": "watch",
+      "weekTrend": "상승",
+      "actionGuide": "헤지점검",
       "trendUrl": "https://www.goldmansachs.com/insights/",
       "source": "manual"
     },
@@ -78,6 +92,8 @@ window.PANIC_DATA = {
       "delta": "📉 -6.65",
       "status": "🟢 안정",
       "tone": "stable",
+      "weekTrend": "하락",
+      "actionGuide": "분할매수",
       "trendUrl": "https://fred.stlouisfed.org/series/MOVE",
       "source": "yahoo"
     },
@@ -88,6 +104,8 @@ window.PANIC_DATA = {
       "delta": "📈 +1.52",
       "status": "🟢 안정",
       "tone": "stable",
+      "weekTrend": "상승",
+      "actionGuide": "관망",
       "trendUrl": "https://www.cboe.com/tradable_products/vix/vxn/",
       "source": "yahoo"
     }

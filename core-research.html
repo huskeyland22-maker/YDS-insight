@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>CORE RESEARCH · Y'ds의 투자 인사이트</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      html {
+        background-color: #0c1222;
+      }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background-color: #0c1222;
+        color: #e4e9f2;
+        font-family: "Noto Sans KR", system-ui, sans-serif;
+      }
+    </style>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-layer" aria-hidden="true"></div>
+    <div class="bg-glow bg-glow--gold" aria-hidden="true"></div>
+    <div class="bg-glow bg-glow--blue" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="logo" href="index.html">Y'ds</a>
+        <nav class="nav" aria-label="주요 메뉴">
+          <a href="index.html">홈</a>
+          <a href="hold-and-pick.html">HOLD AND PICK</a>
+          <a href="index.html#insights">인사이트</a>
+          <a href="index.html#contact">연락</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container hap-page">
+      <header class="hap-hero">
+        <p class="eyebrow">Core Report Workspace</p>
+        <h1>CORE RESEARCH</h1>
+        <p class="lead">현재 시장 흐름, 핵심 가설, 검증 포인트를 정리해두는 리서치 전용 공간입니다.</p>
+      </header>
+
+      <section class="hap-section">
+        <div class="hap-section__head">
+          <h2>링크 클립보드</h2>
+          <p>
+            기사/리포트 URL을 붙여 넣고, 출처·한 줄 메모만 빠르게 남기는 용도입니다. 입력하면 목록에 쌓이고
+            브라우저에 자동 저장됩니다.
+          </p>
+        </div>
+        <form id="core-clip-form" class="core-clip-form" autocomplete="off">
+          <div class="core-clip-form__grid">
+            <label class="hap-field hap-field--span2">
+              <span class="hap-field__label">URL</span>
+              <input type="url" id="clip-url" placeholder="https://..." required />
+            </label>
+            <label class="hap-field">
+              <span class="hap-field__label">출처</span>
+              <input type="text" id="clip-source" placeholder="예: Bloomberg" />
+            </label>
+            <label class="hap-field">
+              <span class="hap-field__label">태그</span>
+              <input type="text" id="clip-tag" placeholder="예: 반도체, 거시" />
+            </label>
+            <label class="hap-field hap-field--span2">
+              <span class="hap-field__label">한 줄 메모</span>
+              <input type="text" id="clip-note" placeholder="핵심 포인트 한 줄" />
+            </label>
+          </div>
+          <button type="submit" class="hap-btn hap-btn--primary">클립 추가</button>
+        </form>
+
+        <div class="core-meta">
+          <p id="core-last-saved" class="core-meta__saved">마지막 저장: 아직 없음</p>
+          <button type="button" id="core-reset-btn" class="hap-btn hap-btn--ghost">목록 초기화</button>
+        </div>
+
+        <ul id="core-clip-list" class="core-clip-list" aria-label="저장된 링크 클립"></ul>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p class="footer-brand">
+          <a href="index.html" style="color: inherit; text-decoration: none">Y'ds의 투자 인사이트</a>
+        </p>
+        <p class="footer-note">본 페이지는 투자 권유가 아니며, 학습·정리 목적입니다.</p>
+      </div>
+    </footer>
+    <script>
+      (function () {
+        var STORAGE_KEY = "core-research-v1";
+        var formEl = document.getElementById("core-clip-form");
+        var listEl = document.getElementById("core-clip-list");
+        var urlEl = document.getElementById("clip-url");
+        var sourceEl = document.getElementById("clip-source");
+        var tagEl = document.getElementById("clip-tag");
+        var noteEl = document.getElementById("clip-note");
+        var lastSavedEl = document.getElementById("core-last-saved");
+        var resetBtn = document.getElementById("core-reset-btn");
+
+        function nowStamp() {
+          var now = new Date();
+          var mm = String(now.getMonth() + 1).padStart(2, "0");
+          var dd = String(now.getDate()).padStart(2, "0");
+          var hh = String(now.getHours()).padStart(2, "0");
+          var mi = String(now.getMinutes()).padStart(2, "0");
+          return now.getFullYear() + "." + mm + "." + dd + " " + hh + ":" + mi;
+        }
+
+        function loadStore() {
+          try {
+            var raw = localStorage.getItem(STORAGE_KEY);
+            if (!raw) return { lastSaved: "", items: [] };
+            var parsed = JSON.parse(raw);
+            return parsed && typeof parsed === "object" ? parsed : { lastSaved: "", items: [] };
+          } catch (e) {
+            return { lastSaved: "", items: [] };
+          }
+        }
+
+        function saveStore(store) {
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(store));
+          if (lastSavedEl) lastSavedEl.textContent = "마지막 저장: " + (store.lastSaved || "-");
+        }
+
+        function escapeHtml(text) {
+          return String(text || "")
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#39;");
+        }
+
+        function safeUrl(raw) {
+          var u = String(raw || "").trim();
+          if (u.indexOf("http://") === 0 || u.indexOf("https://") === 0) return u;
+          return "";
+        }
+
+        var store = loadStore();
+        if (!Array.isArray(store.items)) store.items = [];
+
+        function renderList() {
+          if (!listEl) return;
+          if (!store.items.length) {
+            listEl.innerHTML =
+              '<li class="core-clip-empty">아직 저장된 링크가 없습니다. 위 입력칸에 URL을 붙여 넣어 클립을 추가해보세요.</li>';
+            return;
+          }
+
+          listEl.innerHTML = store.items
+            .map(function (item, idx) {
+              var url = safeUrl(item.url);
+              return (
+                '<li class="core-clip-item">' +
+                '<div class="core-clip-item__top">' +
+                '<span class="core-clip-item__idx">#' +
+                (idx + 1) +
+                "</span>" +
+                (item.source ? '<span class="core-clip-item__source">' + escapeHtml(item.source) + "</span>" : "") +
+                (item.tag ? '<span class="core-clip-item__tag">' + escapeHtml(item.tag) + "</span>" : "") +
+                "</div>" +
+                '<p class="core-clip-item__url">' +
+                (url
+                  ? '<a href="' +
+                    escapeHtml(url) +
+                    '" target="_blank" rel="noopener noreferrer">' +
+                    escapeHtml(url) +
+                    "</a>"
+                  : '<span class="core-clip-item__invalid">유효하지 않은 URL</span>') +
+                "</p>" +
+                (item.note ? '<p class="core-clip-item__note">' + escapeHtml(item.note) + "</p>" : "") +
+                '<button type="button" class="core-clip-item__delete" data-delete-idx="' +
+                idx +
+                '">삭제</button>' +
+                "</li>"
+              );
+            })
+            .join("");
+        }
+
+        if (lastSavedEl) {
+          lastSavedEl.textContent = "마지막 저장: " + (store.lastSaved || "아직 없음");
+        }
+
+        renderList();
+
+        if (formEl) {
+          formEl.addEventListener("submit", function (e) {
+            e.preventDefault();
+            var url = safeUrl(urlEl && urlEl.value);
+            if (!url) return;
+            store.items.unshift({
+              url: url,
+              source: sourceEl ? sourceEl.value.trim() : "",
+              tag: tagEl ? tagEl.value.trim() : "",
+              note: noteEl ? noteEl.value.trim() : ""
+            });
+            store.lastSaved = nowStamp();
+            saveStore(store);
+            renderList();
+            formEl.reset();
+          });
+        }
+
+        if (listEl) {
+          listEl.addEventListener("click", function (e) {
+            var target = e.target;
+            if (!target || target.getAttribute("data-delete-idx") == null) return;
+            var idx = Number(target.getAttribute("data-delete-idx"));
+            if (!Number.isInteger(idx) || idx < 0 || idx >= store.items.length) return;
+            store.items.splice(idx, 1);
+            store.lastSaved = nowStamp();
+            saveStore(store);
+            renderList();
+          });
+        }
+
+        if (resetBtn) {
+          resetBtn.addEventListener("click", function () {
+            store = { lastSaved: nowStamp(), items: [] };
+            saveStore(store);
+            renderList();
+            if (formEl) formEl.reset();
+          });
+        }
+      })();
+    </script>
+  </body>
+</html>

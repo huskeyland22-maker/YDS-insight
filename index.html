@@ -57,7 +57,8 @@
             </p>
             <div class="hero-tags">
               <a class="tag tag--muted" href="value-chain-map.html">코리아 밸류체인 맵</a>
-              <a class="tag tag--outline" href="hold-and-pick.html">HOLD AND PICK</a>
+              <a class="tag tag--muted" href="hold-and-pick.html">HOLD AND PICK</a>
+              <a class="tag tag--muted" href="core-research.html">CORE RESEARCH</a>
             </div>
           </div>
           <aside class="hero-panel" aria-label="요약 및 채널">
@@ -127,22 +128,6 @@
         </div>
       </section>
 
-      <section id="markets" class="section">
-        <div class="container">
-          <h2 class="section-title">시장을 바라보는 시선</h2>
-          <div class="market-grid market-grid--single">
-            <article class="market-card market-card--kr">
-              <h3>코스피 · 코스닥</h3>
-              <p>
-                공시, 실적, 배당·자사주, 정책 뉴스까지. 처음에는 용어만
-                익혀도 좋고, 관심 종목 몇 개의 흐름만 따라가도 좋습니다.
-                무엇보다 나만의 속도로 익혀 가면 됩니다.
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
-
       <section id="panic-monitor" class="section section--tint">
         <div class="container">
           <h2 class="section-title">9대 패닉 지수 모니터</h2>
@@ -159,7 +144,8 @@
                   <th>실시간 수치</th>
                   <th>전일 대비 (Delta)</th>
                   <th>상태 등급</th>
-                  <th>추세 (5년)</th>
+                  <th>1주 추세</th>
+                  <th>행동 가이드</th>
                 </tr>
               </thead>
               <tbody id="panic-table-body"></tbody>
@@ -172,26 +158,65 @@
         <div class="container">
           <h2 class="section-title section-title--on-dark">최근 인사이트</h2>
           <p class="section-intro section-intro--on-dark">
-            아래는 향후 글이나 노트를 올릴 자리입니다. 블로그나 노션 링크로
-            연결해도 좋습니다.
-          </p>
-          <div class="insight-list">
-            <a class="insight-row" href="#">
-              <span class="insight-date">준비 중</span>
-              <span class="insight-title">첫 번째 시장 노트가 이곳에 표시됩니다</span>
-              <span class="insight-arrow" aria-hidden="true">→</span>
-            </a>
-            <a class="insight-row" href="#">
-              <span class="insight-date">준비 중</span>
-              <span class="insight-title">공시 한 줄 요약 습관 (예시)</span>
-              <span class="insight-arrow" aria-hidden="true">→</span>
-            </a>
-            <a class="insight-row" href="#">
-              <span class="insight-date">준비 중</span>
-              <span class="insight-title">코스피·코스닥 섹터 로테이션 메모 (예시)</span>
-              <span class="insight-arrow" aria-hidden="true">→</span>
-            </a>
+                     </p>
+          <div class="insight-cards" id="insight-cards">
+            <article class="insight-card" data-note-id="1" tabindex="0">
+              <div class="insight-card__head">
+                <span class="insight-card__label">노트 1</span>
+                <span class="insight-card__hint">Enter / 클릭해서 펼치기</span>
+              </div>
+              <p class="insight-card__preview" id="insight-preview-1"></p>
+              <textarea
+                id="insight-note-1"
+                class="insight-card__body"
+                rows="8"
+                placeholder="기사/리포트에서 핵심 문장을 붙여 넣고, 아래에 짧은 의견을 추가하세요."
+              ></textarea>
+            </article>
+
+            <article class="insight-card" data-note-id="2" tabindex="0">
+              <div class="insight-card__head">
+                <span class="insight-card__label">노트 2</span>
+                <span class="insight-card__hint">Enter / 클릭해서 펼치기</span>
+              </div>
+              <p class="insight-card__preview" id="insight-preview-2"></p>
+              <textarea
+                id="insight-note-2"
+                class="insight-card__body"
+                rows="8"
+                placeholder="시장 흐름 메모, 이벤트 요약, 체크 포인트를 적어두세요."
+              ></textarea>
+            </article>
+
+            <article class="insight-card" data-note-id="3" tabindex="0">
+              <div class="insight-card__head">
+                <span class="insight-card__label">노트 3</span>
+                <span class="insight-card__hint">Enter / 클릭해서 펼치기</span>
+              </div>
+              <p class="insight-card__preview" id="insight-preview-3"></p>
+              <textarea
+                id="insight-note-3"
+                class="insight-card__body"
+                rows="8"
+                placeholder="중요 문장 스크랩 + 나만의 해석을 짧게 정리하세요."
+              ></textarea>
+            </article>
+
+            <article class="insight-card" data-note-id="4" tabindex="0">
+              <div class="insight-card__head">
+                <span class="insight-card__label">노트 4</span>
+                <span class="insight-card__hint">Enter / 클릭해서 펼치기</span>
+              </div>
+              <p class="insight-card__preview" id="insight-preview-4"></p>
+              <textarea
+                id="insight-note-4"
+                class="insight-card__body"
+                rows="8"
+                placeholder="추가 스크랩 노트"
+              ></textarea>
+            </article>
           </div>
+          <p class="insight-note__saved" id="insight-note-saved">저장 상태: 아직 없음</p>
         </div>
       </section>
 
@@ -226,6 +251,32 @@
             <a class="insight-row" href="https://www.investing.com/economic-calendar/" target="_blank" rel="noopener noreferrer">
               <span class="insight-date">일정</span>
               <span class="insight-title">Investing.com 경제 캘린더</span>
+              <span class="insight-arrow" aria-hidden="true">→</span>
+            </a>
+
+            <a class="insight-row" href="https://finviz.com" target="_blank" rel="noopener noreferrer">
+              <span class="insight-date">차트</span>
+              <span class="insight-title">Finviz</span>
+              <span class="insight-arrow" aria-hidden="true">→</span>
+            </a>
+            <a class="insight-row" href="https://finance.yahoo.com" target="_blank" rel="noopener noreferrer">
+              <span class="insight-date">시세</span>
+              <span class="insight-title">Yahoo Finance</span>
+              <span class="insight-arrow" aria-hidden="true">→</span>
+            </a>
+            <a class="insight-row" href="https://fred.stlouisfed.org" target="_blank" rel="noopener noreferrer">
+              <span class="insight-date">지표</span>
+              <span class="insight-title">FRED (St. Louis Fed)</span>
+              <span class="insight-arrow" aria-hidden="true">→</span>
+            </a>
+            <a class="insight-row" href="https://www.federalreserve.gov" target="_blank" rel="noopener noreferrer">
+              <span class="insight-date">지표</span>
+              <span class="insight-title">Federal Reserve Board</span>
+              <span class="insight-arrow" aria-hidden="true">→</span>
+            </a>
+            <a class="insight-row" href="https://contents.premium.naver.com/usa/nasdaq" target="_blank" rel="noopener noreferrer">
+              <span class="insight-date">리서치</span>
+              <span class="insight-title">네이버 프리미엄콘텐츠 · 미국주식 사관학교</span>
               <span class="insight-arrow" aria-hidden="true">→</span>
             </a>
           </div>
@@ -282,6 +333,18 @@
           return "panic-delta";
         }
 
+        function weekTrendClass(value) {
+          if (value === "상승") return "panic-week panic-week--up";
+          if (value === "하락") return "panic-week panic-week--down";
+          return "panic-week panic-week--flat";
+        }
+
+        function actionGuideClass(value) {
+          if (value === "분할매수") return "panic-guide panic-guide--buy";
+          if (value === "헤지점검") return "panic-guide panic-guide--hedge";
+          return "panic-guide panic-guide--wait";
+        }
+
         function tickerDeltaClass(direction) {
           if (direction === "up") return "up";
           if (direction === "down") return "down";
@@ -334,8 +397,11 @@
               var delta = escapeHtml(item.delta || "-");
               var status = escapeHtml(item.status || "-");
               var toneClass = stateClassByTone(item.tone);
-              var trendUrl = escapeHtml(item.trendUrl || "#");
               var deltaClass = deltaClassByEmoji(item.delta);
+              var weekTrend = escapeHtml(item.weekTrend || "보합");
+              var actionGuide = escapeHtml(item.actionGuide || "관망");
+              var weekTrendCls = weekTrendClass(item.weekTrend);
+              var actionGuideCls = actionGuideClass(item.actionGuide);
               var source = escapeHtml(item.source || "external");
 
               return (
@@ -344,11 +410,8 @@
                 "<td>" + value + "</td>" +
                 '<td class="' + deltaClass + '">' + delta + "</td>" +
                 '<td><span class="' + toneClass + '">' + status + "</span></td>" +
-                '<td><a class="panic-trend-link" href="' +
-                trendUrl +
-                '" target="_blank" rel="noopener noreferrer" data-source="' +
-                source +
-                '">📊 보기</a></td>' +
+                '<td><span class="' + weekTrendCls + '">' + weekTrend + "</span></td>" +
+                '<td><span class="' + actionGuideCls + '">' + actionGuide + "</span></td>" +
                 "</tr>"
               );
             })
@@ -420,6 +483,87 @@
         ];
 
         quoteEl.textContent = howardMarksQuotes[slot % howardMarksQuotes.length];
+
+        (function initInsightNotes() {
+          var NOTE_KEY = "insight:notes:v1";
+          var ids = ["insight-note-1", "insight-note-2", "insight-note-3", "insight-note-4"];
+          var savedEl = document.getElementById("insight-note-saved");
+          var cardsEl = document.getElementById("insight-cards");
+
+          function stamp() {
+            var now = new Date();
+            var mm = String(now.getMonth() + 1).padStart(2, "0");
+            var dd = String(now.getDate()).padStart(2, "0");
+            var hh = String(now.getHours()).padStart(2, "0");
+            var mi = String(now.getMinutes()).padStart(2, "0");
+            return now.getFullYear() + "." + mm + "." + dd + " " + hh + ":" + mi;
+          }
+
+          var store = { lastSaved: "", notes: {} };
+          try {
+            var raw = localStorage.getItem(NOTE_KEY);
+            if (raw) {
+              var parsed = JSON.parse(raw);
+              if (parsed && typeof parsed === "object") {
+                store = parsed;
+              }
+            }
+          } catch (e) {}
+
+          function saveNow() {
+            store.lastSaved = stamp();
+            localStorage.setItem(NOTE_KEY, JSON.stringify(store));
+            if (savedEl) savedEl.textContent = "저장 상태: " + store.lastSaved;
+          }
+
+          ids.forEach(function (id) {
+            var el = document.getElementById(id);
+            if (!el) return;
+            if (store.notes && typeof store.notes[id] === "string") {
+              el.value = store.notes[id];
+            }
+            var preview = document.getElementById(id.replace("insight-note", "insight-preview"));
+            if (preview) {
+              var t = (el.value || "").trim();
+              preview.textContent = t ? t : "내용 미리보기";
+            }
+            el.addEventListener("input", function () {
+              store.notes = store.notes || {};
+              store.notes[id] = el.value;
+              var pv = document.getElementById(id.replace("insight-note", "insight-preview"));
+              if (pv) {
+                var text = (el.value || "").trim();
+                pv.textContent = text ? text : "내용 미리보기";
+              }
+              saveNow();
+            });
+          });
+
+          if (savedEl && store.lastSaved) {
+            savedEl.textContent = "저장 상태: " + store.lastSaved;
+          }
+
+          if (cardsEl) {
+            cardsEl.addEventListener("click", function (e) {
+              var card = e.target.closest(".insight-card");
+              if (!card) return;
+              var textarea = card.querySelector(".insight-card__body");
+              var isOpen = card.classList.toggle("is-open");
+              if (isOpen && textarea) textarea.focus();
+            });
+
+            cardsEl.addEventListener("keydown", function (e) {
+              var card = e.target.closest(".insight-card");
+              if (!card) return;
+              if (e.key === "Enter" && e.target.classList.contains("insight-card")) {
+                e.preventDefault();
+                var area = card.querySelector(".insight-card__body");
+                var open = card.classList.toggle("is-open");
+                if (open && area) area.focus();
+              }
+            });
+          }
+        })();
       })();
     </script>
   </body>
