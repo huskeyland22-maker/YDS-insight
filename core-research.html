@@ -25,7 +25,13 @@
         font-family: "Noto Sans KR", system-ui, sans-serif;
       }
     </style>
+    <script src="site-version.js"></script>
     <link rel="stylesheet" href="styles.css" />
+    <script>
+      (function () {
+        if (window.applySiteVersion) window.applySiteVersion(document);
+      })();
+    </script>
   </head>
   <body>
     <div class="bg-layer" aria-hidden="true"></div>

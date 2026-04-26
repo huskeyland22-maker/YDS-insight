@@ -23,7 +23,13 @@
         font-family: "Noto Sans KR", system-ui, sans-serif;
       }
     </style>
-    <link rel="stylesheet" href="styles.css?v=20260426-0017" />
+    <script src="site-version.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <script>
+      (function () {
+        if (window.applySiteVersion) window.applySiteVersion(document);
+      })();
+    </script>
   </head>
   <body>
     <div class="bg-layer" aria-hidden="true"></div>
@@ -56,7 +62,7 @@
               개인 투자자를 위한 단순한 공간입니다.
             </p>
             <div class="hero-tags">
-              <a class="tag tag--muted" href="value-chain-map.html">코리아 밸류체인 맵</a>
+              <a class="tag tag--muted" href="value-chain-map-fixed.html">밸류체인 맵 Pro</a>
               <a class="tag tag--muted" href="hold-and-pick.html">HOLD AND PICK</a>
               <a class="tag tag--muted" href="core-research.html">CORE RESEARCH</a>
             </div>
@@ -315,8 +321,10 @@
         </p>
       </div>
     </footer>
-    <script src="ticker-data.js"></script>
-    <script src="panic-data.js"></script>
+    <script>
+      document.write('<script src="' + window.withSiteVersion("ticker-data.js") + '"><\/script>');
+      document.write('<script src="' + window.withSiteVersion("panic-data.js") + '"><\/script>');
+    </script>
     <script>
       (function () {
         var tickerTrackEl = document.getElementById("market-ticker-track");
@@ -717,7 +725,7 @@
           if (window.PANIC_DATA && Array.isArray(window.PANIC_DATA.items)) {
             renderPanicTable(window.PANIC_DATA);
           } else {
-            fetch("panic-data.json")
+            fetch(window.withSiteVersion("panic-data.json"))
               .then(function (res) {
                 if (!res.ok) throw new Error("panic-data fetch failed");
                 return res.json();
@@ -743,7 +751,7 @@
                 renderTicker(window.TICKER_DATA);
                 return;
               }
-              fetch("ticker-data.json")
+              fetch(window.withSiteVersion("ticker-data.json"))
                 .then(function (res) {
                   if (!res.ok) throw new Error("ticker-data fetch failed");
                   return res.json();

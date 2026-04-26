@@ -3,6 +3,876 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>코리아 밸류체인 맵 · Y'ds의 투자 인사이트</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      html { background-color: #0c1222; }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background-color: #0c1222;
+        color: #e4e9f2;
+        font-family: "Noto Sans KR", system-ui, sans-serif;
+      }
+      .vc-card {
+        border: 1px solid rgba(146, 164, 201, 0.25);
+        background: linear-gradient(180deg, rgba(18, 28, 52, 0.78), rgba(10, 16, 34, 0.9));
+        box-shadow: 0 0 0 1px rgba(88, 132, 255, 0.12), 0 22px 52px rgba(0, 0, 0, 0.34);
+      }
+      .vc-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        border-radius: 1rem;
+        background: radial-gradient(circle at 80% 0%, rgba(119, 193, 255, 0.09), rgba(0, 0, 0, 0));
+      }
+      .stock-link {
+        display: block;
+        color: #d6deee;
+        text-decoration: none;
+        border-radius: 0.5rem;
+        padding: 0.35rem 0.45rem;
+        transition: all 0.2s ease;
+      }
+      .stock-link:hover {
+        color: #fff;
+        background: rgba(86, 131, 255, 0.2);
+        transform: translateX(2px);
+      }
+    </style>
+    <script src="site-version.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <script>
+      (function () {
+        if (window.applySiteVersion) window.applySiteVersion(document);
+      })();
+    </script>
+  </head>
+  <body>
+    <div class="bg-layer" aria-hidden="true"></div>
+    <div class="bg-glow bg-glow--gold" aria-hidden="true"></div>
+    <div class="bg-glow bg-glow--blue" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="logo" href="index.html">Y'ds</a>
+        <nav class="nav" aria-label="주요 메뉴">
+          <a href="index.html">홈</a>
+          <a href="index.html#panic-monitor">패닉 지수</a>
+          <a href="core-research.html">리서치</a>
+          <a href="index.html#contact">연락</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container py-10 md:py-14">
+      <section class="mb-8 md:mb-10">
+        <p class="text-xs md:text-sm tracking-[0.22em] uppercase text-blue-200/70">Digital Korea Value Chain</p>
+        <h1 class="mt-3 text-3xl md:text-4xl font-semibold text-slate-100">코리아 밸류체인 맵 (2026 Outlook)</h1>
+        <p class="mt-3 max-w-4xl text-sm md:text-base text-slate-300 leading-relaxed">
+          국내 유망 10대 섹터를 대형주 Top 5와 강소기업 5로 분리해 한눈에 정리했습니다. 종목 클릭 시 네이버 금융 종목 페이지로 연결됩니다.
+        </p>
+      </section>
+
+      <section class="mb-5 flex flex-wrap items-center justify-between gap-3 text-sm">
+        <p id="heat-updated-at" class="text-slate-300">Heat 업데이트: 불러오는 중...</p>
+        <button id="reset-favorites" class="rounded-lg border border-slate-500/40 px-3 py-1.5 text-slate-200 hover:border-blue-300/50 hover:text-white" type="button">
+          관심 섹터 초기화
+        </button>
+      </section>
+
+      <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6" id="value-chain-grid"></section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p class="footer-brand"><a href="index.html" style="color: inherit; text-decoration: none">Y'ds의 투자 인사이트</a></p>
+        <p class="footer-note">본 페이지는 투자 권유가 아니며, 학습·정리 목적입니다.</p>
+      </div>
+    </footer>
+
+    <script src="value-chain-data.js"></script>
+    <script>
+      (function () {
+        var FAVORITE_KEY = "value-chain:favorites:v1";
+        var sectors = Array.isArray(window.VALUE_CHAIN_SECTORS) ? window.VALUE_CHAIN_SECTORS.slice() : [];
+        var heatMeta = { updatedAt: "-" };
+
+        function loadFavorites() {
+          try {
+            var raw = localStorage.getItem(FAVORITE_KEY);
+            var parsed = raw ? JSON.parse(raw) : [];
+            return Array.isArray(parsed) ? parsed : [];
+          } catch (e) {
+            return [];
+          }
+        }
+
+        function saveFavorites(ids) {
+          try { localStorage.setItem(FAVORITE_KEY, JSON.stringify(ids)); } catch (e) {}
+        }
+
+        function stockUrl(item) {
+          if (item.code) return "https://finance.naver.com/item/main.naver?code=" + encodeURIComponent(item.code);
+          return "https://finance.naver.com/search/search.naver?query=" + encodeURIComponent(item.name);
+        }
+
+        function listHtml(items) {
+          return items.map(function (item) {
+            return '<li><a class="stock-link" href="' + stockUrl(item) + '" target="_blank" rel="noopener noreferrer" title="' + item.tip + '">' + item.name + "</a></li>";
+          }).join("");
+        }
+
+        function heatToneClass(heat) {
+          if (heat === "VERY HOT") return "text-rose-200 bg-rose-500/20 border-rose-300/30";
+          if (heat === "HOT") return "text-amber-200 bg-amber-500/20 border-amber-300/30";
+          return "text-emerald-200 bg-emerald-500/20 border-emerald-300/30";
+        }
+
+        function applyHeatMap(heatData) {
+          if (!heatData || typeof heatData !== "object") return;
+          var map = heatData.sectorHeat || {};
+          heatMeta.updatedAt = heatData.updatedAt || "-";
+          sectors.forEach(function (s) { if (map[s.id]) s.heat = map[s.id]; });
+        }
+
+        function render() {
+          var favoriteIds = loadFavorites();
+          var favoriteSet = {};
+          favoriteIds.forEach(function (id) { favoriteSet[id] = true; });
+
+          var ordered = sectors.slice().sort(function (a, b) {
+            var af = favoriteSet[a.id] ? 0 : 1;
+            var bf = favoriteSet[b.id] ? 0 : 1;
+            if (af !== bf) return af - bf;
+            return a.order - b.order;
+          });
+
+          var container = document.getElementById("value-chain-grid");
+          if (!container) return;
+
+          container.innerHTML = ordered.map(function (sector, index) {
+            var isFavorite = !!favoriteSet[sector.id];
+            return (
+              '<article class="vc-card relative rounded-2xl p-5 md:p-6">' +
+              '<div class="mb-4 flex items-start justify-between gap-3">' +
+              '<div><p class="text-xs text-blue-200/70 tracking-wider">SECTOR ' + String(index + 1).padStart(2, "0") + '</p><h2 class="mt-1 text-lg md:text-xl font-semibold text-slate-100">' + sector.icon + " " + sector.name + '</h2></div>' +
+              '<span class="text-[11px] md:text-xs border rounded-full px-2.5 py-1 ' + heatToneClass(sector.heat) + '">' + sector.heat + "</span></div>" +
+              '<div class="mb-4"><button type="button" class="favorite-btn rounded-lg border px-3 py-1.5 text-xs ' + (isFavorite ? "border-blue-300/70 text-blue-100 bg-blue-500/20" : "border-slate-500/40 text-slate-300 hover:border-blue-300/50 hover:text-white") + '" data-sector-id="' + sector.id + '">' + (isFavorite ? "관심 섹터 해제" : "관심 섹터 등록") + "</button></div>" +
+              '<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">' +
+              '<div><p class="text-xs font-semibold text-blue-200/75 mb-2">대형주 TOP 5</p><ul class="text-sm space-y-1.5">' + listHtml(sector.top) + "</ul></div>" +
+              '<div><p class="text-xs font-semibold text-amber-200/75 mb-2">강소기업 5</p><ul class="text-sm space-y-1.5">' + listHtml(sector.hidden) + "</ul></div></div></article>"
+            );
+          }).join("");
+
+          var heatUpdatedAtEl = document.getElementById("heat-updated-at");
+          if (heatUpdatedAtEl) heatUpdatedAtEl.textContent = "Heat 업데이트: " + heatMeta.updatedAt;
+        }
+
+        function bindEvents() {
+          var container = document.getElementById("value-chain-grid");
+          if (container) {
+            container.addEventListener("click", function (e) {
+              var btn = e.target.closest(".favorite-btn");
+              if (!btn) return;
+              var id = btn.getAttribute("data-sector-id");
+              if (!id) return;
+              var favorites = loadFavorites();
+              var idx = favorites.indexOf(id);
+              if (idx === -1) favorites.push(id); else favorites.splice(idx, 1);
+              saveFavorites(favorites);
+              render();
+            });
+          }
+          var resetBtn = document.getElementById("reset-favorites");
+          if (resetBtn) {
+            resetBtn.addEventListener("click", function () {
+              saveFavorites([]);
+              render();
+            });
+          }
+        }
+
+        bindEvents();
+        fetch("value-chain-heat.json")
+          .then(function (res) {
+            if (!res.ok) throw new Error("heat fetch failed");
+            return res.json();
+          })
+          .then(function (data) {
+            applyHeatMap(data);
+            render();
+          })
+          .catch(function () {
+            render();
+          });
+      })();
+    </script>
+  </body>
+</html>
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>코리아 밸류체인 맵 · Y'ds의 투자 인사이트</title>
+  </head>
+  <body>
+    <p>temporary</p>
+  </body>
+</html>
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>코리아 밸류체인 맵 · Y'ds의 투자 인사이트</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      html {
+        background-color: #0c1222;
+      }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background-color: #0c1222;
+        color: #e4e9f2;
+        font-family: "Noto Sans KR", system-ui, sans-serif;
+      }
+      .vc-card {
+        border: 1px solid rgba(146, 164, 201, 0.25);
+        background: linear-gradient(180deg, rgba(18, 28, 52, 0.78), rgba(10, 16, 34, 0.9));
+        box-shadow: 0 0 0 1px rgba(88, 132, 255, 0.12), 0 22px 52px rgba(0, 0, 0, 0.34);
+      }
+      .vc-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        border-radius: 1rem;
+        background: radial-gradient(circle at 80% 0%, rgba(119, 193, 255, 0.09), rgba(0, 0, 0, 0));
+      }
+      .stock-link {
+        display: block;
+        color: #d6deee;
+        text-decoration: none;
+        border-radius: 0.5rem;
+        padding: 0.35rem 0.45rem;
+        transition: all 0.2s ease;
+      }
+      .stock-link:hover {
+        color: #fff;
+        background: rgba(86, 131, 255, 0.2);
+        transform: translateX(2px);
+      }
+    </style>
+    <script src="site-version.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <script>
+      (function () {
+        if (window.applySiteVersion) window.applySiteVersion(document);
+      })();
+    </script>
+  </head>
+  <body>
+    <div class="bg-layer" aria-hidden="true"></div>
+    <div class="bg-glow bg-glow--gold" aria-hidden="true"></div>
+    <div class="bg-glow bg-glow--blue" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="logo" href="index.html">Y'ds</a>
+        <nav class="nav" aria-label="주요 메뉴">
+          <a href="index.html">홈</a>
+          <a href="index.html#panic-monitor">패닉 지수</a>
+          <a href="core-research.html">리서치</a>
+          <a href="index.html#contact">연락</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container py-10 md:py-14">
+      <section class="mb-8 md:mb-10">
+        <p class="text-xs md:text-sm tracking-[0.22em] uppercase text-blue-200/70">Digital Korea Value Chain</p>
+        <h1 class="mt-3 text-3xl md:text-4xl font-semibold text-slate-100">코리아 밸류체인 맵 (2026 Outlook)</h1>
+        <p class="mt-3 max-w-4xl text-sm md:text-base text-slate-300 leading-relaxed">
+          국내 유망 10대 섹터를 대형주 Top 5와 강소기업 5로 분리해 한눈에 정리했습니다. 종목을 클릭하면 네이버 금융 종목 페이지로 이동하고,
+          관심 섹터를 선택하면 다음 방문부터 우선 정렬됩니다.
+        </p>
+      </section>
+
+      <section class="mb-5 flex flex-wrap items-center justify-between gap-3 text-sm">
+        <p id="heat-updated-at" class="text-slate-300">Heat 업데이트: 불러오는 중...</p>
+        <button
+          id="reset-favorites"
+          class="rounded-lg border border-slate-500/40 px-3 py-1.5 text-slate-200 hover:border-blue-300/50 hover:text-white"
+          type="button"
+        >
+          관심 섹터 초기화
+        </button>
+      </section>
+
+      <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6" id="value-chain-grid"></section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p class="footer-brand">
+          <a href="index.html" style="color: inherit; text-decoration: none">Y'ds의 투자 인사이트</a>
+        </p>
+        <p class="footer-note">본 페이지는 투자 권유가 아니며, 학습·정리 목적입니다.</p>
+      </div>
+    </footer>
+
+    <script>
+      document.write('<script src="' + window.withSiteVersion("value-chain-data.js") + '"><\/script>');
+    </script>
+    <script>
+      (function () {
+        var FAVORITE_KEY = "value-chain:favorites:v1";
+        var sectors = Array.isArray(window.VALUE_CHAIN_SECTORS) ? window.VALUE_CHAIN_SECTORS.slice() : [];
+        var heatMeta = { updatedAt: "-" };
+
+        function loadFavorites() {
+          try {
+            var raw = localStorage.getItem(FAVORITE_KEY);
+            var parsed = raw ? JSON.parse(raw) : [];
+            return Array.isArray(parsed) ? parsed : [];
+          } catch (e) {
+            return [];
+          }
+        }
+
+        function saveFavorites(ids) {
+          try {
+            localStorage.setItem(FAVORITE_KEY, JSON.stringify(ids));
+          } catch (e) {}
+        }
+
+        function stockUrl(item) {
+          if (item.code) return "https://finance.naver.com/item/main.naver?code=" + encodeURIComponent(item.code);
+          return "https://finance.naver.com/search/search.naver?query=" + encodeURIComponent(item.name);
+        }
+
+        function listHtml(items) {
+          return items
+            .map(function (item) {
+              return (
+                '<li><a class="stock-link" href="' +
+                stockUrl(item) +
+                '" target="_blank" rel="noopener noreferrer" title="' +
+                item.tip +
+                '">' +
+                item.name +
+                "</a></li>"
+              );
+            })
+            .join("");
+        }
+
+        function heatToneClass(heat) {
+          if (heat === "VERY HOT") return "text-rose-200 bg-rose-500/20 border-rose-300/30";
+          if (heat === "HOT") return "text-amber-200 bg-amber-500/20 border-amber-300/30";
+          return "text-emerald-200 bg-emerald-500/20 border-emerald-300/30";
+        }
+
+        function applyHeatMap(heatData) {
+          if (!heatData || typeof heatData !== "object") return;
+          var map = heatData.sectorHeat || {};
+          heatMeta.updatedAt = heatData.updatedAt || "-";
+          sectors.forEach(function (s) {
+            if (map[s.id]) s.heat = map[s.id];
+          });
+        }
+
+        function render() {
+          var favoriteIds = loadFavorites();
+          var favoriteSet = {};
+          favoriteIds.forEach(function (id) {
+            favoriteSet[id] = true;
+          });
+
+          var ordered = sectors
+            .slice()
+            .sort(function (a, b) {
+              var af = favoriteSet[a.id] ? 0 : 1;
+              var bf = favoriteSet[b.id] ? 0 : 1;
+              if (af !== bf) return af - bf;
+              return a.order - b.order;
+            });
+
+          var container = document.getElementById("value-chain-grid");
+          if (!container) return;
+
+          container.innerHTML = ordered
+            .map(function (sector, index) {
+              var isFavorite = !!favoriteSet[sector.id];
+              return (
+                '<article class="vc-card relative rounded-2xl p-5 md:p-6">' +
+                '<div class="mb-4 flex items-start justify-between gap-3">' +
+                '<div><p class="text-xs text-blue-200/70 tracking-wider">SECTOR ' +
+                String(index + 1).padStart(2, "0") +
+                '</p><h2 class="mt-1 text-lg md:text-xl font-semibold text-slate-100">' +
+                sector.icon +
+                " " +
+                sector.name +
+                '</h2></div><span class="text-[11px] md:text-xs border rounded-full px-2.5 py-1 ' +
+                heatToneClass(sector.heat) +
+                '">' +
+                sector.heat +
+                "</span></div>" +
+                '<div class="mb-4"><button type="button" class="favorite-btn rounded-lg border px-3 py-1.5 text-xs ' +
+                (isFavorite
+                  ? "border-blue-300/70 text-blue-100 bg-blue-500/20"
+                  : "border-slate-500/40 text-slate-300 hover:border-blue-300/50 hover:text-white") +
+                '" data-sector-id="' +
+                sector.id +
+                '">' +
+                (isFavorite ? "관심 섹터 해제" : "관심 섹터 등록") +
+                "</button></div>" +
+                '<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">' +
+                '<div><p class="text-xs font-semibold text-blue-200/75 mb-2">대형주 TOP 5</p><ul class="text-sm space-y-1.5">' +
+                listHtml(sector.top) +
+                "</ul></div>" +
+                '<div><p class="text-xs font-semibold text-amber-200/75 mb-2">강소기업 5</p><ul class="text-sm space-y-1.5">' +
+                listHtml(sector.hidden) +
+                "</ul></div></div></article>"
+              );
+            })
+            .join("");
+
+          var heatUpdatedAtEl = document.getElementById("heat-updated-at");
+          if (heatUpdatedAtEl) heatUpdatedAtEl.textContent = "Heat 업데이트: " + heatMeta.updatedAt;
+        }
+
+        function bindEvents() {
+          var container = document.getElementById("value-chain-grid");
+          if (container) {
+            container.addEventListener("click", function (e) {
+              var btn = e.target.closest(".favorite-btn");
+              if (!btn) return;
+              var id = btn.getAttribute("data-sector-id");
+              if (!id) return;
+              var favorites = loadFavorites();
+              var idx = favorites.indexOf(id);
+              if (idx === -1) favorites.push(id);
+              else favorites.splice(idx, 1);
+              saveFavorites(favorites);
+              render();
+            });
+          }
+
+          var resetBtn = document.getElementById("reset-favorites");
+          if (resetBtn) {
+            resetBtn.addEventListener("click", function () {
+              saveFavorites([]);
+              render();
+            });
+          }
+        }
+
+        function init() {
+          bindEvents();
+          fetch(window.withSiteVersion("value-chain-heat.json"))
+            .then(function (res) {
+              if (!res.ok) throw new Error("heat fetch failed");
+              return res.json();
+            })
+            .then(function (data) {
+              applyHeatMap(data);
+              render();
+            })
+            .catch(function () {
+              render();
+            });
+        }
+
+        init();
+      })();
+    </script>
+  </body>
+ </html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>코리아 밸류체인 맵 · Y'ds의 투자 인사이트</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      html {
+        background-color: #0c1222;
+      }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background-color: #0c1222;
+        color: #e4e9f2;
+        font-family: "Noto Sans KR", system-ui, sans-serif;
+      }
+      .vc-card {
+        border: 1px solid rgba(146, 164, 201, 0.25);
+        background: linear-gradient(180deg, rgba(18, 28, 52, 0.78), rgba(10, 16, 34, 0.9));
+        box-shadow: 0 0 0 1px rgba(88, 132, 255, 0.12), 0 22px 52px rgba(0, 0, 0, 0.34);
+      }
+      .vc-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        border-radius: 1rem;
+        background: radial-gradient(circle at 80% 0%, rgba(119, 193, 255, 0.09), rgba(0, 0, 0, 0));
+      }
+      .stock-link {
+        display: block;
+        color: #d6deee;
+        text-decoration: none;
+        border-radius: 0.5rem;
+        padding: 0.35rem 0.45rem;
+        transition: all 0.2s ease;
+      }
+      .stock-link:hover {
+        color: #fff;
+        background: rgba(86, 131, 255, 0.2);
+        transform: translateX(2px);
+      }
+    </style>
+    <script src="site-version.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <script>
+      (function () {
+        if (window.applySiteVersion) window.applySiteVersion(document);
+      })();
+    </script>
+  </head>
+  <body>
+    <div class="bg-layer" aria-hidden="true"></div>
+    <div class="bg-glow bg-glow--gold" aria-hidden="true"></div>
+    <div class="bg-glow bg-glow--blue" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="logo" href="index.html">Y'ds</a>
+        <nav class="nav" aria-label="주요 메뉴">
+          <a href="index.html">홈</a>
+          <a href="index.html#panic-monitor">패닉 지수</a>
+          <a href="core-research.html">리서치</a>
+          <a href="index.html#contact">연락</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container py-10 md:py-14">
+      <section class="mb-8 md:mb-10">
+        <p class="text-xs md:text-sm tracking-[0.22em] uppercase text-blue-200/70">Digital Korea Value Chain</p>
+        <h1 class="mt-3 text-3xl md:text-4xl font-semibold text-slate-100">코리아 밸류체인 맵 (2026 Outlook)</h1>
+        <p class="mt-3 max-w-4xl text-sm md:text-base text-slate-300 leading-relaxed">
+          국내 유망 10대 섹터를 대형주 Top 5와 강소기업 5로 분리해 한눈에 정리했습니다. 종목을 클릭하면 네이버 금융 검색으로 이동하며,
+          마우스를 올리면 핵심 키워드를 빠르게 확인할 수 있습니다.
+        </p>
+      </section>
+
+      <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6" id="value-chain-grid"></section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p class="footer-brand">
+          <a href="index.html" style="color: inherit; text-decoration: none">Y'ds의 투자 인사이트</a>
+        </p>
+        <p class="footer-note">본 페이지는 투자 권유가 아니며, 학습·정리 목적입니다.</p>
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        var sectors = [
+          {
+            icon: "🧠",
+            name: "HBM / AI 반도체",
+            heat: "VERY HOT",
+            heatTone: "text-rose-200 bg-rose-500/20 border-rose-300/30",
+            top: [
+              { name: "삼성전자", tip: "메모리·파운드리 양축 운영" },
+              { name: "SK하이닉스", tip: "HBM 주도권 핵심" },
+              { name: "한미반도체", tip: "HBM TC본더 경쟁력" },
+              { name: "이오테크닉스", tip: "레이저 공정 장비 강점" },
+              { name: "리노공업", tip: "반도체 테스트 소켓 강자" }
+            ],
+            hidden: [
+              { name: "HPSP", tip: "고압 수소 어닐링 장비" },
+              { name: "테크윙", tip: "메모리 테스트 장비" },
+              { name: "피에스케이홀딩스", tip: "후공정 장비 포트폴리오" },
+              { name: "에스티아이", tip: "반도체·디스플레이 장비" },
+              { name: "오픈엣지테크놀로지", tip: "온디바이스 AI IP" }
+            ]
+          },
+          {
+            icon: "🔋",
+            name: "전고체 / 차세대 배터리",
+            heat: "HOT",
+            heatTone: "text-amber-200 bg-amber-500/20 border-amber-300/30",
+            top: [
+              { name: "LG에너지솔루션", tip: "글로벌 배터리 셀 선도" },
+              { name: "삼성SDI", tip: "프리미엄 배터리 포지션" },
+              { name: "POSCO홀딩스", tip: "소재-광물 밸류체인" },
+              { name: "에코프로비엠", tip: "양극재 대표주" },
+              { name: "엘앤에프", tip: "하이니켈 양극재 공급" }
+            ],
+            hidden: [
+              { name: "이수스페셜티케미컬", tip: "전고체 소재 기대주" },
+              { name: "나노신소재", tip: "도전재·첨가제 기술" },
+              { name: "대주전자재료", tip: "실리콘 음극재 핵심" },
+              { name: "필에너지", tip: "배터리 장비 신성장" },
+              { name: "씨아이에스", tip: "전극공정 장비 공급" }
+            ]
+          },
+          {
+            icon: "🛡️",
+            name: "K-방산 (수출 주도)",
+            heat: "VERY HOT",
+            heatTone: "text-rose-200 bg-rose-500/20 border-rose-300/30",
+            top: [
+              { name: "한화에어로스페이스", tip: "엔진·지상 방산 확장" },
+              { name: "현대로템", tip: "K2 전차 수출 모멘텀" },
+              { name: "LIG넥스원", tip: "유도무기 체계 강점" },
+              { name: "한국항공우주", tip: "항공·군수 체계 통합" },
+              { name: "한화시스템", tip: "레이다·C4I 역량" }
+            ],
+            hidden: [
+              { name: "제노코", tip: "위성통신·방산 부품" },
+              { name: "퍼스텍", tip: "방산 기계부품 공급" },
+              { name: "비츠로테크", tip: "전력·방산 계열 수혜" },
+              { name: "켄코아에어로스페이스", tip: "항공 구조물 전문" },
+              { name: "아이쓰리시스템", tip: "적외선 영상센서" }
+            ]
+          },
+          {
+            icon: "⚛️",
+            name: "원전 / SMR",
+            heat: "HOT",
+            heatTone: "text-amber-200 bg-amber-500/20 border-amber-300/30",
+            top: [
+              { name: "두산에너빌리티", tip: "원전 주기기 핵심" },
+              { name: "현대건설", tip: "해외 원전 EPC 경험" },
+              { name: "대우건설", tip: "원전·에너지 플랜트 참여" },
+              { name: "한전기술", tip: "원전 설계 엔지니어링" },
+              { name: "우리기술", tip: "원전 제어계측 관련" }
+            ],
+            hidden: [
+              { name: "우진", tip: "원전 계측기기 강점" },
+              { name: "에너토크", tip: "밸브 액추에이터" },
+              { name: "비에이치아이", tip: "발전 기자재 공급" },
+              { name: "일진파워", tip: "원자력 정비 서비스" },
+              { name: "오르비텍", tip: "원전 안전·해체 관련" }
+            ]
+          },
+          {
+            icon: "🧬",
+            name: "바이오시밀러 / CDMO",
+            heat: "WARM",
+            heatTone: "text-emerald-200 bg-emerald-500/20 border-emerald-300/30",
+            top: [
+              { name: "삼성바이오로직스", tip: "글로벌 CDMO 리더" },
+              { name: "셀트리온", tip: "바이오시밀러 파이프라인" },
+              { name: "유한양행", tip: "신약 개발 협업 확대" },
+              { name: "한미약품", tip: "R&D 기반 기술수출" },
+              { name: "알테오젠", tip: "플랫폼 기술 성장성" }
+            ],
+            hidden: [
+              { name: "에스티팜", tip: "올리고 API 경쟁력" },
+              { name: "바이넥스", tip: "CMO 생산 인프라" },
+              { name: "펩트론", tip: "약효지속 기술 보유" },
+              { name: "리가켐바이오", tip: "ADC 파이프라인 기대" },
+              { name: "에이비엘바이오", tip: "이중항체 기술주" }
+            ]
+          },
+          {
+            icon: "🤖",
+            name: "온디바이스 AI / 로봇",
+            heat: "VERY HOT",
+            heatTone: "text-rose-200 bg-rose-500/20 border-rose-300/30",
+            top: [
+              { name: "레인보우로보틱스", tip: "휴머노이드 기대감" },
+              { name: "두산로보틱스", tip: "협동로봇 대표주" },
+              { name: "LG전자", tip: "AI 가전·로봇 확장" },
+              { name: "네이버", tip: "AI 모델·로봇 플랫폼" },
+              { name: "카카오", tip: "AI 서비스 생태계 강화" }
+            ],
+            hidden: [
+              { name: "제주반도체", tip: "모바일 메모리 특화" },
+              { name: "고영", tip: "3D 검사 장비·로봇수술" },
+              { name: "뉴로메카", tip: "협동로봇 솔루션" },
+              { name: "에스비비테크", tip: "로봇 감속기 부품" },
+              { name: "심텍", tip: "고다층 패키지기판" }
+            ]
+          },
+          {
+            icon: "🚀",
+            name: "우주항공 (K-NASA)",
+            heat: "HOT",
+            heatTone: "text-amber-200 bg-amber-500/20 border-amber-300/30",
+            top: [
+              { name: "한화에어로스페이스", tip: "발사체·항공엔진 축" },
+              { name: "한국항공우주", tip: "위성·항공체계 역량" },
+              { name: "현대차", tip: "AAM 미래 모빌리티" },
+              { name: "대한항공", tip: "항공우주 MRO·기술축적" },
+              { name: "인텔리안테크", tip: "위성통신 안테나 강자" }
+            ],
+            hidden: [
+              { name: "컨텍", tip: "지상국 데이터 서비스" },
+              { name: "쎄트렉아이", tip: "소형위성 제조 역량" },
+              { name: "루미르", tip: "우주광학·센서 관련" },
+              { name: "제노코", tip: "우주항공 전장부품" },
+              { name: "에이치브이엠", tip: "우주소재 부품 확장" }
+            ]
+          },
+          {
+            icon: "🚢",
+            name: "조선 / 해양 플랜트",
+            heat: "WARM",
+            heatTone: "text-emerald-200 bg-emerald-500/20 border-emerald-300/30",
+            top: [
+              { name: "HD현대중공업", tip: "고부가 선종 경쟁력" },
+              { name: "삼성중공업", tip: "LNG선·해양플랜트" },
+              { name: "한화오션", tip: "방산-조선 시너지" },
+              { name: "HD한국조선해양", tip: "지주형 조선 포트폴리오" },
+              { name: "HD현대마린솔루션", tip: "선박 서비스 수익원" }
+            ],
+            hidden: [
+              { name: "현대힘스", tip: "선박 블록 제조" },
+              { name: "동성하이텍", tip: "조선 기자재 공급" },
+              { name: "한국카본", tip: "LNG 보냉재 강점" },
+              { name: "세진중공업", tip: "선박 구조물 생산" },
+              { name: "태광", tip: "피팅·배관 부품" }
+            ]
+          },
+          {
+            icon: "🎬",
+            name: "엔터 / K-컬처",
+            heat: "HOT",
+            heatTone: "text-amber-200 bg-amber-500/20 border-amber-300/30",
+            top: [
+              { name: "하이브", tip: "글로벌 팬덤 플랫폼" },
+              { name: "JYP Ent.", tip: "아티스트 IP 고성장" },
+              { name: "에스엠", tip: "멀티레이블 전략" },
+              { name: "와이지엔터테인먼트", tip: "아티스트 라인업 복귀" },
+              { name: "CJ ENM", tip: "콘텐츠·미디어 밸류체인" }
+            ],
+            hidden: [
+              { name: "디어유", tip: "팬 커뮤니케이션 플랫폼" },
+              { name: "실리콘투", tip: "K-뷰티 글로벌 유통" },
+              { name: "삼화네트웍스", tip: "드라마 제작사" },
+              { name: "자이언트스텝", tip: "버추얼 제작 기술" },
+              { name: "스튜디오드래곤", tip: "드라마 IP 제작 강자" }
+            ]
+          },
+          {
+            icon: "🚘",
+            name: "자율주행 / 전장",
+            heat: "VERY HOT",
+            heatTone: "text-rose-200 bg-rose-500/20 border-rose-300/30",
+            top: [
+              { name: "현대모비스", tip: "전장·AD 핵심 부품" },
+              { name: "현대차", tip: "SDV 전환 선도" },
+              { name: "삼성전기", tip: "MLCC·전장부품 확대" },
+              { name: "LG이노텍", tip: "카메라·통신 모듈" },
+              { name: "HL만도", tip: "제동·조향 ADAS 부품" }
+            ],
+            hidden: [
+              { name: "넥스트칩", tip: "차량용 영상 반도체" },
+              { name: "퓨런티어", tip: "ADAS 공정 장비" },
+              { name: "스마트레이더시스템", tip: "차량 레이더 센서" },
+              { name: "모트렉스", tip: "IVI·차량 인포테인먼트" },
+              { name: "에이테크솔루션", tip: "차량용 금형·부품" }
+            ]
+          }
+        ];
+
+        function naverSearchUrl(name) {
+          return "https://finance.naver.com/search/search.naver?query=" + encodeURIComponent(name);
+        }
+
+        function listHtml(items) {
+          return items
+            .map(function (item) {
+              return (
+                '<li><a class="stock-link" href="' +
+                naverSearchUrl(item.name) +
+                '" target="_blank" rel="noopener noreferrer" title="' +
+                item.tip +
+                '">' +
+                item.name +
+                "</a></li>"
+              );
+            })
+            .join("");
+        }
+
+        var container = document.getElementById("value-chain-grid");
+        if (!container) return;
+
+        container.innerHTML = sectors
+          .map(function (sector, index) {
+            return (
+              '<article class="vc-card relative rounded-2xl p-5 md:p-6">' +
+              '<div class="mb-4 flex items-start justify-between gap-3">' +
+              '<div><p class="text-xs text-blue-200/70 tracking-wider">SECTOR ' +
+              String(index + 1).padStart(2, "0") +
+              '</p><h2 class="mt-1 text-lg md:text-xl font-semibold text-slate-100">' +
+              sector.icon +
+              " " +
+              sector.name +
+              '</h2></div><span class="text-[11px] md:text-xs border rounded-full px-2.5 py-1 ' +
+              sector.heatTone +
+              '">' +
+              sector.heat +
+              "</span></div>" +
+              '<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">' +
+              '<div><p class="text-xs font-semibold text-blue-200/75 mb-2">대형주 TOP 5</p><ul class="text-sm space-y-1.5">' +
+              listHtml(sector.top) +
+              "</ul></div>" +
+              '<div><p class="text-xs font-semibold text-amber-200/75 mb-2">강소기업 5</p><ul class="text-sm space-y-1.5">' +
+              listHtml(sector.hidden) +
+              "</ul></div></div></article>"
+            );
+          })
+          .join("");
+      })();
+    </script>
+  </body>
+</html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- 로컬 file:// 열 때 예전 내용이 남는 현상 완화(브라우저마다 다름). 그래도 안 바뀌면 Ctrl+F5 -->
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <meta http-equiv="Pragma" content="no-cache" />
@@ -26,7 +896,13 @@
         font-family: "Noto Sans KR", system-ui, sans-serif;
       }
     </style>
+    <script src="site-version.js"></script>
     <link rel="stylesheet" href="styles.css" />
+    <script>
+      (function () {
+        if (window.applySiteVersion) window.applySiteVersion(document);
+      })();
+    </script>
   </head>
   <body>
     <div class="bg-layer" aria-hidden="true"></div>

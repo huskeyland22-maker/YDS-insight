@@ -1,0 +1,15 @@
+{
+  "updatedAt": "2026-04-26 12:26 KST",
+  "sectorHeat": {
+    "hbm-ai-semiconductor": "VERY HOT",
+    "solid-state-battery": "HOT",
+    "defense": "VERY HOT",
+    "nuclear-smr": "HOT",
+    "biosimilar-cdmo": "WARM",
+    "on-device-ai-robotics": "VERY HOT",
+    "aerospace": "HOT",
+    "shipbuilding-offshore": "WARM",
+    "entertainment-kculture": "HOT",
+    "autonomous-automotive": "VERY HOT"
+  }
+}

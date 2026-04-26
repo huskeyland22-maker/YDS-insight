@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>코리아 밸류체인 맵 (Fixed) · Y'ds의 투자 인사이트</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      html { background-color: #0c1222; }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background-color: #0c1222;
+        color: #e4e9f2;
+        font-family: "Noto Sans KR", system-ui, sans-serif;
+      }
+      .vc-card {
+        border: 1px solid rgba(146, 164, 201, 0.25);
+        background: linear-gradient(180deg, rgba(18, 28, 52, 0.78), rgba(10, 16, 34, 0.9));
+        box-shadow: 0 0 0 1px rgba(88, 132, 255, 0.12), 0 22px 52px rgba(0, 0, 0, 0.34);
+      }
+      .vc-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        border-radius: 1rem;
+        background: radial-gradient(circle at 80% 0%, rgba(119, 193, 255, 0.09), rgba(0, 0, 0, 0));
+      }
+      .stock-link {
+        display: block;
+        color: #d6deee;
+        text-decoration: none;
+        border-radius: 0.5rem;
+        padding: 0.35rem 0.45rem;
+        transition: all 0.2s ease;
+      }
+      .stock-link:hover {
+        color: #fff;
+        background: rgba(86, 131, 255, 0.2);
+        transform: translateX(2px);
+      }
+    </style>
+    <script src="site-version.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <script>
+      (function () {
+        if (window.applySiteVersion) window.applySiteVersion(document);
+      })();
+    </script>
+  </head>
+  <body>
+    <div class="bg-layer" aria-hidden="true"></div>
+    <div class="bg-glow bg-glow--gold" aria-hidden="true"></div>
+    <div class="bg-glow bg-glow--blue" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="logo" href="index.html">Y'ds</a>
+        <nav class="nav" aria-label="주요 메뉴">
+          <a href="index.html">홈</a>
+          <a href="index.html#panic-monitor">패닉 지수</a>
+          <a href="core-research.html">리서치</a>
+          <a href="index.html#contact">연락</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container py-10 md:py-14">
+      <section class="mb-8 md:mb-10">
+        <p class="text-xs md:text-sm tracking-[0.22em] uppercase text-blue-200/70">Digital Korea Value Chain</p>
+        <h1 class="mt-3 text-3xl md:text-4xl font-semibold text-slate-100">밸류체인 맵 Pro (2026 Outlook)</h1>
+        <p class="mt-3 max-w-4xl text-sm md:text-base text-slate-300 leading-relaxed">
+          국내 유망 10대 섹터를 대형주 Top 5와 강소기업 5로 분리해 한눈에 정리했습니다. 종목 클릭 시 네이버 종목 상세(우선)와 다음 종목 상세(백업)가 새 탭으로 함께 열립니다.
+        </p>
+      </section>
+
+      <section class="mb-5 flex flex-wrap items-center justify-between gap-3 text-sm">
+        <p id="heat-updated-at" class="text-slate-300">Heat 업데이트: 불러오는 중...</p>
+        <div class="flex flex-wrap items-center gap-2">
+          <label class="text-slate-300" for="open-mode-select">탭 열기</label>
+          <select id="open-mode-select" class="rounded-lg border border-slate-500/40 bg-[#0f172c] px-2 py-1 text-slate-100">
+            <option value="1">1개 (네이버만)</option>
+            <option value="2">2개 (네이버 + 다음)</option>
+          </select>
+          <label class="text-slate-300" for="heat-style-select">Heat 색상</label>
+          <select id="heat-style-select" class="rounded-lg border border-slate-500/40 bg-[#0f172c] px-2 py-1 text-slate-100">
+            <option value="vivid">선명</option>
+            <option value="soft">은은</option>
+          </select>
+          <button id="reset-favorites" class="rounded-lg border border-slate-500/40 px-3 py-1.5 text-slate-200 hover:border-blue-300/50 hover:text-white" type="button">
+            관심 섹터 초기화
+          </button>
+        </div>
+      </section>
+
+      <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6" id="value-chain-grid"></section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p class="footer-brand"><a href="index.html" style="color: inherit; text-decoration: none">Y'ds의 투자 인사이트</a></p>
+        <p class="footer-note">본 페이지는 투자 권유가 아니며, 학습·정리 목적입니다.</p>
+      </div>
+    </footer>
+
+    <script src="value-chain-data.js"></script>
+    <script>
+      (function () {
+        var FAVORITE_KEY = "value-chain:favorites:v1";
+        var OPEN_MODE_KEY = "value-chain:open-mode:v1";
+        var HEAT_STYLE_KEY = "value-chain:heat-style:v1";
+        var sectors = Array.isArray(window.VALUE_CHAIN_SECTORS) ? window.VALUE_CHAIN_SECTORS.slice() : [];
+        var heatMeta = { updatedAt: "-" };
+        var openMode = localStorage.getItem(OPEN_MODE_KEY) || "2";
+        var heatStyle = localStorage.getItem(HEAT_STYLE_KEY) || "vivid";
+
+        function loadFavorites() {
+          try {
+            var raw = localStorage.getItem(FAVORITE_KEY);
+            var parsed = raw ? JSON.parse(raw) : [];
+            return Array.isArray(parsed) ? parsed : [];
+          } catch (e) {
+            return [];
+          }
+        }
+
+        function saveFavorites(ids) {
+          try { localStorage.setItem(FAVORITE_KEY, JSON.stringify(ids)); } catch (e) {}
+        }
+
+        function stockUrl(item) {
+          if (item.code) return "https://finance.naver.com/item/main.naver?code=" + encodeURIComponent(item.code);
+          var q = item.name + " 주가";
+          return "https://finance.naver.com/search/search.naver?query=" + encodeURIComponent(q);
+        }
+
+        function secondaryStockUrl(item) {
+          if (item.code) return "https://finance.daum.net/quotes/A" + encodeURIComponent(item.code);
+          var q = item.name + " 주가";
+          return "https://search.daum.net/search?w=tot&q=" + encodeURIComponent(q);
+        }
+
+        function listHtml(items) {
+          return items.map(function (item) {
+            return (
+              '<li><a class="stock-link" href="' +
+              stockUrl(item) +
+              '" data-secondary-url="' +
+              secondaryStockUrl(item) +
+              '" target="_blank" rel="noopener noreferrer" title="' +
+              item.tip +
+              '">' +
+              item.name +
+              "</a></li>"
+            );
+          }).join("");
+        }
+
+        function heatToneClass(heat) {
+          if (heatStyle === "soft") {
+            if (heat === "VERY HOT") return "text-rose-100 bg-rose-400/12 border-rose-200/25";
+            if (heat === "HOT") return "text-amber-100 bg-amber-400/12 border-amber-200/25";
+            return "text-emerald-100 bg-emerald-400/12 border-emerald-200/25";
+          }
+          if (heat === "VERY HOT") return "text-rose-200 bg-rose-500/20 border-rose-300/30";
+          if (heat === "HOT") return "text-amber-200 bg-amber-500/20 border-amber-300/30";
+          return "text-emerald-200 bg-emerald-500/20 border-emerald-300/30";
+        }
+
+        function applyHeatMap(heatData) {
+          if (!heatData || typeof heatData !== "object") return;
+          var map = heatData.sectorHeat || {};
+          heatMeta.updatedAt = heatData.updatedAt || "-";
+          sectors.forEach(function (s) { if (map[s.id]) s.heat = map[s.id]; });
+        }
+
+        function render() {
+          var favoriteIds = loadFavorites();
+          var favoriteSet = {};
+          favoriteIds.forEach(function (id) { favoriteSet[id] = true; });
+
+          var ordered = sectors.slice().sort(function (a, b) {
+            var af = favoriteSet[a.id] ? 0 : 1;
+            var bf = favoriteSet[b.id] ? 0 : 1;
+            if (af !== bf) return af - bf;
+            return a.order - b.order;
+          });
+
+          var container = document.getElementById("value-chain-grid");
+          if (!container) return;
+
+          container.innerHTML = ordered.map(function (sector, index) {
+            var isFavorite = !!favoriteSet[sector.id];
+            return (
+              '<article class="vc-card relative rounded-2xl p-5 md:p-6">' +
+              '<div class="mb-4 flex items-start justify-between gap-3">' +
+              '<div><p class="text-xs text-blue-200/70 tracking-wider">SECTOR ' + String(index + 1).padStart(2, "0") + '</p><h2 class="mt-1 text-lg md:text-xl font-semibold text-slate-100">' + sector.icon + " " + sector.name + '</h2></div>' +
+              '<span class="text-[11px] md:text-xs border rounded-full px-2.5 py-1 ' + heatToneClass(sector.heat) + '">' + sector.heat + "</span></div>" +
+              '<div class="mb-4"><button type="button" class="favorite-btn rounded-lg border px-3 py-1.5 text-xs ' + (isFavorite ? "border-blue-300/70 text-blue-100 bg-blue-500/20" : "border-slate-500/40 text-slate-300 hover:border-blue-300/50 hover:text-white") + '" data-sector-id="' + sector.id + '">' + (isFavorite ? "관심 섹터 해제" : "관심 섹터 등록") + "</button></div>" +
+              '<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">' +
+              '<div><p class="text-xs font-semibold text-blue-200/75 mb-2">대형주 TOP 5</p><ul class="text-sm space-y-1.5">' + listHtml(sector.top) + "</ul></div>" +
+              '<div><p class="text-xs font-semibold text-amber-200/75 mb-2">강소기업 5</p><ul class="text-sm space-y-1.5">' + listHtml(sector.hidden) + "</ul></div></div></article>"
+            );
+          }).join("");
+
+          var heatUpdatedAtEl = document.getElementById("heat-updated-at");
+          if (heatUpdatedAtEl) heatUpdatedAtEl.textContent = "Heat 업데이트: " + heatMeta.updatedAt;
+        }
+
+        function bindEvents() {
+          var container = document.getElementById("value-chain-grid");
+          var openModeSelect = document.getElementById("open-mode-select");
+          var heatStyleSelect = document.getElementById("heat-style-select");
+
+          if (openModeSelect) {
+            openModeSelect.value = openMode;
+            openModeSelect.addEventListener("change", function () {
+              openMode = openModeSelect.value === "1" ? "1" : "2";
+              localStorage.setItem(OPEN_MODE_KEY, openMode);
+            });
+          }
+
+          if (heatStyleSelect) {
+            heatStyleSelect.value = heatStyle;
+            heatStyleSelect.addEventListener("change", function () {
+              heatStyle = heatStyleSelect.value === "soft" ? "soft" : "vivid";
+              localStorage.setItem(HEAT_STYLE_KEY, heatStyle);
+              render();
+            });
+          }
+
+          if (container) {
+            container.addEventListener("click", function (e) {
+              var link = e.target.closest(".stock-link");
+              if (!link) return;
+              e.preventDefault();
+              var primary = link.getAttribute("href");
+              var secondary = link.getAttribute("data-secondary-url");
+              if (primary) window.open(primary, "_blank", "noopener,noreferrer");
+              if (openMode === "2" && secondary) window.open(secondary, "_blank", "noopener,noreferrer");
+            });
+
+            container.addEventListener("click", function (e) {
+              var btn = e.target.closest(".favorite-btn");
+              if (!btn) return;
+              var id = btn.getAttribute("data-sector-id");
+              if (!id) return;
+              var favorites = loadFavorites();
+              var idx = favorites.indexOf(id);
+              if (idx === -1) favorites.push(id); else favorites.splice(idx, 1);
+              saveFavorites(favorites);
+              render();
+            });
+          }
+          var resetBtn = document.getElementById("reset-favorites");
+          if (resetBtn) {
+            resetBtn.addEventListener("click", function () {
+              saveFavorites([]);
+              render();
+            });
+          }
+        }
+
+        bindEvents();
+        fetch("value-chain-heat.json")
+          .then(function (res) {
+            if (!res.ok) throw new Error("heat fetch failed");
+            return res.json();
+          })
+          .then(function (data) {
+            applyHeatMap(data);
+            render();
+          })
+          .catch(function () {
+            render();
+          });
+      })();
+    </script>
+  </body>
+</html>
