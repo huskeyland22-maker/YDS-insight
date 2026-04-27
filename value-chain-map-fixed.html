@@ -80,7 +80,7 @@
         <p class="text-xs md:text-sm tracking-[0.22em] uppercase text-blue-200/70">Digital Korea Value Chain</p>
         <h1 class="mt-3 text-3xl md:text-4xl font-semibold text-slate-100">밸류체인 맵 Pro (2026 Outlook)</h1>
         <p class="mt-3 max-w-4xl text-sm md:text-base text-slate-300 leading-relaxed">
-          국내 유망 10대 섹터를 대형주 Top 5와 강소기업 5로 분리해 한눈에 정리했습니다. 종목 클릭 시 네이버 종목 상세(우선)와 다음 종목 상세(백업)가 새 탭으로 함께 열립니다.
+          국내 핵심 주도 섹터를 대형주 Top 5와 강소기업 5로 분리해 한눈에 정리했습니다. 종목 클릭 시 네이버 종목 상세(우선)와 다음 종목 상세(백업)가 새 탭으로 함께 열립니다.
         </p>
       </section>
 
@@ -150,8 +150,116 @@
           return "https://search.daum.net/search?w=tot&q=" + encodeURIComponent(q);
         }
 
-        function listHtml(items) {
-          return items.map(function (item) {
+        function inferSectionLabel(item, sector, index) {
+          var tip = (item && item.tip ? item.tip : "").toLowerCase();
+          var name = (item && item.name ? item.name : "").toLowerCase();
+          var text = tip + " " + name;
+
+          var downstreamKeywords = ["플랫폼", "서비스", "유통", "완제품", "완성", "브랜드", "통합", "mro", "c4i", "생태계", "가전"];
+          var upstreamKeywords = ["소재", "부품", "장비", "테스트", "기판", "센서", "피팅", "밸브", "전해질", "음극", "양극", "모듈"];
+          var midstreamKeywords = ["제조", "생산", "주기기", "시스템", "엔진", "패키징", "설계", "파운드리", "셀", "cdmo", "파이프라인"];
+
+          function hasKeyword(list) {
+            return list.some(function (kw) { return text.indexOf(kw) !== -1; });
+          }
+
+          if (hasKeyword(upstreamKeywords)) return "부품단";
+          if (hasKeyword(midstreamKeywords)) return "생산단";
+          if (hasKeyword(downstreamKeywords)) return "수요단";
+
+          if (Array.isArray(sector.sections) && sector.sections.length === 3) {
+            if (index <= 2) return sector.sections[0];
+            if (index <= 5) return sector.sections[1];
+            return sector.sections[2];
+          }
+
+          return "생산단";
+        }
+
+        function inferSubsectorLabel(item, sector, sectionLabel) {
+          var tip = (item && item.tip ? item.tip : "").toLowerCase();
+          var text = tip + " " + (item && item.name ? item.name.toLowerCase() : "");
+          var sectorId = sector && sector.id ? sector.id : "";
+
+          if (sectorId === "hbm-ai-semiconductor") {
+            if (text.indexOf("hbm") !== -1 || text.indexOf("메모리") !== -1) return "메모리/HBM";
+            if (text.indexOf("테스트") !== -1 || text.indexOf("패키") !== -1 || text.indexOf("소켓") !== -1) return "후공정·테스트";
+            return "장비·소재";
+          }
+          if (sectorId === "solid-state-battery") {
+            if (text.indexOf("셀") !== -1 || text.indexOf("배터리") !== -1) return "셀·팩";
+            if (text.indexOf("양극") !== -1 || text.indexOf("음극") !== -1 || text.indexOf("소재") !== -1) return "소재";
+            return "장비·리사이클";
+          }
+          if (sectorId === "defense") {
+            if (text.indexOf("전차") !== -1 || text.indexOf("지상") !== -1) return "지상체계";
+            if (text.indexOf("유도") !== -1 || text.indexOf("레이다") !== -1 || text.indexOf("c4i") !== -1) return "유도무기·전자전";
+            return "항공·엔진";
+          }
+          if (sectorId === "nuclear-smr") {
+            if (text.indexOf("smr") !== -1) return "SMR";
+            if (text.indexOf("정비") !== -1 || text.indexOf("밸브") !== -1 || text.indexOf("계측") !== -1) return "기자재·정비";
+            return "대형원전";
+          }
+          if (sectorId === "power-grid-hvdc") {
+            if (text.indexOf("변압기") !== -1 || text.indexOf("전력기기") !== -1 || text.indexOf("배전") !== -1) return "변압기·전력기기";
+            if (text.indexOf("hvdc") !== -1 || text.indexOf("송전") !== -1 || text.indexOf("그리드") !== -1 || text.indexOf("자동화") !== -1) return "송전·HVDC";
+            return "케이블·전력망";
+          }
+          if (sectorId === "biosimilar-cdmo") {
+            if (text.indexOf("cdmo") !== -1 || text.indexOf("cmo") !== -1) return "CDMO·CMO";
+            if (text.indexOf("시밀러") !== -1 || text.indexOf("유통") !== -1) return "상업화·유통";
+            return "플랫폼·신약";
+          }
+          if (sectorId === "on-device-ai-robotics") {
+            if (text.indexOf("감속기") !== -1 || text.indexOf("센서") !== -1 || text.indexOf("부품") !== -1) return "핵심구동부";
+            if (text.indexOf("협동로봇") !== -1 || text.indexOf("휴머노이드") !== -1) return "완성로봇";
+            return "SI·응용";
+          }
+          if (sectorId === "aerospace") {
+            if (text.indexOf("발사") !== -1 || text.indexOf("엔진") !== -1) return "발사체·추진";
+            if (text.indexOf("위성") !== -1 || text.indexOf("안테나") !== -1 || text.indexOf("탑재") !== -1) return "위성·탑재체";
+            return "지상국·서비스";
+          }
+          if (sectorId === "shipbuilding-offshore") {
+            if (text.indexOf("엔진") !== -1 || text.indexOf("기자재") !== -1 || text.indexOf("보냉") !== -1) return "엔진·기자재";
+            if (text.indexOf("서비스") !== -1 || text.indexOf("mro") !== -1) return "MRO·서비스";
+            return "완성조선";
+          }
+          if (sectorId === "entertainment-kculture") {
+            if (text.indexOf("플랫폼") !== -1 || text.indexOf("팬덤") !== -1 || text.indexOf("md") !== -1) return "팬플랫폼·MD";
+            if (text.indexOf("제작") !== -1 || text.indexOf("미디어") !== -1 || text.indexOf("유통") !== -1) return "제작·유통";
+            return "IP·아티스트";
+          }
+          if (sectorId === "autonomous-automotive") {
+            if (text.indexOf("센서") !== -1 || text.indexOf("칩") !== -1 || text.indexOf("레이더") !== -1) return "센서·칩";
+            if (text.indexOf("부품") !== -1 || text.indexOf("모듈") !== -1 || text.indexOf("mlcc") !== -1) return "전장부품";
+            return "SDV·플랫폼";
+          }
+          if (sectorId === "ai-datacenter-infra") {
+            if (text.indexOf("hbm") !== -1 || text.indexOf("서버") !== -1 || text.indexOf("스토리지") !== -1) return "서버·수요";
+            if (text.indexOf("전력") !== -1 || text.indexOf("배전") !== -1 || text.indexOf("냉각") !== -1 || text.indexOf("hvac") !== -1) return "전력·냉각";
+            return "운영·부품";
+          }
+          if (sectorId === "power-semiconductor-electronics") {
+            if (text.indexOf("ic") !== -1 || text.indexOf("설계") !== -1 || text.indexOf("반도체 생산") !== -1) return "칩 설계·생산";
+            if (text.indexOf("장비") !== -1 || text.indexOf("공정") !== -1) return "공정·장비";
+            return "소재·부품";
+          }
+
+          return sectionLabel === "수요단" ? "서비스·수요" : sectionLabel === "부품단" ? "소재·부품" : "제조·통합";
+        }
+
+        function sectionBadgeClass(label) {
+          if (label === "수요단") return "border-emerald-300/35 bg-emerald-500/15 text-emerald-100";
+          if (label === "부품단") return "border-indigo-300/35 bg-indigo-500/15 text-indigo-100";
+          return "border-amber-300/35 bg-amber-500/15 text-amber-100";
+        }
+
+        function listHtml(items, sector, startIndex) {
+          return items.map(function (item, idx) {
+            var sectionLabel = inferSectionLabel(item, sector, (startIndex || 0) + idx);
+            var subsectorLabel = inferSubsectorLabel(item, sector, sectionLabel);
             return (
               '<li><a class="stock-link" href="' +
               stockUrl(item) +
@@ -159,11 +267,30 @@
               secondaryStockUrl(item) +
               '" target="_blank" rel="noopener noreferrer" title="' +
               item.tip +
-              '">' +
+              '"><span>' +
               item.name +
-              "</a></li>"
+              '</span><span class="ml-2 inline-flex rounded-full border px-1.5 py-0.5 text-[10px] ' +
+              sectionBadgeClass(sectionLabel) +
+              '">' +
+              sectionLabel +
+              " · " +
+              subsectorLabel +
+              "</span></a></li>"
             );
           }).join("");
+        }
+
+        function sectionsHtml(sector) {
+          if (!sector || !Array.isArray(sector.sections) || !sector.sections.length) return "";
+          return (
+            '<div class="mb-4 flex flex-wrap gap-1.5">' +
+            sector.sections
+              .map(function (label) {
+                return '<span class="rounded-full border border-blue-300/25 bg-blue-500/10 px-2 py-0.5 text-[11px] text-blue-100/90">' + label + "</span>";
+              })
+              .join("") +
+            "</div>"
+          );
         }
 
         function heatToneClass(heat) {
@@ -207,9 +334,10 @@
               '<div><p class="text-xs text-blue-200/70 tracking-wider">SECTOR ' + String(index + 1).padStart(2, "0") + '</p><h2 class="mt-1 text-lg md:text-xl font-semibold text-slate-100">' + sector.icon + " " + sector.name + '</h2></div>' +
               '<span class="text-[11px] md:text-xs border rounded-full px-2.5 py-1 ' + heatToneClass(sector.heat) + '">' + sector.heat + "</span></div>" +
               '<div class="mb-4"><button type="button" class="favorite-btn rounded-lg border px-3 py-1.5 text-xs ' + (isFavorite ? "border-blue-300/70 text-blue-100 bg-blue-500/20" : "border-slate-500/40 text-slate-300 hover:border-blue-300/50 hover:text-white") + '" data-sector-id="' + sector.id + '">' + (isFavorite ? "관심 섹터 해제" : "관심 섹터 등록") + "</button></div>" +
+              sectionsHtml(sector) +
               '<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">' +
-              '<div><p class="text-xs font-semibold text-blue-200/75 mb-2">대형주 TOP 5</p><ul class="text-sm space-y-1.5">' + listHtml(sector.top) + "</ul></div>" +
-              '<div><p class="text-xs font-semibold text-amber-200/75 mb-2">강소기업 5</p><ul class="text-sm space-y-1.5">' + listHtml(sector.hidden) + "</ul></div></div></article>"
+              '<div><p class="text-xs font-semibold text-blue-200/75 mb-2">대형주 TOP 5</p><ul class="text-sm space-y-1.5">' + listHtml(sector.top, sector, 0) + "</ul></div>" +
+              '<div><p class="text-xs font-semibold text-amber-200/75 mb-2">강소기업 5</p><ul class="text-sm space-y-1.5">' + listHtml(sector.hidden, sector, 5) + "</ul></div></div></article>"
             );
           }).join("");
 
