@@ -105,6 +105,7 @@
       <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6" id="value-chain-grid"></section>
     </main>
 
+
     <footer class="site-footer">
       <div class="container footer-inner">
         <p class="footer-brand"><a href="index.html" style="color: inherit; text-decoration: none">Y'ds의 투자 인사이트</a></p>
@@ -120,6 +121,7 @@
         var HEAT_STYLE_KEY = "value-chain:heat-style:v1";
         var sectors = Array.isArray(window.VALUE_CHAIN_SECTORS) ? window.VALUE_CHAIN_SECTORS.slice() : [];
         var heatMeta = { updatedAt: "-" };
+        var timingMeta = { updatedAt: "-", bySymbol: {} };
         var openMode = localStorage.getItem(OPEN_MODE_KEY) || "2";
         var heatStyle = localStorage.getItem(HEAT_STYLE_KEY) || "vivid";
 
@@ -148,6 +150,7 @@
           var q = item.name + " 주가";
           return "https://search.daum.net/search?w=tot&q=" + encodeURIComponent(q);
         }
+
 
         function inferSectionLabel(item, sector, index) {
           var tip = (item && item.tip ? item.tip : "").toLowerCase();
@@ -255,10 +258,81 @@
           return "border-amber-300/35 bg-amber-500/15 text-amber-100";
         }
 
+        function timingSignal(item, sectionLabel) {
+          if (item && item.code && timingMeta.bySymbol && timingMeta.bySymbol[item.code]) {
+            return timingMeta.bySymbol[item.code];
+          }
+          var key = String((item && item.code) || (item && item.name) || "");
+          var score = 0;
+          for (var i = 0; i < key.length; i++) score += key.charCodeAt(i);
+          if (sectionLabel === "수요단") score += 7;
+          if (sectionLabel === "생산단") score += 3;
+          var bucket = score % 3;
+          if (bucket === 0) return { grade: "A", state: "추세초입", action: "분할진입", tone: "good" };
+          if (bucket === 1) return { grade: "B", state: "눌림대기", action: "관찰", tone: "wait" };
+          return { grade: "C", state: "과열주의", action: "추격금지", tone: "hot" };
+        }
+
+        function timingBadgeClass(tone) {
+          if (tone === "good") return "border-emerald-300/35 bg-emerald-500/15 text-emerald-100";
+          if (tone === "hot") return "border-rose-300/35 bg-rose-500/15 text-rose-100";
+          return "border-amber-300/35 bg-amber-500/15 text-amber-100";
+        }
+
+        function actionClass(action) {
+          if (action === "분할진입") return "text-emerald-100 bg-emerald-500/15 border-emerald-300/35";
+          if (action === "추격금지") return "text-rose-100 bg-rose-500/15 border-rose-300/35";
+          return "text-amber-100 bg-amber-500/15 border-amber-300/35";
+        }
+
+        function timingPanelHtml(item, signal, panelId) {
+          var m = signal && signal.metrics ? signal.metrics : null;
+          var trend = m && Number.isFinite(m.close) && Number.isFinite(m.ma20) && Number.isFinite(m.ma60)
+            ? ("종가 " + m.close.toFixed(1) + " / MA20 " + m.ma20.toFixed(1) + " / MA60 " + m.ma60.toFixed(1))
+            : (signal.tone === "good" ? "정배열 근접(20 > 60일선)" : signal.tone === "wait" ? "20일선 눌림 구간" : "고점 이격 확대");
+          var rsi = m && Number.isFinite(m.rsi14)
+            ? ("RSI14 " + m.rsi14.toFixed(1))
+            : (signal.tone === "good" ? "48 ~ 62 (건강한 상승)" : signal.tone === "wait" ? "38 ~ 49 (반등 대기)" : "72+ (과열 경계)");
+          var stochastic = m && Number.isFinite(m.stochK) && Number.isFinite(m.stochD)
+            ? ("%K " + m.stochK.toFixed(1) + " / %D " + m.stochD.toFixed(1))
+            : (signal.tone === "hot" ? "80 이상 데드크로스 경계" : "20~80 내 골든크로스 확인");
+          var volume = m && Number.isFinite(m.volumeRatio20)
+            ? ("20일 평균 대비 " + m.volumeRatio20.toFixed(2) + "x")
+            : (signal.tone === "good" ? "20일 평균 대비 1.2x 이상" : signal.tone === "wait" ? "평균 부근 (확인 필요)" : "급증 후 둔화 여부 체크");
+          var risk = signal.tone === "good" ? "60일선 이탈 시 점수 하향" : signal.tone === "wait" ? "지지 이탈 시 관찰 유지" : "스토캐스틱 과열 + 이격 확대 시 비중 축소";
+          return (
+            '<div id="' + panelId + '" class="timing-panel mt-1.5 hidden rounded-lg border border-slate-500/30 bg-[#101934]/85 p-2.5 text-[11px] leading-relaxed">' +
+            '<p class="mb-1 text-slate-100"><span class="text-blue-200">추세</span>: ' + trend + "</p>" +
+            '<p class="mb-1 text-slate-100"><span class="text-blue-200">모멘텀(RSI)</span>: ' + rsi + "</p>" +
+            '<p class="mb-1 text-slate-100"><span class="text-blue-200">스토캐스틱</span>: ' + stochastic + "</p>" +
+            '<p class="mb-1 text-slate-100"><span class="text-blue-200">거래</span>: ' + volume + "</p>" +
+            '<p class="text-slate-100"><span class="text-blue-200">리스크</span>: ' + risk + "</p>" +
+            "</div>"
+          );
+        }
+
+        function sectorTimingSummary(allItems, sector) {
+          var counts = { good: 0, wait: 0, hot: 0 };
+          allItems.forEach(function (item, idx) {
+            var sectionLabel = inferSectionLabel(item, sector, idx);
+            var s = timingSignal(item, sectionLabel);
+            counts[s.tone] += 1;
+          });
+          return (
+            '<div class="mb-4 flex flex-wrap gap-1.5 text-[11px]">' +
+            '<span class="rounded-full border border-emerald-300/35 bg-emerald-500/12 px-2 py-0.5 text-emerald-100">초입 ' + counts.good + "</span>" +
+            '<span class="rounded-full border border-amber-300/35 bg-amber-500/12 px-2 py-0.5 text-amber-100">대기 ' + counts.wait + "</span>" +
+            '<span class="rounded-full border border-rose-300/35 bg-rose-500/12 px-2 py-0.5 text-rose-100">과열 ' + counts.hot + "</span>" +
+            "</div>"
+          );
+        }
+
         function listHtml(items, sector, startIndex) {
           return items.map(function (item, idx) {
             var sectionLabel = inferSectionLabel(item, sector, (startIndex || 0) + idx);
             var subsectorLabel = inferSubsectorLabel(item, sector, sectionLabel);
+            var signal = timingSignal(item, sectionLabel);
+            var panelId = "timing-" + (item.code || item.name).replace(/[^a-zA-Z0-9가-힣]/g, "");
             return (
               '<li><a class="stock-link" href="' +
               stockUrl(item) +
@@ -274,7 +348,21 @@
               sectionLabel +
               " · " +
               subsectorLabel +
-              "</span></a></li>"
+              '</span><span class="ml-2 inline-flex rounded-full border px-1.5 py-0.5 text-[10px] ' +
+              timingBadgeClass(signal.tone) +
+              '">' +
+              signal.grade +
+              " (" +
+              signal.state +
+              ')</span></a><button type="button" class="timing-toggle ml-1 rounded-md border border-slate-500/40 px-1.5 py-0.5 text-[10px] text-slate-300 hover:border-blue-300/50 hover:text-white" data-target="' +
+              panelId +
+              '">신호</button><span class="ml-1 inline-flex rounded-full border px-1.5 py-0.5 text-[10px] ' +
+              actionClass(signal.action) +
+              '">' +
+              signal.action +
+              "</span>" +
+              timingPanelHtml(item, signal, panelId) +
+              "</li>"
             );
           }).join("");
         }
@@ -310,6 +398,30 @@
           sectors.forEach(function (s) { if (map[s.id]) s.heat = map[s.id]; });
         }
 
+        function refreshTimingSignals() {
+          var codes = [];
+          sectors.forEach(function (sector) {
+            (sector.top || []).concat(sector.hidden || []).forEach(function (item) {
+              if (item && item.code) codes.push(item.code);
+            });
+          });
+          var uniqueCodes = Array.from(new Set(codes));
+          if (!uniqueCodes.length) return;
+          fetch("/api/timing?symbols=" + encodeURIComponent(uniqueCodes.join(",")))
+            .then(function (res) {
+              if (!res.ok) throw new Error("timing fetch failed");
+              return res.json();
+            })
+            .then(function (data) {
+              timingMeta.updatedAt = data.updatedAt || "-";
+              timingMeta.bySymbol = data.timingBySymbol || {};
+              render();
+            })
+            .catch(function () {
+              // keep static fallback
+            });
+        }
+
         function render() {
           var favoriteIds = loadFavorites();
           var favoriteSet = {};
@@ -327,6 +439,7 @@
 
           container.innerHTML = ordered.map(function (sector, index) {
             var isFavorite = !!favoriteSet[sector.id];
+            var allItems = (sector.top || []).concat(sector.hidden || []);
             return (
               '<article class="vc-card relative rounded-2xl p-5 md:p-6">' +
               '<div class="mb-4 flex items-start justify-between gap-3">' +
@@ -334,6 +447,7 @@
               '<span class="text-[11px] md:text-xs border rounded-full px-2.5 py-1 ' + heatToneClass(sector.heat) + '">' + sector.heat + "</span></div>" +
               '<div class="mb-4"><button type="button" class="favorite-btn rounded-lg border px-3 py-1.5 text-xs ' + (isFavorite ? "border-blue-300/70 text-blue-100 bg-blue-500/20" : "border-slate-500/40 text-slate-300 hover:border-blue-300/50 hover:text-white") + '" data-sector-id="' + sector.id + '">' + (isFavorite ? "관심 섹터 해제" : "관심 섹터 등록") + "</button></div>" +
               sectionsHtml(sector) +
+              sectorTimingSummary(allItems, sector) +
               '<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">' +
               '<div><p class="text-xs font-semibold text-blue-200/75 mb-2">대형주 TOP 5</p><ul class="text-sm space-y-1.5">' + listHtml(sector.top, sector, 0) + "</ul></div>" +
               '<div><p class="text-xs font-semibold text-amber-200/75 mb-2">강소기업 5</p><ul class="text-sm space-y-1.5">' + listHtml(sector.hidden, sector, 5) + "</ul></div></div></article>"
@@ -368,6 +482,18 @@
 
           if (container) {
             container.addEventListener("click", function (e) {
+              var timingToggle = e.target.closest(".timing-toggle");
+              if (timingToggle) {
+                e.preventDefault();
+                e.stopPropagation();
+                var targetId = timingToggle.getAttribute("data-target");
+                if (!targetId) return;
+                var panel = document.getElementById(targetId);
+                if (!panel) return;
+                panel.classList.toggle("hidden");
+                return;
+              }
+
               var link = e.target.closest(".stock-link");
               if (!link) return;
               e.preventDefault();
@@ -411,6 +537,8 @@
           .catch(function () {
             render();
           });
+        refreshTimingSignals();
+        setInterval(refreshTimingSignals, 10 * 60 * 1000);
       })();
     </script>
   </body>

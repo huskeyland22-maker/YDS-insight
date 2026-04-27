@@ -49,6 +49,74 @@ function formatTickerDelta(latest, previous, options = {}) {
   return { text: `${sign}${pct.toFixed(digits)}${suffix}`, direction: pct > 0 ? "up" : "down" };
 }
 
+function average(values) {
+  if (!Array.isArray(values) || !values.length) return Number.NaN;
+  const sum = values.reduce((acc, v) => acc + v, 0);
+  return sum / values.length;
+}
+
+function sma(values, period) {
+  if (!Array.isArray(values) || values.length < period) return Number.NaN;
+  return average(values.slice(values.length - period));
+}
+
+function rsi(values, period = 14) {
+  if (!Array.isArray(values) || values.length <= period) return Number.NaN;
+  let gains = 0;
+  let losses = 0;
+  for (let i = values.length - period; i < values.length; i += 1) {
+    const prev = values[i - 1];
+    const curr = values[i];
+    const diff = curr - prev;
+    if (diff > 0) gains += diff;
+    else losses += Math.abs(diff);
+  }
+  if (losses === 0) return 100;
+  const rs = gains / losses;
+  return 100 - 100 / (1 + rs);
+}
+
+function stochastic(highs, lows, closes, period = 14, smooth = 3) {
+  if (!Array.isArray(closes) || closes.length < period + smooth) return { k: Number.NaN, d: Number.NaN };
+  const kSeries = [];
+  for (let i = period - 1; i < closes.length; i += 1) {
+    const windowHigh = Math.max(...highs.slice(i - period + 1, i + 1));
+    const windowLow = Math.min(...lows.slice(i - period + 1, i + 1));
+    const close = closes[i];
+    if (!Number.isFinite(windowHigh) || !Number.isFinite(windowLow) || windowHigh === windowLow) {
+      kSeries.push(Number.NaN);
+      continue;
+    }
+    const k = ((close - windowLow) / (windowHigh - windowLow)) * 100;
+    kSeries.push(k);
+  }
+  const validK = kSeries.filter((v) => Number.isFinite(v));
+  if (validK.length < smooth) return { k: Number.NaN, d: Number.NaN };
+  const currentK = average(validK.slice(-smooth));
+  const dValues = [];
+  for (let i = smooth - 1; i < validK.length; i += 1) {
+    dValues.push(average(validK.slice(i - smooth + 1, i + 1)));
+  }
+  const currentD = dValues.length ? dValues[dValues.length - 1] : Number.NaN;
+  return { k: currentK, d: currentD };
+}
+
+function classifyTiming(metrics) {
+  const { close, ma20, ma60, rsi14, stochK, stochD, volumeRatio20 } = metrics;
+  const uptrend = Number.isFinite(close) && Number.isFinite(ma20) && Number.isFinite(ma60) && close > ma20 && ma20 > ma60;
+  const pullback = Number.isFinite(close) && Number.isFinite(ma20) && close >= ma20 * 0.985 && close <= ma20 * 1.02;
+  const overheated = (Number.isFinite(rsi14) && rsi14 >= 75) || (Number.isFinite(stochK) && Number.isFinite(stochD) && stochK > 80 && stochK < stochD);
+  const golden = Number.isFinite(stochK) && Number.isFinite(stochD) && stochK > stochD && stochK < 60;
+
+  if (uptrend && (golden || pullback) && !overheated) {
+    return { grade: "A", state: "추세초입", action: "분할진입", tone: "good" };
+  }
+  if (overheated) {
+    return { grade: "C", state: "과열주의", action: "추격금지", tone: "hot" };
+  }
+  return { grade: "B", state: "눌림대기", action: "관찰", tone: "wait" };
+}
+
 async function fetchClosePrice(ticker) {
   const url = `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(
     ticker
@@ -86,6 +154,38 @@ async function fetchClosePrice(ticker) {
     close: closes[idx],
     previous: prev,
     asOf: toIsoDate((timestamps[idx] || 0) * 1000)
+  };
+}
+
+async function fetchHistory(ticker) {
+  const url = `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(
+    ticker
+  )}?interval=1d&range=6mo`;
+  const response = await fetch(url);
+  if (!response.ok) throw new Error(`Yahoo response not ok for ${ticker}`);
+  const data = await response.json();
+  const result = data?.chart?.result?.[0];
+  const quote = result?.indicators?.quote?.[0];
+  const closes = Array.isArray(quote?.close) ? quote.close : [];
+  const highs = Array.isArray(quote?.high) ? quote.high : [];
+  const lows = Array.isArray(quote?.low) ? quote.low : [];
+  const volumes = Array.isArray(quote?.volume) ? quote.volume : [];
+
+  const packed = [];
+  for (let i = 0; i < closes.length; i += 1) {
+    const c = closes[i];
+    const h = highs[i];
+    const l = lows[i];
+    const v = volumes[i];
+    if (!Number.isFinite(c) || !Number.isFinite(h) || !Number.isFinite(l) || !Number.isFinite(v)) continue;
+    packed.push({ c, h, l, v });
+  }
+  if (packed.length < 80) throw new Error(`insufficient history for ${ticker}`);
+  return {
+    closes: packed.map((x) => x.c),
+    highs: packed.map((x) => x.h),
+    lows: packed.map((x) => x.l),
+    volumes: packed.map((x) => x.v)
   };
 }
 
@@ -174,6 +274,57 @@ async function handleApiTicker(req, res) {
   }
 }
 
+async function handleApiTiming(req, res, urlObj) {
+  const symbolsRaw = urlObj.searchParams.get("symbols") || "";
+  const symbols = symbolsRaw
+    .split(",")
+    .map((s) => s.trim())
+    .filter(Boolean)
+    .slice(0, 250);
+
+  if (!symbols.length) {
+    sendJson(res, 400, { error: "symbols query is required" });
+    return;
+  }
+
+  const settled = await Promise.allSettled(symbols.map((ticker) => fetchHistory(ticker)));
+  const result = {};
+
+  settled.forEach((entry, idx) => {
+    const ticker = symbols[idx];
+    if (entry.status !== "fulfilled") return;
+    const { closes, highs, lows, volumes } = entry.value;
+    const close = closes[closes.length - 1];
+    const ma20 = sma(closes, 20);
+    const ma60 = sma(closes, 60);
+    const rsi14 = rsi(closes, 14);
+    const stoch = stochastic(highs, lows, closes, 14, 3);
+    const avgVol20 = sma(volumes, 20);
+    const volNow = volumes[volumes.length - 1];
+    const volumeRatio20 = Number.isFinite(avgVol20) && avgVol20 > 0 ? volNow / avgVol20 : Number.NaN;
+    const timing = classifyTiming({ close, ma20, ma60, rsi14, stochK: stoch.k, stochD: stoch.d, volumeRatio20 });
+
+    result[ticker] = {
+      ...timing,
+      metrics: {
+        close,
+        ma20,
+        ma60,
+        rsi14,
+        stochK: stoch.k,
+        stochD: stoch.d,
+        volumeRatio20
+      }
+    };
+  });
+
+  sendJson(res, 200, {
+    updatedAt: new Date().toISOString(),
+    source: "yahoo-chart-6mo",
+    timingBySymbol: result
+  });
+}
+
 function safeResolvePath(urlPathname) {
   const cleanPath = decodeURIComponent(urlPathname.split("?")[0]).replace(/^\/+/, "");
   const requested = cleanPath === "" ? "index.html" : cleanPath;
@@ -211,6 +362,10 @@ const server = http.createServer(async (req, res) => {
   }
   if (req.method === "GET" && urlObj.pathname === "/api/ticker") {
     await handleApiTicker(req, res);
+    return;
+  }
+  if (req.method === "GET" && urlObj.pathname === "/api/timing") {
+    await handleApiTiming(req, res, urlObj);
     return;
   }
   await serveStatic(req, res, urlObj);
