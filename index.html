@@ -32,6 +32,7 @@
     </script>
   </head>
   <body>
+    <a class="skip-link" href="#main-content">본문 바로가기</a>
     <div class="bg-layer" aria-hidden="true"></div>
     <div class="bg-glow bg-glow--gold" aria-hidden="true"></div>
     <div class="bg-glow bg-glow--blue" aria-hidden="true"></div>
@@ -43,12 +44,13 @@
           <a href="#panic-monitor">패닉 지수</a>
           <a href="#insights">인사이트</a>
           <a href="#youtube-channels">유튜브</a>
-          <a href="#contact">연락</a>
+          <a href="#favorite-books">My Favorite Books</a>
+          <a href="#contact">Message</a>
         </nav>
       </div>
     </header>
 
-    <main>
+    <main id="main-content">
       <section class="hero">
         <div class="container hero-grid">
           <div class="hero-copy">
@@ -79,7 +81,7 @@
               </div>
               <div id="youtube-channels" class="hero-youtube" aria-label="유튜브 채널">
                 <p class="hero-youtube__title">HIT THE CHANNEL</p>
-                <div class="hero-youtube__list">
+                <div class="hero-youtube__list" id="hero-youtube-list">
                   <article class="hero-youtube__item">
                     <a class="hero-youtube__media hero-youtube__media--link" href="https://www.youtube.com/watch?v=3-bVy6O_6hU" target="_blank" rel="noopener noreferrer" aria-label="경제 읽어주는 남자 대표 영상 보기">
                       <img class="hero-youtube__thumb" src="https://i.ytimg.com/vi/3-bVy6O_6hU/hqdefault.jpg" alt="경제 읽어주는 남자 대표 영상 썸네일" loading="lazy" />
@@ -88,7 +90,7 @@
                     <a class="hero-youtube__name" href="https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg" target="_blank" rel="noopener noreferrer" aria-label="경제 읽어주는 남자 채널 보기">경제 읽어주는 남자</a>
                     <a class="hero-youtube__latest" href="https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos" target="_blank" rel="noopener noreferrer" aria-label="경제 읽어주는 남자 최신 영상 보기">최신 ↗</a>
                   </article>
-                  <article class="hero-youtube__item">
+                  <article class="hero-youtube__item hero-youtube__item--extra">
                     <a class="hero-youtube__media hero-youtube__media--link" href="https://www.youtube.com/watch?v=aUi9yXxhg6s" target="_blank" rel="noopener noreferrer" aria-label="교양이를 부탁해 대표 영상 보기">
                       <img class="hero-youtube__thumb" src="https://i.ytimg.com/vi/aUi9yXxhg6s/hqdefault.jpg" alt="교양이를 부탁해 대표 영상 썸네일" loading="lazy" />
                       <span class="hero-youtube__play" aria-hidden="true">▶</span>
@@ -96,7 +98,7 @@
                     <a class="hero-youtube__name" href="https://www.youtube.com/@sbs_explained" target="_blank" rel="noopener noreferrer" aria-label="교양이를 부탁해 채널 보기">교양이를 부탁해</a>
                     <a class="hero-youtube__latest" href="https://www.youtube.com/@sbs_explained/videos" target="_blank" rel="noopener noreferrer" aria-label="교양이를 부탁해 최신 영상 보기">최신 ↗</a>
                   </article>
-                  <article class="hero-youtube__item">
+                  <article class="hero-youtube__item hero-youtube__item--extra">
                     <a class="hero-youtube__media hero-youtube__media--link" href="https://www.youtube.com/watch?v=s-iNcadU6Ig" target="_blank" rel="noopener noreferrer" aria-label="한경 글로벌 마켓 대표 영상 보기">
                       <img class="hero-youtube__thumb" src="https://i.ytimg.com/vi/s-iNcadU6Ig/hqdefault.jpg" alt="한경 글로벌 마켓 대표 영상 썸네일" loading="lazy" />
                       <span class="hero-youtube__play" aria-hidden="true">▶</span>
@@ -104,7 +106,7 @@
                     <a class="hero-youtube__name" href="https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA" target="_blank" rel="noopener noreferrer" aria-label="한경 글로벌 마켓 채널 보기">한경 글로벌 마켓</a>
                     <a class="hero-youtube__latest" href="https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos" target="_blank" rel="noopener noreferrer" aria-label="한경 글로벌 마켓 최신 영상 보기">최신 ↗</a>
                   </article>
-                  <article class="hero-youtube__item">
+                  <article class="hero-youtube__item hero-youtube__item--extra">
                     <a class="hero-youtube__media hero-youtube__media--link" href="https://www.youtube.com/watch?v=Ubopw9o7WAI" target="_blank" rel="noopener noreferrer" aria-label="머니 인사이드 대표 영상 보기">
                       <img class="hero-youtube__thumb" src="https://i.ytimg.com/vi/Ubopw9o7WAI/hqdefault.jpg" alt="머니 인사이드 대표 영상 썸네일" loading="lazy" />
                       <span class="hero-youtube__play" aria-hidden="true">▶</span>
@@ -129,6 +131,9 @@
                     <a class="hero-youtube__latest" href="https://www.youtube.com/@%EA%B0%84%EB%8B%A8%EA%B2%BD%EC%A0%9C%ED%95%9C%EC%8A%A4%ED%91%BC/videos" target="_blank" rel="noopener noreferrer" aria-label="간단경제한스푼 최신 영상 보기">최신 ↗</a>
                   </article>
                 </div>
+                <button type="button" class="hero-youtube__toggle" id="hero-youtube-toggle" aria-expanded="false">
+                  더보기
+                </button>
               </div>
             </div>
           </aside>
@@ -175,14 +180,27 @@
               장기 위기 신호 · 계산 중...
             </p>
           </div>
+          <section class="panic-multi-signal" id="panic-multi-signal" aria-label="단기·중기·장기 대응 시그널">
+            <article class="panic-signal-card panic-signal-card--short" id="panic-signal-short">
+              <h3>단기 시그널</h3>
+              <p class="panic-signal-card__meta">계산 중...</p>
+            </article>
+            <article class="panic-signal-card panic-signal-card--mid" id="panic-signal-mid">
+              <h3>중기 시그널</h3>
+              <p class="panic-signal-card__meta">계산 중...</p>
+            </article>
+            <article class="panic-signal-card panic-signal-card--long" id="panic-signal-long">
+              <h3>장기 시그널</h3>
+              <p class="panic-signal-card__meta">계산 중...</p>
+            </article>
+          </section>
         </div>
       </section>
 
       <section id="insights" class="section section--dark">
         <div class="container">
           <h2 class="section-title section-title--on-dark">최근 인사이트</h2>
-          <p class="section-intro section-intro--on-dark">
-                     </p>
+          <p class="section-intro section-intro--on-dark"></p>
           <div class="insight-cards" id="insight-cards">
             <article class="insight-card" data-note-id="1" tabindex="0">
               <div class="insight-card__head">
@@ -307,11 +325,83 @@
         </div>
       </section>
 
+      <section id="favorite-books" class="section section--dark">
+        <div class="container">
+          <h2 class="section-title section-title--on-dark">My Favorite Books</h2>
+          <p class="section-intro section-intro--on-dark">
+            투자 관점에 영향을 준 책 제목과 저자를 자유롭게 기록해 보세요.
+          </p>
+          <div class="favorite-books" id="favorite-books-list">
+            <label class="favorite-books__row">
+              <span class="favorite-books__idx">01</span>
+              <input type="text" id="favorite-book-1" class="favorite-books__input" placeholder="책 제목을 입력하세요" />
+              <input type="text" id="favorite-book-author-1" class="favorite-books__input favorite-books__input--author" placeholder="저자" />
+            </label>
+            <label class="favorite-books__row">
+              <span class="favorite-books__idx">02</span>
+              <input type="text" id="favorite-book-2" class="favorite-books__input" placeholder="책 제목을 입력하세요" />
+              <input type="text" id="favorite-book-author-2" class="favorite-books__input favorite-books__input--author" placeholder="저자" />
+            </label>
+            <label class="favorite-books__row">
+              <span class="favorite-books__idx">03</span>
+              <input type="text" id="favorite-book-3" class="favorite-books__input" placeholder="책 제목을 입력하세요" />
+              <input type="text" id="favorite-book-author-3" class="favorite-books__input favorite-books__input--author" placeholder="저자" />
+            </label>
+            <label class="favorite-books__row">
+              <span class="favorite-books__idx">04</span>
+              <input type="text" id="favorite-book-4" class="favorite-books__input" placeholder="책 제목을 입력하세요" />
+              <input type="text" id="favorite-book-author-4" class="favorite-books__input favorite-books__input--author" placeholder="저자" />
+            </label>
+            <label class="favorite-books__row">
+              <span class="favorite-books__idx">05</span>
+              <input type="text" id="favorite-book-5" class="favorite-books__input" placeholder="책 제목을 입력하세요" />
+              <input type="text" id="favorite-book-author-5" class="favorite-books__input favorite-books__input--author" placeholder="저자" />
+            </label>
+            <label class="favorite-books__row">
+              <span class="favorite-books__idx">06</span>
+              <input type="text" id="favorite-book-6" class="favorite-books__input" placeholder="책 제목을 입력하세요" />
+              <input type="text" id="favorite-book-author-6" class="favorite-books__input favorite-books__input--author" placeholder="저자" />
+            </label>
+            <label class="favorite-books__row">
+              <span class="favorite-books__idx">07</span>
+              <input type="text" id="favorite-book-7" class="favorite-books__input" placeholder="책 제목을 입력하세요" />
+              <input type="text" id="favorite-book-author-7" class="favorite-books__input favorite-books__input--author" placeholder="저자" />
+            </label>
+            <label class="favorite-books__row">
+              <span class="favorite-books__idx">08</span>
+              <input type="text" id="favorite-book-8" class="favorite-books__input" placeholder="책 제목을 입력하세요" />
+              <input type="text" id="favorite-book-author-8" class="favorite-books__input favorite-books__input--author" placeholder="저자" />
+            </label>
+            <label class="favorite-books__row">
+              <span class="favorite-books__idx">09</span>
+              <input type="text" id="favorite-book-9" class="favorite-books__input" placeholder="책 제목을 입력하세요" />
+              <input type="text" id="favorite-book-author-9" class="favorite-books__input favorite-books__input--author" placeholder="저자" />
+            </label>
+            <label class="favorite-books__row">
+              <span class="favorite-books__idx">10</span>
+              <input type="text" id="favorite-book-10" class="favorite-books__input" placeholder="책 제목을 입력하세요" />
+              <input type="text" id="favorite-book-author-10" class="favorite-books__input favorite-books__input--author" placeholder="저자" />
+            </label>
+            <label class="favorite-books__row">
+              <span class="favorite-books__idx">11</span>
+              <input type="text" id="favorite-book-11" class="favorite-books__input" placeholder="책 제목을 입력하세요" />
+              <input type="text" id="favorite-book-author-11" class="favorite-books__input favorite-books__input--author" placeholder="저자" />
+            </label>
+            <label class="favorite-books__row">
+              <span class="favorite-books__idx">12</span>
+              <input type="text" id="favorite-book-12" class="favorite-books__input" placeholder="책 제목을 입력하세요" />
+              <input type="text" id="favorite-book-author-12" class="favorite-books__input favorite-books__input--author" placeholder="저자" />
+            </label>
+          </div>
+          <p class="favorite-books__saved" id="favorite-books-saved">저장 상태: 아직 없음</p>
+        </div>
+      </section>
+
       <section id="contact" class="section section--tint">
         <div class="container contact-block">
-          <h2 class="section-title">연락</h2>
+          <h2 class="section-title">Message</h2>
           <p class="contact-text">
-            협업·질문은 아래 이메일로 연락 주시면 됩니다.
+            협업·질문은 아래 이메일로 메시지 주시면 됩니다.
           </p>
           <p class="contact-email">
             <a href="mailto:huskeyland22@gmail.com">huskeyland22@gmail.com</a>
@@ -322,9 +412,16 @@
 
     <footer class="site-footer">
       <div class="container footer-inner">
-        <p class="footer-brand">Y'ds의 투자 인사이트</p>
-        <p class="footer-note">
-          본 사이트의 내용은 투자 권유가 아니며, 개인적인 학습과 기록 목적입니다.
+        <div class="footer-copy">
+          <p class="footer-brand">Y'ds의 투자 인사이트</p>
+          <p class="footer-note">
+            본 사이트의 내용은 투자 권유가 아니며, 개인적인 학습과 기록 목적입니다.
+          </p>
+        </div>
+        <p class="footer-visit-box" aria-label="방문자 카운터">
+          <span class="footer-visit-box__label">VISITS</span>
+          <span class="footer-visit-box__scope">GLOBAL</span>
+          <span class="footer-visit-box__value" id="visit-count">--</span>
         </p>
       </div>
     </footer>
@@ -337,6 +434,43 @@
         var tickerTrackEl = document.getElementById("market-ticker-track");
         var panicBodyEl = document.getElementById("panic-table-body");
         var panicUpdatedAtEl = document.getElementById("panic-updated-at");
+        var visitCountEl = document.getElementById("visit-count");
+
+        if (visitCountEl) {
+          // Global counter (shared across all visitors) via CountAPI.
+          var counterNamespace = "yds-investment-insights";
+          var counterKey = "home-visits";
+          var counterUrl =
+            "https://api.countapi.xyz/hit/" +
+            encodeURIComponent(counterNamespace) +
+            "/" +
+            encodeURIComponent(counterKey);
+
+          fetch(counterUrl)
+            .then(function (res) {
+              if (!res.ok) throw new Error("visit counter fetch failed");
+              return res.json();
+            })
+            .then(function (data) {
+              var value = data && typeof data.value === "number" ? data.value : null;
+              if (value === null) throw new Error("invalid visit counter response");
+              visitCountEl.textContent = value.toLocaleString("ko-KR");
+            })
+            .catch(function () {
+              // Fallback: local counter if network/external API is unavailable.
+              try {
+                var VISIT_KEY = "site:local-visit-count:v1";
+                var rawVisits = localStorage.getItem(VISIT_KEY);
+                var visits = parseInt(rawVisits || "0", 10);
+                if (!Number.isFinite(visits)) visits = 0;
+                visits += 1;
+                localStorage.setItem(VISIT_KEY, String(visits));
+                visitCountEl.textContent = visits.toLocaleString("ko-KR");
+              } catch (e) {
+                visitCountEl.textContent = "--";
+              }
+            });
+        }
 
         function escapeHtml(text) {
           return String(text)
@@ -616,6 +750,84 @@
             return "7D → 0";
           }
 
+          function signalToneByScore(score) {
+            if (score >= 2) return "buy";
+            if (score <= -2) return "sell";
+            return "neutral";
+          }
+
+          function signalTextByTone(tone) {
+            if (tone === "buy") return "강력 매수";
+            if (tone === "sell") return "과열/매도";
+            return "관망/중립";
+          }
+
+          function itemById(items) {
+            var map = {};
+            (items || []).forEach(function (item) {
+              map[item.id] = item;
+            });
+            return map;
+          }
+
+          function valueOrDash(num, suffix) {
+            if (!Number.isFinite(num)) return "-";
+            return num + (suffix || "");
+          }
+
+          function makeSignalBadge(label, value, tone) {
+            return (
+              '<span class="panic-signal-badge panic-signal-badge--' +
+              tone +
+              '">' +
+              escapeHtml(label + " " + value) +
+              "</span>"
+            );
+          }
+
+          function renderSignalCard(el, title, score, badgesHtml, strategy) {
+            if (!el) return;
+            var tone = signalToneByScore(score);
+            el.className =
+              "panic-signal-card panic-signal-card--" +
+              (tone === "buy" ? "buy" : tone === "sell" ? "sell" : "neutral");
+            el.innerHTML =
+              "<h3>" +
+              title +
+              "</h3>" +
+              '<p class="panic-signal-card__meta">Score ' +
+              (score > 0 ? "+" + score : String(score)) +
+              ' · <strong>' +
+              signalTextByTone(tone) +
+              "</strong></p>" +
+              '<div class="panic-signal-card__badges">' +
+              badgesHtml +
+              "</div>" +
+              '<p class="panic-signal-card__strategy">' +
+              escapeHtml(strategy) +
+              "</p>";
+          }
+
+          var thresholdDefaults = {
+            shortVixBuy: 25,
+            shortVixSell: 15,
+            shortVxnBuy: 30,
+            shortVxnSell: 18,
+            shortPcBuy: 1.0,
+            shortPcSell: 0.5,
+            midHyBuy: 4.0,
+            midHySell: 3.0,
+            midMoveBuy: 110,
+            midMoveSell: 80,
+            midFngBuy: 30,
+            midFngSell: 75,
+            longRiskBuy: 80,
+            longRiskSell: 35,
+            longOppBuy: 70,
+            longOppSell: 25
+          };
+
+
           var priorityOrder = ["vix", "fng", "hy", "move"]; // 2-4-1-3 우선순위 (이전 추천 기준)
           var priorityMap = priorityOrder.reduce(function (acc, id, idx) {
             acc[id] = idx;
@@ -665,9 +877,13 @@
           var riskLineEl = document.getElementById("panic-risk-line");
           var shortRiskLineEl = document.getElementById("panic-short-risk-line");
           var longRiskLineEl = document.getElementById("panic-long-risk-line");
+          var shortSignalCardEl = document.getElementById("panic-signal-short");
+          var midSignalCardEl = document.getElementById("panic-signal-mid");
+          var longSignalCardEl = document.getElementById("panic-signal-long");
           var score = calcWeightedRisk(data.items || []);
           var shortScore = calcShortTermRisk(data.items || []);
           var longSignal = calcLongTermCrisisSignal(data.items || []);
+          var byId = itemById(data.items || []);
 
           var historyStore = loadRiskHistory();
           var dKey = todayKey();
@@ -726,6 +942,93 @@
               trendText(historyStore.long) +
               actionText;
           }
+
+          // 단기/중기/장기 대응 시그널 카드 (임계값 조절 가능)
+          var vix = parseValueNumber(byId.vix && byId.vix.value);
+          var vxn = parseValueNumber(byId.vxn && byId.vxn.value);
+          var putcall = parseValueNumber(byId.putcall && byId.putcall.value);
+          var hy = parseValueNumber(byId.hy && byId.hy.value);
+          var move = parseValueNumber(byId.move && byId.move.value);
+          var fng = parseValueNumber(byId.fng && byId.fng.value);
+
+          function renderTrafficSignals(cfg) {
+            var shortSignalScore = 0;
+            if (vix !== null && vix >= cfg.shortVixBuy) shortSignalScore += 1;
+            if (vxn !== null && vxn >= cfg.shortVxnBuy) shortSignalScore += 1;
+            if (putcall !== null && putcall >= cfg.shortPcBuy) shortSignalScore += 1;
+            if (vix !== null && vix <= cfg.shortVixSell) shortSignalScore -= 1;
+            if (vxn !== null && vxn <= cfg.shortVxnSell) shortSignalScore -= 1;
+            if (putcall !== null && putcall <= cfg.shortPcSell) shortSignalScore -= 1;
+
+            var shortBadges =
+              makeSignalBadge("VIX", valueOrDash(vix), vix !== null && vix >= cfg.shortVixBuy ? "buy" : vix !== null && vix <= cfg.shortVixSell ? "sell" : "neutral") +
+              makeSignalBadge("VXN", valueOrDash(vxn), vxn !== null && vxn >= cfg.shortVxnBuy ? "buy" : vxn !== null && vxn <= cfg.shortVxnSell ? "sell" : "neutral") +
+              makeSignalBadge(
+                "Put/Call",
+                valueOrDash(putcall),
+                putcall !== null && putcall >= cfg.shortPcBuy ? "buy" : putcall !== null && putcall <= cfg.shortPcSell ? "sell" : "neutral"
+              );
+
+            renderSignalCard(
+              shortSignalCardEl,
+              "단기 시그널 (VIX·VXN·Put/Call)",
+              shortSignalScore,
+              shortBadges,
+              shortSignalScore >= 2 ? "분할 매수 시작" : shortSignalScore <= -2 ? "수익 실현·현금 비중 확대" : "보유 비중 유지·추세 관망"
+            );
+
+            var midSignalScore = 0;
+            if (vix !== null && vix >= cfg.shortVixBuy) midSignalScore += 1;
+            if (hy !== null && hy >= cfg.midHyBuy) midSignalScore += 1;
+            if (move !== null && move >= cfg.midMoveBuy) midSignalScore += 1;
+            if (fng !== null && fng <= cfg.midFngBuy) midSignalScore += 1;
+            if (vix !== null && vix <= cfg.shortVixSell) midSignalScore -= 1;
+            if (hy !== null && hy <= cfg.midHySell) midSignalScore -= 1;
+            if (move !== null && move <= cfg.midMoveSell) midSignalScore -= 1;
+            if (fng !== null && fng >= cfg.midFngSell) midSignalScore -= 1;
+
+            var midBadges =
+              makeSignalBadge("VIX", valueOrDash(vix), vix !== null && vix >= cfg.shortVixBuy ? "buy" : vix !== null && vix <= cfg.shortVixSell ? "sell" : "neutral") +
+              makeSignalBadge("HY", valueOrDash(hy, "%"), hy !== null && hy >= cfg.midHyBuy ? "buy" : hy !== null && hy <= cfg.midHySell ? "sell" : "neutral") +
+              makeSignalBadge("MOVE", valueOrDash(move), move !== null && move >= cfg.midMoveBuy ? "buy" : move !== null && move <= cfg.midMoveSell ? "sell" : "neutral") +
+              makeSignalBadge("F&G", valueOrDash(fng), fng !== null && fng <= cfg.midFngBuy ? "buy" : fng !== null && fng >= cfg.midFngSell ? "sell" : "neutral");
+
+            renderSignalCard(
+              midSignalCardEl,
+              "중기 시그널 (VIX·HY·MOVE·F&G)",
+              midSignalScore,
+              midBadges,
+              midSignalScore >= 2 ? "핵심 구간 분할 매수" : midSignalScore <= -2 ? "익절/리밸런싱 강화" : "중립 유지·리스크 점검"
+            );
+
+            var longSignalScore = 0;
+            if (longSignal.risk >= cfg.longRiskBuy) longSignalScore += 1;
+            if (longSignal.opportunity >= cfg.longOppBuy) longSignalScore += 1;
+            if (longSignal.risk <= cfg.longRiskSell) longSignalScore -= 1;
+            if (longSignal.opportunity <= cfg.longOppSell) longSignalScore -= 1;
+
+            var longBadges =
+              makeSignalBadge(
+                "Long Risk",
+                valueOrDash(longSignal.risk) + "/100",
+                longSignal.risk >= cfg.longRiskBuy ? "buy" : longSignal.risk <= cfg.longRiskSell ? "sell" : "neutral"
+              ) +
+              makeSignalBadge(
+                "Opportunity",
+                valueOrDash(longSignal.opportunity) + "/100",
+                longSignal.opportunity >= cfg.longOppBuy ? "buy" : longSignal.opportunity <= cfg.longOppSell ? "sell" : "neutral"
+              );
+
+            renderSignalCard(
+              longSignalCardEl,
+              "장기 시그널 (위기·기회 온도)",
+              longSignalScore,
+              longBadges,
+              longSignalScore >= 2 ? "장기 바닥권 분할 매수 관찰" : longSignalScore <= -2 ? "과열 구간 비중 축소" : "장기 추세 중립 유지"
+            );
+          }
+
+          renderTrafficSignals(thresholdDefaults);
         }
 
         if (panicBodyEl && panicUpdatedAtEl) {
@@ -771,9 +1074,39 @@
         }
 
         var quoteEl = document.getElementById("daily-quote");
+        var youtubeListEl = document.getElementById("hero-youtube-list");
+        var youtubeToggleEl = document.getElementById("hero-youtube-toggle");
+        var YOUTUBE_TOGGLE_KEY = "hero:youtube-collapsed:v1";
+
+        if (youtubeListEl && youtubeToggleEl) {
+          var extraItems = youtubeListEl.querySelectorAll(".hero-youtube__item--extra");
+          if (extraItems.length) {
+            var collapsed = true;
+            try {
+              var stored = localStorage.getItem(YOUTUBE_TOGGLE_KEY);
+              if (stored === "false") collapsed = false;
+            } catch (e) {}
+
+            youtubeListEl.classList.toggle("is-collapsed", collapsed);
+            youtubeToggleEl.setAttribute("aria-expanded", collapsed ? "false" : "true");
+            youtubeToggleEl.textContent = collapsed ? "더보기" : "접기";
+
+            youtubeToggleEl.addEventListener("click", function () {
+              var isCollapsed = youtubeListEl.classList.toggle("is-collapsed");
+              youtubeToggleEl.setAttribute("aria-expanded", isCollapsed ? "false" : "true");
+              youtubeToggleEl.textContent = isCollapsed ? "더보기" : "접기";
+              try {
+                localStorage.setItem(YOUTUBE_TOGGLE_KEY, String(isCollapsed));
+              } catch (e) {}
+            });
+          } else {
+            youtubeToggleEl.style.display = "none";
+          }
+        }
+
         if (!quoteEl) return;
 
-        // 2일마다 한 문구씩 순환
+        // 1일마다 한 문구씩 순환
         var rotationDays = 3;
         var anchorDate = new Date("2026-01-01T00:00:00");
         var now = new Date();
@@ -786,10 +1119,79 @@
           "“대부분의 것은 결국 사이클을 따른다.”",
           "“좋은 투자는 좋은 자산을 사는 것이 아니라, 좋은 가격에 사는 것이다.”",
           "“시대를 너무 앞서가면, 틀린 것과 구별되지 않는다.”",
-          "“가장 큰 투자 실수는 정보나 분석보다 심리에서 비롯된다.”"
+          "“손실을 줄이는 인내가 장기 수익을 만든다.”",
+          "“좋은 조건에서만 사고, 기회는 조급히 쫓지 말고, 손실을 피하는 원칙을 지켜라.”"
         ];
 
         quoteEl.textContent = howardMarksQuotes[slot % howardMarksQuotes.length];
+
+        (function initFavoriteBooks() {
+          var BOOK_KEY = "favorite:books:v1";
+          var ids = [
+            "favorite-book-1",
+            "favorite-book-2",
+            "favorite-book-3",
+            "favorite-book-4",
+            "favorite-book-5",
+            "favorite-book-6",
+            "favorite-book-author-1",
+            "favorite-book-author-2",
+            "favorite-book-author-3",
+            "favorite-book-author-4",
+            "favorite-book-author-5",
+            "favorite-book-author-6",
+            "favorite-book-7",
+            "favorite-book-8",
+            "favorite-book-9",
+            "favorite-book-10",
+            "favorite-book-11",
+            "favorite-book-12",
+            "favorite-book-author-7",
+            "favorite-book-author-8",
+            "favorite-book-author-9",
+            "favorite-book-author-10",
+            "favorite-book-author-11",
+            "favorite-book-author-12"
+          ];
+          var savedEl = document.getElementById("favorite-books-saved");
+
+          function stamp() {
+            var now = new Date();
+            var mm = String(now.getMonth() + 1).padStart(2, "0");
+            var dd = String(now.getDate()).padStart(2, "0");
+            var hh = String(now.getHours()).padStart(2, "0");
+            var mi = String(now.getMinutes()).padStart(2, "0");
+            return now.getFullYear() + "." + mm + "." + dd + " " + hh + ":" + mi;
+          }
+
+          var store = { lastSaved: "", books: {} };
+          try {
+            var raw = localStorage.getItem(BOOK_KEY);
+            if (raw) {
+              var parsed = JSON.parse(raw);
+              if (parsed && typeof parsed === "object") store = parsed;
+            }
+          } catch (e) {}
+
+          function saveNow() {
+            store.lastSaved = stamp();
+            localStorage.setItem(BOOK_KEY, JSON.stringify(store));
+            if (savedEl) savedEl.textContent = "저장 상태: " + store.lastSaved;
+          }
+
+          ids.forEach(function (id) {
+            var el = document.getElementById(id);
+            if (!el) return;
+            if (store.books && typeof store.books[id] === "string") el.value = store.books[id];
+            el.addEventListener("input", function () {
+              store.books = store.books || {};
+              store.books[id] = el.value;
+              saveNow();
+            });
+          });
+
+          if (savedEl && store.lastSaved) savedEl.textContent = "저장 상태: " + store.lastSaved;
+        })();
 
         (function initInsightNotes() {
           var NOTE_KEY = "insight:notes:v1";
