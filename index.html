@@ -617,6 +617,17 @@
           latestPanicData = data || { items: [] };
           var WEIGHTS = { hy: 35, vix: 30, move: 20, fng: 15 };
           var RISK_HISTORY_KEY = "panic:risk-history:v1";
+          var PANIC_INDEX_HINTS = {
+            vix: "S&P500 옵션 변동성 기대치. 높을수록 공포 심리 강화.",
+            fng: "CNN 공포·탐욕 지수. 낮을수록 공포, 높을수록 탐욕.",
+            bofa: "BofA Bull & Bear 지표. 낮을수록 역발상 관점의 공포 구간.",
+            skew: "S&P500 꼬리위험(급락 헤지 수요) 지표. 높을수록 하방 경계.",
+            putcall: "풋/콜 거래비율. 1 이상이면 방어 심리(풋 비중) 강화.",
+            hy: "미국 하이일드 스프레드. 높을수록 신용 리스크 확대.",
+            move: "미국채 변동성 지수. 높을수록 금리시장 불안.",
+            gsbb: "GS 버블 지표(고평가/과열 추정). 높을수록 과열 경계.",
+            vxn: "나스닥100 변동성 기대치. 기술주 리스크 온도."
+          };
 
           function toneRiskScore(tone) {
             if (tone === "alert") return 100;
@@ -922,10 +933,25 @@
               var labelClass = isPriority ? "panic-label panic-label--priority" : "panic-label";
               var labelCellClass = isPriority ? "panic-label-cell panic-label-cell--priority" : "panic-label-cell";
               var labelStyle = isPriority ? ' style="color:#7FBF9F;"' : "";
+              var labelHint = escapeHtml(PANIC_INDEX_HINTS[item.id] || "시장 심리·변동성·신용위험을 보여주는 보조 지표");
 
               return (
                 "<tr>" +
-                '<td class="' + labelCellClass + '"><span class="' + labelClass + '"' + labelStyle + ">" + label + "</span></td>" +
+                '<td class="' +
+                labelCellClass +
+                '"><span class="' +
+                labelClass +
+                ' panic-label-hint" title="' +
+                labelHint +
+                '" aria-label="' +
+                label +
+                " 설명: " +
+                labelHint +
+                '"' +
+                labelStyle +
+                ">" +
+                label +
+                "</span></td>" +
                 "<td>" + value + "</td>" +
                 '<td class="' + deltaClass + '">' + delta + "</td>" +
                 '<td><span class="' + toneClass + '">' + status + "</span></td>" +

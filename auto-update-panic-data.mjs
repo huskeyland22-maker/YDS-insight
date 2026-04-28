@@ -110,22 +110,33 @@ async function fetchJson(url) {
   return JSON.parse(text);
 }
 
-async function fetchYahooLatestTwo(symbol) {
-  const url = `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(symbol)}?interval=1d&range=7d`;
+async function fetchYahooLatestTwo(symbol, options = {}) {
+  const range = options.range || "1mo";
+  const url = `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(symbol)}?interval=1d&range=${encodeURIComponent(range)}`;
   const json = await fetchJson(url);
   const result = json?.chart?.result?.[0];
-  const meta = result?.meta || {};
-  const live = meta?.regularMarketPrice;
-  const prevClose = meta?.previousClose ?? meta?.chartPreviousClose;
+  const closes = result?.indicators?.quote?.[0]?.close;
+  const timestamps = result?.timestamp;
 
-  if (Number.isFinite(live) && Number.isFinite(prevClose)) {
-    return { latest: live, previous: prevClose };
+  if (!Array.isArray(closes) || !Array.isArray(timestamps) || closes.length !== timestamps.length) {
+    throw new Error(`yahoo rows invalid: ${symbol}`);
   }
 
-  const closes = result?.indicators?.quote?.[0]?.close;
-  const values = Array.isArray(closes) ? closes.filter((v) => Number.isFinite(v)) : [];
-  if (values.length < 2) throw new Error(`yahoo rows insufficient: ${symbol}`);
-  return { latest: values[values.length - 1], previous: values[values.length - 2] };
+  const pairs = [];
+  for (let i = 0; i < closes.length; i += 1) {
+    const close = closes[i];
+    const ts = timestamps[i];
+    if (!Number.isFinite(close) || !Number.isFinite(ts)) continue;
+    pairs.push({ close, ts });
+  }
+  if (pairs.length < 2) throw new Error(`yahoo rows insufficient: ${symbol}`);
+
+  return {
+    latest: pairs[pairs.length - 1].close,
+    previous: pairs[pairs.length - 2].close,
+    latestDate: pairs[pairs.length - 1].ts,
+    previousDate: pairs[pairs.length - 2].ts
+  };
 }
 
 async function fetchFredLatestTwo(seriesId) {
@@ -187,6 +198,11 @@ function formatTickerDelta(latest, previous, options = {}) {
   const sign = pct > 0 ? "+" : "";
   const suffix = isPercentPoint ? "%p" : "%";
   return { text: `${sign}${pct.toFixed(digits)}${suffix}`, direction: pct > 0 ? "up" : "down" };
+}
+
+function deltaPercent(latest, previous) {
+  if (!Number.isFinite(latest) || !Number.isFinite(previous) || previous === 0) return null;
+  return ((latest - previous) / previous) * 100;
 }
 
 async function main() {
@@ -255,7 +271,19 @@ async function main() {
   const tickerItems = [];
   for (const source of tickerSources) {
     try {
-      const { latest, previous } = await fetchYahooLatestTwo(source.symbol);
+      let { latest, previous } = await fetchYahooLatestTwo(source.symbol);
+      let pct = deltaPercent(latest, previous);
+
+      // 지수형 자산은 시점 불일치로 튀는 값이 간헐적으로 나와, 비정상 수치면 넓은 range로 재조회
+      const needsSanityCheck = source.label === "S&P 500" || source.label === "NASDAQ 100";
+      const isOutlier = needsSanityCheck && pct !== null && Math.abs(pct) > 8;
+      if (isOutlier) {
+        const retried = await fetchYahooLatestTwo(source.symbol, { range: "6mo" });
+        latest = retried.latest;
+        previous = retried.previous;
+        pct = deltaPercent(latest, previous);
+      }
+
       const normalizedLatest = source.valueDivisor ? latest / source.valueDivisor : latest;
       const normalizedPrevious = source.valueDivisor ? previous / source.valueDivisor : previous;
       const delta = formatTickerDelta(normalizedLatest, normalizedPrevious, {
@@ -268,7 +296,7 @@ async function main() {
         delta: delta.text,
         direction: delta.direction
       });
-      logs.push(`[OK] ticker ${source.label} updated`);
+      logs.push(`[OK] ticker ${source.label} updated (${pct !== null ? pct.toFixed(2) + "%" : "-"})`);
     } catch (err) {
       logs.push(`[SKIP] ticker ${source.label} ${err.message}`);
     }

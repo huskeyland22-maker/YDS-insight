@@ -1206,6 +1206,12 @@ a.tag.tag--outline:hover {
   font-weight: 500;
 }
 
+.panic-label-hint {
+  text-decoration: underline dotted rgba(197, 205, 217, 0.75);
+  text-underline-offset: 2px;
+  cursor: help;
+}
+
 .panic-label--priority {
   color: #7FBF9F !important;
 }
