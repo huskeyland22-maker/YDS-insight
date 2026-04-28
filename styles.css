@@ -1837,6 +1837,46 @@ a.tag.tag--outline:hover {
   min-height: 560px;
 }
 
+#tradingview-heatmap.is-hidden {
+  display: none;
+}
+
+.overseas-heatmap-fallback {
+  min-height: 220px;
+  display: grid;
+  place-content: center;
+  gap: 0.55rem;
+  text-align: center;
+  padding: 1rem 0.8rem;
+  color: var(--mist-dim);
+  font-size: 0.78rem;
+}
+
+.overseas-heatmap-fallback.is-hidden {
+  display: none;
+}
+
+.overseas-heatmap-fallback__links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.overseas-heatmap-fallback__links a {
+  text-decoration: none;
+  border: 1px solid rgba(198, 163, 90, 0.32);
+  background: rgba(198, 163, 90, 0.12);
+  color: var(--gold);
+  border-radius: 999px;
+  padding: 0.2rem 0.6rem;
+  font-size: 0.72rem;
+}
+
+.overseas-heatmap-fallback__links a:hover {
+  background: rgba(198, 163, 90, 0.2);
+}
+
 .overseas-heatmap-frame {
   width: 100%;
   min-height: 520px;
@@ -1848,6 +1888,11 @@ a.tag.tag--outline:hover {
   .overseas-heatmap-frame-wrap .tradingview-widget-container,
   #tradingview-heatmap {
     min-height: 360px;
+  }
+
+  .overseas-heatmap-fallback {
+    min-height: 180px;
+    font-size: 0.74rem;
   }
 }
 
