@@ -3459,6 +3459,19 @@ input.hap-won-input:focus {
 
 /* Mobile optimization */
 @media (max-width: 768px) {
+  /* iOS 캐시/로컬상태 영향과 무관하게 해외 인사이트 블록은 항상 표시 */
+  #overseas-cockpit .overseas-detail-block {
+    display: block !important;
+  }
+
+  #overseas-cockpit .overseas-toggle-btn {
+    display: none !important;
+  }
+
+  #overseas-cockpit.overseas-cockpit--compact .overseas-detail-block {
+    display: block !important;
+  }
+
   .container {
     width: min(1080px, 100% - 1.5rem);
   }
