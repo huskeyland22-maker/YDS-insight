@@ -24,6 +24,7 @@
       }
     </style>
     <script src="site-version.js"></script>
+    <script src="sync-config.js"></script>
     <link rel="stylesheet" href="styles.css" />
     <script>
       (function () {
@@ -1134,6 +1135,7 @@
 
         (function initFavoriteBooks() {
           var BOOK_KEY = "favorite:books:v1";
+          var syncCfg = window.FAVORITE_BOOKS_SYNC || null;
           var ids = [
             "favorite-book-1",
             "favorite-book-2",
@@ -1180,10 +1182,71 @@
             }
           } catch (e) {}
 
-          function saveNow() {
+          function saveLocal() {
             store.lastSaved = stamp();
             localStorage.setItem(BOOK_KEY, JSON.stringify(store));
             if (savedEl) savedEl.textContent = "저장 상태: " + store.lastSaved;
+          }
+
+          function isCloudEnabled() {
+            return (
+              syncCfg &&
+              syncCfg.provider === "supabase" &&
+              syncCfg.url &&
+              syncCfg.anonKey &&
+              syncCfg.table &&
+              syncCfg.rowId
+            );
+          }
+
+          function supabaseHeaders() {
+            return {
+              "Content-Type": "application/json",
+              apikey: syncCfg.anonKey,
+              Authorization: "Bearer " + syncCfg.anonKey
+            };
+          }
+
+          function fetchCloudStore() {
+            if (!isCloudEnabled()) return Promise.reject(new Error("cloud sync disabled"));
+            var url =
+              syncCfg.url.replace(/\/+$/, "") +
+              "/rest/v1/" +
+              encodeURIComponent(syncCfg.table) +
+              "?id=eq." +
+              encodeURIComponent(syncCfg.rowId) +
+              "&select=last_saved,books";
+            return fetch(url, { headers: supabaseHeaders() }).then(function (res) {
+              if (!res.ok) throw new Error("cloud fetch failed");
+              return res.json();
+            });
+          }
+
+          function saveCloudStore() {
+            if (!isCloudEnabled()) return Promise.resolve();
+            var url =
+              syncCfg.url.replace(/\/+$/, "") +
+              "/rest/v1/" +
+              encodeURIComponent(syncCfg.table) +
+              "?id=eq." +
+              encodeURIComponent(syncCfg.rowId);
+            var payload = { id: syncCfg.rowId, last_saved: store.lastSaved || "", books: store.books || {} };
+            return fetch(url, {
+              method: "POST",
+              headers: Object.assign({ Prefer: "resolution=merge-duplicates" }, supabaseHeaders()),
+              body: JSON.stringify(payload)
+            }).then(function (res) {
+              if (!res.ok) throw new Error("cloud save failed");
+            });
+          }
+
+          var saveTimer = null;
+          function saveNow() {
+            saveLocal();
+            if (saveTimer) clearTimeout(saveTimer);
+            saveTimer = setTimeout(function () {
+              saveCloudStore().catch(function () {});
+            }, 350);
           }
 
           ids.forEach(function (id) {
@@ -1197,7 +1260,30 @@
             });
           });
 
-          if (savedEl && store.lastSaved) savedEl.textContent = "저장 상태: " + store.lastSaved;
+          function hydrateInputs() {
+            ids.forEach(function (id) {
+              var el = document.getElementById(id);
+              if (!el) return;
+              el.value = store.books && typeof store.books[id] === "string" ? store.books[id] : "";
+            });
+            if (savedEl && store.lastSaved) savedEl.textContent = "저장 상태: " + store.lastSaved;
+          }
+
+          fetchCloudStore()
+            .then(function (rows) {
+              var remote = Array.isArray(rows) ? rows[0] : null;
+              if (!remote || !remote.books || typeof remote.books !== "object") return;
+              var remoteStamp = String(remote.last_saved || "");
+              var localStamp = String(store.lastSaved || "");
+              if (remoteStamp && (!localStamp || remoteStamp > localStamp)) {
+                store = { lastSaved: remoteStamp, books: remote.books };
+                localStorage.setItem(BOOK_KEY, JSON.stringify(store));
+              }
+              hydrateInputs();
+            })
+            .catch(function () {
+              hydrateInputs();
+            });
         })();
 
         (function initInsightNotes() {
