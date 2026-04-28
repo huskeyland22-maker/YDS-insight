@@ -24,7 +24,6 @@
       }
     </style>
     <script src="site-version.js"></script>
-    <script src="sync-config.js"></script>
     <link rel="stylesheet" href="styles.css" />
     <script>
       (function () {
@@ -45,7 +44,6 @@
           <a href="#panic-monitor">패닉 지수</a>
           <a href="#insights">인사이트</a>
           <a href="#youtube-channels">유튜브</a>
-          <a href="#favorite-books">My Favorite Books</a>
           <a href="#contact">Message</a>
         </nav>
       </div>
@@ -323,78 +321,6 @@
               <span class="insight-arrow" aria-hidden="true">→</span>
             </a>
           </div>
-        </div>
-      </section>
-
-      <section id="favorite-books" class="section section--dark">
-        <div class="container">
-          <h2 class="section-title section-title--on-dark">My Favorite Books</h2>
-          <p class="section-intro section-intro--on-dark">
-            투자 관점에 영향을 준 책 제목과 저자를 자유롭게 기록해 보세요.
-          </p>
-          <div class="favorite-books" id="favorite-books-list">
-            <label class="favorite-books__row">
-              <span class="favorite-books__idx">01</span>
-              <input type="text" id="favorite-book-1" class="favorite-books__input" placeholder="책 제목을 입력하세요" />
-              <input type="text" id="favorite-book-author-1" class="favorite-books__input favorite-books__input--author" placeholder="저자" />
-            </label>
-            <label class="favorite-books__row">
-              <span class="favorite-books__idx">02</span>
-              <input type="text" id="favorite-book-2" class="favorite-books__input" placeholder="책 제목을 입력하세요" />
-              <input type="text" id="favorite-book-author-2" class="favorite-books__input favorite-books__input--author" placeholder="저자" />
-            </label>
-            <label class="favorite-books__row">
-              <span class="favorite-books__idx">03</span>
-              <input type="text" id="favorite-book-3" class="favorite-books__input" placeholder="책 제목을 입력하세요" />
-              <input type="text" id="favorite-book-author-3" class="favorite-books__input favorite-books__input--author" placeholder="저자" />
-            </label>
-            <label class="favorite-books__row">
-              <span class="favorite-books__idx">04</span>
-              <input type="text" id="favorite-book-4" class="favorite-books__input" placeholder="책 제목을 입력하세요" />
-              <input type="text" id="favorite-book-author-4" class="favorite-books__input favorite-books__input--author" placeholder="저자" />
-            </label>
-            <label class="favorite-books__row">
-              <span class="favorite-books__idx">05</span>
-              <input type="text" id="favorite-book-5" class="favorite-books__input" placeholder="책 제목을 입력하세요" />
-              <input type="text" id="favorite-book-author-5" class="favorite-books__input favorite-books__input--author" placeholder="저자" />
-            </label>
-            <label class="favorite-books__row">
-              <span class="favorite-books__idx">06</span>
-              <input type="text" id="favorite-book-6" class="favorite-books__input" placeholder="책 제목을 입력하세요" />
-              <input type="text" id="favorite-book-author-6" class="favorite-books__input favorite-books__input--author" placeholder="저자" />
-            </label>
-            <label class="favorite-books__row">
-              <span class="favorite-books__idx">07</span>
-              <input type="text" id="favorite-book-7" class="favorite-books__input" placeholder="책 제목을 입력하세요" />
-              <input type="text" id="favorite-book-author-7" class="favorite-books__input favorite-books__input--author" placeholder="저자" />
-            </label>
-            <label class="favorite-books__row">
-              <span class="favorite-books__idx">08</span>
-              <input type="text" id="favorite-book-8" class="favorite-books__input" placeholder="책 제목을 입력하세요" />
-              <input type="text" id="favorite-book-author-8" class="favorite-books__input favorite-books__input--author" placeholder="저자" />
-            </label>
-            <label class="favorite-books__row">
-              <span class="favorite-books__idx">09</span>
-              <input type="text" id="favorite-book-9" class="favorite-books__input" placeholder="책 제목을 입력하세요" />
-              <input type="text" id="favorite-book-author-9" class="favorite-books__input favorite-books__input--author" placeholder="저자" />
-            </label>
-            <label class="favorite-books__row">
-              <span class="favorite-books__idx">10</span>
-              <input type="text" id="favorite-book-10" class="favorite-books__input" placeholder="책 제목을 입력하세요" />
-              <input type="text" id="favorite-book-author-10" class="favorite-books__input favorite-books__input--author" placeholder="저자" />
-            </label>
-            <label class="favorite-books__row">
-              <span class="favorite-books__idx">11</span>
-              <input type="text" id="favorite-book-11" class="favorite-books__input" placeholder="책 제목을 입력하세요" />
-              <input type="text" id="favorite-book-author-11" class="favorite-books__input favorite-books__input--author" placeholder="저자" />
-            </label>
-            <label class="favorite-books__row">
-              <span class="favorite-books__idx">12</span>
-              <input type="text" id="favorite-book-12" class="favorite-books__input" placeholder="책 제목을 입력하세요" />
-              <input type="text" id="favorite-book-author-12" class="favorite-books__input favorite-books__input--author" placeholder="저자" />
-            </label>
-          </div>
-          <p class="favorite-books__saved" id="favorite-books-saved">저장 상태: 아직 없음</p>
         </div>
       </section>
 
@@ -1132,159 +1058,6 @@
         ];
 
         quoteEl.textContent = howardMarksQuotes[slot % howardMarksQuotes.length];
-
-        (function initFavoriteBooks() {
-          var BOOK_KEY = "favorite:books:v1";
-          var syncCfg = window.FAVORITE_BOOKS_SYNC || null;
-          var ids = [
-            "favorite-book-1",
-            "favorite-book-2",
-            "favorite-book-3",
-            "favorite-book-4",
-            "favorite-book-5",
-            "favorite-book-6",
-            "favorite-book-author-1",
-            "favorite-book-author-2",
-            "favorite-book-author-3",
-            "favorite-book-author-4",
-            "favorite-book-author-5",
-            "favorite-book-author-6",
-            "favorite-book-7",
-            "favorite-book-8",
-            "favorite-book-9",
-            "favorite-book-10",
-            "favorite-book-11",
-            "favorite-book-12",
-            "favorite-book-author-7",
-            "favorite-book-author-8",
-            "favorite-book-author-9",
-            "favorite-book-author-10",
-            "favorite-book-author-11",
-            "favorite-book-author-12"
-          ];
-          var savedEl = document.getElementById("favorite-books-saved");
-
-          function stamp() {
-            var now = new Date();
-            var mm = String(now.getMonth() + 1).padStart(2, "0");
-            var dd = String(now.getDate()).padStart(2, "0");
-            var hh = String(now.getHours()).padStart(2, "0");
-            var mi = String(now.getMinutes()).padStart(2, "0");
-            return now.getFullYear() + "." + mm + "." + dd + " " + hh + ":" + mi;
-          }
-
-          var store = { lastSaved: "", books: {} };
-          try {
-            var raw = localStorage.getItem(BOOK_KEY);
-            if (raw) {
-              var parsed = JSON.parse(raw);
-              if (parsed && typeof parsed === "object") store = parsed;
-            }
-          } catch (e) {}
-
-          function saveLocal() {
-            store.lastSaved = stamp();
-            localStorage.setItem(BOOK_KEY, JSON.stringify(store));
-            if (savedEl) savedEl.textContent = "저장 상태: " + store.lastSaved;
-          }
-
-          function isCloudEnabled() {
-            return (
-              syncCfg &&
-              syncCfg.provider === "supabase" &&
-              syncCfg.url &&
-              syncCfg.anonKey &&
-              syncCfg.table &&
-              syncCfg.rowId
-            );
-          }
-
-          function supabaseHeaders() {
-            return {
-              "Content-Type": "application/json",
-              apikey: syncCfg.anonKey,
-              Authorization: "Bearer " + syncCfg.anonKey
-            };
-          }
-
-          function fetchCloudStore() {
-            if (!isCloudEnabled()) return Promise.reject(new Error("cloud sync disabled"));
-            var url =
-              syncCfg.url.replace(/\/+$/, "") +
-              "/rest/v1/" +
-              encodeURIComponent(syncCfg.table) +
-              "?id=eq." +
-              encodeURIComponent(syncCfg.rowId) +
-              "&select=last_saved,books";
-            return fetch(url, { headers: supabaseHeaders() }).then(function (res) {
-              if (!res.ok) throw new Error("cloud fetch failed");
-              return res.json();
-            });
-          }
-
-          function saveCloudStore() {
-            if (!isCloudEnabled()) return Promise.resolve();
-            var url =
-              syncCfg.url.replace(/\/+$/, "") +
-              "/rest/v1/" +
-              encodeURIComponent(syncCfg.table) +
-              "?id=eq." +
-              encodeURIComponent(syncCfg.rowId);
-            var payload = { id: syncCfg.rowId, last_saved: store.lastSaved || "", books: store.books || {} };
-            return fetch(url, {
-              method: "POST",
-              headers: Object.assign({ Prefer: "resolution=merge-duplicates" }, supabaseHeaders()),
-              body: JSON.stringify(payload)
-            }).then(function (res) {
-              if (!res.ok) throw new Error("cloud save failed");
-            });
-          }
-
-          var saveTimer = null;
-          function saveNow() {
-            saveLocal();
-            if (saveTimer) clearTimeout(saveTimer);
-            saveTimer = setTimeout(function () {
-              saveCloudStore().catch(function () {});
-            }, 350);
-          }
-
-          ids.forEach(function (id) {
-            var el = document.getElementById(id);
-            if (!el) return;
-            if (store.books && typeof store.books[id] === "string") el.value = store.books[id];
-            el.addEventListener("input", function () {
-              store.books = store.books || {};
-              store.books[id] = el.value;
-              saveNow();
-            });
-          });
-
-          function hydrateInputs() {
-            ids.forEach(function (id) {
-              var el = document.getElementById(id);
-              if (!el) return;
-              el.value = store.books && typeof store.books[id] === "string" ? store.books[id] : "";
-            });
-            if (savedEl && store.lastSaved) savedEl.textContent = "저장 상태: " + store.lastSaved;
-          }
-
-          fetchCloudStore()
-            .then(function (rows) {
-              var remote = Array.isArray(rows) ? rows[0] : null;
-              if (!remote || !remote.books || typeof remote.books !== "object") return;
-              var remoteStamp = String(remote.last_saved || "");
-              var localStamp = String(store.lastSaved || "");
-              if (remoteStamp && (!localStamp || remoteStamp > localStamp)) {
-                store = { lastSaved: remoteStamp, books: remote.books };
-                localStorage.setItem(BOOK_KEY, JSON.stringify(store));
-              }
-              hydrateInputs();
-            })
-            .catch(function () {
-              hydrateInputs();
-            });
-        })();
 
         (function initInsightNotes() {
           var NOTE_KEY = "insight:notes:v1";

@@ -1,12 +1,11 @@
 import http from "node:http";
-import { readFile, stat, writeFile } from "node:fs/promises";
+import { readFile, stat } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const PORT = Number(process.env.PORT || 3000);
-const FAVORITE_BOOKS_PATH = path.join(__dirname, "favorite-books-data.json");
 
 const CONTENT_TYPES = {
   ".html": "text/html; charset=utf-8",
@@ -24,39 +23,6 @@ const CONTENT_TYPES = {
 function sendJson(res, status, payload) {
   res.writeHead(status, { "Content-Type": "application/json; charset=utf-8" });
   res.end(JSON.stringify(payload));
-}
-
-async function readJsonBody(req) {
-  const chunks = [];
-  for await (const chunk of req) {
-    chunks.push(chunk);
-  }
-  const text = Buffer.concat(chunks).toString("utf8").trim();
-  if (!text) return {};
-  return JSON.parse(text);
-}
-
-async function loadFavoriteBooksStore() {
-  try {
-    const raw = await readFile(FAVORITE_BOOKS_PATH, "utf8");
-    const parsed = JSON.parse(raw);
-    if (parsed && typeof parsed === "object" && parsed.books && typeof parsed.books === "object") {
-      return {
-        lastSaved: typeof parsed.lastSaved === "string" ? parsed.lastSaved : "",
-        books: parsed.books
-      };
-    }
-  } catch {}
-  return { lastSaved: "", books: {} };
-}
-
-async function saveFavoriteBooksStore(data) {
-  const safe = {
-    lastSaved: typeof data.lastSaved === "string" ? data.lastSaved : "",
-    books: data && typeof data.books === "object" && data.books ? data.books : {}
-  };
-  await writeFile(FAVORITE_BOOKS_PATH, `${JSON.stringify(safe, null, 2)}\n`, "utf8");
-  return safe;
 }
 
 function toIsoDate(date) {
@@ -359,21 +325,6 @@ async function handleApiTiming(req, res, urlObj) {
   });
 }
 
-async function handleFavoriteBooksGet(req, res) {
-  const store = await loadFavoriteBooksStore();
-  sendJson(res, 200, store);
-}
-
-async function handleFavoriteBooksPut(req, res) {
-  try {
-    const body = await readJsonBody(req);
-    const saved = await saveFavoriteBooksStore(body);
-    sendJson(res, 200, { ok: true, store: saved });
-  } catch {
-    sendJson(res, 400, { error: "invalid favorite books payload" });
-  }
-}
-
 function safeResolvePath(urlPathname) {
   const cleanPath = decodeURIComponent(urlPathname.split("?")[0]).replace(/^\/+/, "");
   const requested = cleanPath === "" ? "index.html" : cleanPath;
@@ -415,14 +366,6 @@ const server = http.createServer(async (req, res) => {
   }
   if (req.method === "GET" && urlObj.pathname === "/api/timing") {
     await handleApiTiming(req, res, urlObj);
-    return;
-  }
-  if (req.method === "GET" && urlObj.pathname === "/api/favorite-books") {
-    await handleFavoriteBooksGet(req, res);
-    return;
-  }
-  if (req.method === "PUT" && urlObj.pathname === "/api/favorite-books") {
-    await handleFavoriteBooksPut(req, res);
     return;
   }
   await serveStatic(req, res, urlObj);
