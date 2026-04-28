@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026.04.28 21:54 KST (자동 업데이트)",
+  "updatedAt": "2026.04.28 22:24 KST (자동 업데이트)",
   "items": [
     {
       "id": "vix",
       "label": "VIX Index",
-      "value": "19.32",
-      "delta": "📈 +1.30",
+      "value": "19.07",
+      "delta": "📈 +1.05",
       "status": "🟢 안정",
       "tone": "stable",
       "weekTrend": "상승",

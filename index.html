@@ -64,7 +64,7 @@
               개인 투자자를 위한 단순한 공간입니다.
             </p>
             <div class="hero-tags">
-              <a class="tag tag--muted" href="value-chain-map-fixed.html">VALUE CHAIN PRO</a>
+              <a class="tag tag--muted" href="value-chain-map-fixed.html">KOREA VALUE CHAIN MAP</a>
               <a class="tag tag--muted" href="hold-and-pick.html">HOLD AND PICK</a>
             </div>
           </div>
@@ -146,6 +146,232 @@
         </div>
       </section>
 
+      <section id="overseas-cockpit" class="section section--tint">
+        <div class="container">
+          <h2 class="section-title">해외증시 콕핏</h2>
+          <p class="section-intro">
+            나스닥·변동성·금리 기반으로 레버리지 ETF 대응 모드를 빠르게 확인하는 요약판입니다.
+          </p>
+          <div class="overseas-toolbar">
+            <button type="button" class="overseas-toggle-btn" id="overseas-detail-toggle" aria-expanded="true">상세 숨기기</button>
+            <p class="overseas-trust-line" id="overseas-trust-line">데이터 신뢰도: 계산 중...</p>
+          </div>
+          <div class="overseas-grid">
+            <article class="overseas-card overseas-card--score">
+              <h3>리스크 온도</h3>
+              <p class="overseas-score" id="overseas-score">-- / 100</p>
+              <p class="overseas-tone" id="overseas-tone">데이터 계산 중...</p>
+              <p class="overseas-action" id="overseas-action">오늘의 액션 계산 중...</p>
+              <p class="overseas-rationale" id="overseas-rationale">근거 계산 중...</p>
+            </article>
+
+            <article class="overseas-card">
+              <h3>핵심 지표</h3>
+              <div class="overseas-metric-list" id="overseas-metric-list">
+                <span class="overseas-chip">NDX: -</span>
+                <span class="overseas-chip">VIX: -</span>
+                <span class="overseas-chip">VXN: -</span>
+                <span class="overseas-chip">US10Y: -</span>
+              </div>
+            </article>
+
+            <article class="overseas-card">
+              <h3>레버리지 가이드</h3>
+              <div class="overseas-etf-list" id="overseas-etf-list">
+                <div class="overseas-etf-row"><strong>SOXL</strong><span>데이터 계산 중...</span></div>
+                <div class="overseas-etf-row"><strong>TQQQ</strong><span>데이터 계산 중...</span></div>
+                <div class="overseas-etf-row"><strong>SSO</strong><span>데이터 계산 중...</span></div>
+              </div>
+              <p class="overseas-note">
+                * 단기 변동성 구간에서는 신호를 우선하고, 비중은 분할 원칙으로 관리하세요.
+              </p>
+            </article>
+          </div>
+          <div class="overseas-insight-wrap overseas-detail-block">
+          <h3 class="overseas-insight-title">해외 인사이트 허브</h3>
+          <p class="section-intro">
+            특정 종목 추격보다 시장 구조를 읽기 위한 프레임입니다. 매크로-섹터-실행 순서로 점검하고 마지막에 주간 결론을 남겨보세요.
+          </p>
+          <section class="overseas-flow-radar overseas-detail-block" aria-label="글로벌 자금 흐름 레이더">
+            <h3>Global Flow Radar</h3>
+            <p class="overseas-flow-radar__intro">
+              헤지펀드/월가 자금 흐름을 직접 볼 수는 없지만, 핵심 프록시 지표를 묶으면 큰 물줄기를 읽을 수 있습니다.
+            </p>
+            <p class="overseas-regime-line" id="overseas-regime-line">
+              Regime Score 계산 중...
+            </p>
+            <p class="overseas-regime-trend" id="overseas-regime-trend">
+              7D 추세 계산 중...
+            </p>
+            <div class="overseas-flow-radar__chips" id="overseas-flow-radar-chips">
+              <span class="overseas-flow-chip">엔캐리 압력: USDJPY, JPY 변동성</span>
+              <span class="overseas-flow-chip">달러 유동성: DXY, US10Y 실질 부담</span>
+              <span class="overseas-flow-chip">리스크 선호: VIX/VXN, HY 스프레드</span>
+              <span class="overseas-flow-chip">기관 프록시: QQQ/SPY vs TLT 상대강도</span>
+              <span class="overseas-flow-chip">신용 체력: HYG/LQD 흐름</span>
+            </div>
+            <div class="overseas-flow-lanes" id="overseas-flow-lanes">
+              <article class="overseas-flow-lane">
+                <h4>단기 흐름</h4>
+                <p>단기 해석 계산 중...</p>
+              </article>
+              <article class="overseas-flow-lane">
+                <h4>중기 흐름</h4>
+                <p>중기 해석 계산 중...</p>
+              </article>
+              <article class="overseas-flow-lane">
+                <h4>장기 흐름</h4>
+                <p>장기 해석 계산 중...</p>
+              </article>
+            </div>
+          </section>
+          <section class="overseas-heatmap-card overseas-detail-block" aria-label="미국시장 히트맵">
+            <div class="overseas-heatmap-card__head">
+              <h3>US Market Heatmap (Treemap)</h3>
+              <a href="https://finviz.com/map.ashx" target="_blank" rel="noopener noreferrer">핀비즈 원본 ↗</a>
+            </div>
+            <p class="overseas-heatmap-card__intro">
+              박스 크기는 시가총액, 색상은 전일 등락률을 의미합니다.
+            </p>
+            <div class="overseas-heatmap-frame-wrap">
+              <div class="tradingview-widget-container">
+                <div id="tradingview-heatmap"></div>
+              </div>
+            </div>
+            <p class="overseas-heatmap-card__note">
+              핀비즈는 임베드 차단이 있어 링크로 열어야 할 수 있습니다. 화면에서는 TradingView 히트맵을 기본으로 제공합니다.
+            </p>
+          </section>
+          <div class="overseas-insight-grid overseas-detail-block">
+            <article class="overseas-insight-card">
+              <h3>1) Macro Regime</h3>
+              <p>금리/변동성/신용 지표를 바탕으로 이번 주 국면을 한 문장으로 정의합니다.</p>
+              <ul>
+                <li>VIX, VXN, US10Y, HY 스프레드 변화</li>
+                <li>달러 강세 여부와 성장주 부담 점검</li>
+                <li>결론: Risk-on / Neutral / Risk-off</li>
+              </ul>
+            </article>
+            <article class="overseas-insight-card">
+              <h3>2) Breadth & Rotation</h3>
+              <p>지수 상승의 질을 확인하고 자금이 이동하는 섹터를 기록합니다.</p>
+              <ul>
+                <li>나스닥/반도체와 S&amp;P 상대 강도 비교</li>
+                <li>테크 쏠림인지 순환 장세인지 분류</li>
+                <li>강세/약세 섹터 2개씩 메모</li>
+              </ul>
+            </article>
+            <article class="overseas-insight-card">
+              <h3>3) Execution Plan</h3>
+              <p>매수 추천보다 조건 기반 대응 규칙으로 실행 리스크를 낮춥니다.</p>
+              <ul>
+                <li>공격: 분할 진입(예: 25-35-40)</li>
+                <li>중립: 코어 보유 + 신규 축소</li>
+                <li>방어: 현금/헤지 우선, 추격 금지</li>
+              </ul>
+            </article>
+            <article class="overseas-insight-card overseas-insight-card--checklist">
+              <h3>4) Weekly Insight Questions</h3>
+              <p>주말 점검용 고정 질문입니다.</p>
+              <ol>
+                <li>이번 주 상승/하락의 핵심 원인은 무엇이었나?</li>
+                <li>다음 주 변동성 이벤트(FOMC, CPI, 실적)는?</li>
+                <li>내 포지션에서 줄일 리스크와 늘릴 기회는?</li>
+              </ol>
+              <p class="overseas-insight-note">Tip: 결론은 3줄 이내로 남기면 다음 주 의사결정이 빨라집니다.</p>
+            </article>
+          </div>
+          <section class="overseas-storyline overseas-detail-block" aria-label="점진 확장 스토리라인">
+            <h3>점진 확장 스토리라인</h3>
+            <ol>
+              <li><strong>Phase 1:</strong> 글로벌 자금 흐름 국면판 고도화 (엔캐리·달러·신용·변동성)</li>
+              <li><strong>Phase 2:</strong> 섹터 플레이북 확장 (반도체, AI, 금융, 에너지)</li>
+              <li><strong>Phase 3:</strong> 실행 시나리오 자동화 (공격/중립/방어별 비중 템플릿)</li>
+              <li><strong>Phase 4:</strong> 주간 회고 누적 (신호 대비 실제 성과 기록)</li>
+            </ol>
+            <p class="overseas-storyline__note">
+              핵심은 종목 추격보다 “큰 흐름 판독 → 섹터 선택 → 실행” 순서를 고정하는 것입니다.
+            </p>
+          </section>
+          <section class="overseas-sector-board overseas-detail-block" aria-label="섹터 강도 보드">
+            <div class="overseas-sector-board__head">
+              <h3>섹터 강도 보드</h3>
+              <p>1D/1W/1M 기반 상대 강도 요약</p>
+            </div>
+            <div class="overseas-sector-board__grid" id="overseas-sector-board-grid">
+              <article class="overseas-sector-card"><h4>반도체</h4><p>데이터 계산 중...</p></article>
+              <article class="overseas-sector-card"><h4>AI/성장</h4><p>데이터 계산 중...</p></article>
+              <article class="overseas-sector-card"><h4>금융</h4><p>데이터 계산 중...</p></article>
+              <article class="overseas-sector-card"><h4>에너지</h4><p>데이터 계산 중...</p></article>
+            </div>
+          </section>
+          <section class="overseas-weekly-summary overseas-detail-block" aria-label="주간 요약">
+            <h3>이번 주 해외시장 3줄 요약</h3>
+            <ul id="overseas-weekly-summary-list">
+              <li>요약 생성 중...</li>
+            </ul>
+          </section>
+          <section class="overseas-quick-note overseas-detail-block" aria-label="선택형 인사이트 기록 카드">
+            <div class="overseas-quick-note__head">
+              <h3>선택형 인사이트 기록 카드</h3>
+              <p>클릭만으로 이번 흐름을 저장합니다. 글을 길게 쓰지 않아도 됩니다.</p>
+            </div>
+            <div class="overseas-quick-note__groups" id="overseas-quick-note-groups">
+              <div class="overseas-quick-group">
+                <h4>1) 이번 주 국면</h4>
+                <div class="overseas-quick-options">
+                  <button type="button" class="overseas-quick-option" data-field="regime" data-value="Risk-on">Risk-on</button>
+                  <button type="button" class="overseas-quick-option" data-field="regime" data-value="Neutral">Neutral</button>
+                  <button type="button" class="overseas-quick-option" data-field="regime" data-value="Risk-off">Risk-off</button>
+                </div>
+              </div>
+              <div class="overseas-quick-group">
+                <h4>2) 주도 섹터</h4>
+                <div class="overseas-quick-options">
+                  <button type="button" class="overseas-quick-option" data-field="leader" data-value="반도체">반도체</button>
+                  <button type="button" class="overseas-quick-option" data-field="leader" data-value="AI/성장">AI/성장</button>
+                  <button type="button" class="overseas-quick-option" data-field="leader" data-value="금융">금융</button>
+                  <button type="button" class="overseas-quick-option" data-field="leader" data-value="에너지">에너지</button>
+                </div>
+              </div>
+              <div class="overseas-quick-group">
+                <h4>3) 실행 모드</h4>
+                <div class="overseas-quick-options">
+                  <button type="button" class="overseas-quick-option" data-field="plan" data-value="공격(분할진입)">공격(분할진입)</button>
+                  <button type="button" class="overseas-quick-option" data-field="plan" data-value="중립(보유중심)">중립(보유중심)</button>
+                  <button type="button" class="overseas-quick-option" data-field="plan" data-value="방어(현금/헤지)">방어(현금/헤지)</button>
+                </div>
+              </div>
+              <div class="overseas-quick-group">
+                <h4>4) 근거 소스</h4>
+                <div class="overseas-quick-options">
+                  <button type="button" class="overseas-quick-option" data-field="source" data-value="미국증시 사관학교">미국증시 사관학교</button>
+                  <button type="button" class="overseas-quick-option" data-field="source" data-value="매크로 뉴스">매크로 뉴스</button>
+                  <button type="button" class="overseas-quick-option" data-field="source" data-value="실적 시즌">실적 시즌</button>
+                  <button type="button" class="overseas-quick-option" data-field="source" data-value="FOMC/CPI">FOMC/CPI</button>
+                </div>
+              </div>
+            </div>
+            <p class="overseas-quick-note__preview" id="overseas-quick-note-preview">선택 후 "기록 저장"을 누르면 카드가 남습니다.</p>
+            <div class="overseas-quick-note__actions">
+              <button type="button" class="overseas-quick-btn overseas-quick-btn--save" id="overseas-quick-save">기록 저장</button>
+              <button type="button" class="overseas-quick-btn" id="overseas-quick-reset">선택 초기화</button>
+              <span class="overseas-quick-note__saved" id="overseas-quick-saved">저장 상태: -</span>
+            </div>
+            <div class="overseas-quick-filters" id="overseas-quick-filters" aria-label="기록 필터">
+              <button type="button" class="overseas-quick-filter is-active" data-filter="all" aria-pressed="true">전체</button>
+              <button type="button" class="overseas-quick-filter" data-filter="Risk-on" aria-pressed="false">Risk-on</button>
+              <button type="button" class="overseas-quick-filter" data-filter="Neutral" aria-pressed="false">Neutral</button>
+              <button type="button" class="overseas-quick-filter" data-filter="Risk-off" aria-pressed="false">Risk-off</button>
+            </div>
+            <ul class="overseas-quick-note__history" id="overseas-quick-history">
+              <li>아직 저장된 기록이 없습니다.</li>
+            </ul>
+          </section>
+          </div>
+        </div>
+      </section>
+
       <section id="panic-monitor" class="section section--tint">
         <div class="container">
           <h2 class="section-title">9대 패닉 지수 모니터</h2>
@@ -206,45 +432,6 @@
               <p class="panic-signal-card__meta">계산 중...</p>
             </article>
           </section>
-        </div>
-      </section>
-
-      <section id="overseas-cockpit" class="section">
-        <div class="container">
-          <h2 class="section-title">해외증시 콕핏</h2>
-          <p class="section-intro">
-            나스닥·변동성·금리 기반으로 레버리지 ETF 대응 모드를 빠르게 확인하는 요약판입니다.
-          </p>
-          <div class="overseas-grid">
-            <article class="overseas-card overseas-card--score">
-              <h3>리스크 온도</h3>
-              <p class="overseas-score" id="overseas-score">-- / 100</p>
-              <p class="overseas-tone" id="overseas-tone">데이터 계산 중...</p>
-              <p class="overseas-action" id="overseas-action">오늘의 액션 계산 중...</p>
-            </article>
-
-            <article class="overseas-card">
-              <h3>핵심 지표</h3>
-              <div class="overseas-metric-list" id="overseas-metric-list">
-                <span class="overseas-chip">NDX: -</span>
-                <span class="overseas-chip">VIX: -</span>
-                <span class="overseas-chip">VXN: -</span>
-                <span class="overseas-chip">US10Y: -</span>
-              </div>
-            </article>
-
-            <article class="overseas-card">
-              <h3>레버리지 가이드</h3>
-              <div class="overseas-etf-list" id="overseas-etf-list">
-                <div class="overseas-etf-row"><strong>SOXL</strong><span>데이터 계산 중...</span></div>
-                <div class="overseas-etf-row"><strong>TQQQ</strong><span>데이터 계산 중...</span></div>
-                <div class="overseas-etf-row"><strong>SSO</strong><span>데이터 계산 중...</span></div>
-              </div>
-              <p class="overseas-note">
-                * 단기 변동성 구간에서는 신호를 우선하고, 비중은 분할 원칙으로 관리하세요.
-              </p>
-            </article>
-          </div>
         </div>
       </section>
 
@@ -422,6 +609,25 @@
         var overseasActionEl = document.getElementById("overseas-action");
         var overseasMetricListEl = document.getElementById("overseas-metric-list");
         var overseasEtfListEl = document.getElementById("overseas-etf-list");
+        var overseasFlowChipsEl = document.getElementById("overseas-flow-radar-chips");
+        var overseasRegimeLineEl = document.getElementById("overseas-regime-line");
+        var overseasRegimeTrendEl = document.getElementById("overseas-regime-trend");
+        var overseasFlowLanesEl = document.getElementById("overseas-flow-lanes");
+        var overseasSectorBoardGridEl = document.getElementById("overseas-sector-board-grid");
+        var overseasWeeklySummaryListEl = document.getElementById("overseas-weekly-summary-list");
+        var overseasDetailToggleEl = document.getElementById("overseas-detail-toggle");
+        var overseasTrustLineEl = document.getElementById("overseas-trust-line");
+        var overseasRationaleEl = document.getElementById("overseas-rationale");
+        var overseasDetailBlocks = Array.prototype.slice.call(document.querySelectorAll(".overseas-detail-block"));
+        var overseasCockpitSectionEl = document.getElementById("overseas-cockpit");
+        var overseasQuickGroupsEl = document.getElementById("overseas-quick-note-groups");
+        var overseasQuickPreviewEl = document.getElementById("overseas-quick-note-preview");
+        var overseasQuickSaveEl = document.getElementById("overseas-quick-save");
+        var overseasQuickResetEl = document.getElementById("overseas-quick-reset");
+        var overseasQuickSavedEl = document.getElementById("overseas-quick-saved");
+        var overseasQuickFiltersEl = document.getElementById("overseas-quick-filters");
+        var overseasQuickHistoryEl = document.getElementById("overseas-quick-history");
+        var OVERSEAS_DETAIL_KEY = "overseas:detail-collapsed:v1";
         var latestTickerData = null;
         var latestPanicData = null;
         var latestOverseasData = window.OVERSEAS_DATA && Array.isArray(window.OVERSEAS_DATA.items) ? window.OVERSEAS_DATA : null;
@@ -544,6 +750,167 @@
           return "0.00%";
         }
 
+        function flowToneClass(tone) {
+          if (tone === "up") return "overseas-flow-chip overseas-flow-chip--up";
+          if (tone === "down") return "overseas-flow-chip overseas-flow-chip--down";
+          return "overseas-flow-chip overseas-flow-chip--flat";
+        }
+
+        function renderOverseasFlowRadar() {
+          if (!overseasFlowChipsEl) return;
+          var flowItems = latestOverseasData && latestOverseasData.flow && Array.isArray(latestOverseasData.flow.items)
+            ? latestOverseasData.flow.items
+            : [];
+          if (!flowItems.length) return;
+          overseasFlowChipsEl.innerHTML = flowItems
+            .map(function (item) {
+              return (
+                '<span class="' + flowToneClass(item.tone) + '">' +
+                escapeHtml((item.label || "-") + ": " + (item.value || "-") + " (" + (item.delta || "-") + ")") +
+                "</span>"
+              );
+            })
+            .join("");
+
+          if (overseasRegimeLineEl) {
+            var regime = latestOverseasData && latestOverseasData.flow && latestOverseasData.flow.regime
+              ? latestOverseasData.flow.regime
+              : null;
+            if (!regime || !Number.isFinite(regime.score)) {
+              overseasRegimeLineEl.className = "overseas-regime-line";
+              overseasRegimeLineEl.textContent = "Regime Score 계산 중...";
+              if (overseasRegimeTrendEl) {
+                overseasRegimeTrendEl.className = "overseas-regime-trend";
+                overseasRegimeTrendEl.textContent = "7D 추세 계산 중...";
+              }
+            } else {
+              var state = String(regime.state || "Neutral");
+              var cls =
+                state === "Risk-on"
+                  ? "overseas-regime-line overseas-regime-line--on"
+                  : state === "Risk-off"
+                    ? "overseas-regime-line overseas-regime-line--off"
+                    : "overseas-regime-line overseas-regime-line--neutral";
+              overseasRegimeLineEl.className = cls;
+              overseasRegimeLineEl.textContent =
+                "Regime Score " +
+                regime.score +
+                "/100 · " +
+                state +
+                " · " +
+                String(regime.action || "");
+
+              if (overseasRegimeTrendEl) {
+                var history = Array.isArray(regime.history) ? regime.history : [];
+                if (history.length >= 2) {
+                  var start = Number(history[0].s);
+                  var end = Number(history[history.length - 1].s);
+                  var diff = end - start;
+                  var trendText = diff > 0 ? "상승" : diff < 0 ? "하락" : "보합";
+                  var clsTrend =
+                    diff > 0
+                      ? "overseas-regime-trend overseas-regime-trend--up"
+                      : diff < 0
+                        ? "overseas-regime-trend overseas-regime-trend--down"
+                        : "overseas-regime-trend overseas-regime-trend--flat";
+                  overseasRegimeTrendEl.className = clsTrend;
+                  overseasRegimeTrendEl.textContent =
+                    "7D 추세 · " +
+                    trendText +
+                    " (" +
+                    (diff > 0 ? "+" + diff : String(diff)) +
+                    ") · " +
+                    String(history[0].d || "-") +
+                    " → " +
+                    String(history[history.length - 1].d || "-");
+                } else {
+                  overseasRegimeTrendEl.className = "overseas-regime-trend";
+                  overseasRegimeTrendEl.textContent = "7D 추세 · 데이터 누적 중";
+                }
+              }
+            }
+          }
+
+          if (overseasFlowLanesEl) {
+            var map = {};
+            flowItems.forEach(function (it) {
+              if (it && it.id) map[it.id] = it;
+            });
+            var usdjpyTone = map.usdjpy && map.usdjpy.tone;
+            var dxyTone = map.dxy && map.dxy.tone;
+            var qqqTltTone = map.qqq_tlt && map.qqq_tlt.tone;
+            var hygLqdTone = map.hyg_lqd && map.hyg_lqd.tone;
+            var vixHyTone = map.vix_hy && map.vix_hy.tone;
+            var regimeState = latestOverseasData && latestOverseasData.flow && latestOverseasData.flow.regime
+              ? String(latestOverseasData.flow.regime.state || "Neutral")
+              : "Neutral";
+
+            var shortText =
+              usdjpyTone === "down" || vixHyTone === "down"
+                ? "엔캐리/변동성 압력으로 단기 리스크오프 우세. 레버리지는 추격보다 방어적 분할 접근이 유리합니다."
+                : "변동성/엔캐리 압력이 완만해 단기 리스크온 시도가 가능합니다. 다만 급등 구간 추격은 제한하세요.";
+            var midText =
+              qqqTltTone === "up" && hygLqdTone === "up"
+                ? "기관 프록시(주식/채권, 하이일드/우량채)가 동시 개선되어 중기 위험자산 선호가 강화되는 흐름입니다."
+                : qqqTltTone === "down" || hygLqdTone === "down"
+                  ? "기관 프록시가 둔화되어 중기 자금은 방어 자산을 병행하는 국면입니다. 섹터 익스포저를 압축하세요."
+                  : "기관 프록시는 혼조입니다. 섹터별 선별 대응과 현금 비중의 균형이 필요합니다.";
+            var longText =
+              regimeState === "Risk-on" && dxyTone !== "down"
+                ? "장기적으로는 리스크온 기조가 우세합니다. 핵심 섹터를 단계적으로 확장할 수 있는 환경입니다."
+                : regimeState === "Risk-off" || dxyTone === "down"
+                  ? "장기적으로는 달러/리스크 지표 부담이 남아 있습니다. 방어 우선, 고변동 섹터는 신호 확인 후 진입하세요."
+                  : "장기 국면은 중립입니다. 큰 방향성보다 이벤트 기반 변동성 관리가 성과를 좌우합니다.";
+
+            overseasFlowLanesEl.innerHTML =
+              '<article class="overseas-flow-lane"><h4>단기 흐름</h4><p>' + escapeHtml(shortText) + "</p></article>" +
+              '<article class="overseas-flow-lane"><h4>중기 흐름</h4><p>' + escapeHtml(midText) + "</p></article>" +
+              '<article class="overseas-flow-lane"><h4>장기 흐름</h4><p>' + escapeHtml(longText) + "</p></article>";
+          }
+        }
+
+        function renderOverseasInsightExtras() {
+          var insight = latestOverseasData && latestOverseasData.insight ? latestOverseasData.insight : null;
+          var sectors = insight && Array.isArray(insight.sectorStrength) ? insight.sectorStrength : [];
+          var summary = insight && Array.isArray(insight.weeklySummary) ? insight.weeklySummary : [];
+
+          if (overseasSectorBoardGridEl) {
+            if (!sectors.length) {
+              overseasSectorBoardGridEl.innerHTML = '<article class="overseas-sector-card"><h4>섹터</h4><p>데이터 없음</p></article>';
+            } else {
+              function sectorToneClass(score) {
+                if (!Number.isFinite(score)) return "overseas-sector-card";
+                if (score >= 1.5) return "overseas-sector-card overseas-sector-card--strong";
+                if (score <= -1.5) return "overseas-sector-card overseas-sector-card--weak";
+                return "overseas-sector-card overseas-sector-card--neutral";
+              }
+              overseasSectorBoardGridEl.innerHTML = sectors
+                .map(function (s) {
+                  var rawScore = Number(s.score);
+                  var score = Number.isFinite(rawScore) ? rawScore.toFixed(1) : "-";
+                  return (
+                    '<article class="' + sectorToneClass(rawScore) + '">' +
+                    "<h4>" + escapeHtml(s.label || "-") + ' <span>(' + escapeHtml(s.symbol || "-") + ")</span></h4>" +
+                    '<p><strong>Score ' + escapeHtml(score) + "</strong></p>" +
+                    '<p>1D ' + escapeHtml(s.p1d || "-") + " · 1W " + escapeHtml(s.p1w || "-") + " · 1M " + escapeHtml(s.p1m || "-") + "</p>" +
+                    "</article>"
+                  );
+                })
+                .join("");
+            }
+          }
+
+          if (overseasWeeklySummaryListEl) {
+            if (!summary.length) {
+              overseasWeeklySummaryListEl.innerHTML = "<li>요약 데이터 없음</li>";
+            } else {
+              overseasWeeklySummaryListEl.innerHTML = summary.map(function (line) {
+                return "<li>" + escapeHtml(line) + "</li>";
+              }).join("");
+            }
+          }
+        }
+
         function renderOverseasCockpit() {
           if (!overseasScoreEl || !overseasToneEl || !overseasActionEl || !overseasMetricListEl || !overseasEtfListEl) return;
           if (!latestTickerData || !latestPanicData) return;
@@ -576,6 +943,14 @@
           if (score < 0) score = 0;
           score = Math.round(score);
 
+          var reasons = [];
+          if (vixValue !== null) reasons.push({ t: "VIX", v: (22 - vixValue) * 2.1 });
+          if (vxnValue !== null) reasons.push({ t: "VXN", v: (28 - vxnValue) * 1.3 });
+          if (us10yDelta !== null) reasons.push({ t: "US10Y", v: us10yDelta > 0 ? -8 : 6 });
+          if (hyValue !== null) reasons.push({ t: "HY", v: hyValue >= 4 ? -10 : 6 });
+          if (fngValue !== null) reasons.push({ t: "F&G", v: fngValue >= 75 ? -7 : fngValue <= 30 ? -6 : 4 });
+          reasons.sort(function (a, b) { return Math.abs(b.v) - Math.abs(a.v); });
+
           var tone = score >= 65 ? "공격" : score <= 38 ? "방어" : "중립";
           var action =
             tone === "공격"
@@ -588,6 +963,12 @@
           overseasToneEl.className = toneClass(tone);
           overseasToneEl.textContent = "모드: " + tone;
           overseasActionEl.textContent = "오늘의 액션 · " + action;
+          if (overseasRationaleEl) {
+            var reasonText = reasons.slice(0, 3).map(function (r) {
+              return r.t + " " + (r.v >= 0 ? "+" : "") + Math.round(r.v);
+            }).join(" · ");
+            overseasRationaleEl.textContent = "근거 · " + (reasonText || "핵심 지표 계산 중");
+          }
 
           overseasMetricListEl.innerHTML =
             '<span class="overseas-chip">NDX ' + escapeHtml((ndx && ndx.delta) || "-") + "</span>" +
@@ -633,6 +1014,14 @@
             etfPlan("SOXL", tone, tone === "공격" ? buySplit : tone === "중립" ? neutralSplit : defenseSplit, "https://finance.yahoo.com/quote/SOXL", perfMap.SOXL) +
             etfPlan("TQQQ", tone, tone === "공격" ? buySplit : tone === "중립" ? neutralSplit : defenseSplit, "https://finance.yahoo.com/quote/TQQQ", perfMap.TQQQ) +
             etfPlan("SSO", tone, tone === "공격" ? "분할 30%-30%-40%" : tone === "중립" ? neutralSplit : defenseSplit, "https://finance.yahoo.com/quote/SSO", perfMap.SSO);
+          renderOverseasFlowRadar();
+          renderOverseasInsightExtras();
+          if (overseasTrustLineEl) {
+            var flowUpdated = latestOverseasData && latestOverseasData.flow && latestOverseasData.flow.updatedAt ? latestOverseasData.flow.updatedAt : "-";
+            var etfUpdated = latestOverseasData && latestOverseasData.updatedAt ? latestOverseasData.updatedAt : "-";
+            overseasTrustLineEl.textContent =
+              "데이터 신뢰도 · 시장지표(자동): " + flowUpdated + " · ETF(자동): " + etfUpdated + " · 종목 큐레이션(수동)";
+          }
         }
 
         function buildSnapshotCard(label, value, delta, direction) {
@@ -1391,6 +1780,281 @@
             renderOverseasCockpit();
           });
 
+        (function initOverseasHeatmapWidget() {
+          var host = document.getElementById("tradingview-heatmap");
+          if (!host) return;
+          var script = document.createElement("script");
+          script.type = "text/javascript";
+          script.async = true;
+          script.src = "https://s3.tradingview.com/external-embedding/embed-widget-stock-heatmap.js";
+          script.text =
+            JSON.stringify({
+              dataSource: "SPX500",
+              blockSize: "market_cap_basic",
+              blockColor: "change",
+              grouping: "sector",
+              locale: "kr",
+              symbolUrl: "",
+              colorTheme: "dark",
+              hasTopBar: false,
+              isDataSetEnabled: false,
+              isZoomEnabled: true,
+              hasSymbolTooltip: true,
+              isMonoSize: false,
+              width: "100%",
+              height: "560"
+            });
+          host.appendChild(script);
+        })();
+
+        (function initOverseasDetailToggle() {
+          if (!overseasDetailToggleEl || !overseasDetailBlocks.length) return;
+          var collapsed = false;
+          try {
+            collapsed = localStorage.getItem(OVERSEAS_DETAIL_KEY) === "true";
+          } catch (e) {}
+          function apply() {
+            overseasDetailBlocks.forEach(function (el) {
+              el.classList.toggle("is-collapsed", collapsed);
+            });
+            if (overseasCockpitSectionEl) {
+              overseasCockpitSectionEl.classList.toggle("overseas-cockpit--compact", collapsed);
+            }
+            overseasDetailToggleEl.setAttribute("aria-expanded", collapsed ? "false" : "true");
+            overseasDetailToggleEl.textContent = collapsed ? "상세 보기" : "상세 숨기기";
+          }
+          apply();
+          overseasDetailToggleEl.addEventListener("click", function () {
+            collapsed = !collapsed;
+            try { localStorage.setItem(OVERSEAS_DETAIL_KEY, String(collapsed)); } catch (e) {}
+            apply();
+          });
+        })();
+
+        (function initOverseasQuickNote() {
+          if (!overseasQuickGroupsEl || !overseasQuickSaveEl || !overseasQuickHistoryEl) return;
+          var QUICK_NOTE_KEY = "overseas:quick-note:v1";
+          var selected = { regime: "", leader: "", plan: "", source: "" };
+          var currentFilter = "all";
+          var store = { lastSaved: "", history: [] };
+
+          function stamp() {
+            var now = new Date();
+            var mm = String(now.getMonth() + 1).padStart(2, "0");
+            var dd = String(now.getDate()).padStart(2, "0");
+            var hh = String(now.getHours()).padStart(2, "0");
+            var mi = String(now.getMinutes()).padStart(2, "0");
+            return now.getFullYear() + "." + mm + "." + dd + " " + hh + ":" + mi;
+          }
+
+          function buildText(item) {
+            var base =
+              "국면 " + item.regime + " · 주도 " + item.leader + " · 실행 " + item.plan + " · 근거 " + item.source;
+            if (item.regimeScoreText) {
+              return base + " · " + item.regimeScoreText;
+            }
+            return base;
+          }
+
+          function readRegimeSnapshot() {
+            var regime = latestOverseasData && latestOverseasData.flow && latestOverseasData.flow.regime
+              ? latestOverseasData.flow.regime
+              : null;
+            if (!regime || !Number.isFinite(regime.score)) {
+              return "";
+            }
+            var state = String(regime.state || "Neutral");
+            return "Regime Score " + regime.score + "/100 (" + state + ")";
+          }
+
+          function readRegimeState() {
+            var regime = latestOverseasData && latestOverseasData.flow && latestOverseasData.flow.regime
+              ? latestOverseasData.flow.regime
+              : null;
+            if (!regime) return "";
+            return String(regime.state || "Neutral");
+          }
+
+          function badgeClassByRegime(state) {
+            if (state === "Risk-on") return "overseas-quick-badge overseas-quick-badge--on";
+            if (state === "Risk-off") return "overseas-quick-badge overseas-quick-badge--off";
+            if (state === "Neutral") return "overseas-quick-badge overseas-quick-badge--neutral";
+            return "overseas-quick-badge";
+          }
+
+          function scoreChipClass(score) {
+            if (!Number.isFinite(score)) return "overseas-quick-score";
+            if (score >= 70) return "overseas-quick-score overseas-quick-score--high";
+            if (score <= 40) return "overseas-quick-score overseas-quick-score--low";
+            return "overseas-quick-score overseas-quick-score--mid";
+          }
+
+          function renderPreview() {
+            if (!overseasQuickPreviewEl) return;
+            if (!selected.regime || !selected.leader || !selected.plan || !selected.source) {
+              overseasQuickPreviewEl.textContent = '선택 후 "기록 저장"을 누르면 카드가 남습니다.';
+              return;
+            }
+            overseasQuickPreviewEl.textContent = buildText(selected);
+          }
+
+          function renderHistory() {
+            var allItems = store.history || [];
+            var filtered = currentFilter === "all"
+              ? allItems
+              : allItems.filter(function (item) {
+                  var state = item.regimeState || "";
+                  if (!state && item.regimeScoreText) {
+                    var m = String(item.regimeScoreText).match(/\((Risk-on|Risk-off|Neutral)\)/);
+                    state = m ? m[1] : "";
+                  }
+                  if (!state && item.text) {
+                    var t = String(item.text).match(/\((Risk-on|Risk-off|Neutral)\)/);
+                    state = t ? t[1] : "";
+                  }
+                  return state === currentFilter;
+                });
+            var list = filtered.slice(0, 5);
+            if (!list.length) {
+              overseasQuickHistoryEl.innerHTML =
+                currentFilter === "all"
+                  ? "<li>아직 저장된 기록이 없습니다.</li>"
+                  : "<li>" + escapeHtml(currentFilter) + " 기록이 아직 없습니다.</li>";
+              return;
+            }
+            overseasQuickHistoryEl.innerHTML = list
+              .map(function (item) {
+                var state = item.regimeState || "";
+                var score = Number(item.regimeScore);
+                if (!Number.isFinite(score) && item.regimeScoreText) {
+                  var scoreNumMatch = String(item.regimeScoreText).match(/Regime Score\s+(\d+(?:\.\d+)?)\/100/);
+                  score = scoreNumMatch ? Number(scoreNumMatch[1]) : NaN;
+                }
+                if (!state && item.regimeScoreText) {
+                  var scoreMatch = String(item.regimeScoreText).match(/\((Risk-on|Risk-off|Neutral)\)/);
+                  state = scoreMatch ? scoreMatch[1] : "";
+                }
+                if (!state && item.text) {
+                  var textMatch = String(item.text).match(/\((Risk-on|Risk-off|Neutral)\)/);
+                  state = textMatch ? textMatch[1] : "";
+                }
+                var badgeHtml = state
+                  ? '<span class="' + badgeClassByRegime(state) + '">' + escapeHtml(state) + "</span>"
+                  : "";
+                var scoreHtml = Number.isFinite(score)
+                  ? '<span class="' + scoreChipClass(score) + '">Score ' + escapeHtml(String(Math.round(score))) + "</span>"
+                  : "";
+                return "<li><strong>" + escapeHtml(item.savedAt) + "</strong> " + badgeHtml + " " + scoreHtml + " · " + escapeHtml(item.text) + "</li>";
+              })
+              .join("");
+          }
+
+          function syncOptionState() {
+            var buttons = overseasQuickGroupsEl.querySelectorAll(".overseas-quick-option");
+            buttons.forEach(function (btn) {
+              var field = btn.getAttribute("data-field");
+              var value = btn.getAttribute("data-value");
+              var active = selected[field] === value;
+              btn.classList.toggle("is-active", active);
+              btn.setAttribute("aria-pressed", active ? "true" : "false");
+            });
+            renderPreview();
+          }
+
+          function persist() {
+            try {
+              localStorage.setItem(QUICK_NOTE_KEY, JSON.stringify(store));
+            } catch (e) {}
+            if (overseasQuickSavedEl) {
+              overseasQuickSavedEl.textContent = "저장 상태: " + (store.lastSaved || "-");
+            }
+          }
+
+          try {
+            var raw = localStorage.getItem(QUICK_NOTE_KEY);
+            if (raw) {
+              var parsed = JSON.parse(raw);
+              if (parsed && typeof parsed === "object") {
+                store.lastSaved = parsed.lastSaved || "";
+                store.history = Array.isArray(parsed.history) ? parsed.history : [];
+              }
+            }
+          } catch (e) {}
+
+          renderHistory();
+          persist();
+
+          function syncFilterState() {
+            if (!overseasQuickFiltersEl) return;
+            var buttons = overseasQuickFiltersEl.querySelectorAll(".overseas-quick-filter");
+            buttons.forEach(function (btn) {
+              var v = btn.getAttribute("data-filter");
+              var active = v === currentFilter;
+              btn.classList.toggle("is-active", active);
+              btn.setAttribute("aria-pressed", active ? "true" : "false");
+            });
+          }
+
+          if (overseasQuickFiltersEl) {
+            overseasQuickFiltersEl.addEventListener("click", function (e) {
+              var btn = e.target.closest(".overseas-quick-filter");
+              if (!btn) return;
+              var filter = btn.getAttribute("data-filter") || "all";
+              currentFilter = filter;
+              syncFilterState();
+              renderHistory();
+            });
+            syncFilterState();
+          }
+
+          overseasQuickGroupsEl.addEventListener("click", function (e) {
+            var btn = e.target.closest(".overseas-quick-option");
+            if (!btn) return;
+            var field = btn.getAttribute("data-field");
+            var value = btn.getAttribute("data-value");
+            if (!field || !value) return;
+            selected[field] = value;
+            syncOptionState();
+          });
+
+          overseasQuickSaveEl.addEventListener("click", function () {
+            if (!selected.regime || !selected.leader || !selected.plan || !selected.source) {
+              if (overseasQuickPreviewEl) {
+                overseasQuickPreviewEl.textContent = "4개 항목을 모두 선택하면 저장됩니다.";
+              }
+              return;
+            }
+            var entry = {
+              savedAt: stamp(),
+              regime: selected.regime,
+              leader: selected.leader,
+              plan: selected.plan,
+              source: selected.source,
+              regimeScoreText: readRegimeSnapshot(),
+              regimeState: readRegimeState(),
+              regimeScore:
+                latestOverseasData &&
+                latestOverseasData.flow &&
+                latestOverseasData.flow.regime &&
+                Number.isFinite(latestOverseasData.flow.regime.score)
+                  ? Number(latestOverseasData.flow.regime.score)
+                  : null
+            };
+            entry.text = buildText(entry);
+            store.lastSaved = entry.savedAt;
+            store.history = [entry].concat(store.history || []).slice(0, 30);
+            persist();
+            renderHistory();
+          });
+
+          if (overseasQuickResetEl) {
+            overseasQuickResetEl.addEventListener("click", function () {
+              selected = { regime: "", leader: "", plan: "", source: "" };
+              syncOptionState();
+            });
+          }
+        })();
+
         var quoteEl = document.getElementById("daily-quote");
         var youtubeListEl = document.getElementById("hero-youtube-list");
         var youtubeToggleEl = document.getElementById("hero-youtube-toggle");
@@ -1424,8 +2088,8 @@
 
         if (!quoteEl) return;
 
-        // 1일마다 한 문구씩 순환
-        var rotationDays = 3;
+        // 매일 한 문구씩 순환
+        var rotationDays = 1;
         var anchorDate = new Date("2026-01-01T00:00:00");
         var now = new Date();
         var dayMs = 24 * 60 * 60 * 1000;
@@ -1433,12 +2097,26 @@
         var slot = Math.floor(elapsedDays / rotationDays);
 
         var howardMarksQuotes = [
-          "“예측할 수는 없지만, 준비할 수는 있다.”",
-          "“대부분의 것은 결국 사이클을 따른다.”",
-          "“좋은 투자는 좋은 자산을 사는 것이 아니라, 좋은 가격에 사는 것이다.”",
-          "“시대를 너무 앞서가면, 틀린 것과 구별되지 않는다.”",
-          "“손실을 줄이는 인내가 장기 수익을 만든다.”",
-          "“좋은 조건에서만 사고, 기회는 조급히 쫓지 말고, 손실을 피하는 원칙을 지켜라.”"
+          "“우리는 미래를 정확히 맞히기보다, 여러 가능성에 대비하는 쪽이 더 현실적이다.”",
+          "“시장은 낙관과 비관 사이를 오가며 흔들리고, 투자자는 그 진폭을 이용할 줄 알아야 한다.”",
+          "“좋은 자산이라도 비싼 가격에 사면 평범한 결과가 되고, 평범한 자산도 싸게 사면 훌륭한 결과가 될 수 있다.”",
+          "“대중의 확신이 가장 강할 때가 오히려 리스크를 가장 경계해야 할 때인 경우가 많다.”",
+          "“상방 수익을 크게 만드는 비결보다, 큰 손실을 피하는 태도가 장기 성과를 더 강하게 만든다.”",
+          "“사이클을 부정하지 말고, 지금이 사이클의 어느 구간인지 끊임없이 점검하라.”",
+          "“남들과 같은 정보를 보고도 다른 결론에 도달하려면, 가격과 심리의 괴리를 읽어야 한다.”",
+          "“탁월한 투자란 늘 맞히는 것이 아니라, 틀렸을 때도 치명상을 피하도록 설계하는 것이다.”",
+          "“불확실성은 제거할 수 없으니, 포지션 크기와 분산으로 통제 가능한 영역으로 바꿔야 한다.”",
+          "“시장이 공포에 젖을 때 기회가 생기고, 시장이 안심에 젖을 때 경계가 필요해진다.”",
+          "“확신이 높아질수록 레버리지보다 유연성을 남겨두는 편이 실제 생존 확률을 높인다.”",
+          "“좋은 의사결정은 결과가 아니라 과정에서 나온다; 같은 상황이 오면 다시 같은 판단을 할 수 있어야 한다.”",
+          "“수익률은 실력의 일부만 반영하고, 가격이 이미 무엇을 선반영했는지를 읽는 능력이 차이를 만든다.”",
+          "“군중과 반대로 간다는 사실 자체가 정답은 아니며, 왜 반대로 가는지에 대한 근거가 정답에 가깝다.”",
+          "“투자는 속도의 게임이 아니라 지속성의 게임이고, 끝까지 남는 사람이 결국 복리의 힘을 얻는다.”",
+          "“이해할 수 있는 사업만 고르는 절제가 장기 성과를 안정적으로 만든다.”",
+          "“좋은 기업을 적정 가격에 오래 보유하는 태도가 잦은 매매보다 강한 경우가 많다.”",
+          "“시장 가격은 매일 흔들리지만, 기업의 본질가치는 하루아침에 바뀌지 않는다.”",
+          "“현금흐름이 튼튼하고 부채 관리가 좋은 기업은 위기에서 더 큰 격차를 만든다.”",
+          "“복리는 시간이 친구가 되어줄 때 비로소 힘을 발휘하니, 조급함이 가장 비싼 비용이 된다.”"
         ];
 
         quoteEl.textContent = howardMarksQuotes[slot % howardMarksQuotes.length];

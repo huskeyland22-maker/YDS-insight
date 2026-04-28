@@ -237,7 +237,19 @@ function formatSignedPctOrDash(value) {
   return `${sign}${Math.abs(value).toFixed(2)}%`;
 }
 
+function formatNumberOrDash(value, digits = 2) {
+  if (!Number.isFinite(value)) return "-";
+  return value.toFixed(digits);
+}
+
 async function main() {
+  let previousOverseasData = null;
+  try {
+    previousOverseasData = JSON.parse(await readFile(overseasDataPath, "utf8"));
+  } catch (err) {
+    previousOverseasData = null;
+  }
+
   const raw = await readFile(dataPath, "utf8");
   const data = JSON.parse(raw);
   const items = Array.isArray(data.items) ? data.items : [];
@@ -383,8 +395,206 @@ async function main() {
 
   const overseasData = {
     updatedAt: `${nowKstString()} (자동 업데이트)`,
-    items: overseasItems
+    items: overseasItems,
+    flow: {
+      updatedAt: `${nowKstString()} (자동 업데이트)`,
+      items: []
+    },
+    insight: {
+      sectorStrength: [],
+      weeklySummary: []
+    }
   };
+
+  try {
+    const usdJpy = await fetchYahooLatestTwo("JPY=X");
+    overseasData.flow.items.push({
+      id: "usdjpy",
+      label: "엔캐리 압력",
+      value: `USDJPY ${formatNumberOrDash(usdJpy.latest, 2)}`,
+      delta: formatSignedPctOrDash(deltaPercent(usdJpy.latest, usdJpy.previous)),
+      tone: deltaPercent(usdJpy.latest, usdJpy.previous) > 0.6 ? "down" : "up"
+    });
+    logs.push("[OK] flow usdjpy updated");
+  } catch (err) {
+    logs.push(`[SKIP] flow usdjpy ${err.message}`);
+  }
+
+  try {
+    const dxy = await fetchYahooLatestTwo("DX-Y.NYB");
+    overseasData.flow.items.push({
+      id: "dxy",
+      label: "달러 유동성",
+      value: `DXY ${formatNumberOrDash(dxy.latest, 2)}`,
+      delta: formatSignedPctOrDash(deltaPercent(dxy.latest, dxy.previous)),
+      tone: deltaPercent(dxy.latest, dxy.previous) > 0.4 ? "down" : "up"
+    });
+    logs.push("[OK] flow dxy updated");
+  } catch (err) {
+    logs.push(`[SKIP] flow dxy ${err.message}`);
+  }
+
+  try {
+    const qqq = await fetchYahooLatestTwo("QQQ");
+    const tlt = await fetchYahooLatestTwo("TLT");
+    const ratioNow = Number.isFinite(qqq.latest) && Number.isFinite(tlt.latest) && tlt.latest !== 0 ? qqq.latest / tlt.latest : null;
+    const ratioPrev = Number.isFinite(qqq.previous) && Number.isFinite(tlt.previous) && tlt.previous !== 0 ? qqq.previous / tlt.previous : null;
+    const ratioDelta = deltaPercent(ratioNow, ratioPrev);
+    overseasData.flow.items.push({
+      id: "qqq_tlt",
+      label: "기관 프록시",
+      value: `QQQ/TLT ${formatNumberOrDash(ratioNow, 3)}`,
+      delta: formatSignedPctOrDash(ratioDelta),
+      tone: ratioDelta >= 0 ? "up" : "down"
+    });
+    logs.push("[OK] flow qqq_tlt updated");
+  } catch (err) {
+    logs.push(`[SKIP] flow qqq_tlt ${err.message}`);
+  }
+
+  try {
+    const hyg = await fetchYahooLatestTwo("HYG");
+    const lqd = await fetchYahooLatestTwo("LQD");
+    const ratioNow = Number.isFinite(hyg.latest) && Number.isFinite(lqd.latest) && lqd.latest !== 0 ? hyg.latest / lqd.latest : null;
+    const ratioPrev = Number.isFinite(hyg.previous) && Number.isFinite(lqd.previous) && lqd.previous !== 0 ? hyg.previous / lqd.previous : null;
+    const ratioDelta = deltaPercent(ratioNow, ratioPrev);
+    overseasData.flow.items.push({
+      id: "hyg_lqd",
+      label: "신용 체력",
+      value: `HYG/LQD ${formatNumberOrDash(ratioNow, 3)}`,
+      delta: formatSignedPctOrDash(ratioDelta),
+      tone: ratioDelta >= 0 ? "up" : "down"
+    });
+    logs.push("[OK] flow hyg_lqd updated");
+  } catch (err) {
+    logs.push(`[SKIP] flow hyg_lqd ${err.message}`);
+  }
+
+  try {
+    const vixItem = byId.get("vix");
+    const hyItem = byId.get("hy");
+    const vixValue = toNumber(vixItem && vixItem.value);
+    const hyValue = toNumber(hyItem && hyItem.value);
+    const vixDelta = parseFloat(String(vixItem && vixItem.delta || "").replace(/[^0-9.+-]/g, ""));
+    const hyDelta = parseFloat(String(hyItem && hyItem.delta || "").replace(/[^0-9.+-]/g, ""));
+    const stress = (Number.isFinite(vixValue) ? vixValue : 22) + (Number.isFinite(hyValue) ? hyValue * 3 : 12);
+    overseasData.flow.items.push({
+      id: "vix_hy",
+      label: "리스크 선호",
+      value: `VIX ${formatNumberOrDash(vixValue, 2)} / HY ${formatNumberOrDash(hyValue, 2)}%`,
+      delta: `VIX ${formatSignedPctOrDash(vixDelta)} · HY ${formatSignedPctOrDash(hyDelta)}`,
+      tone: stress <= 30 ? "up" : stress >= 35 ? "down" : "flat"
+    });
+    logs.push("[OK] flow vix_hy updated");
+  } catch (err) {
+    logs.push(`[SKIP] flow vix_hy ${err.message}`);
+  }
+
+  {
+    const flowItems = Array.isArray(overseasData.flow.items) ? overseasData.flow.items : [];
+    let score = 50;
+    flowItems.forEach((item) => {
+      if (!item) return;
+      if (item.tone === "up") score += 8;
+      else if (item.tone === "down") score -= 8;
+    });
+    if (score > 100) score = 100;
+    if (score < 0) score = 0;
+    const regime = score >= 62 ? "Risk-on" : score <= 38 ? "Risk-off" : "Neutral";
+    const action =
+      regime === "Risk-on"
+        ? "성장/섹터 ETF는 눌림 분할 접근"
+        : regime === "Risk-off"
+          ? "현금/헤지 비중 우선, 레버리지 축소"
+          : "중립 비중 유지, 이벤트 확인 후 대응";
+    const dateKey = nowKstString().slice(0, 10);
+    const prevHistory =
+      previousOverseasData &&
+      previousOverseasData.flow &&
+      previousOverseasData.flow.regime &&
+      Array.isArray(previousOverseasData.flow.regime.history)
+        ? previousOverseasData.flow.regime.history
+        : [];
+    let history = prevHistory
+      .map((entry) => ({
+        d: String(entry && entry.d ? entry.d : ""),
+        s: Number(entry && entry.s)
+      }))
+      .filter((entry) => /^\d{4}\.\d{2}\.\d{2}$/.test(entry.d) && Number.isFinite(entry.s));
+    if (history.length && history[history.length - 1].d === dateKey) {
+      history[history.length - 1].s = Math.round(score);
+    } else {
+      history.push({ d: dateKey, s: Math.round(score) });
+    }
+    if (history.length > 7) history = history.slice(history.length - 7);
+    overseasData.flow.regime = {
+      score: Math.round(score),
+      state: regime,
+      action,
+      history
+    };
+  }
+
+  {
+    const sectorDefs = [
+      { id: "semiconductor", label: "반도체", symbol: "SOXX" },
+      { id: "ai-growth", label: "AI/성장", symbol: "QQQ" },
+      { id: "financials", label: "금융", symbol: "XLF" },
+      { id: "energy", label: "에너지", symbol: "XLE" }
+    ];
+    const sectorStrength = [];
+    for (const sector of sectorDefs) {
+      try {
+        const latestTwo = await fetchYahooLatestTwo(sector.symbol);
+        const oneDay = deltaPercent(latestTwo.latest, latestTwo.previous);
+        const series = await fetchYahooSeries(sector.symbol, { range: "6mo" });
+        const latest = series[series.length - 1].close;
+        const idx1w = Math.max(0, series.length - 6);
+        const idx1m = Math.max(0, series.length - 22);
+        const oneWeek = deltaPercent(latest, series[idx1w].close);
+        const oneMonth = deltaPercent(latest, series[idx1m].close);
+        const composite =
+          (Number.isFinite(oneDay) ? oneDay * 0.2 : 0) +
+          (Number.isFinite(oneWeek) ? oneWeek * 0.35 : 0) +
+          (Number.isFinite(oneMonth) ? oneMonth * 0.45 : 0);
+        sectorStrength.push({
+          id: sector.id,
+          label: sector.label,
+          symbol: sector.symbol,
+          p1d: formatSignedPctOrDash(oneDay),
+          p1w: formatSignedPctOrDash(oneWeek),
+          p1m: formatSignedPctOrDash(oneMonth),
+          score: Math.round(composite * 10) / 10
+        });
+        logs.push(`[OK] sector ${sector.symbol} updated`);
+      } catch (err) {
+        logs.push(`[SKIP] sector ${sector.symbol} ${err.message}`);
+      }
+    }
+    sectorStrength.sort((a, b) => b.score - a.score);
+    overseasData.insight.sectorStrength = sectorStrength;
+
+    const regime = overseasData.flow && overseasData.flow.regime ? overseasData.flow.regime : null;
+    const top = sectorStrength[0] || null;
+    const bottom = sectorStrength.length > 1 ? sectorStrength[sectorStrength.length - 1] : null;
+    const weeklySummary = [];
+    if (regime) {
+      weeklySummary.push(
+        `국면: ${regime.state} (${regime.score}/100) · ${regime.action}`
+      );
+    }
+    if (top) {
+      weeklySummary.push(
+        `강세 섹터: ${top.label}(${top.symbol}) ${top.p1w} / ${top.p1m}`
+      );
+    }
+    if (bottom) {
+      weeklySummary.push(
+        `약세 섹터: ${bottom.label}(${bottom.symbol}) ${bottom.p1w} / ${bottom.p1m}`
+      );
+    }
+    overseasData.insight.weeklySummary = weeklySummary;
+  }
   await writeFile(overseasDataPath, `${JSON.stringify(overseasData, null, 2)}\n`, "utf8");
   await writeFile(overseasDataJsPath, `window.OVERSEAS_DATA = ${JSON.stringify(overseasData, null, 2)};\n`, "utf8");
 

@@ -146,6 +146,7 @@ window.VALUE_CHAIN_SECTORS = [
       { name: "카카오", code: "035720", tip: "AI 서비스 생태계 강화" }
     ],
     hidden: [
+      { name: "에스피지", code: "058610", tip: "정밀 감속기·로봇 구동계 핵심" },
       { name: "제주반도체", code: "080220", tip: "모바일 메모리 특화" },
       { name: "고영", code: "098460", tip: "3D 검사 장비·로봇수술" },
       { name: "뉴로메카", code: "348340", tip: "협동로봇 솔루션" },

@@ -49,6 +49,76 @@
         background: rgba(86, 131, 255, 0.2);
         transform: translateX(2px);
       }
+      .vc-tree-wrap {
+        border: 1px solid rgba(146, 164, 201, 0.28);
+        border-radius: 1rem;
+        background: linear-gradient(180deg, rgba(16, 24, 44, 0.78), rgba(10, 16, 34, 0.9));
+        padding: 1rem;
+      }
+      .vc-tree-wrap details {
+        margin-top: 0.45rem;
+      }
+      .vc-tree-wrap summary {
+        cursor: pointer;
+        list-style: none;
+      }
+      .vc-tree-wrap summary::-webkit-details-marker {
+        display: none;
+      }
+      .vc-tree-wrap .node {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        border: 1px solid rgba(148, 163, 184, 0.35);
+        border-radius: 999px;
+        padding: 0.2rem 0.55rem;
+        font-size: 0.76rem;
+      }
+      .vc-tree-wrap .node--stage { color: #dbeafe; border-color: rgba(125, 211, 252, 0.35); }
+      .vc-tree-wrap .node--subsector { color: #fde68a; border-color: rgba(253, 230, 138, 0.35); }
+      .vc-tree-wrap .node--stock {
+        display: inline-block;
+        margin: 0.2rem 0.25rem 0 0;
+        border-radius: 0.5rem;
+        border: 1px solid rgba(148, 163, 184, 0.25);
+        padding: 0.2rem 0.45rem;
+        color: #cbd5e1;
+        text-decoration: none;
+        font-size: 0.74rem;
+      }
+      .vc-tree-wrap .node--stock:hover {
+        color: #fff;
+        border-color: rgba(125, 211, 252, 0.5);
+        background: rgba(59, 130, 246, 0.18);
+      }
+      .vc-tree-indent {
+        position: relative;
+        margin-left: 0.85rem;
+        border-left: 1px dashed rgba(148, 163, 184, 0.32);
+        padding-left: 0.7rem;
+      }
+      .vc-tree-indent::after {
+        content: "";
+        position: absolute;
+        left: -1px;
+        bottom: 0;
+        width: 0.55rem;
+        height: 0.55rem;
+        border-left: 1px dashed rgba(148, 163, 184, 0.32);
+        border-bottom: 1px dashed rgba(148, 163, 184, 0.32);
+        border-bottom-left-radius: 0.35rem;
+      }
+      .rotation-item {
+        margin-bottom: 0.2rem;
+      }
+      .rotation-item--strong {
+        color: #ffc0c7;
+        font-weight: 700;
+      }
+      .rotation-item--mid {
+        color: #ffd7dc;
+        font-weight: 600;
+      }
     </style>
     <script src="site-version.js"></script>
     <link rel="stylesheet" href="styles.css" />
@@ -77,7 +147,7 @@
     <main class="container py-10 md:py-14">
       <section class="mb-8 md:mb-10">
         <p class="text-xs md:text-sm tracking-[0.22em] uppercase text-blue-200/70">Digital Korea Value Chain</p>
-        <h1 class="mt-3 text-3xl md:text-4xl font-semibold text-slate-100">밸류체인 맵 Pro (2026 Outlook)</h1>
+        <h1 class="mt-3 text-3xl md:text-4xl font-semibold text-slate-100">KOREA VALUE CHAIN MAP (2026 OUTLOOK)</h1>
         <p class="mt-3 max-w-4xl text-sm md:text-base text-slate-300 leading-relaxed">
           국내 핵심 주도 섹터를 대형주 Top 5와 강소기업 5로 분리해 한눈에 정리했습니다. 종목 클릭 시 네이버 종목 상세(우선)와 다음 종목 상세(백업)가 새 탭으로 함께 열립니다.
         </p>
@@ -96,9 +166,26 @@
             <option value="vivid">선명</option>
             <option value="soft">은은</option>
           </select>
-          <button id="reset-favorites" class="rounded-lg border border-slate-500/40 px-3 py-1.5 text-slate-200 hover:border-blue-300/50 hover:text-white" type="button">
-            관심 섹터 초기화
-          </button>
+        </div>
+      </section>
+
+      <section class="mb-6 rounded-2xl border border-slate-500/30 bg-[#101934]/85 p-4 md:p-5" aria-label="순환매 레이더">
+        <p class="text-xs tracking-[0.16em] uppercase text-blue-200/70">Sector Rotation Radar</p>
+        <h2 class="mt-2 text-lg md:text-xl font-semibold text-slate-100">순환매 레이더 (주도 · 다음 출발 · 과열)</h2>
+        <p class="mt-2 text-sm text-slate-300">타이밍 신호(A/B/C)와 섹터별 분포를 바탕으로 현재 순환 흐름을 자동 요약합니다.</p>
+        <div class="mt-3 grid grid-cols-1 gap-3 md:grid-cols-3" id="rotation-radar-grid">
+          <article class="rounded-xl border border-emerald-300/25 bg-emerald-500/10 p-3">
+            <h3 class="text-sm font-semibold text-emerald-100">이번 주 주도 섹터</h3>
+            <ul class="mt-2 text-xs text-slate-200" id="rotation-leaders-list"><li>계산 중...</li></ul>
+          </article>
+          <article class="rounded-xl border border-blue-300/25 bg-blue-500/10 p-3">
+            <h3 class="text-sm font-semibold text-blue-100">다음 출발 후보</h3>
+            <ul class="mt-2 text-xs text-slate-200" id="rotation-next-list"><li>계산 중...</li></ul>
+          </article>
+          <article class="rounded-xl border border-rose-300/25 bg-rose-500/10 p-3">
+            <h3 class="text-sm font-semibold text-rose-100">과열·휴식 구간</h3>
+            <ul class="mt-2 text-xs text-slate-200" id="rotation-hot-list"><li>계산 중...</li></ul>
+          </article>
         </div>
       </section>
 
@@ -116,28 +203,26 @@
     <script src="value-chain-data.js"></script>
     <script>
       (function () {
-        var FAVORITE_KEY = "value-chain:favorites:v1";
         var OPEN_MODE_KEY = "value-chain:open-mode:v1";
         var HEAT_STYLE_KEY = "value-chain:heat-style:v1";
+        var MAX_TOP_ITEMS = 5;
+        var MAX_HIDDEN_ITEMS = 4;
+        var PRIORITY_HIDDEN_BY_SECTOR = {
+          "on-device-ai-robotics": ["에스피지", "고영", "뉴로메카", "에스비비테크"],
+          "hbm-ai-semiconductor": ["HPSP", "테크윙", "피에스케이홀딩스", "에스티아이"],
+          "power-grid-hvdc": ["제룡전기", "가온전선", "LS전선아시아", "누리플렉스"],
+          defense: ["아이쓰리시스템", "제노코", "켄코아에어로스페이스", "퍼스텍"]
+        };
+        var EXCLUDE_SMALLCAP = {
+          "루미르": true,
+          "에이테크솔루션": true,
+          "피에스텍": true
+        };
         var sectors = Array.isArray(window.VALUE_CHAIN_SECTORS) ? window.VALUE_CHAIN_SECTORS.slice() : [];
         var heatMeta = { updatedAt: "-" };
         var timingMeta = { updatedAt: "-", bySymbol: {} };
         var openMode = localStorage.getItem(OPEN_MODE_KEY) || "2";
         var heatStyle = localStorage.getItem(HEAT_STYLE_KEY) || "vivid";
-
-        function loadFavorites() {
-          try {
-            var raw = localStorage.getItem(FAVORITE_KEY);
-            var parsed = raw ? JSON.parse(raw) : [];
-            return Array.isArray(parsed) ? parsed : [];
-          } catch (e) {
-            return [];
-          }
-        }
-
-        function saveFavorites(ids) {
-          try { localStorage.setItem(FAVORITE_KEY, JSON.stringify(ids)); } catch (e) {}
-        }
 
         function stockUrl(item) {
           if (item.code) return "https://finance.naver.com/item/main.naver?code=" + encodeURIComponent(item.code);
@@ -351,8 +436,6 @@
               '</span><span class="ml-2 inline-flex rounded-full border px-1.5 py-0.5 text-[10px] ' +
               timingBadgeClass(signal.tone) +
               '">' +
-              signal.grade +
-              " (" +
               signal.state +
               ')</span></a><button type="button" class="timing-toggle ml-1 rounded-md border border-slate-500/40 px-1.5 py-0.5 text-[10px] text-slate-300 hover:border-blue-300/50 hover:text-white" data-target="' +
               panelId +
@@ -380,6 +463,89 @@
           );
         }
 
+        function curatedBySector(sector) {
+          var top = (sector.top || []).slice(0, MAX_TOP_ITEMS);
+          var hiddenSource = (sector.hidden || []).filter(function (item) {
+            return item && !EXCLUDE_SMALLCAP[item.name];
+          });
+          var hidden = [];
+          var used = {};
+          var priorityNames = PRIORITY_HIDDEN_BY_SECTOR[sector.id] || [];
+          priorityNames.forEach(function (name) {
+            if (hidden.length >= MAX_HIDDEN_ITEMS) return;
+            var found = hiddenSource.find(function (item) { return item.name === name; });
+            if (found && !used[found.name]) {
+              hidden.push(found);
+              used[found.name] = true;
+            }
+          });
+          hiddenSource.forEach(function (item) {
+            if (hidden.length >= MAX_HIDDEN_ITEMS) return;
+            if (used[item.name]) return;
+            hidden.push(item);
+            used[item.name] = true;
+          });
+          return { top: top, hidden: hidden, all: top.concat(hidden) };
+        }
+
+        function sectorTreeHtml(sector) {
+          var allItems = curatedBySector(sector).all;
+          var tree = {};
+          allItems.forEach(function (item, idx) {
+            var stage = inferSectionLabel(item, sector, idx);
+            var subsector = inferSubsectorLabel(item, sector, stage);
+            if (!tree[stage]) tree[stage] = {};
+            if (!tree[stage][subsector]) tree[stage][subsector] = [];
+            tree[stage][subsector].push(item);
+          });
+          var stages = Object.keys(tree);
+          return (
+            '<div class="vc-tree-wrap">' +
+            '<p class="mb-2 text-[11px] text-slate-300">핵심 종목만 노출 · 대형주 최대 ' + MAX_TOP_ITEMS + '개 / 강소기업 최대 ' + MAX_HIDDEN_ITEMS + "개</p>" +
+            stages
+              .map(function (stage) {
+                var subsectors = Object.keys(tree[stage]);
+                return (
+                  '<div class="mb-2"><span class="node node--stage">' +
+                  stage +
+                  "</span><div class=\"vc-tree-indent mt-1\">" +
+                  subsectors
+                    .map(function (sub) {
+                      return (
+                        '<div class="mb-1.5"><span class="node node--subsector">' +
+                        sub +
+                        "</span><div class=\"vc-tree-indent mt-1\">" +
+                        tree[stage][sub]
+                          .map(function (item) {
+                            var signal = timingSignal(item, stage);
+                            return (
+                              '<span class="inline-flex items-center gap-1">' +
+                              '<a class="node--stock" href="' +
+                              stockUrl(item) +
+                              '" target="_blank" rel="noopener noreferrer">' +
+                              item.name +
+                              "</a>" +
+                              '<span class="inline-flex rounded-full border px-1.5 py-0.5 text-[10px] ' +
+                              timingBadgeClass(signal.tone) +
+                              '">' +
+                              signal.state +
+                              "</span>" +
+                              "</span>"
+                            );
+                          })
+                          .join("") +
+                        "</div></div>"
+                      );
+                    })
+                    .join("") +
+                  "</div></div>"
+                );
+              })
+              .join("") +
+            "</div>"
+          );
+        }
+
         function heatToneClass(heat) {
           if (heatStyle === "soft") {
             if (heat === "VERY HOT") return "text-rose-100 bg-rose-400/12 border-rose-200/25";
@@ -398,10 +564,72 @@
           sectors.forEach(function (s) { if (map[s.id]) s.heat = map[s.id]; });
         }
 
+        function scoreSectorRotation(sector) {
+          var items = curatedBySector(sector).all;
+          var stats = { good: 0, wait: 0, hot: 0, total: 0 };
+          items.forEach(function (item, idx) {
+            var sectionLabel = inferSectionLabel(item, sector, idx);
+            var signal = timingSignal(item, sectionLabel);
+            stats.total += 1;
+            stats[signal.tone] += 1;
+          });
+          var total = stats.total || 1;
+          var leadScore = (stats.good / total) * 100 - (stats.hot / total) * 35;
+          var nextScore = (stats.wait / total) * 100 + (stats.good / total) * 20 - (stats.hot / total) * 15;
+          var hotScore = (stats.hot / total) * 100;
+          return {
+            id: sector.id,
+            name: sector.name,
+            icon: sector.icon,
+            leadScore: Math.round(leadScore * 10) / 10,
+            nextScore: Math.round(nextScore * 10) / 10,
+            hotScore: Math.round(hotScore * 10) / 10,
+            stats: stats
+          };
+        }
+
+        function renderRotationRadar() {
+          var leaderEl = document.getElementById("rotation-leaders-list");
+          var nextEl = document.getElementById("rotation-next-list");
+          var hotEl = document.getElementById("rotation-hot-list");
+          if (!leaderEl || !nextEl || !hotEl) return;
+          var scored = sectors.map(scoreSectorRotation);
+          if (!scored.length) return;
+
+          var leaders = scored.slice().sort(function (a, b) { return b.leadScore - a.leadScore; }).slice(0, 3);
+          var nexts = scored.slice().sort(function (a, b) { return b.nextScore - a.nextScore; }).slice(0, 3);
+          var hots = scored.slice().sort(function (a, b) { return b.hotScore - a.hotScore; }).slice(0, 3);
+
+          function rowHtml(item, kind, rank) {
+            var cls = "rotation-item";
+            if ((kind === "lead" || kind === "next") && rank === 0) cls += " rotation-item--strong";
+            else if ((kind === "lead" || kind === "next") && rank === 1) cls += " rotation-item--mid";
+            var score =
+              kind === "lead" ? item.leadScore :
+              kind === "next" ? item.nextScore :
+              item.hotScore;
+            return (
+              '<li class="' + cls + '">' +
+              item.icon +
+              " " +
+              item.name +
+              " · 점수 " +
+              score +
+              " · " +
+              (kind === "lead" ? "초입 우세" : kind === "next" ? "대기 구간" : "과열 비중 높음") +
+              "</li>"
+            );
+          }
+
+          leaderEl.innerHTML = leaders.map(function (item, idx) { return rowHtml(item, "lead", idx); }).join("");
+          nextEl.innerHTML = nexts.map(function (item, idx) { return rowHtml(item, "next", idx); }).join("");
+          hotEl.innerHTML = hots.map(function (item, idx) { return rowHtml(item, "hot", idx); }).join("");
+        }
+
         function refreshTimingSignals() {
           var codes = [];
           sectors.forEach(function (sector) {
-            (sector.top || []).concat(sector.hidden || []).forEach(function (item) {
+            curatedBySector(sector).all.forEach(function (item) {
               if (item && item.code) codes.push(item.code);
             });
           });
@@ -423,14 +651,11 @@
         }
 
         function render() {
-          var favoriteIds = loadFavorites();
-          var favoriteSet = {};
-          favoriteIds.forEach(function (id) { favoriteSet[id] = true; });
-
+          var heatRank = { "VERY HOT": 0, HOT: 1, WARM: 2 };
           var ordered = sectors.slice().sort(function (a, b) {
-            var af = favoriteSet[a.id] ? 0 : 1;
-            var bf = favoriteSet[b.id] ? 0 : 1;
-            if (af !== bf) return af - bf;
+            var ar = Object.prototype.hasOwnProperty.call(heatRank, a.heat) ? heatRank[a.heat] : 99;
+            var br = Object.prototype.hasOwnProperty.call(heatRank, b.heat) ? heatRank[b.heat] : 99;
+            if (ar !== br) return ar - br;
             return a.order - b.order;
           });
 
@@ -438,24 +663,21 @@
           if (!container) return;
 
           container.innerHTML = ordered.map(function (sector, index) {
-            var isFavorite = !!favoriteSet[sector.id];
-            var allItems = (sector.top || []).concat(sector.hidden || []);
+            var allItems = curatedBySector(sector).all;
             return (
               '<article class="vc-card relative rounded-2xl p-5 md:p-6">' +
               '<div class="mb-4 flex items-start justify-between gap-3">' +
               '<div><p class="text-xs text-blue-200/70 tracking-wider">SECTOR ' + String(index + 1).padStart(2, "0") + '</p><h2 class="mt-1 text-lg md:text-xl font-semibold text-slate-100">' + sector.icon + " " + sector.name + '</h2></div>' +
               '<span class="text-[11px] md:text-xs border rounded-full px-2.5 py-1 ' + heatToneClass(sector.heat) + '">' + sector.heat + "</span></div>" +
-              '<div class="mb-4"><button type="button" class="favorite-btn rounded-lg border px-3 py-1.5 text-xs ' + (isFavorite ? "border-blue-300/70 text-blue-100 bg-blue-500/20" : "border-slate-500/40 text-slate-300 hover:border-blue-300/50 hover:text-white") + '" data-sector-id="' + sector.id + '">' + (isFavorite ? "관심 섹터 해제" : "관심 섹터 등록") + "</button></div>" +
               sectionsHtml(sector) +
-              sectorTimingSummary(allItems, sector) +
-              '<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">' +
-              '<div><p class="text-xs font-semibold text-blue-200/75 mb-2">대형주 TOP 5</p><ul class="text-sm space-y-1.5">' + listHtml(sector.top, sector, 0) + "</ul></div>" +
-              '<div><p class="text-xs font-semibold text-amber-200/75 mb-2">강소기업 5</p><ul class="text-sm space-y-1.5">' + listHtml(sector.hidden, sector, 5) + "</ul></div></div></article>"
+              sectorTreeHtml(sector) +
+              "</article>"
             );
           }).join("");
 
           var heatUpdatedAtEl = document.getElementById("heat-updated-at");
           if (heatUpdatedAtEl) heatUpdatedAtEl.textContent = "Heat 업데이트: " + heatMeta.updatedAt;
+          renderRotationRadar();
         }
 
         function bindEvents() {
@@ -503,24 +725,6 @@
               if (openMode === "2" && secondary) window.open(secondary, "_blank", "noopener,noreferrer");
             });
 
-            container.addEventListener("click", function (e) {
-              var btn = e.target.closest(".favorite-btn");
-              if (!btn) return;
-              var id = btn.getAttribute("data-sector-id");
-              if (!id) return;
-              var favorites = loadFavorites();
-              var idx = favorites.indexOf(id);
-              if (idx === -1) favorites.push(id); else favorites.splice(idx, 1);
-              saveFavorites(favorites);
-              render();
-            });
-          }
-          var resetBtn = document.getElementById("reset-favorites");
-          if (resetBtn) {
-            resetBtn.addEventListener("click", function () {
-              saveFavorites([]);
-              render();
-            });
           }
         }
 

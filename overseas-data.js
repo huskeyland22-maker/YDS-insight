@@ -1,5 +1,5 @@
 window.OVERSEAS_DATA = {
-  "updatedAt": "2026.04.28 21:54 KST (자동 업데이트)",
+  "updatedAt": "2026.04.28 22:24 KST (자동 업데이트)",
   "items": [
     {
       "symbol": "SOXL",
@@ -25,5 +25,101 @@ window.OVERSEAS_DATA = {
       "mdd": "0.00%",
       "updatedAt": "2026.04.28"
     }
-  ]
+  ],
+  "flow": {
+    "updatedAt": "2026.04.28 22:24 KST (자동 업데이트)",
+    "items": [
+      {
+        "id": "usdjpy",
+        "label": "엔캐리 압력",
+        "value": "USDJPY 159.56",
+        "delta": "-0.01%",
+        "tone": "up"
+      },
+      {
+        "id": "dxy",
+        "label": "달러 유동성",
+        "value": "DXY 98.73",
+        "delta": "+0.26%",
+        "tone": "up"
+      },
+      {
+        "id": "qqq_tlt",
+        "label": "기관 프록시",
+        "value": "QQQ/TLT 7.699",
+        "delta": "+0.55%",
+        "tone": "up"
+      },
+      {
+        "id": "hyg_lqd",
+        "label": "신용 체력",
+        "value": "HYG/LQD 0.737",
+        "delta": "+0.32%",
+        "tone": "up"
+      },
+      {
+        "id": "vix_hy",
+        "label": "리스크 선호",
+        "value": "VIX 19.07 / HY 2.86%",
+        "delta": "VIX +1.05% · HY 0.00%",
+        "tone": "up"
+      }
+    ],
+    "regime": {
+      "score": 90,
+      "state": "Risk-on",
+      "action": "성장/섹터 ETF는 눌림 분할 접근",
+      "history": [
+        {
+          "d": "2026.04.28",
+          "s": 90
+        }
+      ]
+    }
+  },
+  "insight": {
+    "sectorStrength": [
+      {
+        "id": "semiconductor",
+        "label": "반도체",
+        "symbol": "SOXX",
+        "p1d": "-1.34%",
+        "p1w": "+9.07%",
+        "p1m": "+38.49%",
+        "score": 20.2
+      },
+      {
+        "id": "ai-growth",
+        "label": "AI/성장",
+        "symbol": "QQQ",
+        "p1d": "+0.05%",
+        "p1w": "+2.70%",
+        "p1m": "+15.76%",
+        "score": 8
+      },
+      {
+        "id": "financials",
+        "label": "금융",
+        "symbol": "XLF",
+        "p1d": "+0.76%",
+        "p1w": "-1.56%",
+        "p1m": "+5.63%",
+        "score": 2.1
+      },
+      {
+        "id": "energy",
+        "label": "에너지",
+        "symbol": "XLE",
+        "p1d": "-0.18%",
+        "p1w": "+3.09%",
+        "p1m": "-7.72%",
+        "score": -2.4
+      }
+    ],
+    "weeklySummary": [
+      "국면: Risk-on (90/100) · 성장/섹터 ETF는 눌림 분할 접근",
+      "강세 섹터: 반도체(SOXX) +9.07% / +38.49%",
+      "약세 섹터: 에너지(XLE) +3.09% / -7.72%"
+    ]
+  }
 };
