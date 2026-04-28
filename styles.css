@@ -106,6 +106,7 @@ body {
   position: sticky;
   top: 0;
   z-index: 10;
+  -webkit-backdrop-filter: blur(14px);
   backdrop-filter: blur(14px);
   background: rgba(12, 18, 34, 0.72);
   border-bottom: 1px solid rgba(232, 236, 244, 0.06);
@@ -1388,6 +1389,18 @@ a.tag.tag--outline:hover {
   background: rgba(232, 236, 244, 0.04);
 }
 
+/* 좁은 화면: 2열만 있을 때 3번째(저자)가 번호 열 아래로만 가서 거의 안 보이던 문제 → 저자는 한 줄 전체 */
+@media (max-width: 719px) {
+  .favorite-books__row .favorite-books__input:not(.favorite-books__input--author) {
+    min-width: 0;
+  }
+
+  .favorite-books__row .favorite-books__input--author {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+}
+
 @media (min-width: 720px) {
   .favorite-books__row {
     grid-template-columns: auto minmax(0, 1fr) 8.4rem;
@@ -2594,4 +2607,25 @@ input.hap-won-input:focus {
     font-size: 0.7rem;
     padding: 0.2rem 0.5rem;
   }
+}
+
+/* <details>/<summary>: Safari·Chrome·Samsung Internet에서 동일하게 보이도록 */
+details > summary {
+  list-style: none;
+}
+
+details > summary::-webkit-details-marker {
+  display: none;
+}
+
+details > summary::marker {
+  content: "";
+}
+
+/* 밸류체인 샘플 등: 종목 링크 줄바꿈·터치 영역 */
+.vc-stock-link {
+  -webkit-tap-highlight-color: rgba(96, 165, 250, 0.25);
+  touch-action: manipulation;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
 }

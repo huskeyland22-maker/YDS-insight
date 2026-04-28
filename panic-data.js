@@ -1,11 +1,11 @@
 window.PANIC_DATA = {
-  "updatedAt": "2026.04.24 16:48 KST (자동 업데이트)",
+  "updatedAt": "2026.04.28 14:05 KST (자동 업데이트)",
   "items": [
     {
       "id": "vix",
       "label": "VIX Index",
-      "value": "18.94",
-      "delta": "📈 +1.00",
+      "value": "18.02",
+      "delta": "📈 +0.54",
       "status": "🟢 안정",
       "tone": "stable",
       "weekTrend": "상승",
@@ -40,8 +40,8 @@ window.PANIC_DATA = {
     {
       "id": "skew",
       "label": "SKEW Index",
-      "value": "139.59",
-      "delta": "📉 -10.35",
+      "value": "139.64",
+      "delta": "📉 -1.10",
       "status": "🟡 주의",
       "tone": "watch",
       "weekTrend": "하락",
@@ -64,8 +64,8 @@ window.PANIC_DATA = {
     {
       "id": "hy",
       "label": "HY 금리 스프레드",
-      "value": "2.84%",
-      "delta": "📉 -0.01%",
+      "value": "2.86%",
+      "delta": "➡️ 0%",
       "status": "🟢 안정",
       "tone": "stable",
       "weekTrend": "보합",
@@ -88,8 +88,8 @@ window.PANIC_DATA = {
     {
       "id": "move",
       "label": "MOVE Index",
-      "value": "67.70",
-      "delta": "📉 -6.65",
+      "value": "68.42",
+      "delta": "📈 +2.53",
       "status": "🟢 안정",
       "tone": "stable",
       "weekTrend": "하락",
@@ -100,8 +100,8 @@ window.PANIC_DATA = {
     {
       "id": "vxn",
       "label": "VXN Index",
-      "value": "23.32",
-      "delta": "📈 +1.52",
+      "value": "23.08",
+      "delta": "📈 +0.90",
       "status": "🟢 안정",
       "tone": "stable",
       "weekTrend": "상승",

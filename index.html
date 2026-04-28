@@ -1032,21 +1032,28 @@
         }
 
         if (panicBodyEl && panicUpdatedAtEl) {
-          if (window.PANIC_DATA && Array.isArray(window.PANIC_DATA.items)) {
-            renderPanicTable(window.PANIC_DATA);
-          } else {
-            fetch(window.withSiteVersion("panic-data.json"))
-              .then(function (res) {
-                if (!res.ok) throw new Error("panic-data fetch failed");
-                return res.json();
-              })
-              .then(renderPanicTable)
-              .catch(function () {
+          // JSON을 우선 사용: Actions로 json만 최신 커밋된 경우에도 날짜·수치가 맞게 보임. 실패 시 panic-data.js 폴백.
+          fetch(window.withSiteVersion("panic-data.json"))
+            .then(function (res) {
+              if (!res.ok) throw new Error("panic-data fetch failed");
+              return res.json();
+            })
+            .then(function (data) {
+              if (data && Array.isArray(data.items)) {
+                renderPanicTable(data);
+              } else {
+                throw new Error("panic-data invalid shape");
+              }
+            })
+            .catch(function () {
+              if (window.PANIC_DATA && Array.isArray(window.PANIC_DATA.items)) {
+                renderPanicTable(window.PANIC_DATA);
+              } else {
                 panicUpdatedAtEl.textContent = "업데이트 기준: 데이터 로딩 실패";
                 panicBodyEl.innerHTML =
                   '<tr><td colspan="5">패닉 지수 데이터를 불러오지 못했습니다. 로컬 파일 모드라면 panic-data.js 파일을 확인해주세요.</td></tr>';
-              });
-          }
+              }
+            });
         }
 
         if (tickerTrackEl) {
