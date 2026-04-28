@@ -1831,11 +1831,24 @@ a.tag.tag--outline:hover {
   background: rgba(12, 18, 34, 0.7);
 }
 
+.overseas-heatmap-frame-wrap .tradingview-widget-container,
+#tradingview-heatmap {
+  width: 100%;
+  min-height: 560px;
+}
+
 .overseas-heatmap-frame {
   width: 100%;
   min-height: 520px;
   border: 0;
   display: block;
+}
+
+@media (max-width: 768px) {
+  .overseas-heatmap-frame-wrap .tradingview-widget-container,
+  #tradingview-heatmap {
+    min-height: 360px;
+  }
 }
 
 .overseas-heatmap-card__note {
