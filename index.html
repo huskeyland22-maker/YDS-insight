@@ -1833,9 +1833,15 @@
         (function initOverseasDetailToggle() {
           if (!overseasDetailToggleEl || !overseasDetailBlocks.length) return;
           var collapsed = false;
+          var isMobile = window.matchMedia && window.matchMedia("(max-width: 768px)").matches;
           try {
             collapsed = localStorage.getItem(OVERSEAS_DETAIL_KEY) === "true";
           } catch (e) {}
+          // 모바일에서는 상세 블록이 통째로 사라지지 않도록 항상 펼침 상태를 기본으로 유지
+          if (isMobile && collapsed) {
+            collapsed = false;
+            try { localStorage.setItem(OVERSEAS_DETAIL_KEY, "false"); } catch (e) {}
+          }
           function apply() {
             overseasDetailBlocks.forEach(function (el) {
               el.classList.toggle("is-collapsed", collapsed);
