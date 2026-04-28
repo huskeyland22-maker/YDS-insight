@@ -1,5 +1,5 @@
 window.PANIC_DATA = {
-  "updatedAt": "2026.04.28 14:57 KST (자동 업데이트)",
+  "updatedAt": "2026.04.28 15:05 KST (자동 업데이트)",
   "items": [
     {
       "id": "vix",

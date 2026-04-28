@@ -155,7 +155,9 @@
           <section class="us-close-snapshot" aria-label="지난밤 미국장 스냅샷">
             <h3>US Close Snapshot</h3>
             <div class="us-close-snapshot__grid" id="us-close-snapshot-grid">
+              <div class="us-close-snapshot__card"><span class="k">DOW</span><strong class="v">-</strong><em class="d">-</em></div>
               <div class="us-close-snapshot__card"><span class="k">S&P 500</span><strong class="v">-</strong><em class="d">-</em></div>
+              <div class="us-close-snapshot__card"><span class="k">NASDAQ Composite</span><strong class="v">-</strong><em class="d">-</em></div>
               <div class="us-close-snapshot__card"><span class="k">NASDAQ 100</span><strong class="v">-</strong><em class="d">-</em></div>
               <div class="us-close-snapshot__card"><span class="k">VIX</span><strong class="v">-</strong><em class="d">-</em></div>
               <div class="us-close-snapshot__card"><span class="k">US 10Y</span><strong class="v">-</strong><em class="d">-</em></div>
@@ -493,15 +495,21 @@
             panicById[it.id] = it;
           });
 
+          var dow = tickerByLabel.DOW || null;
           var sp = tickerByLabel["S&P 500"] || null;
+          var ixic = tickerByLabel["NASDAQ Composite"] || null;
           var ndx = tickerByLabel["NASDAQ 100"] || null;
           var us10y = tickerByLabel["US 10Y"] || null;
           var vix = panicById.vix || null;
 
           var riskOnVotes = 0;
           var riskOffVotes = 0;
+          if (dow && dow.direction === "up") riskOnVotes += 1;
+          if (dow && dow.direction === "down") riskOffVotes += 1;
           if (sp && sp.direction === "up") riskOnVotes += 1;
           if (sp && sp.direction === "down") riskOffVotes += 1;
+          if (ixic && ixic.direction === "up") riskOnVotes += 1;
+          if (ixic && ixic.direction === "down") riskOffVotes += 1;
           if (ndx && ndx.direction === "up") riskOnVotes += 1;
           if (ndx && ndx.direction === "down") riskOffVotes += 1;
 
@@ -533,8 +541,12 @@
           panicUsLinkEl.textContent =
             "미국장 연동 코멘트 · " +
             tone +
+            " · DOW " +
+            (dow ? dow.delta : "-") +
             " · S&P " +
             (sp ? sp.delta : "-") +
+            " · IXIC " +
+            (ixic ? ixic.delta : "-") +
             " / NDX " +
             (ndx ? ndx.delta : "-") +
             " / VIX " +
@@ -558,13 +570,17 @@
             panicById[it.id] = it;
           });
 
+          var dow = tickerByLabel.DOW || {};
           var sp = tickerByLabel["S&P 500"] || {};
+          var ixic = tickerByLabel["NASDAQ Composite"] || {};
           var ndx = tickerByLabel["NASDAQ 100"] || {};
           var us10y = tickerByLabel["US 10Y"] || {};
           var vix = panicById.vix || {};
 
           usCloseSnapshotGridEl.innerHTML =
+            buildSnapshotCard("DOW", dow.value, dow.delta, dow.direction) +
             buildSnapshotCard("S&P 500", sp.value, sp.delta, sp.direction) +
+            buildSnapshotCard("NASDAQ Composite", ixic.value, ixic.delta, ixic.direction) +
             buildSnapshotCard("NASDAQ 100", ndx.value, ndx.delta, ndx.direction) +
             buildSnapshotCard("VIX", vix.value, vix.delta, String(vix.delta || "").indexOf("📈") !== -1 ? "up" : String(vix.delta || "").indexOf("📉") !== -1 ? "down" : "") +
             buildSnapshotCard("US 10Y", us10y.value, us10y.delta, us10y.direction);

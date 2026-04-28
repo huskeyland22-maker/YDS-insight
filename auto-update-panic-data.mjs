@@ -262,7 +262,9 @@ async function main() {
   const tickerSources = [
     { label: "KOSPI", symbol: "^KS11", digits: 2 },
     { label: "KOSDAQ", symbol: "^KQ11", digits: 2 },
+    { label: "DOW", symbol: "^DJI", digits: 2 },
     { label: "S&P 500", symbol: "^GSPC", digits: 2 },
+    { label: "NASDAQ Composite", symbol: "^IXIC", digits: 2 },
     { label: "NASDAQ 100", symbol: "^NDX", digits: 2 },
     { label: "USD/KRW", symbol: "KRW=X", digits: 2 },
     { label: "US 10Y", symbol: "^TNX", digits: 2, valueDivisor: 10, isPercentSuffix: true, isPercentPointDelta: true }
@@ -275,7 +277,11 @@ async function main() {
       let pct = deltaPercent(latest, previous);
 
       // 지수형 자산은 시점 불일치로 튀는 값이 간헐적으로 나와, 비정상 수치면 넓은 range로 재조회
-      const needsSanityCheck = source.label === "S&P 500" || source.label === "NASDAQ 100";
+      const needsSanityCheck =
+        source.label === "DOW" ||
+        source.label === "S&P 500" ||
+        source.label === "NASDAQ Composite" ||
+        source.label === "NASDAQ 100";
       const isOutlier = needsSanityCheck && pct !== null && Math.abs(pct) > 8;
       if (isOutlier) {
         const retried = await fetchYahooLatestTwo(source.symbol, { range: "6mo" });
