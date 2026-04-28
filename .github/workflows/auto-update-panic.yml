@@ -33,7 +33,7 @@ jobs:
             echo "No changes to commit"
             exit 0
           fi
-          git add panic-data.json panic-data.js ticker-data.json ticker-data.js site-version.js
+          git add panic-data.json panic-data.js ticker-data.json ticker-data.js overseas-data.json overseas-data.js site-version.js
           git commit -m "chore: auto update panic and ticker data"
 
       - name: Push to main

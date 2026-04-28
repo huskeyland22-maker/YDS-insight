@@ -1,11 +1,11 @@
 window.PANIC_DATA = {
-  "updatedAt": "2026.04.28 15:05 KST (자동 업데이트)",
+  "updatedAt": "2026.04.28 21:54 KST (자동 업데이트)",
   "items": [
     {
       "id": "vix",
       "label": "VIX Index",
-      "value": "18.02",
-      "delta": "📉 -0.69",
+      "value": "19.32",
+      "delta": "📈 +1.30",
       "status": "🟢 안정",
       "tone": "stable",
       "weekTrend": "상승",
@@ -16,8 +16,8 @@ window.PANIC_DATA = {
     {
       "id": "fng",
       "label": "CNN F&G",
-      "value": "67",
-      "delta": "➡️ 0",
+      "value": "68",
+      "delta": "📈 +1",
       "status": "🟢 중립",
       "tone": "stable",
       "weekTrend": "보합",

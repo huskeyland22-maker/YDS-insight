@@ -1307,6 +1307,173 @@ a.tag.tag--outline:hover {
   color: #e2c680;
 }
 
+/* Overseas cockpit */
+
+.overseas-grid {
+  display: grid;
+  gap: 0.8rem;
+}
+
+@media (min-width: 920px) {
+  .overseas-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.overseas-card {
+  border-radius: var(--radius);
+  border: 1px solid rgba(232, 236, 244, 0.1);
+  background: rgba(20, 28, 47, 0.5);
+  padding: 0.95rem 0.95rem 1rem;
+}
+
+.overseas-card h3 {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--mist);
+}
+
+.overseas-score {
+  margin: 0.45rem 0 0;
+  font-size: 1.28rem;
+  font-weight: 700;
+  color: var(--gold);
+}
+
+.overseas-tone {
+  margin: 0.32rem 0 0;
+  display: inline-block;
+  border-radius: 999px;
+  padding: 0.14rem 0.55rem;
+  border: 1px solid rgba(232, 236, 244, 0.2);
+  font-size: 0.76rem;
+  color: var(--mist-dim);
+}
+
+.overseas-tone--attack {
+  color: #8de09a;
+  border-color: rgba(108, 187, 122, 0.45);
+  background: rgba(108, 187, 122, 0.16);
+}
+
+.overseas-tone--neutral {
+  color: #e2c680;
+  border-color: rgba(198, 163, 90, 0.45);
+  background: rgba(198, 163, 90, 0.16);
+}
+
+.overseas-tone--defense {
+  color: #f1a1a1;
+  border-color: rgba(217, 112, 112, 0.45);
+  background: rgba(217, 112, 112, 0.16);
+}
+
+.overseas-action {
+  margin: 0.5rem 0 0;
+  color: var(--mist-dim);
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+.overseas-metric-list {
+  margin-top: 0.55rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.34rem;
+}
+
+.overseas-chip {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  border: 1px solid rgba(232, 236, 244, 0.16);
+  background: rgba(232, 236, 244, 0.07);
+  padding: 0.16rem 0.52rem;
+  font-size: 0.72rem;
+  color: var(--mist-dim);
+}
+
+.overseas-etf-list {
+  margin-top: 0.5rem;
+  display: grid;
+  gap: 0.38rem;
+}
+
+.overseas-etf-row {
+  display: grid;
+  gap: 0.22rem;
+  border-radius: 8px;
+  border: 1px solid rgba(232, 236, 244, 0.11);
+  background: rgba(12, 18, 34, 0.55);
+  padding: 0.4rem 0.5rem;
+  text-decoration: none;
+}
+
+.overseas-etf-row strong {
+  color: var(--mist);
+  font-size: 0.82rem;
+}
+
+.overseas-etf-row span {
+  color: var(--text-muted);
+  font-size: 0.74rem;
+}
+
+.overseas-etf-mode {
+  color: var(--text-muted);
+  font-size: 0.74rem;
+}
+
+.overseas-etf-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.32rem;
+}
+
+.overseas-value {
+  font-style: normal;
+  font-size: 0.68rem;
+  border-radius: 999px;
+  border: 1px solid rgba(232, 236, 244, 0.15);
+  background: rgba(232, 236, 244, 0.08);
+  color: var(--mist-dim);
+  padding: 0.1rem 0.42rem;
+}
+
+.overseas-value--up {
+  color: #8de09a;
+  border-color: rgba(108, 187, 122, 0.45);
+  background: rgba(108, 187, 122, 0.16);
+}
+
+.overseas-value--down {
+  color: #f1a1a1;
+  border-color: rgba(217, 112, 112, 0.45);
+  background: rgba(217, 112, 112, 0.16);
+}
+
+.overseas-value--flat {
+  color: #e2c680;
+  border-color: rgba(198, 163, 90, 0.45);
+  background: rgba(198, 163, 90, 0.16);
+}
+
+.overseas-etf-updated {
+  color: var(--text-muted);
+  font-size: 0.66rem;
+}
+
+.overseas-etf-row:hover {
+  border-color: rgba(198, 163, 90, 0.38);
+  background: rgba(198, 163, 90, 0.09);
+}
+
+.overseas-note {
+  margin: 0.52rem 0 0;
+  color: var(--text-muted);
+  font-size: 0.74rem;
+}
+
 /* Insights */
 
 .insight-list {

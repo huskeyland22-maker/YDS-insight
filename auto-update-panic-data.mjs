@@ -8,6 +8,8 @@ const dataPath = path.join(__dirname, "panic-data.json");
 const dataJsPath = path.join(__dirname, "panic-data.js");
 const tickerDataPath = path.join(__dirname, "ticker-data.json");
 const tickerDataJsPath = path.join(__dirname, "ticker-data.js");
+const overseasDataPath = path.join(__dirname, "overseas-data.json");
+const overseasDataJsPath = path.join(__dirname, "overseas-data.js");
 
 function nowKstString() {
   const now = new Date();
@@ -139,6 +141,30 @@ async function fetchYahooLatestTwo(symbol, options = {}) {
   };
 }
 
+async function fetchYahooSeries(symbol, options = {}) {
+  const range = options.range || "1y";
+  const url = `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(symbol)}?interval=1d&range=${encodeURIComponent(range)}`;
+  const json = await fetchJson(url);
+  const result = json?.chart?.result?.[0];
+  const closes = result?.indicators?.quote?.[0]?.close;
+  const timestamps = result?.timestamp;
+  if (!Array.isArray(closes) || !Array.isArray(timestamps) || closes.length !== timestamps.length) {
+    throw new Error(`yahoo series invalid: ${symbol}`);
+  }
+
+  const rows = [];
+  for (let i = 0; i < closes.length; i += 1) {
+    const close = closes[i];
+    const ts = timestamps[i];
+    if (!Number.isFinite(close) || !Number.isFinite(ts)) continue;
+    rows.push({ close, ts });
+  }
+  if (rows.length < 22) {
+    throw new Error(`yahoo series insufficient: ${symbol}`);
+  }
+  return rows;
+}
+
 async function fetchFredLatestTwo(seriesId) {
   const url = `https://fred.stlouisfed.org/graph/fredgraph.csv?id=${encodeURIComponent(seriesId)}`;
   const csv = await fetchText(url);
@@ -203,6 +229,12 @@ function formatTickerDelta(latest, previous, options = {}) {
 function deltaPercent(latest, previous) {
   if (!Number.isFinite(latest) || !Number.isFinite(previous) || previous === 0) return null;
   return ((latest - previous) / previous) * 100;
+}
+
+function formatSignedPctOrDash(value) {
+  if (!Number.isFinite(value)) return "-";
+  const sign = value > 0 ? "+" : value < 0 ? "-" : "";
+  return `${sign}${Math.abs(value).toFixed(2)}%`;
 }
 
 async function main() {
@@ -315,8 +347,50 @@ async function main() {
   await writeFile(tickerDataPath, `${JSON.stringify(tickerData, null, 2)}\n`, "utf8");
   await writeFile(tickerDataJsPath, `window.TICKER_DATA = ${JSON.stringify(tickerData, null, 2)};\n`, "utf8");
 
+  const overseasSources = [
+    { symbol: "SOXL", range: "1y" },
+    { symbol: "TQQQ", range: "1y" },
+    { symbol: "SSO", range: "1y" }
+  ];
+  const overseasItems = [];
+  for (const source of overseasSources) {
+    try {
+      const rows = await fetchYahooSeries(source.symbol, { range: source.range });
+      const latest = rows[rows.length - 1].close;
+      const idx1w = Math.max(0, rows.length - 6);
+      const idx1m = Math.max(0, rows.length - 22);
+      const close1w = rows[idx1w].close;
+      const close1m = rows[idx1m].close;
+      const oneDay = rows.length > 1 ? deltaPercent(latest, rows[rows.length - 2].close) : null;
+      const oneWeek = deltaPercent(latest, close1w);
+      const oneMonth = deltaPercent(latest, close1m);
+      const peak = rows.reduce((acc, row) => (row.close > acc ? row.close : acc), Number.NEGATIVE_INFINITY);
+      const mdd = Number.isFinite(peak) && peak > 0 ? ((latest - peak) / peak) * 100 : null;
+
+      overseasItems.push({
+        symbol: source.symbol,
+        p1d: formatSignedPctOrDash(oneDay),
+        p1w: formatSignedPctOrDash(oneWeek),
+        p1m: formatSignedPctOrDash(oneMonth),
+        mdd: formatSignedPctOrDash(mdd),
+        updatedAt: nowKstString().slice(0, 10).replace(/\./g, ".")
+      });
+      logs.push(`[OK] overseas ${source.symbol} updated`);
+    } catch (err) {
+      logs.push(`[SKIP] overseas ${source.symbol} ${err.message}`);
+    }
+  }
+
+  const overseasData = {
+    updatedAt: `${nowKstString()} (자동 업데이트)`,
+    items: overseasItems
+  };
+  await writeFile(overseasDataPath, `${JSON.stringify(overseasData, null, 2)}\n`, "utf8");
+  await writeFile(overseasDataJsPath, `window.OVERSEAS_DATA = ${JSON.stringify(overseasData, null, 2)};\n`, "utf8");
+
   console.log("panic-data.json / panic-data.js 업데이트 완료");
   console.log("ticker-data.json / ticker-data.js 업데이트 완료");
+  console.log("overseas-data.json / overseas-data.js 업데이트 완료");
   logs.forEach((log) => console.log(log));
   console.log("고정값(수동 유지): bofa, putcall, gsbb");
 }
