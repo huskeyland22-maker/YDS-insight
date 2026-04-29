@@ -2,6 +2,9 @@
   "name": "yds-investment-insights",
   "private": true,
   "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
     "start": "node server.mjs",
     "version:site": "node scripts/bump-site-version.mjs"

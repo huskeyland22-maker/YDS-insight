@@ -1,0 +1,12 @@
+# https://render.com/docs/blueprint-spec
+services:
+  - type: web
+    name: yds-investment-insights
+    runtime: node
+    plan: free
+    region: singapore
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: "20"
