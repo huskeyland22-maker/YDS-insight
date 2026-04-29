@@ -99,6 +99,28 @@ function toneAndStatusById(id, value) {
   return { tone: null, status: null };
 }
 
+function actionGuideByTone(tone) {
+  if (tone === "alert") return "헤지점검";
+  if (tone === "watch") return "분할매수";
+  return "관망";
+}
+
+/** 약 5거래일 전 종가 대비 추세 (표의 주간 추세 열과 동기화) */
+function weekTrendFromLatestAndRef(id, latest, ref) {
+  if (!Number.isFinite(latest) || !Number.isFinite(ref)) return "보합";
+  if (id === "hy") {
+    const d = latest - ref;
+    if (d > 0.06) return "상승";
+    if (d < -0.06) return "하락";
+    return "보합";
+  }
+  if (ref === 0) return "보합";
+  const pct = ((latest - ref) / ref) * 100;
+  if (pct > 0.45) return "상승";
+  if (pct < -0.45) return "하락";
+  return "보합";
+}
+
 async function fetchText(url) {
   const res = await fetch(url, {
     headers: { "user-agent": "yds-investment-insights-bot/1.0" }
@@ -110,6 +132,52 @@ async function fetchText(url) {
 async function fetchJson(url) {
   const text = await fetchText(url);
   return JSON.parse(text);
+}
+
+/** 미국 동부 달력 기준 YYYY-MM-DD (sv-SE = ISO 형식) */
+function formatEtYmd(ms) {
+  return new Intl.DateTimeFormat("sv-SE", {
+    timeZone: "America/New_York",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit"
+  }).format(new Date(ms));
+}
+
+function etWeekdayAndMinutesFromMs(ms) {
+  const parts = new Intl.DateTimeFormat("en-US", {
+    timeZone: "America/New_York",
+    weekday: "short",
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false
+  }).formatToParts(new Date(ms));
+  const m = {};
+  for (const p of parts) {
+    if (p.type !== "literal") m[p.type] = p.value;
+  }
+  const wdMap = { Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6 };
+  const wd = wdMap[m.weekday] ?? 0;
+  const mins = parseInt(m.hour, 10) * 60 + parseInt(m.minute, 10);
+  return { wd, mins };
+}
+
+/**
+ * Yahoo 일봉 마지막 행이 '미국 당일'이면서 정규장 종가(16:00 ET)+버퍼 이전이면 미확정으로 보고 제거.
+ * 월요일 아침 KST 등은 직전 금요일 종가가 마지막으로 남도록 자연스럽게 맞춰짐.
+ */
+function trimIncompleteUsDailyBars(rows) {
+  if (!Array.isArray(rows) || rows.length < 2) return rows;
+  const nowMs = Date.now();
+  const todayEt = formatEtYmd(nowMs);
+  const { wd, mins } = etWeekdayAndMinutesFromMs(nowMs);
+  const last = rows[rows.length - 1];
+  const lastEt = formatEtYmd(last.ts * 1000);
+  const isWeekday = wd >= 1 && wd <= 5;
+  if (lastEt === todayEt && isWeekday && mins < 16 * 60 + 15) {
+    return rows.slice(0, -1);
+  }
+  return rows;
 }
 
 async function fetchYahooLatestTwo(symbol, options = {}) {
@@ -131,13 +199,17 @@ async function fetchYahooLatestTwo(symbol, options = {}) {
     if (!Number.isFinite(close) || !Number.isFinite(ts)) continue;
     pairs.push({ close, ts });
   }
-  if (pairs.length < 2) throw new Error(`yahoo rows insufficient: ${symbol}`);
+  let trimmed = pairs;
+  if (options.trimUsIncomplete) {
+    trimmed = trimIncompleteUsDailyBars(pairs);
+  }
+  if (trimmed.length < 2) throw new Error(`yahoo rows insufficient: ${symbol}`);
 
   return {
-    latest: pairs[pairs.length - 1].close,
-    previous: pairs[pairs.length - 2].close,
-    latestDate: pairs[pairs.length - 1].ts,
-    previousDate: pairs[pairs.length - 2].ts
+    latest: trimmed[trimmed.length - 1].close,
+    previous: trimmed[trimmed.length - 2].close,
+    latestDate: trimmed[trimmed.length - 1].ts,
+    previousDate: trimmed[trimmed.length - 2].ts
   };
 }
 
@@ -159,13 +231,18 @@ async function fetchYahooSeries(symbol, options = {}) {
     if (!Number.isFinite(close) || !Number.isFinite(ts)) continue;
     rows.push({ close, ts });
   }
-  if (rows.length < 22) {
+  let trimmed = rows;
+  if (options.trimUsIncomplete) {
+    trimmed = trimIncompleteUsDailyBars(rows);
+  }
+  const minRows = Number.isFinite(options.minRows) ? options.minRows : 22;
+  if (trimmed.length < minRows) {
     throw new Error(`yahoo series insufficient: ${symbol}`);
   }
-  return rows;
+  return trimmed;
 }
 
-async function fetchFredLatestTwo(seriesId) {
+async function fetchFredSeriesValues(seriesId) {
   const url = `https://fred.stlouisfed.org/graph/fredgraph.csv?id=${encodeURIComponent(seriesId)}`;
   const csv = await fetchText(url);
   const lines = csv.trim().split(/\r?\n/).slice(1);
@@ -179,6 +256,11 @@ async function fetchFredLatestTwo(seriesId) {
   }
 
   if (values.length < 2) throw new Error(`fred rows insufficient: ${seriesId}`);
+  return values;
+}
+
+async function fetchFredLatestTwo(seriesId) {
+  const values = await fetchFredSeriesValues(seriesId);
   return { latest: values[values.length - 1], previous: values[values.length - 2] };
 }
 
@@ -187,23 +269,33 @@ async function fetchCnnFearGreed() {
   const json = await fetchJson(url);
   const now = json?.fear_and_greed?.score;
   const previous = json?.fear_and_greed?.previous_close;
+  const weekAgo = json?.fear_and_greed?.previous_1_week;
 
   if (!Number.isFinite(now) || !Number.isFinite(previous)) {
     throw new Error("invalid CNN Fear&Greed payload");
   }
-  return { latest: now, previous };
+  let weekTrend = "보합";
+  if (Number.isFinite(weekAgo)) {
+    const wdiff = now - weekAgo;
+    if (wdiff > 2.5) weekTrend = "상승";
+    else if (wdiff < -2.5) weekTrend = "하락";
+  }
+  return { latest: now, previous, weekTrend };
 }
 
-function applyUpdate(item, latest, previous) {
+function applyUpdate(item, latest, previous, meta = {}) {
   const isPercent = String(item.value || "").includes("%");
   const baseDigits = decimalPlaces(item.value, isPercent ? 2 : 2);
   const digits = precisionById(item.id, baseDigits);
   item.value = formatValue(latest, item.value, isPercent, digits);
   item.delta = formatDelta(latest, previous, isPercent, digits);
 
+  if (meta.weekTrend) item.weekTrend = meta.weekTrend;
+
   const nextState = toneAndStatusById(item.id, latest);
   if (nextState.tone) item.tone = nextState.tone;
   if (nextState.status) item.status = nextState.status;
+  if (item.tone) item.actionGuide = actionGuideByTone(item.tone);
 }
 
 function formatTickerValue(value, digits = 2) {
@@ -243,6 +335,8 @@ function formatNumberOrDash(value, digits = 2) {
 }
 
 async function main() {
+  const skipPanic = process.env.SKIP_PANIC === "1";
+
   let previousOverseasData = null;
   try {
     previousOverseasData = JSON.parse(await readFile(overseasDataPath, "utf8"));
@@ -257,67 +351,73 @@ async function main() {
   const byId = new Map(items.map((item) => [item.id, item]));
   const logs = [];
 
-  const tasks = [
-    {
-      id: "vix",
-      run: () => fetchYahooLatestTwo("^VIX")
-    },
-    {
-      id: "fng",
-      run: () => fetchCnnFearGreed()
-    },
-    {
-      id: "skew",
-      run: () => fetchYahooLatestTwo("^SKEW")
-    },
-    {
-      id: "hy",
-      run: () => fetchFredLatestTwo("BAMLH0A0HYM2")
-    },
-    {
-      id: "move",
-      run: () => fetchYahooLatestTwo("^MOVE")
-    },
-    {
-      id: "vxn",
-      run: () => fetchYahooLatestTwo("^VXN")
+  if (!skipPanic) {
+    async function yahooPanicRow(symbol, id) {
+      const rows = await fetchYahooSeries(symbol, { range: "3mo", minRows: 6, trimUsIncomplete: true });
+      const latest = rows[rows.length - 1].close;
+      const previous = rows[rows.length - 2].close;
+      const ref = rows.length >= 6 ? rows[rows.length - 6].close : rows[0].close;
+      const weekTrend = weekTrendFromLatestAndRef(id, latest, ref);
+      return { latest, previous, weekTrend };
     }
-  ];
 
-  for (const task of tasks) {
-    const item = byId.get(task.id);
-    if (!item) continue;
+    const tasks = [
+      { id: "vix", run: () => yahooPanicRow("^VIX", "vix") },
+      { id: "fng", run: () => fetchCnnFearGreed() },
+      { id: "skew", run: () => yahooPanicRow("^SKEW", "skew") },
+      {
+        id: "hy",
+        run: async () => {
+          const vals = await fetchFredSeriesValues("BAMLH0A0HYM2");
+          const latest = vals[vals.length - 1];
+          const previous = vals[vals.length - 2];
+          const ref = vals.length >= 6 ? vals[vals.length - 6] : vals[0];
+          const weekTrend = weekTrendFromLatestAndRef("hy", latest, ref);
+          return { latest, previous, weekTrend };
+        }
+      },
+      { id: "move", run: () => yahooPanicRow("^MOVE", "move") },
+      { id: "vxn", run: () => yahooPanicRow("^VXN", "vxn") }
+    ];
 
-    try {
-      const { latest, previous } = await task.run();
-      applyUpdate(item, latest, previous);
-      logs.push(`[OK] ${task.id} updated`);
-    } catch (err) {
-      logs.push(`[SKIP] ${task.id} ${err.message}`);
+    for (const task of tasks) {
+      const item = byId.get(task.id);
+      if (!item) continue;
+
+      try {
+        const { latest, previous, weekTrend } = await task.run();
+        applyUpdate(item, latest, previous, { weekTrend });
+        logs.push(`[OK] ${task.id} updated`);
+      } catch (err) {
+        logs.push(`[SKIP] ${task.id} ${err.message}`);
+      }
     }
+
+    data.updatedAt = `${nowKstString()} (자동 업데이트)`;
+    const jsonText = `${JSON.stringify(data, null, 2)}\n`;
+    const jsText = `window.PANIC_DATA = ${JSON.stringify(data, null, 2)};\n`;
+    await writeFile(dataPath, jsonText, "utf8");
+    await writeFile(dataJsPath, jsText, "utf8");
+  } else {
+    logs.push("[SKIP] panic rows (SKIP_PANIC=1, updated by update_data.py)");
   }
 
-  data.updatedAt = `${nowKstString()} (자동 업데이트)`;
-  const jsonText = `${JSON.stringify(data, null, 2)}\n`;
-  const jsText = `window.PANIC_DATA = ${JSON.stringify(data, null, 2)};\n`;
-  await writeFile(dataPath, jsonText, "utf8");
-  await writeFile(dataJsPath, jsText, "utf8");
-
   const tickerSources = [
-    { label: "KOSPI", symbol: "^KS11", digits: 2 },
-    { label: "KOSDAQ", symbol: "^KQ11", digits: 2 },
-    { label: "DOW", symbol: "^DJI", digits: 2 },
-    { label: "S&P 500", symbol: "^GSPC", digits: 2 },
-    { label: "NASDAQ Composite", symbol: "^IXIC", digits: 2 },
-    { label: "NASDAQ 100", symbol: "^NDX", digits: 2 },
-    { label: "USD/KRW", symbol: "KRW=X", digits: 2 },
-    { label: "US 10Y", symbol: "^TNX", digits: 2, valueDivisor: 10, isPercentSuffix: true, isPercentPointDelta: true }
+    { label: "KOSPI", symbol: "^KS11", digits: 2, trimUsIncomplete: false },
+    { label: "KOSDAQ", symbol: "^KQ11", digits: 2, trimUsIncomplete: false },
+    { label: "DOW", symbol: "^DJI", digits: 2, trimUsIncomplete: true },
+    { label: "S&P 500", symbol: "^GSPC", digits: 2, trimUsIncomplete: true },
+    { label: "NASDAQ Composite", symbol: "^IXIC", digits: 2, trimUsIncomplete: true },
+    { label: "NASDAQ 100", symbol: "^NDX", digits: 2, trimUsIncomplete: true },
+    { label: "USD/KRW", symbol: "KRW=X", digits: 2, trimUsIncomplete: false },
+    { label: "US 10Y", symbol: "^TNX", digits: 2, valueDivisor: 10, isPercentSuffix: true, isPercentPointDelta: true, trimUsIncomplete: true }
   ];
 
   const tickerItems = [];
   for (const source of tickerSources) {
     try {
-      let { latest, previous } = await fetchYahooLatestTwo(source.symbol);
+      const trim = source.trimUsIncomplete === true;
+      let { latest, previous } = await fetchYahooLatestTwo(source.symbol, { trimUsIncomplete: trim });
       let pct = deltaPercent(latest, previous);
 
       // 지수형 자산은 시점 불일치로 튀는 값이 간헐적으로 나와, 비정상 수치면 넓은 range로 재조회
@@ -328,7 +428,7 @@ async function main() {
         source.label === "NASDAQ 100";
       const isOutlier = needsSanityCheck && pct !== null && Math.abs(pct) > 8;
       if (isOutlier) {
-        const retried = await fetchYahooLatestTwo(source.symbol, { range: "6mo" });
+        const retried = await fetchYahooLatestTwo(source.symbol, { range: "6mo", trimUsIncomplete: trim });
         latest = retried.latest;
         previous = retried.previous;
         pct = deltaPercent(latest, previous);
@@ -367,7 +467,7 @@ async function main() {
   const overseasItems = [];
   for (const source of overseasSources) {
     try {
-      const rows = await fetchYahooSeries(source.symbol, { range: source.range });
+      const rows = await fetchYahooSeries(source.symbol, { range: source.range, trimUsIncomplete: true });
       const latest = rows[rows.length - 1].close;
       const idx1w = Math.max(0, rows.length - 6);
       const idx1m = Math.max(0, rows.length - 22);
@@ -407,7 +507,7 @@ async function main() {
   };
 
   try {
-    const usdJpy = await fetchYahooLatestTwo("JPY=X");
+    const usdJpy = await fetchYahooLatestTwo("JPY=X", { trimUsIncomplete: true });
     overseasData.flow.items.push({
       id: "usdjpy",
       label: "엔캐리 압력",
@@ -421,7 +521,7 @@ async function main() {
   }
 
   try {
-    const dxy = await fetchYahooLatestTwo("DX-Y.NYB");
+    const dxy = await fetchYahooLatestTwo("DX-Y.NYB", { trimUsIncomplete: true });
     overseasData.flow.items.push({
       id: "dxy",
       label: "달러 유동성",
@@ -435,8 +535,8 @@ async function main() {
   }
 
   try {
-    const qqq = await fetchYahooLatestTwo("QQQ");
-    const tlt = await fetchYahooLatestTwo("TLT");
+    const qqq = await fetchYahooLatestTwo("QQQ", { trimUsIncomplete: true });
+    const tlt = await fetchYahooLatestTwo("TLT", { trimUsIncomplete: true });
     const ratioNow = Number.isFinite(qqq.latest) && Number.isFinite(tlt.latest) && tlt.latest !== 0 ? qqq.latest / tlt.latest : null;
     const ratioPrev = Number.isFinite(qqq.previous) && Number.isFinite(tlt.previous) && tlt.previous !== 0 ? qqq.previous / tlt.previous : null;
     const ratioDelta = deltaPercent(ratioNow, ratioPrev);
@@ -453,8 +553,8 @@ async function main() {
   }
 
   try {
-    const hyg = await fetchYahooLatestTwo("HYG");
-    const lqd = await fetchYahooLatestTwo("LQD");
+    const hyg = await fetchYahooLatestTwo("HYG", { trimUsIncomplete: true });
+    const lqd = await fetchYahooLatestTwo("LQD", { trimUsIncomplete: true });
     const ratioNow = Number.isFinite(hyg.latest) && Number.isFinite(lqd.latest) && lqd.latest !== 0 ? hyg.latest / lqd.latest : null;
     const ratioPrev = Number.isFinite(hyg.previous) && Number.isFinite(lqd.previous) && lqd.previous !== 0 ? hyg.previous / lqd.previous : null;
     const ratioDelta = deltaPercent(ratioNow, ratioPrev);
@@ -545,9 +645,9 @@ async function main() {
     const sectorStrength = [];
     for (const sector of sectorDefs) {
       try {
-        const latestTwo = await fetchYahooLatestTwo(sector.symbol);
+        const latestTwo = await fetchYahooLatestTwo(sector.symbol, { trimUsIncomplete: true });
         const oneDay = deltaPercent(latestTwo.latest, latestTwo.previous);
-        const series = await fetchYahooSeries(sector.symbol, { range: "6mo" });
+        const series = await fetchYahooSeries(sector.symbol, { range: "6mo", trimUsIncomplete: true });
         const latest = series[series.length - 1].close;
         const idx1w = Math.max(0, series.length - 6);
         const idx1m = Math.max(0, series.length - 22);
@@ -598,11 +698,15 @@ async function main() {
   await writeFile(overseasDataPath, `${JSON.stringify(overseasData, null, 2)}\n`, "utf8");
   await writeFile(overseasDataJsPath, `window.OVERSEAS_DATA = ${JSON.stringify(overseasData, null, 2)};\n`, "utf8");
 
-  console.log("panic-data.json / panic-data.js 업데이트 완료");
+  console.log(
+    skipPanic
+      ? "panic-data: skipped (SKIP_PANIC=1)"
+      : "panic-data.json / panic-data.js 업데이트 완료"
+  );
   console.log("ticker-data.json / ticker-data.js 업데이트 완료");
   console.log("overseas-data.json / overseas-data.js 업데이트 완료");
   logs.forEach((log) => console.log(log));
-  console.log("고정값(수동 유지): bofa, putcall, gsbb");
+  console.log("고정값(수동 유지): bofa, putcall, gsbb (Yahoo에 CBOE equity P/C 일치 티커 없음)");
 }
 
 main().catch((err) => {

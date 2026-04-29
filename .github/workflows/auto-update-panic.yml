@@ -2,8 +2,9 @@ name: Auto Update Panic Data
 
 on:
   schedule:
-    # 08:30 KST = 23:30 UTC (previous day)
-    - cron: "30 23 * * *"
+    # 한국 08:20 KST = 전날 UTC 23:20 (미국 정규장 종가·정산 후 여유를 두고 수집)
+    # 참고: 서머타임 시 미국장 마감 ≈ KST 05:00, 겨울 ≈ 06:00 — 확정·배포 여유로 08:00~09:00대 권장
+    - cron: "20 23 * * *"
   workflow_dispatch:
 
 permissions:
@@ -16,12 +17,29 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      # 한국 08:20 KST = UTC 전날 23:20 — cron은 위 on.schedule 참고
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+
+      - name: Update panic data (Python · yfinance + FRED CSV)
+        run: python update_data.py
+
+      - name: Patch CNN Fear & Greed if needed (Node fetch)
+        run: node scripts/patch-fng-from-cnn.mjs
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: "20"
 
-      - name: Update panic and ticker data
+      - name: Update ticker and overseas data (Node, panic skipped)
+        env:
+          SKIP_PANIC: "1"
         run: node auto-update-panic-data.mjs
 
       - name: Bump site version for cache busting
@@ -34,7 +52,7 @@ jobs:
             exit 0
           fi
           git add panic-data.json panic-data.js ticker-data.json ticker-data.js overseas-data.json overseas-data.js site-version.js
-          git commit -m "chore: auto update panic and ticker data"
+          git commit -m "chore: auto update panic (Python) and ticker/overseas (Node)"
 
       - name: Push to main
         run: git push origin main

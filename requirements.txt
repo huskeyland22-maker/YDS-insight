@@ -1,0 +1,4 @@
+# Used by update_data.py (GitHub Actions + optional local runs)
+# FRED는 pandas_datareader 대신 fredgraph.csv(urllib)로 읽어 3.12+ distutils 이슈를 피합니다.
+yfinance>=0.2.40
+pandas>=2.0
