@@ -67,6 +67,35 @@
         background: rgba(15, 23, 42, 0.7);
         padding: 0.85rem;
       }
+      .sector-link {
+        color: #f1f5f9;
+        text-decoration: none;
+      }
+      .sector-link:hover {
+        color: #ffffff;
+      }
+      .sector-stock-link {
+        display: inline-flex;
+        align-items: center;
+        margin: 0.14rem 0.2rem 0.14rem 0;
+        color: #dbeafe;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.74rem;
+        padding: 0.18rem 0.48rem;
+        border-radius: 999px;
+        border: 1px solid rgba(148, 163, 184, 0.3);
+        background: rgba(30, 41, 59, 0.55);
+      }
+      .sector-stock-link:hover {
+        color: #ffffff;
+        background: rgba(59, 130, 246, 0.22);
+        border-color: rgba(96, 165, 250, 0.4);
+      }
+      .sector-stock-wrap {
+        display: flex;
+        flex-wrap: wrap;
+      }
     </style>
     <script>
       (function () {
@@ -102,23 +131,9 @@
         <div class="map-scroll mt-3" id="map-flow"></div>
       </section>
 
-      <section class="nw-card mb-4">
-        <div class="flex items-center justify-between gap-2">
-          <p class="text-xs tracking-[0.18em] uppercase text-violet-200/80">TODAY STATUS</p>
-          <a class="text-xs text-blue-200 hover:text-white" href="money-flow-tracker.html">Money Flow Tracker ↗</a>
-        </div>
-        <ul class="mt-3 text-sm text-slate-300 space-y-1" id="today-status-list">
-          <li>데이터 계산 중...</li>
-        </ul>
-      </section>
-
       <section class="nw-card mb-6">
         <div class="flex items-center justify-between gap-2">
           <p class="text-xs tracking-[0.18em] uppercase text-rose-200/80">섹터 카드</p>
-          <div class="flex items-center gap-2">
-            <button class="status-badge tone-hot" id="mode-aggressive" type="button">공격형</button>
-            <button class="status-badge tone-up" id="mode-stable" type="button">안정형</button>
-          </div>
         </div>
         <div class="mt-3 grid grid-cols-1 gap-3 md:grid-cols-2" id="sector-card-list"></div>
       </section>
@@ -230,24 +245,23 @@
           wrap.innerHTML = html;
         }
 
-        function renderSectorCards(states, mode) {
+        function renderSectorCards(states) {
           var wrap = document.getElementById("sector-card-list");
           if (!wrap) return;
-          var weights = mode === "stable"
-            ? { packaging: 30, cooling: 20, power: 30, material: 15, gpu: 5 }
-            : { packaging: 40, cooling: 25, power: 20, material: 10, gpu: 5 };
+          var weights = { packaging: 40, cooling: 25, power: 20, material: 10, gpu: 5 };
           wrap.innerHTML = sectorDefs.map(function (s) {
             var state = states[s.id] || { text: s.icon + " " + s.statusText, cls: s.tone, strategy: s.strategy };
             var stocks = s.stocks.map(function (st) {
-              return '<a class="text-blue-200 hover:text-white" href="stock.html?name=' + encodeURIComponent(st.name) + "&code=" + encodeURIComponent(st.code) + "&theme=" + encodeURIComponent(s.label) + '">' + st.name + "</a>";
+              return '<a class="sector-stock-link" href="stock.html?name=' + encodeURIComponent(st.name) + "&code=" + encodeURIComponent(st.code) + "&theme=" + encodeURIComponent(s.label) + '">' + st.name + "</a>";
             }).join(", ");
             var weight = weights[s.id] || 0;
             return (
               '<article class="sector-card" id="sector-' + s.id + '">' +
               '<div class="flex items-center justify-between gap-2">' +
-              '<h2 class="text-sm font-semibold text-slate-100"><a class="hover:text-white" href="sector-map.html?sector=' + encodeURIComponent(s.sectorKey || "semiconductor") + '">' + s.icon + " " + s.label + "</a></h2>" +
+              '<h2 class="text-sm font-semibold text-slate-100"><a class="sector-link" href="sector-map.html?sector=' + encodeURIComponent(s.sectorKey || "semiconductor") + '">' + s.icon + " " + s.label + "</a></h2>" +
               '<span class="status-badge ' + state.cls + '">' + state.text + "</span></div>" +
-              '<p class="mt-2 text-xs text-slate-300">대표: ' + stocks + "</p>" +
+              "</div>" +
+              '<p class="mt-2 text-xs text-slate-300">대표:</p><div class="sector-stock-wrap">' + stocks + "</div>" +
               '<p class="mt-1 text-xs text-slate-300">전략: ' + state.strategy + "</p>" +
               '<p class="mt-1 text-xs text-slate-400">추천 비중: ' + weight + "%</p>" +
               '</article>'
@@ -292,8 +306,7 @@
 
           var top = Object.keys(scores).sort(function (a, b) { return scores[b] - scores[a]; })[0];
           renderMapFlow(top);
-          var mode = document.body.getAttribute("data-portfolio-mode") || "aggressive";
-          renderSectorCards(states, mode);
+          renderSectorCards(states);
         }
 
         function refresh() {
@@ -309,39 +322,11 @@
             })
             .catch(function () {
               renderMapFlow("packaging");
-              renderSectorCards({}, document.body.getAttribute("data-portfolio-mode") || "aggressive");
+              renderSectorCards({});
             });
         }
-
-        function setMode(mode) {
-          document.body.setAttribute("data-portfolio-mode", mode);
-          var a = document.getElementById("mode-aggressive");
-          var s = document.getElementById("mode-stable");
-          if (a && s) {
-            if (mode === "stable") {
-              s.classList.add("tone-hot");
-              a.classList.remove("tone-hot");
-            } else {
-              a.classList.add("tone-hot");
-              s.classList.remove("tone-hot");
-            }
-          }
-          refresh();
-        }
-
-        var modeAgg = document.getElementById("mode-aggressive");
-        var modeStable = document.getElementById("mode-stable");
-        if (modeAgg) modeAgg.addEventListener("click", function () { setMode("aggressive"); });
-        if (modeStable) modeStable.addEventListener("click", function () { setMode("stable"); });
-
-        document.body.setAttribute("data-portfolio-mode", "aggressive");
         refresh();
         setInterval(refresh, 10 * 60 * 1000);
-
-        var modeAgg = document.getElementById("mode-aggressive");
-        var modeStable = document.getElementById("mode-stable");
-        if (modeAgg) modeAgg.addEventListener("click", function () { applyPortfolioMode("aggressive"); });
-        if (modeStable) modeStable.addEventListener("click", function () { applyPortfolioMode("stable"); });
       })();
     </script>
   </body>
