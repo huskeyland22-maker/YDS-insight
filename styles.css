@@ -1352,9 +1352,12 @@ a.tag.tag--outline:hover {
 .us-night-brief-card {
   margin: 0.55rem 0 0.85rem;
   border-radius: 12px;
-  border: 1px solid rgba(163, 190, 236, 0.52);
-  background: linear-gradient(180deg, rgba(60, 79, 118, 0.93), rgba(52, 70, 106, 0.94));
+  border: 1px solid rgba(197, 168, 111, 0.28);
+  background:
+    linear-gradient(180deg, rgba(23, 33, 56, 0.92), rgba(16, 24, 43, 0.94)),
+    radial-gradient(circle at 92% 8%, rgba(145, 182, 255, 0.14), rgba(0, 0, 0, 0));
   padding: 0.72rem 0.82rem;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
 }
 
 .us-night-brief-card__head {
@@ -1367,7 +1370,7 @@ a.tag.tag--outline:hover {
 .us-night-brief-card__head h3 {
   margin: 0;
   font-size: 1.05rem;
-  color: #d9e8ff;
+  color: #e8edf9;
   letter-spacing: 0.02em;
 }
 
@@ -1375,42 +1378,44 @@ a.tag.tag--outline:hover {
   display: inline-flex;
   align-items: center;
   border-radius: 999px;
-  border: 1px solid rgba(148, 163, 184, 0.35);
+  border: 1px solid rgba(148, 163, 184, 0.3);
   padding: 0.14rem 0.52rem;
   font-size: 0.86rem;
-  color: #dbe4f5;
-  background: rgba(148, 163, 184, 0.14);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: #d6dfef;
+  background: rgba(123, 146, 186, 0.13);
 }
 
 .us-night-brief-card__tone--on {
-  color: #9ee8a8;
-  border-color: rgba(108, 187, 122, 0.45);
-  background: rgba(108, 187, 122, 0.14);
+  color: #b9e4c0;
+  border-color: rgba(112, 170, 124, 0.38);
+  background: rgba(84, 129, 94, 0.18);
 }
 
 .us-night-brief-card__tone--off {
-  color: #f4b0b0;
-  border-color: rgba(217, 112, 112, 0.45);
-  background: rgba(217, 112, 112, 0.14);
+  color: #e7c3c3;
+  border-color: rgba(170, 116, 116, 0.38);
+  background: rgba(125, 86, 86, 0.18);
 }
 
 .us-night-brief-card__tone--mix {
-  color: #f1d697;
-  border-color: rgba(198, 163, 90, 0.45);
-  background: rgba(198, 163, 90, 0.14);
+  color: #e3d3ac;
+  border-color: rgba(170, 142, 90, 0.38);
+  background: rgba(122, 103, 67, 0.18);
 }
 
 .us-night-brief-card__summary {
   margin: 0.62rem 0 0.58rem;
   font-size: 0.95rem;
-  color: #c8dcff;
+  color: #d3def4;
   line-height: 1.68;
 }
 
 .us-night-brief-card__list {
   margin: 0.42rem 0 0;
   padding-left: 1rem;
-  color: #cbd5e1;
+  color: #c7d2e8;
   font-size: 0.92rem;
   line-height: 1.72;
 }
