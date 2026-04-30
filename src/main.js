@@ -33,6 +33,27 @@ async function handleBuy(stock) {
   await refreshTradePanels();
 }
 
+async function handleManualBuy(input) {
+  var name = input && input.name ? String(input.name).trim() : "";
+  var code = input && input.code ? String(input.code).trim() : "";
+  var entry = Number(input && input.entry);
+
+  if (!name || !code || !Number.isFinite(entry) || entry <= 0) {
+    alert("종목명/코드/진입가를 올바르게 입력해 주세요.");
+    return;
+  }
+
+  saveTrade({
+    name: name,
+    code: code,
+    entry: entry,
+    current: entry,
+    return: 0,
+  });
+
+  await refreshTradePanels();
+}
+
 function getPanicScore(result) {
   var scoreFromFlow =
     window.OVERSEAS_DATA &&
@@ -76,7 +97,7 @@ async function runDecisionEngine() {
 
   renderDecision(result);
   renderScenario(scenario);
-  renderStocks(stocks, plan, handleBuy);
+  renderStocks(stocks, plan, handleBuy, handleManualBuy);
   await refreshTradePanels();
 }
 
