@@ -7,6 +7,7 @@
   },
   "scripts": {
     "start": "node server.mjs",
+    "backtest": "node src/backtest/run.js",
     "version:site": "node scripts/bump-site-version.mjs",
     "update:panic:python": "python update_data.py",
     "update:panic:node": "node auto-update-panic-data.mjs",

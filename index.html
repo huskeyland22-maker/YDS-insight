@@ -353,6 +353,36 @@
           </div>
         </div>
       </section>
+      <!-- Decision Engine -->
+      <section id="decision-engine" class="section section--tint">
+        <div class="container">
+          <h2 class="section-title">Decision Engine</h2>
+          <div id="decision-output" class="overseas-card">
+            <h3>시장 상태 분석 중...</h3>
+          </div>
+          <div id="scenario-output" class="overseas-card">
+            <h3>시나리오 계산 중...</h3>
+          </div>
+        </div>
+      </section>
+      <section class="section section--tint">
+        <div class="container">
+          <h2 class="section-title">Execution System</h2>
+          <div id="stock-recommendation" class="overseas-card"></div>
+        </div>
+      </section>
+      <section class="section section--tint">
+        <div class="container">
+          <h2 class="section-title">Trade History</h2>
+          <div id="trade-history"></div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="container">
+          <h2 class="section-title">Performance</h2>
+          <div id="analytics"></div>
+        </div>
+      </section>
 
       <section id="panic-monitor" class="section section--tint">
         <div class="container">
@@ -579,6 +609,7 @@
       document.write('<script src="' + window.withSiteVersion("overseas-data.js") + '"><\/script>');
       document.write('<script src="' + window.withSiteVersion("youtube-data.js") + '"><\/script>');
     </script>
+    <script type="module" src="./src/main.js"></script>
     <script>
       (function () {
         var tickerTrackEl = document.getElementById("market-ticker-track");
@@ -1003,43 +1034,34 @@
           var hyValue = parseTickerNumber(hy && hy.value);
           var fngValue = parseTickerNumber(fng && fng.value);
 
-          var score = 50;
-          if (ndxDelta !== null) score += ndxDelta * 14;
-          if (spxDelta !== null) score += spxDelta * 10;
-          if (vixValue !== null) score += (22 - vixValue) * 2.1;
-          if (vxnValue !== null) score += (28 - vxnValue) * 1.3;
-          if (us10yDelta !== null) score += us10yDelta > 0 ? -8 : 6;
-          if (hyValue !== null) score += hyValue >= 4 ? -10 : 6;
-          if (fngValue !== null) score += fngValue >= 75 ? -7 : fngValue <= 30 ? -6 : 4;
-          if (score > 100) score = 100;
-          if (score < 0) score = 0;
-          score = Math.round(score);
+          var decision = null;
+          if (window.buildMarketDataSnapshot && window.evaluateMarket) {
+            var marketData = window.buildMarketDataSnapshot(latestTickerData, latestPanicData);
+            decision = window.evaluateMarket(marketData, window.MARKET_RULES || []);
+          }
 
-          var reasons = [];
-          if (vixValue !== null) reasons.push({ t: "VIX", v: (22 - vixValue) * 2.1 });
-          if (vxnValue !== null) reasons.push({ t: "VXN", v: (28 - vxnValue) * 1.3 });
-          if (us10yDelta !== null) reasons.push({ t: "US10Y", v: us10yDelta > 0 ? -8 : 6 });
-          if (hyValue !== null) reasons.push({ t: "HY", v: hyValue >= 4 ? -10 : 6 });
-          if (fngValue !== null) reasons.push({ t: "F&G", v: fngValue >= 75 ? -7 : fngValue <= 30 ? -6 : 4 });
-          reasons.sort(function (a, b) { return Math.abs(b.v) - Math.abs(a.v); });
-
-          var tone = score >= 65 ? "공격" : score <= 38 ? "방어" : "중립";
-          var action =
-            tone === "공격"
-              ? "SOXL/TQQQ는 눌림 분할 접근, 추격 비중은 제한"
-              : tone === "방어"
-                ? "레버리지 비중 축소 + 현금/헤지 점검"
-                : "포지션 중립 유지, 강한 시그널 대기";
+          var score = decision ? decision.score : 50;
+          var tone = decision ? decision.mode : (score >= 65 ? "공격" : score <= 38 ? "방어" : "중립");
+          var action = decision && decision.actionText
+            ? decision.actionText
+            : (tone === "공격"
+                ? "SOXL/TQQQ는 눌림 분할 접근, 추격 비중은 제한"
+                : tone === "방어"
+                  ? "레버리지 비중 축소 + 현금/헤지 점검"
+                  : "포지션 중립 유지, 강한 시그널 대기");
 
           overseasScoreEl.textContent = score + " / 100";
           overseasToneEl.className = toneClass(tone);
           overseasToneEl.textContent = "모드: " + tone;
           overseasActionEl.textContent = "오늘의 액션 · " + action;
           if (overseasRationaleEl) {
-            var reasonText = reasons.slice(0, 3).map(function (r) {
-              return r.t + " " + (r.v >= 0 ? "+" : "") + Math.round(r.v);
-            }).join(" · ");
+            var reasonText = decision && decision.reasonText ? decision.reasonText : "핵심 지표 계산 중";
+            var transitionText =
+              decision && decision.transition && decision.transition.changed
+                ? " · 상태변화: " + decision.transition.previous + " -> " + decision.transition.current
+                : "";
             overseasRationaleEl.textContent = "근거 · " + (reasonText || "핵심 지표 계산 중");
+            if (transitionText) overseasRationaleEl.textContent += transitionText;
           }
 
           overseasMetricListEl.innerHTML =
@@ -1074,18 +1096,25 @@
             );
           }
 
-          var buySplit = "분할 25%-35%-40%";
-          var neutralSplit = "분할 20%-30%-50%";
-          var defenseSplit = "신규 축소 · 관찰";
           var perfMap = {};
           ((latestOverseasData && latestOverseasData.items) || []).forEach(function (item) {
             if (item && item.symbol) perfMap[String(item.symbol).toUpperCase()] = item;
           });
 
+          var plans = decision && window.recommendEtfPlan
+            ? window.recommendEtfPlan(decision, window.ETF_UNIVERSE || [])
+            : [
+                { symbol: "SOXL", link: "https://finance.yahoo.com/quote/SOXL", mode: tone, splitText: tone === "공격" ? "분할 25%-35%-40%" : tone === "중립" ? "분할 20%-30%-50%" : "신규 축소 · 관찰" },
+                { symbol: "TQQQ", link: "https://finance.yahoo.com/quote/TQQQ", mode: tone, splitText: tone === "공격" ? "분할 25%-35%-40%" : tone === "중립" ? "분할 20%-30%-50%" : "신규 축소 · 관찰" },
+                { symbol: "SSO", link: "https://finance.yahoo.com/quote/SSO", mode: tone, splitText: tone === "공격" ? "분할 30%-30%-40%" : tone === "중립" ? "분할 20%-30%-50%" : "신규 축소 · 관찰" }
+              ];
+
           overseasEtfListEl.innerHTML =
-            etfPlan("SOXL", tone, tone === "공격" ? buySplit : tone === "중립" ? neutralSplit : defenseSplit, "https://finance.yahoo.com/quote/SOXL", perfMap.SOXL) +
-            etfPlan("TQQQ", tone, tone === "공격" ? buySplit : tone === "중립" ? neutralSplit : defenseSplit, "https://finance.yahoo.com/quote/TQQQ", perfMap.TQQQ) +
-            etfPlan("SSO", tone, tone === "공격" ? "분할 30%-30%-40%" : tone === "중립" ? neutralSplit : defenseSplit, "https://finance.yahoo.com/quote/SSO", perfMap.SSO);
+            plans
+              .map(function (plan) {
+                return etfPlan(plan.symbol, plan.mode, plan.splitText, plan.link, perfMap[plan.symbol]);
+              })
+              .join("");
           renderUsNightBrief();
           renderOverseasFlowRadar();
           renderOverseasInsightExtras();
