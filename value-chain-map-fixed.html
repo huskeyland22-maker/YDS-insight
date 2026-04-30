@@ -188,7 +188,6 @@
           </article>
         </div>
       </section>
-
       <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6" id="value-chain-grid"></section>
     </main>
 
@@ -381,6 +380,9 @@
           var stochastic = m && Number.isFinite(m.stochK) && Number.isFinite(m.stochD)
             ? ("%K " + m.stochK.toFixed(1) + " / %D " + m.stochD.toFixed(1))
             : (signal.tone === "hot" ? "80 이상 데드크로스 경계" : "20~80 내 골든크로스 확인");
+          var macd = m && Number.isFinite(m.macdLine) && Number.isFinite(m.macdSignal)
+            ? ("MACD " + m.macdLine.toFixed(2) + " / Signal " + m.macdSignal.toFixed(2) + " / Hist " + ((Number.isFinite(m.macdHistogram) ? m.macdHistogram : 0).toFixed(2)))
+            : (signal.tone === "good" ? "시그널 상향(골든크로스) 확인" : signal.tone === "hot" ? "시그널 하향(데드크로스) 경계" : "제로라인 부근 방향성 대기");
           var volume = m && Number.isFinite(m.volumeRatio20)
             ? ("20일 평균 대비 " + m.volumeRatio20.toFixed(2) + "x")
             : (signal.tone === "good" ? "20일 평균 대비 1.2x 이상" : signal.tone === "wait" ? "평균 부근 (확인 필요)" : "급증 후 둔화 여부 체크");
@@ -390,6 +392,7 @@
             '<p class="mb-1 text-slate-100"><span class="text-blue-200">추세</span>: ' + trend + "</p>" +
             '<p class="mb-1 text-slate-100"><span class="text-blue-200">모멘텀(RSI)</span>: ' + rsi + "</p>" +
             '<p class="mb-1 text-slate-100"><span class="text-blue-200">스토캐스틱</span>: ' + stochastic + "</p>" +
+            '<p class="mb-1 text-slate-100"><span class="text-blue-200">MACD</span>: ' + macd + "</p>" +
             '<p class="mb-1 text-slate-100"><span class="text-blue-200">거래</span>: ' + volume + "</p>" +
             '<p class="text-slate-100"><span class="text-blue-200">리스크</span>: ' + risk + "</p>" +
             "</div>"
@@ -587,6 +590,7 @@
             stats: stats
           };
         }
+
 
         function renderRotationRadar() {
           var leaderEl = document.getElementById("rotation-leaders-list");

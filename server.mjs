@@ -101,17 +101,65 @@ function stochastic(highs, lows, closes, period = 14, smooth = 3) {
   return { k: currentK, d: currentD };
 }
 
+function ema(values, period) {
+  if (!Array.isArray(values) || values.length < period) return [];
+  const alpha = 2 / (period + 1);
+  const out = [];
+  let prev = average(values.slice(0, period));
+  out.push(prev);
+  for (let i = period; i < values.length; i += 1) {
+    prev = values[i] * alpha + prev * (1 - alpha);
+    out.push(prev);
+  }
+  return out;
+}
+
+function macd(values, fast = 12, slow = 26, signalPeriod = 9) {
+  if (!Array.isArray(values) || values.length < slow + signalPeriod) {
+    return { macdLine: Number.NaN, signalLine: Number.NaN, histogram: Number.NaN };
+  }
+  const fastEma = ema(values, fast);
+  const slowEma = ema(values, slow);
+  if (!fastEma.length || !slowEma.length) {
+    return { macdLine: Number.NaN, signalLine: Number.NaN, histogram: Number.NaN };
+  }
+  const offset = slow - fast;
+  const macdSeries = [];
+  for (let i = 0; i < slowEma.length; i += 1) {
+    const fastVal = fastEma[i + offset];
+    const slowVal = slowEma[i];
+    if (!Number.isFinite(fastVal) || !Number.isFinite(slowVal)) continue;
+    macdSeries.push(fastVal - slowVal);
+  }
+  if (macdSeries.length < signalPeriod) {
+    return { macdLine: Number.NaN, signalLine: Number.NaN, histogram: Number.NaN };
+  }
+  const signalSeries = ema(macdSeries, signalPeriod);
+  if (!signalSeries.length) {
+    return { macdLine: Number.NaN, signalLine: Number.NaN, histogram: Number.NaN };
+  }
+  const macdLine = macdSeries[macdSeries.length - 1];
+  const signalLine = signalSeries[signalSeries.length - 1];
+  return {
+    macdLine,
+    signalLine,
+    histogram: macdLine - signalLine
+  };
+}
+
 function classifyTiming(metrics) {
-  const { close, ma20, ma60, rsi14, stochK, stochD, volumeRatio20 } = metrics;
+  const { close, ma20, ma60, rsi14, stochK, stochD, macdLine, macdSignal, volumeRatio20 } = metrics;
   const uptrend = Number.isFinite(close) && Number.isFinite(ma20) && Number.isFinite(ma60) && close > ma20 && ma20 > ma60;
   const pullback = Number.isFinite(close) && Number.isFinite(ma20) && close >= ma20 * 0.985 && close <= ma20 * 1.02;
   const overheated = (Number.isFinite(rsi14) && rsi14 >= 75) || (Number.isFinite(stochK) && Number.isFinite(stochD) && stochK > 80 && stochK < stochD);
   const golden = Number.isFinite(stochK) && Number.isFinite(stochD) && stochK > stochD && stochK < 60;
+  const macdBull = Number.isFinite(macdLine) && Number.isFinite(macdSignal) && macdLine >= macdSignal;
+  const macdBear = Number.isFinite(macdLine) && Number.isFinite(macdSignal) && macdLine < macdSignal;
 
-  if (uptrend && (golden || pullback) && !overheated) {
+  if (uptrend && (golden || pullback || macdBull) && !overheated) {
     return { grade: "A", state: "추세초입", action: "분할진입", tone: "good" };
   }
-  if (overheated) {
+  if (overheated || macdBear) {
     return { grade: "C", state: "과열주의", action: "추격금지", tone: "hot" };
   }
   return { grade: "B", state: "눌림대기", action: "관찰", tone: "wait" };
@@ -301,10 +349,21 @@ async function handleApiTiming(req, res, urlObj) {
     const ma60 = sma(closes, 60);
     const rsi14 = rsi(closes, 14);
     const stoch = stochastic(highs, lows, closes, 14, 3);
+    const macdValue = macd(closes, 12, 26, 9);
     const avgVol20 = sma(volumes, 20);
     const volNow = volumes[volumes.length - 1];
     const volumeRatio20 = Number.isFinite(avgVol20) && avgVol20 > 0 ? volNow / avgVol20 : Number.NaN;
-    const timing = classifyTiming({ close, ma20, ma60, rsi14, stochK: stoch.k, stochD: stoch.d, volumeRatio20 });
+    const timing = classifyTiming({
+      close,
+      ma20,
+      ma60,
+      rsi14,
+      stochK: stoch.k,
+      stochD: stoch.d,
+      macdLine: macdValue.macdLine,
+      macdSignal: macdValue.signalLine,
+      volumeRatio20
+    });
 
     result[ticker] = {
       ...timing,
@@ -315,6 +374,9 @@ async function handleApiTiming(req, res, urlObj) {
         rsi14,
         stochK: stoch.k,
         stochD: stoch.d,
+        macdLine: macdValue.macdLine,
+        macdSignal: macdValue.signalLine,
+        macdHistogram: macdValue.histogram,
         volumeRatio20
       }
     };

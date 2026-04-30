@@ -1,11 +1,11 @@
 window.PANIC_DATA = {
-  "updatedAt": "2026.04.29 11:00 KST (자동 업데이트 · Python)",
+  "updatedAt": "2026.04.30 15:50 KST (자동 업데이트 · Python)",
   "items": [
     {
       "id": "vix",
       "label": "VIX Index",
-      "value": "17.83",
-      "delta": "📉 -0.19",
+      "value": "18.81",
+      "delta": "📈 +0.98",
       "status": "🟢 안정",
       "tone": "stable",
       "weekTrend": "하락",
@@ -17,7 +17,7 @@ window.PANIC_DATA = {
       "id": "fng",
       "label": "CNN F&G",
       "value": "64",
-      "delta": "📉 -4",
+      "delta": "➡️ 0",
       "status": "🟢 중립",
       "tone": "stable",
       "weekTrend": "하락",
@@ -40,11 +40,11 @@ window.PANIC_DATA = {
     {
       "id": "skew",
       "label": "SKEW Index",
-      "value": "138.16",
-      "delta": "📉 -1.48",
+      "value": "141.88",
+      "delta": "📈 +3.72",
       "status": "🟡 주의",
       "tone": "watch",
-      "weekTrend": "하락",
+      "weekTrend": "상승",
       "actionGuide": "분할매수",
       "trendUrl": "https://www.cboe.com/tradable_products/vix/vix_historical_data/",
       "source": "yahoo"
@@ -64,8 +64,8 @@ window.PANIC_DATA = {
     {
       "id": "hy",
       "label": "HY 금리 스프레드",
-      "value": "2.84%",
-      "delta": "📉 -0.02%",
+      "value": "2.85%",
+      "delta": "📈 +0.01%",
       "status": "🟢 안정",
       "tone": "stable",
       "weekTrend": "보합",
@@ -88,11 +88,11 @@ window.PANIC_DATA = {
     {
       "id": "move",
       "label": "MOVE Index",
-      "value": "68.68",
-      "delta": "📈 +0.26",
+      "value": "74.33",
+      "delta": "📈 +5.65",
       "status": "🟢 안정",
       "tone": "stable",
-      "weekTrend": "하락",
+      "weekTrend": "상승",
       "actionGuide": "관망",
       "trendUrl": "https://fred.stlouisfed.org/series/MOVE",
       "source": "yahoo"
@@ -100,11 +100,11 @@ window.PANIC_DATA = {
     {
       "id": "vxn",
       "label": "VXN Index",
-      "value": "23.24",
-      "delta": "📈 +0.16",
+      "value": "23.76",
+      "delta": "📈 +0.52",
       "status": "🟢 안정",
       "tone": "stable",
-      "weekTrend": "하락",
+      "weekTrend": "상승",
       "actionGuide": "관망",
       "trendUrl": "https://www.cboe.com/tradable_products/vix/vxn/",
       "source": "yahoo"

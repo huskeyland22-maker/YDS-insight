@@ -65,6 +65,7 @@
             </p>
             <div class="hero-tags">
               <a class="tag tag--muted" href="value-chain-map-fixed.html">KOREA VALUE CHAIN MAP</a>
+              <a class="tag tag--muted" href="next-wave-sector-map.html">NEXT WAVE SECTOR MAP</a>
               <a class="tag tag--muted" href="hold-and-pick.html">HOLD AND PICK</a>
             </div>
           </div>
@@ -152,6 +153,20 @@
           <p class="section-intro">
             나스닥·변동성·금리 기반으로 레버리지 ETF 대응 모드를 빠르게 확인하는 요약판입니다.
           </p>
+          <article class="us-night-brief-card" id="us-night-brief-card" aria-label="지난밤 미국시장 브리핑">
+            <div class="us-night-brief-card__head">
+              <h3>지난밤 미국시장 브리핑</h3>
+              <span class="us-night-brief-card__tone" id="us-night-brief-tone">분석 중</span>
+            </div>
+            <p class="us-night-brief-card__summary" id="us-night-brief-summary">미국시장 요약을 계산하고 있습니다...</p>
+            <ul class="us-night-brief-card__list">
+              <li id="us-night-brief-line-policy">통화정책: 데이터 계산 중...</li>
+              <li id="us-night-brief-line-rate">금리/채권: 데이터 계산 중...</li>
+              <li id="us-night-brief-line-risk">리스크 요인: 데이터 계산 중...</li>
+              <li id="us-night-brief-line-korea">한국시장 연계: 데이터 계산 중...</li>
+              <li id="us-night-brief-line-check">오늘 체크포인트: 데이터 계산 중...</li>
+            </ul>
+          </article>
           <div class="overseas-toolbar">
             <button type="button" class="overseas-toggle-btn" id="overseas-detail-toggle" aria-expanded="true">상세 숨기기</button>
             <p class="overseas-trust-line" id="overseas-trust-line">데이터 신뢰도: 계산 중...</p>
@@ -634,6 +649,14 @@
         var overseasQuickSavedEl = document.getElementById("overseas-quick-saved");
         var overseasQuickFiltersEl = document.getElementById("overseas-quick-filters");
         var overseasQuickHistoryEl = document.getElementById("overseas-quick-history");
+        var usNightBriefCardEl = document.getElementById("us-night-brief-card");
+        var usNightBriefToneEl = document.getElementById("us-night-brief-tone");
+        var usNightBriefSummaryEl = document.getElementById("us-night-brief-summary");
+        var usNightBriefPolicyEl = document.getElementById("us-night-brief-line-policy");
+        var usNightBriefRateEl = document.getElementById("us-night-brief-line-rate");
+        var usNightBriefRiskEl = document.getElementById("us-night-brief-line-risk");
+        var usNightBriefKoreaEl = document.getElementById("us-night-brief-line-korea");
+        var usNightBriefCheckEl = document.getElementById("us-night-brief-line-check");
         var OVERSEAS_DETAIL_KEY = "overseas:detail-collapsed:v1";
         var latestTickerData = null;
         var latestPanicData = null;
@@ -918,6 +941,87 @@
           }
         }
 
+        function renderUsNightBrief() {
+          if (!usNightBriefCardEl) return;
+          if (!latestTickerData || !latestPanicData) {
+            if (usNightBriefSummaryEl) usNightBriefSummaryEl.textContent = "미국시장 요약을 계산하고 있습니다...";
+            return;
+          }
+          var ndx = getTickerByLabel("NASDAQ 100");
+          var spx = getTickerByLabel("S&P 500");
+          var dow = getTickerByLabel("DOW");
+          var us10y = getTickerByLabel("US 10Y");
+          var vix = getPanicById("vix");
+          var fng = getPanicById("fng");
+
+          var ndxDelta = parseTickerNumber(ndx && ndx.delta);
+          var spxDelta = parseTickerNumber(spx && spx.delta);
+          var dowDelta = parseTickerNumber(dow && dow.delta);
+          var us10yDelta = parseTickerNumber(us10y && us10y.delta);
+          var vixValue = parseTickerNumber(vix && vix.value);
+          var fngValue = parseTickerNumber(fng && fng.value);
+
+          var equityBias = 0;
+          if (Number.isFinite(ndxDelta)) equityBias += ndxDelta * 1.5;
+          if (Number.isFinite(spxDelta)) equityBias += spxDelta * 1.2;
+          if (Number.isFinite(dowDelta)) equityBias += dowDelta * 0.9;
+
+          var tone =
+            equityBias >= 0.8 ? "위험선호 우위" :
+            equityBias <= -0.8 ? "위험회피 우위" :
+            "혼조 흐름";
+
+          var fedComment =
+            Number.isFinite(us10yDelta) && us10yDelta > 0
+              ? "연준의 인하 기대가 빠르게 살아나기보다, 고금리 장기화 가능성을 다시 가격에 반영하는 분위기였습니다. 즉, 정책 완화 시점이 뒤로 밀릴 수 있다는 인식이 기술주 멀티플에 부담으로 작용하기 쉬운 환경입니다."
+              : Number.isFinite(us10yDelta) && us10yDelta < 0
+                ? "연준의 금리 부담 완화 기대가 재부각되며 성장주 쪽으로 위험선호가 살아나는 흐름이었습니다. 특히 장기할인율이 낮아질 때 실적 가시성이 있는 대형 기술주가 상대적으로 빠르게 반응하는 패턴이 반복됩니다."
+                : "연준 금리 경로에 대한 시장 해석은 뚜렷한 한쪽보다 관망 성격이 강했습니다. 이 구간에서는 지수 방향성보다 실적/가이던스가 확인된 섹터로 자금이 선택적으로 유입되는 특징이 나타납니다.";
+          var rateComment = Number.isFinite(us10yDelta)
+            ? (us10yDelta > 0
+                ? "장기국채 금리가 반등해 밸류에이션 부담이 커질 수 있어, 고평가 성장주의 단기 변동성 확대 가능성을 열어둬야 합니다. 동시에 장기 전쟁/지정학 리스크가 깊어지면 재정·원자재 경로를 통해 장기금리에 상방 압력을 더할 수 있어, 금리 민감주의 체력 점검이 중요합니다."
+                : "장기국채 금리가 완만해지며 멀티플 부담이 줄어, 기술주 중심의 반등 시도가 이어질 여건이 마련됐습니다. 다만 금리 하락의 원인이 경기둔화 우려인지 정책 기대인지에 따라 업종 반응이 달라지므로, 채권 강세의 성격을 함께 확인해야 합니다.")
+            : "장기금리 방향성이 뚜렷하지 않아 종목별 차별화가 더 중요해졌습니다. 이럴 때는 지수 추격보다 이익 모멘텀과 수급이 맞물리는 업종을 선별하는 접근이 유효합니다.";
+          var riskComment = Number.isFinite(vixValue)
+            ? (vixValue >= 25
+                ? "지정학·정책 불확실성(장기 전쟁 리스크 포함)이 안전자산 선호를 자극할 수 있어, 갑작스러운 금리/유가 쇼크를 함께 경계해야 합니다. 변동성 레벨이 높아질수록 테마 순환 속도는 빨라지고, 같은 섹터 내에서도 대형·현금흐름 우량주로 쏠림이 강해질 가능성이 큽니다."
+                : "변동성은 급격히 악화된 구간은 아니지만, 지정학 이슈가 재부각되면 금리와 원자재가 동반 반응할 가능성이 있습니다. 즉, 평온한 장에서도 이벤트 리스크가 촉발점이 될 수 있으므로 손절·비중 규칙을 사전에 고정해두는 것이 중요합니다.")
+            : "리스크 지표는 중립이나, 지정학 이슈 재점화 가능성은 상시 점검이 필요합니다. 특히 유가·달러·장기금리가 동시에 움직이는 구간은 한국 증시 변동성이 빠르게 확대될 수 있습니다.";
+          var koreaComment = tone === "위험선호 우위"
+            ? "국내는 반도체 → 전력 → 냉각 순의 순환 강도와 외국인 수급 지속성을 확인하면 좋겠습니다. 미국 기술주 강세가 유지될 때는 한국에서도 공급망 후행 업종(전력기기·냉각·부품)으로 확산되는지 체크하면 체감 수익률 개선에 도움이 됩니다."
+            : tone === "위험회피 우위"
+              ? "국내는 주도주의 눌림 강도, 방어 섹터 상대강도, 환율·금리 민감주 변동성 관리가 우선입니다. 특히 달러 강세와 장기금리 상승이 겹치면 성장주 프리미엄이 빠르게 축소될 수 있어, 현금비중·헷지 비중을 탄력적으로 조절하는 전략이 필요합니다."
+              : "국내는 지수 방향 베팅보다 업종 순환의 선후(반도체/전력/냉각/원자재)와 거래대금 흐름을 함께 보시는 게 유효합니다. 혼조장에서는 지수는 횡보해도 섹터별 성과 격차가 커지므로, 선행 강도와 눌림 회복 신호를 분리해 관리하는 것이 중요합니다.";
+          var sentimentComment = Number.isFinite(fngValue)
+            ? (fngValue >= 75 ? "심리(탐욕)가 과열권이라 추격보다 눌림 확인이 유리합니다." : fngValue <= 30 ? "심리(공포)는 과매도 구간 접근으로 반등 탄력을 점검할 시점입니다." : "심리(중립)는 이벤트 따라 빠르게 쏠림이 바뀔 수 있는 구간입니다.")
+            : "심리 지표는 중립권으로 해석합니다.";
+          var checkComment =
+            "오늘 체크포인트: (1) 미 장기금리 재상승 여부, (2) 나스닥 대비 필라델피아반도체 상대강도, (3) 한국장 개장 후 반도체→전력→냉각 순 거래대금 확산 여부, (4) 환율 급등 동반 시 성장주 변동성 확대 여부를 우선 확인하세요.";
+
+          if (usNightBriefToneEl) {
+            usNightBriefToneEl.textContent = tone;
+            usNightBriefToneEl.className =
+              "us-night-brief-card__tone " +
+              (tone === "위험선호 우위"
+                ? "us-night-brief-card__tone--on"
+                : tone === "위험회피 우위"
+                  ? "us-night-brief-card__tone--off"
+                  : "us-night-brief-card__tone--mix");
+          }
+          if (usNightBriefSummaryEl) {
+            usNightBriefSummaryEl.textContent =
+              "지수 흐름: NDX " + (ndx && ndx.delta ? ndx.delta : "-") +
+              " / S&P " + (spx && spx.delta ? spx.delta : "-") +
+              " / DOW " + (dow && dow.delta ? dow.delta : "-") +
+              " · " + sentimentComment;
+          }
+          if (usNightBriefPolicyEl) usNightBriefPolicyEl.textContent = "통화정책: " + fedComment;
+          if (usNightBriefRateEl) usNightBriefRateEl.textContent = "금리/채권: " + rateComment;
+          if (usNightBriefRiskEl) usNightBriefRiskEl.textContent = "리스크 요인: " + riskComment;
+          if (usNightBriefKoreaEl) usNightBriefKoreaEl.textContent = "한국시장 연계: " + koreaComment;
+          if (usNightBriefCheckEl) usNightBriefCheckEl.textContent = checkComment;
+        }
+
         function renderOverseasCockpit() {
           if (!overseasScoreEl || !overseasToneEl || !overseasActionEl || !overseasMetricListEl || !overseasEtfListEl) return;
           if (!latestTickerData || !latestPanicData) return;
@@ -1021,6 +1125,7 @@
             etfPlan("SOXL", tone, tone === "공격" ? buySplit : tone === "중립" ? neutralSplit : defenseSplit, "https://finance.yahoo.com/quote/SOXL", perfMap.SOXL) +
             etfPlan("TQQQ", tone, tone === "공격" ? buySplit : tone === "중립" ? neutralSplit : defenseSplit, "https://finance.yahoo.com/quote/TQQQ", perfMap.TQQQ) +
             etfPlan("SSO", tone, tone === "공격" ? "분할 30%-30%-40%" : tone === "중립" ? neutralSplit : defenseSplit, "https://finance.yahoo.com/quote/SSO", perfMap.SSO);
+          renderUsNightBrief();
           renderOverseasFlowRadar();
           renderOverseasInsightExtras();
           if (overseasTrustLineEl) {

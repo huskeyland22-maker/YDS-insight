@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stock View · Y'ds의 투자 인사이트</title>
+    <script src="site-version.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .sv-card {
+        border: 1px solid rgba(146, 164, 201, 0.25);
+        border-radius: 1rem;
+        background: linear-gradient(180deg, rgba(18, 28, 52, 0.82), rgba(10, 16, 34, 0.92));
+        padding: 1rem;
+      }
+      .metric-chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        border: 1px solid rgba(148, 163, 184, 0.35);
+        border-radius: 999px;
+        padding: 0.25rem 0.6rem;
+        font-size: 0.75rem;
+        color: #dbe4f5;
+        background: rgba(15, 23, 42, 0.72);
+      }
+    </style>
+    <script>
+      (function () {
+        if (window.applySiteVersion) window.applySiteVersion(document);
+      })();
+    </script>
+  </head>
+  <body>
+    <div class="bg-layer" aria-hidden="true"></div>
+    <div class="bg-glow bg-glow--gold" aria-hidden="true"></div>
+    <div class="bg-glow bg-glow--blue" aria-hidden="true"></div>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="logo" href="index.html">Y'ds</a>
+        <nav class="nav" aria-label="주요 메뉴">
+          <a href="next-wave-sector-map.html">NEXT WAVE SECTOR MAP</a>
+        </nav>
+      </div>
+    </header>
+    <main class="container py-10 md:py-14">
+      <section class="mb-6">
+        <h1 class="text-3xl md:text-4xl font-semibold text-slate-100" id="stock-title">Stock View</h1>
+        <p class="mt-2 text-sm text-slate-300" id="stock-sub">테마와 돈의 흐름 연결 관점</p>
+      </section>
+      <section class="sv-card">
+        <p class="text-sm text-slate-300" id="stock-flow">이 종목은 병목 흐름 내 위치를 분석합니다.</p>
+        <p class="mt-2 text-sm text-slate-300" id="stock-timing-line">타이밍: 계산 중...</p>
+        <div class="mt-3 flex flex-wrap gap-2" id="stock-metrics">
+          <span class="metric-chip">RSI: -</span>
+          <span class="metric-chip">MACD: -</span>
+          <span class="metric-chip">이격도: -</span>
+          <span class="metric-chip">거래배수: -</span>
+        </div>
+        <p class="mt-3 text-xs text-slate-400" id="stock-updated-at">신호 시각: -</p>
+        <div class="mt-3 flex gap-2">
+          <a class="tag tag--muted" id="naver-link" target="_blank" rel="noopener noreferrer">네이버 종목</a>
+          <a class="tag tag--muted" id="daum-link" target="_blank" rel="noopener noreferrer">다음 종목</a>
+        </div>
+      </section>
+    </main>
+    <script>
+      (function () {
+        var p = new URLSearchParams(window.location.search);
+        var name = p.get("name") || "종목";
+        var code = p.get("code") || "";
+        var theme = p.get("theme") || "테마";
+        var title = document.getElementById("stock-title");
+        var sub = document.getElementById("stock-sub");
+        var flow = document.getElementById("stock-flow");
+        var timingLine = document.getElementById("stock-timing-line");
+        var metricsWrap = document.getElementById("stock-metrics");
+        var updatedAtEl = document.getElementById("stock-updated-at");
+        if (title) title.textContent = name;
+        if (sub) sub.textContent = theme + " 섹터 내 핵심 연결 종목";
+        if (flow) flow.textContent = "돈 흐름: HBM → " + theme + " → " + name;
+        var n = document.getElementById("naver-link");
+        var d = document.getElementById("daum-link");
+        if (n) n.href = code ? "https://finance.naver.com/item/main.naver?code=" + encodeURIComponent(code) : "#";
+        if (d) d.href = code ? "https://finance.daum.net/quotes/A" + encodeURIComponent(code) : "#";
+
+        function fmt(v, digits) {
+          return Number.isFinite(v) ? v.toFixed(digits) : "-";
+        }
+
+        function renderTiming(data) {
+          if (!data || !data.metrics) {
+            if (timingLine) timingLine.textContent = "타이밍: 데이터 부족";
+            return;
+          }
+          var m = data.metrics;
+          var spread = Number.isFinite(m.close) && Number.isFinite(m.ma20) && m.ma20 !== 0
+            ? ((m.close - m.ma20) / m.ma20) * 100
+            : Number.NaN;
+          var macdGap = Number.isFinite(m.macdLine) && Number.isFinite(m.macdSignal)
+            ? (m.macdLine - m.macdSignal)
+            : Number.NaN;
+
+          var timingText = "타이밍: 눌림 시 분할 매수, 단기 과열 시 관망";
+          if (Number.isFinite(m.rsi14) && Number.isFinite(m.volumeRatio20) && Number.isFinite(macdGap)) {
+            if (m.rsi14 >= 55 && m.rsi14 <= 73 && m.volumeRatio20 >= 1.2 && macdGap >= 0) {
+              timingText = "타이밍: 추세 진행 구간 (눌림 매수 우위)";
+            } else if (m.rsi14 >= 48 && m.rsi14 < 58 && macdGap >= 0) {
+              timingText = "타이밍: 초기 진입 구간 (분할 접근)";
+            } else if (m.rsi14 >= 70 || macdGap < 0) {
+              timingText = "타이밍: 과열/약화 신호 (추격 금지)";
+            } else {
+              timingText = "타이밍: 대기 구간 (신호 확인 필요)";
+            }
+          }
+          if (timingLine) timingLine.textContent = timingText;
+
+          if (metricsWrap) {
+            metricsWrap.innerHTML =
+              '<span class="metric-chip">RSI: ' + fmt(m.rsi14, 1) + "</span>" +
+              '<span class="metric-chip">MACD: ' + fmt(m.macdLine, 2) + " / Signal " + fmt(m.macdSignal, 2) + "</span>" +
+              '<span class="metric-chip">이격도: ' + fmt(spread, 2) + "%</span>" +
+              '<span class="metric-chip">거래배수: ' + fmt(m.volumeRatio20, 2) + "x</span>";
+          }
+        }
+
+        if (!code) return;
+        fetch("/api/timing?symbols=" + encodeURIComponent(code))
+          .then(function (res) {
+            if (!res.ok) throw new Error("timing fetch failed");
+            return res.json();
+          })
+          .then(function (payload) {
+            var map = payload && payload.timingBySymbol ? payload.timingBySymbol : {};
+            renderTiming(map[code]);
+            if (updatedAtEl) updatedAtEl.textContent = "신호 시각: " + (payload.updatedAt || "-");
+          })
+          .catch(function () {
+            if (timingLine) timingLine.textContent = "타이밍: 데이터 불러오기 실패";
+          });
+      })();
+    </script>
+  </body>
+</html>

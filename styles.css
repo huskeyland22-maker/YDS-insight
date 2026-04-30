@@ -1349,6 +1349,100 @@ a.tag.tag--outline:hover {
   margin-bottom: 0.7rem;
 }
 
+.us-night-brief-card {
+  margin: 0.55rem 0 0.85rem;
+  border-radius: 12px;
+  border: 1px solid rgba(163, 190, 236, 0.52);
+  background: linear-gradient(180deg, rgba(60, 79, 118, 0.93), rgba(52, 70, 106, 0.94));
+  padding: 0.72rem 0.82rem;
+}
+
+.us-night-brief-card__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.us-night-brief-card__head h3 {
+  margin: 0;
+  font-size: 1.05rem;
+  color: #d9e8ff;
+  letter-spacing: 0.02em;
+}
+
+.us-night-brief-card__tone {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  padding: 0.14rem 0.52rem;
+  font-size: 0.86rem;
+  color: #dbe4f5;
+  background: rgba(148, 163, 184, 0.14);
+}
+
+.us-night-brief-card__tone--on {
+  color: #9ee8a8;
+  border-color: rgba(108, 187, 122, 0.45);
+  background: rgba(108, 187, 122, 0.14);
+}
+
+.us-night-brief-card__tone--off {
+  color: #f4b0b0;
+  border-color: rgba(217, 112, 112, 0.45);
+  background: rgba(217, 112, 112, 0.14);
+}
+
+.us-night-brief-card__tone--mix {
+  color: #f1d697;
+  border-color: rgba(198, 163, 90, 0.45);
+  background: rgba(198, 163, 90, 0.14);
+}
+
+.us-night-brief-card__summary {
+  margin: 0.62rem 0 0.58rem;
+  font-size: 0.95rem;
+  color: #c8dcff;
+  line-height: 1.68;
+}
+
+.us-night-brief-card__list {
+  margin: 0.42rem 0 0;
+  padding-left: 1rem;
+  color: #cbd5e1;
+  font-size: 0.92rem;
+  line-height: 1.72;
+}
+
+.us-night-brief-card__list li + li {
+  margin-top: 0.42rem;
+}
+
+@media (max-width: 768px) {
+  .us-night-brief-card__head h3 {
+    font-size: 1.65rem;
+  }
+
+  .us-night-brief-card__tone {
+    font-size: 1.18rem;
+  }
+
+  .us-night-brief-card__summary {
+    font-size: 1.42rem;
+    line-height: 1.74;
+  }
+
+  .us-night-brief-card__list {
+    font-size: 1.32rem;
+    line-height: 1.8;
+  }
+
+  .us-night-brief-card__list li + li {
+    margin-top: 0.5rem;
+  }
+}
+
 .overseas-toggle-btn {
   border: 1px solid rgba(198, 163, 90, 0.4);
   background: rgba(198, 163, 90, 0.1);
