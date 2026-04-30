@@ -21,9 +21,6 @@ export function renderTradeHistory(trades) {
         "<p>현재가: " +
         t.current +
         "</p>" +
-        "<p>가격 상태: " +
-        (t.priceStatus === "live" ? "실시간" : "이전값 유지") +
-        "</p>" +
         "<p>수익률: " +
         t.return +
         "%</p>" +
