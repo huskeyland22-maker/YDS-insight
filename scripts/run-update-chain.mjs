@@ -17,4 +17,10 @@ const node = spawnSync("node", ["auto-update-panic-data.mjs"], {
   stdio: "inherit",
   env: { ...process.env, SKIP_PANIC: "1" }
 });
-process.exit(node.status ?? 1);
+if (node.status !== 0) process.exit(node.status ?? 1);
+
+const fetchData = spawnSync("node", [path.join(root, "scripts", "fetch.js")], {
+  cwd: root,
+  stdio: "inherit"
+});
+process.exit(fetchData.status ?? 0);
