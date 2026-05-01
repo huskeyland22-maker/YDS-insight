@@ -548,6 +548,7 @@
     </footer>
     <script>
       document.write('<script src="' + window.withSiteVersion("ticker-data.js") + '"><\/script>');
+      document.write('<script src="' + window.withSiteVersion("data/us-close-snapshot.js") + '"><\/script>');
       document.write('<script src="' + window.withSiteVersion("panic-data.js") + '"><\/script>');
       document.write('<script src="' + window.withSiteVersion("overseas-data.js") + '"><\/script>');
       document.write('<script src="' + window.withSiteVersion("panic-signal-engine.js") + '"><\/script>');
@@ -1634,10 +1635,28 @@
         }
 
         function loadMarketData() {
+          var protocol = String(window.location.protocol || "").toLowerCase();
+          var fromScript = window.US_CLOSE_SNAPSHOT_DATA;
+          if (protocol === "file:") {
+            if (fromScript && typeof fromScript === "object") {
+              renderMarket(fromScript);
+              return;
+            }
+            var metaFile = document.getElementById("us-close-snapshot-updated-at");
+            if (metaFile) {
+              metaFile.textContent =
+                "업데이트 기준: 로컬(file)에서는 JSON fetch가 막힙니다. data/us-close-snapshot.js가 있는지 확인하거나 npm start로 로컬 서버를 쓰세요.";
+            }
+            return;
+          }
           var relPaths = ["data/us-close-snapshot.json", "data/market.json"];
           var lastErr = null;
           function tryIndex(i) {
             if (i >= relPaths.length) {
+              if (fromScript && typeof fromScript === "object") {
+                renderMarket(fromScript);
+                return;
+              }
               var meta = document.getElementById("us-close-snapshot-updated-at");
               if (meta) {
                 meta.textContent =
@@ -1743,7 +1762,7 @@
         }
 
         function renderUsCloseSnapshot() {
-          // US Close 카드·날짜는 항상 data/us-close-snapshot.json(loadMarketData → renderMarket) 기준. 티커 로드로 그리드를 덮어쓰지 않음.
+          // US Close: http(s)는 JSON fetch, file:// 는 data/us-close-snapshot.js(US_CLOSE_SNAPSHOT_DATA). 티커로 그리드 덮어쓰지 않음.
         }
 
         function renderTicker(data) {

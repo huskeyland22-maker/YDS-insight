@@ -1,7 +1,7 @@
 /**
  * scripts/fetch.js — data/panic.json 갱신 (overwrite)
  * data/ticker.json — ticker-data.json·panic-data 기반 생성 (market 이전에 반드시 기록)
- * data/us-close-snapshot.json — data/ticker.json + panic-data 기반 (URL에 "market" 미포함: 일부 차단기 회피)
+ * data/us-close-snapshot.json + data/us-close-snapshot.js — ticker+panic 기반 (동일 페이로드; .js는 file:// 로컬 열람용)
  */
 import fs from "node:fs";
 import path from "node:path";
@@ -12,6 +12,7 @@ const root = path.resolve(__dirname, "..");
 const outDir = path.join(root, "data");
 const outPath = path.join(outDir, "panic.json");
 const usCloseSnapshotPath = path.join(outDir, "us-close-snapshot.json");
+const usCloseSnapshotJsPath = path.join(outDir, "us-close-snapshot.js");
 const tickerJsonPath = path.join(outDir, "ticker.json");
 const panicPath = path.join(root, "panic-data.json");
 const tickerPath = path.join(root, "ticker-data.json");
@@ -429,7 +430,13 @@ function isForceMarketSave() {
 
 function saveMarketJson(slot, market, reasonLabel) {
   market.updatedAt = new Date().toISOString();
-  fs.writeFileSync(usCloseSnapshotPath, JSON.stringify(market, null, 2) + "\n", "utf8");
+  const json = JSON.stringify(market, null, 2) + "\n";
+  fs.writeFileSync(usCloseSnapshotPath, json, "utf8");
+  fs.writeFileSync(
+    usCloseSnapshotJsPath,
+    "window.US_CLOSE_SNAPSHOT_DATA = " + JSON.stringify(market) + ";\n",
+    "utf8"
+  );
   console.log("[fetch.js]", "[" + slot + "]", reasonLabel, usCloseSnapshotPath, "updatedAt(ISO)=", market.updatedAt);
 }
 
