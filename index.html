@@ -13,12 +13,12 @@
     <!-- 폴백: styles.css가 없거나 경로가 어긋나도 흰 화면이 되지 않도록 -->
     <style>
       html {
-        background-color: #0c1222;
+        background-color: #0b0f14;
       }
       body {
         margin: 0;
         min-height: 100vh;
-        background-color: #0c1222;
+        background-color: #0b0f14;
         color: #e4e9f2;
         font-family: "Noto Sans KR", system-ui, sans-serif;
       }
@@ -43,7 +43,6 @@
         <nav class="nav" aria-label="주요 메뉴">
           <a href="#panic-monitor">패닉 지수</a>
           <a href="#overseas-cockpit">해외증시</a>
-          <a href="#insights">인사이트</a>
           <a href="#youtube-channels">유튜브</a>
           <a href="#contact">Message</a>
         </nav>
@@ -98,12 +97,6 @@
               </div>
             </div>
           </aside>
-        </div>
-      </section>
-
-      <section class="market-ticker" aria-label="주요 시장 지표 티커">
-        <div class="market-ticker__viewport">
-          <div class="market-ticker__track" id="market-ticker-track"></div>
         </div>
       </section>
 
@@ -361,18 +354,109 @@
             지수 명칭, 실시간 수치, 전일 대비(Delta), 상태 등급, 5년 추세를 한눈에 정리합니다.
           </p>
           <p class="panic-updated-at" id="panic-updated-at">업데이트 기준: 로딩 중...</p>
-          <section class="us-close-snapshot" aria-label="지난밤 미국장 스냅샷">
-            <h3>US Close Snapshot</h3>
-            <div class="us-close-snapshot__grid" id="us-close-snapshot-grid">
-              <div class="us-close-snapshot__card"><span class="k">DOW</span><strong class="v">-</strong><em class="d">-</em></div>
-              <div class="us-close-snapshot__card"><span class="k">S&P 500</span><strong class="v">-</strong><em class="d">-</em></div>
-              <div class="us-close-snapshot__card"><span class="k">NASDAQ Composite</span><strong class="v">-</strong><em class="d">-</em></div>
-              <div class="us-close-snapshot__card"><span class="k">NASDAQ 100</span><strong class="v">-</strong><em class="d">-</em></div>
-              <div class="us-close-snapshot__card"><span class="k">VIX</span><strong class="v">-</strong><em class="d">-</em></div>
-              <div class="us-close-snapshot__card"><span class="k">US 10Y</span><strong class="v">-</strong><em class="d">-</em></div>
+
+          <div class="dashboard terminal-dashboard" id="terminal-dashboard">
+            <div class="market-grid terminal-dashboard__market">
+              <section class="us-close-snapshot us-close-snapshot--terminal" aria-label="지난밤 미국장 스냅샷">
+                <h3>US Close Snapshot</h3>
+                <div class="us-close-snapshot__grid" id="us-close-snapshot-grid">
+                  <div class="us-close-snapshot__card terminal-stat-card" id="dow"><span class="k">DOW</span><strong class="v">-</strong><em class="d terminal-delta terminal-delta--flat">-</em></div>
+                  <div class="us-close-snapshot__card terminal-stat-card" id="sp500"><span class="k">S&P 500</span><strong class="v">-</strong><em class="d terminal-delta terminal-delta--flat">-</em></div>
+                  <div class="us-close-snapshot__card terminal-stat-card" id="nasdaq"><span class="k">NASDAQ Composite</span><strong class="v">-</strong><em class="d terminal-delta terminal-delta--flat">-</em></div>
+                  <div class="us-close-snapshot__card terminal-stat-card" id="nasdaq100"><span class="k">NASDAQ 100</span><strong class="v">-</strong><em class="d terminal-delta terminal-delta--flat">-</em></div>
+                  <div class="us-close-snapshot__card terminal-stat-card" id="vix"><span class="k">VIX</span><strong class="v">-</strong><em class="d terminal-delta terminal-delta--flat">-</em></div>
+                  <div class="us-close-snapshot__card terminal-stat-card" id="us10y"><span class="k">US 10Y</span><strong class="v">-</strong><em class="d terminal-delta terminal-delta--flat">-</em></div>
+                </div>
+              </section>
             </div>
-          </section>
+
+            <div class="signal-grid terminal-dashboard__signals">
+              <section
+                class="panic-signal-dashboard panic-signal-dashboard--terminal"
+                id="panic-signal-dashboard"
+                aria-label="패닉 시그널 엔진"
+                aria-live="polite"
+              >
+                <header class="panic-signal-dashboard__head">
+                  <h3 class="panic-signal-dashboard__title">시그널 엔진</h3>
+                  <p class="panic-signal-dashboard__desc">
+                    패닉 지표를 0~100으로 점수화한 뒤 구간별 시그널로 요약합니다. 높은 점수는 역발상 관점의 매수(공포 국면), 낮은 점수는 과열·매도 경계에 가깝게 해석합니다.
+                  </p>
+                  <p class="panic-signal-dashboard__updated" id="panic-signal-data-updated-at" aria-live="polite"></p>
+                </header>
+                <div class="panic-signal-dashboard__grid">
+                  <article class="panic-signal-dashboard__card panic-signal-dashboard__card--na" data-signal-card="short"></article>
+                  <article class="panic-signal-dashboard__card panic-signal-dashboard__card--na" data-signal-card="mid"></article>
+                  <article class="panic-signal-dashboard__card panic-signal-dashboard__card--na" data-signal-card="long"></article>
+                </div>
+              </section>
+
+              <section
+                class="panic-trading-dashboard panic-trading-dashboard--terminal"
+                id="panic-trading-dashboard"
+                aria-label="트레이딩 기반 시그널"
+                aria-live="polite"
+              >
+                <header class="panic-trading-dashboard__head">
+                  <h3 class="panic-trading-dashboard__title">트레이딩 시그널</h3>
+                  <p class="panic-trading-dashboard__desc">
+                    레벨 + 모멘텀(Δ) 규칙으로 단·중·장기를 별도 산출합니다. 상단 엔진(평균 점수형)과 병렬로 동작합니다.
+                  </p>
+                </header>
+                <div class="panic-trading-dashboard__grid">
+                  <article class="panic-trading-dashboard__card panic-trading-dashboard__card--na" data-trading-card="short"></article>
+                  <article class="panic-trading-dashboard__card panic-trading-dashboard__card--na" data-trading-card="mid"></article>
+                  <article class="panic-trading-dashboard__card panic-trading-dashboard__card--na" data-trading-card="long"></article>
+                </div>
+              </section>
+            </div>
+
+            <div class="ticker-bar terminal-dashboard__ticker">
+              <section class="market-ticker market-ticker--terminal" aria-label="주요 시장 지표 티커">
+                <div class="market-ticker__viewport">
+                  <p class="market-ticker__pulse" id="market-ticker-signal-line" aria-live="polite">
+                    현재 시장 상태: 계산 중…
+                  </p>
+                  <div class="market-ticker__track" id="market-ticker-track"></div>
+                </div>
+              </section>
+            </div>
+          </div>
+
           <p class="panic-us-link" id="panic-us-link" aria-live="polite">미국장 연동 코멘트 계산 중...</p>
+
+          <div class="history-card signal-history-card" id="signal-history-card">
+            <div class="history-title">Signal History</div>
+            <p class="history-sub">모멘텀 시그널(단기·중기·장기) · 최근 7영업일 · 클릭 시 상세</p>
+            <div class="history-head" aria-hidden="true">
+              <span>날짜</span>
+              <span>단기</span>
+              <span>중기</span>
+              <span>장기</span>
+              <span>전일 대비</span>
+            </div>
+            <div id="historyList" class="history-list"></div>
+          </div>
+
+          <div
+            id="signalHistoryDetail"
+            class="signal-history-detail"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="signalHistoryDetailTitle"
+            hidden
+          >
+            <div class="signal-history-detail__backdrop" id="signalHistoryDetailBackdrop" tabindex="-1"></div>
+            <div class="signal-history-detail__panel">
+              <header class="signal-history-detail__head">
+                <h3 id="signalHistoryDetailTitle" class="signal-history-detail__title">시그널 상세</h3>
+                <button type="button" class="signal-history-detail__close" id="signalHistoryDetailClose" aria-label="닫기">
+                  ×
+                </button>
+              </header>
+              <div id="signalHistoryDetailBody" class="signal-history-detail__body"></div>
+            </div>
+          </div>
 
           <section class="panic-table-wrap" aria-label="9대 패닉 지수 표">
             <table class="panic-table">
@@ -389,96 +473,6 @@
               <tbody id="panic-table-body"></tbody>
             </table>
           </section>
-          <div class="panic-risk-strip" aria-label="리스크 신호 요약">
-            <p class="panic-risk-line panic-risk-line--short" id="panic-short-risk-line" aria-live="polite">
-              단기 Risk Signal · 계산 중...
-            </p>
-            <p class="panic-risk-line" id="panic-risk-line" aria-live="polite">
-              중기 Risk Signal · 계산 중...
-            </p>
-            <p class="panic-risk-line panic-risk-line--long" id="panic-long-risk-line" aria-live="polite">
-              장기 위기 신호 · 계산 중...
-            </p>
-          </div>
-          <section class="panic-multi-signal" id="panic-multi-signal" aria-label="단기·중기·장기 대응 시그널">
-            <article class="panic-signal-card panic-signal-card--short" id="panic-signal-short">
-              <h3>단기 시그널</h3>
-              <p class="panic-signal-card__meta">계산 중...</p>
-            </article>
-            <article class="panic-signal-card panic-signal-card--mid" id="panic-signal-mid">
-              <h3>중기 시그널</h3>
-              <p class="panic-signal-card__meta">계산 중...</p>
-            </article>
-            <article class="panic-signal-card panic-signal-card--long" id="panic-signal-long">
-              <h3>장기 시그널</h3>
-              <p class="panic-signal-card__meta">계산 중...</p>
-            </article>
-          </section>
-        </div>
-      </section>
-
-      <section id="insights" class="section section--dark">
-        <div class="container">
-          <h2 class="section-title section-title--on-dark">최근 인사이트</h2>
-          <p class="section-intro section-intro--on-dark"></p>
-          <div class="insight-cards" id="insight-cards">
-            <article class="insight-card" data-note-id="1" tabindex="0">
-              <div class="insight-card__head">
-                <span class="insight-card__label">노트 1</span>
-                <span class="insight-card__hint">Enter / 클릭해서 펼치기</span>
-              </div>
-              <p class="insight-card__preview" id="insight-preview-1"></p>
-              <textarea
-                id="insight-note-1"
-                class="insight-card__body"
-                rows="8"
-                placeholder="기사/리포트에서 핵심 문장을 붙여 넣고, 아래에 짧은 의견을 추가하세요."
-              ></textarea>
-            </article>
-
-            <article class="insight-card" data-note-id="2" tabindex="0">
-              <div class="insight-card__head">
-                <span class="insight-card__label">노트 2</span>
-                <span class="insight-card__hint">Enter / 클릭해서 펼치기</span>
-              </div>
-              <p class="insight-card__preview" id="insight-preview-2"></p>
-              <textarea
-                id="insight-note-2"
-                class="insight-card__body"
-                rows="8"
-                placeholder="시장 흐름 메모, 이벤트 요약, 체크 포인트를 적어두세요."
-              ></textarea>
-            </article>
-
-            <article class="insight-card" data-note-id="3" tabindex="0">
-              <div class="insight-card__head">
-                <span class="insight-card__label">노트 3</span>
-                <span class="insight-card__hint">Enter / 클릭해서 펼치기</span>
-              </div>
-              <p class="insight-card__preview" id="insight-preview-3"></p>
-              <textarea
-                id="insight-note-3"
-                class="insight-card__body"
-                rows="8"
-                placeholder="중요 문장 스크랩 + 나만의 해석을 짧게 정리하세요."
-              ></textarea>
-            </article>
-
-            <article class="insight-card" data-note-id="4" tabindex="0">
-              <div class="insight-card__head">
-                <span class="insight-card__label">노트 4</span>
-                <span class="insight-card__hint">Enter / 클릭해서 펼치기</span>
-              </div>
-              <p class="insight-card__preview" id="insight-preview-4"></p>
-              <textarea
-                id="insight-note-4"
-                class="insight-card__body"
-                rows="8"
-                placeholder="추가 스크랩 노트"
-              ></textarea>
-            </article>
-          </div>
-          <p class="insight-note__saved" id="insight-note-saved">저장 상태: 아직 없음</p>
         </div>
       </section>
 
@@ -577,6 +571,8 @@
       document.write('<script src="' + window.withSiteVersion("ticker-data.js") + '"><\/script>');
       document.write('<script src="' + window.withSiteVersion("panic-data.js") + '"><\/script>');
       document.write('<script src="' + window.withSiteVersion("overseas-data.js") + '"><\/script>');
+      document.write('<script src="' + window.withSiteVersion("panic-signal-engine.js") + '"><\/script>');
+      document.write('<script src="' + window.withSiteVersion("panic-trading-signals.js") + '"><\/script>');
       document.write('<script src="' + window.withSiteVersion("youtube-data.js") + '"><\/script>');
     </script>
     <script>
@@ -622,6 +618,7 @@
         var latestTickerData = null;
         var latestPanicData = null;
         var latestOverseasData = window.OVERSEAS_DATA && Array.isArray(window.OVERSEAS_DATA.items) ? window.OVERSEAS_DATA : null;
+        var latestTradingShortSignal = null;
 
         if (visitCountEl) {
           // Global counter (shared across all visitors) via CountAPI.
@@ -719,6 +716,356 @@
           }
           return null;
         }
+
+        var panicSignalDashboardEl = document.getElementById("panic-signal-dashboard");
+        var panicSignalUpdatedAtEl = document.getElementById("panic-signal-data-updated-at");
+        var panicTradingDashboardEl = document.getElementById("panic-trading-dashboard");
+        var marketTickerSignalLineEl = document.getElementById("market-ticker-signal-line");
+        var terminalDashboardEl = document.getElementById("terminal-dashboard");
+
+        var SIGNAL_HISTORY_KEY = "signalHistory";
+        var SIGNAL_HISTORY_MAX = 30;
+        var SIGNAL_HISTORY_DISPLAY = 7;
+
+        function signalHistoryTodayYmd() {
+          try {
+            return new Intl.DateTimeFormat("en-CA", {
+              timeZone: "Asia/Seoul",
+              year: "numeric",
+              month: "2-digit",
+              day: "2-digit"
+            }).format(new Date());
+          } catch (e) {
+            return new Date().toISOString().slice(0, 10);
+          }
+        }
+
+        function signalStorageAvailable() {
+          try {
+            var k = "__signal_hist_probe__";
+            localStorage.setItem(k, "1");
+            localStorage.removeItem(k);
+            return true;
+          } catch (e) {
+            return false;
+          }
+        }
+
+        function loadSignalHistory() {
+          if (!signalStorageAvailable()) return [];
+          try {
+            var raw = localStorage.getItem(SIGNAL_HISTORY_KEY);
+            if (!raw || typeof raw !== "string") return [];
+            var parsed = JSON.parse(raw);
+            if (!Array.isArray(parsed)) return [];
+            return parsed.filter(function (x) {
+              return x && typeof x.date === "string" && x.short && x.mid && x.long;
+            });
+          } catch (e) {
+            console.warn("[signalHistory] load parse failed", e);
+            return [];
+          }
+        }
+
+        function normalizeHorizonForHistory(sig) {
+          var s = sig && typeof sig === "object" ? sig : {};
+          var out = {
+            label: s.label != null ? String(s.label) : "—",
+            strength: s.strength != null ? String(s.strength) : ""
+          };
+          if (s.reason != null && String(s.reason)) {
+            out.reason = String(s.reason).slice(0, 400);
+          }
+          return out;
+        }
+
+        function saveSignalHistory(signals) {
+          if (!signals || typeof signals !== "object") return;
+          if (!signalStorageAvailable()) return;
+          var today = signalHistoryTodayYmd();
+          var row = {
+            date: today,
+            short: normalizeHorizonForHistory(signals.short),
+            mid: normalizeHorizonForHistory(signals.mid),
+            long: normalizeHorizonForHistory(signals.long)
+          };
+          try {
+            var history = loadSignalHistory();
+            history = history.filter(function (item) {
+              return item && item.date !== today;
+            });
+            history.unshift(row);
+            if (history.length > SIGNAL_HISTORY_MAX) {
+              history = history.slice(0, SIGNAL_HISTORY_MAX);
+            }
+            localStorage.setItem(SIGNAL_HISTORY_KEY, JSON.stringify(history));
+          } catch (e) {
+            console.warn("[signalHistory] save failed", e);
+          }
+        }
+
+        function signalHistoryFingerprint(entry) {
+          if (!entry || !entry.date) return "";
+          return (
+            entry.date +
+            "|" +
+            (entry.short && entry.short.label) +
+            "|" +
+            (entry.mid && entry.mid.label) +
+            "|" +
+            (entry.long && entry.long.label)
+          );
+        }
+
+        function signalHistoryDeltaSummary(prev, cur) {
+          if (!prev || !cur) return "—";
+          var parts = [];
+          if (prev.short && cur.short && prev.short.label !== cur.short.label) {
+            parts.push("단기 " + prev.short.label + " → " + cur.short.label);
+          }
+          if (prev.mid && cur.mid && prev.mid.label !== cur.mid.label) {
+            parts.push("중기 " + prev.mid.label + " → " + cur.mid.label);
+          }
+          if (prev.long && cur.long && prev.long.label !== cur.long.label) {
+            parts.push("장기 " + prev.long.label + " → " + cur.long.label);
+          }
+          return parts.length ? parts.join(" · ") : "—";
+        }
+
+        function renderSignalHistory() {
+          var el = document.getElementById("historyList");
+          if (!el) return;
+          var history = loadSignalHistory();
+          var slice = history.slice(0, SIGNAL_HISTORY_DISPLAY);
+          if (!slice.length) {
+            el.innerHTML =
+              '<p class="history-empty">저장된 히스토리가 없습니다. 시그널이 계산되면 오늘 날짜부터 쌓입니다.</p>';
+            return;
+          }
+          var prevFp = window.__signalHistoryTopFp || "";
+          var html = "";
+          for (var i = 0; i < slice.length; i += 1) {
+            var item = slice[i];
+            var prev = slice[i + 1] || null;
+            var delta = signalHistoryDeltaSummary(prev, item);
+            var wrapCls = "history-row-wrap";
+            html +=
+              '<div class="' +
+              wrapCls +
+              '" data-date="' +
+              escapeHtml(item.date) +
+              '" role="button" tabindex="0">' +
+              '<div class="history-row">' +
+              '<span class="history-date">' +
+              escapeHtml(item.date || "") +
+              "</span>" +
+              '<span class="history-cell">' +
+              escapeHtml((item.short && item.short.label) || "—") +
+              "</span>" +
+              '<span class="history-cell">' +
+              escapeHtml((item.mid && item.mid.label) || "—") +
+              "</span>" +
+              '<span class="history-cell">' +
+              escapeHtml((item.long && item.long.label) || "—") +
+              "</span>" +
+              '<span class="history-delta">' +
+              escapeHtml(delta) +
+              "</span>" +
+              "</div>" +
+              "</div>";
+          }
+          el.innerHTML = html;
+          var topFp = signalHistoryFingerprint(slice[0]);
+          if (prevFp && topFp && prevFp !== topFp) {
+            var firstWrap = el.querySelector(".history-row-wrap");
+            if (firstWrap) {
+              firstWrap.classList.add("is-flash");
+              window.setTimeout(function () {
+                firstWrap.classList.remove("is-flash");
+              }, 900);
+            }
+          }
+          window.__signalHistoryTopFp = topFp;
+        }
+
+        function findSignalHistoryByDate(dateStr) {
+          var h = loadSignalHistory();
+          for (var i = 0; i < h.length; i += 1) {
+            if (h[i] && h[i].date === dateStr) return h[i];
+          }
+          return null;
+        }
+
+        function openSignalHistoryDetail(dateStr) {
+          var modal = document.getElementById("signalHistoryDetail");
+          var body = document.getElementById("signalHistoryDetailBody");
+          var title = document.getElementById("signalHistoryDetailTitle");
+          if (!modal || !body) return;
+          var row = findSignalHistoryByDate(dateStr);
+          if (!row) return;
+          if (title) {
+            title.textContent = "시그널 상세 · " + row.date;
+          }
+          function block(horizon, label) {
+            var h = row[horizon] || {};
+            var r = h.reason ? '<p class="signal-history-detail__reason">' + escapeHtml(h.reason) + "</p>" : "";
+            return (
+              '<section class="signal-history-detail__block">' +
+              '<h4>' +
+              escapeHtml(label) +
+              "</h4>" +
+              '<p class="signal-history-detail__label">' +
+              escapeHtml(h.label || "—") +
+              "</p>" +
+              '<p class="signal-history-detail__meta">강도 · ' +
+              escapeHtml(h.strength || "—") +
+              "</p>" +
+              r +
+              "</section>"
+            );
+          }
+          body.innerHTML =
+            block("short", "단기") + block("mid", "중기") + block("long", "장기");
+          modal.hidden = false;
+          document.body.style.overflow = "hidden";
+          var closeBtn = document.getElementById("signalHistoryDetailClose");
+          if (closeBtn) closeBtn.focus();
+        }
+
+        function closeSignalHistoryDetail() {
+          var modal = document.getElementById("signalHistoryDetail");
+          if (!modal) return;
+          modal.hidden = true;
+          document.body.style.overflow = "";
+        }
+
+        (function initSignalHistoryUi() {
+          var card = document.getElementById("signal-history-card");
+          var modal = document.getElementById("signalHistoryDetail");
+          var backdrop = document.getElementById("signalHistoryDetailBackdrop");
+          var closeBtn = document.getElementById("signalHistoryDetailClose");
+          if (card && !card.dataset.signalHistUi) {
+            card.dataset.signalHistUi = "1";
+            card.addEventListener("click", function (ev) {
+              var wrap = ev.target.closest(".history-row-wrap");
+              if (!wrap) return;
+              var d = wrap.getAttribute("data-date");
+              if (d) openSignalHistoryDetail(d);
+            });
+            card.addEventListener("keydown", function (ev) {
+              if (ev.key !== "Enter" && ev.key !== " ") return;
+              var wrap = ev.target.closest(".history-row-wrap");
+              if (!wrap) return;
+              ev.preventDefault();
+              var d = wrap.getAttribute("data-date");
+              if (d) openSignalHistoryDetail(d);
+            });
+          }
+          if (backdrop && !backdrop.dataset.signalHistUi) {
+            backdrop.dataset.signalHistUi = "1";
+            backdrop.addEventListener("click", closeSignalHistoryDetail);
+          }
+          if (closeBtn && !closeBtn.dataset.signalHistUi) {
+            closeBtn.dataset.signalHistUi = "1";
+            closeBtn.addEventListener("click", closeSignalHistoryDetail);
+          }
+          document.addEventListener("keydown", function (ev) {
+            if (ev.key === "Escape" && modal && !modal.hidden) {
+              closeSignalHistoryDetail();
+            }
+          });
+        })();
+
+        renderSignalHistory();
+
+        function updateMarketTickerTradingPulse(shortSig) {
+          if (!marketTickerSignalLineEl) return;
+          var lab = shortSig && shortSig.label ? String(shortSig.label) : "—";
+          marketTickerSignalLineEl.textContent = "현재 시장 상태: " + lab;
+        }
+
+        function applyPanicSignals(rawPayload, sourceTag) {
+          if (!window.PanicSignalEngine || !panicSignalDashboardEl) return;
+          var merged = window.PanicSignalEngine.mergeMomentumPayload(
+            rawPayload && typeof rawPayload === "object" ? rawPayload : null,
+            latestPanicData,
+            latestTickerData,
+            latestOverseasData
+          );
+          var signals = window.PanicSignalEngine.getMomentumSignals(merged);
+          window.PanicSignalEngine.renderMomentumDashboard(panicSignalDashboardEl, signals, merged);
+          if (panicSignalUpdatedAtEl) {
+            panicSignalUpdatedAtEl.textContent = merged.updatedAt
+              ? "마지막 업데이트(시그널): " + merged.updatedAt
+              : "마지막 업데이트(시그널): —";
+          }
+          console.log("[panic-signal]", sourceTag || "apply", merged.updatedAt || "-", signals);
+
+          var tSignals = null;
+          if (window.PanicSignalEngine.getTradingSignals && window.PanicSignalEngine.renderTradingSignals && panicTradingDashboardEl) {
+            tSignals = window.PanicSignalEngine.getTradingSignals(merged);
+            latestTradingShortSignal = tSignals.short || null;
+            window.PanicSignalEngine.renderTradingSignals(panicTradingDashboardEl, tSignals, merged);
+            updateMarketTickerTradingPulse(latestTradingShortSignal);
+            console.log("[panic-trading]", sourceTag || "apply", tSignals);
+          }
+
+          if (terminalDashboardEl) {
+            var shortBuy =
+              tSignals &&
+              tSignals.short &&
+              tSignals.short.label &&
+              /매수/.test(String(tSignals.short.label));
+            terminalDashboardEl.classList.toggle("terminal-dashboard--short-buy", !!shortBuy);
+          }
+
+          try {
+            saveSignalHistory(signals);
+            renderSignalHistory();
+          } catch (e) {
+            console.warn("[signalHistory] persist/render", e);
+          }
+        }
+
+        function refreshPanicSignalDashboard() {
+          if (!window.PanicSignalEngine || !panicSignalDashboardEl) return;
+          var url = "/data/panic.json?v=" + Date.now();
+          fetch(url)
+            .then(function (res) {
+              if (!res.ok) throw new Error("panic.json HTTP " + res.status);
+              return res.json();
+            })
+            .then(function (json) {
+              applyPanicSignals(json, "fetch:/data/panic.json");
+            })
+            .catch(function (err) {
+              console.warn("[panic-signal] fetch failed, fallback", err && err.message ? err.message : err);
+              if (latestPanicData && Array.isArray(latestPanicData.items)) {
+                var row = window.PanicSignalEngine.buildMacroRow(
+                  latestPanicData,
+                  latestTickerData,
+                  latestOverseasData
+                );
+                row.updatedAt = (latestPanicData.updatedAt || "") + " · 폴백";
+                applyPanicSignals(row, "fallback:buildMacroRow");
+              } else {
+                window.PanicSignalEngine.renderLoading(panicSignalDashboardEl);
+                if (window.PanicSignalEngine.renderTradingLoading && panicTradingDashboardEl) {
+                  window.PanicSignalEngine.renderTradingLoading(panicTradingDashboardEl);
+                }
+                if (panicSignalUpdatedAtEl) {
+                  panicSignalUpdatedAtEl.textContent = "마지막 업데이트(시그널): 로드 실패";
+                }
+                updateMarketTickerTradingPulse({ label: "데이터 로드 실패" });
+                if (terminalDashboardEl) {
+                  terminalDashboardEl.classList.remove("terminal-dashboard--short-buy");
+                }
+                console.warn("[panic-signal] no fallback data");
+              }
+            });
+        }
+
+        refreshPanicSignalDashboard();
 
         function toneClass(tone) {
           if (tone === "공격") return "overseas-tone overseas-tone--attack";
@@ -1097,23 +1444,161 @@
           }
         }
 
-        function buildSnapshotCard(label, value, delta, direction) {
-          var deltaClass = direction === "up" ? "up" : direction === "down" ? "down" : "";
+        function buildSnapshotCard(label, value, delta, direction, cardId) {
+          var deltaClass = direction === "up" ? "up" : direction === "down" ? "down" : "flat";
+          var arrow = direction === "up" ? "▲ " : direction === "down" ? "▼ " : "";
+          var idAttr = cardId ? ' id="' + String(cardId).replace(/[^a-z0-9_-]/gi, "") + '"' : "";
           return (
-            '<div class="us-close-snapshot__card">' +
+            '<div class="us-close-snapshot__card terminal-stat-card"' +
+            idAttr +
+            ">" +
             '<span class="k">' +
             escapeHtml(label) +
             "</span>" +
             '<strong class="v">' +
             escapeHtml(value || "-") +
             "</strong>" +
-            '<em class="d ' +
+            '<em class="d terminal-delta terminal-delta--' +
             deltaClass +
             '">' +
-            escapeHtml(delta || "-") +
+            escapeHtml(arrow + (delta == null || delta === "" ? "-" : delta)) +
             "</em>" +
             "</div>"
           );
+        }
+
+        function marketItemOrNull(data, key) {
+          var it = data && data[key];
+          if (!it || typeof it !== "object") return { value: null, change: null };
+          var v = it.value;
+          var c = it.change;
+          return {
+            value: v !== undefined && v !== null && v !== "" && Number.isFinite(Number(v)) ? Number(v) : null,
+            change: c !== undefined && c !== null && c !== "" && Number.isFinite(Number(c)) ? Number(c) : null
+          };
+        }
+
+        function formatMarketValue(cardId, value) {
+          if (value === null || value === undefined || !Number.isFinite(Number(value))) return "-";
+          var n = Number(value);
+          if (cardId === "us10y") return n.toFixed(2) + "%";
+          if (cardId === "vix") return n.toFixed(2);
+          return n.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        }
+
+        function formatMarketDelta(cardId, change) {
+          if (change === null || change === undefined || !Number.isFinite(Number(change))) return "-";
+          var c = Number(change);
+          if (c === 0) {
+            if (cardId === "us10y") return "0.00%p";
+            if (cardId === "vix") return "0.00";
+            return "0.00%";
+          }
+          var prefix = c > 0 ? "+" : "";
+          if (cardId === "us10y") return prefix + c.toFixed(2) + "%p";
+          if (cardId === "vix") return prefix + c.toFixed(2);
+          return prefix + c.toFixed(2) + "%";
+        }
+
+        function marketDeltaDirection(cardId, change) {
+          if (change === null || change === undefined || !Number.isFinite(Number(change))) return "flat";
+          var c = Number(change);
+          if (c > 0) return "up";
+          if (c < 0) return "down";
+          return "flat";
+        }
+
+        function terminalDeltaArrow(change) {
+          if (change === null || change === undefined || !Number.isFinite(Number(change))) return "";
+          var c = Number(change);
+          if (c > 0) return "▲ ";
+          if (c < 0) return "▼ ";
+          return "";
+        }
+
+        function animateTerminalValue(el, cardId, numericEnd) {
+          if (!el) return;
+          if (numericEnd === null || numericEnd === undefined || !Number.isFinite(Number(numericEnd))) {
+            el.textContent = "-";
+            el.removeAttribute("data-num");
+            return;
+          }
+          numericEnd = Number(numericEnd);
+          var prevRaw = el.getAttribute("data-num");
+          var prev = prevRaw != null && prevRaw !== "" ? parseFloat(prevRaw) : NaN;
+          el.setAttribute("data-num", String(numericEnd));
+          if (!Number.isFinite(prev)) {
+            el.textContent = formatMarketValue(cardId, numericEnd);
+            return;
+          }
+          if (Math.abs(prev - numericEnd) < 1e-6) {
+            el.textContent = formatMarketValue(cardId, numericEnd);
+            return;
+          }
+          var start = window.performance && performance.now ? performance.now() : Date.now();
+          var duration = 520;
+          function tick(now) {
+            var t = Math.min(1, (now - start) / duration);
+            var ease = 1 - Math.pow(1 - t, 3);
+            var cur = prev + (numericEnd - prev) * ease;
+            el.textContent = formatMarketValue(cardId, cur);
+            if (t < 1) {
+              requestAnimationFrame(tick);
+            } else {
+              el.textContent = formatMarketValue(cardId, numericEnd);
+            }
+          }
+          requestAnimationFrame(tick);
+        }
+
+        function updateMarketCard(cardId, item) {
+          var el = document.getElementById(cardId);
+          if (!el) return;
+          var vEl = el.querySelector(".v");
+          var dEl = el.querySelector(".d");
+          if (!vEl || !dEl) return;
+          var safe = item && typeof item === "object" ? item : { value: null, change: null };
+          animateTerminalValue(vEl, cardId, safe.value);
+
+          var dir = marketDeltaDirection(cardId, safe.change);
+          el.classList.remove("is-up", "is-down", "is-flat", "is-vix-up");
+          if (dir === "up") el.classList.add("is-up");
+          else if (dir === "down") el.classList.add("is-down");
+          else el.classList.add("is-flat");
+
+          if (cardId === "vix" && safe.change !== null && Number.isFinite(Number(safe.change)) && Number(safe.change) > 0) {
+            el.classList.add("is-vix-up");
+          }
+
+          var dBody = formatMarketDelta(cardId, safe.change);
+          dEl.textContent = terminalDeltaArrow(safe.change) + dBody;
+          dEl.className = "d terminal-delta terminal-delta--" + dir;
+        }
+
+        function renderMarket(data) {
+          if (!data || typeof data !== "object") return;
+          updateMarketCard("dow", marketItemOrNull(data, "dow"));
+          updateMarketCard("sp500", marketItemOrNull(data, "sp500"));
+          updateMarketCard("nasdaq", marketItemOrNull(data, "nasdaq"));
+          updateMarketCard("nasdaq100", marketItemOrNull(data, "nasdaq100"));
+          updateMarketCard("vix", marketItemOrNull(data, "vix"));
+          updateMarketCard("us10y", marketItemOrNull(data, "us10y"));
+        }
+
+        function loadMarketData() {
+          var raw = "data/market.json?v=" + Date.now();
+          var url = window.withSiteVersion ? window.withSiteVersion(raw) : raw;
+          fetch(url)
+            .then(function (res) {
+              if (!res.ok) throw new Error("market fetch failed");
+              return res.json();
+            })
+            .then(function (data) {
+              renderMarket(data);
+            })
+            .catch(function () {
+              console.error("market load fail");
+            });
         }
 
         function updateUsLinkageComment() {
@@ -1216,12 +1701,13 @@
           var vix = panicById.vix || {};
 
           usCloseSnapshotGridEl.innerHTML =
-            buildSnapshotCard("DOW", dow.value, dow.delta, dow.direction) +
-            buildSnapshotCard("S&P 500", sp.value, sp.delta, sp.direction) +
-            buildSnapshotCard("NASDAQ Composite", ixic.value, ixic.delta, ixic.direction) +
-            buildSnapshotCard("NASDAQ 100", ndx.value, ndx.delta, ndx.direction) +
-            buildSnapshotCard("VIX", vix.value, vix.delta, String(vix.delta || "").indexOf("📈") !== -1 ? "up" : String(vix.delta || "").indexOf("📉") !== -1 ? "down" : "") +
-            buildSnapshotCard("US 10Y", us10y.value, us10y.delta, us10y.direction);
+            buildSnapshotCard("DOW", dow.value, dow.delta, dow.direction, "dow") +
+            buildSnapshotCard("S&P 500", sp.value, sp.delta, sp.direction, "sp500") +
+            buildSnapshotCard("NASDAQ Composite", ixic.value, ixic.delta, ixic.direction, "nasdaq") +
+            buildSnapshotCard("NASDAQ 100", ndx.value, ndx.delta, ndx.direction, "nasdaq100") +
+            buildSnapshotCard("VIX", vix.value, vix.delta, String(vix.delta || "").indexOf("📈") !== -1 ? "up" : String(vix.delta || "").indexOf("📉") !== -1 ? "down" : "", "vix") +
+            buildSnapshotCard("US 10Y", us10y.value, us10y.delta, us10y.direction, "us10y");
+          loadMarketData();
         }
 
         function renderTicker(data) {
@@ -1233,6 +1719,8 @@
               '<div class="market-ticker__group"><span class="market-ticker__item">데이터 준비 중...</span></div>';
             renderUsCloseSnapshot();
             updateUsLinkageComment();
+            refreshPanicSignalDashboard();
+            updateMarketTickerTradingPulse(latestTradingShortSignal || { label: "계산 중…" });
             return;
           }
 
@@ -1266,12 +1754,12 @@
           renderUsCloseSnapshot();
           updateUsLinkageComment();
           renderOverseasCockpit();
+          refreshPanicSignalDashboard();
+          updateMarketTickerTradingPulse(latestTradingShortSignal || { label: "계산 중…" });
         }
 
         function renderPanicTable(data) {
           latestPanicData = data || { items: [] };
-          var WEIGHTS = { hy: 35, vix: 30, move: 20, fng: 15 };
-          var RISK_HISTORY_KEY = "panic:risk-history:v1";
           var PANIC_INDEX_HINTS = {
             vix: "S&P500 옵션 변동성 기대치. 높을수록 공포 심리 강화.",
             fng: "CNN 공포·탐욕 지수. 낮을수록 공포, 높을수록 탐욕.",
@@ -1283,281 +1771,6 @@
             gsbb: "GS 버블 지표(고평가/과열 추정). 높을수록 과열 경계.",
             vxn: "나스닥100 변동성 기대치. 기술주 리스크 온도."
           };
-
-          function toneRiskScore(tone) {
-            if (tone === "alert") return 100;
-            if (tone === "watch") return 60;
-            return 25; // stable
-          }
-
-          function calcWeightedRisk(items) {
-            var totalWeight = 0;
-            var weighted = 0;
-            items.forEach(function (item) {
-              var w = WEIGHTS[item.id];
-              if (!w) return;
-              totalWeight += w;
-              weighted += toneRiskScore(item.tone) * w;
-            });
-            if (!totalWeight) return null;
-            return Math.round(weighted / totalWeight);
-          }
-
-          function calcShortTermRisk(items) {
-            var SHORT_WEIGHTS = { vix: 35, skew: 25, putcall: 25, vxn: 15 };
-            var totalWeight = 0;
-            var weighted = 0;
-
-            items.forEach(function (item) {
-              var w = SHORT_WEIGHTS[item.id];
-              if (!w) return;
-
-              var score = toneRiskScore(item.tone);
-              if (item.weekTrend === "상승") score += 10;
-              if (String(item.delta || "").indexOf("📈") !== -1) score += 8;
-              if (String(item.delta || "").indexOf("📉") !== -1) score -= 6;
-
-              if (score > 100) score = 100;
-              if (score < 0) score = 0;
-
-              totalWeight += w;
-              weighted += score * w;
-            });
-
-            if (!totalWeight) return null;
-            return Math.round(weighted / totalWeight);
-          }
-
-          // 장기 위기 신호: 금융위기/급락장 전조와 극단 공포(역발상 기회) 포착용
-          function parseValueNumber(text) {
-            var cleaned = String(text || "").replace(/[^0-9.\-]/g, "");
-            var num = parseFloat(cleaned);
-            return Number.isFinite(num) ? num : null;
-          }
-
-          function calcLongTermCrisisSignal(items) {
-            var byId = {};
-            items.forEach(function (item) {
-              byId[item.id] = item;
-            });
-
-            var bofa = parseValueNumber(byId.bofa && byId.bofa.value); // 0에 가까울수록 극단 공포
-            var hy = parseValueNumber(byId.hy && byId.hy.value);
-            var move = parseValueNumber(byId.move && byId.move.value);
-            var vix = parseValueNumber(byId.vix && byId.vix.value);
-            var fng = parseValueNumber(byId.fng && byId.fng.value); // 낮을수록 공포
-
-            var risk = 0;
-            var opportunity = 0;
-
-            if (bofa !== null) {
-              if (bofa <= 1) {
-                risk += 30;
-                opportunity += 40;
-              } else if (bofa <= 2) {
-                risk += 22;
-                opportunity += 26;
-              } else if (bofa <= 3) {
-                risk += 14;
-                opportunity += 12;
-              } else if (bofa >= 8) {
-                risk += 10; // 반대로 과열도 리스크
-              }
-            }
-
-            if (hy !== null) {
-              if (hy >= 5) risk += 24;
-              else if (hy >= 4) risk += 18;
-              else if (hy >= 3.2) risk += 10;
-            }
-
-            if (move !== null) {
-              if (move >= 140) risk += 18;
-              else if (move >= 110) risk += 12;
-              else if (move >= 90) risk += 6;
-            }
-
-            if (vix !== null) {
-              if (vix >= 35) {
-                risk += 20;
-                opportunity += 16;
-              } else if (vix >= 28) {
-                risk += 14;
-                opportunity += 8;
-              } else if (vix >= 22) {
-                risk += 8;
-              }
-            }
-
-            if (fng !== null) {
-              if (fng <= 20) {
-                risk += 12;
-                opportunity += 14;
-              } else if (fng <= 35) {
-                risk += 8;
-                opportunity += 7;
-              } else if (fng >= 80) {
-                risk += 8;
-              }
-            }
-
-            if (risk > 100) risk = 100;
-            if (opportunity > 100) opportunity = 100;
-
-            return { risk: Math.round(risk), opportunity: Math.round(opportunity) };
-          }
-
-          function riskLabel(score) {
-            if (score >= 82) return "매우 높음";
-            if (score >= 67) return "높음";
-            if (score >= 52) return "주의";
-            if (score >= 37) return "낮음";
-            return "매우 낮음";
-          }
-
-          function riskClass(score) {
-            if (score >= 82) return "panic-risk-line panic-risk-line--very-high";
-            if (score >= 67) return "panic-risk-line panic-risk-line--high";
-            if (score >= 52) return "panic-risk-line panic-risk-line--elevated";
-            if (score >= 37) return "panic-risk-line panic-risk-line--low";
-            return "panic-risk-line panic-risk-line--very-low";
-          }
-
-          function longRiskLabel(score) {
-            if (score >= 80) return "위기 임박";
-            if (score >= 62) return "경보";
-            if (score >= 45) return "주의";
-            return "안정";
-          }
-
-          function todayKey() {
-            var now = new Date();
-            var y = now.getFullYear();
-            var m = String(now.getMonth() + 1).padStart(2, "0");
-            var d = String(now.getDate()).padStart(2, "0");
-            return y + "-" + m + "-" + d;
-          }
-
-          function loadRiskHistory() {
-            try {
-              var raw = localStorage.getItem(RISK_HISTORY_KEY);
-              if (!raw) return { short: [], mid: [], long: [] };
-              var parsed = JSON.parse(raw);
-              return {
-                short: Array.isArray(parsed.short) ? parsed.short : [],
-                mid: Array.isArray(parsed.mid) ? parsed.mid : [],
-                long: Array.isArray(parsed.long) ? parsed.long : []
-              };
-            } catch (e) {
-              return { short: [], mid: [], long: [] };
-            }
-          }
-
-          function saveRiskHistory(store) {
-            try {
-              localStorage.setItem(RISK_HISTORY_KEY, JSON.stringify(store));
-            } catch (e) {}
-          }
-
-          function upsertDaily(arr, score, dKey) {
-            var list = Array.isArray(arr) ? arr.slice() : [];
-            if (list.length && list[list.length - 1].d === dKey) {
-              list[list.length - 1].s = score;
-            } else {
-              list.push({ d: dKey, s: score });
-            }
-            if (list.length > 7) list = list.slice(list.length - 7);
-            return list;
-          }
-
-          function trendText(arr) {
-            if (!Array.isArray(arr) || arr.length < 2) return "7D 신규";
-            var first = Number(arr[0].s);
-            var last = Number(arr[arr.length - 1].s);
-            if (!Number.isFinite(first) || !Number.isFinite(last)) return "7D -";
-            var diff = Math.round(last - first);
-            if (diff > 0) return "7D ▲ +" + diff;
-            if (diff < 0) return "7D ▼ " + diff;
-            return "7D → 0";
-          }
-
-          function signalToneByScore(score) {
-            if (score >= 2) return "buy";
-            if (score <= -2) return "sell";
-            return "neutral";
-          }
-
-          function signalTextByTone(tone) {
-            if (tone === "buy") return "강력 매수";
-            if (tone === "sell") return "과열/매도";
-            return "관망/중립";
-          }
-
-          function itemById(items) {
-            var map = {};
-            (items || []).forEach(function (item) {
-              map[item.id] = item;
-            });
-            return map;
-          }
-
-          function valueOrDash(num, suffix) {
-            if (!Number.isFinite(num)) return "-";
-            return num + (suffix || "");
-          }
-
-          function makeSignalBadge(label, value, tone) {
-            return (
-              '<span class="panic-signal-badge panic-signal-badge--' +
-              tone +
-              '">' +
-              escapeHtml(label + " " + value) +
-              "</span>"
-            );
-          }
-
-          function renderSignalCard(el, title, score, badgesHtml, strategy) {
-            if (!el) return;
-            var tone = signalToneByScore(score);
-            el.className =
-              "panic-signal-card panic-signal-card--" +
-              (tone === "buy" ? "buy" : tone === "sell" ? "sell" : "neutral");
-            el.innerHTML =
-              "<h3>" +
-              title +
-              "</h3>" +
-              '<p class="panic-signal-card__meta">Score ' +
-              (score > 0 ? "+" + score : String(score)) +
-              ' · <strong>' +
-              signalTextByTone(tone) +
-              "</strong></p>" +
-              '<div class="panic-signal-card__badges">' +
-              badgesHtml +
-              "</div>" +
-              '<p class="panic-signal-card__strategy">' +
-              escapeHtml(strategy) +
-              "</p>";
-          }
-
-          var thresholdDefaults = {
-            shortVixBuy: 25,
-            shortVixSell: 15,
-            shortVxnBuy: 30,
-            shortVxnSell: 18,
-            shortPcBuy: 1.0,
-            shortPcSell: 0.5,
-            midHyBuy: 4.0,
-            midHySell: 3.0,
-            midMoveBuy: 110,
-            midMoveSell: 80,
-            midFngBuy: 30,
-            midFngSell: 75,
-            longRiskBuy: 80,
-            longRiskSell: 35,
-            longOppBuy: 70,
-            longOppSell: 25
-          };
-
 
           var priorityOrder = ["vix", "fng", "hy", "move"]; // 2-4-1-3 우선순위 (이전 추천 기준)
           var priorityMap = priorityOrder.reduce(function (acc, id, idx) {
@@ -1620,164 +1833,10 @@
           panicBodyEl.innerHTML = rows;
           panicUpdatedAtEl.textContent = "업데이트 기준: " + (data.updatedAt || "-");
 
-          var riskLineEl = document.getElementById("panic-risk-line");
-          var shortRiskLineEl = document.getElementById("panic-short-risk-line");
-          var longRiskLineEl = document.getElementById("panic-long-risk-line");
-          var shortSignalCardEl = document.getElementById("panic-signal-short");
-          var midSignalCardEl = document.getElementById("panic-signal-mid");
-          var longSignalCardEl = document.getElementById("panic-signal-long");
-          var score = calcWeightedRisk(data.items || []);
-          var shortScore = calcShortTermRisk(data.items || []);
-          var longSignal = calcLongTermCrisisSignal(data.items || []);
-          var byId = itemById(data.items || []);
-
-          var historyStore = loadRiskHistory();
-          var dKey = todayKey();
-          if (score !== null) historyStore.mid = upsertDaily(historyStore.mid, score, dKey);
-          if (shortScore !== null) historyStore.short = upsertDaily(historyStore.short, shortScore, dKey);
-          historyStore.long = upsertDaily(historyStore.long, longSignal.risk, dKey);
-          saveRiskHistory(historyStore);
-
-          if (riskLineEl) {
-            if (score === null) {
-              riskLineEl.className = "panic-risk-line";
-              riskLineEl.textContent = "중기 · 데이터 부족";
-            } else {
-              riskLineEl.className = riskClass(score);
-              riskLineEl.textContent =
-                "중기 · " +
-                riskLabel(score) +
-                " (" +
-                score +
-                "/100) · HY35 / VIX30 / MOVE20 / F&G15 · " +
-                trendText(historyStore.mid);
-            }
-          }
-
-          if (shortRiskLineEl) {
-            if (shortScore === null) {
-              shortRiskLineEl.className = "panic-risk-line panic-risk-line--short";
-              shortRiskLineEl.textContent = "단기 · 데이터 부족";
-            } else {
-              shortRiskLineEl.className = riskClass(shortScore) + " panic-risk-line--short";
-              shortRiskLineEl.textContent =
-                "단기 · " +
-                riskLabel(shortScore) +
-                " (" +
-                shortScore +
-                "/100) · VIX35 / SKEW25 / 풋콜25 / VXN15 · " +
-                trendText(historyStore.short);
-            }
-          }
-
-          if (longRiskLineEl) {
-            var longCls = riskClass(longSignal.risk) + " panic-risk-line--long";
-            var longLabel = longRiskLabel(longSignal.risk);
-            var isBuyWatch = longSignal.risk >= 80 && longSignal.opportunity >= 70;
-            var actionText = isBuyWatch ? " · 분할매수 관찰구간" : "";
-            longRiskLineEl.className = longCls;
-            longRiskLineEl.textContent =
-              "장기 · " +
-              longLabel +
-              " (" +
-              longSignal.risk +
-              "/100) · 기회온도 " +
-              longSignal.opportunity +
-              "/100 · B&B·HY·MOVE·VIX·F&G" +
-              " · " +
-              trendText(historyStore.long) +
-              actionText;
-          }
-
-          // 단기/중기/장기 대응 시그널 카드 (임계값 조절 가능)
-          var vix = parseValueNumber(byId.vix && byId.vix.value);
-          var vxn = parseValueNumber(byId.vxn && byId.vxn.value);
-          var putcall = parseValueNumber(byId.putcall && byId.putcall.value);
-          var hy = parseValueNumber(byId.hy && byId.hy.value);
-          var move = parseValueNumber(byId.move && byId.move.value);
-          var fng = parseValueNumber(byId.fng && byId.fng.value);
-
-          function renderTrafficSignals(cfg) {
-            var shortSignalScore = 0;
-            if (vix !== null && vix >= cfg.shortVixBuy) shortSignalScore += 1;
-            if (vxn !== null && vxn >= cfg.shortVxnBuy) shortSignalScore += 1;
-            if (putcall !== null && putcall >= cfg.shortPcBuy) shortSignalScore += 1;
-            if (vix !== null && vix <= cfg.shortVixSell) shortSignalScore -= 1;
-            if (vxn !== null && vxn <= cfg.shortVxnSell) shortSignalScore -= 1;
-            if (putcall !== null && putcall <= cfg.shortPcSell) shortSignalScore -= 1;
-
-            var shortBadges =
-              makeSignalBadge("VIX", valueOrDash(vix), vix !== null && vix >= cfg.shortVixBuy ? "buy" : vix !== null && vix <= cfg.shortVixSell ? "sell" : "neutral") +
-              makeSignalBadge("VXN", valueOrDash(vxn), vxn !== null && vxn >= cfg.shortVxnBuy ? "buy" : vxn !== null && vxn <= cfg.shortVxnSell ? "sell" : "neutral") +
-              makeSignalBadge(
-                "Put/Call",
-                valueOrDash(putcall),
-                putcall !== null && putcall >= cfg.shortPcBuy ? "buy" : putcall !== null && putcall <= cfg.shortPcSell ? "sell" : "neutral"
-              );
-
-            renderSignalCard(
-              shortSignalCardEl,
-              "단기 시그널 (VIX·VXN·Put/Call)",
-              shortSignalScore,
-              shortBadges,
-              shortSignalScore >= 2 ? "분할 매수 시작" : shortSignalScore <= -2 ? "수익 실현·현금 비중 확대" : "보유 비중 유지·추세 관망"
-            );
-
-            var midSignalScore = 0;
-            if (vix !== null && vix >= cfg.shortVixBuy) midSignalScore += 1;
-            if (hy !== null && hy >= cfg.midHyBuy) midSignalScore += 1;
-            if (move !== null && move >= cfg.midMoveBuy) midSignalScore += 1;
-            if (fng !== null && fng <= cfg.midFngBuy) midSignalScore += 1;
-            if (vix !== null && vix <= cfg.shortVixSell) midSignalScore -= 1;
-            if (hy !== null && hy <= cfg.midHySell) midSignalScore -= 1;
-            if (move !== null && move <= cfg.midMoveSell) midSignalScore -= 1;
-            if (fng !== null && fng >= cfg.midFngSell) midSignalScore -= 1;
-
-            var midBadges =
-              makeSignalBadge("VIX", valueOrDash(vix), vix !== null && vix >= cfg.shortVixBuy ? "buy" : vix !== null && vix <= cfg.shortVixSell ? "sell" : "neutral") +
-              makeSignalBadge("HY", valueOrDash(hy, "%"), hy !== null && hy >= cfg.midHyBuy ? "buy" : hy !== null && hy <= cfg.midHySell ? "sell" : "neutral") +
-              makeSignalBadge("MOVE", valueOrDash(move), move !== null && move >= cfg.midMoveBuy ? "buy" : move !== null && move <= cfg.midMoveSell ? "sell" : "neutral") +
-              makeSignalBadge("F&G", valueOrDash(fng), fng !== null && fng <= cfg.midFngBuy ? "buy" : fng !== null && fng >= cfg.midFngSell ? "sell" : "neutral");
-
-            renderSignalCard(
-              midSignalCardEl,
-              "중기 시그널 (VIX·HY·MOVE·F&G)",
-              midSignalScore,
-              midBadges,
-              midSignalScore >= 2 ? "핵심 구간 분할 매수" : midSignalScore <= -2 ? "익절/리밸런싱 강화" : "중립 유지·리스크 점검"
-            );
-
-            var longSignalScore = 0;
-            if (longSignal.risk >= cfg.longRiskBuy) longSignalScore += 1;
-            if (longSignal.opportunity >= cfg.longOppBuy) longSignalScore += 1;
-            if (longSignal.risk <= cfg.longRiskSell) longSignalScore -= 1;
-            if (longSignal.opportunity <= cfg.longOppSell) longSignalScore -= 1;
-
-            var longBadges =
-              makeSignalBadge(
-                "Long Risk",
-                valueOrDash(longSignal.risk) + "/100",
-                longSignal.risk >= cfg.longRiskBuy ? "buy" : longSignal.risk <= cfg.longRiskSell ? "sell" : "neutral"
-              ) +
-              makeSignalBadge(
-                "Opportunity",
-                valueOrDash(longSignal.opportunity) + "/100",
-                longSignal.opportunity >= cfg.longOppBuy ? "buy" : longSignal.opportunity <= cfg.longOppSell ? "sell" : "neutral"
-              );
-
-            renderSignalCard(
-              longSignalCardEl,
-              "장기 시그널 (위기·기회 온도)",
-              longSignalScore,
-              longBadges,
-              longSignalScore >= 2 ? "장기 바닥권 분할 매수 관찰" : longSignalScore <= -2 ? "과열 구간 비중 축소" : "장기 추세 중립 유지"
-            );
-          }
-
-          renderTrafficSignals(thresholdDefaults);
           renderUsCloseSnapshot();
           updateUsLinkageComment();
           renderOverseasCockpit();
+          refreshPanicSignalDashboard();
         }
 
         if (panicBodyEl && panicUpdatedAtEl) {
@@ -1804,6 +1863,8 @@
               }
             });
         }
+
+        loadMarketData();
 
         if (tickerTrackEl) {
           fetch("/api/ticker")
@@ -1851,6 +1912,7 @@
           })
           .finally(function () {
             renderOverseasCockpit();
+            refreshPanicSignalDashboard();
           });
 
         (function initOverseasHeatmapWidget() {
@@ -2254,87 +2316,6 @@
         ];
 
         quoteEl.textContent = howardMarksQuotes[slot % howardMarksQuotes.length];
-
-        (function initInsightNotes() {
-          var NOTE_KEY = "insight:notes:v1";
-          var ids = ["insight-note-1", "insight-note-2", "insight-note-3", "insight-note-4"];
-          var savedEl = document.getElementById("insight-note-saved");
-          var cardsEl = document.getElementById("insight-cards");
-
-          function stamp() {
-            var now = new Date();
-            var mm = String(now.getMonth() + 1).padStart(2, "0");
-            var dd = String(now.getDate()).padStart(2, "0");
-            var hh = String(now.getHours()).padStart(2, "0");
-            var mi = String(now.getMinutes()).padStart(2, "0");
-            return now.getFullYear() + "." + mm + "." + dd + " " + hh + ":" + mi;
-          }
-
-          var store = { lastSaved: "", notes: {} };
-          try {
-            var raw = localStorage.getItem(NOTE_KEY);
-            if (raw) {
-              var parsed = JSON.parse(raw);
-              if (parsed && typeof parsed === "object") {
-                store = parsed;
-              }
-            }
-          } catch (e) {}
-
-          function saveNow() {
-            store.lastSaved = stamp();
-            localStorage.setItem(NOTE_KEY, JSON.stringify(store));
-            if (savedEl) savedEl.textContent = "저장 상태: " + store.lastSaved;
-          }
-
-          ids.forEach(function (id) {
-            var el = document.getElementById(id);
-            if (!el) return;
-            if (store.notes && typeof store.notes[id] === "string") {
-              el.value = store.notes[id];
-            }
-            var preview = document.getElementById(id.replace("insight-note", "insight-preview"));
-            if (preview) {
-              var t = (el.value || "").trim();
-              preview.textContent = t ? t : "내용 미리보기";
-            }
-            el.addEventListener("input", function () {
-              store.notes = store.notes || {};
-              store.notes[id] = el.value;
-              var pv = document.getElementById(id.replace("insight-note", "insight-preview"));
-              if (pv) {
-                var text = (el.value || "").trim();
-                pv.textContent = text ? text : "내용 미리보기";
-              }
-              saveNow();
-            });
-          });
-
-          if (savedEl && store.lastSaved) {
-            savedEl.textContent = "저장 상태: " + store.lastSaved;
-          }
-
-          if (cardsEl) {
-            cardsEl.addEventListener("click", function (e) {
-              var card = e.target.closest(".insight-card");
-              if (!card) return;
-              var textarea = card.querySelector(".insight-card__body");
-              var isOpen = card.classList.toggle("is-open");
-              if (isOpen && textarea) textarea.focus();
-            });
-
-            cardsEl.addEventListener("keydown", function (e) {
-              var card = e.target.closest(".insight-card");
-              if (!card) return;
-              if (e.key === "Enter" && e.target.classList.contains("insight-card")) {
-                e.preventDefault();
-                var area = card.querySelector(".insight-card__body");
-                var open = card.classList.toggle("is-open");
-                if (open && area) area.focus();
-              }
-            });
-          }
-        })();
       })();
     </script>
   </body>

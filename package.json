@@ -10,6 +10,7 @@
     "version:site": "node scripts/bump-site-version.mjs",
     "update:panic:python": "python update_data.py",
     "update:panic:node": "node auto-update-panic-data.mjs",
-    "update:panic": "node scripts/run-update-chain.mjs"
+    "update:panic": "node scripts/run-update-chain.mjs",
+    "update:panic-json": "node scripts/fetch.js"
   }
 }

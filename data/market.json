@@ -1,0 +1,27 @@
+{
+  "dow": {
+    "value": 48861.81,
+    "change": -0.57
+  },
+  "sp500": {
+    "value": 7135.95,
+    "change": -0.04
+  },
+  "nasdaq": {
+    "value": 24673.24,
+    "change": 0.04
+  },
+  "nasdaq100": {
+    "value": 27186.98,
+    "change": 0.58
+  },
+  "vix": {
+    "value": 18.81,
+    "change": 0.98
+  },
+  "us10y": {
+    "value": 0.44,
+    "change": 1.47
+  },
+  "updatedAt": "2026-05-01 09:43"
+}

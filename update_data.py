@@ -1,18 +1,17 @@
 #!/usr/bin/env python3
 """
-9대 패닉 지수 중 자동 갱신 가능한 행만 업데이트하고 panic-data.json / panic-data.js에 반영합니다.
+9대 패닉 지수 중 자동 갱신 가능한 행을 업데이트하고 panic-data.json / panic-data.js에 반영합니다.
 
-- yfinance: VIX, SKEW, MOVE, VXN (^VIX, ^SKEW, ^MOVE, ^VXN)
-- FRED HY 스프레드 (BAMLH0A0HYM2): fredgraph.csv (urllib, Node 스크립트와 동일 계열)
-- CNN Fear & Greed: 로컬/일부 IP에서 urllib이 418이 나는 경우가 있어, `scripts/patch-fng-from-cnn.mjs`(Node fetch)에서만 갱신합니다.
+데이터 원천 (Investing.com / 공식 마감에 맞추기 위한 티커·시리즈 고정):
+- VIX / VXN / SKEW / 풋콜: Yahoo Finance (^VIX, ^VXN, ^SKEW, ^PCC) **Adj Close** (없으면 Close)
+- MOVE: ^MOVE Adj Close → 실패 시 FRED MOVE (일별 확정치 CSV)
+- HY: FRED BAMLH0A0HYM2
+- CNN F&G: 여전히 `scripts/patch-fng-from-cnn.mjs`에서만 갱신 (urllib 418 회피)
 
-수동 유지: BofA B&B, 풋/콜 비율, GS B/B (무료·일치 티커 한계)
+시간 기준: 미국 동부(US/Eastern) 기준 최근 **완료된** 거래일 종가(Adj Close). 평일 ET 16:15 이전에는 당일 미완료 봉을 제외합니다.
+루트 JSON에 `asOfDateET`(YYYY-MM-DD, 마감 기준일)를 기록합니다.
 
-스케줄: GitHub Actions는 UTC cron입니다. 한국 08:20 KST = 전날 UTC 23:20 → cron: "20 23 * * *"
-(미국 정규장 종가·정산 후 여유 — 서머타임 시 장 마감 ≈ KST 05:00, 겨울 ≈ 06:00 권장 반영 시간대와 맞춤)
-설정은 .github/workflows/auto-update-panic.yml 참고.
-
-Yahoo 일봉: 미국 동부 기준 당일 봉이 아직 ‘종가 확정 전’이면(평일 ET 16:15 이전) 마지막 행을 제외해 직전 완료 거래일 종가를 씁니다.
+BofA / GS: 무료 API가 불안정하므로 기본은 JSON 유지. 아래 MANUAL_* 에 숫자를 넣으면 해당 값으로만 덮어씁니다.
 """
 
 from __future__ import annotations
@@ -23,21 +22,43 @@ import urllib.parse
 import urllib.request
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
-from zoneinfo import ZoneInfo
-
 import pandas as pd
 import yfinance as yf
+from zoneinfo import ZoneInfo
 
 ROOT = Path(__file__).resolve().parent
 PANIC_JSON = ROOT / "panic-data.json"
 PANIC_JS = ROOT / "panic-data.js"
 UA = "yds-investment-insights-bot/1.0"
 
+# ---------------------------------------------------------------------------
+# BofA Bull & Bear / GS B/B — 자동 수집 없음. None이면 JSON 기존 값 유지.
+# 숫자를 넣으면 전일 종가(JSON의 현재 value) 대비 델타로 반영합니다.
+# 예: MANUAL_BOFA_VALUE = 6.25
+# ---------------------------------------------------------------------------
+MANUAL_BOFA_VALUE: float | None = None
+MANUAL_GSBB_VALUE: float | None = None  # 퍼센트 지수면 68.0 처럼 입력 (표시는 % 붙음)
+
+
+def round2(x: float) -> float:
+    return round(float(x), 2)
+
 
 def now_kst_string() -> str:
     kst = timezone(timedelta(hours=9))
     now = datetime.now(kst)
     return f"{now:%Y.%m.%d %H:%M} KST"
+
+
+def parse_value_float(text: str | None) -> float | None:
+    cleaned = re.sub(r"[^0-9.\-]", "", str(text or ""))
+    if not cleaned:
+        return None
+    try:
+        v = float(cleaned)
+    except ValueError:
+        return None
+    return v if v == v else None  # NaN
 
 
 def decimal_places(text: str | None, fallback: int = 2) -> int:
@@ -49,7 +70,7 @@ def decimal_places(text: str | None, fallback: int = 2) -> int:
 def precision_by_id(item_id: str, fallback: int) -> int:
     if item_id == "fng":
         return 0
-    if item_id == "hy":
+    if item_id in ("hy", "vix", "skew", "move", "vxn", "putcall", "bofa", "gsbb"):
         return 2
     return fallback
 
@@ -61,7 +82,7 @@ def format_value(value: float, prev_text: str, is_percent: bool, digits: int) ->
 def format_delta(now: float, prev: float, is_percent: bool, digits: int) -> str:
     if not (isinstance(now, (int, float)) and isinstance(prev, (int, float))):
         return "-"
-    diff = now - prev
+    diff = round2(now - prev)
     if diff == 0:
         return f"➡️ 0{'%' if is_percent else ''}"
     icon = "📈" if diff > 0 else "📉"
@@ -73,7 +94,7 @@ def format_delta(now: float, prev: float, is_percent: bool, digits: int) -> str:
 
 
 def tone_and_status(item_id: str, value: float) -> tuple[str | None, str | None]:
-    if not isinstance(value, (int, float)) or not (value == value):  # NaN
+    if not isinstance(value, (int, float)) or not (value == value):
         return "watch", "🟡 점검 필요"
     if item_id == "vix":
         if value < 20:
@@ -111,6 +132,12 @@ def tone_and_status(item_id: str, value: float) -> tuple[str | None, str | None]
         if value <= 35:
             return "watch", "🟡 주의"
         return "alert", "🔴 위험"
+    if item_id == "putcall":
+        if value >= 1.35:
+            return "alert", "🔴 위험"
+        if value >= 1.2:
+            return "watch", "🟡 주의"
+        return "stable", "🟢 안정"
     return None, None
 
 
@@ -161,14 +188,42 @@ def settled_us_close_series(closes: pd.Series) -> pd.Series:
     return closes
 
 
-def yahoo_panic_row(symbol: str, item_id: str) -> tuple[float, float, str]:
-    hist = yf.Ticker(symbol).history(period="3mo", auto_adjust=False)
-    closes = settled_us_close_series(hist["Close"].dropna())
+def last_bar_date_et(closes: pd.Series) -> str:
+    """마지막 봉 인덱스를 US/Eastern 날짜 YYYY-MM-DD 로."""
+    if closes is None or len(closes) == 0:
+        return ""
+    last_idx = closes.index[-1]
+    ts = pd.Timestamp(last_idx)
+    if ts.tzinfo is None:
+        ts = ts.tz_localize("UTC")
+    return ts.astimezone(ZoneInfo("America/New_York")).strftime("%Y-%m-%d")
+
+
+def adj_close_series(hist: pd.DataFrame) -> pd.Series:
+    """우선 Adj Close, 전부 NaN이면 Close."""
+    if hist is None or len(hist) == 0:
+        raise ValueError("empty history")
+    if "Adj Close" in hist.columns:
+        adj = hist["Adj Close"].astype(float)
+        close = hist["Close"].astype(float) if "Close" in hist.columns else adj
+        s = adj.fillna(close)
+    else:
+        s = hist["Close"].astype(float)
+    return s.dropna()
+
+
+def yahoo_adj_history(symbol: str) -> pd.DataFrame:
+    return yf.Ticker(symbol).history(period="3mo", auto_adjust=False)
+
+
+def yahoo_panic_row_adj(symbol: str, item_id: str) -> tuple[float, float, str]:
+    hist = yahoo_adj_history(symbol)
+    closes = settled_us_close_series(adj_close_series(hist))
     if len(closes) < 6:
         raise ValueError(f"{symbol}: insufficient rows ({len(closes)})")
-    latest = float(closes.iloc[-1])
-    previous = float(closes.iloc[-2])
-    ref = float(closes.iloc[-6])
+    latest = round2(float(closes.iloc[-1]))
+    previous = round2(float(closes.iloc[-2]))
+    ref = round2(float(closes.iloc[-6]))
     return latest, previous, week_trend_from_ref(item_id, latest, ref)
 
 
@@ -192,21 +247,52 @@ def fetch_fred_series_values(series_id: str) -> list[float]:
     return values
 
 
-def fred_hy_row() -> tuple[float, float, str]:
-    vals = fetch_fred_series_values("BAMLH0A0HYM2")
-    latest = vals[-1]
-    previous = vals[-2]
-    ref = vals[-6] if len(vals) >= 6 else vals[0]
-    return latest, previous, week_trend_from_ref("hy", latest, ref)
+def fred_numeric_row(series_id: str, item_id: str) -> tuple[float, float, str]:
+    vals = fetch_fred_series_values(series_id)
+    latest = round2(vals[-1])
+    previous = round2(vals[-2])
+    ref = round2(vals[-6] if len(vals) >= 6 else vals[0])
+    return latest, previous, week_trend_from_ref(item_id, latest, ref)
+
+
+def move_row() -> tuple[float, float, str, str]:
+    try:
+        a, b, c = yahoo_panic_row_adj("^MOVE", "move")
+        return a, b, c, "yahoo"
+    except Exception:
+        pass
+    try:
+        a, b, c = fred_numeric_row("MOVE", "move")
+        return a, b, c, "fred"
+    except Exception as exc:
+        raise RuntimeError(f"MOVE: yahoo ^MOVE and FRED MOVE failed: {exc}") from exc
+
+
+def canonical_as_of_date_et() -> str:
+    """배치 기준일: Yahoo 일봉 마지막 봉의 ET 날짜 (^VIX 우선, 실패 시 ^VXN)."""
+    for sym in ("^VIX", "^VXN"):
+        try:
+            hist = yahoo_adj_history(sym)
+            closes = settled_us_close_series(adj_close_series(hist))
+            d = last_bar_date_et(closes)
+            if d:
+                return d
+        except Exception:
+            continue
+    return ""
 
 
 def apply_update(item: dict, latest: float, previous: float, week_trend: str) -> None:
+    latest = round2(latest)
+    previous = round2(previous)
     is_percent = "%" in str(item.get("value") or "")
-    base_digits = decimal_places(item.get("value"), 2 if is_percent else 2)
+    base_digits = decimal_places(item.get("value"), 2)
     digits = precision_by_id(str(item.get("id")), base_digits)
     item["value"] = format_value(latest, str(item.get("value")), is_percent, digits)
     item["delta"] = format_delta(latest, previous, is_percent, digits)
     item["weekTrend"] = week_trend
+    item["previousClose"] = previous
+    item["change"] = round2(latest - previous)
     tid = str(item.get("id"))
     tone, status = tone_and_status(tid, latest)
     if tone:
@@ -217,36 +303,84 @@ def apply_update(item: dict, latest: float, previous: float, week_trend: str) ->
         item["actionGuide"] = action_guide_by_tone(str(item["tone"]))
 
 
+def apply_manual_numeric(item: dict, new_latest: float, log: list[str], source: str) -> None:
+    prev = parse_value_float(item.get("value"))
+    if prev is None:
+        prev = round2(float(new_latest))
+    wt = week_trend_from_ref(str(item.get("id")), round2(float(new_latest)), prev)
+    apply_update(item, float(new_latest), prev, wt)
+    item["source"] = source
+    log.append(f"[OK] {item.get('id')} {source}")
+
+
+def update_manual_indices(by_id: dict, log: list[str]) -> None:
+    if MANUAL_BOFA_VALUE is not None:
+        it = by_id.get("bofa")
+        if it:
+            apply_manual_numeric(it, float(MANUAL_BOFA_VALUE), log, "manual_override")
+    else:
+        log.append("[KEEP] bofa (MANUAL_BOFA_VALUE=None, JSON 유지)")
+
+    if MANUAL_GSBB_VALUE is not None:
+        it = by_id.get("gsbb")
+        if it:
+            apply_manual_numeric(it, float(MANUAL_GSBB_VALUE), log, "manual_override")
+    else:
+        log.append("[KEEP] gsbb (MANUAL_GSBB_VALUE=None, JSON 유지)")
+
+
 def main() -> None:
     raw = PANIC_JSON.read_text(encoding="utf-8")
     data = json.loads(raw)
     items = data.get("items") or []
     by_id = {str(it.get("id")): it for it in items}
 
-    tasks: list[tuple[str, callable]] = [
-        ("vix", lambda: yahoo_panic_row("^VIX", "vix")),
-        ("skew", lambda: yahoo_panic_row("^SKEW", "skew")),
-        ("hy", lambda: fred_hy_row()),
-        ("move", lambda: yahoo_panic_row("^MOVE", "move")),
-        ("vxn", lambda: yahoo_panic_row("^VXN", "vxn")),
+    as_of = canonical_as_of_date_et()
+    if as_of:
+        data["asOfDateET"] = as_of
+
+    yahoo_tasks = [
+        ("vix", "^VIX", "vix"),
+        ("vxn", "^VXN", "vxn"),
+        ("skew", "^SKEW", "skew"),
+        ("putcall", "^PCC", "putcall"),
     ]
 
     log: list[str] = []
-    for tid, runner in tasks:
+    for tid, sym, iid in yahoo_tasks:
         item = by_id.get(tid)
         if not item:
             log.append(f"[SKIP] {tid} not in JSON")
             continue
         try:
-            latest, previous, week_trend = runner()
+            latest, previous, week_trend = yahoo_panic_row_adj(sym, iid)
             apply_update(item, latest, previous, week_trend)
-            if tid == "hy":
-                item["source"] = "fred"
-            else:
-                item["source"] = "yahoo"
+            item["source"] = "yahoo"
             log.append(f"[OK] {tid} updated")
         except Exception as exc:  # noqa: BLE001
             log.append(f"[SKIP] {tid} {exc}")
+
+    item_move = by_id.get("move")
+    if item_move:
+        try:
+            latest, previous, week_trend, src = move_row()
+            apply_update(item_move, latest, previous, week_trend)
+            item_move["source"] = src
+            log.append("[OK] move updated")
+        except Exception as exc:  # noqa: BLE001
+            log.append(f"[SKIP] move {exc}")
+
+    item_hy = by_id.get("hy")
+    if item_hy:
+        try:
+            latest, previous, week_trend = fred_numeric_row("BAMLH0A0HYM2", "hy")
+            apply_update(item_hy, latest, previous, week_trend)
+            item_hy["source"] = "fred"
+            log.append("[OK] hy updated")
+        except Exception as exc:  # noqa: BLE001
+            log.append(f"[SKIP] hy {exc}")
+
+    update_manual_indices(by_id, log)
 
     data["updatedAt"] = f"{now_kst_string()} (자동 업데이트 · Python)"
     PANIC_JSON.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
@@ -255,9 +389,11 @@ def main() -> None:
         encoding="utf-8",
     )
     print("panic-data.json / panic-data.js 업데이트 완료 (update_data.py)")
+    if data.get("asOfDateET"):
+        print("asOfDateET (US/Eastern 기준 종가일):", data["asOfDateET"])
     for line in log:
         print(line)
-    print("고정값(수동 유지): bofa, putcall, gsbb · CNN F&G는 patch-fng-from-cnn.mjs에서 처리")
+    print("CNN F&G는 scripts/patch-fng-from-cnn.mjs 에서 갱신합니다.")
 
 
 if __name__ == "__main__":
