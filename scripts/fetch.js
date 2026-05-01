@@ -134,9 +134,21 @@ function mv(data, key) {
   return v === undefined || v === null ? undefined : v;
 }
 
+/** market 스냅샷 항목의 등락(%)·포인트 */
+function mc(data, key) {
+  if (!data || typeof data !== "object") return undefined;
+  const o = data[key];
+  if (!o || typeof o !== "object") return undefined;
+  const c = o.change;
+  if (c === undefined || c === null || c === "") return undefined;
+  const n = Number(c);
+  return Number.isFinite(n) ? n : undefined;
+}
+
 /**
- * DOW·S&P·NASDAQ이 이전과 동일하고 VIX·US10Y 값도 동일하면 스테일(미갱신)로 보고 false.
- * oldData 없음 → true (최초 생성).
+ * DOW·S&P·NASDAQ·NASDAQ100·VIX·US10Y의 value·change가 이전 파일과 전부 동일하면
+ * Yahoo 캐시 등으로 스테일한 스냅샷으로 보고 저장 생략.
+ * (구버전은 NASDAQ 100을 비교에서 빼서 NDX만 바뀌어도 market.json이 안 갱신되는 버그가 있었음.)
  */
 function hasValidUpdate(newData, oldData) {
   if (!oldData) return true;
@@ -144,19 +156,13 @@ function hasValidUpdate(newData, oldData) {
   const nd = newData && typeof newData === "object" ? newData : {};
   const od = oldData && typeof oldData === "object" ? oldData : {};
 
-  const sameIndex =
-    mv(nd, "dow") === mv(od, "dow") &&
-    mv(nd, "sp500") === mv(od, "sp500") &&
-    mv(nd, "nasdaq") === mv(od, "nasdaq");
-
-  const vixChanged = mv(nd, "vix") !== mv(od, "vix");
-  const rateChanged = mv(nd, "us10y") !== mv(od, "us10y");
-
-  if (sameIndex && !vixChanged && !rateChanged) {
-    return false;
+  const keys = ["dow", "sp500", "nasdaq", "nasdaq100", "vix", "us10y"];
+  for (const k of keys) {
+    if (mv(nd, k) !== mv(od, k)) return true;
+    if (mc(nd, k) !== mc(od, k)) return true;
   }
 
-  return true;
+  return false;
 }
 
 function pairUs10y(ticker) {
@@ -242,6 +248,40 @@ function runSlotLabel() {
   return "로컬 실행";
 }
 
+/** 2차 슬롯·FORCE_UPDATE·KST 09시 이후 → market.json 스테일 스킵 무시하고 저장 */
+function kstHour() {
+  try {
+    const parts = new Intl.DateTimeFormat("en-GB", {
+      timeZone: "Asia/Seoul",
+      hour: "numeric",
+      hour12: false
+    }).formatToParts(new Date());
+    const hp = parts.find((p) => p.type === "hour");
+    if (!hp) return NaN;
+    return parseInt(hp.value, 10);
+  } catch {
+    return NaN;
+  }
+}
+
+function isForceMarketSave() {
+  const fu = String(process.env.FORCE_UPDATE || "").trim().toLowerCase();
+  if (fu === "true" || fu === "1") {
+    console.log("[fetch.js] isForceMarketSave: FORCE_UPDATE=", process.env.FORCE_UPDATE);
+    return true;
+  }
+  if (process.env.RUN_SLOT === "2차") {
+    console.log("[fetch.js] isForceMarketSave: RUN_SLOT=2차");
+    return true;
+  }
+  const h = kstHour();
+  if (Number.isFinite(h) && h >= 9) {
+    console.log("[fetch.js] isForceMarketSave: KST hour>=9 →", h);
+    return true;
+  }
+  return false;
+}
+
 function main() {
   const slot = runSlotLabel();
   console.log("[fetch.js]", "[" + slot + "]", "시작");
@@ -251,16 +291,33 @@ function main() {
     console.log("[fetch.js]", "[" + slot + "]", "1단계: data 디렉터리 확인");
 
     console.log("[fetch.js]", "[" + slot + "]", "2단계: panic.json 소스 빌드");
-    const built = buildFromSources();
-    const payload = built ?? { ...MOCK };
-    payload.updatedAt = formatUpdatedAtSuccess();
-    fs.writeFileSync(outPath, JSON.stringify(payload, null, 2) + "\n", "utf8");
-    console.log("[fetch.js]", "[" + slot + "]", "panic.json 저장 완료", outPath, "updatedAt=", payload.updatedAt);
+    let payload;
+    try {
+      const built = buildFromSources();
+      payload = built ?? { ...MOCK };
+      payload.updatedAt = formatUpdatedAtSuccess();
+    } catch (e) {
+      console.error("[fetch.js]", "[" + slot + "]", "panic 페이로드 빌드 실패:", e && e.message ? e.message : e);
+      throw e;
+    }
+    try {
+      fs.writeFileSync(outPath, JSON.stringify(payload, null, 2) + "\n", "utf8");
+      console.log("[fetch.js]", "[" + slot + "]", "panic.json 저장 완료", outPath, "updatedAt=", payload.updatedAt);
+    } catch (e) {
+      console.error("[fetch.js]", "[" + slot + "]", "panic.json 쓰기 실패:", e && e.message ? e.message : e);
+      throw e;
+    }
 
     console.log("[fetch.js]", "[" + slot + "]", "3단계: market 스냅샷 계산");
-    const panic = readJsonSafe(panicPath);
-    const ticker = readJsonSafe(tickerPath);
-    const market = buildMarketSnapshot(panic, ticker);
+    let market;
+    try {
+      const panic = readJsonSafe(panicPath);
+      const ticker = readJsonSafe(tickerPath);
+      market = buildMarketSnapshot(panic, ticker);
+    } catch (e) {
+      console.error("[fetch.js]", "[" + slot + "]", "market 스냅샷 계산 실패:", e && e.message ? e.message : e);
+      throw e;
+    }
 
     console.log("[fetch.js]", "[" + slot + "]", "4단계: 기존 market.json 읽기");
     let oldMarket = null;
@@ -276,23 +333,36 @@ function main() {
       oldMarket = null;
     }
 
-    console.log("[fetch.js]", "[" + slot + "]", "5단계: 유효성 검증 hasValidUpdate");
+    const forceMarket = isForceMarketSave();
+    console.log("[fetch.js]", "[" + slot + "]", "5단계: forceMarket=", forceMarket);
     const valid = hasValidUpdate(market, oldMarket);
     console.log("[fetch.js]", "[" + slot + "]", "hasValidUpdate=", valid);
 
-    if (!valid) {
+    if (forceMarket) {
+      try {
+        market.updatedAt = formatUpdatedAtSuccess();
+        fs.writeFileSync(marketPath, JSON.stringify(market, null, 2) + "\n", "utf8");
+        console.log("[fetch.js]", "[" + slot + "]", "market.json 강제 저장 완료", marketPath, "updatedAt=", market.updatedAt);
+      } catch (e) {
+        console.error("[fetch.js]", "[" + slot + "]", "market.json 강제 저장 실패:", e && e.message ? e.message : e);
+        throw e;
+      }
+    } else if (valid) {
+      try {
+        market.updatedAt = formatUpdatedAtSuccess();
+        fs.writeFileSync(marketPath, JSON.stringify(market, null, 2) + "\n", "utf8");
+        console.log("[fetch.js]", "[" + slot + "]", "market.json 저장 완료", marketPath, "updatedAt=", market.updatedAt);
+      } catch (e) {
+        console.error("[fetch.js]", "[" + slot + "]", "market.json 저장 실패:", e && e.message ? e.message : e);
+        throw e;
+      }
+    } else {
       console.log(
         "[fetch.js]",
         "[" + slot + "]",
-        "market.json 스킵: DOW·S&P·NASDAQ 동일 + VIX·US10Y 무변 → 스테일 데이터로 판단, 저장 안 함"
+        "market.json 스킵: 지수·VIX·US10Y value/change 전 구간이 이전과 동일 → 스테일 스냅샷으로 판단, 저장 안 함"
       );
-      console.log("[fetch.js]", "[" + slot + "]", "종료(정상)");
-      return;
     }
-
-    market.updatedAt = formatUpdatedAtSuccess();
-    fs.writeFileSync(marketPath, JSON.stringify(market, null, 2) + "\n", "utf8");
-    console.log("[fetch.js]", "[" + slot + "]", "market.json 저장 완료", marketPath, "updatedAt=", market.updatedAt);
     console.log("[fetch.js]", "[" + slot + "]", "종료(정상)");
   } catch (e) {
     console.error("[fetch.js]", "[" + slot + "]", "실패:", e && e.stack ? e.stack : e && e.message ? e.message : e);

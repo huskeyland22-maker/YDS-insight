@@ -24,6 +24,7 @@ jobs:
       - name: Run fetch script
         env:
           RUN_SLOT: ${{ github.event_name == 'workflow_dispatch' && '수동' || (github.event.schedule == '30 0 * * *' && '2차' || '1차') }}
+          FORCE_UPDATE: ${{ github.event.schedule == '30 0 * * *' && 'true' || 'false' }}
         run: node scripts/fetch.js
 
       - name: Commit and push if changed

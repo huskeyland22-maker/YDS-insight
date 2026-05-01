@@ -620,6 +620,13 @@
         var latestOverseasData = window.OVERSEAS_DATA && Array.isArray(window.OVERSEAS_DATA.items) ? window.OVERSEAS_DATA : null;
         var latestTradingShortSignal = null;
 
+        function appendFetchCacheBust(url) {
+          var u = String(url || "");
+          if (!u) return u;
+          var sep = u.indexOf("?") >= 0 ? "&" : "?";
+          return u + sep + "_ts=" + Date.now();
+        }
+
         if (visitCountEl) {
           // Global counter (shared across all visitors) via CountAPI.
           var counterNamespace = "yds-investment-insights";
@@ -1029,7 +1036,8 @@
 
         function refreshPanicSignalDashboard() {
           if (!window.PanicSignalEngine || !panicSignalDashboardEl) return;
-          var url = "/data/panic.json?v=" + Date.now();
+          var url = appendFetchCacheBust("/data/panic.json");
+          console.log("[fetch] panic.json", url);
           fetch(url)
             .then(function (res) {
               if (!res.ok) throw new Error("panic.json HTTP " + res.status);
@@ -1585,19 +1593,96 @@
           updateMarketCard("us10y", marketItemOrNull(data, "us10y"));
         }
 
+        function parseNumFromTickerValue(text) {
+          var cleaned = String(text ?? "").replace(/[^0-9.\-]/g, "");
+          var n = parseFloat(cleaned);
+          return Number.isFinite(n) ? Math.round(n * 100) / 100 : null;
+        }
+
+        function pctChangeFromTickerDelta(deltaStr) {
+          var s = String(deltaStr ?? "");
+          var cleaned = s.replace(/%p/gi, "").replace(/%/g, "").replace(/[^0-9.\-+]/g, "");
+          var n = parseFloat(cleaned);
+          return Number.isFinite(n) ? Math.round(n * 100) / 100 : null;
+        }
+
+        function vixPointChangeFromPanicItem(it) {
+          if (!it) return null;
+          if (it.change !== undefined && it.change !== null && it.change !== "") {
+            var c = Number(it.change);
+            if (Number.isFinite(c)) return Math.round(c * 100) / 100;
+          }
+          var d = String(it.delta || "");
+          var n = parseFloat(d.replace(/[^0-9.\-+]/g, ""));
+          if (!Number.isFinite(n)) return null;
+          if (d.indexOf("📉") !== -1) return Math.round(-Math.abs(n) * 100) / 100;
+          if (d.indexOf("📈") !== -1) return Math.round(Math.abs(n) * 100) / 100;
+          return Math.round(n * 100) / 100;
+        }
+
+        /** fetch.js buildMarketSnapshot과 동일 기준 — 티커·패닉 테이블과 터미널 카드 정렬 */
+        function buildMarketSnapshotFromTickerAndPanic() {
+          if (!latestTickerData || !Array.isArray(latestTickerData.items)) return null;
+          var by = {};
+          latestTickerData.items.forEach(function (it) {
+            if (it && it.label) by[it.label] = it;
+          });
+          var vixIt = null;
+          var panicItems = (latestPanicData && latestPanicData.items) || [];
+          for (var i = 0; i < panicItems.length; i += 1) {
+            if (panicItems[i] && panicItems[i].id === "vix") {
+              vixIt = panicItems[i];
+              break;
+            }
+          }
+          function row(label) {
+            var t = by[label];
+            return {
+              value: parseNumFromTickerValue(t && t.value),
+              change: pctChangeFromTickerDelta(t && t.delta)
+            };
+          }
+          return {
+            dow: row("DOW"),
+            sp500: row("S&P 500"),
+            nasdaq: row("NASDAQ Composite"),
+            nasdaq100: row("NASDAQ 100"),
+            vix: {
+              value: parseNumFromTickerValue(vixIt && vixIt.value),
+              change: vixPointChangeFromPanicItem(vixIt)
+            },
+            us10y: row("US 10Y")
+          };
+        }
+
+        function syncMarketUiFromTickerAndPanic() {
+          var snap = buildMarketSnapshotFromTickerAndPanic();
+          if (!snap) return;
+          renderMarket(snap);
+          console.log("[market-ui] 터미널 카드를 티커·패닉 테이블과 동기화 (NDX·IXIC 포함)");
+        }
+
         function loadMarketData() {
-          var raw = "data/market.json?v=" + Date.now();
-          var url = window.withSiteVersion ? window.withSiteVersion(raw) : raw;
+          var raw = "data/market.json";
+          var base = window.withSiteVersion ? window.withSiteVersion(raw) : raw;
+          var url = appendFetchCacheBust(base);
+          console.log("[fetch] market.json", url);
           fetch(url)
             .then(function (res) {
               if (!res.ok) throw new Error("market fetch failed");
               return res.json();
             })
             .then(function (data) {
+              // market.json 응답이 티커보다 늦게 오면 예전 수치로 덮어써서 "변하지 않는" 것처럼 보임 → 티커가 있으면 항상 티커 기준으로만 카드 갱신
+              if (latestTickerData && Array.isArray(latestTickerData.items) && latestTickerData.items.length > 0) {
+                syncMarketUiFromTickerAndPanic();
+                console.log("[fetch] market.json 응답 무시(티커 우선 동기화)");
+                return;
+              }
               renderMarket(data);
             })
-            .catch(function () {
-              console.error("market load fail");
+            .catch(function (err) {
+              console.error("[fetch] market load fail", err && err.message ? err.message : err);
             });
         }
 
@@ -1707,7 +1792,11 @@
             buildSnapshotCard("NASDAQ 100", ndx.value, ndx.delta, ndx.direction, "nasdaq100") +
             buildSnapshotCard("VIX", vix.value, vix.delta, String(vix.delta || "").indexOf("📈") !== -1 ? "up" : String(vix.delta || "").indexOf("📉") !== -1 ? "down" : "", "vix") +
             buildSnapshotCard("US 10Y", us10y.value, us10y.delta, us10y.direction, "us10y");
-          loadMarketData();
+          if ((latestTickerData.items || []).length > 0) {
+            syncMarketUiFromTickerAndPanic();
+          } else {
+            loadMarketData();
+          }
         }
 
         function renderTicker(data) {
@@ -1841,7 +1930,9 @@
 
         if (panicBodyEl && panicUpdatedAtEl) {
           // JSON을 우선 사용: Actions로 json만 최신 커밋된 경우에도 날짜·수치가 맞게 보임. 실패 시 panic-data.js 폴백.
-          fetch(window.withSiteVersion("panic-data.json"))
+          var panicDataUrl = appendFetchCacheBust(window.withSiteVersion("panic-data.json"));
+          console.log("[fetch] panic-data.json", panicDataUrl);
+          fetch(panicDataUrl)
             .then(function (res) {
               if (!res.ok) throw new Error("panic-data fetch failed");
               return res.json();
@@ -1867,7 +1958,9 @@
         loadMarketData();
 
         if (tickerTrackEl) {
-          fetch("/api/ticker")
+          var tickerApiUrl = appendFetchCacheBust("/api/ticker");
+          console.log("[fetch] /api/ticker", tickerApiUrl);
+          fetch(tickerApiUrl)
             .then(function (res) {
               if (!res.ok) throw new Error("api ticker fetch failed");
               return res.json();
@@ -1878,7 +1971,9 @@
                 renderTicker(window.TICKER_DATA);
                 return;
               }
-              fetch(window.withSiteVersion("ticker-data.json"))
+              var tickerJsonUrl = appendFetchCacheBust(window.withSiteVersion("ticker-data.json"));
+              console.log("[fetch] ticker-data.json", tickerJsonUrl);
+              fetch(tickerJsonUrl)
                 .then(function (res) {
                   if (!res.ok) throw new Error("ticker-data fetch failed");
                   return res.json();
