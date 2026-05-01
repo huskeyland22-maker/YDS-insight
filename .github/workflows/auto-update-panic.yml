@@ -5,10 +5,18 @@ on:
     # 한국 08:20 KST = 전날 UTC 23:20 (미국 정규장 종가·정산 후 여유를 두고 수집)
     # 참고: 서머타임 시 미국장 마감 ≈ KST 05:00, 겨울 ≈ KST 06:00 — 확정·배포 여유로 08:00~09:00대 권장
     - cron: "20 23 * * *"
+    # 한국 12:30 KST = UTC 03:30 (아침 배치 실패·지연 시 점심에 재시도)
+    - cron: "30 3 * * *"
+    # 한국 19:00 KST = UTC 10:00 (당일 데이터 재확인·저녁 보정)
+    - cron: "0 10 * * *"
   workflow_dispatch:
 
 permissions:
   contents: write
+
+concurrency:
+  group: yds-data-${{ github.ref }}
+  cancel-in-progress: false
 
 jobs:
   update-and-deploy:
@@ -27,7 +35,20 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Update panic data (Python · yfinance + FRED CSV)
-        run: python update_data.py
+        run: |
+          set -e
+          for attempt in 1 2 3; do
+            echo "=== update_data.py attempt $attempt ==="
+            if python update_data.py; then
+              exit 0
+            fi
+            if [ "$attempt" -eq 3 ]; then
+              echo "All attempts failed"
+              exit 1
+            fi
+            echo "Retry in 60s..."
+            sleep 60
+          done
 
       - name: Patch CNN Fear & Greed if needed (Node fetch)
         run: node scripts/patch-fng-from-cnn.mjs
