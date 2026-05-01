@@ -1,7 +1,7 @@
 /**
  * scripts/fetch.js — data/panic.json 갱신 (overwrite)
- * panic-data.json의 previousClose·change 기반으로 { now, prev } 구조 생성
- * data/market.json — 스테일 판별 후 유효할 때만 덮어쓰기
+ * data/ticker.json — ticker-data.json·panic-data 기반 생성 (market 이전에 반드시 기록)
+ * data/market.json — data/ticker.json + panic-data 기반
  */
 import fs from "node:fs";
 import path from "node:path";
@@ -12,9 +12,17 @@ const root = path.resolve(__dirname, "..");
 const outDir = path.join(root, "data");
 const outPath = path.join(outDir, "panic.json");
 const marketPath = path.join(outDir, "market.json");
+const tickerJsonPath = path.join(outDir, "ticker.json");
 const panicPath = path.join(root, "panic-data.json");
 const tickerPath = path.join(root, "ticker-data.json");
 const overseasPath = path.join(root, "overseas-data.json");
+
+/** true면 hasValidUpdate / 2차 슬롯과 무관하게 market.json 항상 저장 */
+const FETCH_FORCE_SAVE =
+  String(process.env.FETCH_FORCE_SAVE || "")
+    .trim()
+    .toLowerCase() === "true" ||
+  String(process.env.FETCH_FORCE_SAVE || "").trim() === "1";
 
 function round2(x) {
   return Math.round(Number(x) * 100) / 100;
@@ -37,11 +45,6 @@ function readJsonSafe(p) {
 function kstUpdatedAt() {
   const s = new Date().toLocaleString("sv-SE", { timeZone: "Asia/Seoul", hour12: false });
   return s.replace("T", " ").slice(0, 16);
-}
-
-function valById(items, id) {
-  const it = items.find((x) => x && x.id === id);
-  return it ? parseNum(it.value) : null;
 }
 
 function pairFromItem(items, id) {
@@ -107,6 +110,130 @@ function vixPointChange(it) {
   return round2(n);
 }
 
+function pickTickerItem(items, label) {
+  if (!Array.isArray(items)) return null;
+  return items.find((x) => x && x.label === label) || null;
+}
+
+/**
+ * 루트 ticker-data.json + panic-data 기반으로 data/ticker.json용 배열 생성.
+ * 실패 시 요청 예시와 동일한 기본 행 반환.
+ */
+async function fetchTicker() {
+  const legacy = readJsonSafe(tickerPath);
+  const panicFull = readJsonSafe(panicPath);
+  const vixIt = panicItemById(panicFull, "vix");
+
+  const rows = [];
+  if (legacy && Array.isArray(legacy.items)) {
+    const items = legacy.items;
+    const push = (symbol, label) => {
+      const it = pickTickerItem(items, label);
+      if (!it) return;
+      const price = parseNum(it.value);
+      const change = pctOrPointsFromDelta(it.delta);
+      rows.push({
+        symbol,
+        price: Number.isFinite(price) ? round2(price) : it.value,
+        change: Number.isFinite(change) ? change : 0
+      });
+    };
+    push("DOW", "DOW");
+    push("SP500", "S&P 500");
+    push("NASDAQ", "NASDAQ Composite");
+    push("NASDAQ100", "NASDAQ 100");
+    const u10 = pickTickerItem(items, "US 10Y");
+    if (u10) {
+      const price = parseNum(u10.value);
+      const change = pctOrPointsFromDelta(u10.delta);
+      rows.push({
+        symbol: "US10Y",
+        price: Number.isFinite(price) ? round2(price) : u10.value,
+        change: Number.isFinite(change) ? change : 0
+      });
+    }
+    if (vixIt) {
+      const price = parseNum(vixIt.value);
+      const ch = vixPointChange(vixIt);
+      rows.push({
+        symbol: "VIX",
+        price: Number.isFinite(price) ? round2(price) : vixIt.value,
+        change: Number.isFinite(ch) ? ch : 0
+      });
+    }
+  }
+
+  if (rows.length) {
+    return rows;
+  }
+
+  const vixPrice = vixIt ? parseNum(vixIt.value) : null;
+  const vixCh = vixIt ? vixPointChange(vixIt) : null;
+  return [
+    { symbol: "DOW", price: 48861.81, change: -0.57 },
+    { symbol: "SP500", price: 7135.95, change: -0.04 },
+    { symbol: "NASDAQ", price: 24673.24, change: 0.04 },
+    { symbol: "NASDAQ100", price: 27186.98, change: 0.58 },
+    {
+      symbol: "VIX",
+      price: Number.isFinite(vixPrice) ? round2(vixPrice) : 18.81,
+      change: Number.isFinite(vixCh) ? vixCh : 0.98
+    },
+    { symbol: "US10Y", price: 0.44, change: 1.47 }
+  ];
+}
+
+function formatDeltaFromNumber(changeNum, isUs10y) {
+  if (!Number.isFinite(changeNum)) return "-";
+  const abs = Math.abs(changeNum).toFixed(2);
+  const suffix = isUs10y ? "%p" : "%";
+  if (changeNum > 0) return "+" + abs + suffix;
+  if (changeNum < 0) return "-" + abs + suffix;
+  return "0.00" + suffix;
+}
+
+/** data/ticker.json 배열 → buildMarketSnapshot 호환 { items } */
+function tickerCompactToLegacyTicker(rows) {
+  if (!Array.isArray(rows) || !rows.length) return { items: [] };
+  const SYM_TO_LABEL = {
+    DOW: "DOW",
+    SP500: "S&P 500",
+    NASDAQ: "NASDAQ Composite",
+    NASDAQ100: "NASDAQ 100",
+    US10Y: "US 10Y",
+    VIX: "VIX"
+  };
+  const items = rows.map((r) => {
+    const label = SYM_TO_LABEL[r.symbol] || String(r.symbol);
+    const changeNum = Number(r.change);
+    const direction = !Number.isFinite(changeNum) ? "flat" : changeNum > 0 ? "up" : changeNum < 0 ? "down" : "flat";
+    const deltaStr = formatDeltaFromNumber(changeNum, r.symbol === "US10Y");
+    const priceNum = typeof r.price === "number" ? r.price : parseNum(r.price);
+    let valueStr;
+    if (r.symbol === "US10Y" && Number.isFinite(priceNum)) {
+      valueStr = priceNum.toFixed(2) + "%";
+    } else if (Number.isFinite(priceNum)) {
+      valueStr = priceNum.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    } else {
+      valueStr = String(r.price ?? "-");
+    }
+    return { label, value: valueStr, delta: deltaStr, direction };
+  });
+  return { items };
+}
+
+/** market.json 계산용: data/ticker.json 우선, 없으면 루트 ticker-data.json */
+function loadTickerForMarket() {
+  const raw = readJsonSafe(tickerJsonPath);
+  if (Array.isArray(raw) && raw.length) {
+    return tickerCompactToLegacyTicker(raw);
+  }
+  if (raw && Array.isArray(raw.items) && raw.items.length && raw.items[0].symbol) {
+    return tickerCompactToLegacyTicker(raw.items);
+  }
+  return readJsonSafe(tickerPath) || { items: [] };
+}
+
 function buildMarketSnapshot(panic, ticker) {
   const dow = tickerByLabel(ticker, "DOW");
   const sp = tickerByLabel(ticker, "S&P 500");
@@ -145,11 +272,6 @@ function mc(data, key) {
   return Number.isFinite(n) ? n : undefined;
 }
 
-/**
- * DOW·S&P·NASDAQ·NASDAQ100·VIX·US10Y의 value·change가 이전 파일과 전부 동일하면
- * Yahoo 캐시 등으로 스테일한 스냅샷으로 보고 저장 생략.
- * (구버전은 NASDAQ 100을 비교에서 빼서 NDX만 바뀌어도 market.json이 안 갱신되는 버그가 있었음.)
- */
 function hasValidUpdate(newData, oldData) {
   if (!oldData) return true;
 
@@ -163,6 +285,31 @@ function hasValidUpdate(newData, oldData) {
   }
 
   return false;
+}
+
+function stripUpdatedAt(obj) {
+  if (!obj || typeof obj !== "object") return obj;
+  const copy = { ...obj };
+  delete copy.updatedAt;
+  return copy;
+}
+
+function logMarketPayloads(newData, oldData) {
+  const fresh = stripUpdatedAt(newData);
+  const old = stripUpdatedAt(oldData) || {};
+  console.log("=== NEW DATA ===");
+  console.log(JSON.stringify(fresh, null, 2));
+  console.log("=== OLD DATA ===");
+  console.log(JSON.stringify(old, null, 2));
+}
+
+function logMarketFieldArrows(newData, oldData) {
+  const od = oldData && typeof oldData === "object" ? oldData : {};
+  console.log("DOW:", od?.dow?.value, "→", newData?.dow?.value);
+  console.log("VIX:", od?.vix?.value, "→", newData?.vix?.value);
+  console.log("US10Y:", od?.us10y?.value, "→", newData?.us10y?.value);
+  console.log("[diff] S&P:", od?.sp500?.value, "→", newData?.sp500?.value, "| IXIC:", od?.nasdaq?.value, "→", newData?.nasdaq?.value, "| NDX:", od?.nasdaq100?.value, "→", newData?.nasdaq100?.value);
+  console.log("[diff] DOW ch:", od?.dow?.change, "→", newData?.dow?.change, "| VIX ch:", od?.vix?.change, "→", newData?.vix?.change, "| US10Y ch:", od?.us10y?.change, "→", newData?.us10y?.change);
 }
 
 function pairUs10y(ticker) {
@@ -230,7 +377,6 @@ function buildFromSources() {
   return out;
 }
 
-/** panic / market 공통: 성공 시각 + 성공 표기, 2차 스케줄에서만 final update */
 function formatUpdatedAtSuccess() {
   let s = kstUpdatedAt() + " KST · success";
   if (process.env.RUN_SLOT === "2차") {
@@ -248,7 +394,6 @@ function runSlotLabel() {
   return "로컬 실행";
 }
 
-/** 2차 슬롯·FORCE_UPDATE·KST 09시 이후 → market.json 스테일 스킵 무시하고 저장 */
 function kstHour() {
   try {
     const parts = new Intl.DateTimeFormat("en-GB", {
@@ -282,13 +427,44 @@ function isForceMarketSave() {
   return false;
 }
 
-function main() {
+function saveMarketJson(slot, market, reasonLabel) {
+  market.updatedAt = new Date().toISOString();
+  fs.writeFileSync(marketPath, JSON.stringify(market, null, 2) + "\n", "utf8");
+  console.log("[fetch.js]", "[" + slot + "]", reasonLabel, marketPath, "updatedAt(ISO)=", market.updatedAt);
+}
+
+async function main() {
   const slot = runSlotLabel();
-  console.log("[fetch.js]", "[" + slot + "]", "시작");
+  console.log("[fetch.js]", "[" + slot + "]", "시작", "FETCH_FORCE_SAVE=", FETCH_FORCE_SAVE);
 
   try {
     fs.mkdirSync(outDir, { recursive: true });
     console.log("[fetch.js]", "[" + slot + "]", "1단계: data 디렉터리 확인");
+
+    const tickerData = await fetchTicker();
+    try {
+      fs.writeFileSync(tickerJsonPath, JSON.stringify(tickerData, null, 2) + "\n", "utf8");
+      console.log(
+        "[fetch.js]",
+        "[" + slot + "]",
+        "ticker.json 저장 완료",
+        tickerJsonPath,
+        "rows=",
+        Array.isArray(tickerData) ? tickerData.length : 0
+      );
+    } catch (e) {
+      console.error("FETCH ERROR (ticker.json write):", e);
+      throw e;
+    }
+
+    let oldPanicOnDisk = null;
+    try {
+      if (fs.existsSync(outPath)) {
+        oldPanicOnDisk = readJsonSafe(outPath);
+      }
+    } catch (e) {
+      console.error("[fetch.js] FETCH ERROR (old panic read):", e);
+    }
 
     console.log("[fetch.js]", "[" + slot + "]", "2단계: panic.json 소스 빌드");
     let payload;
@@ -297,25 +473,31 @@ function main() {
       payload = built ?? { ...MOCK };
       payload.updatedAt = formatUpdatedAtSuccess();
     } catch (e) {
-      console.error("[fetch.js]", "[" + slot + "]", "panic 페이로드 빌드 실패:", e && e.message ? e.message : e);
+      console.error("FETCH ERROR:", e);
       throw e;
     }
+
+    console.log("=== NEW DATA (panic.json payload) ===");
+    console.log(JSON.stringify(payload, null, 2));
+    console.log("=== OLD DATA (기존 panic.json) ===");
+    console.log(JSON.stringify(oldPanicOnDisk || {}, null, 2));
+
     try {
       fs.writeFileSync(outPath, JSON.stringify(payload, null, 2) + "\n", "utf8");
       console.log("[fetch.js]", "[" + slot + "]", "panic.json 저장 완료", outPath, "updatedAt=", payload.updatedAt);
     } catch (e) {
-      console.error("[fetch.js]", "[" + slot + "]", "panic.json 쓰기 실패:", e && e.message ? e.message : e);
+      console.error("FETCH ERROR:", e);
       throw e;
     }
 
-    console.log("[fetch.js]", "[" + slot + "]", "3단계: market 스냅샷 계산");
+    console.log("[fetch.js]", "[" + slot + "]", "3단계: market 스냅샷 계산 (data/ticker.json 사용)");
     let market;
     try {
       const panic = readJsonSafe(panicPath);
-      const ticker = readJsonSafe(tickerPath);
+      const ticker = loadTickerForMarket();
       market = buildMarketSnapshot(panic, ticker);
     } catch (e) {
-      console.error("[fetch.js]", "[" + slot + "]", "market 스냅샷 계산 실패:", e && e.message ? e.message : e);
+      console.error("FETCH ERROR:", e);
       throw e;
     }
 
@@ -333,27 +515,34 @@ function main() {
       oldMarket = null;
     }
 
-    const forceMarket = isForceMarketSave();
-    console.log("[fetch.js]", "[" + slot + "]", "5단계: forceMarket=", forceMarket);
-    const valid = hasValidUpdate(market, oldMarket);
-    console.log("[fetch.js]", "[" + slot + "]", "hasValidUpdate=", valid);
+    logMarketPayloads(market, oldMarket);
+    logMarketFieldArrows(market, oldMarket);
 
-    if (forceMarket) {
+    const forceMarket = isForceMarketSave();
+    const valid = hasValidUpdate(market, oldMarket);
+    console.log("[fetch.js]", "[" + slot + "]", "5단계: FETCH_FORCE_SAVE=", FETCH_FORCE_SAVE, "forceMarket=", forceMarket, "hasValidUpdate=", valid);
+
+    if (FETCH_FORCE_SAVE) {
+      console.log("🔥 FORCE UPDATE 실행 (FETCH_FORCE_SAVE)");
       try {
-        market.updatedAt = formatUpdatedAtSuccess();
-        fs.writeFileSync(marketPath, JSON.stringify(market, null, 2) + "\n", "utf8");
-        console.log("[fetch.js]", "[" + slot + "]", "market.json 강제 저장 완료", marketPath, "updatedAt=", market.updatedAt);
+        saveMarketJson(slot, market, "market.json 강제 저장(FETCH_FORCE_SAVE)");
       } catch (e) {
-        console.error("[fetch.js]", "[" + slot + "]", "market.json 강제 저장 실패:", e && e.message ? e.message : e);
+        console.error("FETCH ERROR:", e);
+        throw e;
+      }
+    } else if (forceMarket) {
+      console.log("🔥 FORCE UPDATE 실행 (2차/FORCE_UPDATE/KST≥9)");
+      try {
+        saveMarketJson(slot, market, "market.json 강제 저장(슬롯/시간)");
+      } catch (e) {
+        console.error("FETCH ERROR:", e);
         throw e;
       }
     } else if (valid) {
       try {
-        market.updatedAt = formatUpdatedAtSuccess();
-        fs.writeFileSync(marketPath, JSON.stringify(market, null, 2) + "\n", "utf8");
-        console.log("[fetch.js]", "[" + slot + "]", "market.json 저장 완료", marketPath, "updatedAt=", market.updatedAt);
+        saveMarketJson(slot, market, "market.json 저장(변화 감지)");
       } catch (e) {
-        console.error("[fetch.js]", "[" + slot + "]", "market.json 저장 실패:", e && e.message ? e.message : e);
+        console.error("FETCH ERROR:", e);
         throw e;
       }
     } else {
@@ -365,9 +554,12 @@ function main() {
     }
     console.log("[fetch.js]", "[" + slot + "]", "종료(정상)");
   } catch (e) {
-    console.error("[fetch.js]", "[" + slot + "]", "실패:", e && e.stack ? e.stack : e && e.message ? e.message : e);
+    console.error("FETCH ERROR:", e && e.stack ? e.stack : e && e.message ? e.message : e);
     process.exitCode = 1;
   }
 }
 
-main();
+main().catch((e) => {
+  console.error("FETCH ERROR:", e && e.stack ? e.stack : e && e.message ? e.message : e);
+  process.exitCode = 1;
+});

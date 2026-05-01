@@ -3,7 +3,7 @@ name: Auto Update Panic Data
 on:
   schedule:
     # 한국 08:20 KST = 전날 UTC 23:20 (미국 정규장 종가·정산 후 여유를 두고 수집)
-    # 참고: 서머타임 시 미국장 마감 ≈ KST 05:00, 겨울 ≈ 06:00 — 확정·배포 여유로 08:00~09:00대 권장
+    # 참고: 서머타임 시 미국장 마감 ≈ KST 05:00, 겨울 ≈ KST 06:00 — 확정·배포 여유로 08:00~09:00대 권장
     - cron: "20 23 * * *"
   workflow_dispatch:
 
@@ -45,14 +45,18 @@ jobs:
       - name: Bump site version for cache busting
         run: npm run version:site
 
-      - name: Commit changes if needed
+      - name: Commit and push if needed
         run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           if git diff --quiet; then
             echo "No changes to commit"
             exit 0
           fi
           git add panic-data.json panic-data.js ticker-data.json ticker-data.js overseas-data.json overseas-data.js youtube-data.json youtube-data.js site-version.js
-          git commit -m "chore: auto update panic (Python) and ticker/overseas (Node)"
-
-      - name: Push to main
-        run: git push origin main
+          if git diff --staged --quiet; then
+            echo "No staged changes"
+            exit 0
+          fi
+          git commit -m "chore: auto update panic (Python) and ticker/overseas (Node)" || echo "No commit (skipped)"
+          git push origin main

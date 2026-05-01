@@ -193,30 +193,6 @@
               </article>
             </div>
           </section>
-          <section class="overseas-heatmap-card overseas-detail-block" aria-label="미국시장 히트맵">
-            <div class="overseas-heatmap-card__head">
-              <h3>US Market Heatmap (Treemap)</h3>
-              <a href="https://finviz.com/map.ashx" target="_blank" rel="noopener noreferrer">핀비즈 원본 ↗</a>
-            </div>
-            <p class="overseas-heatmap-card__intro">
-              박스 크기는 시가총액, 색상은 전일 등락률을 의미합니다.
-            </p>
-            <div class="overseas-heatmap-frame-wrap">
-              <div class="tradingview-widget-container">
-                <div id="tradingview-heatmap"></div>
-              </div>
-              <div class="overseas-heatmap-fallback is-hidden" id="overseas-heatmap-fallback">
-                <p>모바일 브라우저/네트워크 환경에서 위젯이 차단될 수 있습니다.</p>
-                <div class="overseas-heatmap-fallback__links">
-                  <a href="https://www.tradingview.com/heatmap/stock/?color=change&dataset=SPX500&group=sector&size=market_cap_basic" target="_blank" rel="noopener noreferrer">TradingView 히트맵 열기 ↗</a>
-                  <a href="https://finviz.com/map.ashx" target="_blank" rel="noopener noreferrer">Finviz 히트맵 열기 ↗</a>
-                </div>
-              </div>
-            </div>
-            <p class="overseas-heatmap-card__note">
-              핀비즈는 임베드 차단이 있어 링크로 열어야 할 수 있습니다. 화면에서는 TradingView 히트맵을 기본으로 제공합니다.
-            </p>
-          </section>
           <div class="overseas-insight-grid overseas-detail-block">
             <article class="overseas-insight-card">
               <h3>1) Macro Regime</h3>
@@ -2009,49 +1985,6 @@
             renderOverseasCockpit();
             refreshPanicSignalDashboard();
           });
-
-        (function initOverseasHeatmapWidget() {
-          var host = document.getElementById("tradingview-heatmap");
-          var fallback = document.getElementById("overseas-heatmap-fallback");
-          if (!host) return;
-          function showFallback() {
-            if (fallback) fallback.classList.remove("is-hidden");
-            host.classList.add("is-hidden");
-          }
-          var isMobile = window.matchMedia && window.matchMedia("(max-width: 768px)").matches;
-          var script = document.createElement("script");
-          script.type = "text/javascript";
-          script.async = true;
-          script.src = "https://s3.tradingview.com/external-embedding/embed-widget-stock-heatmap.js";
-          script.text =
-            JSON.stringify({
-              dataSource: "SPX500",
-              blockSize: "market_cap_basic",
-              blockColor: "change",
-              grouping: "sector",
-              locale: "kr",
-              symbolUrl: "",
-              colorTheme: "dark",
-              hasTopBar: false,
-              isDataSetEnabled: false,
-              isZoomEnabled: !isMobile,
-              hasSymbolTooltip: true,
-              isMonoSize: false,
-              width: "100%",
-              height: isMobile ? "360" : "560"
-            });
-          host.appendChild(script);
-
-          // 모바일 일부 브라우저에서 3rd-party 위젯이 비어 보일 수 있어 폴백 표시
-          window.setTimeout(function () {
-            var rendered = host.querySelector("iframe, canvas, table, svg, .tv-embed-widget-wrapper");
-            if (!rendered) showFallback();
-          }, 4500);
-
-          script.addEventListener("error", function () {
-            showFallback();
-          });
-        })();
 
         (function initOverseasDetailToggle() {
           if (!overseasDetailToggleEl || !overseasDetailBlocks.length) return;
