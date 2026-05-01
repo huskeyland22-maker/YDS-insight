@@ -32,10 +32,10 @@ window.TICKER_DATA = {
       "direction": "up"
     },
     {
-      "label": "NASDAQ Composite",
-      "value": "24,892.31",
-      "delta": "+0.89%",
-      "direction": "up"
+      "label": "Dollar Index",
+      "value": "98.08",
+      "delta": "-0.85%",
+      "direction": "down"
     },
     {
       "label": "NASDAQ 100",

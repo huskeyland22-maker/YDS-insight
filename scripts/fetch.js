@@ -163,7 +163,7 @@ async function fetchTicker() {
     push("USDKRW", ["USD/KRW", "미국 USD"]);
     push("DOW", "DOW");
     push("SP500", "S&P 500");
-    push("NASDAQ", "NASDAQ Composite");
+    push("NASDAQ", "NASDAQ 100");
     push("WTI", "WTI");
     push("GOLD", ["국제 금", "Gold"]);
     push("BITCOIN", ["비트코인", "Bitcoin"]);
@@ -198,7 +198,7 @@ async function fetchTicker() {
   return [
     { symbol: "DOW", price: 48861.81, change: -0.57 },
     { symbol: "SP500", price: 7135.95, change: -0.04 },
-    { symbol: "NASDAQ", price: 24673.24, change: 0.04 },
+    { symbol: "NASDAQ", price: 27452.12, change: 0.98 },
     { symbol: "NASDAQ100", price: 27186.98, change: 0.58 },
     {
       symbol: "VIX",
@@ -225,7 +225,7 @@ function tickerCompactToLegacyTicker(rows) {
     USDKRW: "USD/KRW",
     DOW: "DOW",
     SP500: "S&P 500",
-    NASDAQ: "NASDAQ Composite",
+    NASDAQ: "NASDAQ 100",
     WTI: "WTI",
     GOLD: "국제 금",
     BITCOIN: "비트코인",
@@ -275,7 +275,7 @@ function buildMarketSnapshot(panic, ticker, overseas) {
   const usdkrw = tickerByLabels(ticker, ["USD/KRW", "미국 USD"]);
   const dow = tickerByLabel(ticker, "DOW");
   const sp = tickerByLabel(ticker, "S&P 500");
-  const ixic = tickerByLabel(ticker, "NASDAQ Composite");
+  const ixic = tickerByLabel(ticker, "NASDAQ 100");
   const wti = tickerByLabels(ticker, ["WTI"]);
   const gold = tickerByLabels(ticker, ["국제 금", "Gold"]);
   const us10 = tickerByLabel(ticker, "US 10Y");

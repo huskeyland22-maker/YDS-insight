@@ -182,27 +182,6 @@
           <p class="panic-updated-at" id="panic-updated-at">업데이트 기준: 로딩 중...</p>
 
           <div class="dashboard terminal-dashboard" id="terminal-dashboard">
-            <div class="market-grid terminal-dashboard__market">
-              <section class="us-close-snapshot us-close-snapshot--terminal" aria-label="지난밤 미국장 스냅샷">
-                <h3>US Close Snapshot</h3>
-                <p class="panic-updated-at us-close-snapshot__updated-at" id="us-close-snapshot-updated-at" aria-live="polite">
-                  업데이트 기준: 로딩 중...
-                </p>
-                <div class="us-close-snapshot__grid" id="us-close-snapshot-grid">
-                  <div class="us-close-snapshot__card terminal-stat-card" id="usdkrw"><span class="k">미국 USD</span><strong class="v">-</strong><em class="d terminal-delta terminal-delta--flat">-</em></div>
-                  <div class="us-close-snapshot__card terminal-stat-card" id="dow"><span class="k">DOW</span><strong class="v">-</strong><em class="d terminal-delta terminal-delta--flat">-</em></div>
-                  <div class="us-close-snapshot__card terminal-stat-card" id="sp500"><span class="k">S&P 500</span><strong class="v">-</strong><em class="d terminal-delta terminal-delta--flat">-</em></div>
-                  <div class="us-close-snapshot__card terminal-stat-card" id="nasdaq"><span class="k">NASDAQ Composite</span><strong class="v">-</strong><em class="d terminal-delta terminal-delta--flat">-</em></div>
-                  <div class="us-close-snapshot__card terminal-stat-card" id="wti"><span class="k">WTI</span><strong class="v">-</strong><em class="d terminal-delta terminal-delta--flat">-</em></div>
-                  <div class="us-close-snapshot__card terminal-stat-card" id="gold"><span class="k">국제 금</span><strong class="v">-</strong><em class="d terminal-delta terminal-delta--flat">-</em></div>
-                  <div class="us-close-snapshot__card terminal-stat-card" id="vix"><span class="k">VIX</span><strong class="v">-</strong><em class="d terminal-delta terminal-delta--flat">-</em></div>
-                  <div class="us-close-snapshot__card terminal-stat-card" id="us10y"><span class="k">US 10Y</span><strong class="v">-</strong><em class="d terminal-delta terminal-delta--flat">-</em></div>
-                  <div class="us-close-snapshot__card terminal-stat-card" id="bitcoin"><span class="k">비트코인</span><strong class="v">-</strong><em class="d terminal-delta terminal-delta--flat">-</em></div>
-                  <div class="us-close-snapshot__card terminal-stat-card" id="dxy"><span class="k">Dollar Index</span><strong class="v">-</strong><em class="d terminal-delta terminal-delta--flat">-</em></div>
-                </div>
-              </section>
-            </div>
-
             <div class="signal-grid terminal-dashboard__signals">
               <section
                 class="panic-signal-dashboard panic-signal-dashboard--terminal"
@@ -1596,147 +1575,9 @@
           }
         }
 
-        function marketItemOrNull(data, key) {
-          var it = data && data[key];
-          if (!it || typeof it !== "object") return { value: null, change: null };
-          function toNum(x) {
-            if (x === undefined || x === null || x === "") return null;
-            if (typeof x === "number") return Number.isFinite(x) ? x : null;
-            var n = parseFloat(String(x).replace(/,/g, ""));
-            return Number.isFinite(n) ? n : null;
-          }
-          return { value: toNum(it.value), change: toNum(it.change) };
-        }
-
-        function formatMarketValue(cardId, value) {
-          if (value === null || value === undefined || !Number.isFinite(Number(value))) return "-";
-          var n = Number(value);
-          if (cardId === "us10y") return n.toFixed(3) + "%";
-          if (cardId === "bitcoin") return new Intl.NumberFormat("en-US", { notation: "compact", maximumFractionDigits: 2 }).format(n);
-          if (cardId === "vix") return n.toFixed(2);
-          return n.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-        }
-
-        function formatMarketDelta(cardId, change) {
-          if (change === null || change === undefined || !Number.isFinite(Number(change))) return "-";
-          var c = Number(change);
-          if (c === 0) {
-            if (cardId === "us10y") return "0.000%p";
-            if (cardId === "vix") return "0.00";
-            if (cardId === "bitcoin") return "0";
-            return "0.00%";
-          }
-          var prefix = c > 0 ? "+" : "";
-          if (cardId === "us10y") return prefix + c.toFixed(3) + "%p";
-          if (cardId === "vix") return prefix + c.toFixed(2);
-          if (cardId === "bitcoin") return prefix + Math.round(c).toLocaleString("en-US");
-          return prefix + c.toFixed(2) + "%";
-        }
-
-        function marketDeltaDirection(cardId, change) {
-          if (change === null || change === undefined || !Number.isFinite(Number(change))) return "flat";
-          var c = Number(change);
-          if (c > 0) return "up";
-          if (c < 0) return "down";
-          return "flat";
-        }
-
-        function terminalDeltaArrow(change) {
-          if (change === null || change === undefined || !Number.isFinite(Number(change))) return "";
-          var c = Number(change);
-          if (c > 0) return "▲ ";
-          if (c < 0) return "▼ ";
-          return "";
-        }
-
-        function animateTerminalValue(el, cardId, numericEnd) {
-          if (!el) return;
-          if (numericEnd === null || numericEnd === undefined || !Number.isFinite(Number(numericEnd))) {
-            el.textContent = "-";
-            el.removeAttribute("data-num");
-            return;
-          }
-          numericEnd = Number(numericEnd);
-          var prevRaw = el.getAttribute("data-num");
-          var prev = prevRaw != null && prevRaw !== "" ? parseFloat(prevRaw) : NaN;
-          el.setAttribute("data-num", String(numericEnd));
-          if (!Number.isFinite(prev)) {
-            el.textContent = formatMarketValue(cardId, numericEnd);
-            return;
-          }
-          if (Math.abs(prev - numericEnd) < 1e-6) {
-            el.textContent = formatMarketValue(cardId, numericEnd);
-            return;
-          }
-          var start = window.performance && performance.now ? performance.now() : Date.now();
-          var duration = 520;
-          function tick(now) {
-            var t = Math.min(1, (now - start) / duration);
-            var ease = 1 - Math.pow(1 - t, 3);
-            var cur = prev + (numericEnd - prev) * ease;
-            el.textContent = formatMarketValue(cardId, cur);
-            if (t < 1) {
-              requestAnimationFrame(tick);
-            } else {
-              el.textContent = formatMarketValue(cardId, numericEnd);
-            }
-          }
-          requestAnimationFrame(tick);
-        }
-
-        function updateMarketCard(cardId, item) {
-          var el = document.getElementById(cardId);
-          if (!el) return;
-          var vEl = el.querySelector(".v");
-          var dEl = el.querySelector(".d");
-          if (!vEl || !dEl) return;
-          var safe = item && typeof item === "object" ? item : { value: null, change: null };
-          animateTerminalValue(vEl, cardId, safe.value);
-
-          var dir = marketDeltaDirection(cardId, safe.change);
-          el.classList.remove("is-up", "is-down", "is-flat", "is-vix-up");
-          if (dir === "up") el.classList.add("is-up");
-          else if (dir === "down") el.classList.add("is-down");
-          else el.classList.add("is-flat");
-
-          if (cardId === "vix" && safe.change !== null && Number.isFinite(Number(safe.change)) && Number(safe.change) > 0) {
-            el.classList.add("is-vix-up");
-          }
-
-          var dBody = formatMarketDelta(cardId, safe.change);
-          dEl.textContent = terminalDeltaArrow(safe.change) + dBody;
-          dEl.className = "d terminal-delta terminal-delta--" + dir;
-        }
-
-        function updateUsCloseSnapshotMeta(isoTime) {
-          var el = document.getElementById("us-close-snapshot-updated-at");
-          if (!el) return;
-          if (!isoTime) {
-            el.textContent = "업데이트 기준: -";
-            return;
-          }
-          var d = new Date(isoTime);
-          if (isNaN(d.getTime())) {
-            el.textContent = "업데이트 기준: " + String(isoTime);
-            return;
-          }
-          el.textContent = "업데이트 기준: " + d.toLocaleString("ko-KR") + " (US 종가 스냅샷)";
-        }
-
         function renderMarket(data) {
           if (!data || typeof data !== "object") return;
           latestUsCloseSnapshot = data;
-          updateMarketCard("usdkrw", marketItemOrNull(data, "usdkrw"));
-          updateMarketCard("dow", marketItemOrNull(data, "dow"));
-          updateMarketCard("sp500", marketItemOrNull(data, "sp500"));
-          updateMarketCard("nasdaq", marketItemOrNull(data, "nasdaq"));
-          updateMarketCard("wti", marketItemOrNull(data, "wti"));
-          updateMarketCard("gold", marketItemOrNull(data, "gold"));
-          updateMarketCard("vix", marketItemOrNull(data, "vix"));
-          updateMarketCard("us10y", marketItemOrNull(data, "us10y"));
-          updateMarketCard("bitcoin", marketItemOrNull(data, "bitcoin"));
-          updateMarketCard("dxy", marketItemOrNull(data, "dxy"));
-          updateUsCloseSnapshotMeta(data.updatedAt != null ? data.updatedAt : data.market && data.market.updatedAt);
           renderOverseasInsightHub();
         }
 
@@ -1748,11 +1589,9 @@
               renderMarket(fromScript);
               return;
             }
-            var metaFile = document.getElementById("us-close-snapshot-updated-at");
-            if (metaFile) {
-              metaFile.textContent =
-                "업데이트 기준: 로컬(file)에서는 JSON fetch가 막힙니다. data/us-close-snapshot.js가 있는지 확인하거나 npm start로 로컬 서버를 쓰세요.";
-            }
+            console.warn(
+              "[US close data] file://에서는 JSON fetch가 막힙니다. data/us-close-snapshot.js를 포함하거나 로컬 서버(npm start)를 사용하세요."
+            );
             return;
           }
           var relPaths = ["data/us-close-snapshot.json", "data/market.json"];
@@ -1763,12 +1602,10 @@
                 renderMarket(fromScript);
                 return;
               }
-              var meta = document.getElementById("us-close-snapshot-updated-at");
-              if (meta) {
-                meta.textContent =
-                  "업데이트 기준: US 종가 스냅샷 로드 실패 · " +
-                  (lastErr && lastErr.message ? lastErr.message : "오류");
-              }
+              console.warn(
+                "[US close data] 로드 실패:",
+                lastErr && lastErr.message ? lastErr.message : "알 수 없는 오류"
+              );
               return;
             }
             var raw = siteDataFileUrl(relPaths[i]);
@@ -1806,8 +1643,9 @@
 
           var dow = tickerByLabel.DOW || null;
           var sp = tickerByLabel["S&P 500"] || null;
-          var ixic = tickerByLabel["NASDAQ Composite"] || null;
           var ndx = tickerByLabel["NASDAQ 100"] || null;
+          var dxyTicker =
+            tickerByLabel["Dollar Index"] || tickerByLabel["달러인덱스"] || tickerByLabel["DXY"] || null;
           var us10y = tickerByLabel["US 10Y"] || null;
           var vix = panicById.vix || null;
 
@@ -1817,8 +1655,6 @@
           if (dow && dow.direction === "down") riskOffVotes += 1;
           if (sp && sp.direction === "up") riskOnVotes += 1;
           if (sp && sp.direction === "down") riskOffVotes += 1;
-          if (ixic && ixic.direction === "up") riskOnVotes += 1;
-          if (ixic && ixic.direction === "down") riskOffVotes += 1;
           if (ndx && ndx.direction === "up") riskOnVotes += 1;
           if (ndx && ndx.direction === "down") riskOffVotes += 1;
 
@@ -1854,10 +1690,10 @@
             (dow ? dow.delta : "-") +
             " · S&P " +
             (sp ? sp.delta : "-") +
-            " · IXIC " +
-            (ixic ? ixic.delta : "-") +
-            " / NDX " +
+            " · NDX " +
             (ndx ? ndx.delta : "-") +
+            " · Dollar Index " +
+            (dxyTicker ? dxyTicker.delta : "-") +
             " / VIX " +
             (vix ? vix.value : "-") +
             " / US10Y " +
@@ -1867,10 +1703,6 @@
           renderOverseasCockpit();
         }
 
-        function renderUsCloseSnapshot() {
-          // US Close: http(s)는 JSON fetch, file:// 는 data/us-close-snapshot.js(US_CLOSE_SNAPSHOT_DATA). 티커로 그리드 덮어쓰지 않음.
-        }
-
         function renderTicker(data) {
           if (!tickerTrackEl) return;
           var items = (data && data.items) || [];
@@ -1878,7 +1710,6 @@
           if (!items.length) {
             tickerTrackEl.innerHTML =
               '<div class="market-ticker__group"><span class="market-ticker__item">데이터 준비 중...</span></div>';
-            renderUsCloseSnapshot();
             updateUsLinkageComment();
             refreshPanicSignalDashboard();
             updateMarketTickerTradingPulse(latestTradingShortSignal || { label: "계산 중…" });
@@ -1916,7 +1747,6 @@
             '<div class="market-ticker__group" aria-hidden="true">' +
             itemHtml +
             "</div>";
-          renderUsCloseSnapshot();
           updateUsLinkageComment();
           renderOverseasCockpit();
           refreshPanicSignalDashboard();
@@ -1998,7 +1828,6 @@
           panicBodyEl.innerHTML = rows;
           panicUpdatedAtEl.textContent = "업데이트 기준: " + (data.updatedAt || "-");
 
-          renderUsCloseSnapshot();
           updateUsLinkageComment();
           renderOverseasCockpit();
           refreshPanicSignalDashboard();
@@ -2049,7 +1878,7 @@
           var SYM_TO_LABEL = {
             DOW: "DOW",
             SP500: "S&P 500",
-            NASDAQ: "NASDAQ Composite",
+            NASDAQ: "NASDAQ 100",
             NASDAQ100: "NASDAQ 100",
             US10Y: "US 10Y",
             VIX: "VIX"

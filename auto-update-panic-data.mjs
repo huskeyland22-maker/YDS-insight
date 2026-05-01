@@ -446,7 +446,7 @@ async function main() {
     { label: "KOSPI200", symbol: "^KS200", digits: 2, trimUsIncomplete: false },
     { label: "DOW", symbol: "^DJI", digits: 2, trimUsIncomplete: true },
     { label: "S&P 500", symbol: "^GSPC", digits: 2, trimUsIncomplete: true },
-    { label: "NASDAQ Composite", symbol: "^IXIC", digits: 2, trimUsIncomplete: true },
+    { label: "Dollar Index", symbol: "DX-Y.NYB", digits: 2, trimUsIncomplete: true },
     { label: "NASDAQ 100", symbol: "^NDX", digits: 2, trimUsIncomplete: true },
     { label: "USD/KRW", symbol: "KRW=X", digits: 2, trimUsIncomplete: false },
     { label: "US 10Y", symbol: "^TNX", digits: 2, valueDivisor: 10, isPercentSuffix: true, isPercentPointDelta: true, trimUsIncomplete: true }
@@ -463,7 +463,7 @@ async function main() {
       const needsSanityCheck =
         source.label === "DOW" ||
         source.label === "S&P 500" ||
-        source.label === "NASDAQ Composite" ||
+        source.label === "Dollar Index" ||
         source.label === "NASDAQ 100";
       const isOutlier = needsSanityCheck && pct !== null && Math.abs(pct) > 8;
       if (isOutlier) {
