@@ -1,27 +1,27 @@
 {
   "dow": {
-    "value": 48861.81,
-    "change": -0.57
+    "value": 49652.14,
+    "change": 1.62
   },
   "sp500": {
-    "value": 7135.95,
-    "change": -0.04
+    "value": 7209.01,
+    "change": 1.02
   },
   "nasdaq": {
-    "value": 24673.24,
-    "change": 0.04
+    "value": 24892.31,
+    "change": 0.89
   },
   "nasdaq100": {
-    "value": 27186.98,
-    "change": 0.58
+    "value": 27452.12,
+    "change": 0.98
   },
   "vix": {
-    "value": 18.81,
-    "change": 0.98
+    "value": 16.89,
+    "change": -1.92
   },
   "us10y": {
     "value": 0.44,
-    "change": 1.47
+    "change": -0.63
   },
-  "updatedAt": "2026-05-01T03:39:56.370Z"
+  "updatedAt": "2026-05-01T03:58:02.869Z"
 }
