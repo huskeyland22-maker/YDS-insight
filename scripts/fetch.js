@@ -29,6 +29,10 @@ function round2(x) {
   return Math.round(Number(x) * 100) / 100;
 }
 
+function hasNumeric(x) {
+  return x !== null && x !== undefined && x !== "" && Number.isFinite(Number(x));
+}
+
 function parseNum(text) {
   const cleaned = String(text ?? "").replace(/[^0-9.\-]/g, "");
   const n = parseFloat(cleaned);
@@ -78,10 +82,26 @@ function readDxy(overseas) {
   return m ? round2(parseFloat(m[1])) : null;
 }
 
+function readDxyChange(overseas) {
+  const items = overseas?.flow?.items;
+  if (!Array.isArray(items)) return null;
+  const row = items.find((x) => x && x.id === "dxy");
+  return pctOrPointsFromDelta(row?.delta);
+}
+
 function tickerByLabel(ticker, label) {
   const items = ticker?.items;
   if (!Array.isArray(items)) return null;
   return items.find((x) => x && x.label === label) || null;
+}
+
+function tickerByLabels(ticker, labels) {
+  if (!Array.isArray(labels) || !labels.length) return null;
+  for (const label of labels) {
+    const row = tickerByLabel(ticker, label);
+    if (row) return row;
+  }
+  return null;
 }
 
 function pctOrPointsFromDelta(deltaStr) {
@@ -128,8 +148,9 @@ async function fetchTicker() {
   const rows = [];
   if (legacy && Array.isArray(legacy.items)) {
     const items = legacy.items;
-    const push = (symbol, label) => {
-      const it = pickTickerItem(items, label);
+    const push = (symbol, labels) => {
+      const arr = Array.isArray(labels) ? labels : [labels];
+      const it = arr.map((label) => pickTickerItem(items, label)).find(Boolean);
       if (!it) return;
       const price = parseNum(it.value);
       const change = pctOrPointsFromDelta(it.delta);
@@ -139,10 +160,14 @@ async function fetchTicker() {
         change: Number.isFinite(change) ? change : 0
       });
     };
+    push("USDKRW", ["USD/KRW", "미국 USD"]);
     push("DOW", "DOW");
     push("SP500", "S&P 500");
     push("NASDAQ", "NASDAQ Composite");
-    push("NASDAQ100", "NASDAQ 100");
+    push("WTI", "WTI");
+    push("GOLD", ["국제 금", "Gold"]);
+    push("BITCOIN", ["비트코인", "Bitcoin"]);
+    push("DXY", ["달러인덱스", "Dollar Index", "DXY"]);
     const u10 = pickTickerItem(items, "US 10Y");
     if (u10) {
       const price = parseNum(u10.value);
@@ -197,10 +222,14 @@ function formatDeltaFromNumber(changeNum, isUs10y) {
 function tickerCompactToLegacyTicker(rows) {
   if (!Array.isArray(rows) || !rows.length) return { items: [] };
   const SYM_TO_LABEL = {
+    USDKRW: "USD/KRW",
     DOW: "DOW",
     SP500: "S&P 500",
     NASDAQ: "NASDAQ Composite",
-    NASDAQ100: "NASDAQ 100",
+    WTI: "WTI",
+    GOLD: "국제 금",
+    BITCOIN: "비트코인",
+    DXY: "달러인덱스",
     US10Y: "US 10Y",
     VIX: "VIX"
   };
@@ -235,22 +264,60 @@ function loadTickerForMarket() {
   return readJsonSafe(tickerPath) || { items: [] };
 }
 
-function buildMarketSnapshot(panic, ticker) {
+function normalizeUs10y(value) {
+  const n = Number(value);
+  if (!Number.isFinite(n)) return null;
+  if (n <= 0 || n < 1) return null;
+  return round2(n);
+}
+
+function buildMarketSnapshot(panic, ticker, overseas) {
+  const usdkrw = tickerByLabels(ticker, ["USD/KRW", "미국 USD"]);
   const dow = tickerByLabel(ticker, "DOW");
   const sp = tickerByLabel(ticker, "S&P 500");
   const ixic = tickerByLabel(ticker, "NASDAQ Composite");
-  const ndx = tickerByLabel(ticker, "NASDAQ 100");
+  const wti = tickerByLabels(ticker, ["WTI"]);
+  const gold = tickerByLabels(ticker, ["국제 금", "Gold"]);
   const us10 = tickerByLabel(ticker, "US 10Y");
+  const bitcoin = tickerByLabels(ticker, ["비트코인", "Bitcoin"]);
+  const dxy = tickerByLabels(ticker, ["달러인덱스", "Dollar Index", "DXY"]);
   const vixIt = panicItemById(panic, "vix");
+  const us10yValue = normalizeUs10y(parseNum(us10?.value));
+  const us10yChange = us10yValue === null ? null : pctOrPointsFromDelta(us10?.delta);
+
+  const dxyFromTicker = parseNum(dxy?.value);
+  const dxyFallback = readDxy(overseas);
+  const dxyValue = Number.isFinite(dxyFromTicker) ? dxyFromTicker : dxyFallback;
+  const dxyFromTickerChange = pctOrPointsFromDelta(dxy?.delta);
+  const dxyFallbackChange = readDxyChange(overseas);
+  const dxyChange = Number.isFinite(dxyFromTickerChange) ? dxyFromTickerChange : dxyFallbackChange;
 
   return {
+    usdkrw: { value: parseNum(usdkrw?.value), change: pctOrPointsFromDelta(usdkrw?.delta) },
     dow: { value: parseNum(dow?.value), change: pctOrPointsFromDelta(dow?.delta) },
     sp500: { value: parseNum(sp?.value), change: pctOrPointsFromDelta(sp?.delta) },
     nasdaq: { value: parseNum(ixic?.value), change: pctOrPointsFromDelta(ixic?.delta) },
-    nasdaq100: { value: parseNum(ndx?.value), change: pctOrPointsFromDelta(ndx?.delta) },
+    wti: { value: parseNum(wti?.value), change: pctOrPointsFromDelta(wti?.delta) },
+    gold: { value: parseNum(gold?.value), change: pctOrPointsFromDelta(gold?.delta) },
     vix: { value: parseNum(vixIt?.value), change: vixPointChange(vixIt) },
-    us10y: { value: parseNum(us10?.value), change: pctOrPointsFromDelta(us10?.delta) }
+    us10y: { value: us10yValue, change: us10yChange },
+    bitcoin: { value: parseNum(bitcoin?.value), change: pctOrPointsFromDelta(bitcoin?.delta) },
+    dxy: { value: dxyValue, change: dxyChange }
   };
+}
+
+function mergeMarketWithFallback(newData, oldData) {
+  if (!oldData || typeof oldData !== "object") return newData;
+  const merged = { ...(newData && typeof newData === "object" ? newData : {}) };
+  const keys = ["usdkrw", "dow", "sp500", "nasdaq", "wti", "gold", "vix", "us10y", "bitcoin", "dxy"];
+  for (const k of keys) {
+    const cur = merged[k] && typeof merged[k] === "object" ? { ...merged[k] } : {};
+    const old = oldData[k] && typeof oldData[k] === "object" ? oldData[k] : {};
+    if (!hasNumeric(cur.value) && hasNumeric(old.value)) cur.value = Number(old.value);
+    if (!hasNumeric(cur.change) && hasNumeric(old.change)) cur.change = Number(old.change);
+    merged[k] = cur;
+  }
+  return merged;
 }
 
 /** 스냅샷 항목 value 안전 추출 */
@@ -279,7 +346,7 @@ function hasValidUpdate(newData, oldData) {
   const nd = newData && typeof newData === "object" ? newData : {};
   const od = oldData && typeof oldData === "object" ? oldData : {};
 
-  const keys = ["dow", "sp500", "nasdaq", "nasdaq100", "vix", "us10y"];
+  const keys = ["usdkrw", "dow", "sp500", "nasdaq", "wti", "gold", "vix", "us10y", "bitcoin", "dxy"];
   for (const k of keys) {
     if (mv(nd, k) !== mv(od, k)) return true;
     if (mc(nd, k) !== mc(od, k)) return true;
@@ -306,10 +373,15 @@ function logMarketPayloads(newData, oldData) {
 
 function logMarketFieldArrows(newData, oldData) {
   const od = oldData && typeof oldData === "object" ? oldData : {};
+  console.log("USDKRW:", od?.usdkrw?.value, "→", newData?.usdkrw?.value);
   console.log("DOW:", od?.dow?.value, "→", newData?.dow?.value);
+  console.log("WTI:", od?.wti?.value, "→", newData?.wti?.value);
+  console.log("GOLD:", od?.gold?.value, "→", newData?.gold?.value);
   console.log("VIX:", od?.vix?.value, "→", newData?.vix?.value);
   console.log("US10Y:", od?.us10y?.value, "→", newData?.us10y?.value);
-  console.log("[diff] S&P:", od?.sp500?.value, "→", newData?.sp500?.value, "| IXIC:", od?.nasdaq?.value, "→", newData?.nasdaq?.value, "| NDX:", od?.nasdaq100?.value, "→", newData?.nasdaq100?.value);
+  console.log("BITCOIN:", od?.bitcoin?.value, "→", newData?.bitcoin?.value);
+  console.log("DXY:", od?.dxy?.value, "→", newData?.dxy?.value);
+  console.log("[diff] S&P:", od?.sp500?.value, "→", newData?.sp500?.value, "| IXIC:", od?.nasdaq?.value, "→", newData?.nasdaq?.value);
   console.log("[diff] DOW ch:", od?.dow?.change, "→", newData?.dow?.change, "| VIX ch:", od?.vix?.change, "→", newData?.vix?.change, "| US10Y ch:", od?.us10y?.change, "→", newData?.us10y?.change);
 }
 
@@ -502,7 +574,8 @@ async function main() {
     try {
       const panic = readJsonSafe(panicPath);
       const ticker = loadTickerForMarket();
-      market = buildMarketSnapshot(panic, ticker);
+      const overseas = readJsonSafe(overseasPath);
+      market = buildMarketSnapshot(panic, ticker, overseas);
     } catch (e) {
       console.error("FETCH ERROR:", e);
       throw e;
@@ -522,17 +595,18 @@ async function main() {
       oldMarket = null;
     }
 
-    logMarketPayloads(market, oldMarket);
-    logMarketFieldArrows(market, oldMarket);
+    const marketMerged = mergeMarketWithFallback(market, oldMarket);
+    logMarketPayloads(marketMerged, oldMarket);
+    logMarketFieldArrows(marketMerged, oldMarket);
 
     const forceMarket = isForceMarketSave();
-    const valid = hasValidUpdate(market, oldMarket);
+    const valid = hasValidUpdate(marketMerged, oldMarket);
     console.log("[fetch.js]", "[" + slot + "]", "5단계: FETCH_FORCE_SAVE=", FETCH_FORCE_SAVE, "forceMarket=", forceMarket, "hasValidUpdate=", valid);
 
     if (FETCH_FORCE_SAVE) {
       console.log("🔥 FORCE UPDATE 실행 (FETCH_FORCE_SAVE)");
       try {
-        saveMarketJson(slot, market, "us-close-snapshot.json 강제 저장(FETCH_FORCE_SAVE)");
+        saveMarketJson(slot, marketMerged, "us-close-snapshot.json 강제 저장(FETCH_FORCE_SAVE)");
       } catch (e) {
         console.error("FETCH ERROR:", e);
         throw e;
@@ -540,14 +614,14 @@ async function main() {
     } else if (forceMarket) {
       console.log("🔥 FORCE UPDATE 실행 (2차/FORCE_UPDATE/KST≥9)");
       try {
-        saveMarketJson(slot, market, "us-close-snapshot.json 강제 저장(슬롯/시간)");
+        saveMarketJson(slot, marketMerged, "us-close-snapshot.json 강제 저장(슬롯/시간)");
       } catch (e) {
         console.error("FETCH ERROR:", e);
         throw e;
       }
     } else if (valid) {
       try {
-        saveMarketJson(slot, market, "us-close-snapshot.json 저장(변화 감지)");
+        saveMarketJson(slot, marketMerged, "us-close-snapshot.json 저장(변화 감지)");
       } catch (e) {
         console.error("FETCH ERROR:", e);
         throw e;

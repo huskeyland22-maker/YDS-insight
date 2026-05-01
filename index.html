@@ -339,12 +339,16 @@
                   업데이트 기준: 로딩 중...
                 </p>
                 <div class="us-close-snapshot__grid" id="us-close-snapshot-grid">
+                  <div class="us-close-snapshot__card terminal-stat-card" id="usdkrw"><span class="k">미국 USD</span><strong class="v">-</strong><em class="d terminal-delta terminal-delta--flat">-</em></div>
                   <div class="us-close-snapshot__card terminal-stat-card" id="dow"><span class="k">DOW</span><strong class="v">-</strong><em class="d terminal-delta terminal-delta--flat">-</em></div>
                   <div class="us-close-snapshot__card terminal-stat-card" id="sp500"><span class="k">S&P 500</span><strong class="v">-</strong><em class="d terminal-delta terminal-delta--flat">-</em></div>
                   <div class="us-close-snapshot__card terminal-stat-card" id="nasdaq"><span class="k">NASDAQ Composite</span><strong class="v">-</strong><em class="d terminal-delta terminal-delta--flat">-</em></div>
-                  <div class="us-close-snapshot__card terminal-stat-card" id="nasdaq100"><span class="k">NASDAQ 100</span><strong class="v">-</strong><em class="d terminal-delta terminal-delta--flat">-</em></div>
+                  <div class="us-close-snapshot__card terminal-stat-card" id="wti"><span class="k">WTI</span><strong class="v">-</strong><em class="d terminal-delta terminal-delta--flat">-</em></div>
+                  <div class="us-close-snapshot__card terminal-stat-card" id="gold"><span class="k">국제 금</span><strong class="v">-</strong><em class="d terminal-delta terminal-delta--flat">-</em></div>
                   <div class="us-close-snapshot__card terminal-stat-card" id="vix"><span class="k">VIX</span><strong class="v">-</strong><em class="d terminal-delta terminal-delta--flat">-</em></div>
                   <div class="us-close-snapshot__card terminal-stat-card" id="us10y"><span class="k">US 10Y</span><strong class="v">-</strong><em class="d terminal-delta terminal-delta--flat">-</em></div>
+                  <div class="us-close-snapshot__card terminal-stat-card" id="bitcoin"><span class="k">비트코인</span><strong class="v">-</strong><em class="d terminal-delta terminal-delta--flat">-</em></div>
+                  <div class="us-close-snapshot__card terminal-stat-card" id="dxy"><span class="k">달러인덱스</span><strong class="v">-</strong><em class="d terminal-delta terminal-delta--flat">-</em></div>
                 </div>
               </section>
             </div>
@@ -1514,7 +1518,8 @@
         function formatMarketValue(cardId, value) {
           if (value === null || value === undefined || !Number.isFinite(Number(value))) return "-";
           var n = Number(value);
-          if (cardId === "us10y") return n.toFixed(2) + "%";
+          if (cardId === "us10y") return n.toFixed(3) + "%";
+          if (cardId === "bitcoin") return n.toLocaleString("en-US", { maximumFractionDigits: 0 });
           if (cardId === "vix") return n.toFixed(2);
           return n.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
         }
@@ -1523,13 +1528,15 @@
           if (change === null || change === undefined || !Number.isFinite(Number(change))) return "-";
           var c = Number(change);
           if (c === 0) {
-            if (cardId === "us10y") return "0.00%p";
+            if (cardId === "us10y") return "0.000%p";
             if (cardId === "vix") return "0.00";
+            if (cardId === "bitcoin") return "0";
             return "0.00%";
           }
           var prefix = c > 0 ? "+" : "";
-          if (cardId === "us10y") return prefix + c.toFixed(2) + "%p";
+          if (cardId === "us10y") return prefix + c.toFixed(3) + "%p";
           if (cardId === "vix") return prefix + c.toFixed(2);
+          if (cardId === "bitcoin") return prefix + Math.round(c).toLocaleString("en-US");
           return prefix + c.toFixed(2) + "%";
         }
 
@@ -1625,12 +1632,16 @@
 
         function renderMarket(data) {
           if (!data || typeof data !== "object") return;
+          updateMarketCard("usdkrw", marketItemOrNull(data, "usdkrw"));
           updateMarketCard("dow", marketItemOrNull(data, "dow"));
           updateMarketCard("sp500", marketItemOrNull(data, "sp500"));
           updateMarketCard("nasdaq", marketItemOrNull(data, "nasdaq"));
-          updateMarketCard("nasdaq100", marketItemOrNull(data, "nasdaq100"));
+          updateMarketCard("wti", marketItemOrNull(data, "wti"));
+          updateMarketCard("gold", marketItemOrNull(data, "gold"));
           updateMarketCard("vix", marketItemOrNull(data, "vix"));
           updateMarketCard("us10y", marketItemOrNull(data, "us10y"));
+          updateMarketCard("bitcoin", marketItemOrNull(data, "bitcoin"));
+          updateMarketCard("dxy", marketItemOrNull(data, "dxy"));
           updateUsCloseSnapshotMeta(data.updatedAt != null ? data.updatedAt : data.market && data.market.updatedAt);
         }
 

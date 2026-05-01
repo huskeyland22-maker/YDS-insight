@@ -1,4 +1,8 @@
 {
+  "usdkrw": {
+    "value": 1475,
+    "change": -0.87
+  },
   "dow": {
     "value": 49652.14,
     "change": 1.62
@@ -11,17 +15,29 @@
     "value": 24892.31,
     "change": 0.89
   },
-  "nasdaq100": {
-    "value": 27452.12,
-    "change": 0.98
+  "wti": {
+    "value": 104.96,
+    "change": -0.1
+  },
+  "gold": {
+    "value": 4606.3,
+    "change": -0.5
   },
   "vix": {
     "value": 16.89,
     "change": -1.92
   },
   "us10y": {
-    "value": 0.44,
-    "change": -0.63
+    "value": 4.388,
+    "change": -0.002
+  },
+  "bitcoin": {
+    "value": 114664000,
+    "change": 854000
+  },
+  "dxy": {
+    "value": 98.07,
+    "change": 0.01
   },
   "updatedAt": "2026-05-01T07:42:07.992Z"
 }
