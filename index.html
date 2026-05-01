@@ -335,6 +335,9 @@
             <div class="market-grid terminal-dashboard__market">
               <section class="us-close-snapshot us-close-snapshot--terminal" aria-label="지난밤 미국장 스냅샷">
                 <h3>US Close Snapshot</h3>
+                <p class="panic-updated-at us-close-snapshot__updated-at" id="us-close-snapshot-updated-at" aria-live="polite">
+                  업데이트 기준: 로딩 중...
+                </p>
                 <div class="us-close-snapshot__grid" id="us-close-snapshot-grid">
                   <div class="us-close-snapshot__card terminal-stat-card" id="dow"><span class="k">DOW</span><strong class="v">-</strong><em class="d terminal-delta terminal-delta--flat">-</em></div>
                   <div class="us-close-snapshot__card terminal-stat-card" id="sp500"><span class="k">S&P 500</span><strong class="v">-</strong><em class="d terminal-delta terminal-delta--flat">-</em></div>
@@ -556,7 +559,6 @@
         var tickerTrackEl = document.getElementById("market-ticker-track");
         var panicBodyEl = document.getElementById("panic-table-body");
         var panicUpdatedAtEl = document.getElementById("panic-updated-at");
-        var usCloseSnapshotGridEl = document.getElementById("us-close-snapshot-grid");
         var panicUsLinkEl = document.getElementById("panic-us-link");
         var visitCountEl = document.getElementById("visit-count");
         var overseasScoreEl = document.getElementById("overseas-score");
@@ -1428,38 +1430,16 @@
           }
         }
 
-        function buildSnapshotCard(label, value, delta, direction, cardId) {
-          var deltaClass = direction === "up" ? "up" : direction === "down" ? "down" : "flat";
-          var arrow = direction === "up" ? "▲ " : direction === "down" ? "▼ " : "";
-          var idAttr = cardId ? ' id="' + String(cardId).replace(/[^a-z0-9_-]/gi, "") + '"' : "";
-          return (
-            '<div class="us-close-snapshot__card terminal-stat-card"' +
-            idAttr +
-            ">" +
-            '<span class="k">' +
-            escapeHtml(label) +
-            "</span>" +
-            '<strong class="v">' +
-            escapeHtml(value || "-") +
-            "</strong>" +
-            '<em class="d terminal-delta terminal-delta--' +
-            deltaClass +
-            '">' +
-            escapeHtml(arrow + (delta == null || delta === "" ? "-" : delta)) +
-            "</em>" +
-            "</div>"
-          );
-        }
-
         function marketItemOrNull(data, key) {
           var it = data && data[key];
           if (!it || typeof it !== "object") return { value: null, change: null };
-          var v = it.value;
-          var c = it.change;
-          return {
-            value: v !== undefined && v !== null && v !== "" && Number.isFinite(Number(v)) ? Number(v) : null,
-            change: c !== undefined && c !== null && c !== "" && Number.isFinite(Number(c)) ? Number(c) : null
-          };
+          function toNum(x) {
+            if (x === undefined || x === null || x === "") return null;
+            if (typeof x === "number") return Number.isFinite(x) ? x : null;
+            var n = parseFloat(String(x).replace(/,/g, ""));
+            return Number.isFinite(n) ? n : null;
+          }
+          return { value: toNum(it.value), change: toNum(it.change) };
         }
 
         function formatMarketValue(cardId, value) {
@@ -1559,6 +1539,21 @@
           dEl.className = "d terminal-delta terminal-delta--" + dir;
         }
 
+        function updateUsCloseSnapshotMeta(isoTime) {
+          var el = document.getElementById("us-close-snapshot-updated-at");
+          if (!el) return;
+          if (!isoTime) {
+            el.textContent = "업데이트 기준: -";
+            return;
+          }
+          var d = new Date(isoTime);
+          if (isNaN(d.getTime())) {
+            el.textContent = "업데이트 기준: " + String(isoTime);
+            return;
+          }
+          el.textContent = "업데이트 기준: " + d.toLocaleString("ko-KR") + " (market.json)";
+        }
+
         function renderMarket(data) {
           if (!data || typeof data !== "object") return;
           updateMarketCard("dow", marketItemOrNull(data, "dow"));
@@ -1567,75 +1562,7 @@
           updateMarketCard("nasdaq100", marketItemOrNull(data, "nasdaq100"));
           updateMarketCard("vix", marketItemOrNull(data, "vix"));
           updateMarketCard("us10y", marketItemOrNull(data, "us10y"));
-        }
-
-        function parseNumFromTickerValue(text) {
-          var cleaned = String(text ?? "").replace(/[^0-9.\-]/g, "");
-          var n = parseFloat(cleaned);
-          return Number.isFinite(n) ? Math.round(n * 100) / 100 : null;
-        }
-
-        function pctChangeFromTickerDelta(deltaStr) {
-          var s = String(deltaStr ?? "");
-          var cleaned = s.replace(/%p/gi, "").replace(/%/g, "").replace(/[^0-9.\-+]/g, "");
-          var n = parseFloat(cleaned);
-          return Number.isFinite(n) ? Math.round(n * 100) / 100 : null;
-        }
-
-        function vixPointChangeFromPanicItem(it) {
-          if (!it) return null;
-          if (it.change !== undefined && it.change !== null && it.change !== "") {
-            var c = Number(it.change);
-            if (Number.isFinite(c)) return Math.round(c * 100) / 100;
-          }
-          var d = String(it.delta || "");
-          var n = parseFloat(d.replace(/[^0-9.\-+]/g, ""));
-          if (!Number.isFinite(n)) return null;
-          if (d.indexOf("📉") !== -1) return Math.round(-Math.abs(n) * 100) / 100;
-          if (d.indexOf("📈") !== -1) return Math.round(Math.abs(n) * 100) / 100;
-          return Math.round(n * 100) / 100;
-        }
-
-        /** fetch.js buildMarketSnapshot과 동일 기준 — 티커·패닉 테이블과 터미널 카드 정렬 */
-        function buildMarketSnapshotFromTickerAndPanic() {
-          if (!latestTickerData || !Array.isArray(latestTickerData.items)) return null;
-          var by = {};
-          latestTickerData.items.forEach(function (it) {
-            if (it && it.label) by[it.label] = it;
-          });
-          var vixIt = null;
-          var panicItems = (latestPanicData && latestPanicData.items) || [];
-          for (var i = 0; i < panicItems.length; i += 1) {
-            if (panicItems[i] && panicItems[i].id === "vix") {
-              vixIt = panicItems[i];
-              break;
-            }
-          }
-          function row(label) {
-            var t = by[label];
-            return {
-              value: parseNumFromTickerValue(t && t.value),
-              change: pctChangeFromTickerDelta(t && t.delta)
-            };
-          }
-          return {
-            dow: row("DOW"),
-            sp500: row("S&P 500"),
-            nasdaq: row("NASDAQ Composite"),
-            nasdaq100: row("NASDAQ 100"),
-            vix: {
-              value: parseNumFromTickerValue(vixIt && vixIt.value),
-              change: vixPointChangeFromPanicItem(vixIt)
-            },
-            us10y: row("US 10Y")
-          };
-        }
-
-        function syncMarketUiFromTickerAndPanic() {
-          var snap = buildMarketSnapshotFromTickerAndPanic();
-          if (!snap) return;
-          renderMarket(snap);
-          console.log("[market-ui] 터미널 카드를 티커·패닉 테이블과 동기화 (NDX·IXIC 포함)");
+          updateUsCloseSnapshotMeta(data.updatedAt != null ? data.updatedAt : data.market && data.market.updatedAt);
         }
 
         function loadMarketData() {
@@ -1649,16 +1576,11 @@
               return res.json();
             })
             .then(function (data) {
-              // market.json 응답이 티커보다 늦게 오면 예전 수치로 덮어써서 "변하지 않는" 것처럼 보임 → 티커가 있으면 항상 티커 기준으로만 카드 갱신
-              if (latestTickerData && Array.isArray(latestTickerData.items) && latestTickerData.items.length > 0) {
-                syncMarketUiFromTickerAndPanic();
-                console.log("[fetch] market.json 응답 무시(티커 우선 동기화)");
-                return;
-              }
               renderMarket(data);
             })
             .catch(function (err) {
               console.error("[fetch] market load fail", err && err.message ? err.message : err);
+              updateUsCloseSnapshotMeta(null);
             });
         }
 
@@ -1742,37 +1664,7 @@
         }
 
         function renderUsCloseSnapshot() {
-          if (!usCloseSnapshotGridEl) return;
-          if (!latestTickerData) return;
-
-          var tickerByLabel = {};
-          (latestTickerData.items || []).forEach(function (it) {
-            tickerByLabel[it.label] = it;
-          });
-          var panicById = {};
-          (latestPanicData && latestPanicData.items ? latestPanicData.items : []).forEach(function (it) {
-            panicById[it.id] = it;
-          });
-
-          var dow = tickerByLabel.DOW || {};
-          var sp = tickerByLabel["S&P 500"] || {};
-          var ixic = tickerByLabel["NASDAQ Composite"] || {};
-          var ndx = tickerByLabel["NASDAQ 100"] || {};
-          var us10y = tickerByLabel["US 10Y"] || {};
-          var vix = panicById.vix || {};
-
-          usCloseSnapshotGridEl.innerHTML =
-            buildSnapshotCard("DOW", dow.value, dow.delta, dow.direction, "dow") +
-            buildSnapshotCard("S&P 500", sp.value, sp.delta, sp.direction, "sp500") +
-            buildSnapshotCard("NASDAQ Composite", ixic.value, ixic.delta, ixic.direction, "nasdaq") +
-            buildSnapshotCard("NASDAQ 100", ndx.value, ndx.delta, ndx.direction, "nasdaq100") +
-            buildSnapshotCard("VIX", vix.value, vix.delta, String(vix.delta || "").indexOf("📈") !== -1 ? "up" : String(vix.delta || "").indexOf("📉") !== -1 ? "down" : "", "vix") +
-            buildSnapshotCard("US 10Y", us10y.value, us10y.delta, us10y.direction, "us10y");
-          if ((latestTickerData.items || []).length > 0) {
-            syncMarketUiFromTickerAndPanic();
-          } else {
-            loadMarketData();
-          }
+          // US Close 카드·날짜는 항상 data/market.json(loadMarketData → renderMarket) 기준. 티커 로드로 그리드를 덮어쓰지 않음.
         }
 
         function renderTicker(data) {
@@ -1933,30 +1825,91 @@
 
         loadMarketData();
 
+        function normalizeDataTickerJson(raw) {
+          if (!raw) return null;
+          if (raw && Array.isArray(raw.items) && raw.items[0] && raw.items[0].label) {
+            return raw;
+          }
+          var rows = Array.isArray(raw) ? raw : raw && Array.isArray(raw.items) ? raw.items : [];
+          if (!rows.length || !rows[0] || !rows[0].symbol) {
+            return null;
+          }
+          var SYM_TO_LABEL = {
+            DOW: "DOW",
+            SP500: "S&P 500",
+            NASDAQ: "NASDAQ Composite",
+            NASDAQ100: "NASDAQ 100",
+            US10Y: "US 10Y",
+            VIX: "VIX"
+          };
+          function fmtDelta(changeNum, isUs10y) {
+            if (!Number.isFinite(changeNum)) return "-";
+            var abs = Math.abs(changeNum).toFixed(2);
+            var suffix = isUs10y ? "%p" : "%";
+            if (changeNum > 0) return "+" + abs + suffix;
+            if (changeNum < 0) return "-" + abs + suffix;
+            return "0.00" + suffix;
+          }
+          var items = rows.map(function (r) {
+            var label = SYM_TO_LABEL[r.symbol] || String(r.symbol);
+            var changeNum = Number(r.change);
+            var direction = !Number.isFinite(changeNum) ? "flat" : changeNum > 0 ? "up" : changeNum < 0 ? "down" : "flat";
+            var deltaStr = fmtDelta(changeNum, r.symbol === "US10Y");
+            var priceNum = typeof r.price === "number" ? r.price : parseFloat(String(r.price).replace(/[^0-9.\-]/g, ""));
+            var valueStr;
+            if (r.symbol === "US10Y" && Number.isFinite(priceNum)) {
+              valueStr = priceNum.toFixed(2) + "%";
+            } else if (Number.isFinite(priceNum)) {
+              valueStr = priceNum.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+            } else {
+              valueStr = String(r.price ?? "-");
+            }
+            return { label: label, value: valueStr, delta: deltaStr, direction: direction };
+          });
+          return { items: items };
+        }
+
         if (tickerTrackEl) {
-          var tickerApiUrl = appendFetchCacheBust("/api/ticker");
-          console.log("[fetch] /api/ticker", tickerApiUrl);
-          fetch(tickerApiUrl)
+          var dataTickerUrl = appendFetchCacheBust(window.withSiteVersion("data/ticker.json"));
+          console.log("[fetch] data/ticker.json", dataTickerUrl);
+          fetch(dataTickerUrl)
             .then(function (res) {
-              if (!res.ok) throw new Error("api ticker fetch failed");
+              if (!res.ok) throw new Error("data/ticker.json failed");
               return res.json();
             })
-            .then(renderTicker)
-            .catch(function () {
-              if (window.TICKER_DATA && Array.isArray(window.TICKER_DATA.items)) {
-                renderTicker(window.TICKER_DATA);
+            .then(function (raw) {
+              var mapped = normalizeDataTickerJson(raw);
+              if (mapped && mapped.items && mapped.items.length) {
+                renderTicker(mapped);
                 return;
               }
-              var tickerJsonUrl = appendFetchCacheBust(window.withSiteVersion("ticker-data.json"));
-              console.log("[fetch] ticker-data.json", tickerJsonUrl);
-              fetch(tickerJsonUrl)
+              throw new Error("data/ticker.json invalid");
+            })
+            .catch(function () {
+              var tickerApiUrl = appendFetchCacheBust("/api/ticker");
+              console.log("[fetch] /api/ticker (fallback)", tickerApiUrl);
+              fetch(tickerApiUrl)
                 .then(function (res) {
-                  if (!res.ok) throw new Error("ticker-data fetch failed");
+                  if (!res.ok) throw new Error("api ticker fetch failed");
                   return res.json();
                 })
                 .then(renderTicker)
                 .catch(function () {
-                  renderTicker({ items: [] });
+                  if (window.TICKER_DATA && Array.isArray(window.TICKER_DATA.items)) {
+                    renderTicker(window.TICKER_DATA);
+                    return;
+                  }
+                  var tickerJsonUrl = appendFetchCacheBust(window.withSiteVersion("ticker-data.json"));
+                  console.log("[fetch] ticker-data.json", tickerJsonUrl);
+                  fetch(tickerJsonUrl)
+                    .then(function (res) {
+                      if (!res.ok) throw new Error("ticker-data fetch failed");
+                      return res.json();
+                    })
+                    .then(renderTicker)
+                    .catch(function () {
+                      renderTicker({ items: [] });
+                    });
                 });
             });
         }
