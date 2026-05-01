@@ -605,9 +605,22 @@
           return u + sep + "_ts=" + Date.now();
         }
 
-        /** Pages가 /repo 또는 /repo/index.html 일 때 모두 …/repo/data/*.json 이 되도록 절대 URL 생성 */
+        /**
+         * Pages가 /repo 또는 /repo/index.html 일 때 모두 …/repo/data/*.json 이 되도록 절대 URL 생성.
+         * file://·opaque origin(origin 문자열 "null") 등에서는 origin+pathname 조합이 깨지므로 baseURI 기준으로만 해석.
+         */
         function siteDataFileUrl(filename) {
+          var f = String(filename || "").replace(/^\//, "");
+          if (!f) return "";
+          var protocol = String(window.location.protocol || "").toLowerCase();
           var origin = window.location.origin;
+          if (origin === "null" || (protocol !== "http:" && protocol !== "https:")) {
+            try {
+              return new URL(f, document.baseURI).href;
+            } catch (e) {
+              return f;
+            }
+          }
           var pathname = window.location.pathname || "/";
           var dir;
           if (pathname.endsWith("/")) {
@@ -620,8 +633,42 @@
               dir = pathname + "/";
             }
           }
-          var f = String(filename || "").replace(/^\//, "");
           return origin + dir + f;
+        }
+
+        /** 일부 확장/환경에서 fetch만 막히는 경우 XHR로 동일 URL 재시도 */
+        function fetchJsonWithXhrFallback(url) {
+          return fetch(url)
+            .then(function (res) {
+              if (!res.ok) throw new Error("HTTP " + res.status);
+              return res.json();
+            })
+            .catch(function (fetchErr) {
+              return new Promise(function (resolve, reject) {
+                var xhr = new XMLHttpRequest();
+                xhr.open("GET", url, true);
+                xhr.timeout = 30000;
+                xhr.responseType = "text";
+                xhr.onload = function () {
+                  if (xhr.status >= 200 && xhr.status < 300) {
+                    try {
+                      resolve(JSON.parse(xhr.responseText));
+                    } catch (e) {
+                      reject(fetchErr);
+                    }
+                  } else {
+                    reject(fetchErr || new Error("HTTP " + xhr.status));
+                  }
+                };
+                xhr.onerror = function () {
+                  reject(fetchErr);
+                };
+                xhr.ontimeout = function () {
+                  reject(fetchErr);
+                };
+                xhr.send();
+              });
+            });
         }
 
         if (visitCountEl) {
@@ -1603,11 +1650,7 @@
             var base = window.withSiteVersion ? window.withSiteVersion(raw) : raw;
             var url = appendFetchCacheBust(base);
             console.log("[fetch] US close snapshot", relPaths[i], url);
-            fetch(url, { cache: "no-store" })
-              .then(function (res) {
-                if (!res.ok) throw new Error("snapshot fetch failed " + res.status);
-                return res.json();
-              })
+            fetchJsonWithXhrFallback(url)
               .then(function (data) {
                 renderMarket(data);
               })
