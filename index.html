@@ -1014,15 +1014,15 @@
 
         function refreshPanicSignalDashboard() {
           if (!window.PanicSignalEngine || !panicSignalDashboardEl) return;
-          var url = appendFetchCacheBust("/data/panic.json");
-          console.log("[fetch] panic.json", url);
+          var url = appendFetchCacheBust(window.withSiteVersion("data/panic.json"));
+          console.log("[fetch] data/panic.json", url);
           fetch(url)
             .then(function (res) {
               if (!res.ok) throw new Error("panic.json HTTP " + res.status);
               return res.json();
             })
             .then(function (json) {
-              applyPanicSignals(json, "fetch:/data/panic.json");
+              applyPanicSignals(json, "fetch:data/panic.json");
             })
             .catch(function (err) {
               console.warn("[panic-signal] fetch failed, fallback", err && err.message ? err.message : err);
@@ -1796,8 +1796,8 @@
           refreshPanicSignalDashboard();
         }
 
-        if (panicBodyEl && panicUpdatedAtEl) {
-          // JSON을 우선 사용: Actions로 json만 최신 커밋된 경우에도 날짜·수치가 맞게 보임. 실패 시 panic-data.js 폴백.
+        function loadPanicTableFromJson() {
+          if (!panicBodyEl || !panicUpdatedAtEl) return;
           var panicDataUrl = appendFetchCacheBust(window.withSiteVersion("panic-data.json"));
           console.log("[fetch] panic-data.json", panicDataUrl);
           fetch(panicDataUrl)
@@ -1824,6 +1824,7 @@
         }
 
         loadMarketData();
+        loadPanicTableFromJson();
 
         function normalizeDataTickerJson(raw) {
           if (!raw) return null;
@@ -1869,7 +1870,8 @@
           return { items: items };
         }
 
-        if (tickerTrackEl) {
+        function loadTickerTrackFromJson() {
+          if (!tickerTrackEl) return;
           var dataTickerUrl = appendFetchCacheBust(window.withSiteVersion("data/ticker.json"));
           console.log("[fetch] data/ticker.json", dataTickerUrl);
           fetch(dataTickerUrl)
@@ -1913,6 +1915,18 @@
                 });
             });
         }
+
+        loadTickerTrackFromJson();
+
+        (function scheduleDashboardDataRefresh() {
+          var MS = 8 * 60 * 1000;
+          window.setInterval(function () {
+            loadMarketData();
+            loadPanicTableFromJson();
+            loadTickerTrackFromJson();
+            refreshPanicSignalDashboard();
+          }, MS);
+        })();
 
         // overseas도 panic/ticker와 동일하게 JSON 우선 로딩 후 JS 폴백
         fetch(window.withSiteVersion("overseas-data.json"))
