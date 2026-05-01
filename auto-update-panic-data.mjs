@@ -443,6 +443,7 @@ async function main() {
   const tickerSources = [
     { label: "KOSPI", symbol: "^KS11", digits: 2, trimUsIncomplete: false },
     { label: "KOSDAQ", symbol: "^KQ11", digits: 2, trimUsIncomplete: false },
+    { label: "KOSPI200", symbol: "^KS200", digits: 2, trimUsIncomplete: false },
     { label: "DOW", symbol: "^DJI", digits: 2, trimUsIncomplete: true },
     { label: "S&P 500", symbol: "^GSPC", digits: 2, trimUsIncomplete: true },
     { label: "NASDAQ Composite", symbol: "^IXIC", digits: 2, trimUsIncomplete: true },
@@ -563,7 +564,7 @@ async function main() {
     overseasData.flow.items.push({
       id: "dxy",
       label: "달러 유동성",
-      value: `DXY ${formatNumberOrDash(dxy.latest, 2)}`,
+      value: `Dollar Index ${formatNumberOrDash(dxy.latest, 2)}`,
       delta: formatSignedPctOrDash(deltaPercent(dxy.latest, dxy.previous)),
       tone: deltaPercent(dxy.latest, dxy.previous) > 0.4 ? "down" : "up"
     });

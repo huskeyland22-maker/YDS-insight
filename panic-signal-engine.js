@@ -450,7 +450,7 @@
           (dR != null ? dR : "n/a") +
           ") + 유동성 지표 악화(Δ=" +
           (dL != null ? dL : "n/a") +
-          ", MOVE 프록시). DXY=" +
+          ", MOVE 프록시). Dollar Index=" +
           (Number.isFinite(dxy) ? dxy : "n/a") +
           ", 10Y−2Y=" +
           (Number.isFinite(yc) ? yc : "n/a") +
@@ -466,7 +466,7 @@
           (dR != null ? dR : "n/a") +
           ") + 유동성 지표 개선(Δ=" +
           (dL != null ? dL : "n/a") +
-          "). DXY=" +
+          "). Dollar Index=" +
           (Number.isFinite(dxy) ? dxy : "n/a") +
           "."
       };
@@ -593,7 +593,7 @@
   var CARD_COPY = {
     short: { title: "단기", sub: "VIX · Put/Call · CNN F&G (레벨+Δ)" },
     mid: { title: "중기", sub: "BofA B&B · HY (레벨+Δ)" },
-    long: { title: "장기", sub: "금리 · 유동성(MOVE) · DXY · 곡선" }
+    long: { title: "장기", sub: "금리 · 유동성(MOVE) · Dollar Index · 곡선" }
   };
 
   function strengthToKey(st) {

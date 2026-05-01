@@ -1,0 +1,85 @@
+window.PORTAL_BRIEF_DATA = {
+  "updatedAt": "2026-05-01 17:17 KST (포털 RSS 자동 수집)",
+  "source": "google-news-rss",
+  "sections": {
+    "market": {
+      "brief": "포털 시그널: [집중취재] 미 4월 FOMC 금리 동결·M7 실적 발표…국내 영향은? - 매일경제TV",
+      "title": "[집중취재] 미 4월 FOMC 금리 동결·M7 실적 발표…국내 영향은? - 매일경제TV",
+      "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5VR21zdFo4Tnh3Sl9LTjBoZVMwb0x4bTQxbU1VVV9DaXdSSm44STNrdGN5amxsWTBIMzZZYzBlRGU1VW94SDN3Q3RvaGZKLTdBX1RQYjk0VThObkVmNzdRR3F1TFVEMllk?oc=5",
+      "source": "매일경제TV",
+      "score": 5
+    },
+    "flow": {
+      "brief": "자금흐름 단서: “반도체가 가면 증시도 간다” 월가의 ‘북극성’ 칩 주식, 기술주 사상 최고치 견인 - Benzinga",
+      "title": "“반도체가 가면 증시도 간다” 월가의 ‘북극성’ 칩 주식, 기술주 사상 최고치 견인 - Benzinga",
+      "link": "https://news.google.com/rss/articles/CBMizgJBVV95cUxQNnlsblFCMm5ucXU5WGdDVHJrNTE0LU15dzRQRVQxZG9wRU9DOFM2ZjVlR1Rqak1jQUR5M211S2RTNkxxRDc4cHNQU1MxUFRPRlJuajhlZHpmam81M1R6M0tRMXQ1aVA3WWRNdmtpN05NaDY0YjdrTzRSN1ladDdxcWZJYkpCc1pKZ1BHc1pTdTFvanJaRVNFUzdkcjhIYmlyeXpocGpjMGhBNzh4R2pQOGctUFZWdUh0SWNDTkFEZjZvUmRHN3dFOVBrR2JfYURYVlQzTXliUGh3anF2TDlGV04xdHZ4bEtFRUxYV3RQYjBwekh1REstTEV2OUNCaDI4ZTgwUXo5UlplLXY4TkpvYm1FYVFPdW1SZnVMd0N1dkx6ZTRUbjRIc2VMOERNLUVEM3psQzdPYWllNlBHQXhIclJhWS1zOEU3cVpxWXZn?oc=5",
+      "source": "Benzinga",
+      "score": 1
+    },
+    "smart": {
+      "brief": "월가 관점 단서: 코스피 '밸류업 도약' 발걸음…'MSCI 편입'이 다음 시험대 - 네이트",
+      "title": "코스피 '밸류업 도약' 발걸음…'MSCI 편입'이 다음 시험대 - 네이트",
+      "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE52WWpDellmNnZNeGRsUUFIcmpyOVpPZGI4TkxqOUUyQmlTTlJnQ2VpQjB4T2ZsS0k2OGpmN1A3ZzdSUGV6MlhubUNMMjlyT1lNZ25zbWNtTmlHQkplZFhZYW9FcVhmdjFpcTcyQ0xudEdBTWY4QUNNbQ?oc=5",
+      "source": "네이트",
+      "score": -1
+    },
+    "core": {
+      "brief": "본질 신호: [뉴욕 개장 전 점검] GDP·PCE 촉각…애플 실적 앞두고 선물 상승 - 블록미디어",
+      "title": "[뉴욕 개장 전 점검] GDP·PCE 촉각…애플 실적 앞두고 선물 상승 - 블록미디어",
+      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFBiczZ3Vko2clRpdnhDaE80aGhEUmVqYlpscGVxZm5IemxaOVFhRlRHVmhqcWJZeG12b0J5YzE2bnR4bEZnbXZzMmh3YUV5NnJB?oc=5",
+      "source": "블록미디어",
+      "score": 0
+    },
+    "risk": {
+      "brief": "리스크 단서: 관련 헤드라인 없음",
+      "title": "",
+      "link": "",
+      "source": "Google News",
+      "score": 0
+    },
+    "korea": {
+      "brief": "한국장 연계 단서: 코스피, 연휴 앞두고 '숨 고르기'…나흘 만에 하락 - 연합뉴스",
+      "title": "코스피, 연휴 앞두고 '숨 고르기'…나흘 만에 하락 - 연합뉴스",
+      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBDUUF0eVBqT0h4dHl6Y3BYZTFodENtY3BQak1yRmVOLTBFaUc2Q0dvSEFnWnBQNWNRTmtWNTBHSUg4Z3B2cEt0U2lvY094YnVPcDhCdkxTTWtVNjIxaGxVQ9IBYEFVX3lxTFBDUUF0eVBqT0h4dHl6Y3BYZTFodENtY3BQak1yRmVOLTBFaUc2Q0dvSEFnWnBQNWNRTmtWNTBHSUg4Z3B2cEt0U2lvY094YnVPcDhCdkxTTWtVNjIxaGxVQw?oc=5",
+      "source": "연합뉴스",
+      "score": 5
+    }
+  },
+  "headlines": [
+    {
+      "topic": "market",
+      "title": "[집중취재] 미 4월 FOMC 금리 동결·M7 실적 발표…국내 영향은? - 매일경제TV",
+      "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5VR21zdFo4Tnh3Sl9LTjBoZVMwb0x4bTQxbU1VVV9DaXdSSm44STNrdGN5amxsWTBIMzZZYzBlRGU1VW94SDN3Q3RvaGZKLTdBX1RQYjk0VThObkVmNzdRR3F1TFVEMllk?oc=5",
+      "source": "매일경제TV",
+      "pubDate": "Thu, 30 Apr 2026 08:23:00 GMT"
+    },
+    {
+      "topic": "flow",
+      "title": "“반도체가 가면 증시도 간다” 월가의 ‘북극성’ 칩 주식, 기술주 사상 최고치 견인 - Benzinga",
+      "link": "https://news.google.com/rss/articles/CBMizgJBVV95cUxQNnlsblFCMm5ucXU5WGdDVHJrNTE0LU15dzRQRVQxZG9wRU9DOFM2ZjVlR1Rqak1jQUR5M211S2RTNkxxRDc4cHNQU1MxUFRPRlJuajhlZHpmam81M1R6M0tRMXQ1aVA3WWRNdmtpN05NaDY0YjdrTzRSN1ladDdxcWZJYkpCc1pKZ1BHc1pTdTFvanJaRVNFUzdkcjhIYmlyeXpocGpjMGhBNzh4R2pQOGctUFZWdUh0SWNDTkFEZjZvUmRHN3dFOVBrR2JfYURYVlQzTXliUGh3anF2TDlGV04xdHZ4bEtFRUxYV3RQYjBwekh1REstTEV2OUNCaDI4ZTgwUXo5UlplLXY4TkpvYm1FYVFPdW1SZnVMd0N1dkx6ZTRUbjRIc2VMOERNLUVEM3psQzdPYWllNlBHQXhIclJhWS1zOEU3cVpxWXZn?oc=5",
+      "source": "Benzinga",
+      "pubDate": "Thu, 30 Apr 2026 13:46:05 GMT"
+    },
+    {
+      "topic": "smart",
+      "title": "코스피 '밸류업 도약' 발걸음…'MSCI 편입'이 다음 시험대 - 네이트",
+      "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE52WWpDellmNnZNeGRsUUFIcmpyOVpPZGI4TkxqOUUyQmlTTlJnQ2VpQjB4T2ZsS0k2OGpmN1A3ZzdSUGV6MlhubUNMMjlyT1lNZ25zbWNtTmlHQkplZFhZYW9FcVhmdjFpcTcyQ0xudEdBTWY4QUNNbQ?oc=5",
+      "source": "네이트",
+      "pubDate": "Thu, 30 Apr 2026 21:02:00 GMT"
+    },
+    {
+      "topic": "core",
+      "title": "[뉴욕 개장 전 점검] GDP·PCE 촉각…애플 실적 앞두고 선물 상승 - 블록미디어",
+      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFBiczZ3Vko2clRpdnhDaE80aGhEUmVqYlpscGVxZm5IemxaOVFhRlRHVmhqcWJZeG12b0J5YzE2bnR4bEZnbXZzMmh3YUV5NnJB?oc=5",
+      "source": "블록미디어",
+      "pubDate": "Thu, 30 Apr 2026 12:20:00 GMT"
+    },
+    {
+      "topic": "korea",
+      "title": "코스피, 연휴 앞두고 '숨 고르기'…나흘 만에 하락 - 연합뉴스",
+      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBDUUF0eVBqT0h4dHl6Y3BYZTFodENtY3BQak1yRmVOLTBFaUc2Q0dvSEFnWnBQNWNRTmtWNTBHSUg4Z3B2cEt0U2lvY094YnVPcDhCdkxTTWtVNjIxaGxVQ9IBYEFVX3lxTFBDUUF0eVBqT0h4dHl6Y3BYZTFodENtY3BQak1yRmVOLTBFaUc2Q0dvSEFnWnBQNWNRTmtWNTBHSUg4Z3B2cEt0U2lvY094YnVPcDhCdkxTTWtVNjIxaGxVQw?oc=5",
+      "source": "연합뉴스",
+      "pubDate": "Thu, 30 Apr 2026 10:44:57 GMT"
+    }
+  ]
+};

@@ -23,4 +23,10 @@ const fetchData = spawnSync("node", [path.join(root, "scripts", "fetch.js")], {
   cwd: root,
   stdio: "inherit"
 });
-process.exit(fetchData.status ?? 0);
+if (fetchData.status !== 0) process.exit(fetchData.status ?? 1);
+
+const portal = spawnSync("node", [path.join(root, "scripts", "fetch-portal-brief.mjs")], {
+  cwd: root,
+  stdio: "inherit"
+});
+process.exit(portal.status ?? 0);

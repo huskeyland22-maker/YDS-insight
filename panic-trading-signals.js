@@ -224,7 +224,7 @@
   var TRADING_CARD_COPY = {
     short: { title: "단기 (트레이딩)", sub: "VIX · Put/Call · F&G" },
     mid: { title: "중기 (트레이딩)", sub: "BofA · HY" },
-    long: { title: "장기 (트레이딩)", sub: "금리 · 유동성 · DXY · 곡선" }
+    long: { title: "장기 (트레이딩)", sub: "금리 · 유동성 · Dollar Index · 곡선" }
   };
 
   function strengthToKey(st) {

@@ -229,7 +229,7 @@ function tickerCompactToLegacyTicker(rows) {
     WTI: "WTI",
     GOLD: "국제 금",
     BITCOIN: "비트코인",
-    DXY: "달러인덱스",
+    DXY: "Dollar Index",
     US10Y: "US 10Y",
     VIX: "VIX"
   };

@@ -121,204 +121,54 @@
             </ul>
           </article>
           <div class="overseas-toolbar">
-            <button type="button" class="overseas-toggle-btn" id="overseas-detail-toggle" aria-expanded="true">상세 숨기기</button>
             <p class="overseas-trust-line" id="overseas-trust-line">데이터 신뢰도: 계산 중...</p>
-          </div>
-          <div class="overseas-grid">
-            <article class="overseas-card overseas-card--score">
-              <h3>리스크 온도</h3>
-              <p class="overseas-score" id="overseas-score">-- / 100</p>
-              <p class="overseas-tone" id="overseas-tone">데이터 계산 중...</p>
-              <p class="overseas-action" id="overseas-action">오늘의 액션 계산 중...</p>
-              <p class="overseas-rationale" id="overseas-rationale">근거 계산 중...</p>
-            </article>
-
-            <article class="overseas-card">
-              <h3>핵심 지표</h3>
-              <div class="overseas-metric-list" id="overseas-metric-list">
-                <span class="overseas-chip">NDX: -</span>
-                <span class="overseas-chip">VIX: -</span>
-                <span class="overseas-chip">VXN: -</span>
-                <span class="overseas-chip">US10Y: -</span>
-              </div>
-            </article>
-
-            <article class="overseas-card">
-              <h3>레버리지 가이드</h3>
-              <div class="overseas-etf-list" id="overseas-etf-list">
-                <div class="overseas-etf-row"><strong>SOXL</strong><span>데이터 계산 중...</span></div>
-                <div class="overseas-etf-row"><strong>TQQQ</strong><span>데이터 계산 중...</span></div>
-                <div class="overseas-etf-row"><strong>SSO</strong><span>데이터 계산 중...</span></div>
-              </div>
-              <p class="overseas-note">
-                * 단기 변동성 구간에서는 신호를 우선하고, 비중은 분할 원칙으로 관리하세요.
-              </p>
-            </article>
           </div>
           <div class="overseas-insight-wrap overseas-detail-block">
           <h3 class="overseas-insight-title">해외 인사이트 허브</h3>
-          <p class="section-intro">
-            특정 종목 추격보다 시장 구조를 읽기 위한 프레임입니다. 매크로-섹터-실행 순서로 점검하고 마지막에 주간 결론을 남겨보세요.
-          </p>
-          <section class="overseas-flow-radar overseas-detail-block" aria-label="글로벌 자금 흐름 레이더">
-            <h3>Global Flow Radar</h3>
-            <p class="overseas-flow-radar__intro">
-              헤지펀드/월가 자금 흐름을 직접 볼 수는 없지만, 핵심 프록시 지표를 묶으면 큰 물줄기를 읽을 수 있습니다.
-            </p>
-            <p class="overseas-regime-line" id="overseas-regime-line">
-              Regime Score 계산 중...
-            </p>
-            <p class="overseas-regime-trend" id="overseas-regime-trend">
-              7D 추세 계산 중...
-            </p>
-            <div class="overseas-flow-radar__chips" id="overseas-flow-radar-chips">
-              <span class="overseas-flow-chip">엔캐리 압력: USDJPY, JPY 변동성</span>
-              <span class="overseas-flow-chip">달러 유동성: DXY, US10Y 실질 부담</span>
-              <span class="overseas-flow-chip">리스크 선호: VIX/VXN, HY 스프레드</span>
-              <span class="overseas-flow-chip">기관 프록시: QQQ/SPY vs TLT 상대강도</span>
-              <span class="overseas-flow-chip">신용 체력: HYG/LQD 흐름</span>
-            </div>
-            <div class="overseas-flow-lanes" id="overseas-flow-lanes">
-              <article class="overseas-flow-lane">
-                <h4>단기 흐름</h4>
-                <p>단기 해석 계산 중...</p>
-              </article>
-              <article class="overseas-flow-lane">
-                <h4>중기 흐름</h4>
-                <p>중기 해석 계산 중...</p>
-              </article>
-              <article class="overseas-flow-lane">
-                <h4>장기 흐름</h4>
-                <p>장기 해석 계산 중...</p>
-              </article>
-            </div>
-          </section>
-          <div class="overseas-insight-grid overseas-detail-block">
+          <div class="overseas-insight-meta">
+            <span class="overseas-insight-badge" id="overseas-hub-updated-at">업데이트: 계산 중...</span>
+            <span class="overseas-insight-badge" id="overseas-hub-confidence">신뢰도: 계산 중...</span>
+          </div>
+          <div class="overseas-insight-grid" id="overseas-insight-hub-grid">
             <article class="overseas-insight-card">
-              <h3>1) Macro Regime</h3>
-              <p>금리/변동성/신용 지표를 바탕으로 이번 주 국면을 한 문장으로 정의합니다.</p>
-              <ul>
-                <li>VIX, VXN, US10Y, HY 스프레드 변화</li>
-                <li>달러 강세 여부와 성장주 부담 점검</li>
-                <li>결론: Risk-on / Neutral / Risk-off</li>
-              </ul>
+              <h3>1. 🧭 시장 상태</h3>
+              <p id="overseas-hub-market">Risk Regime 계산 중...</p>
             </article>
             <article class="overseas-insight-card">
-              <h3>2) Breadth & Rotation</h3>
-              <p>지수 상승의 질을 확인하고 자금이 이동하는 섹터를 기록합니다.</p>
-              <ul>
-                <li>나스닥/반도체와 S&amp;P 상대 강도 비교</li>
-                <li>테크 쏠림인지 순환 장세인지 분류</li>
-                <li>강세/약세 섹터 2개씩 메모</li>
-              </ul>
+              <h3>2. 💰 자금 흐름</h3>
+              <p id="overseas-hub-flow">섹터/자산 유입·유출 계산 중...</p>
             </article>
             <article class="overseas-insight-card">
-              <h3>3) Execution Plan</h3>
-              <p>매수 추천보다 조건 기반 대응 규칙으로 실행 리스크를 낮춥니다.</p>
-              <ul>
-                <li>공격: 분할 진입(예: 25-35-40)</li>
-                <li>중립: 코어 보유 + 신규 축소</li>
-                <li>방어: 현금/헤지 우선, 추격 금지</li>
-              </ul>
+              <h3>3. 🏦 큰손 움직임</h3>
+              <p id="overseas-hub-smart">기관/헤지펀드 시그널 계산 중...</p>
+            </article>
+            <article class="overseas-insight-card">
+              <h3>4. 🧠 상승/하락의 본질</h3>
+              <p id="overseas-hub-core">시장 본질 해석 계산 중...</p>
+            </article>
+            <article class="overseas-insight-card">
+              <h3>5. ⚠️ 리스크 & 패닉 신호</h3>
+              <p id="overseas-hub-risk">VIX/금리/신용 위험도 계산 중...</p>
+            </article>
+            <article class="overseas-insight-card">
+              <h3>6. 🎯 트레이딩 전략</h3>
+              <p id="overseas-hub-strategy">실행 전략 계산 중...</p>
+            </article>
+            <article class="overseas-insight-card">
+              <h3>7. 🇰🇷 한국시장 영향</h3>
+              <p id="overseas-hub-korea">다음날 한국시장 영향 계산 중...</p>
             </article>
             <article class="overseas-insight-card overseas-insight-card--checklist">
-              <h3>4) Weekly Insight Questions</h3>
-              <p>주말 점검용 고정 질문입니다.</p>
-              <ol>
-                <li>이번 주 상승/하락의 핵심 원인은 무엇이었나?</li>
-                <li>다음 주 변동성 이벤트(FOMC, CPI, 실적)는?</li>
-                <li>내 포지션에서 줄일 리스크와 늘릴 기회는?</li>
-              </ol>
-              <p class="overseas-insight-note">Tip: 결론은 3줄 이내로 남기면 다음 주 의사결정이 빨라집니다.</p>
+              <h3>8. 🔥 한 줄 인사이트</h3>
+              <p id="overseas-hub-one-liner">핵심 한 줄 계산 중...</p>
             </article>
           </div>
-          <section class="overseas-storyline overseas-detail-block" aria-label="점진 확장 스토리라인">
-            <h3>점진 확장 스토리라인</h3>
-            <ol>
-              <li><strong>Phase 1:</strong> 글로벌 자금 흐름 국면판 고도화 (엔캐리·달러·신용·변동성)</li>
-              <li><strong>Phase 2:</strong> 섹터 플레이북 확장 (반도체, AI, 금융, 에너지)</li>
-              <li><strong>Phase 3:</strong> 실행 시나리오 자동화 (공격/중립/방어별 비중 템플릿)</li>
-              <li><strong>Phase 4:</strong> 주간 회고 누적 (신호 대비 실제 성과 기록)</li>
-            </ol>
-            <p class="overseas-storyline__note">
-              핵심은 종목 추격보다 “큰 흐름 판독 → 섹터 선택 → 실행” 순서를 고정하는 것입니다.
-            </p>
-          </section>
-          <section class="overseas-sector-board overseas-detail-block" aria-label="섹터 강도 보드">
-            <div class="overseas-sector-board__head">
-              <h3>섹터 강도 보드</h3>
-              <p>1D/1W/1M 기반 상대 강도 요약</p>
+          <div class="overseas-insight-sources" id="overseas-insight-sources" aria-label="참고 출처 링크">
+            <span class="overseas-insight-sources__label">참고 출처</span>
+            <div class="overseas-insight-sources__links">
+              <a href="#" aria-disabled="true">데이터 로딩 중...</a>
             </div>
-            <div class="overseas-sector-board__grid" id="overseas-sector-board-grid">
-              <article class="overseas-sector-card"><h4>반도체</h4><p>데이터 계산 중...</p></article>
-              <article class="overseas-sector-card"><h4>AI/성장</h4><p>데이터 계산 중...</p></article>
-              <article class="overseas-sector-card"><h4>금융</h4><p>데이터 계산 중...</p></article>
-              <article class="overseas-sector-card"><h4>에너지</h4><p>데이터 계산 중...</p></article>
-            </div>
-          </section>
-          <section class="overseas-weekly-summary overseas-detail-block" aria-label="주간 요약">
-            <h3>이번 주 해외시장 3줄 요약</h3>
-            <ul id="overseas-weekly-summary-list">
-              <li>요약 생성 중...</li>
-            </ul>
-          </section>
-          <section class="overseas-quick-note overseas-detail-block" aria-label="선택형 인사이트 기록 카드">
-            <div class="overseas-quick-note__head">
-              <h3>선택형 인사이트 기록 카드</h3>
-              <p>클릭만으로 이번 흐름을 저장합니다. 글을 길게 쓰지 않아도 됩니다.</p>
-            </div>
-            <div class="overseas-quick-note__groups" id="overseas-quick-note-groups">
-              <div class="overseas-quick-group">
-                <h4>1) 이번 주 국면</h4>
-                <div class="overseas-quick-options">
-                  <button type="button" class="overseas-quick-option" data-field="regime" data-value="Risk-on">Risk-on</button>
-                  <button type="button" class="overseas-quick-option" data-field="regime" data-value="Neutral">Neutral</button>
-                  <button type="button" class="overseas-quick-option" data-field="regime" data-value="Risk-off">Risk-off</button>
-                </div>
-              </div>
-              <div class="overseas-quick-group">
-                <h4>2) 주도 섹터</h4>
-                <div class="overseas-quick-options">
-                  <button type="button" class="overseas-quick-option" data-field="leader" data-value="반도체">반도체</button>
-                  <button type="button" class="overseas-quick-option" data-field="leader" data-value="AI/성장">AI/성장</button>
-                  <button type="button" class="overseas-quick-option" data-field="leader" data-value="금융">금융</button>
-                  <button type="button" class="overseas-quick-option" data-field="leader" data-value="에너지">에너지</button>
-                </div>
-              </div>
-              <div class="overseas-quick-group">
-                <h4>3) 실행 모드</h4>
-                <div class="overseas-quick-options">
-                  <button type="button" class="overseas-quick-option" data-field="plan" data-value="공격(분할진입)">공격(분할진입)</button>
-                  <button type="button" class="overseas-quick-option" data-field="plan" data-value="중립(보유중심)">중립(보유중심)</button>
-                  <button type="button" class="overseas-quick-option" data-field="plan" data-value="방어(현금/헤지)">방어(현금/헤지)</button>
-                </div>
-              </div>
-              <div class="overseas-quick-group">
-                <h4>4) 근거 소스</h4>
-                <div class="overseas-quick-options">
-                  <button type="button" class="overseas-quick-option" data-field="source" data-value="미국증시 사관학교">미국증시 사관학교</button>
-                  <button type="button" class="overseas-quick-option" data-field="source" data-value="매크로 뉴스">매크로 뉴스</button>
-                  <button type="button" class="overseas-quick-option" data-field="source" data-value="실적 시즌">실적 시즌</button>
-                  <button type="button" class="overseas-quick-option" data-field="source" data-value="FOMC/CPI">FOMC/CPI</button>
-                </div>
-              </div>
-            </div>
-            <p class="overseas-quick-note__preview" id="overseas-quick-note-preview">선택 후 "기록 저장"을 누르면 카드가 남습니다.</p>
-            <div class="overseas-quick-note__actions">
-              <button type="button" class="overseas-quick-btn overseas-quick-btn--save" id="overseas-quick-save">기록 저장</button>
-              <button type="button" class="overseas-quick-btn" id="overseas-quick-reset">선택 초기화</button>
-              <span class="overseas-quick-note__saved" id="overseas-quick-saved">저장 상태: -</span>
-            </div>
-            <div class="overseas-quick-filters" id="overseas-quick-filters" aria-label="기록 필터">
-              <button type="button" class="overseas-quick-filter is-active" data-filter="all" aria-pressed="true">전체</button>
-              <button type="button" class="overseas-quick-filter" data-filter="Risk-on" aria-pressed="false">Risk-on</button>
-              <button type="button" class="overseas-quick-filter" data-filter="Neutral" aria-pressed="false">Neutral</button>
-              <button type="button" class="overseas-quick-filter" data-filter="Risk-off" aria-pressed="false">Risk-off</button>
-            </div>
-            <ul class="overseas-quick-note__history" id="overseas-quick-history">
-              <li>아직 저장된 기록이 없습니다.</li>
-            </ul>
-          </section>
+          </div>
           </div>
         </div>
       </section>
@@ -348,7 +198,7 @@
                   <div class="us-close-snapshot__card terminal-stat-card" id="vix"><span class="k">VIX</span><strong class="v">-</strong><em class="d terminal-delta terminal-delta--flat">-</em></div>
                   <div class="us-close-snapshot__card terminal-stat-card" id="us10y"><span class="k">US 10Y</span><strong class="v">-</strong><em class="d terminal-delta terminal-delta--flat">-</em></div>
                   <div class="us-close-snapshot__card terminal-stat-card" id="bitcoin"><span class="k">비트코인</span><strong class="v">-</strong><em class="d terminal-delta terminal-delta--flat">-</em></div>
-                  <div class="us-close-snapshot__card terminal-stat-card" id="dxy"><span class="k">달러인덱스</span><strong class="v">-</strong><em class="d terminal-delta terminal-delta--flat">-</em></div>
+                  <div class="us-close-snapshot__card terminal-stat-card" id="dxy"><span class="k">Dollar Index</span><strong class="v">-</strong><em class="d terminal-delta terminal-delta--flat">-</em></div>
                 </div>
               </section>
             </div>
@@ -555,6 +405,7 @@
       document.write('<script src="' + window.withSiteVersion("data/us-close-snapshot.js") + '"><\/script>');
       document.write('<script src="' + window.withSiteVersion("panic-data.js") + '"><\/script>');
       document.write('<script src="' + window.withSiteVersion("overseas-data.js") + '"><\/script>');
+      document.write('<script src="' + window.withSiteVersion("data/portal-brief.js") + '"><\/script>');
       document.write('<script src="' + window.withSiteVersion("panic-signal-engine.js") + '"><\/script>');
       document.write('<script src="' + window.withSiteVersion("panic-trading-signals.js") + '"><\/script>');
       document.write('<script src="' + window.withSiteVersion("youtube-data.js") + '"><\/script>');
@@ -577,11 +428,8 @@
         var overseasFlowLanesEl = document.getElementById("overseas-flow-lanes");
         var overseasSectorBoardGridEl = document.getElementById("overseas-sector-board-grid");
         var overseasWeeklySummaryListEl = document.getElementById("overseas-weekly-summary-list");
-        var overseasDetailToggleEl = document.getElementById("overseas-detail-toggle");
         var overseasTrustLineEl = document.getElementById("overseas-trust-line");
         var overseasRationaleEl = document.getElementById("overseas-rationale");
-        var overseasDetailBlocks = Array.prototype.slice.call(document.querySelectorAll(".overseas-detail-block"));
-        var overseasCockpitSectionEl = document.getElementById("overseas-cockpit");
         var overseasQuickGroupsEl = document.getElementById("overseas-quick-note-groups");
         var overseasQuickPreviewEl = document.getElementById("overseas-quick-note-preview");
         var overseasQuickSaveEl = document.getElementById("overseas-quick-save");
@@ -589,6 +437,18 @@
         var overseasQuickSavedEl = document.getElementById("overseas-quick-saved");
         var overseasQuickFiltersEl = document.getElementById("overseas-quick-filters");
         var overseasQuickHistoryEl = document.getElementById("overseas-quick-history");
+        var overseasHubMarketEl = document.getElementById("overseas-hub-market");
+        var overseasHubFlowEl = document.getElementById("overseas-hub-flow");
+        var overseasHubSmartEl = document.getElementById("overseas-hub-smart");
+        var overseasHubCoreEl = document.getElementById("overseas-hub-core");
+        var overseasHubRiskEl = document.getElementById("overseas-hub-risk");
+        var overseasHubStrategyEl = document.getElementById("overseas-hub-strategy");
+        var overseasHubKoreaEl = document.getElementById("overseas-hub-korea");
+        var overseasHubOneLinerEl = document.getElementById("overseas-hub-one-liner");
+        var overseasHubUpdatedAtEl = document.getElementById("overseas-hub-updated-at");
+        var overseasHubConfidenceEl = document.getElementById("overseas-hub-confidence");
+        var overseasHubGridEl = document.getElementById("overseas-insight-hub-grid");
+        var overseasHubSourcesEl = document.getElementById("overseas-insight-sources");
         var usNightBriefCardEl = document.getElementById("us-night-brief-card");
         var usNightBriefToneEl = document.getElementById("us-night-brief-tone");
         var usNightBriefSummaryEl = document.getElementById("us-night-brief-summary");
@@ -597,10 +457,11 @@
         var usNightBriefRiskEl = document.getElementById("us-night-brief-line-risk");
         var usNightBriefKoreaEl = document.getElementById("us-night-brief-line-korea");
         var usNightBriefCheckEl = document.getElementById("us-night-brief-line-check");
-        var OVERSEAS_DETAIL_KEY = "overseas:detail-collapsed:v1";
         var latestTickerData = null;
         var latestPanicData = null;
         var latestOverseasData = window.OVERSEAS_DATA && Array.isArray(window.OVERSEAS_DATA.items) ? window.OVERSEAS_DATA : null;
+        var latestPortalBriefData = window.PORTAL_BRIEF_DATA && typeof window.PORTAL_BRIEF_DATA === "object" ? window.PORTAL_BRIEF_DATA : null;
+        var latestUsCloseSnapshot = null;
         var latestTradingShortSignal = null;
 
         function appendFetchCacheBust(url) {
@@ -1389,9 +1250,240 @@
           if (usNightBriefCheckEl) usNightBriefCheckEl.textContent = checkComment;
         }
 
-        function renderOverseasCockpit() {
-          if (!overseasScoreEl || !overseasToneEl || !overseasActionEl || !overseasMetricListEl || !overseasEtfListEl) return;
+        function renderOverseasInsightHub() {
+          if (
+            !overseasHubMarketEl ||
+            !overseasHubFlowEl ||
+            !overseasHubSmartEl ||
+            !overseasHubCoreEl ||
+            !overseasHubRiskEl ||
+            !overseasHubStrategyEl ||
+            !overseasHubKoreaEl ||
+            !overseasHubOneLinerEl ||
+            !overseasHubGridEl
+          ) return;
           if (!latestTickerData || !latestPanicData) return;
+          var portalSections =
+            latestPortalBriefData && latestPortalBriefData.sections && typeof latestPortalBriefData.sections === "object"
+              ? latestPortalBriefData.sections
+              : null;
+          function portalBriefFor(key, minScore) {
+            if (!portalSections || !portalSections[key]) return "";
+            var sec = portalSections[key];
+            var score = Number(sec.score || 0);
+            if (score < (Number.isFinite(minScore) ? minScore : 3)) return "";
+            if (!sec.brief) return "";
+            return String(sec.brief);
+          }
+          function withPortal(baseText, key, minScore) {
+            var brief = portalBriefFor(key, minScore);
+            if (!brief) return baseText;
+            return baseText + " | " + brief;
+          }
+
+          var ndx = getTickerByLabel("NASDAQ 100");
+          var spx = getTickerByLabel("S&P 500");
+          var dow = getTickerByLabel("DOW");
+          var us10y = getTickerByLabel("US 10Y");
+          var vix = getPanicById("vix");
+          var hy = getPanicById("hy");
+
+          var ndxDelta = parseTickerNumber(ndx && ndx.delta);
+          var spxDelta = parseTickerNumber(spx && spx.delta);
+          var dowDelta = parseTickerNumber(dow && dow.delta);
+          var us10yDelta = parseTickerNumber(us10y && us10y.delta);
+          var vixValue = parseTickerNumber(vix && vix.value);
+          var hyValue = parseTickerNumber(hy && hy.value);
+          var usdkrwChange = latestUsCloseSnapshot && latestUsCloseSnapshot.usdkrw ? Number(latestUsCloseSnapshot.usdkrw.change) : null;
+          var dxyChange = latestUsCloseSnapshot && latestUsCloseSnapshot.dxy ? Number(latestUsCloseSnapshot.dxy.change) : null;
+          var goldChange = latestUsCloseSnapshot && latestUsCloseSnapshot.gold ? Number(latestUsCloseSnapshot.gold.change) : null;
+
+          var equityScore = 0;
+          if (Number.isFinite(ndxDelta)) equityScore += ndxDelta * 1.5;
+          if (Number.isFinite(spxDelta)) equityScore += spxDelta * 1.2;
+          if (Number.isFinite(dowDelta)) equityScore += dowDelta * 0.9;
+          if (Number.isFinite(us10yDelta)) equityScore += us10yDelta < 0 ? 0.8 : -1.0;
+          if (Number.isFinite(vixValue)) equityScore += vixValue < 18 ? 0.8 : vixValue >= 24 ? -1.3 : -0.2;
+          if (Number.isFinite(hyValue)) equityScore += hyValue < 4 ? 0.7 : hyValue > 5 ? -1.0 : 0;
+
+          var regime = equityScore >= 1.2 ? "Risk ON" : equityScore <= -1.2 ? "Risk OFF" : "중립";
+          overseasHubGridEl.classList.remove("overseas-insight-grid--on", "overseas-insight-grid--off", "overseas-insight-grid--neutral");
+          overseasHubGridEl.classList.add(
+            regime === "Risk ON"
+              ? "overseas-insight-grid--on"
+              : regime === "Risk OFF"
+                ? "overseas-insight-grid--off"
+                : "overseas-insight-grid--neutral"
+          );
+          overseasHubMarketEl.textContent = withPortal(
+            regime +
+            " · " +
+            (regime === "Risk ON"
+              ? "변동성·신용 부담 완화로 성장주 중심 위험선호가 살아났습니다."
+              : regime === "Risk OFF"
+                ? "금리·신용·변동성 부담으로 방어 포지셔닝이 우위입니다."
+                : "지수는 버티지만 자금은 업종별 선별 순환이 빠른 장세입니다."),
+            "market",
+            3
+          );
+
+          var sectorStrength = latestOverseasData && latestOverseasData.insight && Array.isArray(latestOverseasData.insight.sectorStrength)
+            ? latestOverseasData.insight.sectorStrength.slice()
+            : [];
+          sectorStrength.sort(function (a, b) { return Number(b && b.score || 0) - Number(a && a.score || 0); });
+          var leader = sectorStrength[0] ? String(sectorStrength[0].label || sectorStrength[0].symbol || "기술주") : "기술주";
+          var lagger = sectorStrength[sectorStrength.length - 1]
+            ? String(sectorStrength[sectorStrength.length - 1].label || sectorStrength[sectorStrength.length - 1].symbol || "방어주")
+            : "방어주";
+          overseasHubFlowEl.textContent = withPortal(
+            "유입: " + leader +
+            " 중심, 유출/둔화: " + lagger +
+            " · 기술주/경기주 상대강도 우위, 방어주·안전자산은 대기.",
+            "flow",
+            3
+          );
+
+          overseasHubSmartEl.textContent = withPortal(
+            (regime === "Risk ON"
+              ? "장기자금은 코어 리스크 비중을 유지·확대하고, 월가 전략 자금은 대형 기술/퀄리티 성장 편향을 강화합니다."
+              : regime === "Risk OFF"
+                ? "장기자금은 방어 섹터·채권으로 리밸런싱하고, 헤지펀드는 지수 익스포저를 줄이며 변동성 헤지를 늘립니다."
+                : "장기자금은 코어를 유지한 채 신규 리스크를 제한하고, 월가·헤지펀드는 이벤트 전술 비중을 높입니다.") +
+            " (BlackRock/Vanguard·GS/MS·Bridgewater/Citadel 성격 반영)",
+            "smart",
+            3
+          );
+
+          overseasHubCoreEl.textContent = withPortal(
+            regime === "Risk ON"
+              ? "상승의 본질은 뉴스보다 할인율 안정에 따른 멀티플 재평가입니다. 즉, '성장 스토리'보다 '자본비용 하락'이 매수를 유도했습니다."
+              : regime === "Risk OFF"
+                ? "하락의 본질은 실적보다 자본비용 재상승과 신용 프리미엄 확대입니다. 현금흐름이 먼 자산부터 디레이팅이 발생합니다."
+                : "본질은 방향성 부재보다 포지션 재배치입니다. 지수 횡보에도 자금은 강한 팩터/섹터로 빠르게 순환합니다.",
+            "core",
+            3
+          );
+
+          var riskScore = 0;
+          if (Number.isFinite(vixValue)) riskScore += vixValue >= 24 ? 2 : vixValue >= 18 ? 1 : 0;
+          if (Number.isFinite(hyValue)) riskScore += hyValue >= 5 ? 2 : hyValue >= 4 ? 1 : 0;
+          if (Number.isFinite(us10yDelta) && us10yDelta > 0) riskScore += 1;
+          if (Number.isFinite(goldChange) && goldChange > 0) riskScore += 1;
+          var riskLevel = riskScore >= 4 ? "높음" : riskScore >= 2 ? "보통" : "낮음";
+          overseasHubRiskEl.textContent = withPortal(
+            "VIX " + ((vix && vix.value) || "-") +
+            " · 금 " + (Number.isFinite(goldChange) ? (goldChange > 0 ? "+" : "") + goldChange.toFixed(2) + "%" : "-") +
+            " · 금리 " + ((us10y && us10y.delta) || "-") +
+            " · HY " + ((hy && hy.value) || "-") +
+            " → 위험 수준: " + riskLevel + ".",
+            "risk",
+            3
+          );
+
+          var strategyLine =
+            regime === "Risk ON"
+              ? "눌림매수 유지, 갭상승 추격은 제한, 수익 구간은 일부 익절로 변동성 관리."
+              : regime === "Risk OFF"
+                ? "신규 매수 축소·관망 우선, 방어 비중 확대와 손절 규칙 엄수."
+                : "코어 보유 + 관망, 강한 업종만 눌림매수하고 약한 업종은 비중 축소.";
+          overseasHubStrategyEl.textContent = withPortal(strategyLine, "market", 3);
+
+          overseasHubKoreaEl.textContent = withPortal(
+            (regime === "Risk ON" ? "상승 우위" : regime === "Risk OFF" ? "하락 우위" : "혼조 가능성") +
+            " · " +
+            (Number.isFinite(usdkrwChange) && usdkrwChange > 0
+              ? "환율 상방 압력으로 성장주 변동성 확대를 경계하세요."
+              : "환율 부담이 제한적이라 반도체·성장주 수급에 우호적입니다.") +
+            (Number.isFinite(dxyChange) ? " Dollar Index(" + (dxyChange > 0 ? "+" : "") + dxyChange.toFixed(2) + "%) 확인." : ""),
+            "korea",
+            3
+          );
+
+          overseasHubOneLinerEl.textContent = withPortal(
+            regime === "Risk ON"
+              ? "오늘 시장을 움직인 진짜 이유는 '금리 상단 안정이 만든 성장주 멀티플 재확장'입니다."
+              : regime === "Risk OFF"
+                ? "오늘 시장을 흔든 진짜 이유는 '할인율 재상승이 촉발한 위험자산 디레이팅'입니다."
+                : "오늘 시장의 핵심은 '지수 정체 속 자금의 빠른 섹터 로테이션'입니다.",
+            "core",
+            3
+          );
+
+          if (overseasHubUpdatedAtEl) {
+            var panicUpdated = latestPanicData && latestPanicData.updatedAt ? String(latestPanicData.updatedAt) : "-";
+            var marketUpdated = latestUsCloseSnapshot && latestUsCloseSnapshot.updatedAt
+              ? new Date(latestUsCloseSnapshot.updatedAt).toLocaleString("ko-KR")
+              : "-";
+            var portalUpdated = latestPortalBriefData && latestPortalBriefData.updatedAt ? String(latestPortalBriefData.updatedAt) : "-";
+            overseasHubUpdatedAtEl.textContent = "업데이트: 패닉 " + panicUpdated + " · 스냅샷 " + marketUpdated + " · 포털 " + portalUpdated;
+          }
+          if (overseasHubConfidenceEl) {
+            var highQualityCount = 0;
+            if (portalSections) {
+              ["market", "flow", "smart", "core", "risk", "korea"].forEach(function (k) {
+                var s = portalSections[k];
+                if (s && Number(s.score || 0) >= 3) highQualityCount += 1;
+              });
+            }
+            var confidence =
+              latestOverseasData && latestOverseasData.updatedAt && latestTickerData && latestPanicData && latestUsCloseSnapshot && latestPortalBriefData
+                ? "신뢰도: 높음 (자동 데이터 5종 + 포털 고품질 " + highQualityCount + "/6)"
+                : "신뢰도: 보통 (일부 소스 대기)";
+            overseasHubConfidenceEl.textContent = confidence;
+          }
+
+          if (overseasHubSourcesEl) {
+            var linksHtml = "";
+            if (portalSections) {
+              var candidates = Object.keys(portalSections)
+                .map(function (k) {
+                  var s = portalSections[k] || {};
+                  return {
+                    key: k,
+                    title: String(s.title || ""),
+                    link: String(s.link || ""),
+                    source: String(s.source || ""),
+                    score: Number(s.score || 0)
+                  };
+                })
+                .filter(function (x) { return x.link && x.title && x.score >= 3; })
+                .sort(function (a, b) { return b.score - a.score; })
+                .slice(0, 3);
+              linksHtml = candidates
+                .map(function (x) {
+                  return (
+                    '<a href="' +
+                    escapeHtml(x.link) +
+                    '" target="_blank" rel="noopener noreferrer">' +
+                    escapeHtml((x.source || "포털") + " · " + x.title) +
+                    "</a>"
+                  );
+                })
+                .join("");
+            }
+            if (!linksHtml) {
+              linksHtml = '<a href="#" aria-disabled="true">고품질 포털 출처 수집 대기</a>';
+            }
+            overseasHubSourcesEl.innerHTML =
+              '<span class="overseas-insight-sources__label">참고 출처</span><div class="overseas-insight-sources__links">' +
+              linksHtml +
+              "</div>";
+          }
+        }
+
+        function renderOverseasCockpit() {
+          if (!latestTickerData || !latestPanicData) return;
+          renderUsNightBrief();
+          renderOverseasInsightHub();
+          if (!overseasScoreEl || !overseasToneEl || !overseasActionEl || !overseasMetricListEl || !overseasEtfListEl) {
+            if (overseasTrustLineEl) {
+              var flowUpdatedFallback = latestOverseasData && latestOverseasData.flow && latestOverseasData.flow.updatedAt ? latestOverseasData.flow.updatedAt : "-";
+              var etfUpdatedFallback = latestOverseasData && latestOverseasData.updatedAt ? latestOverseasData.updatedAt : "-";
+              overseasTrustLineEl.textContent =
+                "데이터 신뢰도 · 시장지표(자동): " + flowUpdatedFallback + " · ETF(자동): " + etfUpdatedFallback + " · 종목 큐레이션(수동)";
+            }
+            return;
+          }
 
           var ndx = getTickerByLabel("NASDAQ 100");
           var spx = getTickerByLabel("S&P 500");
@@ -1493,6 +1585,7 @@
             etfPlan("TQQQ", tone, tone === "공격" ? buySplit : tone === "중립" ? neutralSplit : defenseSplit, "https://finance.yahoo.com/quote/TQQQ", perfMap.TQQQ) +
             etfPlan("SSO", tone, tone === "공격" ? "분할 30%-30%-40%" : tone === "중립" ? neutralSplit : defenseSplit, "https://finance.yahoo.com/quote/SSO", perfMap.SSO);
           renderUsNightBrief();
+          renderOverseasInsightHub();
           renderOverseasFlowRadar();
           renderOverseasInsightExtras();
           if (overseasTrustLineEl) {
@@ -1519,7 +1612,7 @@
           if (value === null || value === undefined || !Number.isFinite(Number(value))) return "-";
           var n = Number(value);
           if (cardId === "us10y") return n.toFixed(3) + "%";
-          if (cardId === "bitcoin") return n.toLocaleString("en-US", { maximumFractionDigits: 0 });
+          if (cardId === "bitcoin") return new Intl.NumberFormat("en-US", { notation: "compact", maximumFractionDigits: 2 }).format(n);
           if (cardId === "vix") return n.toFixed(2);
           return n.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
         }
@@ -1632,6 +1725,7 @@
 
         function renderMarket(data) {
           if (!data || typeof data !== "object") return;
+          latestUsCloseSnapshot = data;
           updateMarketCard("usdkrw", marketItemOrNull(data, "usdkrw"));
           updateMarketCard("dow", marketItemOrNull(data, "dow"));
           updateMarketCard("sp500", marketItemOrNull(data, "sp500"));
@@ -1643,6 +1737,7 @@
           updateMarketCard("bitcoin", marketItemOrNull(data, "bitcoin"));
           updateMarketCard("dxy", marketItemOrNull(data, "dxy"));
           updateUsCloseSnapshotMeta(data.updatedAt != null ? data.updatedAt : data.market && data.market.updatedAt);
+          renderOverseasInsightHub();
         }
 
         function loadMarketData() {
@@ -1796,6 +1891,8 @@
               var value = escapeHtml(item.value || "-");
               var delta = escapeHtml(item.delta || "-");
               var cls = tickerDeltaClass(item.direction);
+              var isKoreaIndex = item && (item.label === "KOSPI" || item.label === "KOSDAQ");
+              var meta = isKoreaIndex ? '<span class="market-ticker__meta">전일 종가</span>' : "";
               return (
                 '<span class="market-ticker__item"><strong>' +
                 label +
@@ -1805,7 +1902,9 @@
                 cls +
                 '">' +
                 delta +
-                "</em></span>"
+                "</em>" +
+                meta +
+                "</span>"
               );
             })
             .join("");
@@ -2066,41 +2165,6 @@
             renderOverseasCockpit();
             refreshPanicSignalDashboard();
           });
-
-        (function initOverseasDetailToggle() {
-          if (!overseasDetailToggleEl || !overseasDetailBlocks.length) return;
-          var collapsed = false;
-          function isMobileView() {
-            return !!(window.matchMedia && window.matchMedia("(max-width: 768px)").matches);
-          }
-          try {
-            collapsed = localStorage.getItem(OVERSEAS_DETAIL_KEY) === "true";
-          } catch (e) {}
-          function apply() {
-            if (isMobileView()) {
-              collapsed = false;
-              try { localStorage.setItem(OVERSEAS_DETAIL_KEY, "false"); } catch (e) {}
-              overseasDetailToggleEl.style.display = "none";
-            } else {
-              overseasDetailToggleEl.style.display = "";
-            }
-            overseasDetailBlocks.forEach(function (el) {
-              el.classList.toggle("is-collapsed", collapsed);
-            });
-            if (overseasCockpitSectionEl) {
-              overseasCockpitSectionEl.classList.toggle("overseas-cockpit--compact", collapsed);
-            }
-            overseasDetailToggleEl.setAttribute("aria-expanded", collapsed ? "false" : "true");
-            overseasDetailToggleEl.textContent = collapsed ? "상세 보기" : "상세 숨기기";
-          }
-          apply();
-          overseasDetailToggleEl.addEventListener("click", function () {
-            if (isMobileView()) return;
-            collapsed = !collapsed;
-            try { localStorage.setItem(OVERSEAS_DETAIL_KEY, String(collapsed)); } catch (e) {}
-            apply();
-          });
-        })();
 
         (function initOverseasQuickNote() {
           if (!overseasQuickGroupsEl || !overseasQuickSaveEl || !overseasQuickHistoryEl) return;
