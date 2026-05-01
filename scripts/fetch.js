@@ -1,7 +1,7 @@
 /**
  * scripts/fetch.js — data/panic.json 갱신 (overwrite)
  * data/ticker.json — ticker-data.json·panic-data 기반 생성 (market 이전에 반드시 기록)
- * data/market.json — data/ticker.json + panic-data 기반
+ * data/us-close-snapshot.json — data/ticker.json + panic-data 기반 (URL에 "market" 미포함: 일부 차단기 회피)
  */
 import fs from "node:fs";
 import path from "node:path";
@@ -11,13 +11,13 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, "..");
 const outDir = path.join(root, "data");
 const outPath = path.join(outDir, "panic.json");
-const marketPath = path.join(outDir, "market.json");
+const usCloseSnapshotPath = path.join(outDir, "us-close-snapshot.json");
 const tickerJsonPath = path.join(outDir, "ticker.json");
 const panicPath = path.join(root, "panic-data.json");
 const tickerPath = path.join(root, "ticker-data.json");
 const overseasPath = path.join(root, "overseas-data.json");
 
-/** true면 hasValidUpdate / 2차 슬롯과 무관하게 market.json 항상 저장 */
+/** true면 hasValidUpdate / 2차 슬롯과 무관하게 us-close-snapshot.json 항상 저장 */
 const FETCH_FORCE_SAVE =
   String(process.env.FETCH_FORCE_SAVE || "")
     .trim()
@@ -222,7 +222,7 @@ function tickerCompactToLegacyTicker(rows) {
   return { items };
 }
 
-/** market.json 계산용: data/ticker.json 우선, 없으면 루트 ticker-data.json */
+/** 스냅샷 계산용: data/ticker.json 우선, 없으면 루트 ticker-data.json */
 function loadTickerForMarket() {
   const raw = readJsonSafe(tickerJsonPath);
   if (Array.isArray(raw) && raw.length) {
@@ -252,7 +252,7 @@ function buildMarketSnapshot(panic, ticker) {
   };
 }
 
-/** market.json 항목 value 안전 추출 */
+/** 스냅샷 항목 value 안전 추출 */
 function mv(data, key) {
   if (!data || typeof data !== "object") return undefined;
   const o = data[key];
@@ -429,8 +429,8 @@ function isForceMarketSave() {
 
 function saveMarketJson(slot, market, reasonLabel) {
   market.updatedAt = new Date().toISOString();
-  fs.writeFileSync(marketPath, JSON.stringify(market, null, 2) + "\n", "utf8");
-  console.log("[fetch.js]", "[" + slot + "]", reasonLabel, marketPath, "updatedAt(ISO)=", market.updatedAt);
+  fs.writeFileSync(usCloseSnapshotPath, JSON.stringify(market, null, 2) + "\n", "utf8");
+  console.log("[fetch.js]", "[" + slot + "]", reasonLabel, usCloseSnapshotPath, "updatedAt(ISO)=", market.updatedAt);
 }
 
 async function main() {
@@ -501,14 +501,14 @@ async function main() {
       throw e;
     }
 
-    console.log("[fetch.js]", "[" + slot + "]", "4단계: 기존 market.json 읽기");
+    console.log("[fetch.js]", "[" + slot + "]", "4단계: 기존 us-close-snapshot.json 읽기");
     let oldMarket = null;
     try {
-      if (fs.existsSync(marketPath)) {
-        oldMarket = readJsonSafe(marketPath);
+      if (fs.existsSync(usCloseSnapshotPath)) {
+        oldMarket = readJsonSafe(usCloseSnapshotPath);
         console.log("[fetch.js]", "[" + slot + "]", "기존 파일:", oldMarket ? "파싱 성공" : "파싱 실패·무시");
       } else {
-        console.log("[fetch.js]", "[" + slot + "]", "기존 market.json 없음 → 최초 저장 허용");
+        console.log("[fetch.js]", "[" + slot + "]", "기존 us-close-snapshot.json 없음 → 최초 저장 허용");
       }
     } catch (e) {
       console.warn("[fetch.js]", "[" + slot + "]", "기존 market 읽기 경고:", e && e.message ? e.message : e);
@@ -525,7 +525,7 @@ async function main() {
     if (FETCH_FORCE_SAVE) {
       console.log("🔥 FORCE UPDATE 실행 (FETCH_FORCE_SAVE)");
       try {
-        saveMarketJson(slot, market, "market.json 강제 저장(FETCH_FORCE_SAVE)");
+        saveMarketJson(slot, market, "us-close-snapshot.json 강제 저장(FETCH_FORCE_SAVE)");
       } catch (e) {
         console.error("FETCH ERROR:", e);
         throw e;
@@ -533,14 +533,14 @@ async function main() {
     } else if (forceMarket) {
       console.log("🔥 FORCE UPDATE 실행 (2차/FORCE_UPDATE/KST≥9)");
       try {
-        saveMarketJson(slot, market, "market.json 강제 저장(슬롯/시간)");
+        saveMarketJson(slot, market, "us-close-snapshot.json 강제 저장(슬롯/시간)");
       } catch (e) {
         console.error("FETCH ERROR:", e);
         throw e;
       }
     } else if (valid) {
       try {
-        saveMarketJson(slot, market, "market.json 저장(변화 감지)");
+        saveMarketJson(slot, market, "us-close-snapshot.json 저장(변화 감지)");
       } catch (e) {
         console.error("FETCH ERROR:", e);
         throw e;
@@ -549,7 +549,7 @@ async function main() {
       console.log(
         "[fetch.js]",
         "[" + slot + "]",
-        "market.json 스킵: 지수·VIX·US10Y value/change 전 구간이 이전과 동일 → 스테일 스냅샷으로 판단, 저장 안 함"
+        "us-close-snapshot.json 스킵: 지수·VIX·US10Y value/change 전 구간이 이전과 동일 → 스테일 스냅샷으로 판단, 저장 안 함"
       );
     }
     console.log("[fetch.js]", "[" + slot + "]", "종료(정상)");

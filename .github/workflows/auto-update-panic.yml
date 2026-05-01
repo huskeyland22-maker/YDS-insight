@@ -63,7 +63,7 @@ jobs:
           SKIP_PANIC: "1"
         run: node auto-update-panic-data.mjs
 
-      - name: Regenerate data/panic.json, data/ticker.json, data/market.json
+      - name: Regenerate data/panic.json, data/ticker.json, data/us-close-snapshot.json
         run: node scripts/fetch.js
 
       - name: Bump site version for cache busting
@@ -77,7 +77,7 @@ jobs:
             echo "No changes to commit"
             exit 0
           fi
-          git add panic-data.json panic-data.js ticker-data.json ticker-data.js overseas-data.json overseas-data.js youtube-data.json youtube-data.js data/panic.json data/ticker.json data/market.json site-version.js
+          git add panic-data.json panic-data.js ticker-data.json ticker-data.js overseas-data.json overseas-data.js youtube-data.json youtube-data.js data/panic.json data/ticker.json data/us-close-snapshot.json site-version.js
           if git diff --staged --quiet; then
             echo "No staged changes"
             exit 0
