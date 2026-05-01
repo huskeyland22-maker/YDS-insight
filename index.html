@@ -605,11 +605,23 @@
           return u + sep + "_ts=" + Date.now();
         }
 
-        /** GitHub Pages 프로젝트 경로(/repo/…)에서 data/*.json 이 루트 /data 로 가지 않도록 절대 URL 생성 */
-        function absoluteAssetUrl(relPath) {
-          var a = document.createElement("a");
-          a.href = relPath;
-          return a.href;
+        /** Pages가 /repo 또는 /repo/index.html 일 때 모두 …/repo/data/*.json 이 되도록 절대 URL 생성 */
+        function siteDataFileUrl(filename) {
+          var origin = window.location.origin;
+          var pathname = window.location.pathname || "/";
+          var dir;
+          if (pathname.endsWith("/")) {
+            dir = pathname;
+          } else {
+            var last = pathname.split("/").pop() || "";
+            if (/\.html?$/i.test(last)) {
+              dir = pathname.replace(/\/[^/]+$/, "/");
+            } else {
+              dir = pathname + "/";
+            }
+          }
+          var f = String(filename || "").replace(/^\//, "");
+          return origin + dir + f;
         }
 
         if (visitCountEl) {
@@ -1022,7 +1034,7 @@
         function refreshPanicSignalDashboard() {
           if (!window.PanicSignalEngine || !panicSignalDashboardEl) return;
           var url = appendFetchCacheBust(
-            window.withSiteVersion ? window.withSiteVersion(absoluteAssetUrl("./data/panic.json")) : absoluteAssetUrl("./data/panic.json")
+            window.withSiteVersion ? window.withSiteVersion(siteDataFileUrl("data/panic.json")) : siteDataFileUrl("data/panic.json")
           );
           console.log("[fetch] data/panic.json", url);
           fetch(url)
@@ -1575,21 +1587,24 @@
         }
 
         function loadMarketData() {
-          var raw = absoluteAssetUrl("./data/market.json");
+          var raw = siteDataFileUrl("data/market.json");
           var base = window.withSiteVersion ? window.withSiteVersion(raw) : raw;
           var url = appendFetchCacheBust(base);
           console.log("[fetch] market.json", url);
           fetch(url)
             .then(function (res) {
-              if (!res.ok) throw new Error("market fetch failed");
+              if (!res.ok) throw new Error("market fetch failed " + res.status);
               return res.json();
             })
             .then(function (data) {
               renderMarket(data);
             })
             .catch(function (err) {
-              console.error("[fetch] market load fail", err && err.message ? err.message : err);
-              updateUsCloseSnapshotMeta(null);
+              console.error("[fetch] market load fail", url, err && err.message ? err.message : err);
+              var meta = document.getElementById("us-close-snapshot-updated-at");
+              if (meta) {
+                meta.textContent = "업데이트 기준: market.json 로드 실패 · " + (err && err.message ? err.message : "오류");
+              }
             });
         }
 
@@ -1834,6 +1849,9 @@
 
         loadMarketData();
         loadPanicTableFromJson();
+        window.addEventListener("load", function () {
+          loadMarketData();
+        });
 
         function normalizeDataTickerJson(raw) {
           if (!raw) return null;
@@ -1882,7 +1900,7 @@
         function loadTickerTrackFromJson() {
           if (!tickerTrackEl) return;
           var dataTickerUrl = appendFetchCacheBust(
-            window.withSiteVersion ? window.withSiteVersion(absoluteAssetUrl("./data/ticker.json")) : absoluteAssetUrl("./data/ticker.json")
+            window.withSiteVersion ? window.withSiteVersion(siteDataFileUrl("data/ticker.json")) : siteDataFileUrl("data/ticker.json")
           );
           console.log("[fetch] data/ticker.json", dataTickerUrl);
           fetch(dataTickerUrl)
