@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.05.01 17:33 KST (자동 업데이트)",
+  "updatedAt": "2026.05.01 23:20 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=NDZ-_SAYZEo",
-      "thumbUrl": "https://i.ytimg.com/vi/NDZ-_SAYZEo/hqdefault.jpg",
-      "videoTitle": "전쟁 났는데 금값이 떨어진 진짜 이유 | 경읽남과 토론합시다 | 김창익 작가 [1편]",
-      "publishedAt": "2026-04-30T21:00:23+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=oEzztjlnnx0",
+      "thumbUrl": "https://i.ytimg.com/vi/oEzztjlnnx0/hqdefault.jpg",
+      "videoTitle": "트럼프는 금으로 2조 달러를 만들려 한다 | 경읽남과 토론합시다 | 김창익 작가 [2편]",
+      "publishedAt": "2026-05-01T09:01:21+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=7ARMncKyVII",
-      "thumbUrl": "https://i.ytimg.com/vi/7ARMncKyVII/hqdefault.jpg",
-      "videoTitle": "[김현석의 월스트리트나우-5월1일] 구글이 따라잡는다?\"..AI 투자 늘린다\"는데 엔비디아 급락한 이유",
-      "publishedAt": "2026-05-01T00:57:35+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=9v7SL2X4CEM",
+      "thumbUrl": "https://i.ytimg.com/vi/9v7SL2X4CEM/hqdefault.jpg",
+      "videoTitle": "빅테크 어닝으로 보는 기술주, 반도체 시장 | 미국-이란, 2차 협상은 대체 언제? | 무너진 OPEC, 치솟는 유가, 혼돈의 에너지 시장 | 월가백브리핑",
+      "publishedAt": "2026-05-01T12:45:29+00:00"
     },
     {
       "id": "moneyinside",
@@ -56,10 +56,10 @@ window.YOUTUBE_DATA = {
       "name": "간단경제한스푼",
       "channelUrl": "https://www.youtube.com/channel/UChuu3KaoDnyttfN10GG169Q",
       "latestUrl": "https://www.youtube.com/@%EA%B0%84%EB%8B%A8%EA%B2%BD%EC%A0%9C%ED%95%9C%EC%8A%A4%ED%91%BC/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=hmkC1LrJC-c",
-      "thumbUrl": "https://i.ytimg.com/vi/hmkC1LrJC-c/hqdefault.jpg",
-      "videoTitle": "삼성,SK도 일본에 꼼짝 못하던 반도체 부품 고청정 특수강관 아스플로, 1인 기업이 일본 100% 독점을 깨버렸습니다.",
-      "publishedAt": "2026-04-30T11:01:19+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=SZicMxihU1w",
+      "thumbUrl": "https://i.ytimg.com/vi/SZicMxihU1w/hqdefault.jpg",
+      "videoTitle": "100년 안 썩던 검은 비닐, 카이스트가 낙엽으로 만든 충격의 필름, 농업 시장이 흔들린다 멀칭 필름",
+      "publishedAt": "2026-05-01T10:45:02+00:00"
     }
   ]
 };
