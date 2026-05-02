@@ -24,6 +24,11 @@
       }
     </style>
     <script src="site-version.js"></script>
+    <script>
+      document.write(
+        '<script src="' + window.withSiteVersion("scripts/github-pages-data-mirror.js") + '"><\/script>'
+      );
+    </script>
     <link rel="stylesheet" href="styles.css" />
     <script>
       (function () {
@@ -41,7 +46,7 @@
       <div class="container header-inner">
         <a class="logo" href="index.html">Y'ds</a>
         <nav class="nav" aria-label="주요 메뉴">
-          <a href="#panic-monitor">패닉 지수</a>
+          <a href="signal-room.html">Signal Desk</a>
           <a href="#overseas-cockpit">해외증시</a>
           <a href="#youtube-channels">유튜브</a>
           <a href="#contact">Message</a>
@@ -170,121 +175,6 @@
             </div>
           </div>
           </div>
-        </div>
-      </section>
-
-      <section id="panic-monitor" class="section section--tint">
-        <div class="container">
-          <h2 class="section-title">9대 패닉 지수 모니터</h2>
-          <p class="section-intro">
-            지수 명칭, 실시간 수치, 전일 대비(Delta), 상태 등급, 5년 추세를 한눈에 정리합니다.
-          </p>
-          <p class="panic-updated-at" id="panic-updated-at">업데이트 기준: 로딩 중...</p>
-
-          <div class="dashboard terminal-dashboard" id="terminal-dashboard">
-            <div class="signal-grid terminal-dashboard__signals">
-              <section
-                class="panic-signal-dashboard panic-signal-dashboard--terminal"
-                id="panic-signal-dashboard"
-                aria-label="패닉 시그널 엔진"
-                aria-live="polite"
-              >
-                <header class="panic-signal-dashboard__head">
-                  <h3 class="panic-signal-dashboard__title">시그널 엔진</h3>
-                  <p class="panic-signal-dashboard__desc">
-                    패닉 지표를 0~100으로 점수화한 뒤 구간별 시그널로 요약합니다. 높은 점수는 역발상 관점의 매수(공포 국면), 낮은 점수는 과열·매도 경계에 가깝게 해석합니다.
-                  </p>
-                  <p class="panic-signal-dashboard__updated" id="panic-signal-data-updated-at" aria-live="polite"></p>
-                </header>
-                <div class="panic-signal-dashboard__grid">
-                  <article class="panic-signal-dashboard__card panic-signal-dashboard__card--na" data-signal-card="short"></article>
-                  <article class="panic-signal-dashboard__card panic-signal-dashboard__card--na" data-signal-card="mid"></article>
-                  <article class="panic-signal-dashboard__card panic-signal-dashboard__card--na" data-signal-card="long"></article>
-                </div>
-              </section>
-
-              <section
-                class="panic-trading-dashboard panic-trading-dashboard--terminal"
-                id="panic-trading-dashboard"
-                aria-label="트레이딩 기반 시그널"
-                aria-live="polite"
-              >
-                <header class="panic-trading-dashboard__head">
-                  <h3 class="panic-trading-dashboard__title">트레이딩 시그널</h3>
-                  <p class="panic-trading-dashboard__desc">
-                    레벨 + 모멘텀(Δ) 규칙으로 단·중·장기를 별도 산출합니다. 상단 엔진(평균 점수형)과 병렬로 동작합니다.
-                  </p>
-                </header>
-                <div class="panic-trading-dashboard__grid">
-                  <article class="panic-trading-dashboard__card panic-trading-dashboard__card--na" data-trading-card="short"></article>
-                  <article class="panic-trading-dashboard__card panic-trading-dashboard__card--na" data-trading-card="mid"></article>
-                  <article class="panic-trading-dashboard__card panic-trading-dashboard__card--na" data-trading-card="long"></article>
-                </div>
-              </section>
-            </div>
-
-            <div class="ticker-bar terminal-dashboard__ticker">
-              <section class="market-ticker market-ticker--terminal" aria-label="주요 시장 지표 티커">
-                <div class="market-ticker__viewport">
-                  <p class="market-ticker__pulse" id="market-ticker-signal-line" aria-live="polite">
-                    현재 시장 상태: 계산 중…
-                  </p>
-                  <div class="market-ticker__track" id="market-ticker-track"></div>
-                </div>
-              </section>
-            </div>
-          </div>
-
-          <p class="panic-us-link" id="panic-us-link" aria-live="polite">미국장 연동 코멘트 계산 중...</p>
-
-          <div class="history-card signal-history-card" id="signal-history-card">
-            <div class="history-title">Signal History</div>
-            <p class="history-sub">모멘텀 시그널(단기·중기·장기) · 최근 7영업일 · 클릭 시 상세</p>
-            <div class="history-head" aria-hidden="true">
-              <span>날짜</span>
-              <span>단기</span>
-              <span>중기</span>
-              <span>장기</span>
-              <span>전일 대비</span>
-            </div>
-            <div id="historyList" class="history-list"></div>
-          </div>
-
-          <div
-            id="signalHistoryDetail"
-            class="signal-history-detail"
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby="signalHistoryDetailTitle"
-            hidden
-          >
-            <div class="signal-history-detail__backdrop" id="signalHistoryDetailBackdrop" tabindex="-1"></div>
-            <div class="signal-history-detail__panel">
-              <header class="signal-history-detail__head">
-                <h3 id="signalHistoryDetailTitle" class="signal-history-detail__title">시그널 상세</h3>
-                <button type="button" class="signal-history-detail__close" id="signalHistoryDetailClose" aria-label="닫기">
-                  ×
-                </button>
-              </header>
-              <div id="signalHistoryDetailBody" class="signal-history-detail__body"></div>
-            </div>
-          </div>
-
-          <section class="panic-table-wrap" aria-label="9대 패닉 지수 표">
-            <table class="panic-table">
-              <thead>
-                <tr>
-                  <th>지수 명칭</th>
-                  <th>실시간 수치</th>
-                  <th>전일 대비 (Delta)</th>
-                  <th>상태 등급</th>
-                  <th>1주 추세</th>
-                  <th>행동 가이드</th>
-                </tr>
-              </thead>
-              <tbody id="panic-table-body"></tbody>
-            </table>
-          </section>
         </div>
       </section>
 
@@ -450,6 +340,20 @@
           return u + sep + "_ts=" + Date.now();
         }
 
+        /** 로컬 서버(npm start 등)에서는 실시간 /api/ticker를 정적 data/ticker.json보다 우선 */
+        function preferLiveTickerApi() {
+          var h = String(window.location.hostname || "").toLowerCase();
+          var p = String(window.location.protocol || "").toLowerCase();
+          return (p === "http:" || p === "https:") && (h === "localhost" || h === "127.0.0.1" || h === "[::1]");
+        }
+
+        function fetchJsonNoStore(url) {
+          return fetch(url, { cache: "no-store" }).then(function (res) {
+            if (!res.ok) throw new Error("HTTP " + res.status);
+            return res.json();
+          });
+        }
+
         /**
          * Pages가 /repo 또는 /repo/index.html 일 때 모두 …/repo/data/*.json 이 되도록 절대 URL 생성.
          * file://·opaque origin(origin 문자열 "null") 등에서는 origin+pathname 조합이 깨지므로 baseURI 기준으로만 해석.
@@ -483,7 +387,7 @@
 
         /** 일부 확장/환경에서 fetch만 막히는 경우 XHR로 동일 URL 재시도 */
         function fetchJsonWithXhrFallback(url) {
-          return fetch(url)
+          return fetch(url, { cache: "no-store" })
             .then(function (res) {
               if (!res.ok) throw new Error("HTTP " + res.status);
               return res.json();
@@ -611,6 +515,101 @@
             if (items[i] && items[i].id === id) return items[i];
           }
           return null;
+        }
+
+        // 오늘의 전략: 가중·구간·지표 정규화 (여기만 수정)
+        var TS = {
+          wVix: 0.35,
+          wFng: 0.35,
+          wPc: 0.3,
+          vixLow: 10,
+          vixSpan: 25,
+          pcLow: 0.38,
+          pcSpan: 0.67,
+          fearFrom: 58,
+          greedTo: 42
+        };
+
+        function todayParseNum(it) {
+          if (!it || it.value == null) return null;
+          var n = parseFloat(String(it.value).replace(/[^0-9.\-]/g, ""));
+          return Number.isFinite(n) ? n : null;
+        }
+
+        function todayMetrics(data) {
+          var by = {};
+          var rows = (data && data.items) || [];
+          for (var i = 0; i < rows.length; i++) {
+            var id = rows[i] && rows[i].id;
+            if (id) by[id] = rows[i];
+          }
+          var c = function (x, a, b) {
+            return Math.min(b, Math.max(a, x));
+          };
+          var vix = todayParseNum(by.vix);
+          var fng = todayParseNum(by.fng);
+          var pc = todayParseNum(by.putcall);
+          var parts = [];
+          if (Number.isFinite(vix))
+            parts.push({ w: TS.wVix, v: c((vix - TS.vixLow) / TS.vixSpan, 0, 1) * 100 });
+          if (Number.isFinite(fng)) parts.push({ w: TS.wFng, v: 100 - fng });
+          if (Number.isFinite(pc))
+            parts.push({ w: TS.wPc, v: c((pc - TS.pcLow) / TS.pcSpan, 0, 1) * 100 });
+          if (!parts.length) return { ok: false };
+          var tw = 0,
+            acc = 0;
+          for (var j = 0; j < parts.length; j++) {
+            tw += parts[j].w;
+            acc += parts[j].w * parts[j].v;
+          }
+          var score = c(Math.round(acc / tw), 0, 100);
+          var regime =
+            score >= TS.fearFrom ? "fear" : score <= TS.greedTo ? "greed" : "neutral";
+          var act = regime === "fear" ? "buy" : regime === "greed" ? "takeProfit" : "wait";
+          return {
+            ok: true,
+            score: score,
+            regime: regime,
+            action: act,
+            detail:
+              "VIX " +
+              (Number.isFinite(vix) ? vix.toFixed(2) : "—") +
+              " · F&G " +
+              (Number.isFinite(fng) ? String(Math.round(fng)) : "—") +
+              " · P/C " +
+              (Number.isFinite(pc) ? pc.toFixed(2) : "—")
+          };
+        }
+
+        function renderTodayStrategyBox() {
+          var card = document.getElementById("today-strategy-card");
+          var marketEl = document.getElementById("today-strategy-market");
+          var scoreEl = document.getElementById("today-strategy-score");
+          var actionEl = document.getElementById("today-strategy-action");
+          var hintEl = document.getElementById("today-strategy-hint");
+          if (!card || !marketEl || !scoreEl || !actionEl) return;
+          var m = todayMetrics(latestPanicData);
+          card.classList.remove(
+            "today-strategy-card--loading",
+            "today-strategy-card--fear",
+            "today-strategy-card--neutral",
+            "today-strategy-card--greed",
+            "today-strategy-card--error"
+          );
+          if (!m.ok) {
+            card.classList.add("today-strategy-card--error");
+            marketEl.textContent = scoreEl.textContent = actionEl.textContent = "—";
+            if (hintEl)
+              hintEl.textContent = "VIX · CNN Fear and Greed · 풋/콜 데이터를 불러오지 못했습니다.";
+            return;
+          }
+          card.classList.add("today-strategy-card--" + m.regime);
+          marketEl.textContent = { fear: "공포", neutral: "중립", greed: "탐욕" }[m.regime];
+          scoreEl.textContent = String(m.score);
+          actionEl.textContent = { buy: "매수", wait: "관망", takeProfit: "익절" }[m.action];
+          if (hintEl)
+            hintEl.textContent =
+              "VIX · CNN Fear and Greed · 풋/콜 기반 자동 요약 · " + m.detail + " (참고용)";
         }
 
         var panicSignalDashboardEl = document.getElementById("panic-signal-dashboard");
@@ -836,8 +835,9 @@
         }
 
         (function initSignalHistoryUi() {
-          var card = document.getElementById("signal-history-card");
           var modal = document.getElementById("signalHistoryDetail");
+          if (!modal) return;
+          var card = document.getElementById("signal-history-card");
           var backdrop = document.getElementById("signalHistoryDetailBackdrop");
           var closeBtn = document.getElementById("signalHistoryDetailClose");
           if (card && !card.dataset.signalHistUi) {
@@ -881,7 +881,7 @@
         }
 
         function applyPanicSignals(rawPayload, sourceTag) {
-          if (!window.PanicSignalEngine || !panicSignalDashboardEl) return;
+          if (!window.PanicSignalEngine) return;
           var merged = window.PanicSignalEngine.mergeMomentumPayload(
             rawPayload && typeof rawPayload === "object" ? rawPayload : null,
             latestPanicData,
@@ -889,7 +889,9 @@
             latestOverseasData
           );
           var signals = window.PanicSignalEngine.getMomentumSignals(merged);
-          window.PanicSignalEngine.renderMomentumDashboard(panicSignalDashboardEl, signals, merged);
+          if (panicSignalDashboardEl) {
+            window.PanicSignalEngine.renderMomentumDashboard(panicSignalDashboardEl, signals, merged);
+          }
           if (panicSignalUpdatedAtEl) {
             panicSignalUpdatedAtEl.textContent = merged.updatedAt
               ? "마지막 업데이트(시그널): " + merged.updatedAt
@@ -898,10 +900,12 @@
           console.log("[panic-signal]", sourceTag || "apply", merged.updatedAt || "-", signals);
 
           var tSignals = null;
-          if (window.PanicSignalEngine.getTradingSignals && window.PanicSignalEngine.renderTradingSignals && panicTradingDashboardEl) {
+          if (window.PanicSignalEngine.getTradingSignals && window.PanicSignalEngine.renderTradingSignals) {
             tSignals = window.PanicSignalEngine.getTradingSignals(merged);
             latestTradingShortSignal = tSignals.short || null;
-            window.PanicSignalEngine.renderTradingSignals(panicTradingDashboardEl, tSignals, merged);
+            if (panicTradingDashboardEl) {
+              window.PanicSignalEngine.renderTradingSignals(panicTradingDashboardEl, tSignals, merged);
+            }
             updateMarketTickerTradingPulse(latestTradingShortSignal);
             console.log("[panic-trading]", sourceTag || "apply", tSignals);
           }
@@ -924,12 +928,12 @@
         }
 
         function refreshPanicSignalDashboard() {
-          if (!window.PanicSignalEngine || !panicSignalDashboardEl) return;
+          if (!window.PanicSignalEngine) return;
           var url = appendFetchCacheBust(
             window.withSiteVersion ? window.withSiteVersion(siteDataFileUrl("data/panic.json")) : siteDataFileUrl("data/panic.json")
           );
           console.log("[fetch] data/panic.json", url);
-          fetch(url)
+          fetch(url, { cache: "no-store" })
             .then(function (res) {
               if (!res.ok) throw new Error("panic.json HTTP " + res.status);
               return res.json();
@@ -948,7 +952,9 @@
                 row.updatedAt = (latestPanicData.updatedAt || "") + " · 폴백";
                 applyPanicSignals(row, "fallback:buildMacroRow");
               } else {
-                window.PanicSignalEngine.renderLoading(panicSignalDashboardEl);
+                if (panicSignalDashboardEl) {
+                  window.PanicSignalEngine.renderLoading(panicSignalDashboardEl);
+                }
                 if (window.PanicSignalEngine.renderTradingLoading && panicTradingDashboardEl) {
                   window.PanicSignalEngine.renderTradingLoading(panicTradingDashboardEl);
                 }
@@ -1596,6 +1602,16 @@
           }
           var relPaths = ["data/us-close-snapshot.json", "data/market.json"];
           var lastErr = null;
+          function isUsCloseShape(obj) {
+            return !!(obj && typeof obj === "object" && (obj.dow || obj.sp500 || obj.usdkrw));
+          }
+          function pickNewerUsClose(a, b) {
+            if (!isUsCloseShape(a)) return isUsCloseShape(b) ? b : null;
+            if (!isUsCloseShape(b)) return a;
+            var ta = Date.parse(String(a.updatedAt || "")) || 0;
+            var tb = Date.parse(String(b.updatedAt || "")) || 0;
+            return tb > ta ? b : a;
+          }
           function tryIndex(i) {
             if (i >= relPaths.length) {
               if (fromScript && typeof fromScript === "object") {
@@ -1608,17 +1624,43 @@
               );
               return;
             }
-            var raw = siteDataFileUrl(relPaths[i]);
+            var rel = relPaths[i];
+            var raw = siteDataFileUrl(rel);
             var base = window.withSiteVersion ? window.withSiteVersion(raw) : raw;
-            var url = appendFetchCacheBust(base);
-            console.log("[fetch] US close snapshot", relPaths[i], url);
-            fetchJsonWithXhrFallback(url)
+            var primaryUrl = appendFetchCacheBust(base);
+            var mirrorBase =
+              rel === "data/us-close-snapshot.json" && window.ydsJsDelivrRepoDataUrl
+                ? window.ydsJsDelivrRepoDataUrl(rel)
+                : null;
+            var mirrorUrl = mirrorBase ? appendFetchCacheBust(mirrorBase) : null;
+            console.log("[fetch] US close snapshot", rel, primaryUrl, mirrorUrl ? "+ jsDelivr(main)" : "");
+            if (mirrorUrl) {
+              Promise.allSettled([
+                fetchJsonWithXhrFallback(primaryUrl),
+                fetchJsonWithXhrFallback(mirrorUrl)
+              ]).then(function (results) {
+                var best = null;
+                for (var j = 0; j < results.length; j++) {
+                  var r = results[j];
+                  if (r.status !== "fulfilled" || !r.value) continue;
+                  best = pickNewerUsClose(best, r.value);
+                }
+                if (best) {
+                  renderMarket(best);
+                  return;
+                }
+                lastErr = new Error("primary+mirror us-close failed");
+                tryIndex(i + 1);
+              });
+              return;
+            }
+            fetchJsonWithXhrFallback(primaryUrl)
               .then(function (data) {
                 renderMarket(data);
               })
               .catch(function (err) {
                 lastErr = err;
-                console.warn("[fetch] snapshot try fail", relPaths[i], err && err.message ? err.message : err);
+                console.warn("[fetch] snapshot try fail", rel, err && err.message ? err.message : err);
                 tryIndex(i + 1);
               });
           }
@@ -1704,9 +1746,14 @@
         }
 
         function renderTicker(data) {
-          if (!tickerTrackEl) return;
           var items = (data && data.items) || [];
           latestTickerData = data || { items: [] };
+          if (!tickerTrackEl) {
+            updateUsLinkageComment();
+            refreshPanicSignalDashboard();
+            updateMarketTickerTradingPulse(latestTradingShortSignal || { label: "계산 중…" });
+            return;
+          }
           if (!items.length) {
             tickerTrackEl.innerHTML =
               '<div class="market-ticker__group"><span class="market-ticker__item">데이터 준비 중...</span></div>';
@@ -1755,89 +1802,93 @@
 
         function renderPanicTable(data) {
           latestPanicData = data || { items: [] };
-          var PANIC_INDEX_HINTS = {
-            vix: "S&P500 옵션 변동성 기대치. 높을수록 공포 심리 강화.",
-            fng: "CNN 공포·탐욕 지수. 낮을수록 공포, 높을수록 탐욕.",
-            bofa: "BofA Bull & Bear 지표. 낮을수록 역발상 관점의 공포 구간.",
-            skew: "S&P500 꼬리위험(급락 헤지 수요) 지표. 높을수록 하방 경계.",
-            putcall: "풋/콜 거래비율. 1 이상이면 방어 심리(풋 비중) 강화.",
-            hy: "미국 하이일드 스프레드. 높을수록 신용 리스크 확대.",
-            move: "미국채 변동성 지수. 높을수록 금리시장 불안.",
-            gsbb: "GS 버블 지표(고평가/과열 추정). 높을수록 과열 경계.",
-            vxn: "나스닥100 변동성 기대치. 기술주 리스크 온도."
-          };
+          if (panicBodyEl) {
+            var PANIC_INDEX_HINTS = {
+              vix: "S&P500 옵션 변동성 기대치. 높을수록 공포 심리 강화.",
+              fng: "CNN 공포·탐욕 지수. 낮을수록 공포, 높을수록 탐욕.",
+              bofa: "BofA Bull & Bear 지표. 낮을수록 역발상 관점의 공포 구간.",
+              skew: "S&P500 꼬리위험(급락 헤지 수요) 지표. 높을수록 하방 경계.",
+              putcall: "풋/콜 거래비율. 1 이상이면 방어 심리(풋 비중) 강화.",
+              hy: "미국 하이일드 스프레드. 높을수록 신용 리스크 확대.",
+              move: "미국채 변동성 지수. 높을수록 금리시장 불안.",
+              gsbb: "GS 버블 지표(고평가/과열 추정). 높을수록 과열 경계.",
+              vxn: "나스닥100 변동성 기대치. 기술주 리스크 온도."
+            };
 
-          var priorityOrder = ["vix", "fng", "hy", "move"]; // 2-4-1-3 우선순위 (이전 추천 기준)
-          var priorityMap = priorityOrder.reduce(function (acc, id, idx) {
-            acc[id] = idx;
-            return acc;
-          }, {});
-          var sortedItems = (data.items || []).slice().sort(function (a, b) {
-            var aRank = Object.prototype.hasOwnProperty.call(priorityMap, a.id) ? priorityMap[a.id] : 999;
-            var bRank = Object.prototype.hasOwnProperty.call(priorityMap, b.id) ? priorityMap[b.id] : 999;
-            if (aRank !== bRank) return aRank - bRank;
-            return 0;
-          });
+            var priorityOrder = ["vix", "fng", "hy", "move"]; // 2-4-1-3 우선순위 (이전 추천 기준)
+            var priorityMap = priorityOrder.reduce(function (acc, id, idx) {
+              acc[id] = idx;
+              return acc;
+            }, {});
+            var sortedItems = (data.items || []).slice().sort(function (a, b) {
+              var aRank = Object.prototype.hasOwnProperty.call(priorityMap, a.id) ? priorityMap[a.id] : 999;
+              var bRank = Object.prototype.hasOwnProperty.call(priorityMap, b.id) ? priorityMap[b.id] : 999;
+              if (aRank !== bRank) return aRank - bRank;
+              return 0;
+            });
 
-          var rows = sortedItems
-            .map(function (item) {
-              var label = escapeHtml(item.label || "-");
-              var value = escapeHtml(item.value || "-");
-              var delta = escapeHtml(item.delta || "-");
-              var status = escapeHtml(item.status || "-");
-              var toneClass = stateClassByTone(item.tone);
-              var deltaClass = deltaClassByEmoji(item.delta);
-              var weekTrend = escapeHtml(item.weekTrend || "보합");
-              var actionGuide = escapeHtml(item.actionGuide || "관망");
-              var weekTrendCls = weekTrendClass(item.weekTrend);
-              var actionGuideCls = actionGuideClass(item.actionGuide);
-              var source = escapeHtml(item.source || "external");
-              var isPriority = Object.prototype.hasOwnProperty.call(priorityMap, item.id);
-              var labelClass = isPriority ? "panic-label panic-label--priority" : "panic-label";
-              var labelCellClass = isPriority ? "panic-label-cell panic-label-cell--priority" : "panic-label-cell";
-              var labelStyle = isPriority ? ' style="color:#7FBF9F;"' : "";
-              var labelHint = escapeHtml(PANIC_INDEX_HINTS[item.id] || "시장 심리·변동성·신용위험을 보여주는 보조 지표");
+            var rows = sortedItems
+              .map(function (item) {
+                var label = escapeHtml(item.label || "-");
+                var value = escapeHtml(item.value || "-");
+                var delta = escapeHtml(item.delta || "-");
+                var status = escapeHtml(item.status || "-");
+                var toneClass = stateClassByTone(item.tone);
+                var deltaClass = deltaClassByEmoji(item.delta);
+                var weekTrend = escapeHtml(item.weekTrend || "보합");
+                var actionGuide = escapeHtml(item.actionGuide || "관망");
+                var weekTrendCls = weekTrendClass(item.weekTrend);
+                var actionGuideCls = actionGuideClass(item.actionGuide);
+                var source = escapeHtml(item.source || "external");
+                var isPriority = Object.prototype.hasOwnProperty.call(priorityMap, item.id);
+                var labelClass = isPriority ? "panic-label panic-label--priority" : "panic-label";
+                var labelCellClass = isPriority ? "panic-label-cell panic-label-cell--priority" : "panic-label-cell";
+                var labelStyle = isPriority ? ' style="color:#7FBF9F;"' : "";
+                var labelHint = escapeHtml(PANIC_INDEX_HINTS[item.id] || "시장 심리·변동성·신용위험을 보여주는 보조 지표");
 
-              return (
-                "<tr>" +
-                '<td class="' +
-                labelCellClass +
-                '"><span class="' +
-                labelClass +
-                ' panic-label-hint" title="' +
-                labelHint +
-                '" aria-label="' +
-                label +
-                " 설명: " +
-                labelHint +
-                '"' +
-                labelStyle +
-                ">" +
-                label +
-                "</span></td>" +
-                "<td>" + value + "</td>" +
-                '<td class="' + deltaClass + '">' + delta + "</td>" +
-                '<td><span class="' + toneClass + '">' + status + "</span></td>" +
-                '<td><span class="' + weekTrendCls + '">' + weekTrend + "</span></td>" +
-                '<td><span class="' + actionGuideCls + '">' + actionGuide + "</span></td>" +
-                "</tr>"
-              );
-            })
-            .join("");
+                return (
+                  "<tr>" +
+                  '<td class="' +
+                  labelCellClass +
+                  '"><span class="' +
+                  labelClass +
+                  ' panic-label-hint" title="' +
+                  labelHint +
+                  '" aria-label="' +
+                  label +
+                  " 설명: " +
+                  labelHint +
+                  '"' +
+                  labelStyle +
+                  ">" +
+                  label +
+                  "</span></td>" +
+                  "<td>" + value + "</td>" +
+                  '<td class="' + deltaClass + '">' + delta + "</td>" +
+                  '<td><span class="' + toneClass + '">' + status + "</span></td>" +
+                  '<td><span class="' + weekTrendCls + '">' + weekTrend + "</span></td>" +
+                  '<td><span class="' + actionGuideCls + '">' + actionGuide + "</span></td>" +
+                  "</tr>"
+                );
+              })
+              .join("");
 
-          panicBodyEl.innerHTML = rows;
-          panicUpdatedAtEl.textContent = "업데이트 기준: " + (data.updatedAt || "-");
+            panicBodyEl.innerHTML = rows;
+          }
+          if (panicUpdatedAtEl) {
+            panicUpdatedAtEl.textContent = "업데이트 기준: " + (data.updatedAt || "-");
+          }
 
           updateUsLinkageComment();
           renderOverseasCockpit();
           refreshPanicSignalDashboard();
+          renderTodayStrategyBox();
         }
 
         function loadPanicTableFromJson() {
-          if (!panicBodyEl || !panicUpdatedAtEl) return;
           var panicDataUrl = appendFetchCacheBust(window.withSiteVersion("panic-data.json"));
           console.log("[fetch] panic-data.json", panicDataUrl);
-          fetch(panicDataUrl)
+          fetch(panicDataUrl, { cache: "no-store" })
             .then(function (res) {
               if (!res.ok) throw new Error("panic-data fetch failed");
               return res.json();
@@ -1853,9 +1904,15 @@
               if (window.PANIC_DATA && Array.isArray(window.PANIC_DATA.items)) {
                 renderPanicTable(window.PANIC_DATA);
               } else {
-                panicUpdatedAtEl.textContent = "업데이트 기준: 데이터 로딩 실패";
-                panicBodyEl.innerHTML =
-                  '<tr><td colspan="5">패닉 지수 데이터를 불러오지 못했습니다. 로컬 파일 모드라면 panic-data.js 파일을 확인해주세요.</td></tr>';
+                if (panicUpdatedAtEl) {
+                  panicUpdatedAtEl.textContent = "업데이트 기준: 데이터 로딩 실패";
+                }
+                if (panicBodyEl) {
+                  panicBodyEl.innerHTML =
+                    '<tr><td colspan="5">패닉 지수 데이터를 불러오지 못했습니다. 로컬 파일 모드라면 panic-data.js 파일을 확인해주세요.</td></tr>';
+                }
+                latestPanicData = null;
+                renderTodayStrategyBox();
               }
             });
         }
@@ -1911,54 +1968,92 @@
         }
 
         function loadTickerTrackFromJson() {
-          if (!tickerTrackEl) return;
           var dataTickerUrl = appendFetchCacheBust(
             window.withSiteVersion ? window.withSiteVersion(siteDataFileUrl("data/ticker.json")) : siteDataFileUrl("data/ticker.json")
           );
+          var tickerApiUrl = appendFetchCacheBust("/api/ticker");
           console.log("[fetch] data/ticker.json", dataTickerUrl);
-          fetch(dataTickerUrl)
-            .then(function (res) {
-              if (!res.ok) throw new Error("data/ticker.json failed");
-              return res.json();
-            })
-            .then(function (raw) {
+
+          function fromDataTickerJson() {
+            return fetchJsonNoStore(dataTickerUrl).then(function (raw) {
               var mapped = normalizeDataTickerJson(raw);
               if (mapped && mapped.items && mapped.items.length) {
                 renderTicker(mapped);
                 return;
               }
               throw new Error("data/ticker.json invalid");
-            })
-            .catch(function () {
-              var tickerApiUrl = appendFetchCacheBust("/api/ticker");
-              console.log("[fetch] /api/ticker (fallback)", tickerApiUrl);
-              fetch(tickerApiUrl)
-                .then(function (res) {
-                  if (!res.ok) throw new Error("api ticker fetch failed");
-                  return res.json();
-                })
-                .then(renderTicker)
-                .catch(function () {
-                  if (window.TICKER_DATA && Array.isArray(window.TICKER_DATA.items)) {
-                    renderTicker(window.TICKER_DATA);
-                    return;
-                  }
-                  var tickerJsonUrl = appendFetchCacheBust(window.withSiteVersion("ticker-data.json"));
-                  console.log("[fetch] ticker-data.json", tickerJsonUrl);
-                  fetch(tickerJsonUrl)
-                    .then(function (res) {
-                      if (!res.ok) throw new Error("ticker-data fetch failed");
-                      return res.json();
-                    })
-                    .then(renderTicker)
-                    .catch(function () {
-                      renderTicker({ items: [] });
-                    });
-                });
             });
+          }
+
+          function fromApiTicker() {
+            console.log("[fetch] /api/ticker", tickerApiUrl);
+            return fetchJsonNoStore(tickerApiUrl).then(function (data) {
+              if (data && Array.isArray(data.items) && data.items.length) {
+                renderTicker(data);
+                return;
+              }
+              throw new Error("api ticker invalid");
+            });
+          }
+
+          function fromEmbeddedTicker() {
+            if (window.TICKER_DATA && Array.isArray(window.TICKER_DATA.items)) {
+              renderTicker(window.TICKER_DATA);
+              return Promise.resolve();
+            }
+            var tickerJsonUrl = appendFetchCacheBust(window.withSiteVersion("ticker-data.json"));
+            console.log("[fetch] ticker-data.json", tickerJsonUrl);
+            return fetchJsonNoStore(tickerJsonUrl).then(renderTicker).catch(function () {
+              renderTicker({ items: [] });
+            });
+          }
+
+          var chain = preferLiveTickerApi()
+            ? fromApiTicker().catch(function () {
+                return fromDataTickerJson().catch(function () {
+                  return fromEmbeddedTicker();
+                });
+              })
+            : fromDataTickerJson().catch(function () {
+                return fromApiTicker().catch(function () {
+                  return fromEmbeddedTicker();
+                });
+              });
+
+          chain.catch(function () {
+            renderTicker({ items: [] });
+          });
         }
 
         loadTickerTrackFromJson();
+
+        function loadOverseasFromJson() {
+          var overseasUrl = appendFetchCacheBust(window.withSiteVersion("overseas-data.json"));
+          console.log("[fetch] overseas-data.json", overseasUrl);
+          return fetch(overseasUrl, { cache: "no-store" })
+            .then(function (res) {
+              if (!res.ok) throw new Error("overseas-data fetch failed");
+              return res.json();
+            })
+            .then(function (data) {
+              if (data && Array.isArray(data.items)) {
+                latestOverseasData = data;
+              } else {
+                throw new Error("overseas-data invalid shape");
+              }
+            })
+            .catch(function () {
+              if (window.OVERSEAS_DATA && Array.isArray(window.OVERSEAS_DATA.items)) {
+                latestOverseasData = window.OVERSEAS_DATA;
+                return;
+              }
+              latestOverseasData = { items: [] };
+            })
+            .finally(function () {
+              renderOverseasCockpit();
+              refreshPanicSignalDashboard();
+            });
+        }
 
         (function scheduleDashboardDataRefresh() {
           var MS = 8 * 60 * 1000;
@@ -1966,34 +2061,13 @@
             loadMarketData();
             loadPanicTableFromJson();
             loadTickerTrackFromJson();
+            loadOverseasFromJson();
             refreshPanicSignalDashboard();
           }, MS);
         })();
 
         // overseas도 panic/ticker와 동일하게 JSON 우선 로딩 후 JS 폴백
-        fetch(window.withSiteVersion("overseas-data.json"))
-          .then(function (res) {
-            if (!res.ok) throw new Error("overseas-data fetch failed");
-            return res.json();
-          })
-          .then(function (data) {
-            if (data && Array.isArray(data.items)) {
-              latestOverseasData = data;
-            } else {
-              throw new Error("overseas-data invalid shape");
-            }
-          })
-          .catch(function () {
-            if (window.OVERSEAS_DATA && Array.isArray(window.OVERSEAS_DATA.items)) {
-              latestOverseasData = window.OVERSEAS_DATA;
-              return;
-            }
-            latestOverseasData = { items: [] };
-          })
-          .finally(function () {
-            renderOverseasCockpit();
-            refreshPanicSignalDashboard();
-          });
+        loadOverseasFromJson();
 
         (function initOverseasQuickNote() {
           if (!overseasQuickGroupsEl || !overseasQuickSaveEl || !overseasQuickHistoryEl) return;

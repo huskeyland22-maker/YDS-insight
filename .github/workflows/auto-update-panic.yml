@@ -64,6 +64,9 @@ jobs:
         run: node auto-update-panic-data.mjs
 
       - name: Regenerate data/panic.json, data/ticker.json, data/us-close-snapshot.json/js
+        env:
+          # 티커/지수 숫자가 전날 스냅샷과 같게 나와도(반올림·병합 등) 미국 종가 반영 후에는 항상 기록
+          FORCE_UPDATE: "true"
         run: node scripts/fetch.js
 
       - name: Bump site version for cache busting
@@ -83,4 +86,4 @@ jobs:
             exit 0
           fi
           git commit -m "chore: auto update panic (Python) and ticker/overseas (Node)" || echo "No commit (skipped)"
-          git push origin main
+          git push origin "HEAD:${{ github.ref_name }}"

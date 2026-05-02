@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signal Desk · Y'ds</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      html {
+        background-color: #0b0f14;
+      }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background-color: #0b0f14;
+        color: #e4e9f2;
+        font-family: "Noto Sans KR", system-ui, sans-serif;
+      }
+    </style>
+    <script src="site-version.js"></script>
+    <script>
+      document.write(
+        '<script src="' + window.withSiteVersion("scripts/github-pages-data-mirror.js") + '"><\/script>'
+      );
+    </script>
+    <link rel="stylesheet" href="styles.css" />
+    <script>
+      if (window.applySiteVersion) window.applySiteVersion(document);
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">본문 바로가기</a>
+    <div class="bg-layer" aria-hidden="true"></div>
+    <div class="bg-glow bg-glow--gold" aria-hidden="true"></div>
+    <div class="bg-glow bg-glow--blue" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="logo" href="index.html">Y'ds</a>
+        <nav class="nav" aria-label="주요 메뉴">
+          <a href="index.html">홈</a>
+          <a href="signal-room.html" aria-current="page">Signal Desk</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content" class="sr-page sd-page">
+      <section id="signal-desk" class="section section--tint signal-desk" aria-label="시그널 데스크">
+        <div class="container signal-desk__inner">
+          <header class="signal-desk__header">
+            <h1 class="section-title signal-desk__title">Signal Desk</h1>
+            <p class="section-intro signal-desk__intro">
+              ① 오늘의 전략 요약 → ② 점수형 시그널 엔진 → ③ 모멘텀형 트레이딩 시그널 → ④ 시장 티커 → ⑤ 미국장 연동 코멘트 → ⑥ 시그널 히스토리 → ⑦ 하단 요약 카드 순으로 확인합니다.
+            </p>
+            <p class="panic-updated-at signal-desk__updated" id="panic-updated-at">업데이트 기준: 로딩 중…</p>
+          </header>
+
+          <div class="signal-desk__body">
+            <section id="today-strategy" class="today-strategy-section signal-desk__panel" aria-label="오늘의 전략">
+              <article
+                class="today-strategy-card today-strategy-card--loading"
+                id="today-strategy-card"
+                aria-live="polite"
+              >
+                <div class="today-strategy-card__accent" aria-hidden="true"></div>
+                <div class="today-strategy-card__body">
+                  <header class="today-strategy-card__head">
+                    <h2 class="today-strategy-card__title">오늘의 전략</h2>
+                    <p class="today-strategy-card__hint" id="today-strategy-hint">
+                      VIX · CNN Fear &amp; Greed · 풋/콜 비율 기반 자동 요약 (참고용, 투자 권유 아님)
+                    </p>
+                  </header>
+                  <div class="today-strategy-card__grid">
+                    <div class="today-strategy-metric">
+                      <span class="today-strategy-metric__label">시장 상태</span>
+                      <strong class="today-strategy-metric__value" id="today-strategy-market">계산 중…</strong>
+                    </div>
+                    <div class="today-strategy-metric">
+                      <span class="today-strategy-metric__label">Panic Score</span>
+                      <strong
+                        class="today-strategy-metric__value today-strategy-metric__value--score"
+                        id="today-strategy-score"
+                      >—</strong>
+                    </div>
+                    <div class="today-strategy-metric">
+                      <span class="today-strategy-metric__label">행동 가이드</span>
+                      <strong class="today-strategy-metric__value" id="today-strategy-action">—</strong>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </section>
+
+            <div class="signal-desk__panel signal-desk__panel--terminal">
+              <div class="dashboard terminal-dashboard" id="terminal-dashboard">
+                <div class="signal-grid terminal-dashboard__signals">
+                  <section
+                    class="panic-signal-dashboard panic-signal-dashboard--terminal"
+                    id="panic-signal-dashboard"
+                    aria-label="패닉 시그널 엔진"
+                    aria-live="polite"
+                  >
+                    <header class="panic-signal-dashboard__head">
+                      <h2 class="panic-signal-dashboard__title">시그널 엔진</h2>
+                      <p class="panic-signal-dashboard__desc">
+                        패닉 지표를 0~100으로 점수화한 뒤 구간별 시그널로 요약합니다. 높은 점수는 역발상 관점의 매수(공포 국면), 낮은 점수는 과열·매도 경계에 가깝게 해석합니다.
+                      </p>
+                      <p class="panic-signal-dashboard__updated" id="panic-signal-data-updated-at" aria-live="polite"></p>
+                    </header>
+                    <div class="panic-signal-dashboard__grid">
+                      <article class="panic-signal-dashboard__card panic-signal-dashboard__card--na" data-signal-card="short"></article>
+                      <article class="panic-signal-dashboard__card panic-signal-dashboard__card--na" data-signal-card="mid"></article>
+                      <article class="panic-signal-dashboard__card panic-signal-dashboard__card--na" data-signal-card="long"></article>
+                    </div>
+                  </section>
+
+                  <section
+                    class="panic-trading-dashboard panic-trading-dashboard--terminal"
+                    id="panic-trading-dashboard"
+                    aria-label="트레이딩 기반 시그널"
+                    aria-live="polite"
+                  >
+                    <header class="panic-trading-dashboard__head">
+                      <h2 class="panic-trading-dashboard__title">트레이딩 시그널</h2>
+                      <p class="panic-trading-dashboard__desc">
+                        레벨 + 모멘텀(Δ) 규칙으로 단·중·장기를 별도 산출합니다. 상단 엔진(평균 점수형)과 병렬로 동작합니다.
+                      </p>
+                    </header>
+                    <div class="panic-trading-dashboard__grid">
+                      <article class="panic-trading-dashboard__card panic-trading-dashboard__card--na" data-trading-card="short"></article>
+                      <article class="panic-trading-dashboard__card panic-trading-dashboard__card--na" data-trading-card="mid"></article>
+                      <article class="panic-trading-dashboard__card panic-trading-dashboard__card--na" data-trading-card="long"></article>
+                    </div>
+                  </section>
+                </div>
+
+                <div class="ticker-bar terminal-dashboard__ticker">
+                  <section class="market-ticker market-ticker--terminal" aria-label="주요 시장 지표 티커">
+                    <div class="market-ticker__viewport">
+                      <p class="market-ticker__pulse" id="market-ticker-signal-line" aria-live="polite">현재 시장 상태: 계산 중…</p>
+                      <div class="market-ticker__track" id="market-ticker-track"></div>
+                    </div>
+                  </section>
+                </div>
+              </div>
+            </div>
+
+            <p class="panic-us-link signal-desk__panel" id="panic-us-link" aria-live="polite">미국장 연동 코멘트 계산 중…</p>
+
+            <div class="history-card signal-history-card signal-desk__panel" id="signal-history-card">
+              <div class="history-title">Signal History</div>
+              <p class="history-sub">모멘텀 시그널(단기·중기·장기) · 최근 7영업일 · 행 클릭 시 상세</p>
+              <div class="history-head" aria-hidden="true">
+                <span>날짜</span>
+                <span>단기</span>
+                <span>중기</span>
+                <span>장기</span>
+                <span>전일 대비</span>
+              </div>
+              <div id="historyList" class="history-list"></div>
+            </div>
+
+            <div
+              id="signalHistoryDetail"
+              class="signal-history-detail signal-desk__panel signal-desk__panel--dialog"
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="signalHistoryDetailTitle"
+              hidden
+            >
+              <div class="signal-history-detail__backdrop" id="signalHistoryDetailBackdrop" tabindex="-1"></div>
+              <div class="signal-history-detail__panel">
+                <header class="signal-history-detail__head">
+                  <h2 id="signalHistoryDetailTitle" class="signal-history-detail__title">시그널 상세</h2>
+                  <button type="button" class="signal-history-detail__close" id="signalHistoryDetailClose" aria-label="닫기">
+                    ×
+                  </button>
+                </header>
+                <div id="signalHistoryDetailBody" class="signal-history-detail__body"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="container sr-wrap sd-summary-wrap">
+        <header class="sr-hero sd-summary-hero">
+          <p class="sr-updated" id="sr-updated">데이터 불러오는 중…</p>
+        </header>
+
+        <section class="sr-card" aria-labelledby="sr-grade-heading">
+          <h2 id="sr-grade-heading" class="sr-card__title">신호 등급</h2>
+          <p class="sr-card__sub">Panic Score와 VIX 전일 대비 방향을 함께 봅니다.</p>
+          <div class="sr-grade" id="sr-grade" data-grade="">—</div>
+          <p class="sr-grade-note" id="sr-grade-note"></p>
+        </section>
+
+        <section class="sr-card" aria-labelledby="sr-signal-heading">
+          <h2 id="sr-signal-heading" class="sr-card__title">오늘의 시그널</h2>
+          <dl class="sr-signal-dl">
+            <div class="sr-signal-row">
+              <dt>시장 상태</dt>
+              <dd id="sr-market">—</dd>
+            </div>
+            <div class="sr-signal-row">
+              <dt>행동 가이드</dt>
+              <dd id="sr-action">—</dd>
+            </div>
+            <div class="sr-signal-row sr-signal-row--full">
+              <dt>근거 요약</dt>
+              <dd id="sr-reason">—</dd>
+            </div>
+          </dl>
+        </section>
+
+        <section class="sr-card" aria-labelledby="sr-kpi-heading">
+          <h2 id="sr-kpi-heading" class="sr-card__title">핵심 지표 요약</h2>
+          <div class="sr-kpi-grid" id="sr-kpi-grid"></div>
+        </section>
+
+        <section class="sr-card" aria-labelledby="sr-scen-heading">
+          <h2 id="sr-scen-heading" class="sr-card__title">시나리오 분석</h2>
+          <div class="sr-scen">
+            <article class="sr-scen__box sr-scen__box--up">
+              <h3 class="sr-scen__label">상승 시나리오</h3>
+              <p class="sr-scen__text" id="sr-scen-bull">—</p>
+            </article>
+            <article class="sr-scen__box sr-scen__box--down">
+              <h3 class="sr-scen__label">하락 시나리오</h3>
+              <p class="sr-scen__text" id="sr-scen-bear">—</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="sr-card" aria-labelledby="sr-pos-heading">
+          <h2 id="sr-pos-heading" class="sr-card__title">포지션 가이드</h2>
+          <ul class="sr-pos-list">
+            <li><span>현금 비중</span> <strong id="sr-cash">—</strong></li>
+            <li><span>주식 비중</span> <strong id="sr-stock">—</strong></li>
+            <li><span>레버리지</span> <strong id="sr-lev">—</strong></li>
+          </ul>
+          <p class="sr-disclaimer">
+            참고용 자동 요약이며 투자 권유가 아닙니다. 본인 책임과 원칙에 따라 판단하세요.
+          </p>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="footer-copy">
+          <p class="footer-brand"><a href="index.html">← Y'ds 메인</a></p>
+          <p class="footer-note">메인 사이트와 동일하게 <code>panic-data.json</code> · <code>panic-data.js</code> 지표 구조를 사용합니다.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.write('<script src="' + window.withSiteVersion("ticker-data.js") + '"><\/script>');
+      document.write('<script src="' + window.withSiteVersion("data/us-close-snapshot.js") + '"><\/script>');
+      document.write('<script src="' + window.withSiteVersion("panic-data.js") + '"><\/script>');
+      document.write('<script src="' + window.withSiteVersion("overseas-data.js") + '"><\/script>');
+      document.write('<script src="' + window.withSiteVersion("data/portal-brief.js") + '"><\/script>');
+      document.write('<script src="' + window.withSiteVersion("panic-signal-engine.js") + '"><\/script>');
+      document.write('<script src="' + window.withSiteVersion("panic-trading-signals.js") + '"><\/script>');
+    </script>
+    <script>
+      document.write('<script src="' + window.withSiteVersion("scripts/signal-desk-page.js") + '"><\/script>');
+    </script>
+  </body>
+</html>

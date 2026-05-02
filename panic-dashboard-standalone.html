@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Panic · SOXL / TQQQ (standalone)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              mono: ["JetBrains Mono", "ui-monospace", "monospace"],
+              sans: ["Inter", "system-ui", "sans-serif"],
+            },
+            colors: {
+              terminal: {
+                bg: "#0a0e14",
+                card: "#111820",
+                border: "#1e2a3a",
+                muted: "#5c6b7a",
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.production.min.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body class="min-h-screen bg-terminal-bg font-sans text-slate-200 antialiased">
+    <div id="root"></div>
+
+    <script type="text/babel" data-presets="react">
+      const { useMemo, useCallback } = React;
+
+      const panicData = {
+        short: [
+          { name: "VIX", value: 16.99, avg: 19.85 },
+          { name: "VXN", value: 21.92, avg: 24.6 },
+          { name: "Put/Call", value: 0.65, avg: 0.78 },
+        ],
+        mid: [
+          { name: "CNN Fear & Greed", value: 65, avg: 50 },
+          { name: "BofA Bull & Bear", value: 6.5, avg: 4.75 },
+          { name: "MOVE Index", value: 70.41, avg: 84.2 },
+        ],
+        long: [
+          { name: "SKEW", value: 141.38, avg: 134.5 },
+          { name: "HY Spread", value: 2.84, avg: 4.12 },
+          { name: "GS B/B", value: 68, avg: 52 },
+        ],
+      };
+
+      const clamp = (n, lo, hi) => Math.min(hi, Math.max(lo, n));
+
+      function computeShortScore(rows) {
+        if (!rows?.length) return 0;
+        const parts = rows.map(({ value, avg }) => {
+          if (!avg) return 50;
+          const ratio = value / avg;
+          return clamp(50 + (ratio - 1) * 120, 0, 100);
+        });
+        return Math.round(parts.reduce((a, b) => a + b, 0) / parts.length);
+      }
+
+      function computeMidScore(rows) {
+        if (!rows?.length) return 0;
+        const parts = rows.map(({ value, avg }) => {
+          if (!avg) return 50;
+          const ratio = value / avg;
+          return clamp(50 + (ratio - 1) * 95, 0, 100);
+        });
+        return Math.round(parts.reduce((a, b) => a + b, 0) / parts.length);
+      }
+
+      function computeLongScore(rows) {
+        if (!rows?.length) return 0;
+        const parts = rows.map(({ value, avg }) => {
+          if (!avg) return 50;
+          const ratio = value / avg;
+          return clamp(50 + (ratio - 1) * 110, 0, 100);
+        });
+        return Math.round(parts.reduce((a, b) => a + b, 0) / parts.length);
+      }
+
+      function computeOverallPanicScore(shortScore, midScore, longScore) {
+        const raw =
+          shortScore * 0.42 + longScore * 0.33 + (100 - midScore) * 0.25;
+        return clamp(Math.round(raw), 0, 100);
+      }
+
+      function resolveMarketOverview(shortScore, midScore, longScore) {
+        const fearLead = shortScore - midScore;
+        const greedLead = midScore - shortScore;
+        if (shortScore >= 58 && fearLead >= 8) {
+          return { tone: "fear", label: "공포 (매수)", emoji: "🔴" };
+        }
+        if (midScore >= 58 && greedLead >= 8) {
+          return { tone: "greed", label: "과열 (매도)", emoji: "🟢" };
+        }
+        if (longScore >= 72 && shortScore < 55) {
+          return { tone: "neutral", label: "구조 리스크 주의", emoji: "🟡" };
+        }
+        return { tone: "neutral", label: "중립", emoji: "🟡" };
+      }
+
+      function buildStrategy(shortScore, midScore, longScore) {
+        const shortBuy = shortScore > 70;
+        const midTrim = midScore > 70;
+        const longRisk = longScore > 70;
+        const riskOff = longRisk || (midTrim && shortScore < 55);
+        const soxlEnter = shortBuy && !riskOff;
+        const tqqqEnter = shortBuy && !riskOff && midScore < 68;
+        const soxl = {
+          enter: soxlEnter,
+          note: soxlEnter
+            ? "단기 공포 구간 — 레버 진입 후보"
+            : shortBuy
+              ? "신호는 강하나 장·중기 리스크로 보수적 대기"
+              : "단기 공포 신호 미달 — 관망 또는 소액 분할",
+        };
+        const tqqq = {
+          enter: tqqqEnter,
+          note: tqqqEnter
+            ? "나스닥 레버 — 단기 매수 시그널 + 중기 과열 완화"
+            : midScore >= 68
+              ? "중기 과열 구간 — TQQQ 신규 비중 확대 자제"
+              : "조건 미충족 — SOXL 대비 보수 운용",
+        };
+        const dcaBuy = shortBuy
+          ? "3~4회 분할: 첫 25% 즉시, 이후 -2~-3% 간격"
+          : "신호 대기 — 확정 시 2~3회 소액 분할만";
+        const dcaSell = midTrim
+          ? "익절: 보유분 30~50% 차감, 나머지 트레일"
+          : "추가 매도 없음 — 포지션 유지 또는 리밸런싱만";
+        const bullets = [];
+        if (shortBuy) bullets.push("단기: SOXL / TQQQ 단기 매수 존");
+        if (midTrim) bullets.push("중기: 비중 축소 / 익절");
+        if (longRisk) bullets.push("장기: 시장 리스크 경고");
+        if (!bullets.length) bullets.push("강한 엣지 없음 — 중립 운용");
+        return {
+          shortBuy,
+          midTrim,
+          longRisk,
+          soxl,
+          tqqq,
+          riskOff,
+          dcaBuy,
+          dcaSell,
+          bullets,
+        };
+      }
+
+      function GaugeBar({ value, accentClass }) {
+        const pct = Math.min(100, Math.max(0, value));
+        return (
+          <div className="h-2 w-full overflow-hidden rounded-full bg-black/50 ring-1 ring-white/5">
+            <div
+              className={`h-full rounded-full transition-all duration-500 ease-out ${accentClass}`}
+              style={{ width: `${pct}%` }}
+              role="progressbar"
+              aria-valuenow={pct}
+              aria-valuemin={0}
+              aria-valuemax={100}
+            />
+          </div>
+        );
+      }
+
+      function TermPanel({
+        title,
+        subtitle,
+        score,
+        statusText,
+        rows,
+        accentBar,
+        ringAccent,
+        scoreColor,
+        formatValue = (v) => v.toFixed(2),
+      }) {
+        return (
+          <article
+            className={`flex flex-col rounded-xl border border-terminal-border bg-terminal-card p-4 shadow-lg ring-1 ${ringAccent} sm:p-5`}
+          >
+            <header className="mb-4 flex flex-wrap items-end justify-between gap-2 border-b border-white/5 pb-3">
+              <div>
+                <h3 className="font-sans text-sm font-semibold uppercase tracking-wider text-slate-400">
+                  {title}
+                </h3>
+                <p className="text-xs text-terminal-muted">{subtitle}</p>
+              </div>
+              <div className="text-right">
+                <div
+                  className={`font-mono text-3xl font-bold tabular-nums tracking-tight sm:text-4xl ${scoreColor}`}
+                >
+                  {score}
+                </div>
+                <p className="max-w-[12rem] text-right text-xs text-slate-400">{statusText}</p>
+              </div>
+            </header>
+            <GaugeBar value={score} accentClass={accentBar} />
+            <ul className="mt-4 space-y-3">
+              {rows.map((row) => {
+                const vs = row.avg ? row.value / row.avg - 1 : 0;
+                const bias =
+                  Math.abs(vs) < 0.03
+                    ? "text-slate-500"
+                    : vs > 0
+                      ? "text-amber-400/90"
+                      : "text-sky-400/90";
+                return (
+                  <li
+                    key={row.name}
+                    className="flex items-center justify-between gap-2 rounded-lg bg-black/25 px-3 py-2 font-mono text-sm"
+                  >
+                    <span className="text-slate-400">{row.name}</span>
+                    <span className="tabular-nums text-slate-100">
+                      <span className="font-semibold text-white">
+                        {formatValue(row.value, row.name)}
+                      </span>
+                      <span className="mx-1.5 text-terminal-muted">/</span>
+                      <span className="text-terminal-muted">{formatValue(row.avg, row.name)}</span>
+                      <span className={`ml-2 text-xs ${bias}`}>
+                        {vs >= 0 ? "▲" : "▼"} {Math.abs(vs * 100).toFixed(1)}%
+                      </span>
+                    </span>
+                  </li>
+                );
+              })}
+            </ul>
+          </article>
+        );
+      }
+
+      function formatShort(v) {
+        return v.toFixed(2);
+      }
+      function shortStatus(score) {
+        if (score > 70) return "강한 공포 — 레버 단기 매수 존";
+        if (score >= 55) return "공포 우세 — 분할 매수 검토";
+        if (score >= 45) return "중립 부근 — 신중 대응";
+        return "낮은 공포 — 추격 매수 자제";
+      }
+      function ShortTermCard({ rows, score }) {
+        return (
+          <TermPanel
+            title="Short-term"
+            subtitle="단기 · VIX / VXN / Put-Call"
+            score={score}
+            statusText={shortStatus(score)}
+            rows={rows}
+            accentBar="bg-gradient-to-r from-red-600 to-rose-500 shadow-[0_0_12px_rgba(239,68,68,0.35)]"
+            ringAccent="ring-red-500/20"
+            scoreColor="text-red-400"
+            formatValue={formatShort}
+          />
+        );
+      }
+
+      function formatMid(v, name) {
+        if (name === "CNN Fear & Greed" || name === "GS B/B") return String(Math.round(v));
+        if (name === "BofA Bull & Bear") return v.toFixed(2);
+        return v.toFixed(2);
+      }
+      function midStatus(score) {
+        if (score > 70) return "과열 — 비중 축소·익절";
+        if (score >= 55) return "과열 기미 — 신규 물량 보수";
+        if (score >= 45) return "중립 부근";
+        return "냉각 구간 — 과열 압력 낮음";
+      }
+      function MidTermCard({ rows, score }) {
+        return (
+          <TermPanel
+            title="Mid-term"
+            subtitle="중기 · 심리·자금·채권 변동성"
+            score={score}
+            statusText={midStatus(score)}
+            rows={rows}
+            accentBar="bg-gradient-to-r from-emerald-600 to-lime-400 shadow-[0_0_12px_rgba(52,211,153,0.3)]"
+            ringAccent="ring-emerald-500/20"
+            scoreColor="text-emerald-400"
+            formatValue={formatMid}
+          />
+        );
+      }
+
+      function formatLong(v, name) {
+        if (name === "GS B/B") return String(Math.round(v));
+        if (name === "HY Spread") return v.toFixed(2);
+        return v.toFixed(2);
+      }
+      function longStatus(score) {
+        if (score > 70) return "구조 리스크 경고";
+        if (score >= 55) return "리스크 상승 — 방어적";
+        if (score >= 45) return "중립 부근";
+        return "구조적 압력 완화";
+      }
+      function LongTermCard({ rows, score }) {
+        return (
+          <TermPanel
+            title="Long-term"
+            subtitle="장기 · 꼬리·크레딧·포지셔닝"
+            score={score}
+            statusText={longStatus(score)}
+            rows={rows}
+            accentBar="bg-gradient-to-r from-amber-600 to-orange-500 shadow-[0_0_12px_rgba(251,146,60,0.3)]"
+            ringAccent="ring-amber-500/15"
+            scoreColor="text-amber-400"
+            formatValue={formatLong}
+          />
+        );
+      }
+
+      function toneStyles(tone) {
+        if (tone === "fear")
+          return {
+            badge: "bg-red-500/15 text-red-300 ring-red-500/30",
+            gauge: "bg-gradient-to-r from-red-600 to-rose-400",
+          };
+        if (tone === "greed")
+          return {
+            badge: "bg-emerald-500/15 text-emerald-300 ring-emerald-500/30",
+            gauge: "bg-gradient-to-r from-emerald-600 to-lime-400",
+          };
+        return {
+          badge: "bg-amber-500/10 text-amber-200 ring-amber-500/25",
+          gauge: "bg-gradient-to-r from-amber-500 to-yellow-400",
+        };
+      }
+
+      function PanicDashboard({ data }) {
+        const model = useMemo(() => {
+          const shortScore = computeShortScore(data.short);
+          const midScore = computeMidScore(data.mid);
+          const longScore = computeLongScore(data.long);
+          const overall = computeOverallPanicScore(shortScore, midScore, longScore);
+          const overview = resolveMarketOverview(shortScore, midScore, longScore);
+          const strategy = buildStrategy(shortScore, midScore, longScore);
+          return { shortScore, midScore, longScore, overall, overview, strategy };
+        }, [data]);
+
+        const { shortScore, midScore, longScore, overall, overview, strategy } = model;
+        const styles = toneStyles(overview.tone);
+
+        const onAction = useCallback((label) => {
+          console.info(`[PanicDashboard] 액션: ${label}`);
+        }, []);
+
+        return (
+          <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8 lg:py-10">
+            <header className="mb-8 flex flex-col gap-2 border-b border-white/5 pb-6 sm:flex-row sm:items-end sm:justify-between">
+              <div>
+                <p className="font-mono text-xs uppercase tracking-[0.2em] text-red-400/80">
+                  Leverage timing · CDN standalone
+                </p>
+                <h1 className="mt-1 font-sans text-2xl font-bold tracking-tight text-white sm:text-3xl">
+                  패닉 시그널 · SOXL / TQQQ
+                </h1>
+                <p className="mt-2 max-w-xl text-sm text-slate-400">
+                  Node 없이 브라우저에서 바로 열 수 있는 버전입니다. 데이터는 아래{" "}
+                  <code className="rounded bg-white/10 px-1 font-mono text-xs">panicData</code>를
+                  수정하세요.
+                </p>
+              </div>
+              <div className="font-mono text-xs text-terminal-muted">
+                {new Date().toLocaleString("ko-KR", {
+                  dateStyle: "medium",
+                  timeStyle: "short",
+                })}
+              </div>
+            </header>
+
+            <section className="mb-8 rounded-2xl border border-terminal-border bg-gradient-to-br from-terminal-card to-black/40 p-5 sm:p-6">
+              <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+                <div className="flex-1">
+                  <h2 className="text-sm font-semibold uppercase tracking-wider text-slate-500">
+                    Market overview
+                  </h2>
+                  <div className="mt-3 flex flex-wrap items-baseline gap-4">
+                    <span className="font-mono text-5xl font-bold tabular-nums text-white sm:text-6xl">
+                      {overall}
+                    </span>
+                    <span className="text-sm text-slate-500">/ 100</span>
+                  </div>
+                  <p className="mt-2 text-sm text-slate-400">종합 패닉·리스크 스코어</p>
+                </div>
+                <div className="flex flex-1 flex-col gap-3 lg:max-w-md">
+                  <div
+                    className={`inline-flex w-fit items-center gap-2 rounded-full px-4 py-2 font-medium ring-1 ${styles.badge}`}
+                  >
+                    <span className="text-lg" aria-hidden>
+                      {overview.emoji}
+                    </span>
+                    <span>현재 시장 상태 · {overview.label}</span>
+                  </div>
+                  <GaugeBar value={overall} accentClass={styles.gauge} />
+                </div>
+              </div>
+            </section>
+
+            <section className="mb-8 grid gap-4 lg:grid-cols-3">
+              <ShortTermCard rows={data.short} score={shortScore} />
+              <MidTermCard rows={data.mid} score={midScore} />
+              <LongTermCard rows={data.long} score={longScore} />
+            </section>
+
+            <section className="mb-6 rounded-2xl border border-terminal-border bg-terminal-card p-5 sm:p-6">
+              <h2 className="text-sm font-semibold uppercase tracking-wider text-slate-500">
+                Trading signals
+              </h2>
+              <div className="mt-4 grid gap-4 md:grid-cols-2">
+                <div className="rounded-xl border border-white/5 bg-black/30 p-4">
+                  <div className="flex items-center justify-between gap-2">
+                    <span className="font-mono text-lg font-semibold text-sky-300">SOXL</span>
+                    <span
+                      className={`rounded px-2 py-0.5 font-mono text-xs font-bold uppercase ${
+                        strategy.soxl.enter
+                          ? "bg-red-500/20 text-red-300"
+                          : "bg-slate-700 text-slate-400"
+                      }`}
+                    >
+                      {strategy.soxl.enter ? "진입" : "관망"}
+                    </span>
+                  </div>
+                  <p className="mt-2 text-sm leading-relaxed text-slate-300">{strategy.soxl.note}</p>
+                </div>
+                <div className="rounded-xl border border-white/5 bg-black/30 p-4">
+                  <div className="flex items-center justify-between gap-2">
+                    <span className="font-mono text-lg font-semibold text-violet-300">TQQQ</span>
+                    <span
+                      className={`rounded px-2 py-0.5 font-mono text-xs font-bold uppercase ${
+                        strategy.tqqq.enter
+                          ? "bg-red-500/20 text-red-300"
+                          : "bg-slate-700 text-slate-400"
+                      }`}
+                    >
+                      {strategy.tqqq.enter ? "진입" : "관망"}
+                    </span>
+                  </div>
+                  <p className="mt-2 text-sm leading-relaxed text-slate-300">{strategy.tqqq.note}</p>
+                </div>
+              </div>
+
+              <div className="mt-4 grid gap-4 md:grid-cols-3">
+                <div className="rounded-xl border border-white/5 bg-black/20 p-4 md:col-span-1">
+                  <p className="text-xs font-semibold uppercase text-slate-500">리스크 회피</p>
+                  <p
+                    className={`mt-1 font-mono text-lg font-bold ${
+                      strategy.riskOff ? "text-amber-400" : "text-slate-500"
+                    }`}
+                  >
+                    {strategy.riskOff ? "권장" : "비권장"}
+                  </p>
+                  <p className="mt-1 text-xs text-slate-500">
+                    장기 경고 또는 중기 과열 + 단기 미약 시 방어
+                  </p>
+                </div>
+                <div className="rounded-xl border border-white/5 bg-black/20 p-4 md:col-span-2">
+                  <p className="text-xs font-semibold uppercase text-slate-500">분할 전략</p>
+                  <ul className="mt-2 space-y-2 text-sm text-slate-300">
+                    <li>
+                      <span className="text-red-400/90">매수</span> · {strategy.dcaBuy}
+                    </li>
+                    <li>
+                      <span className="text-emerald-400/90">매도</span> · {strategy.dcaSell}
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <ul className="mt-4 flex flex-wrap gap-2">
+                {strategy.bullets.map((b) => (
+                  <li
+                    key={b}
+                    className="rounded-lg border border-white/10 bg-black/40 px-3 py-1.5 font-mono text-xs text-slate-300"
+                  >
+                    {b}
+                  </li>
+                ))}
+              </ul>
+            </section>
+
+            <section className="rounded-2xl border border-dashed border-white/10 bg-black/20 p-5 sm:p-6">
+              <h2 className="text-sm font-semibold uppercase tracking-wider text-slate-500">Actions</h2>
+              <p className="mt-1 text-xs text-slate-500">
+                실제 주문은 브로커에서 실행하세요. 버튼은 체크리스트용입니다.
+              </p>
+              <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                <button
+                  type="button"
+                  onClick={() => onAction("SOXL 매수")}
+                  className="rounded-xl bg-gradient-to-r from-red-600 to-rose-600 px-6 py-3 font-semibold text-white shadow-lg shadow-red-900/30 transition hover:brightness-110 active:scale-[0.99]"
+                >
+                  SOXL 매수
+                </button>
+                <button
+                  type="button"
+                  onClick={() => onAction("TQQQ 매수")}
+                  className="rounded-xl bg-gradient-to-r from-violet-600 to-indigo-600 px-6 py-3 font-semibold text-white shadow-lg shadow-violet-900/30 transition hover:brightness-110 active:scale-[0.99]"
+                >
+                  TQQQ 매수
+                </button>
+                <button
+                  type="button"
+                  onClick={() => onAction("리스크 회피")}
+                  className="rounded-xl border border-amber-500/40 bg-amber-500/10 px-6 py-3 font-semibold text-amber-200 transition hover:bg-amber-500/20 active:scale-[0.99]"
+                >
+                  리스크 회피
+                </button>
+              </div>
+            </section>
+          </div>
+        );
+      }
+
+      function App() {
+        return <PanicDashboard data={panicData} />;
+      }
+
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+      root.render(<App />);
+    </script>
+  </body>
+</html>

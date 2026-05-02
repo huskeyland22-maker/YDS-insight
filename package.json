@@ -12,6 +12,7 @@
     "update:panic:node": "node auto-update-panic-data.mjs",
     "update:panic": "node scripts/run-update-chain.mjs",
     "update:panic-json": "node scripts/fetch.js",
+    "refresh:market": "node scripts/refresh-market-light.mjs",
     "update:portal": "node scripts/fetch-portal-brief.mjs"
   }
 }

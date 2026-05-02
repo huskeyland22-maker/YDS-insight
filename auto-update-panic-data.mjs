@@ -374,6 +374,7 @@ function formatNumberOrDash(value, digits = 2) {
 
 async function main() {
   const skipPanic = process.env.SKIP_PANIC === "1";
+  const skipYoutube = process.env.SKIP_YOUTUBE === "1";
 
   let previousOverseasData = null;
   try {
@@ -737,51 +738,55 @@ async function main() {
   await writeFile(overseasDataPath, `${JSON.stringify(overseasData, null, 2)}\n`, "utf8");
   await writeFile(overseasDataJsPath, `window.OVERSEAS_DATA = ${JSON.stringify(overseasData, null, 2)};\n`, "utf8");
 
-  const youtubeChannels = [
-    { id: "kyungiknam", name: "경제 읽어주는 남자", channelId: "UC3pfEoxaRDT6hvZZjpHu7Tg", channelUrl: "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg", latestUrl: "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos", fallbackVideoId: "3-bVy6O_6hU" },
-    { id: "sbs-explained", name: "교양이를 부탁해", channelId: "UCv0f2hty4EwA2vX6rFQfU2A", channelUrl: "https://www.youtube.com/@sbs_explained", latestUrl: "https://www.youtube.com/@sbs_explained/videos", fallbackVideoId: "aUi9yXxhg6s" },
-    { id: "hankyung-global", name: "한경 글로벌 마켓", channelId: "UCWskYkV4c4S9D__rsfOl2JA", channelUrl: "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA", latestUrl: "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos", fallbackVideoId: "s-iNcadU6Ig" },
-    { id: "moneyinside", name: "머니 인사이드", channelId: "UCz77QfQvB4U7fNCLM6N4f9Q", channelUrl: "https://www.youtube.com/@moneyinside7", latestUrl: "https://www.youtube.com/@moneyinside7/videos", fallbackVideoId: "Ubopw9o7WAI" },
-    { id: "3protv", name: "3PRO TV", channelId: "UChR9Kf3F5kCrb1fQ4vWv2Rg", channelUrl: "https://www.youtube.com/@3protv", latestUrl: "https://www.youtube.com/@3protv/videos", fallbackVideoId: "EUxbB3gyITg" },
-    { id: "simple-economy", name: "간단경제한스푼", channelId: "UChuu3KaoDnyttfN10GG169Q", channelUrl: "https://www.youtube.com/channel/UChuu3KaoDnyttfN10GG169Q", latestUrl: "https://www.youtube.com/@%EA%B0%84%EB%8B%A8%EA%B2%BD%EC%A0%9C%ED%95%9C%EC%8A%A4%ED%91%BC/videos", fallbackVideoId: "JLZ_MI5GPJ0" }
-  ];
-  const youtubeItems = [];
-  for (const ch of youtubeChannels) {
-    try {
-      const latest = await fetchYoutubeLatestByChannelId(ch.channelId);
-      youtubeItems.push({
-        id: ch.id,
-        name: ch.name,
-        channelUrl: ch.channelUrl,
-        latestUrl: ch.latestUrl,
-        videoUrl: latest.videoUrl,
-        thumbUrl: latest.thumbUrl,
-        videoTitle: latest.title,
-        publishedAt: latest.publishedAt
-      });
-      logs.push(`[OK] youtube ${ch.name} updated`);
-    } catch (err) {
-      if (ch.fallbackVideoId) {
+  if (!skipYoutube) {
+    const youtubeChannels = [
+      { id: "kyungiknam", name: "경제 읽어주는 남자", channelId: "UC3pfEoxaRDT6hvZZjpHu7Tg", channelUrl: "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg", latestUrl: "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos", fallbackVideoId: "3-bVy6O_6hU" },
+      { id: "sbs-explained", name: "교양이를 부탁해", channelId: "UCv0f2hty4EwA2vX6rFQfU2A", channelUrl: "https://www.youtube.com/@sbs_explained", latestUrl: "https://www.youtube.com/@sbs_explained/videos", fallbackVideoId: "aUi9yXxhg6s" },
+      { id: "hankyung-global", name: "한경 글로벌 마켓", channelId: "UCWskYkV4c4S9D__rsfOl2JA", channelUrl: "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA", latestUrl: "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos", fallbackVideoId: "s-iNcadU6Ig" },
+      { id: "moneyinside", name: "머니 인사이드", channelId: "UCz77QfQvB4U7fNCLM6N4f9Q", channelUrl: "https://www.youtube.com/@moneyinside7", latestUrl: "https://www.youtube.com/@moneyinside7/videos", fallbackVideoId: "Ubopw9o7WAI" },
+      { id: "3protv", name: "3PRO TV", channelId: "UChR9Kf3F5kCrb1fQ4vWv2Rg", channelUrl: "https://www.youtube.com/@3protv", latestUrl: "https://www.youtube.com/@3protv/videos", fallbackVideoId: "EUxbB3gyITg" },
+      { id: "simple-economy", name: "간단경제한스푼", channelId: "UChuu3KaoDnyttfN10GG169Q", channelUrl: "https://www.youtube.com/channel/UChuu3KaoDnyttfN10GG169Q", latestUrl: "https://www.youtube.com/@%EA%B0%84%EB%8B%A8%EA%B2%BD%EC%A0%9C%ED%95%9C%EC%8A%A4%ED%91%BC/videos", fallbackVideoId: "JLZ_MI5GPJ0" }
+    ];
+    const youtubeItems = [];
+    for (const ch of youtubeChannels) {
+      try {
+        const latest = await fetchYoutubeLatestByChannelId(ch.channelId);
         youtubeItems.push({
           id: ch.id,
           name: ch.name,
           channelUrl: ch.channelUrl,
           latestUrl: ch.latestUrl,
-          videoUrl: `https://www.youtube.com/watch?v=${ch.fallbackVideoId}`,
-          thumbUrl: `https://i.ytimg.com/vi/${ch.fallbackVideoId}/hqdefault.jpg`,
-          videoTitle: "대표 영상",
-          publishedAt: ""
+          videoUrl: latest.videoUrl,
+          thumbUrl: latest.thumbUrl,
+          videoTitle: latest.title,
+          publishedAt: latest.publishedAt
         });
+        logs.push(`[OK] youtube ${ch.name} updated`);
+      } catch (err) {
+        if (ch.fallbackVideoId) {
+          youtubeItems.push({
+            id: ch.id,
+            name: ch.name,
+            channelUrl: ch.channelUrl,
+            latestUrl: ch.latestUrl,
+            videoUrl: `https://www.youtube.com/watch?v=${ch.fallbackVideoId}`,
+            thumbUrl: `https://i.ytimg.com/vi/${ch.fallbackVideoId}/hqdefault.jpg`,
+            videoTitle: "대표 영상",
+            publishedAt: ""
+          });
+        }
+        logs.push(`[SKIP] youtube ${ch.name} ${err.message} (fallback used)`);
       }
-      logs.push(`[SKIP] youtube ${ch.name} ${err.message} (fallback used)`);
     }
+    const youtubeData = {
+      updatedAt: `${nowKstString()} (자동 업데이트)`,
+      items: youtubeItems
+    };
+    await writeFile(youtubeDataPath, `${JSON.stringify(youtubeData, null, 2)}\n`, "utf8");
+    await writeFile(youtubeDataJsPath, `window.YOUTUBE_DATA = ${JSON.stringify(youtubeData, null, 2)};\n`, "utf8");
+  } else {
+    logs.push("[SKIP] youtube (SKIP_YOUTUBE=1)");
   }
-  const youtubeData = {
-    updatedAt: `${nowKstString()} (자동 업데이트)`,
-    items: youtubeItems
-  };
-  await writeFile(youtubeDataPath, `${JSON.stringify(youtubeData, null, 2)}\n`, "utf8");
-  await writeFile(youtubeDataJsPath, `window.YOUTUBE_DATA = ${JSON.stringify(youtubeData, null, 2)};\n`, "utf8");
 
   console.log(
     skipPanic
@@ -790,7 +795,7 @@ async function main() {
   );
   console.log("ticker-data.json / ticker-data.js 업데이트 완료");
   console.log("overseas-data.json / overseas-data.js 업데이트 완료");
-  console.log("youtube-data.json / youtube-data.js 업데이트 완료");
+  if (!skipYoutube) console.log("youtube-data.json / youtube-data.js 업데이트 완료");
   logs.forEach((log) => console.log(log));
   console.log("고정값(수동 유지): bofa, putcall, gsbb (Yahoo에 CBOE equity P/C 일치 티커 없음)");
 }

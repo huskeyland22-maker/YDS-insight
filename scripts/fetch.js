@@ -492,9 +492,10 @@ function isForceMarketSave() {
     console.log("[fetch.js] isForceMarketSave: RUN_SLOT=2차");
     return true;
   }
+  // 한국 아침 08:00~08:59(메인 GitHub 배치 ≈ KST 08:20)에도 강제 저장되도록 8시부터 적용
   const h = kstHour();
-  if (Number.isFinite(h) && h >= 9) {
-    console.log("[fetch.js] isForceMarketSave: KST hour>=9 →", h);
+  if (Number.isFinite(h) && h >= 8) {
+    console.log("[fetch.js] isForceMarketSave: KST hour>=8 →", h);
     return true;
   }
   return false;
@@ -612,7 +613,7 @@ async function main() {
         throw e;
       }
     } else if (forceMarket) {
-      console.log("🔥 FORCE UPDATE 실행 (2차/FORCE_UPDATE/KST≥9)");
+      console.log("🔥 FORCE UPDATE 실행 (2차/FORCE_UPDATE/KST≥8)");
       try {
         saveMarketJson(slot, marketMerged, "us-close-snapshot.json 강제 저장(슬롯/시간)");
       } catch (e) {

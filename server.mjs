@@ -282,6 +282,7 @@ async function handleApiTicker(req, res) {
     { label: "Dollar Index", symbol: "DX-Y.NYB", digits: 2 },
     { label: "NASDAQ 100", symbol: "^NDX", digits: 2 },
     { label: "USD/KRW", symbol: "KRW=X", digits: 2 },
+    { label: "VIX", symbol: "^VIX", digits: 2 },
     { label: "US 10Y", symbol: "^TNX", digits: 2, valueDivisor: 10, isPercentSuffix: true, isPercentPointDelta: true }
   ];
 
