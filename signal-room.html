@@ -42,10 +42,6 @@
     <header class="site-header">
       <div class="container header-inner">
         <a class="logo" href="index.html">Y'ds</a>
-        <nav class="nav" aria-label="주요 메뉴">
-          <a href="index.html">홈</a>
-          <a href="signal-room.html" aria-current="page">Signal Desk</a>
-        </nav>
       </div>
     </header>
 
@@ -151,6 +147,35 @@
             </div>
 
             <p class="panic-us-link signal-desk__panel" id="panic-us-link" aria-live="polite">미국장 연동 코멘트 계산 중…</p>
+
+            <section
+              id="panic-dashboard-watchlist-feature"
+              class="panic-watchlist signal-desk__panel"
+              aria-label="관심 종목 워치리스트"
+            >
+              <header class="panic-watchlist__head">
+                <h2 class="panic-watchlist__title">관심 종목</h2>
+                <p class="panic-watchlist__hint">
+                  티커를 추가·삭제하면 이 브라우저에만 저장됩니다 (localStorage · <code>watchlist</code>).
+                </p>
+              </header>
+              <div class="panic-watchlist__form">
+                <label class="visually-hidden" for="panic-watchlist-input">티커 입력</label>
+                <input
+                  type="text"
+                  id="panic-watchlist-input"
+                  class="panic-watchlist__input"
+                  placeholder="예: SOXL, TQQQ, TSLA"
+                  maxlength="20"
+                  autocomplete="off"
+                  spellcheck="false"
+                />
+                <button type="button" id="panic-watchlist-add" class="panic-watchlist__btn panic-watchlist__btn--add">
+                  추가
+                </button>
+              </div>
+              <ul id="panic-watchlist-list" class="panic-watchlist__list" aria-live="polite"></ul>
+            </section>
 
             <div class="history-card signal-history-card signal-desk__panel" id="signal-history-card">
               <div class="history-title">Signal History</div>
@@ -264,7 +289,6 @@
       document.write('<script src="' + window.withSiteVersion("ticker-data.js") + '"><\/script>');
       document.write('<script src="' + window.withSiteVersion("data/us-close-snapshot.js") + '"><\/script>');
       document.write('<script src="' + window.withSiteVersion("panic-data.js") + '"><\/script>');
-      document.write('<script src="' + window.withSiteVersion("overseas-data.js") + '"><\/script>');
       document.write('<script src="' + window.withSiteVersion("data/portal-brief.js") + '"><\/script>');
       document.write('<script src="' + window.withSiteVersion("panic-signal-engine.js") + '"><\/script>');
       document.write('<script src="' + window.withSiteVersion("panic-trading-signals.js") + '"><\/script>');

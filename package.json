@@ -13,6 +13,7 @@
     "update:panic": "node scripts/run-update-chain.mjs",
     "update:panic-json": "node scripts/fetch.js",
     "refresh:market": "node scripts/refresh-market-light.mjs",
+    "ai:engine": "node scripts/demo-panic-ai-engine.mjs",
     "update:portal": "node scripts/fetch-portal-brief.mjs"
   }
 }

@@ -1097,46 +1097,132 @@
     renderKpis(items);
   }
 
-  function loadOverseasFromJson() {
-    var overseasUrl = appendFetchCacheBust(window.withSiteVersion("overseas-data.json"));
-    return fetch(overseasUrl, { cache: "no-store" })
-      .then(function (res) {
-        if (!res.ok) throw new Error("overseas-data fetch failed");
-        return res.json();
-      })
-      .then(function (data) {
-        if (data && Array.isArray(data.items)) {
-          latestOverseasData = data;
-        } else {
-          throw new Error("overseas-data invalid shape");
-        }
-      })
-      .catch(function () {
-        if (window.OVERSEAS_DATA && Array.isArray(window.OVERSEAS_DATA.items)) {
-          latestOverseasData = window.OVERSEAS_DATA;
-          return;
-        }
-        latestOverseasData = { items: [] };
-      })
-      .finally(function () {
-        refreshPanicSignalDashboard();
-      });
+  var WATCHLIST_STORAGE_KEY = "watchlist";
+
+  function normalizeWatchlistTicker(raw) {
+    var s = String(raw || "").trim().toUpperCase();
+    if (!s) return "";
+    if (!/^[A-Z0-9.\-]+$/.test(s)) return "";
+    if (s.length > 20) return "";
+    return s;
   }
+
+  function readWatchlistFromStorage() {
+    try {
+      var raw = localStorage.getItem(WATCHLIST_STORAGE_KEY);
+      if (!raw) return [];
+      var parsed = JSON.parse(raw);
+      if (!Array.isArray(parsed)) return [];
+      return parsed
+        .map(function (t) {
+          return normalizeWatchlistTicker(t);
+        })
+        .filter(function (t) {
+          return !!t;
+        });
+    } catch (e) {
+      return [];
+    }
+  }
+
+  function writeWatchlistToStorage(arr) {
+    try {
+      localStorage.setItem(WATCHLIST_STORAGE_KEY, JSON.stringify(arr));
+    } catch (e) {}
+  }
+
+  function dedupeWatchlistTickers(arr) {
+    var seen = Object.create(null);
+    var out = [];
+    arr.forEach(function (t) {
+      if (!seen[t]) {
+        seen[t] = true;
+        out.push(t);
+      }
+    });
+    return out;
+  }
+
+  function initPanicDashboardWatchlist() {
+    var root = document.getElementById("panic-dashboard-watchlist-feature");
+    var input = document.getElementById("panic-watchlist-input");
+    var addBtn = document.getElementById("panic-watchlist-add");
+    var listEl = document.getElementById("panic-watchlist-list");
+    if (!root || !input || !addBtn || !listEl) return;
+    if (root.getAttribute("data-watchlist-init") === "1") return;
+    root.setAttribute("data-watchlist-init", "1");
+
+    var state = dedupeWatchlistTickers(readWatchlistFromStorage());
+
+    function renderWatchlist() {
+      listEl.innerHTML = "";
+      if (!state.length) {
+        var emptyLi = document.createElement("li");
+        emptyLi.className = "panic-watchlist__empty";
+        emptyLi.textContent = "등록된 티커가 없습니다. 위에서 추가해 보세요.";
+        listEl.appendChild(emptyLi);
+        return;
+      }
+      state.forEach(function (ticker) {
+        var li = document.createElement("li");
+        li.className = "panic-watchlist__row";
+        var span = document.createElement("span");
+        span.className = "panic-watchlist__ticker";
+        span.textContent = ticker;
+        var btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "panic-watchlist__remove";
+        btn.setAttribute("aria-label", ticker + " 삭제");
+        btn.textContent = "❌";
+        btn.addEventListener("click", function () {
+          state = state.filter(function (x) {
+            return x !== ticker;
+          });
+          writeWatchlistToStorage(state);
+          renderWatchlist();
+        });
+        li.appendChild(span);
+        li.appendChild(btn);
+        listEl.appendChild(li);
+      });
+    }
+
+    function addTicker() {
+      var upper = normalizeWatchlistTicker(input.value);
+      if (!upper) return;
+      if (state.indexOf(upper) !== -1) return;
+      state.push(upper);
+      state = dedupeWatchlistTickers(state);
+      writeWatchlistToStorage(state);
+      input.value = "";
+      input.focus();
+      renderWatchlist();
+    }
+
+    addBtn.addEventListener("click", addTicker);
+    input.addEventListener("keydown", function (ev) {
+      if (ev.key === "Enter") {
+        ev.preventDefault();
+        addTicker();
+      }
+    });
+
+    renderWatchlist();
+  }
+
+  initPanicDashboardWatchlist();
 
   loadPanicTableFromJson();
   loadTickerTrackFromJson();
-  loadOverseasFromJson();
 
   window.setInterval(function () {
     loadPanicTableFromJson();
     loadTickerTrackFromJson();
-    loadOverseasFromJson();
     refreshPanicSignalDashboard();
   }, 8 * 60 * 1000);
 
   window.addEventListener("load", function () {
     loadPanicTableFromJson();
     loadTickerTrackFromJson();
-    loadOverseasFromJson();
   });
 })();
