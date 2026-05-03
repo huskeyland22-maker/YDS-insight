@@ -1,5 +1,5 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.05.03 18:07 KST (자동 업데이트)",
+  "updatedAt": "2026.05.03 21:02 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
@@ -56,10 +56,10 @@ window.YOUTUBE_DATA = {
       "name": "간단경제한스푼",
       "channelUrl": "https://www.youtube.com/channel/UChuu3KaoDnyttfN10GG169Q",
       "latestUrl": "https://www.youtube.com/@%EA%B0%84%EB%8B%A8%EA%B2%BD%EC%A0%9C%ED%95%9C%EC%8A%A4%ED%91%BC/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=atRRzT5xDAg",
-      "thumbUrl": "https://i.ytimg.com/vi/atRRzT5xDAg/hqdefault.jpg",
-      "videoTitle": "사우디 전력망 장악한 K-변압기, 한국이 사우디 에너지 혈맥을 쥐었다. \"빨리 보내달라\" 한국에 줄 선 이유",
-      "publishedAt": "2026-05-02T10:45:00+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=e8dwC5Z_jWI",
+      "thumbUrl": "https://i.ytimg.com/vi/e8dwC5Z_jWI/hqdefault.jpg",
+      "videoTitle": "바다 위 원자력 발전소 시대. 삼성 중공업 바다 위 '원전' 띄우자 전세계가 한국앞에 줄섰습니다 부유식 SMR",
+      "publishedAt": "2026-05-03T10:45:03+00:00"
     }
   ]
 };
