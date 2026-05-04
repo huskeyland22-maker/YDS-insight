@@ -1,15 +1,15 @@
 {
-  "updatedAt": "2026.05.04 17:09 KST (자동 업데이트)",
+  "updatedAt": "2026.05.04 19:36 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=Mc2wcvd72rY",
-      "thumbUrl": "https://i.ytimg.com/vi/Mc2wcvd72rY/hqdefault.jpg",
-      "videoTitle": "한국 국채, 지금이 장기투자 기회일 수 있습니다 | 경읽남과 토론합시다 | 마경환 대표 [3편]",
-      "publishedAt": "2026-05-04T03:00:23+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=sUchzW-Ya0M",
+      "thumbUrl": "https://i.ytimg.com/vi/sUchzW-Ya0M/hqdefault.jpg",
+      "videoTitle": "중동전쟁 끝나지 않았는데, 코스피 계속 오르는 이유. 전세계 정부부채가 유동성 장세 이끌어 [경읽남 243화]",
+      "publishedAt": "2026-05-04T09:01:12+00:00"
     },
     {
       "id": "sbs-explained",
@@ -56,10 +56,10 @@
       "name": "간단경제한스푼",
       "channelUrl": "https://www.youtube.com/channel/UChuu3KaoDnyttfN10GG169Q",
       "latestUrl": "https://www.youtube.com/@%EA%B0%84%EB%8B%A8%EA%B2%BD%EC%A0%9C%ED%95%9C%EC%8A%A4%ED%91%BC/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=e8dwC5Z_jWI",
-      "thumbUrl": "https://i.ytimg.com/vi/e8dwC5Z_jWI/hqdefault.jpg",
-      "videoTitle": "바다 위 원자력 발전소 시대. 삼성 중공업 바다 위 '원전' 띄우자 전세계가 한국앞에 줄섰습니다 부유식 SMR",
-      "publishedAt": "2026-05-03T10:45:03+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=CSmvLDKr36c",
+      "thumbUrl": "https://i.ytimg.com/vi/CSmvLDKr36c/hqdefault.jpg",
+      "videoTitle": "미국 퀄컴 중국 화웨도 못 뚫은 벽 ,차세대 통신망 6G, 한국이 ETRI가 세계 최초로 200Gbps 6G 무선 시연에 성공",
+      "publishedAt": "2026-05-04T09:45:01+00:00"
     }
   ]
 }
