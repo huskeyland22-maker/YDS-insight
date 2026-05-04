@@ -1,60 +1,60 @@
 window.OVERSEAS_DATA = {
-  "updatedAt": "2026.05.05 02:17 KST (자동 업데이트)",
+  "updatedAt": "2026.05.05 08:13 KST (자동 업데이트)",
   "items": [
     {
       "symbol": "SOXL",
-      "p1d": "+2.69%",
-      "p1w": "+1.62%",
-      "p1m": "+149.52%",
-      "mdd": "0.00%",
+      "p1d": "-2.19%",
+      "p1w": "+3.37%",
+      "p1m": "+141.80%",
+      "mdd": "-2.19%",
       "updatedAt": "2026.05.05"
     },
     {
       "symbol": "TQQQ",
-      "p1d": "+2.77%",
-      "p1w": "+4.38%",
-      "p1m": "+51.05%",
-      "mdd": "0.00%",
+      "p1d": "-0.60%",
+      "p1w": "+3.62%",
+      "p1m": "+49.80%",
+      "mdd": "-0.60%",
       "updatedAt": "2026.05.05"
     },
     {
       "symbol": "SSO",
-      "p1d": "+0.56%",
-      "p1w": "+1.77%",
-      "p1m": "+20.25%",
-      "mdd": "0.00%",
+      "p1d": "-0.71%",
+      "p1w": "+0.70%",
+      "p1m": "+19.19%",
+      "mdd": "-0.71%",
       "updatedAt": "2026.05.05"
     }
   ],
   "flow": {
-    "updatedAt": "2026.05.05 02:17 KST (자동 업데이트)",
+    "updatedAt": "2026.05.05 08:13 KST (자동 업데이트)",
     "items": [
       {
         "id": "usdjpy",
         "label": "엔캐리 압력",
-        "value": "USDJPY 156.98",
-        "delta": "-2.00%",
+        "value": "USDJPY 157.19",
+        "delta": "+0.22%",
         "tone": "up"
       },
       {
         "id": "dxy",
         "label": "달러 유동성",
-        "value": "Dollar Index 98.21",
-        "delta": "+0.13%",
+        "value": "Dollar Index 98.48",
+        "delta": "+0.27%",
         "tone": "up"
       },
       {
         "id": "qqq_tlt",
         "label": "기관 프록시",
-        "value": "QQQ/TLT 7.875",
-        "delta": "+0.97%",
+        "value": "QQQ/TLT 7.920",
+        "delta": "+0.58%",
         "tone": "up"
       },
       {
         "id": "hyg_lqd",
         "label": "신용 체력",
         "value": "HYG/LQD 0.737",
-        "delta": "-0.17%",
+        "delta": "-0.00%",
         "tone": "down"
       },
       {
@@ -107,43 +107,43 @@ window.OVERSEAS_DATA = {
         "id": "semiconductor",
         "label": "반도체",
         "symbol": "SOXX",
-        "p1d": "+0.93%",
-        "p1w": "+0.90%",
-        "p1m": "+37.58%",
-        "score": 17.4
+        "p1d": "-0.79%",
+        "p1w": "+1.46%",
+        "p1m": "+36.06%",
+        "score": 16.6
       },
       {
         "id": "ai-growth",
         "label": "AI/성장",
         "symbol": "QQQ",
-        "p1d": "+0.96%",
-        "p1w": "+1.55%",
-        "p1m": "+15.38%",
-        "score": 7.7
-      },
-      {
-        "id": "financials",
-        "label": "금융",
-        "symbol": "XLF",
-        "p1d": "-0.40%",
-        "p1w": "+0.97%",
-        "p1m": "+5.02%",
-        "score": 2.5
+        "p1d": "-0.19%",
+        "p1w": "+1.30%",
+        "p1m": "+15.03%",
+        "score": 7.2
       },
       {
         "id": "energy",
         "label": "에너지",
         "symbol": "XLE",
-        "p1d": "-1.34%",
-        "p1w": "+3.48%",
-        "p1m": "-0.20%",
-        "score": 0.9
+        "p1d": "+0.92%",
+        "p1w": "+4.62%",
+        "p1m": "+0.24%",
+        "score": 1.9
+      },
+      {
+        "id": "financials",
+        "label": "금융",
+        "symbol": "XLF",
+        "p1d": "-0.65%",
+        "p1w": "-0.44%",
+        "p1m": "+4.14%",
+        "score": 1.6
       }
     ],
     "weeklySummary": [
       "국면: Risk-on (74/100) · 성장/섹터 ETF는 눌림 분할 접근",
-      "강세 섹터: 반도체(SOXX) +0.90% / +37.58%",
-      "약세 섹터: 에너지(XLE) +3.48% / -0.20%"
+      "강세 섹터: 반도체(SOXX) +1.46% / +36.06%",
+      "약세 섹터: 금융(XLF) -0.44% / +4.14%"
     ]
   }
 };
