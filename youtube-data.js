@@ -1,5 +1,5 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.05.04 19:36 KST (자동 업데이트)",
+  "updatedAt": "2026.05.05 01:21 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=CmnDTj1ARtc",
-      "thumbUrl": "https://i.ytimg.com/vi/CmnDTj1ARtc/hqdefault.jpg",
-      "videoTitle": "\"호르무즈 상선 내보낸다\" 승부수 던진 트럼프ㅣ이상은의 워싱턴나우",
-      "publishedAt": "2026-05-04T03:00:21+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=mU8fg6DWipQ",
+      "thumbUrl": "https://i.ytimg.com/vi/mU8fg6DWipQ/hqdefault.jpg",
+      "videoTitle": "[빈난새의 개장전요것만-5월4일] 불안한 유가•금리 | 버핏 \"증시 도박판\" | 마이크론 \"AI 이제 시작\" | 클래리티법 청신호 | AMD 애플 팔란티어 루멘텀 맥도날드 GFS",
+      "publishedAt": "2026-05-04T14:28:42+00:00"
     },
     {
       "id": "moneyinside",
@@ -56,10 +56,10 @@ window.YOUTUBE_DATA = {
       "name": "간단경제한스푼",
       "channelUrl": "https://www.youtube.com/channel/UChuu3KaoDnyttfN10GG169Q",
       "latestUrl": "https://www.youtube.com/@%EA%B0%84%EB%8B%A8%EA%B2%BD%EC%A0%9C%ED%95%9C%EC%8A%A4%ED%91%BC/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=CSmvLDKr36c",
-      "thumbUrl": "https://i.ytimg.com/vi/CSmvLDKr36c/hqdefault.jpg",
-      "videoTitle": "미국 퀄컴 중국 화웨도 못 뚫은 벽 ,차세대 통신망 6G, 한국이 ETRI가 세계 최초로 200Gbps 6G 무선 시연에 성공",
-      "publishedAt": "2026-05-04T09:45:01+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=vPdtFNZYAkQ",
+      "thumbUrl": "https://i.ytimg.com/vi/vPdtFNZYAkQ/hqdefault.jpg",
+      "videoTitle": "차세대 중형 위성 2호 4년 만에 드디어 해냈다 한국 '정밀 관측 위성' 발사 성공했습니다",
+      "publishedAt": "2026-05-04T10:45:08+00:00"
     }
   ]
 };
