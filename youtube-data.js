@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.05.05 16:28 KST (자동 업데이트)",
+  "updatedAt": "2026.05.05 19:19 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=2G2ZcRIv3gw",
-      "thumbUrl": "https://i.ytimg.com/vi/2G2ZcRIv3gw/hqdefault.jpg",
-      "videoTitle": "《자본주의 원리》유동성과 자산가격은 어떻게 연결되는가 | 클로즈업 | 경제 쌩기초 [2편]",
-      "publishedAt": "2026-05-05T03:00:07+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=KLUlAI3hbLQ",
+      "thumbUrl": "https://i.ytimg.com/vi/KLUlAI3hbLQ/hqdefault.jpg",
+      "videoTitle": "중동 전쟁, 러우 전쟁처럼 장기화될 수 있다 : 트럼프 “한국도 참전해야” 제안에…靑 “국내법 절차 감안해 검토” | 클로즈업",
+      "publishedAt": "2026-05-05T08:55:30+00:00"
     },
     {
       "id": "sbs-explained",
@@ -56,10 +56,10 @@ window.YOUTUBE_DATA = {
       "name": "간단경제한스푼",
       "channelUrl": "https://www.youtube.com/channel/UChuu3KaoDnyttfN10GG169Q",
       "latestUrl": "https://www.youtube.com/@%EA%B0%84%EB%8B%A8%EA%B2%BD%EC%A0%9C%ED%95%9C%EC%8A%A4%ED%91%BC/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=vPdtFNZYAkQ",
-      "thumbUrl": "https://i.ytimg.com/vi/vPdtFNZYAkQ/hqdefault.jpg",
-      "videoTitle": "차세대 중형 위성 2호 4년 만에 드디어 해냈다 한국 '정밀 관측 위성' 발사 성공했습니다",
-      "publishedAt": "2026-05-04T10:45:08+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=pDc1uQgBKzA",
+      "thumbUrl": "https://i.ytimg.com/vi/pDc1uQgBKzA/hqdefault.jpg",
+      "videoTitle": "95% 스페인 독점 미네랄 블록 익산 작은 공장이 뒤집었습니다 일본 와규도 한국 앞에 줄섰습니다",
+      "publishedAt": "2026-05-05T09:45:09+00:00"
     }
   ]
 };
