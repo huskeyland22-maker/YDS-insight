@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.05.06 01:12 KST (자동 업데이트)",
+  "updatedAt": "2026.05.06 16:58 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=KLUlAI3hbLQ",
-      "thumbUrl": "https://i.ytimg.com/vi/KLUlAI3hbLQ/hqdefault.jpg",
-      "videoTitle": "중동 전쟁, 러우 전쟁처럼 장기화될 수 있다 : 트럼프 “한국도 참전해야” 제안에…靑 “국내법 절차 감안해 검토” | 클로즈업",
-      "publishedAt": "2026-05-05T08:55:30+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=rfM4F91s3ow",
+      "thumbUrl": "https://i.ytimg.com/vi/rfM4F91s3ow/hqdefault.jpg",
+      "videoTitle": "[속보] 코스피 7000 시대! 25만전자, 150만 닉스 [즉시분석]",
+      "publishedAt": "2026-05-06T00:44:54+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=gGuNdD8y_x8",
-      "thumbUrl": "https://i.ytimg.com/vi/gGuNdD8y_x8/hqdefault.jpg",
-      "videoTitle": "[빈난새의 개장전요것만-5월5일] \"테플론 증시\" 이유 | 애플, 인텔 삼성 협업 검토 | 팔란티어 온세미 패브리넷 GFS 이튼 핀터레스트 아이렌 ADM 파이어플라이 페이팔 화이자",
-      "publishedAt": "2026-05-05T14:30:54+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=mnuBPvmMRpA",
+      "thumbUrl": "https://i.ytimg.com/vi/mnuBPvmMRpA/hqdefault.jpg",
+      "videoTitle": "팔기엔 너무 강하고, 사자니 너무 오른것 같은 반도체 주가 논쟁 | AI 인프라 슈퍼사이클 수혜주 | 빈난새의 빈틈없이월가",
+      "publishedAt": "2026-05-06T02:00:48+00:00"
     },
     {
       "id": "moneyinside",
