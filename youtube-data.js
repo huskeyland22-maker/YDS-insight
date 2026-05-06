@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.05.06 16:58 KST (자동 업데이트)",
+  "updatedAt": "2026.05.06 20:22 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=rfM4F91s3ow",
-      "thumbUrl": "https://i.ytimg.com/vi/rfM4F91s3ow/hqdefault.jpg",
-      "videoTitle": "[속보] 코스피 7000 시대! 25만전자, 150만 닉스 [즉시분석]",
-      "publishedAt": "2026-05-06T00:44:54+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=T0yZD26Qhbo",
+      "thumbUrl": "https://i.ytimg.com/vi/T0yZD26Qhbo/hqdefault.jpg",
+      "videoTitle": "양자컴퓨터가 나오면 비트코인은 끝나는가? 암호체계 붕괴 시나리오 | 경읽남과 토론합시다 | 이명호박사 [1편]",
+      "publishedAt": "2026-05-06T09:00:41+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=mnuBPvmMRpA",
-      "thumbUrl": "https://i.ytimg.com/vi/mnuBPvmMRpA/hqdefault.jpg",
-      "videoTitle": "팔기엔 너무 강하고, 사자니 너무 오른것 같은 반도체 주가 논쟁 | AI 인프라 슈퍼사이클 수혜주 | 빈난새의 빈틈없이월가",
-      "publishedAt": "2026-05-06T02:00:48+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=Wrz0yMT9Des",
+      "thumbUrl": "https://i.ytimg.com/vi/Wrz0yMT9Des/hqdefault.jpg",
+      "videoTitle": "AI 모델 밀려도 자신만만? 애플이 설계한 역전 시나리오| 김인엽의 실리콘밸리나우",
+      "publishedAt": "2026-05-06T10:00:49+00:00"
     },
     {
       "id": "moneyinside",
@@ -56,10 +56,10 @@ window.YOUTUBE_DATA = {
       "name": "간단경제한스푼",
       "channelUrl": "https://www.youtube.com/channel/UChuu3KaoDnyttfN10GG169Q",
       "latestUrl": "https://www.youtube.com/@%EA%B0%84%EB%8B%A8%EA%B2%BD%EC%A0%9C%ED%95%9C%EC%8A%A4%ED%91%BC/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=aVtfWGy9tZg",
-      "thumbUrl": "https://i.ytimg.com/vi/aVtfWGy9tZg/hqdefault.jpg",
-      "videoTitle": "세계 1위 농기계 기업이 포기하고 못한 그 기술, 한국  대동 AI 트랙터가 자율주행 시대를 열었다",
-      "publishedAt": "2026-05-05T10:45:00+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=bBR9BPL-9C8",
+      "thumbUrl": "https://i.ytimg.com/vi/bBR9BPL-9C8/hqdefault.jpg",
+      "videoTitle": "한번 충전에 20년 항해? 'SMR 원자로 선박' 등장. 한국이 표준됩니다. 조선과 원전 두 패권을 잡은 유일한 나라",
+      "publishedAt": "2026-05-06T10:45:10+00:00"
     }
   ]
 };
