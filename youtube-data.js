@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.05.07 15:22 KST (자동 업데이트)",
+  "updatedAt": "2026.05.07 20:42 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=3-bVy6O_6hU",
-      "thumbUrl": "https://i.ytimg.com/vi/3-bVy6O_6hU/hqdefault.jpg",
-      "videoTitle": "대표 영상",
-      "publishedAt": ""
+      "videoUrl": "https://www.youtube.com/watch?v=6fJ1qhIQbgU",
+      "thumbUrl": "https://i.ytimg.com/vi/6fJ1qhIQbgU/hqdefault.jpg",
+      "videoTitle": "케빈워시의 금리인하 추진 '3가지 기적의 논리', 5월 국채금리 불안 커질까? [즉시분석]",
+      "publishedAt": "2026-05-07T09:00:16+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=s-iNcadU6Ig",
-      "thumbUrl": "https://i.ytimg.com/vi/s-iNcadU6Ig/hqdefault.jpg",
-      "videoTitle": "대표 영상",
-      "publishedAt": ""
+      "videoUrl": "https://www.youtube.com/watch?v=8Eq_NrZY0rs",
+      "thumbUrl": "https://i.ytimg.com/vi/8Eq_NrZY0rs/hqdefault.jpg",
+      "videoTitle": "[김종학의 뉴욕, 지금-5월7일] 유가 상승 부담에 출구 모색 | 코닝, AMD, 마이크론, 오클로, ARM, 도어대시, 우버, 디즈니, CVS, 오스카헬스, 노보노, 샤크닌자",
+      "publishedAt": "2026-05-06T21:17:58+00:00"
     },
     {
       "id": "moneyinside",
@@ -56,10 +56,10 @@ window.YOUTUBE_DATA = {
       "name": "간단경제한스푼",
       "channelUrl": "https://www.youtube.com/channel/UChuu3KaoDnyttfN10GG169Q",
       "latestUrl": "https://www.youtube.com/@%EA%B0%84%EB%8B%A8%EA%B2%BD%EC%A0%9C%ED%95%9C%EC%8A%A4%ED%91%BC/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=JLZ_MI5GPJ0",
-      "thumbUrl": "https://i.ytimg.com/vi/JLZ_MI5GPJ0/hqdefault.jpg",
-      "videoTitle": "대표 영상",
-      "publishedAt": ""
+      "videoUrl": "https://www.youtube.com/watch?v=1Fdx8T4Xw00",
+      "thumbUrl": "https://i.ytimg.com/vi/1Fdx8T4Xw00/hqdefault.jpg",
+      "videoTitle": "일본 50년 독점한 검은 소재 서울대 연구팀 판을 흔듭니다 초경량 탄소섬유 복합재 개발",
+      "publishedAt": "2026-05-07T10:45:00+00:00"
     }
   ]
 };
