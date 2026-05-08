@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.05.07 20:42 KST (자동 업데이트)",
+  "updatedAt": "2026.05.08 09:08 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=6fJ1qhIQbgU",
-      "thumbUrl": "https://i.ytimg.com/vi/6fJ1qhIQbgU/hqdefault.jpg",
-      "videoTitle": "케빈워시의 금리인하 추진 '3가지 기적의 논리', 5월 국채금리 불안 커질까? [즉시분석]",
-      "publishedAt": "2026-05-07T09:00:16+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=bMSiuLSoX0Q",
+      "thumbUrl": "https://i.ytimg.com/vi/bMSiuLSoX0Q/hqdefault.jpg",
+      "videoTitle": "반도체 슈퍼사이클 논란. 실적 착시와 가격 피크아웃 가능성 | 경읽남과 토론합시다 | 이주완 박사 [1편]",
+      "publishedAt": "2026-05-07T21:00:41+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=8Eq_NrZY0rs",
-      "thumbUrl": "https://i.ytimg.com/vi/8Eq_NrZY0rs/hqdefault.jpg",
-      "videoTitle": "[김종학의 뉴욕, 지금-5월7일] 유가 상승 부담에 출구 모색 | 코닝, AMD, 마이크론, 오클로, ARM, 도어대시, 우버, 디즈니, CVS, 오스카헬스, 노보노, 샤크닌자",
-      "publishedAt": "2026-05-06T21:17:58+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=R-WbAau45tE",
+      "thumbUrl": "https://i.ytimg.com/vi/R-WbAau45tE/hqdefault.jpg",
+      "videoTitle": "[김현석의 브레이킹 뉴스] 4월 고용보고서 발표! 5월 8일 오후 9시 30분 L.I.V.E",
+      "publishedAt": "2026-05-07T22:15:09+00:00"
     },
     {
       "id": "moneyinside",
