@@ -1,61 +1,61 @@
 window.OVERSEAS_DATA = {
-  "updatedAt": "2026.05.09 02:23 KST (자동 업데이트)",
+  "updatedAt": "2026.05.09 06:06 KST (자동 업데이트)",
   "items": [
     {
       "symbol": "SOXL",
-      "p1d": "-8.29%",
-      "p1w": "+19.78%",
-      "p1m": "+125.33%",
-      "mdd": "-8.29%",
+      "p1d": "+16.33%",
+      "p1w": "+35.69%",
+      "p1m": "+145.82%",
+      "mdd": "0.00%",
       "updatedAt": "2026.05.09"
     },
     {
       "symbol": "TQQQ",
-      "p1d": "-0.32%",
-      "p1w": "+12.28%",
-      "p1m": "+48.62%",
-      "mdd": "-0.32%",
+      "p1d": "+6.92%",
+      "p1w": "+16.81%",
+      "p1m": "+55.80%",
+      "mdd": "0.00%",
       "updatedAt": "2026.05.09"
     },
     {
       "symbol": "SSO",
-      "p1d": "-0.66%",
-      "p1w": "+3.53%",
-      "p1m": "+16.52%",
-      "mdd": "-0.66%",
+      "p1d": "+1.60%",
+      "p1w": "+4.60%",
+      "p1m": "+17.02%",
+      "mdd": "0.00%",
       "updatedAt": "2026.05.09"
     }
   ],
   "flow": {
-    "updatedAt": "2026.05.09 02:23 KST (자동 업데이트)",
+    "updatedAt": "2026.05.09 06:06 KST (자동 업데이트)",
     "items": [
       {
         "id": "usdjpy",
         "label": "엔캐리 압력",
-        "value": "USDJPY 156.51",
-        "delta": "-0.74%",
+        "value": "USDJPY 156.62",
+        "delta": "-0.13%",
         "tone": "up"
       },
       {
         "id": "dxy",
         "label": "달러 유동성",
-        "value": "Dollar Index 98.25",
-        "delta": "+0.23%",
+        "value": "Dollar Index 97.85",
+        "delta": "-0.41%",
         "tone": "up"
       },
       {
         "id": "qqq_tlt",
         "label": "기관 프록시",
-        "value": "QQQ/TLT 8.114",
-        "delta": "+0.38%",
+        "value": "QQQ/TLT 8.262",
+        "delta": "+1.83%",
         "tone": "up"
       },
       {
         "id": "hyg_lqd",
         "label": "신용 체력",
         "value": "HYG/LQD 0.734",
-        "delta": "+0.04%",
-        "tone": "up"
+        "delta": "-0.07%",
+        "tone": "down"
       },
       {
         "id": "vix_hy",
@@ -66,7 +66,7 @@ window.OVERSEAS_DATA = {
       }
     ],
     "regime": {
-      "score": 90,
+      "score": 74,
       "state": "Risk-on",
       "action": "성장/섹터 ETF는 눌림 분할 접근",
       "history": [
@@ -96,7 +96,7 @@ window.OVERSEAS_DATA = {
         },
         {
           "d": "2026.05.09",
-          "s": 90
+          "s": 74
         }
       ]
     }
@@ -107,43 +107,43 @@ window.OVERSEAS_DATA = {
         "id": "semiconductor",
         "label": "반도체",
         "symbol": "SOXX",
-        "p1d": "-2.86%",
-        "p1w": "+6.70%",
-        "p1m": "+32.93%",
-        "score": 16.6
+        "p1d": "+5.67%",
+        "p1w": "+11.71%",
+        "p1m": "+37.42%",
+        "score": 22.1
       },
       {
         "id": "ai-growth",
         "label": "AI/성장",
         "symbol": "QQQ",
-        "p1d": "-0.12%",
-        "p1w": "+4.07%",
-        "p1m": "+14.66%",
-        "score": 8
+        "p1d": "+2.34%",
+        "p1w": "+5.50%",
+        "p1m": "+16.56%",
+        "score": 9.8
       },
       {
         "id": "financials",
         "label": "금융",
         "symbol": "XLF",
-        "p1d": "-0.56%",
-        "p1w": "-1.11%",
-        "p1m": "+0.68%",
-        "score": -0.2
+        "p1d": "-0.60%",
+        "p1w": "-1.31%",
+        "p1m": "-0.18%",
+        "score": -0.7
       },
       {
         "id": "energy",
         "label": "에너지",
         "symbol": "XLE",
-        "p1d": "-1.84%",
-        "p1w": "-6.20%",
-        "p1m": "-3.62%",
-        "score": -4.2
+        "p1d": "-0.45%",
+        "p1w": "-5.35%",
+        "p1m": "-2.84%",
+        "score": -3.2
       }
     ],
     "weeklySummary": [
-      "국면: Risk-on (90/100) · 성장/섹터 ETF는 눌림 분할 접근",
-      "강세 섹터: 반도체(SOXX) +6.70% / +32.93%",
-      "약세 섹터: 에너지(XLE) -6.20% / -3.62%"
+      "국면: Risk-on (74/100) · 성장/섹터 ETF는 눌림 분할 접근",
+      "강세 섹터: 반도체(SOXX) +11.71% / +37.42%",
+      "약세 섹터: 에너지(XLE) -5.35% / -2.84%"
     ]
   }
 };
