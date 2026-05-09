@@ -21,7 +21,7 @@
   },
   {
     "symbol": "DXY",
-    "price": 97.85,
+    "price": 97.84,
     "change": -0.41
   },
   {
@@ -31,7 +31,7 @@
   },
   {
     "symbol": "VIX",
-    "price": 17.08,
-    "change": -0.31
+    "price": 17.19,
+    "change": 0.11
   }
 ]

@@ -24,8 +24,8 @@
     "change": -0.5
   },
   "vix": {
-    "value": 17.08,
-    "change": -0.31
+    "value": 17.19,
+    "change": 0.11
   },
   "us10y": {
     "value": 4.388,
@@ -36,8 +36,8 @@
     "change": 854000
   },
   "dxy": {
-    "value": 97.85,
+    "value": 97.84,
     "change": -0.41
   },
-  "updatedAt": "2026-05-08T21:06:35.036Z"
+  "updatedAt": "2026-05-09T00:10:57.005Z"
 }
