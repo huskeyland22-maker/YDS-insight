@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.05.10 19:54 KST (자동 업데이트)",
+  "updatedAt": "2026.05.11 09:09 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=u4Rn0bDXbsg",
-      "thumbUrl": "https://i.ytimg.com/vi/u4Rn0bDXbsg/hqdefault.jpg",
-      "videoTitle": "[풀버전] 안전자산 '금' 공식은 왜 깨졌나? 전쟁 이후 비트코인·스테이블코인이 뜨는 이유 | 경읽남과 토론합시다 | 김동환 대표",
-      "publishedAt": "2026-05-10T09:01:15+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=B81jDk6bltw",
+      "thumbUrl": "https://i.ytimg.com/vi/B81jDk6bltw/hqdefault.jpg",
+      "videoTitle": "삼성전자 파업하면 한국 수출이 흔들린다? 반도체 성과급 논쟁의 진짜 쟁점 | 경읽남과 토론합시다 | 이주완 박사 [3편]",
+      "publishedAt": "2026-05-10T21:00:15+00:00"
     },
     {
       "id": "sbs-explained",
