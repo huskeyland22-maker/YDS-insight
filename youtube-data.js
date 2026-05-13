@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.05.12 20:46 KST (자동 업데이트)",
+  "updatedAt": "2026.05.13 09:14 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=xBDFKmoahn8",
-      "thumbUrl": "https://i.ytimg.com/vi/xBDFKmoahn8/hqdefault.jpg",
-      "videoTitle": "하이닉스가 엔비디아보다 마진이 높은 이유 | 경읽남과 토론합시다 | 유응준 대표 [2편]",
-      "publishedAt": "2026-05-12T09:01:22+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=3-bVy6O_6hU",
+      "thumbUrl": "https://i.ytimg.com/vi/3-bVy6O_6hU/hqdefault.jpg",
+      "videoTitle": "대표 영상",
+      "publishedAt": ""
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=Epn7943q2hg",
-      "thumbUrl": "https://i.ytimg.com/vi/Epn7943q2hg/hqdefault.jpg",
-      "videoTitle": "다 같은 반도체가 아니다, 인텔 퀄컴 폭등 이유 | AI 반도체 밸류체인 총정리 | 빈난새의 빈틈없이월가",
-      "publishedAt": "2026-05-12T02:00:20+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=s-iNcadU6Ig",
+      "thumbUrl": "https://i.ytimg.com/vi/s-iNcadU6Ig/hqdefault.jpg",
+      "videoTitle": "대표 영상",
+      "publishedAt": ""
     },
     {
       "id": "moneyinside",
@@ -56,10 +56,10 @@ window.YOUTUBE_DATA = {
       "name": "간단경제한스푼",
       "channelUrl": "https://www.youtube.com/channel/UChuu3KaoDnyttfN10GG169Q",
       "latestUrl": "https://www.youtube.com/@%EA%B0%84%EB%8B%A8%EA%B2%BD%EC%A0%9C%ED%95%9C%EC%8A%A4%ED%91%BC/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=5kmmI-69oC0",
-      "thumbUrl": "https://i.ytimg.com/vi/5kmmI-69oC0/hqdefault.jpg",
-      "videoTitle": "100년 동안 풀지 못했던 초전도의 발열 난제, 퀜치 한국인 교수가 풀어버렸더니 영국이 기술 빌리러왔습니다.",
-      "publishedAt": "2026-05-12T10:30:07+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=JLZ_MI5GPJ0",
+      "thumbUrl": "https://i.ytimg.com/vi/JLZ_MI5GPJ0/hqdefault.jpg",
+      "videoTitle": "대표 영상",
+      "publishedAt": ""
     }
   ]
 };
