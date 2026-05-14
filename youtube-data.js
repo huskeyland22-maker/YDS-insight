@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.05.13 20:54 KST (자동 업데이트)",
+  "updatedAt": "2026.05.14 09:16 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=uuqTuHvj_Pc",
-      "thumbUrl": "https://i.ytimg.com/vi/uuqTuHvj_Pc/hqdefault.jpg",
-      "videoTitle": "미국 국방부가 비트코인을 보기 시작했습니다… 판이 바뀝니다 | 경읽남과 토론합시다 | 정구태 대표 [1편]",
-      "publishedAt": "2026-05-13T09:01:09+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=K6IuOSVJF9A",
+      "thumbUrl": "https://i.ytimg.com/vi/K6IuOSVJF9A/hqdefault.jpg",
+      "videoTitle": "세상의 모든 자산은 결국 토큰화됩니다 | 경읽남과 토론합시다 | 정구태 대표 [2편]",
+      "publishedAt": "2026-05-13T21:00:32+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=zcgjcHMk_1A",
-      "thumbUrl": "https://i.ytimg.com/vi/zcgjcHMk_1A/hqdefault.jpg",
-      "videoTitle": "극과 극 스페이스X-앤스로픽, 손잡은 이유는 | 김인엽의 실리콘밸리나우",
-      "publishedAt": "2026-05-13T10:00:30+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=IqBxiCmJrHM",
+      "thumbUrl": "https://i.ytimg.com/vi/IqBxiCmJrHM/hqdefault.jpg",
+      "videoTitle": "[김종학의 뉴욕, 지금-5월14일] 미 대통령, 9년 만에 중국 방문 | 세레브라스, 퍼보에너지, 네비우스, 울프스피드, 팔로알토, 엔비디아, 시스코, 알리바바, 포드",
+      "publishedAt": "2026-05-13T21:21:43+00:00"
     },
     {
       "id": "moneyinside",
