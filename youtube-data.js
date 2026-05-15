@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.05.15 15:45 KST (자동 업데이트)",
+  "updatedAt": "2026.05.15 20:46 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=3-bVy6O_6hU",
-      "thumbUrl": "https://i.ytimg.com/vi/3-bVy6O_6hU/hqdefault.jpg",
-      "videoTitle": "대표 영상",
-      "publishedAt": ""
+      "videoUrl": "https://www.youtube.com/watch?v=n3vtRwD6M1k",
+      "thumbUrl": "https://i.ytimg.com/vi/n3vtRwD6M1k/hqdefault.jpg",
+      "videoTitle": "[속보] 권력의 대이동, 체급 키운 중국. '이란-대만 빅딜' 없이 끝난 세기의 담판 미중 정상회담 [즉시분석]",
+      "publishedAt": "2026-05-15T08:15:15+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=s-iNcadU6Ig",
-      "thumbUrl": "https://i.ytimg.com/vi/s-iNcadU6Ig/hqdefault.jpg",
-      "videoTitle": "대표 영상",
-      "publishedAt": ""
+      "videoUrl": "https://www.youtube.com/watch?v=X8gw8T1APSo",
+      "thumbUrl": "https://i.ytimg.com/vi/X8gw8T1APSo/hqdefault.jpg",
+      "videoTitle": "미국도 긴장한 중국 AI…중국 기술주 반전 시작 | 직격인터뷰 : 조너선 크레인 크레인셰어스 CEO",
+      "publishedAt": "2026-05-15T10:00:38+00:00"
     },
     {
       "id": "moneyinside",
@@ -56,10 +56,10 @@ window.YOUTUBE_DATA = {
       "name": "간단경제한스푼",
       "channelUrl": "https://www.youtube.com/channel/UChuu3KaoDnyttfN10GG169Q",
       "latestUrl": "https://www.youtube.com/@%EA%B0%84%EB%8B%A8%EA%B2%BD%EC%A0%9C%ED%95%9C%EC%8A%A4%ED%91%BC/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=JLZ_MI5GPJ0",
-      "thumbUrl": "https://i.ytimg.com/vi/JLZ_MI5GPJ0/hqdefault.jpg",
-      "videoTitle": "대표 영상",
-      "publishedAt": ""
+      "videoUrl": "https://www.youtube.com/watch?v=7mxt116gwIg",
+      "thumbUrl": "https://i.ytimg.com/vi/7mxt116gwIg/hqdefault.jpg",
+      "videoTitle": "엔진 다시 집어넣은 전기차 EREV, 미국 전기차 보조금이 끊기자 K-배터리에 던진 역설적 선물",
+      "publishedAt": "2026-05-15T09:30:05+00:00"
     }
   ]
 };
