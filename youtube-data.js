@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.05.16 09:08 KST (자동 업데이트)",
+  "updatedAt": "2026.05.16 15:10 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=qYNf833JmEw",
-      "thumbUrl": "https://i.ytimg.com/vi/qYNf833JmEw/hqdefault.jpg",
-      "videoTitle": "[풀버전] 미국 국방부가 비트코인을 모으기 시작했다. \"크립토 시장 판이 바뀝니다\" | 경읽남과 토론합시다 | 정구태 대표",
-      "publishedAt": "2026-05-15T21:00:54+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=V1kdemFvX7Y",
+      "thumbUrl": "https://i.ytimg.com/vi/V1kdemFvX7Y/hqdefault.jpg",
+      "videoTitle": "수도권 집값, 결국 더 오를 수밖에 없습니다 | 경읽남과 토론합시다 | 김효선 위원 [2편]",
+      "publishedAt": "2026-05-16T03:00:34+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=zTciwXGq1vA",
-      "thumbUrl": "https://i.ytimg.com/vi/zTciwXGq1vA/hqdefault.jpg",
-      "videoTitle": "\"수수료 받던 플랫폼 다 무너진다\"...우버, 자율주행과 AI 시대에 살아남을까 | 바이아메리카 in 뉴욕",
-      "publishedAt": "2026-05-16T00:00:29+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=0wG-Qn-9TH8",
+      "thumbUrl": "https://i.ytimg.com/vi/0wG-Qn-9TH8/hqdefault.jpg",
+      "videoTitle": "트럼프가 미-중 정상회담에 젠슨 황을 데려간 이유는 | 세레브라스는 버블의 신호탄인 걸까 | 월가백브리핑",
+      "publishedAt": "2026-05-16T03:00:21+00:00"
     },
     {
       "id": "moneyinside",
