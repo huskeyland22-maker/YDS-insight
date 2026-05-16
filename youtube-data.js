@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.05.15 20:46 KST (자동 업데이트)",
+  "updatedAt": "2026.05.16 09:08 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=n3vtRwD6M1k",
-      "thumbUrl": "https://i.ytimg.com/vi/n3vtRwD6M1k/hqdefault.jpg",
-      "videoTitle": "[속보] 권력의 대이동, 체급 키운 중국. '이란-대만 빅딜' 없이 끝난 세기의 담판 미중 정상회담 [즉시분석]",
-      "publishedAt": "2026-05-15T08:15:15+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=qYNf833JmEw",
+      "thumbUrl": "https://i.ytimg.com/vi/qYNf833JmEw/hqdefault.jpg",
+      "videoTitle": "[풀버전] 미국 국방부가 비트코인을 모으기 시작했다. \"크립토 시장 판이 바뀝니다\" | 경읽남과 토론합시다 | 정구태 대표",
+      "publishedAt": "2026-05-15T21:00:54+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=X8gw8T1APSo",
-      "thumbUrl": "https://i.ytimg.com/vi/X8gw8T1APSo/hqdefault.jpg",
-      "videoTitle": "미국도 긴장한 중국 AI…중국 기술주 반전 시작 | 직격인터뷰 : 조너선 크레인 크레인셰어스 CEO",
-      "publishedAt": "2026-05-15T10:00:38+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=zTciwXGq1vA",
+      "thumbUrl": "https://i.ytimg.com/vi/zTciwXGq1vA/hqdefault.jpg",
+      "videoTitle": "\"수수료 받던 플랫폼 다 무너진다\"...우버, 자율주행과 AI 시대에 살아남을까 | 바이아메리카 in 뉴욕",
+      "publishedAt": "2026-05-16T00:00:29+00:00"
     },
     {
       "id": "moneyinside",

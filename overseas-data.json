@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026.05.16 06:07 KST (자동 업데이트)",
+  "updatedAt": "2026.05.16 09:08 KST (자동 업데이트)",
   "items": [
     {
       "symbol": "SOXL",
@@ -27,7 +27,7 @@
     }
   ],
   "flow": {
-    "updatedAt": "2026.05.16 06:07 KST (자동 업데이트)",
+    "updatedAt": "2026.05.16 09:08 KST (자동 업데이트)",
     "items": [
       {
         "id": "usdjpy",
@@ -40,7 +40,7 @@
         "id": "dxy",
         "label": "달러 유동성",
         "value": "Dollar Index 99.27",
-        "delta": "+0.40%",
+        "delta": "+0.39%",
         "tone": "up"
       },
       {
@@ -60,8 +60,8 @@
       {
         "id": "vix_hy",
         "label": "리스크 선호",
-        "value": "VIX 17.26 / HY 2.82%",
-        "delta": "VIX -0.61% · HY 0.00%",
+        "value": "VIX 18.43 / HY 2.76%",
+        "delta": "VIX +1.17% · HY -0.06%",
         "tone": "up"
       }
     ],
