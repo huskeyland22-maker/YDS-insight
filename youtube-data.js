@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.05.16 15:10 KST (자동 업데이트)",
+  "updatedAt": "2026.05.16 19:54 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=V1kdemFvX7Y",
-      "thumbUrl": "https://i.ytimg.com/vi/V1kdemFvX7Y/hqdefault.jpg",
-      "videoTitle": "수도권 집값, 결국 더 오를 수밖에 없습니다 | 경읽남과 토론합시다 | 김효선 위원 [2편]",
-      "publishedAt": "2026-05-16T03:00:34+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=rF0C4s5I6F8",
+      "thumbUrl": "https://i.ytimg.com/vi/rF0C4s5I6F8/hqdefault.jpg",
+      "videoTitle": "[풀버전] 제2의 팔란티어가 한국에서? AI 방산 시장이 열리고 있다 | 경읽남과 토론합시다 | 이명호박사",
+      "publishedAt": "2026-05-16T09:01:13+00:00"
     },
     {
       "id": "sbs-explained",
@@ -56,10 +56,10 @@ window.YOUTUBE_DATA = {
       "name": "간단경제한스푼",
       "channelUrl": "https://www.youtube.com/channel/UChuu3KaoDnyttfN10GG169Q",
       "latestUrl": "https://www.youtube.com/@%EA%B0%84%EB%8B%A8%EA%B2%BD%EC%A0%9C%ED%95%9C%EC%8A%A4%ED%91%BC/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=7mxt116gwIg",
-      "thumbUrl": "https://i.ytimg.com/vi/7mxt116gwIg/hqdefault.jpg",
-      "videoTitle": "엔진 다시 집어넣은 전기차 EREV, 미국 전기차 보조금이 끊기자 K-배터리에 던진 역설적 선물",
-      "publishedAt": "2026-05-15T09:30:05+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=AFbEIgfvzcI",
+      "thumbUrl": "https://i.ytimg.com/vi/AFbEIgfvzcI/hqdefault.jpg",
+      "videoTitle": "캐슈넛 껍질 카다놀과 초임계 열분해로 완성된 분자 단위의 재활용 혁명 탄소국경조정제도가 만든 글로벌 자본 대이동",
+      "publishedAt": "2026-05-16T09:30:10+00:00"
     }
   ]
 };
