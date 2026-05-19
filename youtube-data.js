@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.05.18 22:00 KST (자동 업데이트)",
+  "updatedAt": "2026.05.19 09:18 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=IgjM3gMIr2k",
-      "thumbUrl": "https://i.ytimg.com/vi/IgjM3gMIr2k/hqdefault.jpg",
-      "videoTitle": "방위산업의 지형이 변화한다. '비대칭 전쟁'이 온다 [경읽남 245화]",
-      "publishedAt": "2026-05-18T09:00:32+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=3-bVy6O_6hU",
+      "thumbUrl": "https://i.ytimg.com/vi/3-bVy6O_6hU/hqdefault.jpg",
+      "videoTitle": "대표 영상",
+      "publishedAt": ""
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=7FVuKuRwjvA",
-      "thumbUrl": "https://i.ytimg.com/vi/7FVuKuRwjvA/hqdefault.jpg",
-      "videoTitle": "\"미국은 쇠퇴\" 강펀치 날린 시진핑..흘려넘긴 트럼프ㅣ이상은의 워싱턴나우",
-      "publishedAt": "2026-05-18T03:15:02+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=eR5YGJJUVG4",
+      "thumbUrl": "https://i.ytimg.com/vi/eR5YGJJUVG4/hqdefault.jpg",
+      "videoTitle": "[김종학의 뉴욕, 지금-5월19일] 트럼프 “동맹국 요청, 이란 군사 공격 보류” | BofA ‘최상 시나리오여야 유가 90달러' | 일라이릴리, 엔비디아, 델, 시게이트, UNH",
+      "publishedAt": "2026-05-18T21:20:48+00:00"
     },
     {
       "id": "moneyinside",
@@ -56,10 +56,10 @@ window.YOUTUBE_DATA = {
       "name": "간단경제한스푼",
       "channelUrl": "https://www.youtube.com/channel/UChuu3KaoDnyttfN10GG169Q",
       "latestUrl": "https://www.youtube.com/@%EA%B0%84%EB%8B%A8%EA%B2%BD%EC%A0%9C%ED%95%9C%EC%8A%A4%ED%91%BC/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=A3VBGGIlaB0",
-      "thumbUrl": "https://i.ytimg.com/vi/A3VBGGIlaB0/hqdefault.jpg",
-      "videoTitle": "노벨경제학상 수상자가 극찬한 대한민국 노벨상 함께 받은 두 거장의 엇갈린 진단 1위의 그늘",
-      "publishedAt": "2026-05-18T10:45:00+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=JLZ_MI5GPJ0",
+      "thumbUrl": "https://i.ytimg.com/vi/JLZ_MI5GPJ0/hqdefault.jpg",
+      "videoTitle": "대표 영상",
+      "publishedAt": ""
     }
   ]
 };
