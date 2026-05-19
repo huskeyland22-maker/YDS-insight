@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.05.19 16:00 KST (자동 업데이트)",
+  "updatedAt": "2026.05.19 21:34 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=XO5B9wm3bMI",
-      "thumbUrl": "https://i.ytimg.com/vi/XO5B9wm3bMI/hqdefault.jpg",
-      "videoTitle": "삼성전자·SK하이닉스, 지금이라도 사야 할까 주도주는 아직 끝나지 않았다 | 경읽남과 토론합시다 | 한규범 대표 [1편]",
-      "publishedAt": "2026-05-18T21:00:35+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=m-X2-Y1uXzw",
+      "thumbUrl": "https://i.ytimg.com/vi/m-X2-Y1uXzw/hqdefault.jpg",
+      "videoTitle": "삼성전자·SK하이닉스, 아직 팔 때 아닙니다. 반도체 시계는 아직 오전 | 경읽남과 토론합시다 | 한규범 대표 [2편]",
+      "publishedAt": "2026-05-19T09:00:47+00:00"
     },
     {
       "id": "sbs-explained",
@@ -56,10 +56,10 @@ window.YOUTUBE_DATA = {
       "name": "간단경제한스푼",
       "channelUrl": "https://www.youtube.com/channel/UChuu3KaoDnyttfN10GG169Q",
       "latestUrl": "https://www.youtube.com/@%EA%B0%84%EB%8B%A8%EA%B2%BD%EC%A0%9C%ED%95%9C%EC%8A%A4%ED%91%BC/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=A3VBGGIlaB0",
-      "thumbUrl": "https://i.ytimg.com/vi/A3VBGGIlaB0/hqdefault.jpg",
-      "videoTitle": "노벨경제학상 수상자가 극찬한 대한민국 노벨상 함께 받은 두 거장의 엇갈린 진단 1위의 그늘",
-      "publishedAt": "2026-05-18T10:45:00+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=_8qxCf7wIIU",
+      "thumbUrl": "https://i.ytimg.com/vi/_8qxCf7wIIU/hqdefault.jpg",
+      "videoTitle": "머리카락보다 얇은 바늘 하나로 삼성전자, TSMC, 엔비디아의 공장을 멈춰 세울 수 있는 회사 라노공업 반도체",
+      "publishedAt": "2026-05-19T10:30:15+00:00"
     }
   ]
 };
