@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.05.20 16:00 KST (자동 업데이트)",
+  "updatedAt": "2026.05.20 21:14 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=y3y_4yoYQLM",
-      "thumbUrl": "https://i.ytimg.com/vi/y3y_4yoYQLM/hqdefault.jpg",
-      "videoTitle": "[속보] 삼성전자 노사 협상 결렬. 총파업 현실화 [즉시분석]",
-      "publishedAt": "2026-05-20T03:33:37+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=isa5khHBhxY",
+      "thumbUrl": "https://i.ytimg.com/vi/isa5khHBhxY/hqdefault.jpg",
+      "videoTitle": "중동전쟁 안 끝났는데 코스피가 오르는 이유. 돈은 이미 움직이고 있습니다 | 경읽남 x Bler. 콜라보 | 칠판강의 [1편]",
+      "publishedAt": "2026-05-20T09:00:47+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=vaA5Dju1-zk",
-      "thumbUrl": "https://i.ytimg.com/vi/vaA5Dju1-zk/hqdefault.jpg",
-      "videoTitle": "[김종학의 뉴욕, 지금-5월20일] 미국 30년 만기 국채금리 5.18% 돌파 | “트럼프 직접 주식거래 안 한다\" | 홈디포, 엔비디아, 알파벳, 스탠다드차타드, 스페이스X",
-      "publishedAt": "2026-05-19T21:21:42+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=JcY-QEHR1QU",
+      "thumbUrl": "https://i.ytimg.com/vi/JcY-QEHR1QU/hqdefault.jpg",
+      "videoTitle": "100시간 쉬지도 않고 택배 분류…사람보다 빠른 로봇이 나타났다 | 김인엽의 실리콘밸리나우",
+      "publishedAt": "2026-05-20T10:00:02+00:00"
     },
     {
       "id": "moneyinside",
@@ -56,10 +56,10 @@ window.YOUTUBE_DATA = {
       "name": "간단경제한스푼",
       "channelUrl": "https://www.youtube.com/channel/UChuu3KaoDnyttfN10GG169Q",
       "latestUrl": "https://www.youtube.com/@%EA%B0%84%EB%8B%A8%EA%B2%BD%EC%A0%9C%ED%95%9C%EC%8A%A4%ED%91%BC/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=_8qxCf7wIIU",
-      "thumbUrl": "https://i.ytimg.com/vi/_8qxCf7wIIU/hqdefault.jpg",
-      "videoTitle": "머리카락보다 얇은 바늘 하나로 삼성전자, TSMC, 엔비디아의 공장을 멈춰 세울 수 있는 회사 라노공업 반도체",
-      "publishedAt": "2026-05-19T10:30:15+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=w7STsALlRSE",
+      "thumbUrl": "https://i.ytimg.com/vi/w7STsALlRSE/hqdefault.jpg",
+      "videoTitle": "바닷물로 전기까지? 한국이 세계 최초로 뚫은 물·에너지 위기 해결 기술",
+      "publishedAt": "2026-05-20T10:45:05+00:00"
     }
   ]
 };
