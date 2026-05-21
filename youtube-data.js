@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.05.21 16:04 KST (자동 업데이트)",
+  "updatedAt": "2026.05.21 21:38 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=IUHAzm_oXRA",
-      "thumbUrl": "https://i.ytimg.com/vi/IUHAzm_oXRA/hqdefault.jpg",
-      "videoTitle": "AI 주도주 교체 시작? 반도체 다음은 전력 인프라입니다 | 경읽남 x Bler. 콜라보 | 칠판강의 [2편]",
-      "publishedAt": "2026-05-20T21:00:15+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=rsr6V77sUZU",
+      "thumbUrl": "https://i.ytimg.com/vi/rsr6V77sUZU/hqdefault.jpg",
+      "videoTitle": "중동전쟁 이후 돈은 여기로 몰립니다 AI 방산·드론·전력 인프라 주도주 시나리오 | 경읽남 x Bler. 콜라보 | 칠판강의 [3편]",
+      "publishedAt": "2026-05-21T09:01:05+00:00"
     },
     {
       "id": "sbs-explained",
@@ -56,10 +56,10 @@ window.YOUTUBE_DATA = {
       "name": "간단경제한스푼",
       "channelUrl": "https://www.youtube.com/channel/UChuu3KaoDnyttfN10GG169Q",
       "latestUrl": "https://www.youtube.com/@%EA%B0%84%EB%8B%A8%EA%B2%BD%EC%A0%9C%ED%95%9C%EC%8A%A4%ED%91%BC/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=w7STsALlRSE",
-      "thumbUrl": "https://i.ytimg.com/vi/w7STsALlRSE/hqdefault.jpg",
-      "videoTitle": "바닷물로 전기까지? 한국이 세계 최초로 뚫은 물·에너지 위기 해결 기술",
-      "publishedAt": "2026-05-20T10:45:05+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=WK8i-5mC3HI",
+      "thumbUrl": "https://i.ytimg.com/vi/WK8i-5mC3HI/hqdefault.jpg",
+      "videoTitle": "중국이 수출 금지한 그 기술, 한국 지하 연구실에서 끝났다 한국이 희토류 자석 기술 독립에 성공한 진짜 이유",
+      "publishedAt": "2026-05-21T11:00:31+00:00"
     }
   ]
 };
