@@ -1,5 +1,5 @@
 window.PANIC_DATA = {
-  "updatedAt": "2026.05.21 21:38 KST (자동 업데이트 · Python)",
+  "updatedAt": "2026.05.22 09:16 KST (자동 업데이트 · Python)",
   "signalExtras": {
     "t10y2y": null
   },
@@ -7,22 +7,22 @@ window.PANIC_DATA = {
     {
       "id": "vix",
       "label": "VIX Index",
-      "value": "17.44",
-      "delta": "📉 -0.62",
+      "value": "16.76",
+      "delta": "📉 -0.68",
       "status": "🟢 안정",
       "tone": "stable",
       "weekTrend": "하락",
       "actionGuide": "관망",
       "trendUrl": "https://www.macrotrends.net/2603/vix-volatility-index-historical-chart",
       "source": "yahoo",
-      "previousClose": 18.06,
-      "change": -0.62
+      "previousClose": 17.44,
+      "change": -0.68
     },
     {
       "id": "fng",
       "label": "CNN F&G",
-      "value": "61",
-      "delta": "➡️ 0",
+      "value": "58",
+      "delta": "📉 -3",
       "status": "🟢 중립",
       "tone": "stable",
       "weekTrend": "하락",
@@ -45,16 +45,16 @@ window.PANIC_DATA = {
     {
       "id": "skew",
       "label": "SKEW Index",
-      "value": "132.31",
-      "delta": "📉 -3.19",
-      "status": "🟢 안정",
-      "tone": "stable",
+      "value": "136.96",
+      "delta": "📈 +4.65",
+      "status": "🟡 주의",
+      "tone": "watch",
       "weekTrend": "하락",
-      "actionGuide": "관망",
+      "actionGuide": "분할매수",
       "trendUrl": "https://www.cboe.com/tradable_products/vix/vix_historical_data/",
       "source": "yahoo",
-      "previousClose": 135.5,
-      "change": -3.19
+      "previousClose": 132.31,
+      "change": 4.65
     },
     {
       "id": "putcall",
@@ -71,16 +71,16 @@ window.PANIC_DATA = {
     {
       "id": "hy",
       "label": "HY 금리 스프레드",
-      "value": "2.86%",
-      "delta": "📈 +0.03%",
+      "value": "2.80%",
+      "delta": "📉 -0.06%",
       "status": "🟢 안정",
       "tone": "stable",
       "weekTrend": "보합",
       "actionGuide": "관망",
       "trendUrl": "https://fred.stlouisfed.org/series/BAMLH0A0HYM2",
       "source": "fred",
-      "previousClose": 2.83,
-      "change": 0.03
+      "previousClose": 2.86,
+      "change": -0.06
     },
     {
       "id": "gsbb",
@@ -97,31 +97,31 @@ window.PANIC_DATA = {
     {
       "id": "move",
       "label": "MOVE Index",
-      "value": "81.53",
-      "delta": "📉 -3.79",
+      "value": "79.72",
+      "delta": "📉 -1.81",
       "status": "🟢 안정",
       "tone": "stable",
       "weekTrend": "상승",
       "actionGuide": "관망",
       "trendUrl": "https://fred.stlouisfed.org/series/MOVE",
       "source": "yahoo",
-      "previousClose": 85.32,
-      "change": -3.79
+      "previousClose": 81.53,
+      "change": -1.81
     },
     {
       "id": "vxn",
       "label": "VXN Index",
-      "value": "23.71",
-      "delta": "📉 -0.38",
+      "value": "22.74",
+      "delta": "📉 -0.97",
       "status": "🟢 안정",
       "tone": "stable",
       "weekTrend": "하락",
       "actionGuide": "관망",
       "trendUrl": "https://www.cboe.com/tradable_products/vix/vxn/",
       "source": "yahoo",
-      "previousClose": 24.09,
-      "change": -0.38
+      "previousClose": 23.71,
+      "change": -0.97
     }
   ],
-  "asOfDateET": "2026-05-20"
+  "asOfDateET": "2026-05-21"
 };
