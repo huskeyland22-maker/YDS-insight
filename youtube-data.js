@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.05.22 21:12 KST (자동 업데이트)",
+  "updatedAt": "2026.05.23 09:16 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=dmvaWJ5Kd7s",
-      "thumbUrl": "https://i.ytimg.com/vi/dmvaWJ5Kd7s/hqdefault.jpg",
-      "videoTitle": "국채금리보다 무서운 건 ‘실적 배신’입니다. 주식시장을 꺾을 진짜 트리거 | 클로즈업 | 국채금리 [2편]",
-      "publishedAt": "2026-05-22T09:00:39+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=fbEz0QqDTP8",
+      "thumbUrl": "https://i.ytimg.com/vi/fbEz0QqDTP8/hqdefault.jpg",
+      "videoTitle": "AI는 이제 시작입니다. 진짜 돈은 ‘메모리·전력·데이터센터’로 갑니다 | 한-미-일 산업협력 컨퍼런스 | Session1_AI",
+      "publishedAt": "2026-05-22T21:00:26+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=4QQZSqWUlok",
-      "thumbUrl": "https://i.ytimg.com/vi/4QQZSqWUlok/hqdefault.jpg",
-      "videoTitle": "월가가 베팅한 AI 시대 새로운 원유 | 빈난새의 빈틈없이월가",
-      "publishedAt": "2026-05-22T02:00:38+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=duPlP-TI_4Q",
+      "thumbUrl": "https://i.ytimg.com/vi/duPlP-TI_4Q/hqdefault.jpg",
+      "videoTitle": "데이터센터 확장과 대형 산불이 만든 기현상…올해 60% 오른 미국 전봇대 회사 | 바이아메리카 in 뉴욕",
+      "publishedAt": "2026-05-23T00:00:31+00:00"
     },
     {
       "id": "moneyinside",
