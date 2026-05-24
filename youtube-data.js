@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.05.24 15:49 KST (자동 업데이트)",
+  "updatedAt": "2026.05.24 20:06 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=3-bVy6O_6hU",
-      "thumbUrl": "https://i.ytimg.com/vi/3-bVy6O_6hU/hqdefault.jpg",
-      "videoTitle": "대표 영상",
-      "publishedAt": ""
+      "videoUrl": "https://www.youtube.com/watch?v=8V9RXJXfDTQ",
+      "thumbUrl": "https://i.ytimg.com/vi/8V9RXJXfDTQ/hqdefault.jpg",
+      "videoTitle": "[반도체 모아보기] 슈퍼사이클 vs 피크아웃 논란｜삼성전자·SK하이닉스, 2026년에도 계속 갈까? | 이형수x이주완x유응준",
+      "publishedAt": "2026-05-24T09:00:14+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=s-iNcadU6Ig",
-      "thumbUrl": "https://i.ytimg.com/vi/s-iNcadU6Ig/hqdefault.jpg",
-      "videoTitle": "대표 영상",
-      "publishedAt": ""
+      "videoUrl": "https://www.youtube.com/watch?v=2v7tXkTsoyo",
+      "thumbUrl": "https://i.ytimg.com/vi/2v7tXkTsoyo/hqdefault.jpg",
+      "videoTitle": "엔비디아 마진, 가이던스 보다 더 큰 문제는 | 월가백브리핑",
+      "publishedAt": "2026-05-24T03:00:20+00:00"
     },
     {
       "id": "moneyinside",
@@ -56,10 +56,10 @@ window.YOUTUBE_DATA = {
       "name": "간단경제한스푼",
       "channelUrl": "https://www.youtube.com/channel/UChuu3KaoDnyttfN10GG169Q",
       "latestUrl": "https://www.youtube.com/@%EA%B0%84%EB%8B%A8%EA%B2%BD%EC%A0%9C%ED%95%9C%EC%8A%A4%ED%91%BC/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=gVQvOoBChlo",
-      "thumbUrl": "https://i.ytimg.com/vi/gVQvOoBChlo/hqdefault.jpg",
-      "videoTitle": "일본이 11년 앞섰는데, 한국이 결정타를 가져갔다 글로벌 대기업이 숨기고 싶어하는 한국 신소재의 정체",
-      "publishedAt": "2026-05-23T10:30:19+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=9cEpOh4G3rI",
+      "thumbUrl": "https://i.ytimg.com/vi/9cEpOh4G3rI/hqdefault.jpg",
+      "videoTitle": "ITER 인공태양 심장 프랑스 미국 일본 다 떨어진 ITER 마지막 부품, 한국 강소기업이 따냈다 한국 핵융합 30년 대장정의 결말",
+      "publishedAt": "2026-05-24T11:00:36+00:00"
     }
   ]
 };
