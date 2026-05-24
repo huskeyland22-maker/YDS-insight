@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.05.23 20:03 KST (자동 업데이트)",
+  "updatedAt": "2026.05.24 09:13 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=0CsNAhzf_KI",
-      "thumbUrl": "https://i.ytimg.com/vi/0CsNAhzf_KI/hqdefault.jpg",
-      "videoTitle": "AI 시대, 전력 없으면 끝납니다. 한미일 에너지 안보 전쟁이 시작됐다 | 한-미-일 산업협력 컨퍼런스 | Session2_에너지",
-      "publishedAt": "2026-05-23T09:00:00+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=Q-993XTnUI8",
+      "thumbUrl": "https://i.ytimg.com/vi/Q-993XTnUI8/hqdefault.jpg",
+      "videoTitle": "[모아보기] 전쟁 안 끝났는데 코스피 오르는 이유｜정부 부채가 만든 유동성 장세와 ‘돈의 이동’",
+      "publishedAt": "2026-05-23T21:00:14+00:00"
     },
     {
       "id": "sbs-explained",
