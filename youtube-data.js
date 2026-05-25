@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.05.25 17:01 KST (자동 업데이트)",
+  "updatedAt": "2026.05.25 21:55 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=WV4PrM0ewy4",
-      "thumbUrl": "https://i.ytimg.com/vi/WV4PrM0ewy4/hqdefault.jpg",
-      "videoTitle": "[풀버전] 26년 하반기 돈이 몰릴 '주도주'. AI·방산·전력 인프라 '코스피 시나리오' | 경읽남 x Bler. 콜라보 | 칠판강의",
-      "publishedAt": "2026-05-24T21:00:30+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=5iv-i71k_d0",
+      "thumbUrl": "https://i.ytimg.com/vi/5iv-i71k_d0/hqdefault.jpg",
+      "videoTitle": "100조원 초과세수, 어떻게 써야 하는가? 성장 Vs 분배 Vs 재정건전성 [경읽남 246화]",
+      "publishedAt": "2026-05-25T08:59:01+00:00"
     },
     {
       "id": "sbs-explained",
@@ -56,10 +56,10 @@ window.YOUTUBE_DATA = {
       "name": "간단경제한스푼",
       "channelUrl": "https://www.youtube.com/channel/UChuu3KaoDnyttfN10GG169Q",
       "latestUrl": "https://www.youtube.com/@%EA%B0%84%EB%8B%A8%EA%B2%BD%EC%A0%9C%ED%95%9C%EC%8A%A4%ED%91%BC/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=9cEpOh4G3rI",
-      "thumbUrl": "https://i.ytimg.com/vi/9cEpOh4G3rI/hqdefault.jpg",
-      "videoTitle": "ITER 인공태양 심장 프랑스 미국 일본 다 떨어진 ITER 마지막 부품, 한국 강소기업이 따냈다 한국 핵융합 30년 대장정의 결말",
-      "publishedAt": "2026-05-24T11:00:36+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=O2yFcUPxeoQ",
+      "thumbUrl": "https://i.ytimg.com/vi/O2yFcUPxeoQ/hqdefault.jpg",
+      "videoTitle": "중국 95% 독점 끝났다, 한국이 30년 만에 뒤집은 스테인리스 마그네슘 합금",
+      "publishedAt": "2026-05-25T11:00:27+00:00"
     }
   ]
 };
