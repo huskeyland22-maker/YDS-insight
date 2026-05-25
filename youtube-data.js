@@ -1,5 +1,5 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.05.25 09:14 KST (자동 업데이트)",
+  "updatedAt": "2026.05.25 17:01 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
@@ -8,7 +8,7 @@ window.YOUTUBE_DATA = {
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
       "videoUrl": "https://www.youtube.com/watch?v=WV4PrM0ewy4",
       "thumbUrl": "https://i.ytimg.com/vi/WV4PrM0ewy4/hqdefault.jpg",
-      "videoTitle": "[풀버전] 26년 하반기 돈이 몰릴 '주도주'. AI· 방산·전력 인프라 '코스피 시나리오' | 경읽남 x Bler. 콜라보 | 칠판강의",
+      "videoTitle": "[풀버전] 26년 하반기 돈이 몰릴 '주도주'. AI·방산·전력 인프라 '코스피 시나리오' | 경읽남 x Bler. 콜라보 | 칠판강의",
       "publishedAt": "2026-05-24T21:00:30+00:00"
     },
     {
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=2v7tXkTsoyo",
-      "thumbUrl": "https://i.ytimg.com/vi/2v7tXkTsoyo/hqdefault.jpg",
-      "videoTitle": "엔비디아 마진, 가이던스 보다 더 큰 문제는 | 월가백브리핑",
-      "publishedAt": "2026-05-24T03:00:20+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=b8rA82cxUq0",
+      "thumbUrl": "https://i.ytimg.com/vi/b8rA82cxUq0/hqdefault.jpg",
+      "videoTitle": "스페이스X는 대체 어떤 기업일까 | 월가백브리핑",
+      "publishedAt": "2026-05-25T03:00:18+00:00"
     },
     {
       "id": "moneyinside",
