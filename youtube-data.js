@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.05.28 09:14 KST (자동 업데이트)",
+  "updatedAt": "2026.05.28 16:06 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=3-bVy6O_6hU",
-      "thumbUrl": "https://i.ytimg.com/vi/3-bVy6O_6hU/hqdefault.jpg",
-      "videoTitle": "대표 영상",
-      "publishedAt": ""
+      "videoUrl": "https://www.youtube.com/watch?v=VZi2E5m0PCg",
+      "thumbUrl": "https://i.ytimg.com/vi/VZi2E5m0PCg/hqdefault.jpg",
+      "videoTitle": "[속보] 한국은행의 '매파적 금리동결', 물가·환율 불안 지속시 금리인상 예고 [즉시분석]",
+      "publishedAt": "2026-05-28T00:51:11+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=s-iNcadU6Ig",
-      "thumbUrl": "https://i.ytimg.com/vi/s-iNcadU6Ig/hqdefault.jpg",
-      "videoTitle": "대표 영상",
-      "publishedAt": ""
+      "videoUrl": "https://www.youtube.com/watch?v=7yWz5qiqBek",
+      "thumbUrl": "https://i.ytimg.com/vi/7yWz5qiqBek/hqdefault.jpg",
+      "videoTitle": "AI 최후의 승자를 예측해보시오",
+      "publishedAt": "2026-05-28T00:07:37+00:00"
     },
     {
       "id": "moneyinside",
@@ -56,10 +56,10 @@ window.YOUTUBE_DATA = {
       "name": "간단경제한스푼",
       "channelUrl": "https://www.youtube.com/channel/UChuu3KaoDnyttfN10GG169Q",
       "latestUrl": "https://www.youtube.com/@%EA%B0%84%EB%8B%A8%EA%B2%BD%EC%A0%9C%ED%95%9C%EC%8A%A4%ED%91%BC/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=JLZ_MI5GPJ0",
-      "thumbUrl": "https://i.ytimg.com/vi/JLZ_MI5GPJ0/hqdefault.jpg",
-      "videoTitle": "대표 영상",
-      "publishedAt": ""
+      "videoUrl": "https://www.youtube.com/watch?v=z5kv2zPJWTs",
+      "thumbUrl": "https://i.ytimg.com/vi/z5kv2zPJWTs/hqdefault.jpg",
+      "videoTitle": "40년간 봉인됐던 AI의 진짜 두뇌, 한국이 깨웠다 차세대 인공신경망",
+      "publishedAt": "2026-05-27T11:00:06+00:00"
     }
   ]
 };
