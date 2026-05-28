@@ -1,5 +1,5 @@
 window.PANIC_DATA = {
-  "updatedAt": "2026.05.28 16:06 KST (자동 업데이트 · Python)",
+  "updatedAt": "2026.05.28 22:00 KST (자동 업데이트 · Python)",
   "signalExtras": {
     "t10y2y": null
   },
@@ -22,7 +22,7 @@ window.PANIC_DATA = {
       "id": "fng",
       "label": "CNN F&G",
       "value": "61",
-      "delta": "➡️ 0",
+      "delta": "📈 +1",
       "status": "🟢 중립",
       "tone": "stable",
       "weekTrend": "상승",
