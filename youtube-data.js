@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.05.28 22:00 KST (자동 업데이트)",
+  "updatedAt": "2026.05.29 10:28 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=w_7rTql3wik",
-      "thumbUrl": "https://i.ytimg.com/vi/w_7rTql3wik/hqdefault.jpg",
-      "videoTitle": "[LIVE] 미국 PCE 물가 심층분석 : '인플레 쇼크' 오는가? [즉시분석]",
-      "publishedAt": "2026-05-28T12:13:08+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=UnHOGbGrcfA",
+      "thumbUrl": "https://i.ytimg.com/vi/UnHOGbGrcfA/hqdefault.jpg",
+      "videoTitle": "부동산도, 저작권도, 비상장주식도 토큰화됩니다 | 경읽남과 토론합시다 | 이지민 작가님 [3편]",
+      "publishedAt": "2026-05-28T21:00:32+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=tOqVuD3Ag2w",
-      "thumbUrl": "https://i.ytimg.com/vi/tOqVuD3Ag2w/hqdefault.jpg",
-      "videoTitle": "[빈난새의 개장전 요것만-5월28일] 미국장 개장전 알아야 할 5가지 + 특징주 및 주요 뉴스",
-      "publishedAt": "2026-05-28T12:39:32+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=s-iNcadU6Ig",
+      "thumbUrl": "https://i.ytimg.com/vi/s-iNcadU6Ig/hqdefault.jpg",
+      "videoTitle": "대표 영상",
+      "publishedAt": ""
     },
     {
       "id": "moneyinside",
@@ -56,10 +56,10 @@ window.YOUTUBE_DATA = {
       "name": "간단경제한스푼",
       "channelUrl": "https://www.youtube.com/channel/UChuu3KaoDnyttfN10GG169Q",
       "latestUrl": "https://www.youtube.com/@%EA%B0%84%EB%8B%A8%EA%B2%BD%EC%A0%9C%ED%95%9C%EC%8A%A4%ED%91%BC/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=n9Q03fzAtP8",
-      "thumbUrl": "https://i.ytimg.com/vi/n9Q03fzAtP8/hqdefault.jpg",
-      "videoTitle": "100년 할리우드가 흔들린다, KAIST가 만든 1.23초의 충격 소리 자동 구현 AI[",
-      "publishedAt": "2026-05-28T11:15:02+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=JLZ_MI5GPJ0",
+      "thumbUrl": "https://i.ytimg.com/vi/JLZ_MI5GPJ0/hqdefault.jpg",
+      "videoTitle": "대표 영상",
+      "publishedAt": ""
     }
   ]
 };
