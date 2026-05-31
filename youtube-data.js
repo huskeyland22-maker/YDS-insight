@@ -1,5 +1,5 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.05.31 09:15 KST (자동 업데이트)",
+  "updatedAt": "2026.05.31 16:09 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=OFLGkHxHcZg",
-      "thumbUrl": "https://i.ytimg.com/vi/OFLGkHxHcZg/hqdefault.jpg",
-      "videoTitle": "메모리 폭등에 치솟은 토큰 그리고 AI 폭주를 바라보는 두 가지 시선 | 월가백브리핑",
-      "publishedAt": "2026-05-30T03:00:25+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=E_yFbqLqVrk",
+      "thumbUrl": "https://i.ytimg.com/vi/E_yFbqLqVrk/hqdefault.jpg",
+      "videoTitle": "스페이스X의 상장..숏스퀴즈인가 여름 조정인가 | 월가백브리핑",
+      "publishedAt": "2026-05-31T03:00:25+00:00"
     },
     {
       "id": "moneyinside",
