@@ -1,15 +1,15 @@
 {
-  "updatedAt": "2026.06.01 17:59 KST (자동 업데이트)",
+  "updatedAt": "2026.06.02 00:46 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=IKf6a-F1MAA",
-      "thumbUrl": "https://i.ytimg.com/vi/IKf6a-F1MAA/hqdefault.jpg",
-      "videoTitle": "6월 조정 가져올 '시그널'. 스페이스X IPO와 인플레이션 쇼크 오는가?  [먼데이픽]",
-      "publishedAt": "2026-05-31T21:00:17+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=oFrM0OdhKuQ",
+      "thumbUrl": "https://i.ytimg.com/vi/oFrM0OdhKuQ/hqdefault.jpg",
+      "videoTitle": "케빈 워시의 ‘기적의 논리’, 분열된 연준위원들... 시장에 변동성 불러올 것 [경읽남 247화]",
+      "publishedAt": "2026-06-01T09:00:37+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=qQiCEfIICGg",
-      "thumbUrl": "https://i.ytimg.com/vi/qQiCEfIICGg/hqdefault.jpg",
-      "videoTitle": "'나쁜 딜' 아니면 '노딜'..진퇴양난 이란전ㅣ이상은의 워싱턴나우",
-      "publishedAt": "2026-06-01T03:00:33+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=a8Ah5bN6W8M",
+      "thumbUrl": "https://i.ytimg.com/vi/a8Ah5bN6W8M/hqdefault.jpg",
+      "videoTitle": "[빈난새의 개장전요것만-6월1일] 유가, 금리 상승 | 젠슨황 기조연설 분석 | 에이블의 버크셔 베팅 | ARM 인텔 퀄컴 델 마이크론 IBM 스트래티지 루멘텀 레드와이어 RVMD",
+      "publishedAt": "2026-06-01T14:45:33+00:00"
     },
     {
       "id": "moneyinside",
@@ -56,10 +56,10 @@
       "name": "간단경제한스푼",
       "channelUrl": "https://www.youtube.com/channel/UChuu3KaoDnyttfN10GG169Q",
       "latestUrl": "https://www.youtube.com/@%EA%B0%84%EB%8B%A8%EA%B2%BD%EC%A0%9C%ED%95%9C%EC%8A%A4%ED%91%BC/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=msrcwfXKMBE",
-      "thumbUrl": "https://i.ytimg.com/vi/msrcwfXKMBE/hqdefault.jpg",
-      "videoTitle": "아무도 못 넘던 수소의 벽, 손톱만 한 전지가 바꾸는 에너지 판도, 차세대 암모니아 연료전지의 모든 것",
-      "publishedAt": "2026-05-31T10:30:40+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=msxyoFnhajs",
+      "thumbUrl": "https://i.ytimg.com/vi/msxyoFnhajs/hqdefault.jpg",
+      "videoTitle": "AI가 찾아낸 한 줌의 가루가 대한민국 철강을 살린다 그린수소 촉매 수소 산업의 게임체인저",
+      "publishedAt": "2026-06-01T11:00:06+00:00"
     }
   ]
 }
