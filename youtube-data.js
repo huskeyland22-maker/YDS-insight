@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.05.31 20:25 KST (자동 업데이트)",
+  "updatedAt": "2026.06.01 09:16 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=6uSdzU8lk8s",
-      "thumbUrl": "https://i.ytimg.com/vi/6uSdzU8lk8s/hqdefault.jpg",
-      "videoTitle": "[풀버전] 국채금리 5%, 흔들린다. 돈의 신뢰가 무너지는 진짜 이유 | 경읽남과 토론합시다 | 이승헌 교수",
-      "publishedAt": "2026-05-31T09:00:26+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=IKf6a-F1MAA",
+      "thumbUrl": "https://i.ytimg.com/vi/IKf6a-F1MAA/hqdefault.jpg",
+      "videoTitle": "6월 조정 가져올 '시그널'. 스페이스X IPO와 인플레이션 쇼크 오는가?  [먼데이픽]",
+      "publishedAt": "2026-05-31T21:00:17+00:00"
     },
     {
       "id": "sbs-explained",
