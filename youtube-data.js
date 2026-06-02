@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.06.02 00:46 KST (자동 업데이트)",
+  "updatedAt": "2026.06.02 10:37 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=oFrM0OdhKuQ",
-      "thumbUrl": "https://i.ytimg.com/vi/oFrM0OdhKuQ/hqdefault.jpg",
-      "videoTitle": "케빈 워시의 ‘기적의 논리’, 분열된 연준위원들... 시장에 변동성 불러올 것 [경읽남 247화]",
-      "publishedAt": "2026-06-01T09:00:37+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=hj46asY4-v8",
+      "thumbUrl": "https://i.ytimg.com/vi/hj46asY4-v8/hqdefault.jpg",
+      "videoTitle": "AI를 1%밖에 못 쓰는 회사들의 공통점 | 경읽남과 토론합시다 | 조용민 대표 [2편]",
+      "publishedAt": "2026-06-01T21:00:37+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=a8Ah5bN6W8M",
-      "thumbUrl": "https://i.ytimg.com/vi/a8Ah5bN6W8M/hqdefault.jpg",
-      "videoTitle": "[빈난새의 개장전요것만-6월1일] 유가, 금리 상승 | 젠슨황 기조연설 분석 | 에이블의 버크셔 베팅 | ARM 인텔 퀄컴 델 마이크론 IBM 스트래티지 루멘텀 레드와이어 RVMD",
-      "publishedAt": "2026-06-01T14:45:33+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=uXMbOcfEI-0",
+      "thumbUrl": "https://i.ytimg.com/vi/uXMbOcfEI-0/hqdefault.jpg",
+      "videoTitle": "앤스로픽 상장 서두르는 이유 | 초대형 IPO가 AI 랠리에 미칠 영향 | 빈난새의 빈틈없이월가",
+      "publishedAt": "2026-06-02T01:00:36+00:00"
     },
     {
       "id": "moneyinside",
