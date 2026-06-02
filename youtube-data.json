@@ -1,15 +1,15 @@
 {
-  "updatedAt": "2026.06.02 17:11 KST (자동 업데이트)",
+  "updatedAt": "2026.06.02 22:46 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=hj46asY4-v8",
-      "thumbUrl": "https://i.ytimg.com/vi/hj46asY4-v8/hqdefault.jpg",
-      "videoTitle": "AI를 1%밖에 못 쓰는 회사들의 공통점 | 경읽남과 토론합시다 | 조용민 대표 [2편]",
-      "publishedAt": "2026-06-01T21:00:37+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=i4rc9Ufb2PY",
+      "thumbUrl": "https://i.ytimg.com/vi/i4rc9Ufb2PY/hqdefault.jpg",
+      "videoTitle": "“증시 즐기십시오.\" 6월 증시 결정지을 시그널. '진짜 조정 신호'는 따로 있다 | 월간특강 세미나 [1편]",
+      "publishedAt": "2026-06-02T09:00:23+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=NEmjugDbRyM",
-      "thumbUrl": "https://i.ytimg.com/vi/NEmjugDbRyM/hqdefault.jpg",
-      "videoTitle": "우주 산업의 숨은 강자",
-      "publishedAt": "2026-06-02T02:54:44+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=XifXilxZL0A",
+      "thumbUrl": "https://i.ytimg.com/vi/XifXilxZL0A/hqdefault.jpg",
+      "videoTitle": "[빈난새의 개장전 요것만-6월2일] 미국장 개장전 알아야 할 5가지 + 특징주 및 주요 뉴스",
+      "publishedAt": "2026-06-02T12:50:11+00:00"
     },
     {
       "id": "moneyinside",
@@ -56,10 +56,10 @@
       "name": "간단경제한스푼",
       "channelUrl": "https://www.youtube.com/channel/UChuu3KaoDnyttfN10GG169Q",
       "latestUrl": "https://www.youtube.com/@%EA%B0%84%EB%8B%A8%EA%B2%BD%EC%A0%9C%ED%95%9C%EC%8A%A4%ED%91%BC/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=msxyoFnhajs",
-      "thumbUrl": "https://i.ytimg.com/vi/msxyoFnhajs/hqdefault.jpg",
-      "videoTitle": "AI가 찾아낸 한 줌의 가루가 대한민국 철강을 살린다 그린수소 촉매 수소 산업의 게임체인저",
-      "publishedAt": "2026-06-01T11:00:06+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=EzqqgbTxoBw",
+      "thumbUrl": "https://i.ytimg.com/vi/EzqqgbTxoBw/hqdefault.jpg",
+      "videoTitle": "삼성·SK가 미국 AI 공룡에 수조원 베팅한 진짜 이유 앤트로픽 동맹의 내막",
+      "publishedAt": "2026-06-02T11:15:27+00:00"
     }
   ]
 }
