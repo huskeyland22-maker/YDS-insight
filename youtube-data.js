@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.06.03 10:48 KST (자동 업데이트)",
+  "updatedAt": "2026.06.03 17:32 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=fq1XgVRhCzc",
-      "thumbUrl": "https://i.ytimg.com/vi/fq1XgVRhCzc/hqdefault.jpg",
-      "videoTitle": "[모아보기] 금리만 보면 시장 놓칩니다: 중동 전쟁 이후 비트코인·스테이블코인·AI가 같이 가는 이유 | 경읽남과 토론합시다 | 부총재x성상현x마경환",
-      "publishedAt": "2026-06-02T21:00:26+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=DnEoNZ3T5tI",
+      "thumbUrl": "https://i.ytimg.com/vi/DnEoNZ3T5tI/hqdefault.jpg",
+      "videoTitle": "성과급 배분과 초과세수 돈이 생긴 뒤 더 어려워지는 경제 문제 | 경읽남과 토론합시다 | 조용민 대표 [3편]",
+      "publishedAt": "2026-06-03T03:00:30+00:00"
     },
     {
       "id": "sbs-explained",
