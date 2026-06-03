@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026.06.03 21:44 KST (자동 업데이트)",
+  "updatedAt": "2026.06.03 23:20 KST (자동 업데이트)",
   "items": [
     {
       "symbol": "SOXL",
@@ -27,7 +27,7 @@
     }
   ],
   "flow": {
-    "updatedAt": "2026.06.03 21:44 KST (자동 업데이트)",
+    "updatedAt": "2026.06.03 23:20 KST (자동 업데이트)",
     "items": [
       {
         "id": "usdjpy",
@@ -60,8 +60,8 @@
       {
         "id": "vix_hy",
         "label": "리스크 선호",
-        "value": "VIX 15.77 / HY 2.72%",
-        "delta": "VIX -0.28% · HY -0.02%",
+        "value": "VIX 15.77 / HY 2.71%",
+        "delta": "VIX -0.28% · HY -0.01%",
         "tone": "up"
       }
     ],
