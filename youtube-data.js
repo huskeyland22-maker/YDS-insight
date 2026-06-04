@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.06.04 17:04 KST (자동 업데이트)",
+  "updatedAt": "2026.06.04 21:37 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=5oVs0vHPhXQ",
-      "thumbUrl": "https://i.ytimg.com/vi/5oVs0vHPhXQ/hqdefault.jpg",
-      "videoTitle": "젠슨 황이 한국에 온 진짜 이유 NVIDIA는 이제 GPU 회사가 아닙니다 | 경읽남과 토론합시다 | 강정수 박사님 [1편]",
-      "publishedAt": "2026-06-04T06:00:16+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=1T12Iwl1P-o",
+      "thumbUrl": "https://i.ytimg.com/vi/1T12Iwl1P-o/hqdefault.jpg",
+      "videoTitle": "OECD 2026년 경제전망 보고서 : 스태그플레이션과 정부부채 경고 [즉시분석]",
+      "publishedAt": "2026-06-04T09:00:29+00:00"
     },
     {
       "id": "sbs-explained",
@@ -56,10 +56,10 @@ window.YOUTUBE_DATA = {
       "name": "간단경제한스푼",
       "channelUrl": "https://www.youtube.com/channel/UChuu3KaoDnyttfN10GG169Q",
       "latestUrl": "https://www.youtube.com/@%EA%B0%84%EB%8B%A8%EA%B2%BD%EC%A0%9C%ED%95%9C%EC%8A%A4%ED%91%BC/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=yXzQSh0HUV0",
-      "thumbUrl": "https://i.ytimg.com/vi/yXzQSh0HUV0/hqdefault.jpg",
-      "videoTitle": "휴머노이드 로봇 머리는 미국, 몸통은 중국. 대한민국의 승부수는 관절이었습니다",
-      "publishedAt": "2026-06-03T11:00:18+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=lMqeUeG30QA",
+      "thumbUrl": "https://i.ytimg.com/vi/lMqeUeG30QA/hqdefault.jpg",
+      "videoTitle": "AI가 버리라던 분자, 세계 최고 태양전지가 되다 (19.67%의 반전)",
+      "publishedAt": "2026-06-04T11:15:06+00:00"
     }
   ]
 };
