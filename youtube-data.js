@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.06.03 23:20 KST (자동 업데이트)",
+  "updatedAt": "2026.06.04 10:48 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=qev8e_BEY1o",
-      "thumbUrl": "https://i.ytimg.com/vi/qev8e_BEY1o/hqdefault.jpg",
-      "videoTitle": "[모아보기] 강남만 보다간 평생 집 못 삽니다. 전세대란·월세 시대에 서울 10억 이하 숨은 진주 찾는 법 | 경읽남과 토론합시다 | 김학렬x김효선",
-      "publishedAt": "2026-06-03T09:00:17+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=g0CTZdBCW7k",
+      "thumbUrl": "https://i.ytimg.com/vi/g0CTZdBCW7k/hqdefault.jpg",
+      "videoTitle": "젠슨황이 한국에 온 진짜 이유｜삼겹살 회동 뒤에 숨은 AI 빅픽처 | 클로즈업 |",
+      "publishedAt": "2026-06-03T21:00:35+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=qQi3skDY6ns",
-      "thumbUrl": "https://i.ytimg.com/vi/qQi3skDY6ns/hqdefault.jpg",
-      "videoTitle": "[빈난새의 개장전 요것만-6월3일] 미국장 개장전 알아야 할 5가지 + 특징주 및 주요 뉴스",
-      "publishedAt": "2026-06-03T12:40:41+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=mv-rVXNIiTo",
+      "thumbUrl": "https://i.ytimg.com/vi/mv-rVXNIiTo/hqdefault.jpg",
+      "videoTitle": "환율 1500원 시대? 코스피 올라도 원화는 안오르는 이유 | \"페트로달러 말고 DRAM달러\" | 빈난새의 빈틈없이월가",
+      "publishedAt": "2026-06-04T01:00:25+00:00"
     },
     {
       "id": "moneyinside",
