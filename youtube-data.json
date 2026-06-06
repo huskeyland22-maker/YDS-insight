@@ -1,15 +1,15 @@
 {
-  "updatedAt": "2026.06.06 15:41 KST (자동 업데이트)",
+  "updatedAt": "2026.06.06 20:15 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=2HG_aGopOMA",
-      "thumbUrl": "https://i.ytimg.com/vi/2HG_aGopOMA/hqdefault.jpg",
-      "videoTitle": "한국-엔비디아, 피지컬AI 파트너십 기회 (feat.일본 다자이후) [즉시분석]",
-      "publishedAt": "2026-06-06T05:43:30+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=CfsfHuHdKjc",
+      "thumbUrl": "https://i.ytimg.com/vi/CfsfHuHdKjc/hqdefault.jpg",
+      "videoTitle": "[풀버전] 삼성전자·SK하이닉스, 지금이라도 사야 할까? 다음 주도주는 '이것'입니다. | 경읽남과 토론합시다 | 한규범 대표",
+      "publishedAt": "2026-06-06T09:00:01+00:00"
     },
     {
       "id": "sbs-explained",
@@ -56,10 +56,10 @@
       "name": "간단경제한스푼",
       "channelUrl": "https://www.youtube.com/channel/UChuu3KaoDnyttfN10GG169Q",
       "latestUrl": "https://www.youtube.com/@%EA%B0%84%EB%8B%A8%EA%B2%BD%EC%A0%9C%ED%95%9C%EC%8A%A4%ED%91%BC/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=gGBrvZ_8RXc",
-      "thumbUrl": "https://i.ytimg.com/vi/gGBrvZ_8RXc/hqdefault.jpg",
-      "videoTitle": "3천도 420초를 견디는 우주 엔진 차세대 메탄 엔진 핵심 기술 한국 회사가 만들어 버렸습니다. 세계 우주판을 뒤흔듭니다.",
-      "publishedAt": "2026-06-05T11:15:08+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=MUOOkYeyqt4",
+      "thumbUrl": "https://i.ytimg.com/vi/MUOOkYeyqt4/hqdefault.jpg",
+      "videoTitle": "투명망토가 현실로? 미국 하버드도 못 한 일을 해낸 한국의 정체 메타렌즈",
+      "publishedAt": "2026-06-06T10:00:34+00:00"
     }
   ]
 }
