@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.06.05 21:30 KST (자동 업데이트)",
+  "updatedAt": "2026.06.06 09:20 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=4aCa8mCQgRQ",
-      "thumbUrl": "https://i.ytimg.com/vi/4aCa8mCQgRQ/hqdefault.jpg",
-      "videoTitle": "6월 증시, 진짜 조정은 이제부터? CPI가 시장을 흔든다 | 클로즈업 | 월간특강 세미나 [3편]",
-      "publishedAt": "2026-06-05T09:00:05+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=FzQ837d8ABU",
+      "thumbUrl": "https://i.ytimg.com/vi/FzQ837d8ABU/hqdefault.jpg",
+      "videoTitle": "[풀버전] 스테이블코인 법제화와 달러 패권의 재편 | 경읽남과 토론합시다 | 이지민 작가님",
+      "publishedAt": "2026-06-05T21:00:14+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=5aJ6XdWQTLo",
-      "thumbUrl": "https://i.ytimg.com/vi/5aJ6XdWQTLo/hqdefault.jpg",
-      "videoTitle": "[김현석의 브레이킹 뉴스] 5월 고용보고서 발표! 6월 5일 오후 9시 30분 L.I.V.E",
-      "publishedAt": "2026-06-04T22:11:01+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=-nLbaBqq7YU",
+      "thumbUrl": "https://i.ytimg.com/vi/-nLbaBqq7YU/hqdefault.jpg",
+      "videoTitle": "[빈난새의 개장전요것만-6월5일] '연내 금리인상' 반영 | 반도체 조정에 대한 해석 | S&P, 초대형 IPO 조기편입 거부 | JPM 테슬라 상향 | 플래닛랩스 룰루레몬 서클",
+      "publishedAt": "2026-06-05T14:32:26+00:00"
     },
     {
       "id": "moneyinside",
