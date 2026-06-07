@@ -1,5 +1,5 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.06.07 09:18 KST (자동 업데이트)",
+  "updatedAt": "2026.06.07 16:40 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
