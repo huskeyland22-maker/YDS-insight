@@ -1,15 +1,15 @@
 {
-  "updatedAt": "2026.06.07 16:40 KST (자동 업데이트)",
+  "updatedAt": "2026.06.07 20:42 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=eI_c26JA_Zw",
-      "thumbUrl": "https://i.ytimg.com/vi/eI_c26JA_Zw/hqdefault.jpg",
-      "videoTitle": "[풀버전] 6월 증시, 진짜 변곡점이 온다. 증시를 꺾어놓을 '4가지 트리거'. 스페이스X 초대형 IPO·엔캐리청산·인플레·반도체 실적 | 클로즈업 | 월간특강 세미나",
-      "publishedAt": "2026-06-06T21:00:10+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=__hPBT_FZbA",
+      "thumbUrl": "https://i.ytimg.com/vi/__hPBT_FZbA/hqdefault.jpg",
+      "videoTitle": "[풀버전] 구글 임원 출신 투자자가 보는 AI 거품론의 착각 | 경읽남과 토론합시다 | 조용민 대표",
+      "publishedAt": "2026-06-07T09:00:34+00:00"
     },
     {
       "id": "sbs-explained",
@@ -56,10 +56,10 @@
       "name": "간단경제한스푼",
       "channelUrl": "https://www.youtube.com/channel/UChuu3KaoDnyttfN10GG169Q",
       "latestUrl": "https://www.youtube.com/@%EA%B0%84%EB%8B%A8%EA%B2%BD%EC%A0%9C%ED%95%9C%EC%8A%A4%ED%91%BC/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=v0kePpCCUs0",
-      "thumbUrl": "https://i.ytimg.com/vi/v0kePpCCUs0/hqdefault.jpg",
-      "videoTitle": "배터미에 물 넣었더니 소프트뱅크 손정의가 움직였습니다. 수계 아연 전지 값은 7분의 1, 불도 안 난다 한국이 풀어낸 물 배터리의 비밀",
-      "publishedAt": "2026-06-06T11:15:38+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=DblitaOG9Mk",
+      "thumbUrl": "https://i.ytimg.com/vi/DblitaOG9Mk/hqdefault.jpg",
+      "videoTitle": "흔한 구리가 일으킨 반도체 혁명, 100조 번의 충돌을 멈춘 한국 연구진",
+      "publishedAt": "2026-06-07T10:15:31+00:00"
     }
   ]
 }
