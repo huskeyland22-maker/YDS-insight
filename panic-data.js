@@ -1,5 +1,5 @@
 window.PANIC_DATA = {
-  "updatedAt": "2026.06.08 17:26 KST (자동 업데이트 · Python)",
+  "updatedAt": "2026.06.08 22:58 KST (자동 업데이트 · Python)",
   "signalExtras": {
     "t10y2y": null
   },
@@ -21,8 +21,8 @@ window.PANIC_DATA = {
     {
       "id": "fng",
       "label": "CNN F&G",
-      "value": "42",
-      "delta": "➡️ 0",
+      "value": "43",
+      "delta": "📈 +1",
       "status": "🟢 중립",
       "tone": "stable",
       "weekTrend": "하락",
@@ -71,16 +71,16 @@ window.PANIC_DATA = {
     {
       "id": "hy",
       "label": "HY 금리 스프레드",
-      "value": "2.74%",
-      "delta": "📉 -0.01%",
+      "value": "2.76%",
+      "delta": "📈 +0.02%",
       "status": "🟢 안정",
       "tone": "stable",
       "weekTrend": "보합",
       "actionGuide": "관망",
       "trendUrl": "https://fred.stlouisfed.org/series/BAMLH0A0HYM2",
       "source": "fred",
-      "previousClose": 2.75,
-      "change": -0.01
+      "previousClose": 2.74,
+      "change": 0.02
     },
     {
       "id": "gsbb",

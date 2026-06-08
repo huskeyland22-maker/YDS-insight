@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.06.08 17:26 KST (자동 업데이트)",
+  "updatedAt": "2026.06.08 22:58 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=Zc-jGccHWO8",
-      "thumbUrl": "https://i.ytimg.com/vi/Zc-jGccHWO8/hqdefault.jpg",
-      "videoTitle": "환율 1600원 가나? 본질적인 문제와 대응책은? [즉시분석]",
-      "publishedAt": "2026-06-07T21:00:08+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=axCKQ70ansQ",
+      "thumbUrl": "https://i.ytimg.com/vi/axCKQ70ansQ/hqdefault.jpg",
+      "videoTitle": "일론 머스크가 구상한 우주경제. 스페이스X 상장은 역대급 기회인가? 역대급 변동성인가? [경읽남 248화]",
+      "publishedAt": "2026-06-08T09:00:10+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=0a9DquSMIYE",
-      "thumbUrl": "https://i.ytimg.com/vi/0a9DquSMIYE/hqdefault.jpg",
-      "videoTitle": "AI 사회주의가 온다... 좌우 대동단결 \"AI 수익 나누자\"ㅣ이상은의 워싱턴나우",
-      "publishedAt": "2026-06-08T03:00:28+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=Cr0DO8nUbns",
+      "thumbUrl": "https://i.ytimg.com/vi/Cr0DO8nUbns/hqdefault.jpg",
+      "videoTitle": "[빈난새의 개장전 요것만-6월8일] 미국장 개장전 알아야 할 5가지 + 특징주 및 주요 뉴스",
+      "publishedAt": "2026-06-08T12:47:58+00:00"
     },
     {
       "id": "moneyinside",
@@ -56,10 +56,10 @@ window.YOUTUBE_DATA = {
       "name": "간단경제한스푼",
       "channelUrl": "https://www.youtube.com/channel/UChuu3KaoDnyttfN10GG169Q",
       "latestUrl": "https://www.youtube.com/@%EA%B0%84%EB%8B%A8%EA%B2%BD%EC%A0%9C%ED%95%9C%EC%8A%A4%ED%91%BC/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=DblitaOG9Mk",
-      "thumbUrl": "https://i.ytimg.com/vi/DblitaOG9Mk/hqdefault.jpg",
-      "videoTitle": "흔한 구리가 일으킨 반도체 혁명, 100조 번의 충돌을 멈춘 한국 연구진",
-      "publishedAt": "2026-06-07T10:15:31+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=2-Ic4kNFSTE",
+      "thumbUrl": "https://i.ytimg.com/vi/2-Ic4kNFSTE/hqdefault.jpg",
+      "videoTitle": "삼성,현대,국내 대기업. 해외도 결국 한국에 주문한다 전 세계 단 하나뿐인 독점 기술. 600인승 초대형 엘리베이터.",
+      "publishedAt": "2026-06-08T11:00:08+00:00"
     }
   ]
 };
