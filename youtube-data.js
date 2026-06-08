@@ -1,5 +1,5 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.06.08 10:34 KST (자동 업데이트)",
+  "updatedAt": "2026.06.08 17:26 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=ShXTdy_qUQA",
-      "thumbUrl": "https://i.ytimg.com/vi/ShXTdy_qUQA/hqdefault.jpg",
-      "videoTitle": "최근 폼 미친 월가 강세론자 에드 야데니..그가 신중론으로 돌아선 이유는 | 월가백브리핑",
-      "publishedAt": "2026-06-06T03:00:30+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=0a9DquSMIYE",
+      "thumbUrl": "https://i.ytimg.com/vi/0a9DquSMIYE/hqdefault.jpg",
+      "videoTitle": "AI 사회주의가 온다... 좌우 대동단결 \"AI 수익 나누자\"ㅣ이상은의 워싱턴나우",
+      "publishedAt": "2026-06-08T03:00:28+00:00"
     },
     {
       "id": "moneyinside",

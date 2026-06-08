@@ -1,5 +1,5 @@
 window.OVERSEAS_DATA = {
-  "updatedAt": "2026.06.08 13:22 KST (자동 업데이트)",
+  "updatedAt": "2026.06.08 17:26 KST (자동 업데이트)",
   "items": [
     {
       "symbol": "SOXL",
@@ -27,21 +27,21 @@ window.OVERSEAS_DATA = {
     }
   ],
   "flow": {
-    "updatedAt": "2026.06.08 13:22 KST (자동 업데이트)",
+    "updatedAt": "2026.06.08 17:26 KST (자동 업데이트)",
     "items": [
       {
         "id": "usdjpy",
         "label": "엔캐리 압력",
-        "value": "USDJPY 160.30",
-        "delta": "+0.20%",
+        "value": "USDJPY 159.99",
+        "delta": "+0.03%",
         "tone": "up"
       },
       {
         "id": "dxy",
         "label": "달러 유동성",
-        "value": "Dollar Index 100.03",
-        "delta": "-0.04%",
-        "tone": "up"
+        "value": "Dollar Index 100.07",
+        "delta": "+0.66%",
+        "tone": "down"
       },
       {
         "id": "qqq_tlt",
@@ -66,9 +66,9 @@ window.OVERSEAS_DATA = {
       }
     ],
     "regime": {
-      "score": 74,
-      "state": "Risk-on",
-      "action": "성장/섹터 ETF는 눌림 분할 접근",
+      "score": 58,
+      "state": "Neutral",
+      "action": "중립 비중 유지, 이벤트 확인 후 대응",
       "history": [
         {
           "d": "2026.06.02",
@@ -96,7 +96,7 @@ window.OVERSEAS_DATA = {
         },
         {
           "d": "2026.06.08",
-          "s": 74
+          "s": 58
         }
       ]
     }
@@ -141,7 +141,7 @@ window.OVERSEAS_DATA = {
       }
     ],
     "weeklySummary": [
-      "국면: Risk-on (74/100) · 성장/섹터 ETF는 눌림 분할 접근",
+      "국면: Neutral (58/100) · 중립 비중 유지, 이벤트 확인 후 대응",
       "강세 섹터: 에너지(XLE) +2.45% / +1.18%",
       "약세 섹터: AI/성장(QQQ) -4.50% / +1.34%"
     ]
