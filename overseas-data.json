@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026.06.08 06:17 KST (자동 업데이트)",
+  "updatedAt": "2026.06.08 10:34 KST (자동 업데이트)",
   "items": [
     {
       "symbol": "SOXL",
@@ -27,21 +27,21 @@
     }
   ],
   "flow": {
-    "updatedAt": "2026.06.08 06:17 KST (자동 업데이트)",
+    "updatedAt": "2026.06.08 10:34 KST (자동 업데이트)",
     "items": [
       {
         "id": "usdjpy",
         "label": "엔캐리 압력",
-        "value": "USDJPY 160.22",
-        "delta": "+0.15%",
+        "value": "USDJPY 160.33",
+        "delta": "+0.21%",
         "tone": "up"
       },
       {
         "id": "dxy",
         "label": "달러 유동성",
         "value": "Dollar Index 100.07",
-        "delta": "+0.66%",
-        "tone": "down"
+        "delta": "-0.00%",
+        "tone": "up"
       },
       {
         "id": "qqq_tlt",
@@ -66,9 +66,9 @@
       }
     ],
     "regime": {
-      "score": 58,
-      "state": "Neutral",
-      "action": "중립 비중 유지, 이벤트 확인 후 대응",
+      "score": 74,
+      "state": "Risk-on",
+      "action": "성장/섹터 ETF는 눌림 분할 접근",
       "history": [
         {
           "d": "2026.06.02",
@@ -96,7 +96,7 @@
         },
         {
           "d": "2026.06.08",
-          "s": 58
+          "s": 74
         }
       ]
     }
@@ -141,7 +141,7 @@
       }
     ],
     "weeklySummary": [
-      "국면: Neutral (58/100) · 중립 비중 유지, 이벤트 확인 후 대응",
+      "국면: Risk-on (74/100) · 성장/섹터 ETF는 눌림 분할 접근",
       "강세 섹터: 에너지(XLE) +2.45% / +1.18%",
       "약세 섹터: AI/성장(QQQ) -4.50% / +1.34%"
     ]
