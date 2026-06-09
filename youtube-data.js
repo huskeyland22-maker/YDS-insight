@@ -1,5 +1,5 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.06.09 09:16 KST (자동 업데이트)",
+  "updatedAt": "2026.06.09 16:01 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=5jFLL7rc3Lc",
-      "thumbUrl": "https://i.ytimg.com/vi/5jFLL7rc3Lc/hqdefault.jpg",
-      "videoTitle": "[김종학의 뉴욕, 지금-6월9일] 스페이스X, 초과 청약..고평가 우려도 확산 | 트럼프도 통제 못하는 네타냐후 | 인텔, 구글, 애플, 코닝, 아마존, 마벨, 세레브라스",
-      "publishedAt": "2026-06-08T21:18:15+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=YT1fa3P45D0",
+      "thumbUrl": "https://i.ytimg.com/vi/YT1fa3P45D0/hqdefault.jpg",
+      "videoTitle": "지금 AI 투자자들이 가장 궁금한것 총정리 | 빈난새의 빈틈없이월가",
+      "publishedAt": "2026-06-09T01:15:25+00:00"
     },
     {
       "id": "moneyinside",

@@ -1,5 +1,5 @@
 window.PANIC_DATA = {
-  "updatedAt": "2026.06.09 09:16 KST (자동 업데이트 · Python)",
+  "updatedAt": "2026.06.09 16:01 KST (자동 업데이트 · Python)",
   "signalExtras": {
     "t10y2y": null
   },
@@ -7,22 +7,22 @@ window.PANIC_DATA = {
     {
       "id": "vix",
       "label": "VIX Index",
-      "value": "21.51",
-      "delta": "📈 +6.11",
-      "status": "🟡 주의",
-      "tone": "watch",
+      "value": "18.92",
+      "delta": "📉 -2.59",
+      "status": "🟢 안정",
+      "tone": "stable",
       "weekTrend": "상승",
-      "actionGuide": "분할매수",
+      "actionGuide": "관망",
       "trendUrl": "https://www.macrotrends.net/2603/vix-volatility-index-historical-chart",
       "source": "yahoo",
-      "previousClose": 15.4,
-      "change": 6.11
+      "previousClose": 21.51,
+      "change": -2.59
     },
     {
       "id": "fng",
       "label": "CNN F&G",
-      "value": "40",
-      "delta": "📉 -2",
+      "value": "39",
+      "delta": "📉 -1",
       "status": "🟢 중립",
       "tone": "stable",
       "weekTrend": "하락",
