@@ -1,5 +1,5 @@
 window.PANIC_DATA = {
-  "updatedAt": "2026.06.08 22:58 KST (자동 업데이트 · Python)",
+  "updatedAt": "2026.06.09 09:16 KST (자동 업데이트 · Python)",
   "signalExtras": {
     "t10y2y": null
   },
@@ -21,8 +21,8 @@ window.PANIC_DATA = {
     {
       "id": "fng",
       "label": "CNN F&G",
-      "value": "43",
-      "delta": "📈 +1",
+      "value": "40",
+      "delta": "📉 -2",
       "status": "🟢 중립",
       "tone": "stable",
       "weekTrend": "하락",
@@ -45,16 +45,16 @@ window.PANIC_DATA = {
     {
       "id": "skew",
       "label": "SKEW Index",
-      "value": "152.25",
-      "delta": "📈 +10.10",
+      "value": "145.00",
+      "delta": "📉 -7.25",
       "status": "🔴 위험",
       "tone": "alert",
       "weekTrend": "상승",
       "actionGuide": "헤지점검",
       "trendUrl": "https://www.cboe.com/tradable_products/vix/vix_historical_data/",
       "source": "yahoo",
-      "previousClose": 142.15,
-      "change": 10.1
+      "previousClose": 152.25,
+      "change": -7.25
     },
     {
       "id": "putcall",
@@ -97,31 +97,31 @@ window.PANIC_DATA = {
     {
       "id": "move",
       "label": "MOVE Index",
-      "value": "75.20",
-      "delta": "📈 +4.04",
+      "value": "76.98",
+      "delta": "📈 +1.78",
       "status": "🟢 안정",
       "tone": "stable",
       "weekTrend": "상승",
       "actionGuide": "관망",
       "trendUrl": "https://fred.stlouisfed.org/series/MOVE",
       "source": "yahoo",
-      "previousClose": 71.16,
-      "change": 4.04
+      "previousClose": 75.2,
+      "change": 1.78
     },
     {
       "id": "vxn",
       "label": "VXN Index",
-      "value": "30.47",
-      "delta": "📈 +7.25",
+      "value": "27.12",
+      "delta": "📉 -3.35",
       "status": "🟡 주의",
       "tone": "watch",
       "weekTrend": "상승",
       "actionGuide": "분할매수",
       "trendUrl": "https://www.cboe.com/tradable_products/vix/vxn/",
       "source": "yahoo",
-      "previousClose": 23.22,
-      "change": 7.25
+      "previousClose": 30.47,
+      "change": -3.35
     }
   ],
-  "asOfDateET": "2026-06-05"
+  "asOfDateET": "2026-06-08"
 };
