@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.06.09 16:01 KST (자동 업데이트)",
+  "updatedAt": "2026.06.09 21:30 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=iy7ZFD1GX80",
-      "thumbUrl": "https://i.ytimg.com/vi/iy7ZFD1GX80/hqdefault.jpg",
-      "videoTitle": "저금리 시대는 끝났습니다. 머니 쇼크가 말하는 새로운 경제 질서 | 김광석의 북리뷰_머니쇼크 [1편]",
-      "publishedAt": "2026-06-08T21:00:07+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=2pl44DuHCBM",
+      "thumbUrl": "https://i.ytimg.com/vi/2pl44DuHCBM/hqdefault.jpg",
+      "videoTitle": "스페이스X, 이제 로켓 회사가 아닙니다. AI 데이터센터까지 삼키는 진짜 그림 | 경읽남과 토론합시다 | 강정수 박사님 [2편]",
+      "publishedAt": "2026-06-09T09:00:15+00:00"
     },
     {
       "id": "sbs-explained",
@@ -28,7 +28,7 @@ window.YOUTUBE_DATA = {
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
       "videoUrl": "https://www.youtube.com/watch?v=YT1fa3P45D0",
       "thumbUrl": "https://i.ytimg.com/vi/YT1fa3P45D0/hqdefault.jpg",
-      "videoTitle": "지금 AI 투자자들이 가장 궁금한것 총정리 | 빈난새의 빈틈없이월가",
+      "videoTitle": "AI CAPEX 지속가능? 반도체 피크아웃? 지금 AI 투자자들이 가장 궁금한것 총정리 | 빈난새의 빈틈없이월가",
       "publishedAt": "2026-06-09T01:15:25+00:00"
     },
     {
@@ -56,10 +56,10 @@ window.YOUTUBE_DATA = {
       "name": "간단경제한스푼",
       "channelUrl": "https://www.youtube.com/channel/UChuu3KaoDnyttfN10GG169Q",
       "latestUrl": "https://www.youtube.com/@%EA%B0%84%EB%8B%A8%EA%B2%BD%EC%A0%9C%ED%95%9C%EC%8A%A4%ED%91%BC/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=2-Ic4kNFSTE",
-      "thumbUrl": "https://i.ytimg.com/vi/2-Ic4kNFSTE/hqdefault.jpg",
-      "videoTitle": "삼성,현대,국내 대기업. 해외도 결국 한국에 주문한다 전 세계 단 하나뿐인 독점 기술. 600인승 초대형 엘리베이터.",
-      "publishedAt": "2026-06-08T11:00:08+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=uk-OgtmuiYg",
+      "thumbUrl": "https://i.ytimg.com/vi/uk-OgtmuiYg/hqdefault.jpg",
+      "videoTitle": "ASML만 슈퍼 을이 아니다, 전 세계 반도체가 매달리는 한국의 원자현미경 (파크시스템스)",
+      "publishedAt": "2026-06-09T11:00:16+00:00"
     }
   ]
 };
