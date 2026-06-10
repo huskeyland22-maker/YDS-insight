@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.06.10 16:51 KST (자동 업데이트)",
+  "updatedAt": "2026.06.10 21:48 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=YoVoqVEKlVM",
-      "thumbUrl": "https://i.ytimg.com/vi/YoVoqVEKlVM/hqdefault.jpg",
-      "videoTitle": "[속보] 변동성 심한 3가지 이유 : 한국형 공포지수 '코스피200변동성 지수' 사상 처음 90 돌파 [즉시분석]",
-      "publishedAt": "2026-06-10T00:59:26+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=bTLnmNiGl00",
+      "thumbUrl": "https://i.ytimg.com/vi/bTLnmNiGl00/hqdefault.jpg",
+      "videoTitle": "[LIVE] 미국 5월 CPI 물가 심층분석 : '인플레 쇼크' 오는가? [즉시분석]",
+      "publishedAt": "2026-06-10T11:05:59+00:00"
     },
     {
       "id": "sbs-explained",
@@ -29,7 +29,7 @@ window.YOUTUBE_DATA = {
       "videoUrl": "https://www.youtube.com/watch?v=fmnqdW3yKvQ",
       "thumbUrl": "https://i.ytimg.com/vi/fmnqdW3yKvQ/hqdefault.jpg",
       "videoTitle": "[김현석의 브레이킹 뉴스] 5월 소비자물가지수(CPI) 발표! 6월 10일 오후 9시 30분 L.I.V.E",
-      "publishedAt": "2026-06-09T22:17:56+00:00"
+      "publishedAt": "2026-06-10T12:40:28+00:00"
     },
     {
       "id": "moneyinside",
@@ -56,10 +56,10 @@ window.YOUTUBE_DATA = {
       "name": "간단경제한스푼",
       "channelUrl": "https://www.youtube.com/channel/UChuu3KaoDnyttfN10GG169Q",
       "latestUrl": "https://www.youtube.com/@%EA%B0%84%EB%8B%A8%EA%B2%BD%EC%A0%9C%ED%95%9C%EC%8A%A4%ED%91%BC/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=uk-OgtmuiYg",
-      "thumbUrl": "https://i.ytimg.com/vi/uk-OgtmuiYg/hqdefault.jpg",
-      "videoTitle": "ASML만 슈퍼 을이 아니다, 전 세계 반도체가 매달리는 한국의 원자현미경 (파크시스템스)",
-      "publishedAt": "2026-06-09T11:00:16+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=XWdve89S9y8",
+      "thumbUrl": "https://i.ytimg.com/vi/XWdve89S9y8/hqdefault.jpg",
+      "videoTitle": "중국 의존을 끊은 국내 유일의 기업, 버려진 폐모터에서 희토류 자석을 되살린다 (성림첨단산업)",
+      "publishedAt": "2026-06-10T11:00:26+00:00"
     }
   ]
 };
