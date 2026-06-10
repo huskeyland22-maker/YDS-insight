@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.06.09 21:30 KST (자동 업데이트)",
+  "updatedAt": "2026.06.10 10:31 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=2pl44DuHCBM",
-      "thumbUrl": "https://i.ytimg.com/vi/2pl44DuHCBM/hqdefault.jpg",
-      "videoTitle": "스페이스X, 이제 로켓 회사가 아닙니다. AI 데이터센터까지 삼키는 진짜 그림 | 경읽남과 토론합시다 | 강정수 박사님 [2편]",
-      "publishedAt": "2026-06-09T09:00:15+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=YoVoqVEKlVM",
+      "thumbUrl": "https://i.ytimg.com/vi/YoVoqVEKlVM/hqdefault.jpg",
+      "videoTitle": "[속보] 변동성 심한 3가지 이유 : 한국형 공포지수 '코스피200변동성 지수' 사상 처음 90 돌파 [즉시분석]",
+      "publishedAt": "2026-06-10T00:59:26+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=YT1fa3P45D0",
-      "thumbUrl": "https://i.ytimg.com/vi/YT1fa3P45D0/hqdefault.jpg",
-      "videoTitle": "AI CAPEX 지속가능? 반도체 피크아웃? 지금 AI 투자자들이 가장 궁금한것 총정리 | 빈난새의 빈틈없이월가",
-      "publishedAt": "2026-06-09T01:15:25+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=fmnqdW3yKvQ",
+      "thumbUrl": "https://i.ytimg.com/vi/fmnqdW3yKvQ/hqdefault.jpg",
+      "videoTitle": "[김현석의 브레이킹 뉴스] 5월 소비자물가지수(CPI) 발표! 6월 10일 오후 9시 30분 L.I.V.E",
+      "publishedAt": "2026-06-09T22:17:56+00:00"
     },
     {
       "id": "moneyinside",
