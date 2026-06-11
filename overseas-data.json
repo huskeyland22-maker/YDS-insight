@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026.06.11 13:18 KST (자동 업데이트)",
+  "updatedAt": "2026.06.11 17:18 KST (자동 업데이트)",
   "items": [
     {
       "symbol": "SOXL",
@@ -27,20 +27,20 @@
     }
   ],
   "flow": {
-    "updatedAt": "2026.06.11 13:18 KST (자동 업데이트)",
+    "updatedAt": "2026.06.11 17:18 KST (자동 업데이트)",
     "items": [
       {
         "id": "usdjpy",
         "label": "엔캐리 압력",
-        "value": "USDJPY 160.51",
-        "delta": "+0.08%",
+        "value": "USDJPY 160.38",
+        "delta": "+0.13%",
         "tone": "up"
       },
       {
         "id": "dxy",
         "label": "달러 유동성",
-        "value": "Dollar Index 99.98",
-        "delta": "+0.07%",
+        "value": "Dollar Index 99.91",
+        "delta": "-0.14%",
         "tone": "up"
       },
       {
@@ -60,13 +60,13 @@
       {
         "id": "vix_hy",
         "label": "리스크 선호",
-        "value": "VIX 22.22 / HY 2.78%",
-        "delta": "VIX +2.35% · HY +0.03%",
-        "tone": "flat"
+        "value": "VIX 19.87 / HY 2.78%",
+        "delta": "VIX +0.95% · HY +0.03%",
+        "tone": "up"
       }
     ],
     "regime": {
-      "score": 50,
+      "score": 58,
       "state": "Neutral",
       "action": "중립 비중 유지, 이벤트 확인 후 대응",
       "history": [
@@ -96,7 +96,7 @@
         },
         {
           "d": "2026.06.11",
-          "s": 50
+          "s": 58
         }
       ]
     }
@@ -141,7 +141,7 @@
       }
     ],
     "weeklySummary": [
-      "국면: Neutral (50/100) · 중립 비중 유지, 이벤트 확인 후 대응",
+      "국면: Neutral (58/100) · 중립 비중 유지, 이벤트 확인 후 대응",
       "강세 섹터: 금융(XLF) +1.94% / +2.38%",
       "약세 섹터: AI/성장(QQQ) -5.14% / -0.48%"
     ]
