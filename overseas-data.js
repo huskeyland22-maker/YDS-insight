@@ -1,5 +1,5 @@
 window.OVERSEAS_DATA = {
-  "updatedAt": "2026.06.11 21:12 KST (자동 업데이트)",
+  "updatedAt": "2026.06.11 22:50 KST (자동 업데이트)",
   "items": [
     {
       "symbol": "SOXL",
@@ -27,7 +27,7 @@ window.OVERSEAS_DATA = {
     }
   ],
   "flow": {
-    "updatedAt": "2026.06.11 21:12 KST (자동 업데이트)",
+    "updatedAt": "2026.06.11 22:50 KST (자동 업데이트)",
     "items": [
       {
         "id": "usdjpy",
@@ -60,13 +60,13 @@ window.OVERSEAS_DATA = {
       {
         "id": "vix_hy",
         "label": "리스크 선호",
-        "value": "VIX 19.87 / HY 2.78%",
-        "delta": "VIX +0.95% · HY +0.03%",
-        "tone": "up"
+        "value": "VIX 22.22 / HY 2.78%",
+        "delta": "VIX +2.35% · HY +0.03%",
+        "tone": "flat"
       }
     ],
     "regime": {
-      "score": 74,
+      "score": 66,
       "state": "Risk-on",
       "action": "성장/섹터 ETF는 눌림 분할 접근",
       "history": [
@@ -96,7 +96,7 @@ window.OVERSEAS_DATA = {
         },
         {
           "d": "2026.06.11",
-          "s": 74
+          "s": 66
         }
       ]
     }
@@ -141,7 +141,7 @@ window.OVERSEAS_DATA = {
       }
     ],
     "weeklySummary": [
-      "국면: Risk-on (74/100) · 성장/섹터 ETF는 눌림 분할 접근",
+      "국면: Risk-on (66/100) · 성장/섹터 ETF는 눌림 분할 접근",
       "강세 섹터: 금융(XLF) +2.67% / +2.05%",
       "약세 섹터: 반도체(SOXX) -12.05% / +1.64%"
     ]
