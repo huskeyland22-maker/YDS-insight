@@ -1,5 +1,5 @@
 window.TICKER_DATA = {
-  "updatedAt": "2026.06.13 10:34 KST (자동 업데이트)",
+  "updatedAt": "2026.06.13 13:09 KST (자동 업데이트)",
   "items": [
     {
       "label": "KOSPI",
@@ -33,8 +33,8 @@ window.TICKER_DATA = {
     },
     {
       "label": "Dollar Index",
-      "value": "99.81",
-      "delta": "-0.05%",
+      "value": "99.75",
+      "delta": "-0.11%",
       "direction": "down"
     },
     {
