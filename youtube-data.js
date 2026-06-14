@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.06.14 10:37 KST (자동 업데이트)",
+  "updatedAt": "2026.06.14 16:59 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=RR5KBaAa3O4",
-      "thumbUrl": "https://i.ytimg.com/vi/RR5KBaAa3O4/hqdefault.jpg",
-      "videoTitle": "[속보] 종전 MOU 디지털 서명의 이유. 종전 서두르는 트럼프의 속내 [즉시분석]",
-      "publishedAt": "2026-06-14T01:32:26+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=DTwZ7jlmiy8",
+      "thumbUrl": "https://i.ytimg.com/vi/DTwZ7jlmiy8/hqdefault.jpg",
+      "videoTitle": "[LIVE] 종전협상 이후의 경제 시나리오. 트럼프, 성급히 종전선언 하는 이유 [즉시분석]",
+      "publishedAt": "2026-06-14T07:11:58+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=7Y8Q1fhFjpU",
-      "thumbUrl": "https://i.ytimg.com/vi/7Y8Q1fhFjpU/hqdefault.jpg",
-      "videoTitle": "역대급 단타 전쟁? 다음 주에 레버리지도 상장한다는데 | 월가백브리핑",
-      "publishedAt": "2026-06-13T03:00:03+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=g6MBz4YuaJ4",
+      "thumbUrl": "https://i.ytimg.com/vi/g6MBz4YuaJ4/hqdefault.jpg",
+      "videoTitle": "이것은 합의를 위한 합의?..이번에는 도장 찍을까 | 월가백브리핑",
+      "publishedAt": "2026-06-14T03:00:20+00:00"
     },
     {
       "id": "moneyinside",
