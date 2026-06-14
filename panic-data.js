@@ -1,5 +1,5 @@
 window.PANIC_DATA = {
-  "updatedAt": "2026.06.14 16:59 KST (자동 업데이트 · Python)",
+  "updatedAt": "2026.06.14 20:48 KST (자동 업데이트 · Python)",
   "signalExtras": {
     "t10y2y": null
   },
