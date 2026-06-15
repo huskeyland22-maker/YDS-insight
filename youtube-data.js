@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.06.14 20:48 KST (자동 업데이트)",
+  "updatedAt": "2026.06.15 10:41 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=mv45j0i5NoM",
-      "thumbUrl": "https://i.ytimg.com/vi/mv45j0i5NoM/hqdefault.jpg",
-      "videoTitle": "[모아보기] 미국 국방부가 비트코인을 모으기 시작했다. \"크립토 시장 판이 바뀝니다\" | 경읽남과 토론합시다 | 김창익x김동환x정구태x이지민",
-      "publishedAt": "2026-06-14T09:00:09+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=gnu3H7pLlVI",
+      "thumbUrl": "https://i.ytimg.com/vi/gnu3H7pLlVI/hqdefault.jpg",
+      "videoTitle": "[속보] 종전 MOU 19일 서명. 트럼프가 종전을 서두른 진짜 이유 [즉시분석]",
+      "publishedAt": "2026-06-14T23:21:21+00:00"
     },
     {
       "id": "sbs-explained",
