@@ -1,5 +1,5 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.06.15 18:41 KST (자동 업데이트)",
+  "updatedAt": "2026.06.16 00:36 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=bNDYcVkFfa4",
-      "thumbUrl": "https://i.ytimg.com/vi/bNDYcVkFfa4/hqdefault.jpg",
-      "videoTitle": "미국-이란 협상 타결…이란, 호르무즈 관리할 듯ㅣ이상은의 워싱턴나우",
-      "publishedAt": "2026-06-15T03:00:36+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=LMUvcBOO64Q",
+      "thumbUrl": "https://i.ytimg.com/vi/LMUvcBOO64Q/hqdefault.jpg",
+      "videoTitle": "[빈난새의 개장전요것만-6월15일] $70 못내려가는 유가 | 앤스로픽 신원인증 도입 | 기대반 경계반 FOMC | 스페이스X 엔비디아 마이크론 AMD TXN 로켓랩 캐피털원 로쿠",
+      "publishedAt": "2026-06-15T14:35:40+00:00"
     },
     {
       "id": "moneyinside",
@@ -56,10 +56,10 @@ window.YOUTUBE_DATA = {
       "name": "간단경제한스푼",
       "channelUrl": "https://www.youtube.com/channel/UChuu3KaoDnyttfN10GG169Q",
       "latestUrl": "https://www.youtube.com/@%EA%B0%84%EB%8B%A8%EA%B2%BD%EC%A0%9C%ED%95%9C%EC%8A%A4%ED%91%BC/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=f43ORLi0fkA",
-      "thumbUrl": "https://i.ytimg.com/vi/f43ORLi0fkA/hqdefault.jpg",
-      "videoTitle": "한국 엔지니어 때문에 수조 원 노다지 뺏겼다\" 해외 독점 기업들의 통곡, 화물 손실 83% 줄인 K-조선의 역습",
-      "publishedAt": "2026-06-14T11:15:36+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=VXl2idyUB2w",
+      "thumbUrl": "https://i.ytimg.com/vi/VXl2idyUB2w/hqdefault.jpg",
+      "videoTitle": "세계에서 가장 싼 배터리를 만들던 중국 신왕다가 한국 LG에너지솔루션 앞에 백기를 들었습니다.",
+      "publishedAt": "2026-06-15T10:45:08+00:00"
     }
   ]
 };
