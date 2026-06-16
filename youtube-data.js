@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.06.16 10:48 KST (자동 업데이트)",
+  "updatedAt": "2026.06.16 18:07 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=voOxS00K0cY",
-      "thumbUrl": "https://i.ytimg.com/vi/voOxS00K0cY/hqdefault.jpg",
-      "videoTitle": "“6월 증시, 이제부터 조심해야 하는 이유 실질금리 역전이 보내는 경고” | 경읽남과 토론합시다 | 문남중 수석연구위원 [1편]",
-      "publishedAt": "2026-06-15T21:00:14+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=9j-zw0CjX7k",
+      "thumbUrl": "https://i.ytimg.com/vi/9j-zw0CjX7k/hqdefault.jpg",
+      "videoTitle": "“4분기 증시, 생각보다 강하게 오를 수 있습니다 금리인하 기대와 AI 실적의 힘” | 경읽남과 토론합시다 | 문남중 수석연구위원 [2편]",
+      "publishedAt": "2026-06-16T09:00:07+00:00"
     },
     {
       "id": "sbs-explained",
