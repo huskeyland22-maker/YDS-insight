@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.06.16 00:36 KST (자동 업데이트)",
+  "updatedAt": "2026.06.16 10:48 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=w09Ed9DUe2Y",
-      "thumbUrl": "https://i.ytimg.com/vi/w09Ed9DUe2Y/hqdefault.jpg",
-      "videoTitle": "중국 창신메모리(CXMT) 상장과 반도체 독립 추진. 한국 반도체에 올 위협 [경읽남 249화]",
-      "publishedAt": "2026-06-15T09:00:35+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=voOxS00K0cY",
+      "thumbUrl": "https://i.ytimg.com/vi/voOxS00K0cY/hqdefault.jpg",
+      "videoTitle": "“6월 증시, 이제부터 조심해야 하는 이유 실질금리 역전이 보내는 경고” | 경읽남과 토론합시다 | 문남중 수석연구위원 [1편]",
+      "publishedAt": "2026-06-15T21:00:14+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=LMUvcBOO64Q",
-      "thumbUrl": "https://i.ytimg.com/vi/LMUvcBOO64Q/hqdefault.jpg",
-      "videoTitle": "[빈난새의 개장전요것만-6월15일] $70 못내려가는 유가 | 앤스로픽 신원인증 도입 | 기대반 경계반 FOMC | 스페이스X 엔비디아 마이크론 AMD TXN 로켓랩 캐피털원 로쿠",
-      "publishedAt": "2026-06-15T14:35:40+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=-67LEDMWFBg",
+      "thumbUrl": "https://i.ytimg.com/vi/-67LEDMWFBg/hqdefault.jpg",
+      "videoTitle": "\"전쟁 끝나면 유가•금리 내리고 순환매\" 정말 그럴까요 | 빈난새의 빈틈없이월가",
+      "publishedAt": "2026-06-16T01:00:15+00:00"
     },
     {
       "id": "moneyinside",
