@@ -1,5 +1,5 @@
 window.TICKER_DATA = {
-  "updatedAt": "2026.06.18 03:23 KST (자동 업데이트)",
+  "updatedAt": "2026.06.18 07:03 KST (자동 업데이트)",
   "items": [
     {
       "label": "KOSPI",
@@ -21,39 +21,39 @@ window.TICKER_DATA = {
     },
     {
       "label": "DOW",
-      "value": "51,999.67",
-      "delta": "+0.64%",
-      "direction": "up"
+      "value": "51,492.55",
+      "delta": "-0.98%",
+      "direction": "down"
     },
     {
       "label": "S&P 500",
-      "value": "7,511.35",
-      "delta": "-0.57%",
+      "value": "7,420.10",
+      "delta": "-1.21%",
       "direction": "down"
     },
     {
       "label": "Dollar Index",
-      "value": "99.54",
-      "delta": "-0.09%",
-      "direction": "down"
+      "value": "100.36",
+      "delta": "+0.83%",
+      "direction": "up"
     },
     {
       "label": "NASDAQ 100",
-      "value": "29,968.13",
-      "delta": "-1.89%",
+      "value": "29,670.95",
+      "delta": "-0.99%",
       "direction": "down"
     },
     {
       "label": "USD/KRW",
-      "value": "1,519.79",
-      "delta": "+0.43%",
+      "value": "1,523.65",
+      "delta": "+0.84%",
       "direction": "up"
     },
     {
       "label": "US 10Y",
       "value": "0.45%",
-      "delta": "+0.54%p",
-      "direction": "up"
+      "delta": "-0.53%p",
+      "direction": "down"
     }
   ]
 };
