@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.06.16 23:51 KST (자동 업데이트)",
+  "updatedAt": "2026.06.17 10:42 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=9j-zw0CjX7k",
-      "thumbUrl": "https://i.ytimg.com/vi/9j-zw0CjX7k/hqdefault.jpg",
-      "videoTitle": "“4분기 증시, 생각보다 강하게 오를 수 있습니다 금리인하 기대와 AI 실적의 힘” | 경읽남과 토론합시다 | 문남중 수석연구위원 [2편]",
-      "publishedAt": "2026-06-16T09:00:07+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=ijWZFxqwx1s",
+      "thumbUrl": "https://i.ytimg.com/vi/ijWZFxqwx1s/hqdefault.jpg",
+      "videoTitle": "반도체 주도주는 안 바뀐다… 그런데 다음 돈은 ‘여기’로 몰립니다 | 경읽남과 토론합시다 | 문남중 수석연구위원 [3편]",
+      "publishedAt": "2026-06-16T21:00:09+00:00"
     },
     {
       "id": "sbs-explained",
@@ -28,7 +28,7 @@ window.YOUTUBE_DATA = {
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
       "videoUrl": "https://www.youtube.com/watch?v=vR_73S_rDGk",
       "thumbUrl": "https://i.ytimg.com/vi/vR_73S_rDGk/hqdefault.jpg",
-      "videoTitle": "[빈난새의 개장전요것만-6월16일] 미-이란 합의 이후 전망 | 퀄컴 텐스토렌트 인수 논의 | 스페이스X 시총 5위 | 역시 비둘기 BOJ | 시게이트 웨스턴디지털 GM 염브랜즈",
+      "videoTitle": "[빈난새의 개장전요것만-6월16일] 미-이란 합의 이후 전망 | 퀄컴 텐스토렌트 인수 논의 | 스페이스X 시총 5위 | 역시 비둘기 BOJ | 시게이트 웨스턴디지털 GM 엑손모빌",
       "publishedAt": "2026-06-16T14:37:33+00:00"
     },
     {
