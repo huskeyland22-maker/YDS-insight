@@ -1,15 +1,15 @@
 {
-  "updatedAt": "2026.06.17 17:39 KST (자동 업데이트)",
+  "updatedAt": "2026.06.17 22:35 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=ijWZFxqwx1s",
-      "thumbUrl": "https://i.ytimg.com/vi/ijWZFxqwx1s/hqdefault.jpg",
-      "videoTitle": "반도체 주도주는 안 바뀐다… 그런데 다음 돈은 ‘여기’로 몰립니다 | 경읽남과 토론합시다 | 문남중 수석연구위원 [3편]",
-      "publishedAt": "2026-06-16T21:00:09+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=Z77GFm4GXW4",
+      "thumbUrl": "https://i.ytimg.com/vi/Z77GFm4GXW4/hqdefault.jpg",
+      "videoTitle": "금리 5% 시대에도 주식이 오르는 진짜 이유 | 경읽남과 토론합시다 | 김현준 대표님 [2편]",
+      "publishedAt": "2026-06-17T09:00:06+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=vR_73S_rDGk",
-      "thumbUrl": "https://i.ytimg.com/vi/vR_73S_rDGk/hqdefault.jpg",
-      "videoTitle": "[빈난새의 개장전요것만-6월16일] 미-이란 합의 이후 전망 | 퀄컴 텐스토렌트 인수 논의 | 스페이스X 시총 5위 | 역시 비둘기 BOJ | 시게이트 웨스턴디지털 GM 엑손모빌",
-      "publishedAt": "2026-06-16T14:37:33+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=JemvfYo5bRI",
+      "thumbUrl": "https://i.ytimg.com/vi/JemvfYo5bRI/hqdefault.jpg",
+      "videoTitle": "[빈난새의 개장전 요것만-6월17일] 미국장 개장전 알아야 할 5가지 + 특징주 및 주요 뉴스",
+      "publishedAt": "2026-06-17T12:40:50+00:00"
     },
     {
       "id": "moneyinside",
@@ -56,10 +56,10 @@
       "name": "간단경제한스푼",
       "channelUrl": "https://www.youtube.com/channel/UChuu3KaoDnyttfN10GG169Q",
       "latestUrl": "https://www.youtube.com/@%EA%B0%84%EB%8B%A8%EA%B2%BD%EC%A0%9C%ED%95%9C%EC%8A%A4%ED%91%BC/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=UseWz-sZv_E",
-      "thumbUrl": "https://i.ytimg.com/vi/UseWz-sZv_E/hqdefault.jpg",
-      "videoTitle": "부르는 게 값이던 수소차의 심장, 한국이 끝내 뚫었습니다.",
-      "publishedAt": "2026-06-17T08:15:38+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=WOn6fAJnB-k",
+      "thumbUrl": "https://i.ytimg.com/vi/WOn6fAJnB-k/hqdefault.jpg",
+      "videoTitle": "전 세계에서 다섯 번째로 대형 가스터빈 독자 개발에 성공한 대한민국 대형 가스터빈 숨은 주역",
+      "publishedAt": "2026-06-17T11:00:17+00:00"
     }
   ]
 }
