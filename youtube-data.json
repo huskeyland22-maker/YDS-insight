@@ -1,15 +1,15 @@
 {
-  "updatedAt": "2026.06.18 17:23 KST (자동 업데이트)",
+  "updatedAt": "2026.06.18 21:44 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=QTolcMrvQuk",
-      "thumbUrl": "https://i.ytimg.com/vi/QTolcMrvQuk/hqdefault.jpg",
-      "videoTitle": "삼전·하이닉스 고점 찍었나? “주도주는 항상 바뀝니다” | 경읽남과 토론합시다 | 김현준 대표님 [3편]",
-      "publishedAt": "2026-06-18T03:00:11+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=AyICWLWo4Aw",
+      "thumbUrl": "https://i.ytimg.com/vi/AyICWLWo4Aw/hqdefault.jpg",
+      "videoTitle": "비트코인 50% 하락, 지금 정말 위험한 구간일까? | 경읽남과 토론합시다 | 이장우x박종한 [1편]",
+      "publishedAt": "2026-06-18T09:00:13+00:00"
     },
     {
       "id": "sbs-explained",
@@ -56,10 +56,10 @@
       "name": "간단경제한스푼",
       "channelUrl": "https://www.youtube.com/channel/UChuu3KaoDnyttfN10GG169Q",
       "latestUrl": "https://www.youtube.com/@%EA%B0%84%EB%8B%A8%EA%B2%BD%EC%A0%9C%ED%95%9C%EC%8A%A4%ED%91%BC/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=WOn6fAJnB-k",
-      "thumbUrl": "https://i.ytimg.com/vi/WOn6fAJnB-k/hqdefault.jpg",
-      "videoTitle": "전 세계에서 다섯 번째로 대형 가스터빈 독자 개발에 성공한 대한민국 대형 가스터빈 숨은 주역",
-      "publishedAt": "2026-06-17T11:00:17+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=zMUf88eqAU4",
+      "thumbUrl": "https://i.ytimg.com/vi/zMUf88eqAU4/hqdefault.jpg",
+      "videoTitle": "전 세계가 못 베낀 한국 독점 기술. 100억 원에 팔린 천덕꾸러기 사업부. HPSP가 독점한 ‘고압 수소’ 삼성과 TSMC도 줄섰습니다.",
+      "publishedAt": "2026-06-18T10:45:32+00:00"
     }
   ]
 }
