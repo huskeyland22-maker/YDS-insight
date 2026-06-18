@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026.06.18 13:20 KST (자동 업데이트)",
+  "updatedAt": "2026.06.18 17:23 KST (자동 업데이트)",
   "items": [
     {
       "symbol": "SOXL",
@@ -27,21 +27,21 @@
     }
   ],
   "flow": {
-    "updatedAt": "2026.06.18 13:20 KST (자동 업데이트)",
+    "updatedAt": "2026.06.18 17:23 KST (자동 업데이트)",
     "items": [
       {
         "id": "usdjpy",
         "label": "엔캐리 압력",
-        "value": "USDJPY 160.61",
+        "value": "USDJPY 160.42",
         "delta": "+0.12%",
         "tone": "up"
       },
       {
         "id": "dxy",
         "label": "달러 유동성",
-        "value": "Dollar Index 100.24",
-        "delta": "+0.14%",
-        "tone": "up"
+        "value": "Dollar Index 100.09",
+        "delta": "+0.55%",
+        "tone": "down"
       },
       {
         "id": "qqq_tlt",
@@ -66,7 +66,7 @@
       }
     ],
     "regime": {
-      "score": 58,
+      "score": 42,
       "state": "Neutral",
       "action": "중립 비중 유지, 이벤트 확인 후 대응",
       "history": [
@@ -96,7 +96,7 @@
         },
         {
           "d": "2026.06.18",
-          "s": 58
+          "s": 42
         }
       ]
     }
@@ -141,7 +141,7 @@
       }
     ],
     "weeklySummary": [
-      "국면: Neutral (58/100) · 중립 비중 유지, 이벤트 확인 후 대응",
+      "국면: Neutral (42/100) · 중립 비중 유지, 이벤트 확인 후 대응",
       "강세 섹터: 반도체(SOXX) +10.75% / +20.95%",
       "약세 섹터: 에너지(XLE) -6.15% / -9.76%"
     ]
