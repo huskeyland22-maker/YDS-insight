@@ -1,5 +1,5 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.06.19 11:06 KST (자동 업데이트)",
+  "updatedAt": "2026.06.19 17:43 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=cN7xWS_LAxI",
-      "thumbUrl": "https://i.ytimg.com/vi/cN7xWS_LAxI/hqdefault.jpg",
-      "videoTitle": "40년 투자 패러다임 바뀌었다…AI 시대, 비싸진 돈이 흐르는 곳 | 빈난새의 빈틈없이월가",
-      "publishedAt": "2026-06-19T01:00:18+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=d19sGZ5Bkm8",
+      "thumbUrl": "https://i.ytimg.com/vi/d19sGZ5Bkm8/hqdefault.jpg",
+      "videoTitle": "기승전 태스크포스..워시의 이상과 현실은 | 월가백브리핑",
+      "publishedAt": "2026-06-19T03:00:21+00:00"
     },
     {
       "id": "moneyinside",
