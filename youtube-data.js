@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.06.18 21:44 KST (자동 업데이트)",
+  "updatedAt": "2026.06.19 11:06 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=AyICWLWo4Aw",
-      "thumbUrl": "https://i.ytimg.com/vi/AyICWLWo4Aw/hqdefault.jpg",
-      "videoTitle": "비트코인 50% 하락, 지금 정말 위험한 구간일까? | 경읽남과 토론합시다 | 이장우x박종한 [1편]",
-      "publishedAt": "2026-06-18T09:00:13+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=k853y9SgHU0",
+      "thumbUrl": "https://i.ytimg.com/vi/k853y9SgHU0/hqdefault.jpg",
+      "videoTitle": "비트코인, 아직 바닥 아닐 수 있습니다 하반기 저점은... | 경읽남과 토론합시다 | 이장우x박종한 [2편]",
+      "publishedAt": "2026-06-18T21:00:12+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=5Iq71prrSf0",
-      "thumbUrl": "https://i.ytimg.com/vi/5Iq71prrSf0/hqdefault.jpg",
-      "videoTitle": "[김종학의 뉴욕, 지금-6월18일] ‘금리 동결‘ 케빈 워시 Fed 의장 “좋은 날입니다” | 합의안 곧 서명..트럼프 “내일이나 모레” | 스페이스X, 마이크론, 샌디스크",
-      "publishedAt": "2026-06-17T21:20:54+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=cN7xWS_LAxI",
+      "thumbUrl": "https://i.ytimg.com/vi/cN7xWS_LAxI/hqdefault.jpg",
+      "videoTitle": "40년 투자 패러다임 바뀌었다…AI 시대, 비싸진 돈이 흐르는 곳 | 빈난새의 빈틈없이월가",
+      "publishedAt": "2026-06-19T01:00:18+00:00"
     },
     {
       "id": "moneyinside",
@@ -56,10 +56,10 @@ window.YOUTUBE_DATA = {
       "name": "간단경제한스푼",
       "channelUrl": "https://www.youtube.com/channel/UChuu3KaoDnyttfN10GG169Q",
       "latestUrl": "https://www.youtube.com/@%EA%B0%84%EB%8B%A8%EA%B2%BD%EC%A0%9C%ED%95%9C%EC%8A%A4%ED%91%BC/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=zMUf88eqAU4",
-      "thumbUrl": "https://i.ytimg.com/vi/zMUf88eqAU4/hqdefault.jpg",
-      "videoTitle": "전 세계가 못 베낀 한국 독점 기술. 100억 원에 팔린 천덕꾸러기 사업부. HPSP가 독점한 ‘고압 수소’ 삼성과 TSMC도 줄섰습니다.",
-      "publishedAt": "2026-06-18T10:45:32+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=NxGA7CDOE88",
+      "thumbUrl": "https://i.ytimg.com/vi/NxGA7CDOE88/hqdefault.jpg",
+      "videoTitle": "미국 독일이 90% 쥔 원료 한국 바이오를 옭아매던 가루 한 봉지 결국 세계 1위보다 더 잘만들어서 역수출 합니다.",
+      "publishedAt": "2026-06-18T21:45:18+00:00"
     }
   ]
 };

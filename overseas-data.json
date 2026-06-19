@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026.06.19 07:14 KST (자동 업데이트)",
+  "updatedAt": "2026.06.19 11:06 KST (자동 업데이트)",
   "items": [
     {
       "symbol": "SOXL",
@@ -27,21 +27,21 @@
     }
   ],
   "flow": {
-    "updatedAt": "2026.06.19 07:14 KST (자동 업데이트)",
+    "updatedAt": "2026.06.19 11:06 KST (자동 업데이트)",
     "items": [
       {
         "id": "usdjpy",
         "label": "엔캐리 압력",
-        "value": "USDJPY 161.31",
-        "delta": "+0.44%",
+        "value": "USDJPY 161.19",
+        "delta": "+0.37%",
         "tone": "up"
       },
       {
         "id": "dxy",
         "label": "달러 유동성",
-        "value": "Dollar Index 100.82",
-        "delta": "+0.72%",
-        "tone": "down"
+        "value": "Dollar Index 100.85",
+        "delta": "+0.00%",
+        "tone": "up"
       },
       {
         "id": "qqq_tlt",
@@ -60,13 +60,13 @@
       {
         "id": "vix_hy",
         "label": "리스크 선호",
-        "value": "VIX 18.44 / HY 2.71%",
-        "delta": "VIX +2.03% · HY +0.05%",
+        "value": "VIX 16.40 / HY 2.63%",
+        "delta": "VIX -2.04% · HY -0.08%",
         "tone": "up"
       }
     ],
     "regime": {
-      "score": 74,
+      "score": 90,
       "state": "Risk-on",
       "action": "성장/섹터 ETF는 눌림 분할 접근",
       "history": [
@@ -96,7 +96,7 @@
         },
         {
           "d": "2026.06.19",
-          "s": 74
+          "s": 90
         }
       ]
     }
@@ -141,7 +141,7 @@
       }
     ],
     "weeklySummary": [
-      "국면: Risk-on (74/100) · 성장/섹터 ETF는 눌림 분할 접근",
+      "국면: Risk-on (90/100) · 성장/섹터 ETF는 눌림 분할 접근",
       "강세 섹터: 반도체(SOXX) +8.95% / +28.73%",
       "약세 섹터: 에너지(XLE) -5.86% / -12.27%"
     ]
