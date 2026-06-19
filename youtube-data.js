@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.06.19 17:43 KST (자동 업데이트)",
+  "updatedAt": "2026.06.19 22:26 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=k853y9SgHU0",
-      "thumbUrl": "https://i.ytimg.com/vi/k853y9SgHU0/hqdefault.jpg",
-      "videoTitle": "비트코인, 아직 바닥 아닐 수 있습니다 하반기 저점은... | 경읽남과 토론합시다 | 이장우x박종한 [2편]",
-      "publishedAt": "2026-06-18T21:00:12+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=CU_nARj09d4",
+      "thumbUrl": "https://i.ytimg.com/vi/CU_nARj09d4/hqdefault.jpg",
+      "videoTitle": "비트코인 팔고 주식 사야 할까? 지금 가장 위험한 판단 | 경읽남과 토론합시다 | 이장우x박종한 [3편]",
+      "publishedAt": "2026-06-19T09:00:20+00:00"
     },
     {
       "id": "sbs-explained",
@@ -56,10 +56,10 @@ window.YOUTUBE_DATA = {
       "name": "간단경제한스푼",
       "channelUrl": "https://www.youtube.com/channel/UChuu3KaoDnyttfN10GG169Q",
       "latestUrl": "https://www.youtube.com/@%EA%B0%84%EB%8B%A8%EA%B2%BD%EC%A0%9C%ED%95%9C%EC%8A%A4%ED%91%BC/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=NxGA7CDOE88",
-      "thumbUrl": "https://i.ytimg.com/vi/NxGA7CDOE88/hqdefault.jpg",
-      "videoTitle": "미국 독일이 90% 쥔 원료 한국 바이오를 옭아매던 가루 한 봉지 결국 세계 1위보다 더 잘만들어서 역수출 합니다.",
-      "publishedAt": "2026-06-18T21:45:18+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=5KN97pKsx60",
+      "thumbUrl": "https://i.ytimg.com/vi/5KN97pKsx60/hqdefault.jpg",
+      "videoTitle": "엔비디아, 삼성전자, SK하이닉스가 만든 최첨단 AI 칩도 한국 '이 회사' 없이는 못나갑니다. 반도체 검사의 명줄 실리콘 러버 소켓",
+      "publishedAt": "2026-06-19T11:15:31+00:00"
     }
   ]
 };
