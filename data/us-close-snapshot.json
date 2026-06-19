@@ -1,19 +1,19 @@
 {
   "usdkrw": {
-    "value": 1528.96,
-    "change": 0.23
+    "value": 1529.98,
+    "change": 0.3
   },
   "dow": {
-    "value": 51564.7,
-    "change": 0.14
+    "value": 51492.55,
+    "change": -0.98
   },
   "sp500": {
-    "value": 7500.58,
-    "change": 1.08
+    "value": 7420.1,
+    "change": -1.21
   },
   "nasdaq": {
-    "value": 30406.19,
-    "change": 2.48
+    "value": 29670.95,
+    "change": -0.99
   },
   "wti": {
     "value": 104.96,
@@ -36,8 +36,8 @@
     "change": 854000
   },
   "dxy": {
-    "value": 100.85,
-    "change": 0.76
+    "value": 100.09,
+    "change": 0.55
   },
-  "updatedAt": "2026-06-19T13:26:39.814Z"
+  "updatedAt": "2026-06-19T18:01:09.698Z"
 }
