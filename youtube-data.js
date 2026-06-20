@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.06.19 22:26 KST (자동 업데이트)",
+  "updatedAt": "2026.06.20 10:29 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=CU_nARj09d4",
-      "thumbUrl": "https://i.ytimg.com/vi/CU_nARj09d4/hqdefault.jpg",
-      "videoTitle": "비트코인 팔고 주식 사야 할까? 지금 가장 위험한 판단 | 경읽남과 토론합시다 | 이장우x박종한 [3편]",
-      "publishedAt": "2026-06-19T09:00:20+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=Iak_yXBNsL4",
+      "thumbUrl": "https://i.ytimg.com/vi/Iak_yXBNsL4/hqdefault.jpg",
+      "videoTitle": "[풀버전] “6월 증시, 이제부터 조심해야 하는 이유 실질금리 역전이 보내는 경고” | 경읽남과 토론합시다 | 문남중 수석연구위원",
+      "publishedAt": "2026-06-19T21:00:19+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=d19sGZ5Bkm8",
-      "thumbUrl": "https://i.ytimg.com/vi/d19sGZ5Bkm8/hqdefault.jpg",
-      "videoTitle": "기승전 태스크포스..워시의 이상과 현실은 | 월가백브리핑",
-      "publishedAt": "2026-06-19T03:00:21+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=-LZk3YBX1wc",
+      "thumbUrl": "https://i.ytimg.com/vi/-LZk3YBX1wc/hqdefault.jpg",
+      "videoTitle": "'공장 만드는 공장'..117년 미국 제조사도 찾아온 LG 스마트 팩토리의 '13초 생산라인' | 바이아메리카 in 뉴욕",
+      "publishedAt": "2026-06-20T00:00:39+00:00"
     },
     {
       "id": "moneyinside",
@@ -56,10 +56,10 @@ window.YOUTUBE_DATA = {
       "name": "간단경제한스푼",
       "channelUrl": "https://www.youtube.com/channel/UChuu3KaoDnyttfN10GG169Q",
       "latestUrl": "https://www.youtube.com/@%EA%B0%84%EB%8B%A8%EA%B2%BD%EC%A0%9C%ED%95%9C%EC%8A%A4%ED%91%BC/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=5KN97pKsx60",
-      "thumbUrl": "https://i.ytimg.com/vi/5KN97pKsx60/hqdefault.jpg",
-      "videoTitle": "엔비디아, 삼성전자, SK하이닉스가 만든 최첨단 AI 칩도 한국 '이 회사' 없이는 못나갑니다. 반도체 검사의 명줄 실리콘 러버 소켓",
-      "publishedAt": "2026-06-19T11:15:31+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=_cvWuG9igds",
+      "thumbUrl": "https://i.ytimg.com/vi/_cvWuG9igds/hqdefault.jpg",
+      "videoTitle": "전 세계 삼성도 애플도 30년간 일본 캐논토키 앞에 줄을 서야 했던 OLED 증착장비 한국이 독점 깨버렸습니다",
+      "publishedAt": "2026-06-19T22:00:15+00:00"
     }
   ]
 };
