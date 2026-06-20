@@ -1,5 +1,5 @@
 window.PANIC_DATA = {
-  "updatedAt": "2026.06.20 10:28 KST (자동 업데이트 · Python)",
+  "updatedAt": "2026.06.20 16:11 KST (자동 업데이트 · Python)",
   "signalExtras": {
     "t10y2y": null
   },
@@ -7,16 +7,16 @@ window.PANIC_DATA = {
     {
       "id": "vix",
       "label": "VIX Index",
-      "value": "16.78",
-      "delta": "📈 +0.38",
+      "value": "16.40",
+      "delta": "📉 -2.04",
       "status": "🟢 안정",
       "tone": "stable",
       "weekTrend": "하락",
       "actionGuide": "관망",
       "trendUrl": "https://www.macrotrends.net/2603/vix-volatility-index-historical-chart",
       "source": "yahoo",
-      "previousClose": 16.4,
-      "change": 0.38
+      "previousClose": 18.44,
+      "change": -2.04
     },
     {
       "id": "fng",
@@ -123,5 +123,5 @@ window.PANIC_DATA = {
       "change": -2.25
     }
   ],
-  "asOfDateET": "2026-06-19"
+  "asOfDateET": "2026-06-18"
 };

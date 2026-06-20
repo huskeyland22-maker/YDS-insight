@@ -1,5 +1,5 @@
 window.OVERSEAS_DATA = {
-  "updatedAt": "2026.06.20 13:03 KST (자동 업데이트)",
+  "updatedAt": "2026.06.20 16:11 KST (자동 업데이트)",
   "items": [
     {
       "symbol": "SOXL",
@@ -27,12 +27,12 @@ window.OVERSEAS_DATA = {
     }
   ],
   "flow": {
-    "updatedAt": "2026.06.20 13:03 KST (자동 업데이트)",
+    "updatedAt": "2026.06.20 16:11 KST (자동 업데이트)",
     "items": [
       {
         "id": "usdjpy",
         "label": "엔캐리 압력",
-        "value": "USDJPY 161.28",
+        "value": "USDJPY 161.27",
         "delta": "-0.01%",
         "tone": "up"
       },
@@ -53,15 +53,15 @@ window.OVERSEAS_DATA = {
       {
         "id": "hyg_lqd",
         "label": "신용 체력",
-        "value": "HYG/LQD 0.736",
-        "delta": "+0.67%",
+        "value": "HYG/LQD 0.734",
+        "delta": "+0.08%",
         "tone": "up"
       },
       {
         "id": "vix_hy",
         "label": "리스크 선호",
-        "value": "VIX 16.78 / HY 2.63%",
-        "delta": "VIX +0.38% · HY -0.08%",
+        "value": "VIX 16.40 / HY 2.63%",
+        "delta": "VIX -2.04% · HY -0.08%",
         "tone": "up"
       }
     ],
