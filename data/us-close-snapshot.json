@@ -4,12 +4,12 @@
     "change": -0.5
   },
   "dow": {
-    "value": 51492.55,
-    "change": -0.98
+    "value": 51564.7,
+    "change": 0.14
   },
   "sp500": {
-    "value": 7420.1,
-    "change": -1.21
+    "value": 7500.58,
+    "change": 1.08
   },
   "nasdaq": {
     "value": 30406.19,
@@ -37,7 +37,7 @@
   },
   "dxy": {
     "value": 100.85,
-    "change": 0.76
+    "change": 0
   },
-  "updatedAt": "2026-06-20T14:11:41.492Z"
+  "updatedAt": "2026-06-20T17:38:20.151Z"
 }
