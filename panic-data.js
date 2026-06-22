@@ -1,5 +1,5 @@
 window.PANIC_DATA = {
-  "updatedAt": "2026.06.22 10:41 KST (자동 업데이트 · Python)",
+  "updatedAt": "2026.06.22 18:26 KST (자동 업데이트 · Python)",
   "signalExtras": {
     "t10y2y": null
   },
@@ -25,7 +25,7 @@ window.PANIC_DATA = {
       "delta": "➡️ 0",
       "status": "🟢 중립",
       "tone": "stable",
-      "weekTrend": "보합",
+      "weekTrend": "하락",
       "actionGuide": "관망",
       "trendUrl": "https://edition.cnn.com/markets/fear-and-greed",
       "source": "cnn"
