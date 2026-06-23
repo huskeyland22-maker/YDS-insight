@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026.06.23 10:24 KST (자동 업데이트 · Python)",
+  "updatedAt": "2026.06.23 16:02 KST (자동 업데이트 · Python)",
   "signalExtras": {
     "t10y2y": null
   },
@@ -21,8 +21,8 @@
     {
       "id": "fng",
       "label": "CNN F&G",
-      "value": "35",
-      "delta": "📉 -3",
+      "value": "34",
+      "delta": "➡️ 0",
       "status": "🟢 중립",
       "tone": "stable",
       "weekTrend": "하락",
@@ -97,16 +97,16 @@
     {
       "id": "move",
       "label": "MOVE Index",
-      "value": "70.01",
-      "delta": "📈 +4.62",
+      "value": "65.39",
+      "delta": "📉 -5.27",
       "status": "🟢 안정",
       "tone": "stable",
-      "weekTrend": "상승",
+      "weekTrend": "하락",
       "actionGuide": "관망",
       "trendUrl": "https://fred.stlouisfed.org/series/MOVE",
       "source": "yahoo",
-      "previousClose": 65.39,
-      "change": 4.62
+      "previousClose": 70.66,
+      "change": -5.27
     },
     {
       "id": "vxn",
