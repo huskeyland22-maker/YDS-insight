@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.06.24 09:12 KST (자동 업데이트)",
+  "updatedAt": "2026.06.24 15:59 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=jWzeMFobdy8",
-      "thumbUrl": "https://i.ytimg.com/vi/jWzeMFobdy8/hqdefault.jpg",
-      "videoTitle": "중국이 본 미국의 약점 2035년, 패권의 판이 바뀔 수 있다 | 김광석의 북리뷰 | 중국이 분석한 미국 침몰 시나리오 [1편]",
-      "publishedAt": "2026-06-23T21:00:16+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=3-bVy6O_6hU",
+      "thumbUrl": "https://i.ytimg.com/vi/3-bVy6O_6hU/hqdefault.jpg",
+      "videoTitle": "대표 영상",
+      "publishedAt": ""
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=jc2ypxi-5YI",
-      "thumbUrl": "https://i.ytimg.com/vi/jc2ypxi-5YI/hqdefault.jpg",
-      "videoTitle": "[김종학의 뉴욕, 지금-6월24일] 나스닥 2%대 급락..한국 레버리지 ETF의 나비효과 | 스페이스X, 블랙스톤, 일라이릴리, 에너지퓨얼스, 골드만삭스, 카니발, 세레브라스",
-      "publishedAt": "2026-06-23T21:21:40+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=Yr1mtuxN_ww",
+      "thumbUrl": "https://i.ytimg.com/vi/Yr1mtuxN_ww/hqdefault.jpg",
+      "videoTitle": "버블 (아직) 아닙니다 | 반도체 급락한 세 가지 이유 | 빈난새의 빈틈없이월가",
+      "publishedAt": "2026-06-24T01:00:27+00:00"
     },
     {
       "id": "moneyinside",
