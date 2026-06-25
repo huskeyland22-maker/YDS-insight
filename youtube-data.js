@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.06.24 21:13 KST (자동 업데이트)",
+  "updatedAt": "2026.06.25 10:27 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=7MKIE_YuUdI",
-      "thumbUrl": "https://i.ytimg.com/vi/7MKIE_YuUdI/hqdefault.jpg",
-      "videoTitle": "스페이스X 우주 데이터센터, 전력주에 진짜 악재일까? | 경읽남과 토론합시다 | 손현정 연구원 [3편]",
-      "publishedAt": "2026-06-24T09:05:04+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=GI4h1Zpy16c",
+      "thumbUrl": "https://i.ytimg.com/vi/GI4h1Zpy16c/hqdefault.jpg",
+      "videoTitle": "[속보] 삼성전자-SK하이닉스 폭등랠리 온다!! 마이크론 어닝 서프라이즈(매출 5배 급증, 시간외 주가 10%↑) [즉시분석]",
+      "publishedAt": "2026-06-24T20:54:59+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=UJ1ARYdPmEw",
-      "thumbUrl": "https://i.ytimg.com/vi/UJ1ARYdPmEw/hqdefault.jpg",
-      "videoTitle": "AI인프라 투자의 진짜 적은.. 동네 민심? | 김인엽의 실리콘밸리나우",
-      "publishedAt": "2026-06-24T10:00:38+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=nByMjzO7Bds",
+      "thumbUrl": "https://i.ytimg.com/vi/nByMjzO7Bds/hqdefault.jpg",
+      "videoTitle": "[김현석의 브레이킹 뉴스] 5월 PCE(개인소비지출) 물가 발표! 6월 25일 오후 9시30분 L.I.V.E",
+      "publishedAt": "2026-06-24T22:14:17+00:00"
     },
     {
       "id": "moneyinside",
@@ -56,10 +56,10 @@ window.YOUTUBE_DATA = {
       "name": "간단경제한스푼",
       "channelUrl": "https://www.youtube.com/channel/UChuu3KaoDnyttfN10GG169Q",
       "latestUrl": "https://www.youtube.com/@%EA%B0%84%EB%8B%A8%EA%B2%BD%EC%A0%9C%ED%95%9C%EC%8A%A4%ED%91%BC/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=z97I7W9UNc4",
-      "thumbUrl": "https://i.ytimg.com/vi/z97I7W9UNc4/hqdefault.jpg",
-      "videoTitle": "원조 일본 꺽고 11년 연속 수출 신기록, K라면이 세계 식탁을 점령한 진짜 이유",
-      "publishedAt": "2026-06-24T10:30:05+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=RjTRs62EuAw",
+      "thumbUrl": "https://i.ytimg.com/vi/RjTRs62EuAw/hqdefault.jpg",
+      "videoTitle": "[6.25전쟁 76주년] 잊지 말아야 할 그날, 우리가 기억해야 할 이야기. 폐허 위에서 다시 일어선 대한민국",
+      "publishedAt": "2026-06-24T21:30:04+00:00"
     }
   ]
 };
