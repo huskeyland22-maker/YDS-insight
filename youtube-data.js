@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.06.25 21:11 KST (자동 업데이트)",
+  "updatedAt": "2026.06.26 10:30 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=8YZ-wHgNzUU",
-      "thumbUrl": "https://i.ytimg.com/vi/8YZ-wHgNzUU/hqdefault.jpg",
-      "videoTitle": "[LIVE] 미국 PCE 물가 심층분석 : '인플레 쇼크' 오는가? [즉시분석]",
-      "publishedAt": "2026-06-25T10:22:34+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=HPTUrtV91w4",
+      "thumbUrl": "https://i.ytimg.com/vi/HPTUrtV91w4/hqdefault.jpg",
+      "videoTitle": "BofA, 도이치뱅크의 금리인상 경고. \"금가격 추가 조정 있을 것\" [즉시분석]",
+      "publishedAt": "2026-06-25T21:00:36+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=nByMjzO7Bds",
-      "thumbUrl": "https://i.ytimg.com/vi/nByMjzO7Bds/hqdefault.jpg",
-      "videoTitle": "[김현석의 브레이킹 뉴스] 5월 PCE(개인소비지출) 물가 발표! 6월 25일 오후 9시30분 L.I.V.E",
-      "publishedAt": "2026-06-24T22:14:17+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=cKTMhFXeIWk",
+      "thumbUrl": "https://i.ytimg.com/vi/cKTMhFXeIWk/hqdefault.jpg",
+      "videoTitle": "애플 너마저…\"반도체엔 아무도 NO 못해\" | 뒤집힌 갑을관계, AI 시대 빅테크 재평가 | 빈난새의 빈틈없이월가",
+      "publishedAt": "2026-06-26T01:00:22+00:00"
     },
     {
       "id": "moneyinside",
@@ -56,10 +56,10 @@ window.YOUTUBE_DATA = {
       "name": "간단경제한스푼",
       "channelUrl": "https://www.youtube.com/channel/UChuu3KaoDnyttfN10GG169Q",
       "latestUrl": "https://www.youtube.com/@%EA%B0%84%EB%8B%A8%EA%B2%BD%EC%A0%9C%ED%95%9C%EC%8A%A4%ED%91%BC/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=gy2BK5uQzI0",
-      "thumbUrl": "https://i.ytimg.com/vi/gy2BK5uQzI0/hqdefault.jpg",
-      "videoTitle": "가전회사인 줄 알았던 LG, 117년 미국 기업이 배우러 온 진짜 이유",
-      "publishedAt": "2026-06-25T11:00:10+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=wfnaPw4YUSY",
+      "thumbUrl": "https://i.ytimg.com/vi/wfnaPw4YUSY/hqdefault.jpg",
+      "videoTitle": "삼성이 오픈AI를 전사 파트너로 들인 진짜 이유 700조 데이터센터를 장악할 한",
+      "publishedAt": "2026-06-25T21:30:19+00:00"
     }
   ]
 };
