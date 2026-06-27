@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.06.26 21:05 KST (자동 업데이트)",
+  "updatedAt": "2026.06.27 10:23 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=yJ4M3yoHPUc",
-      "thumbUrl": "https://i.ytimg.com/vi/yJ4M3yoHPUc/hqdefault.jpg",
-      "videoTitle": "피지컬AI 시대, 스테이블코인이 기존 금융을 대체한다 | 경읽남과 토론합시다 | 김상윤 교수 [3편]",
-      "publishedAt": "2026-06-26T09:05:15+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=OAQLxjM4sCU",
+      "thumbUrl": "https://i.ytimg.com/vi/OAQLxjM4sCU/hqdefault.jpg",
+      "videoTitle": "[풀버전] 비트코인 50% 하락, 지금 정말 위험한 구간일까? | 경읽남과 토론합시다 | 이장우x박종한",
+      "publishedAt": "2026-06-26T21:05:16+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=cKTMhFXeIWk",
-      "thumbUrl": "https://i.ytimg.com/vi/cKTMhFXeIWk/hqdefault.jpg",
-      "videoTitle": "애플 너마저…\"반도체엔 아무도 NO 못해\" | 뒤집힌 갑을관계, AI 시대 빅테크 재평가 | 빈난새의 빈틈없이월가",
-      "publishedAt": "2026-06-26T01:00:22+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=-skcNUGA5fo",
+      "thumbUrl": "https://i.ytimg.com/vi/-skcNUGA5fo/hqdefault.jpg",
+      "videoTitle": "건강 소다 열풍에도 코카콜라가 강한 이유..펩시코는 왜 항상 2인자일까 | 바이아메리카 in 뉴욕",
+      "publishedAt": "2026-06-27T00:00:30+00:00"
     },
     {
       "id": "moneyinside",
@@ -56,10 +56,10 @@ window.YOUTUBE_DATA = {
       "name": "간단경제한스푼",
       "channelUrl": "https://www.youtube.com/channel/UChuu3KaoDnyttfN10GG169Q",
       "latestUrl": "https://www.youtube.com/@%EA%B0%84%EB%8B%A8%EA%B2%BD%EC%A0%9C%ED%95%9C%EC%8A%A4%ED%91%BC/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=SCOeshFaK0s",
-      "thumbUrl": "https://i.ytimg.com/vi/SCOeshFaK0s/hqdefault.jpg",
-      "videoTitle": "2년 연속 세계 최고 논문상 카이스트, 이번엔 스스로 펼쳐 입혀지는 의복",
-      "publishedAt": "2026-06-26T11:15:24+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=ARa5NhfbkOs",
+      "thumbUrl": "https://i.ytimg.com/vi/ARa5NhfbkOs/hqdefault.jpg",
+      "videoTitle": "최초, 또 최초  삼성전자 HBM4 매출 10억 달러 돌파의 진짜 의미",
+      "publishedAt": "2026-06-27T00:00:04+00:00"
     }
   ]
 };
