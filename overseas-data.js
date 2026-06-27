@@ -1,33 +1,33 @@
 window.OVERSEAS_DATA = {
-  "updatedAt": "2026.06.27 20:18 KST (자동 업데이트)",
+  "updatedAt": "2026.06.27 22:50 KST (자동 업데이트)",
   "items": [
     {
       "symbol": "SOXL",
-      "p1d": "+10.04%",
-      "p1w": "+8.02%",
-      "p1m": "+11.88%",
-      "mdd": "-16.01%",
+      "p1d": "-14.65%",
+      "p1w": "-22.80%",
+      "p1m": "-1.09%",
+      "mdd": "-28.32%",
       "updatedAt": "2026.06.27"
     },
     {
       "symbol": "TQQQ",
-      "p1d": "+2.25%",
-      "p1w": "-3.34%",
-      "p1m": "-8.54%",
-      "mdd": "-14.07%",
+      "p1d": "-4.16%",
+      "p1w": "-13.32%",
+      "p1m": "-12.05%",
+      "mdd": "-17.65%",
       "updatedAt": "2026.06.27"
     },
     {
       "symbol": "SSO",
-      "p1d": "-0.02%",
-      "p1w": "-1.96%",
-      "p1m": "-4.88%",
-      "mdd": "-7.03%",
+      "p1d": "-0.97%",
+      "p1w": "-4.72%",
+      "p1m": "-5.79%",
+      "mdd": "-7.93%",
       "updatedAt": "2026.06.27"
     }
   ],
   "flow": {
-    "updatedAt": "2026.06.27 20:18 KST (자동 업데이트)",
+    "updatedAt": "2026.06.27 22:50 KST (자동 업데이트)",
     "items": [
       {
         "id": "usdjpy",
@@ -39,22 +39,22 @@ window.OVERSEAS_DATA = {
       {
         "id": "dxy",
         "label": "달러 유동성",
-        "value": "Dollar Index 101.43",
-        "delta": "-0.18%",
+        "value": "Dollar Index 101.36",
+        "delta": "-0.07%",
         "tone": "up"
       },
       {
         "id": "qqq_tlt",
         "label": "기관 프록시",
-        "value": "QQQ/TLT 8.201",
-        "delta": "+0.85%",
-        "tone": "up"
+        "value": "QQQ/TLT 8.087",
+        "delta": "-1.39%",
+        "tone": "down"
       },
       {
         "id": "hyg_lqd",
         "label": "신용 체력",
         "value": "HYG/LQD 0.729",
-        "delta": "-0.04%",
+        "delta": "-0.06%",
         "tone": "down"
       },
       {
@@ -66,9 +66,9 @@ window.OVERSEAS_DATA = {
       }
     ],
     "regime": {
-      "score": 74,
-      "state": "Risk-on",
-      "action": "성장/섹터 ETF는 눌림 분할 접근",
+      "score": 58,
+      "state": "Neutral",
+      "action": "중립 비중 유지, 이벤트 확인 후 대응",
       "history": [
         {
           "d": "2026.06.21",
@@ -96,7 +96,7 @@ window.OVERSEAS_DATA = {
         },
         {
           "d": "2026.06.27",
-          "s": 74
+          "s": 58
         }
       ]
     }
@@ -104,46 +104,46 @@ window.OVERSEAS_DATA = {
   "insight": {
     "sectorStrength": [
       {
-        "id": "semiconductor",
-        "label": "반도체",
-        "symbol": "SOXX",
-        "p1d": "+3.94%",
-        "p1w": "+4.25%",
-        "p1m": "+9.67%",
-        "score": 6.6
-      },
-      {
         "id": "financials",
         "label": "금융",
         "symbol": "XLF",
-        "p1d": "-0.50%",
-        "p1w": "-1.11%",
-        "p1m": "+3.09%",
-        "score": 0.9
+        "p1d": "+0.22%",
+        "p1w": "0.00%",
+        "p1m": "+4.18%",
+        "score": 1.9
       },
       {
-        "id": "ai-growth",
-        "label": "AI/성장",
-        "symbol": "QQQ",
-        "p1d": "+0.81%",
-        "p1w": "-0.85%",
-        "p1m": "-1.90%",
-        "score": -1
+        "id": "semiconductor",
+        "label": "반도체",
+        "symbol": "SOXX",
+        "p1d": "-5.64%",
+        "p1w": "-7.74%",
+        "p1m": "+4.60%",
+        "score": -1.8
       },
       {
         "id": "energy",
         "label": "에너지",
         "symbol": "XLE",
-        "p1d": "+0.97%",
-        "p1w": "-1.06%",
-        "p1m": "-6.50%",
-        "score": -3.1
+        "p1d": "-0.46%",
+        "p1w": "+0.13%",
+        "p1m": "-5.53%",
+        "score": -2.5
+      },
+      {
+        "id": "ai-growth",
+        "label": "AI/성장",
+        "symbol": "QQQ",
+        "p1d": "-1.38%",
+        "p1w": "-4.60%",
+        "p1m": "-3.14%",
+        "score": -3.3
       }
     ],
     "weeklySummary": [
-      "국면: Risk-on (74/100) · 성장/섹터 ETF는 눌림 분할 접근",
-      "강세 섹터: 반도체(SOXX) +4.25% / +9.67%",
-      "약세 섹터: 에너지(XLE) -1.06% / -6.50%"
+      "국면: Neutral (58/100) · 중립 비중 유지, 이벤트 확인 후 대응",
+      "강세 섹터: 금융(XLF) 0.00% / +4.18%",
+      "약세 섹터: AI/성장(QQQ) -4.60% / -3.14%"
     ]
   }
 };
