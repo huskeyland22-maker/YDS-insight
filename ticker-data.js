@@ -1,5 +1,5 @@
 window.TICKER_DATA = {
-  "updatedAt": "2026.06.27 10:23 KST (자동 업데이트)",
+  "updatedAt": "2026.06.27 12:49 KST (자동 업데이트)",
   "items": [
     {
       "label": "KOSPI",
