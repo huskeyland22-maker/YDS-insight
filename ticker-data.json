@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026.06.28 13:11 KST (자동 업데이트)",
+  "updatedAt": "2026.06.28 16:12 KST (자동 업데이트)",
   "items": [
     {
       "label": "KOSPI",
@@ -15,9 +15,9 @@
     },
     {
       "label": "KOSPI200",
-      "value": "1,459.48",
-      "delta": "+0.02%",
-      "direction": "up"
+      "value": "1,366.49",
+      "delta": "-6.03%",
+      "direction": "down"
     },
     {
       "label": "DOW",
@@ -51,8 +51,8 @@
     },
     {
       "label": "US 10Y",
-      "value": "0.45%",
-      "delta": "-0.27%p",
+      "value": "0.44%",
+      "delta": "-0.46%p",
       "direction": "down"
     }
   ]

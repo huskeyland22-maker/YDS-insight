@@ -26,12 +26,12 @@
   },
   {
     "symbol": "US10Y",
-    "price": 0.45,
-    "change": -0.27
+    "price": 0.44,
+    "change": -0.46
   },
   {
     "symbol": "VIX",
-    "price": 18.89,
-    "change": 0.26
+    "price": 18.41,
+    "change": -0.48
   }
 ]

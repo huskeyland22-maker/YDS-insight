@@ -1,5 +1,5 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.06.28 09:15 KST (자동 업데이트)",
+  "updatedAt": "2026.06.28 16:12 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=P9mjHAt1uu0",
-      "thumbUrl": "https://i.ytimg.com/vi/P9mjHAt1uu0/hqdefault.jpg",
-      "videoTitle": "반도체 vs 빅테크 어디에 투자해야 할까 | 월가백브리핑",
-      "publishedAt": "2026-06-27T03:00:28+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=ACKpyyg6fRQ",
+      "thumbUrl": "https://i.ytimg.com/vi/ACKpyyg6fRQ/hqdefault.jpg",
+      "videoTitle": "중간선거 앞두고 금리 인상?..워시의 작전은 | 강달러 도대체 언제까지 | 월가백브리핑",
+      "publishedAt": "2026-06-28T03:00:34+00:00"
     },
     {
       "id": "moneyinside",
