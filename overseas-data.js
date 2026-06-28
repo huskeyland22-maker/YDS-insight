@@ -1,20 +1,20 @@
 window.OVERSEAS_DATA = {
-  "updatedAt": "2026.06.28 16:12 KST (자동 업데이트)",
+  "updatedAt": "2026.06.28 19:29 KST (자동 업데이트)",
   "items": [
     {
       "symbol": "SOXL",
-      "p1d": "+10.04%",
-      "p1w": "+8.02%",
-      "p1m": "+11.88%",
-      "mdd": "-16.01%",
+      "p1d": "-14.65%",
+      "p1w": "-22.80%",
+      "p1m": "-1.09%",
+      "mdd": "-28.32%",
       "updatedAt": "2026.06.28"
     },
     {
       "symbol": "TQQQ",
-      "p1d": "+2.25%",
-      "p1w": "-3.34%",
-      "p1m": "-8.54%",
-      "mdd": "-14.07%",
+      "p1d": "-4.16%",
+      "p1w": "-13.32%",
+      "p1m": "-12.05%",
+      "mdd": "-17.65%",
       "updatedAt": "2026.06.28"
     },
     {
@@ -27,7 +27,7 @@ window.OVERSEAS_DATA = {
     }
   ],
   "flow": {
-    "updatedAt": "2026.06.28 16:12 KST (자동 업데이트)",
+    "updatedAt": "2026.06.28 19:29 KST (자동 업데이트)",
     "items": [
       {
         "id": "usdjpy",
@@ -104,15 +104,6 @@ window.OVERSEAS_DATA = {
   "insight": {
     "sectorStrength": [
       {
-        "id": "semiconductor",
-        "label": "반도체",
-        "symbol": "SOXX",
-        "p1d": "+3.94%",
-        "p1w": "+4.25%",
-        "p1m": "+9.67%",
-        "score": 6.6
-      },
-      {
         "id": "financials",
         "label": "금융",
         "symbol": "XLF",
@@ -120,6 +111,15 @@ window.OVERSEAS_DATA = {
         "p1w": "0.00%",
         "p1m": "+4.18%",
         "score": 1.9
+      },
+      {
+        "id": "semiconductor",
+        "label": "반도체",
+        "symbol": "SOXX",
+        "p1d": "-5.64%",
+        "p1w": "-7.74%",
+        "p1m": "+4.60%",
+        "score": -1.8
       },
       {
         "id": "energy",
@@ -142,7 +142,7 @@ window.OVERSEAS_DATA = {
     ],
     "weeklySummary": [
       "국면: Neutral (58/100) · 중립 비중 유지, 이벤트 확인 후 대응",
-      "강세 섹터: 반도체(SOXX) +4.25% / +9.67%",
+      "강세 섹터: 금융(XLF) 0.00% / +4.18%",
       "약세 섹터: AI/성장(QQQ) -4.60% / -3.14%"
     ]
   }
