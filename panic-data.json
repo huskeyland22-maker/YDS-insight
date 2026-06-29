@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026.06.29 17:30 KST (자동 업데이트 · Python)",
+  "updatedAt": "2026.06.29 22:57 KST (자동 업데이트 · Python)",
   "signalExtras": {
     "t10y2y": null
   },
@@ -21,12 +21,12 @@
     {
       "id": "fng",
       "label": "CNN F&G",
-      "value": "25",
-      "delta": "➡️ 0",
-      "status": "🔴 공포",
-      "tone": "alert",
+      "value": "28",
+      "delta": "📈 +3",
+      "status": "🟢 중립",
+      "tone": "stable",
       "weekTrend": "하락",
-      "actionGuide": "헤지점검",
+      "actionGuide": "관망",
       "trendUrl": "https://edition.cnn.com/markets/fear-and-greed",
       "source": "cnn"
     },
