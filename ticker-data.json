@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026.06.30 03:10 KST (자동 업데이트)",
+  "updatedAt": "2026.06.30 06:37 KST (자동 업데이트)",
   "items": [
     {
       "label": "KOSPI",
@@ -21,39 +21,39 @@
     },
     {
       "label": "DOW",
-      "value": "51,876.11",
-      "delta": "-0.09%",
-      "direction": "down"
+      "value": "52,182.74",
+      "delta": "+0.59%",
+      "direction": "up"
     },
     {
       "label": "S&P 500",
-      "value": "7,354.02",
-      "delta": "-0.05%",
-      "direction": "down"
+      "value": "7,440.43",
+      "delta": "+1.18%",
+      "direction": "up"
     },
     {
       "label": "Dollar Index",
-      "value": "101.36",
-      "delta": "-0.07%",
+      "value": "101.11",
+      "delta": "-0.25%",
       "direction": "down"
     },
     {
       "label": "NASDAQ 100",
-      "value": "29,118.24",
-      "delta": "-1.09%",
-      "direction": "down"
+      "value": "29,774.75",
+      "delta": "+2.25%",
+      "direction": "up"
     },
     {
       "label": "USD/KRW",
-      "value": "1,541.94",
-      "delta": "-0.29%",
-      "direction": "down"
+      "value": "1,540.65",
+      "delta": "+0.35%",
+      "direction": "up"
     },
     {
       "label": "US 10Y",
       "value": "0.44%",
-      "delta": "-0.46%p",
-      "direction": "down"
+      "delta": "+0.05%p",
+      "direction": "up"
     }
   ]
 }
