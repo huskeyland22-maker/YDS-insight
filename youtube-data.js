@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.06.30 09:20 KST (자동 업데이트)",
+  "updatedAt": "2026.06.30 16:06 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=zi06WxDzlZY",
-      "thumbUrl": "https://i.ytimg.com/vi/zi06WxDzlZY/hqdefault.jpg",
-      "videoTitle": "AI·반도체 랠리, 아직 끝나지 않았지만 이제는 조심해야 합니다 | 경읽남과 토론합시다 | 유신익 박사님 [1편]",
-      "publishedAt": "2026-06-29T21:05:34+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=-5gTzwSwuL4",
+      "thumbUrl": "https://i.ytimg.com/vi/-5gTzwSwuL4/hqdefault.jpg",
+      "videoTitle": "트럼프가 스테이블코인에 집착하는 진짜 이유…서클과 XRP가 뜨는 구조| 경읽남과 토론합시다 | 유신익 박사님 [2편]",
+      "publishedAt": "2026-06-30T03:00:25+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=VA3uW3atR_4",
-      "thumbUrl": "https://i.ytimg.com/vi/VA3uW3atR_4/hqdefault.jpg",
-      "videoTitle": "[빈난새의 개장전요것만-6월29일] 미 소비자, 메모리3사 담합 소송 | \"메모리 상승 28년까지\" | \"2분기도 실적 폭발\" | 마이크론 샌디스크 웨스턴디지털 로켓랩 애플 구글",
-      "publishedAt": "2026-06-29T15:29:51+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=1PIV_NGa3vc",
+      "thumbUrl": "https://i.ytimg.com/vi/1PIV_NGa3vc/hqdefault.jpg",
+      "videoTitle": "반도체 랠리의 숨은 뇌관 | '팍스 아메리카나' 지고 '팍스 실리카' 시대 온다 | 빈난새의 빈틈없이월가",
+      "publishedAt": "2026-06-30T01:00:23+00:00"
     },
     {
       "id": "moneyinside",
