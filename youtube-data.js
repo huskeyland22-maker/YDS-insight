@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.06.29 22:57 KST (자동 업데이트)",
+  "updatedAt": "2026.06.30 09:20 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=hwJcVwBnA8E",
-      "thumbUrl": "https://i.ytimg.com/vi/hwJcVwBnA8E/hqdefault.jpg",
-      "videoTitle": "삼성전자-SK하이닉스 실적 발표 Vs 국민연금 55조 매도. 7월 코스피 꺾일까? [경읽남 251화]",
-      "publishedAt": "2026-06-29T09:08:20+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=zi06WxDzlZY",
+      "thumbUrl": "https://i.ytimg.com/vi/zi06WxDzlZY/hqdefault.jpg",
+      "videoTitle": "AI·반도체 랠리, 아직 끝나지 않았지만 이제는 조심해야 합니다 | 경읽남과 토론합시다 | 유신익 박사님 [1편]",
+      "publishedAt": "2026-06-29T21:05:34+00:00"
     },
     {
       "id": "sbs-explained",
@@ -28,8 +28,8 @@ window.YOUTUBE_DATA = {
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
       "videoUrl": "https://www.youtube.com/watch?v=VA3uW3atR_4",
       "thumbUrl": "https://i.ytimg.com/vi/VA3uW3atR_4/hqdefault.jpg",
-      "videoTitle": "[빈난새의 개장전 요것만-6월29일] 미국장 개장전 알아야 할 5가지 + 특징주 및 주요 뉴스",
-      "publishedAt": "2026-06-29T12:46:57+00:00"
+      "videoTitle": "[빈난새의 개장전요것만-6월29일] 미 소비자, 메모리3사 담합 소송 | \"메모리 상승 28년까지\" | \"2분기도 실적 폭발\" | 마이크론 샌디스크 웨스턴디지털 로켓랩 애플 구글",
+      "publishedAt": "2026-06-29T15:29:51+00:00"
     },
     {
       "id": "moneyinside",
@@ -56,10 +56,10 @@ window.YOUTUBE_DATA = {
       "name": "간단경제한스푼",
       "channelUrl": "https://www.youtube.com/channel/UChuu3KaoDnyttfN10GG169Q",
       "latestUrl": "https://www.youtube.com/@%EA%B0%84%EB%8B%A8%EA%B2%BD%EC%A0%9C%ED%95%9C%EC%8A%A4%ED%91%BC/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=I_8WuxEpjmM",
-      "thumbUrl": "https://i.ytimg.com/vi/I_8WuxEpjmM/hqdefault.jpg",
-      "videoTitle": "자석으로 에어컨을 만든다고? 100년 만에 뒤집히는 냉각 혁명, 그 선두에 선 한국 차세대 냉각 기술",
-      "publishedAt": "2026-06-29T11:15:39+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=iMb03Gm1YC0",
+      "thumbUrl": "https://i.ytimg.com/vi/iMb03Gm1YC0/hqdefault.jpg",
+      "videoTitle": "위험한 땅의 역설, 전 세계 무기고가 한반도로 이동하는 진짜 이유 전략요새 한국",
+      "publishedAt": "2026-06-29T21:30:20+00:00"
     }
   ]
 };
