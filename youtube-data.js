@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.06.30 21:03 KST (자동 업데이트)",
+  "updatedAt": "2026.07.01 10:33 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=JsKE_rqSdbc",
-      "thumbUrl": "https://i.ytimg.com/vi/JsKE_rqSdbc/hqdefault.jpg",
-      "videoTitle": "역대급 변동성 끝나지 않았다…7월 시장을 이기는 투자 원칙 | 경제학교 월간특강 [1편]",
-      "publishedAt": "2026-06-30T09:05:03+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=EE8RHN43Jqc",
+      "thumbUrl": "https://i.ytimg.com/vi/EE8RHN43Jqc/hqdefault.jpg",
+      "videoTitle": "반도체 호황에 가려진 한국 경제의 진짜 위기…고환율은 왜 끝나지 않을까 | 경읽남과 토론합시다 | 유신익 박사님 [3편]",
+      "publishedAt": "2026-06-30T21:05:34+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=1PIV_NGa3vc",
-      "thumbUrl": "https://i.ytimg.com/vi/1PIV_NGa3vc/hqdefault.jpg",
-      "videoTitle": "반도체 랠리의 숨은 뇌관? | '팍스 아메리카나' 지고 '팍스 실리카' 시대 온다 | 빈난새의 빈틈없이월가",
-      "publishedAt": "2026-06-30T01:00:23+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=8ZgZ-go48a8",
+      "thumbUrl": "https://i.ytimg.com/vi/8ZgZ-go48a8/hqdefault.jpg",
+      "videoTitle": "[빈난새의 개장전요것만-6월30일] 이란 리스크에도 유가전망 하향 | 엔화 40년래 최저 | 순환매 언와인드 | 샌디스크 AMD 테슬라 브로드컴 로켓랩 AVAV 블록 넥스트파워",
+      "publishedAt": "2026-06-30T14:38:56+00:00"
     },
     {
       "id": "moneyinside",
@@ -56,10 +56,10 @@ window.YOUTUBE_DATA = {
       "name": "간단경제한스푼",
       "channelUrl": "https://www.youtube.com/channel/UChuu3KaoDnyttfN10GG169Q",
       "latestUrl": "https://www.youtube.com/@%EA%B0%84%EB%8B%A8%EA%B2%BD%EC%A0%9C%ED%95%9C%EC%8A%A4%ED%91%BC/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=f7OUjWaCQ3M",
-      "thumbUrl": "https://i.ytimg.com/vi/f7OUjWaCQ3M/hqdefault.jpg",
-      "videoTitle": "삼성과 LG는 왜 갑자기 '집'을 짓기 시작했을까? AI 모듈러 주택을 갑자기 짓는 이유",
-      "publishedAt": "2026-06-30T11:15:28+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=CjlgSa2AQx0",
+      "thumbUrl": "https://i.ytimg.com/vi/CjlgSa2AQx0/hqdefault.jpg",
+      "videoTitle": "석유 한 방울 안 나는 한국, 어떻게 중동 석유의 100년 사슬을 끊어냅니다.",
+      "publishedAt": "2026-06-30T21:30:03+00:00"
     }
   ]
 };
