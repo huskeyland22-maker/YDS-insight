@@ -20,14 +20,14 @@
     "prev": 2.8
   },
   "liquidity": {
-    "now": -1.52,
-    "prev": -1.48
+    "now": -1.48,
+    "prev": -1.49
   },
-  "dollar": 101.38,
+  "dollar": 101.39,
   "yieldCurve": null,
   "rate": {
-    "now": 0.45,
-    "prev": 0.45
+    "now": 0.44,
+    "prev": 0.44
   },
-  "updatedAt": "2026-07-02 12:54 KST · success"
+  "updatedAt": "2026-07-02 15:53 KST · success"
 }
