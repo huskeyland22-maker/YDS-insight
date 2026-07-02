@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.07.02 15:53 KST (자동 업데이트)",
+  "updatedAt": "2026.07.02 21:01 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=3-bVy6O_6hU",
-      "thumbUrl": "https://i.ytimg.com/vi/3-bVy6O_6hU/hqdefault.jpg",
-      "videoTitle": "대표 영상",
-      "publishedAt": ""
+      "videoUrl": "https://www.youtube.com/watch?v=OUQsbBwN2g8",
+      "thumbUrl": "https://i.ytimg.com/vi/OUQsbBwN2g8/hqdefault.jpg",
+      "videoTitle": "[LIVE] 미국 6월 고용지표(실업률, 비농업취업자), 고용쇼크 나올까? [즉시분석]",
+      "publishedAt": "2026-07-02T11:35:44+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=s-iNcadU6Ig",
-      "thumbUrl": "https://i.ytimg.com/vi/s-iNcadU6Ig/hqdefault.jpg",
-      "videoTitle": "대표 영상",
-      "publishedAt": ""
+      "videoUrl": "https://www.youtube.com/watch?v=gDdX6VEtSWM",
+      "thumbUrl": "https://i.ytimg.com/vi/gDdX6VEtSWM/hqdefault.jpg",
+      "videoTitle": "[김현석의 브레이킹 뉴스] 6월 고용보고서 발표! 7월 2일 오후 9시 30분 L.I.V.E",
+      "publishedAt": "2026-07-01T22:14:02+00:00"
     },
     {
       "id": "moneyinside",
@@ -56,10 +56,10 @@ window.YOUTUBE_DATA = {
       "name": "간단경제한스푼",
       "channelUrl": "https://www.youtube.com/channel/UChuu3KaoDnyttfN10GG169Q",
       "latestUrl": "https://www.youtube.com/@%EA%B0%84%EB%8B%A8%EA%B2%BD%EC%A0%9C%ED%95%9C%EC%8A%A4%ED%91%BC/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=JLZ_MI5GPJ0",
-      "thumbUrl": "https://i.ytimg.com/vi/JLZ_MI5GPJ0/hqdefault.jpg",
-      "videoTitle": "대표 영상",
-      "publishedAt": ""
+      "videoUrl": "https://www.youtube.com/watch?v=fETMNEtlHE0",
+      "thumbUrl": "https://i.ytimg.com/vi/fETMNEtlHE0/hqdefault.jpg",
+      "videoTitle": "매년 300억 나랏돈 쓰는 축협... 월드컵 폭망 뒤 정부가 결국 칼뺴들었습니다.",
+      "publishedAt": "2026-07-02T11:15:03+00:00"
     }
   ]
 };
