@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.07.03 09:19 KST (자동 업데이트)",
+  "updatedAt": "2026.07.03 15:45 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=aKf4cM9671s",
-      "thumbUrl": "https://i.ytimg.com/vi/aKf4cM9671s/hqdefault.jpg",
-      "videoTitle": "전력대란이 온다. 한국 기업이 주목받는 이유 | 경읽남과 토론합시다 | 박정호 교수 [2편]",
-      "publishedAt": "2026-07-02T21:05:15+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=oQbtNsPKHVc",
+      "thumbUrl": "https://i.ytimg.com/vi/oQbtNsPKHVc/hqdefault.jpg",
+      "videoTitle": "돈 빌려 올린 증시, 이제 고지서가 온다 #경읽남 #경제읽어주는남자 #경제전망 #북리뷰  #머니쇼크",
+      "publishedAt": "2026-07-03T03:00:09+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=AxbyPveRBM8",
-      "thumbUrl": "https://i.ytimg.com/vi/AxbyPveRBM8/hqdefault.jpg",
-      "videoTitle": "[김종학의 뉴욕, 지금-7월3일] 예상 하회한 고용..미국 경제, 완만한 감속 | 메타, 피그마, 인텔, 마이크론, 애플, 아마존, 테슬라, 리비안",
-      "publishedAt": "2026-07-02T21:17:24+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=qwGsGqwBTwc",
+      "thumbUrl": "https://i.ytimg.com/vi/qwGsGqwBTwc/hqdefault.jpg",
+      "videoTitle": "저커버그가 던진 돌에 맞은 반도체의 앞길은 | 월가백브리핑",
+      "publishedAt": "2026-07-03T03:00:02+00:00"
     },
     {
       "id": "moneyinside",

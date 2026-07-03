@@ -1,8 +1,8 @@
 [
   {
     "symbol": "USDKRW",
-    "price": 1544.08,
-    "change": -0.5
+    "price": 1526.5,
+    "change": -1.63
   },
   {
     "symbol": "DOW",
@@ -21,13 +21,13 @@
   },
   {
     "symbol": "DXY",
-    "price": 100.83,
-    "change": -0.03
+    "price": 100.86,
+    "change": -0.52
   },
   {
     "symbol": "US10Y",
-    "price": 0.45,
-    "change": 2.58
+    "price": 0.44,
+    "change": -0.46
   },
   {
     "symbol": "VIX",
