@@ -1,15 +1,15 @@
 {
-  "updatedAt": "2026.07.03 15:45 KST (자동 업데이트)",
+  "updatedAt": "2026.07.03 20:59 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=oQbtNsPKHVc",
-      "thumbUrl": "https://i.ytimg.com/vi/oQbtNsPKHVc/hqdefault.jpg",
-      "videoTitle": "돈 빌려 올린 증시, 이제 고지서가 온다 #경읽남 #경제읽어주는남자 #경제전망 #북리뷰  #머니쇼크",
-      "publishedAt": "2026-07-03T03:00:09+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=9HdwGAtfRkU",
+      "thumbUrl": "https://i.ytimg.com/vi/9HdwGAtfRkU/hqdefault.jpg",
+      "videoTitle": "SK하이닉스 ADR 미국 상장, 한국 반도체에 미칠 영향 | 경제학교 월간특강 [4편]",
+      "publishedAt": "2026-07-03T09:05:36+00:00"
     },
     {
       "id": "sbs-explained",
@@ -56,10 +56,10 @@
       "name": "간단경제한스푼",
       "channelUrl": "https://www.youtube.com/channel/UChuu3KaoDnyttfN10GG169Q",
       "latestUrl": "https://www.youtube.com/@%EA%B0%84%EB%8B%A8%EA%B2%BD%EC%A0%9C%ED%95%9C%EC%8A%A4%ED%91%BC/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=Rz5dgHYVPD8",
-      "thumbUrl": "https://i.ytimg.com/vi/Rz5dgHYVPD8/hqdefault.jpg",
-      "videoTitle": "우리 기술로 만든 K2전차, 폴란드가 대신 팝니다 (K-방산 수출 공식이 바뀐 진짜 이유)",
-      "publishedAt": "2026-07-02T21:30:02+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=LOIKw7Uo1xI",
+      "thumbUrl": "https://i.ytimg.com/vi/LOIKw7Uo1xI/hqdefault.jpg",
+      "videoTitle": "미국도 중국도 아니었다, 6G 규칙을 손에 쥔 대한민국 새로운 기준을 만들어갑니다",
+      "publishedAt": "2026-07-03T11:30:01+00:00"
     }
   ]
 }
