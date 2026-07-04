@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.07.03 20:59 KST (자동 업데이트)",
+  "updatedAt": "2026.07.04 09:17 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=9HdwGAtfRkU",
-      "thumbUrl": "https://i.ytimg.com/vi/9HdwGAtfRkU/hqdefault.jpg",
-      "videoTitle": "SK하이닉스 ADR 미국 상장, 한국 반도체에 미칠 영향 | 경제학교 월간특강 [4편]",
-      "publishedAt": "2026-07-03T09:05:36+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=lUSjJC8xzds",
+      "thumbUrl": "https://i.ytimg.com/vi/lUSjJC8xzds/hqdefault.jpg",
+      "videoTitle": "[모아보기] “7월 증시, 이제부터 조심해야 하는 이유 실질금리 역전이 보내는 경고” | 경읽남과 토론합시다 | 유신익X문남중X김현준",
+      "publishedAt": "2026-07-03T21:05:21+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=qwGsGqwBTwc",
-      "thumbUrl": "https://i.ytimg.com/vi/qwGsGqwBTwc/hqdefault.jpg",
-      "videoTitle": "저커버그가 던진 돌에 맞은 반도체의 앞길은 | 월가백브리핑",
-      "publishedAt": "2026-07-03T03:00:02+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=Yrs8w-h2kQM",
+      "thumbUrl": "https://i.ytimg.com/vi/Yrs8w-h2kQM/hqdefault.jpg",
+      "videoTitle": "175년 역사 지켜온 CEO의 변심…유리 기업이 판을 바꾼 빅테크 AI 전쟁 | 바이아메리카 in 뉴욕",
+      "publishedAt": "2026-07-04T00:00:22+00:00"
     },
     {
       "id": "moneyinside",
