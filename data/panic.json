@@ -26,8 +26,8 @@
   "dollar": 100.86,
   "yieldCurve": null,
   "rate": {
-    "now": 0.44,
-    "prev": 0.44
+    "now": null,
+    "prev": null
   },
-  "updatedAt": "2026-07-05 02:10 KST · success"
+  "updatedAt": "2026-07-05 06:01 KST · success"
 }
