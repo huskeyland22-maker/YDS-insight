@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.07.04 15:32 KST (자동 업데이트)",
+  "updatedAt": "2026.07.04 20:16 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=v2VxYoGvwes",
-      "thumbUrl": "https://i.ytimg.com/vi/v2VxYoGvwes/hqdefault.jpg",
-      "videoTitle": "중동 전쟁에도 증시가 오른 진짜 이유 #경읽남 #경제읽어주는남자 #경제전망 #북리뷰  #머니쇼크",
-      "publishedAt": "2026-07-04T03:00:01+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=SnXKHdYH3Os",
+      "thumbUrl": "https://i.ytimg.com/vi/SnXKHdYH3Os/hqdefault.jpg",
+      "videoTitle": "주식으로 번 돈, 결국 부동산으로 몰립니다 | 경읽남과 토론합시다 | 박정호 교수 [3편]",
+      "publishedAt": "2026-07-04T09:05:23+00:00"
     },
     {
       "id": "sbs-explained",
@@ -56,10 +56,10 @@ window.YOUTUBE_DATA = {
       "name": "간단경제한스푼",
       "channelUrl": "https://www.youtube.com/channel/UChuu3KaoDnyttfN10GG169Q",
       "latestUrl": "https://www.youtube.com/@%EA%B0%84%EB%8B%A8%EA%B2%BD%EC%A0%9C%ED%95%9C%EC%8A%A4%ED%91%BC/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=bShOuhc_CCA",
-      "thumbUrl": "https://i.ytimg.com/vi/bShOuhc_CCA/hqdefault.jpg",
-      "videoTitle": "세계 최고 부자 도시들이 한국 앞에 줄 선 진짜 이유 한국의 수소 운송 허브로 전환",
-      "publishedAt": "2026-07-04T05:00:15+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=SMMDwHqgU_0",
+      "thumbUrl": "https://i.ytimg.com/vi/SMMDwHqgU_0/hqdefault.jpg",
+      "videoTitle": "폭염에 사람이 죽어나가는데 에어컨을 뜯어낸다? 시대를 역행하는 유럽 규제의 충격적 진실",
+      "publishedAt": "2026-07-04T10:45:31+00:00"
     }
   ]
 };
