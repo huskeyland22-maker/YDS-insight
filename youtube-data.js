@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.07.05 15:53 KST (자동 업데이트)",
+  "updatedAt": "2026.07.05 20:22 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=8g4hA6oSrRM",
-      "thumbUrl": "https://i.ytimg.com/vi/8g4hA6oSrRM/hqdefault.jpg",
-      "videoTitle": "[모아보기] 반도체 다음은 전력? AI 데이터센터가 만드는 진짜 병목 | 경읽남과 토론합시다 | 손현정x김상윤",
-      "publishedAt": "2026-07-05T03:05:28+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=5RdhCVK04LE",
+      "thumbUrl": "https://i.ytimg.com/vi/5RdhCVK04LE/hqdefault.jpg",
+      "videoTitle": "원화가치 급락의 '진짜 이유'. 50조 풀어도 잡히지 않는 원달러 환율. 1600원 가는가? [즉시분석]",
+      "publishedAt": "2026-07-05T09:05:14+00:00"
     },
     {
       "id": "sbs-explained",
@@ -56,10 +56,10 @@ window.YOUTUBE_DATA = {
       "name": "간단경제한스푼",
       "channelUrl": "https://www.youtube.com/channel/UChuu3KaoDnyttfN10GG169Q",
       "latestUrl": "https://www.youtube.com/@%EA%B0%84%EB%8B%A8%EA%B2%BD%EC%A0%9C%ED%95%9C%EC%8A%A4%ED%91%BC/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=v7_tXaDb0n4",
-      "thumbUrl": "https://i.ytimg.com/vi/v7_tXaDb0n4/hqdefault.jpg",
-      "videoTitle": "빅테크가 전부 한국으로 몰려온 진짜 이유",
-      "publishedAt": "2026-07-05T04:00:35+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=RRnwXuvy-zs",
+      "thumbUrl": "https://i.ytimg.com/vi/RRnwXuvy-zs/hqdefault.jpg",
+      "videoTitle": "부를 사람도 올 사람도 없다 조문객 0명 사라지는 3일장 무너져가는 장례식장 무빈소 장례 확산",
+      "publishedAt": "2026-07-05T11:00:35+00:00"
     }
   ]
 };
