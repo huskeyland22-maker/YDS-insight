@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.07.05 09:13 KST (자동 업데이트)",
+  "updatedAt": "2026.07.05 15:53 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=j0l9iEgRSrs",
-      "thumbUrl": "https://i.ytimg.com/vi/j0l9iEgRSrs/hqdefault.jpg",
-      "videoTitle": "[풀버전] 7월 역대급 변동성 온다. 삼성전자 반도체 실적과 SK하이닉스 ADR 미국 상장 효과 | 경제학교 월간특강",
-      "publishedAt": "2026-07-04T21:05:17+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=8g4hA6oSrRM",
+      "thumbUrl": "https://i.ytimg.com/vi/8g4hA6oSrRM/hqdefault.jpg",
+      "videoTitle": "[모아보기] 반도체 다음은 전력? AI 데이터센터가 만드는 진짜 병목 | 경읽남과 토론합시다 | 손현정x김상윤",
+      "publishedAt": "2026-07-05T03:05:28+00:00"
     },
     {
       "id": "sbs-explained",
@@ -56,10 +56,10 @@ window.YOUTUBE_DATA = {
       "name": "간단경제한스푼",
       "channelUrl": "https://www.youtube.com/channel/UChuu3KaoDnyttfN10GG169Q",
       "latestUrl": "https://www.youtube.com/@%EA%B0%84%EB%8B%A8%EA%B2%BD%EC%A0%9C%ED%95%9C%EC%8A%A4%ED%91%BC/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=tXDTyeKNOUc",
-      "thumbUrl": "https://i.ytimg.com/vi/tXDTyeKNOUc/hqdefault.jpg",
-      "videoTitle": "버려지던 물 130억 톤의 반전, 에어컨 펑펑 써도 전기료 반값 되는 비결 지하수 히트펌프",
-      "publishedAt": "2026-07-04T11:30:35+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=v7_tXaDb0n4",
+      "thumbUrl": "https://i.ytimg.com/vi/v7_tXaDb0n4/hqdefault.jpg",
+      "videoTitle": "빅테크가 전부 한국으로 몰려온 진짜 이유",
+      "publishedAt": "2026-07-05T04:00:35+00:00"
     }
   ]
 };
