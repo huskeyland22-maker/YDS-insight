@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.07.05 20:22 KST (자동 업데이트)",
+  "updatedAt": "2026.07.06 09:16 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=5RdhCVK04LE",
-      "thumbUrl": "https://i.ytimg.com/vi/5RdhCVK04LE/hqdefault.jpg",
-      "videoTitle": "원화가치 급락의 '진짜 이유'. 50조 풀어도 잡히지 않는 원달러 환율. 1600원 가는가? [즉시분석]",
-      "publishedAt": "2026-07-05T09:05:14+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=Es6CTtb9Mo8",
+      "thumbUrl": "https://i.ytimg.com/vi/Es6CTtb9Mo8/hqdefault.jpg",
+      "videoTitle": "금 가격 조정된 '5가지 이유'. 향후 금 시세 전망 '3가지 결정요인' [즉시분석]",
+      "publishedAt": "2026-07-05T21:05:09+00:00"
     },
     {
       "id": "sbs-explained",
@@ -56,10 +56,10 @@ window.YOUTUBE_DATA = {
       "name": "간단경제한스푼",
       "channelUrl": "https://www.youtube.com/channel/UChuu3KaoDnyttfN10GG169Q",
       "latestUrl": "https://www.youtube.com/@%EA%B0%84%EB%8B%A8%EA%B2%BD%EC%A0%9C%ED%95%9C%EC%8A%A4%ED%91%BC/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=RRnwXuvy-zs",
-      "thumbUrl": "https://i.ytimg.com/vi/RRnwXuvy-zs/hqdefault.jpg",
-      "videoTitle": "부를 사람도 올 사람도 없다 조문객 0명 사라지는 3일장 무너져가는 장례식장 무빈소 장례 확산",
-      "publishedAt": "2026-07-05T11:00:35+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=TJ64DM5ThQg",
+      "thumbUrl": "https://i.ytimg.com/vi/TJ64DM5ThQg/hqdefault.jpg",
+      "videoTitle": "스위스 제네바 버리고 한국으로 오는 유엔,구글,세계은행까지 한국 AI에 줄 섰습니다",
+      "publishedAt": "2026-07-05T21:30:33+00:00"
     }
   ]
 };
