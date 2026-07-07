@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.07.06 22:36 KST (자동 업데이트)",
+  "updatedAt": "2026.07.07 10:08 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=ibCvHYQ0MXE",
-      "thumbUrl": "https://i.ytimg.com/vi/ibCvHYQ0MXE/hqdefault.jpg",
-      "videoTitle": "한국 경제는 어디로 가는가? 반도체 호황에 파티할 때인가? [경읽남 252화]",
-      "publishedAt": "2026-07-06T09:05:33+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=AjTe0YeTqas",
+      "thumbUrl": "https://i.ytimg.com/vi/AjTe0YeTqas/hqdefault.jpg",
+      "videoTitle": "[속보] 삼성전자, 2분기 영업이익 89.4조·매출 171조⋯ “또 역대 최대 실적” [즉시분석]",
+      "publishedAt": "2026-07-06T23:39:55+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=k2av_Y38ZWs",
-      "thumbUrl": "https://i.ytimg.com/vi/k2av_Y38ZWs/hqdefault.jpg",
-      "videoTitle": "돌연 '공산주의 막아야' 반공 기치 부르짖은 트럼프..맘다니 돌풍에 '견제구'ㅣ이상은의 워싱턴나우",
-      "publishedAt": "2026-07-06T03:00:09+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=-YcECT-0GJc",
+      "thumbUrl": "https://i.ytimg.com/vi/-YcECT-0GJc/hqdefault.jpg",
+      "videoTitle": "[김종학의 뉴욕, 지금-7월7일] 백악관서 사상 첫 합동 개장식 | 트럼프 \"델 사세요\" 발언에 주가 급등 | 브로드컴, 애플과 계약 연장 | 테슬라 6%대 강세",
+      "publishedAt": "2026-07-06T21:14:17+00:00"
     },
     {
       "id": "moneyinside",
@@ -56,10 +56,10 @@ window.YOUTUBE_DATA = {
       "name": "간단경제한스푼",
       "channelUrl": "https://www.youtube.com/channel/UChuu3KaoDnyttfN10GG169Q",
       "latestUrl": "https://www.youtube.com/@%EA%B0%84%EB%8B%A8%EA%B2%BD%EC%A0%9C%ED%95%9C%EC%8A%A4%ED%91%BC/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=XYDixIUeTAo",
-      "thumbUrl": "https://i.ytimg.com/vi/XYDixIUeTAo/hqdefault.jpg",
-      "videoTitle": "미국 유럽 일본도 못 해낸 일, 초속 40만m 유령 원자 포착 세계 유일 라온이 해냈습니다",
-      "publishedAt": "2026-07-06T10:45:17+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=0gQxWf81U_Y",
+      "thumbUrl": "https://i.ytimg.com/vi/0gQxWf81U_Y/hqdefault.jpg",
+      "videoTitle": "삼성·SK·LG가 유리 한 장에 수십조를 건 진짜 이유 유리기판 속도전",
+      "publishedAt": "2026-07-06T21:30:03+00:00"
     }
   ]
 };
