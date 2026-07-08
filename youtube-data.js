@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.07.08 15:10 KST (자동 업데이트)",
+  "updatedAt": "2026.07.08 20:41 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=3-bVy6O_6hU",
-      "thumbUrl": "https://i.ytimg.com/vi/3-bVy6O_6hU/hqdefault.jpg",
-      "videoTitle": "대표 영상",
-      "publishedAt": ""
+      "videoUrl": "https://www.youtube.com/watch?v=gPIZm6jo3B0",
+      "thumbUrl": "https://i.ytimg.com/vi/gPIZm6jo3B0/hqdefault.jpg",
+      "videoTitle": "금 투자, ETF 말고 실물로 사야 하는 이유| 경읽남과 토론합시다 | 금남일 대표님 [3편]",
+      "publishedAt": "2026-07-08T09:05:09+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=s-iNcadU6Ig",
-      "thumbUrl": "https://i.ytimg.com/vi/s-iNcadU6Ig/hqdefault.jpg",
-      "videoTitle": "대표 영상",
-      "publishedAt": ""
+      "videoUrl": "https://www.youtube.com/watch?v=OM_jet5VyFE",
+      "thumbUrl": "https://i.ytimg.com/vi/OM_jet5VyFE/hqdefault.jpg",
+      "videoTitle": "AI인프라 판매설 나온 메타, 그 이유는? | 김인엽의 실리콘밸리나우",
+      "publishedAt": "2026-07-08T10:00:00+00:00"
     },
     {
       "id": "moneyinside",
@@ -56,10 +56,10 @@ window.YOUTUBE_DATA = {
       "name": "간단경제한스푼",
       "channelUrl": "https://www.youtube.com/channel/UChuu3KaoDnyttfN10GG169Q",
       "latestUrl": "https://www.youtube.com/@%EA%B0%84%EB%8B%A8%EA%B2%BD%EC%A0%9C%ED%95%9C%EC%8A%A4%ED%91%BC/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=JLZ_MI5GPJ0",
-      "thumbUrl": "https://i.ytimg.com/vi/JLZ_MI5GPJ0/hqdefault.jpg",
-      "videoTitle": "대표 영상",
-      "publishedAt": ""
+      "videoUrl": "https://www.youtube.com/watch?v=TdChYwsTeG8",
+      "thumbUrl": "https://i.ytimg.com/vi/TdChYwsTeG8/hqdefault.jpg",
+      "videoTitle": "미국 허락 없이는 한 대도 못 팔았다.40년 족쇄가 끊긴 날 세계 5개국만 가진 심장, 대한민국이 6번째로 뚫었습니다 항공 엔진 최초 공개.",
+      "publishedAt": "2026-07-08T11:30:15+00:00"
     }
   ]
 };
