@@ -1,15 +1,15 @@
 {
-  "updatedAt": "2026.07.10 09:19 KST (자동 업데이트)",
+  "updatedAt": "2026.07.10 15:59 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=PmQ_W6Z0sh4",
-      "thumbUrl": "https://i.ytimg.com/vi/PmQ_W6Z0sh4/hqdefault.jpg",
-      "videoTitle": "AI·반도체 패권전쟁 시작됐다? 무너지는 글로벌 밸류체인과 한국의 선택 | 김광석의 북리뷰 | 둠 루프 [3편]",
-      "publishedAt": "2026-07-09T21:05:19+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=3-bVy6O_6hU",
+      "thumbUrl": "https://i.ytimg.com/vi/3-bVy6O_6hU/hqdefault.jpg",
+      "videoTitle": "대표 영상",
+      "publishedAt": ""
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=_drr7u1lMj8",
-      "thumbUrl": "https://i.ytimg.com/vi/_drr7u1lMj8/hqdefault.jpg",
-      "videoTitle": "[김종학의 뉴욕, 지금-7월10일] '자체 AI 칩 9월 생산' 메타 강세 | 마이크론, 미국 내 투자 확대 반등 | SK하이닉스 ADR 내일 상장 | 미-이란 이틀째 공습 교환",
-      "publishedAt": "2026-07-09T21:20:27+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=s-iNcadU6Ig",
+      "thumbUrl": "https://i.ytimg.com/vi/s-iNcadU6Ig/hqdefault.jpg",
+      "videoTitle": "대표 영상",
+      "publishedAt": ""
     },
     {
       "id": "moneyinside",
@@ -56,10 +56,10 @@
       "name": "간단경제한스푼",
       "channelUrl": "https://www.youtube.com/channel/UChuu3KaoDnyttfN10GG169Q",
       "latestUrl": "https://www.youtube.com/@%EA%B0%84%EB%8B%A8%EA%B2%BD%EC%A0%9C%ED%95%9C%EC%8A%A4%ED%91%BC/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=l3_vMbbZj4g",
-      "thumbUrl": "https://i.ytimg.com/vi/l3_vMbbZj4g/hqdefault.jpg",
-      "videoTitle": "버려지던 햇빛 71%의 반란, 중국의 태양광 뒤집을 한국의 비밀 무기",
-      "publishedAt": "2026-07-09T21:30:31+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=JLZ_MI5GPJ0",
+      "thumbUrl": "https://i.ytimg.com/vi/JLZ_MI5GPJ0/hqdefault.jpg",
+      "videoTitle": "대표 영상",
+      "publishedAt": ""
     }
   ]
 }
