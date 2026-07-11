@@ -1,5 +1,5 @@
 window.OVERSEAS_DATA = {
-  "updatedAt": "2026.07.11 14:56 KST (자동 업데이트)",
+  "updatedAt": "2026.07.11 15:17 KST (자동 업데이트)",
   "items": [
     {
       "symbol": "SOXL",
@@ -27,7 +27,7 @@ window.OVERSEAS_DATA = {
     }
   ],
   "flow": {
-    "updatedAt": "2026.07.11 14:56 KST (자동 업데이트)",
+    "updatedAt": "2026.07.11 15:17 KST (자동 업데이트)",
     "items": [
       {
         "id": "usdjpy",
