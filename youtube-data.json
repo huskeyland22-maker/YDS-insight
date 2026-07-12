@@ -1,15 +1,15 @@
 {
-  "updatedAt": "2026.07.11 19:53 KST (자동 업데이트)",
+  "updatedAt": "2026.07.12 09:11 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=DibsdE5Gp5A",
-      "thumbUrl": "https://i.ytimg.com/vi/DibsdE5Gp5A/hqdefault.jpg",
-      "videoTitle": "[풀버전] 2030년 금값 2배 상승? 지금 봐야 할 이유 | 경읽남과 토론합시다 | 금남일 대표님",
-      "publishedAt": "2026-07-11T09:05:01+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=C8o2IiJGo6o",
+      "thumbUrl": "https://i.ytimg.com/vi/C8o2IiJGo6o/hqdefault.jpg",
+      "videoTitle": "[모아보기] 중국 창신메모리(CXMT) 상장과 반도체 독립 추진. 한국 반도체에 올 위협 | 중국 반도체 |",
+      "publishedAt": "2026-07-11T21:05:19+00:00"
     },
     {
       "id": "sbs-explained",
@@ -56,10 +56,10 @@
       "name": "간단경제한스푼",
       "channelUrl": "https://www.youtube.com/channel/UChuu3KaoDnyttfN10GG169Q",
       "latestUrl": "https://www.youtube.com/@%EA%B0%84%EB%8B%A8%EA%B2%BD%EC%A0%9C%ED%95%9C%EC%8A%A4%ED%91%BC/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=CuuzQH3rm9M",
-      "thumbUrl": "https://i.ytimg.com/vi/CuuzQH3rm9M/hqdefault.jpg",
-      "videoTitle": "전 세계가 못 만든 빛의 반도체 한국이 세계 최초로 찍어냅니다.",
-      "publishedAt": "2026-07-11T09:30:15+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=NAh-OEYDxoQ",
+      "thumbUrl": "https://i.ytimg.com/vi/NAh-OEYDxoQ/hqdefault.jpg",
+      "videoTitle": "또 KAIST야? 늘려도 고화질 그대로, 한국이 100년 물리 법칙을 무너뜨린 방법",
+      "publishedAt": "2026-07-11T11:00:39+00:00"
     }
   ]
 }
