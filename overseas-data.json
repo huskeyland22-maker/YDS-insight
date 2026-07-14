@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026.07.14 11:46 KST (자동 업데이트)",
+  "updatedAt": "2026.07.14 14:44 KST (자동 업데이트)",
   "items": [
     {
       "symbol": "SOXL",
@@ -27,20 +27,20 @@
     }
   ],
   "flow": {
-    "updatedAt": "2026.07.14 11:46 KST (자동 업데이트)",
+    "updatedAt": "2026.07.14 14:44 KST (자동 업데이트)",
     "items": [
       {
         "id": "usdjpy",
         "label": "엔캐리 압력",
-        "value": "USDJPY 162.33",
-        "delta": "+0.28%",
+        "value": "USDJPY 161.88",
+        "delta": "-0.30%",
         "tone": "up"
       },
       {
         "id": "dxy",
         "label": "달러 유동성",
-        "value": "Dollar Index 101.19",
-        "delta": "-0.09%",
+        "value": "Dollar Index 101.28",
+        "delta": "+0.31%",
         "tone": "up"
       },
       {

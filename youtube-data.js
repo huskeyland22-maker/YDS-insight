@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.07.14 09:08 KST (자동 업데이트)",
+  "updatedAt": "2026.07.14 14:44 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=eokwiAZDt0k",
-      "thumbUrl": "https://i.ytimg.com/vi/eokwiAZDt0k/hqdefault.jpg",
-      "videoTitle": "트럼프도 막지 못한다… 중동전쟁이 계속되는 이유 | 경읽남과 토론합시다 | 진재일 교수 [1편]",
-      "publishedAt": "2026-07-13T21:05:00+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=3-bVy6O_6hU",
+      "thumbUrl": "https://i.ytimg.com/vi/3-bVy6O_6hU/hqdefault.jpg",
+      "videoTitle": "대표 영상",
+      "publishedAt": ""
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=Rg0TmtqaoVI",
-      "thumbUrl": "https://i.ytimg.com/vi/Rg0TmtqaoVI/hqdefault.jpg",
-      "videoTitle": "[김현석의 브레이킹 뉴스] 6월 소비자물가지수(CPI) 발표! 7월 14일 오후 9시 30분 L.I.V.E",
-      "publishedAt": "2026-07-13T23:10:06+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=s-iNcadU6Ig",
+      "thumbUrl": "https://i.ytimg.com/vi/s-iNcadU6Ig/hqdefault.jpg",
+      "videoTitle": "대표 영상",
+      "publishedAt": ""
     },
     {
       "id": "moneyinside",
@@ -56,10 +56,10 @@ window.YOUTUBE_DATA = {
       "name": "간단경제한스푼",
       "channelUrl": "https://www.youtube.com/channel/UChuu3KaoDnyttfN10GG169Q",
       "latestUrl": "https://www.youtube.com/@%EA%B0%84%EB%8B%A8%EA%B2%BD%EC%A0%9C%ED%95%9C%EC%8A%A4%ED%91%BC/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=VNhdCUvUmG8",
-      "thumbUrl": "https://i.ytimg.com/vi/VNhdCUvUmG8/hqdefault.jpg",
-      "videoTitle": "설계도까지 손에 넣고도 못 만듭니다, 중국이 한국 엔진 앞에 줄 서는 진짜 이유",
-      "publishedAt": "2026-07-13T11:15:31+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=JLZ_MI5GPJ0",
+      "thumbUrl": "https://i.ytimg.com/vi/JLZ_MI5GPJ0/hqdefault.jpg",
+      "videoTitle": "대표 영상",
+      "publishedAt": ""
     }
   ]
 };

@@ -1,5 +1,5 @@
 window.PANIC_DATA = {
-  "updatedAt": "2026.07.14 09:08 KST (자동 업데이트 · Python)",
+  "updatedAt": "2026.07.14 14:44 KST (자동 업데이트 · Python)",
   "signalExtras": {
     "t10y2y": null
   },
@@ -22,7 +22,7 @@ window.PANIC_DATA = {
       "id": "fng",
       "label": "CNN F&G",
       "value": "44",
-      "delta": "📉 -6",
+      "delta": "➡️ 0",
       "status": "🟢 중립",
       "tone": "stable",
       "weekTrend": "보합",
@@ -97,16 +97,16 @@ window.PANIC_DATA = {
     {
       "id": "move",
       "label": "MOVE Index",
-      "value": "77.77",
-      "delta": "📈 +8.22",
+      "value": "69.55",
+      "delta": "📈 +0.66",
       "status": "🟢 안정",
       "tone": "stable",
       "weekTrend": "상승",
       "actionGuide": "관망",
       "trendUrl": "https://fred.stlouisfed.org/series/MOVE",
       "source": "yahoo",
-      "previousClose": 69.55,
-      "change": 8.22
+      "previousClose": 68.89,
+      "change": 0.66
     },
     {
       "id": "vxn",
