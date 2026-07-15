@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.07.15 09:06 KST (자동 업데이트)",
+  "updatedAt": "2026.07.15 14:44 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=8wvbHkvzQzI",
-      "thumbUrl": "https://i.ytimg.com/vi/8wvbHkvzQzI/hqdefault.jpg",
-      "videoTitle": "경제는 호황이라는데 왜 나만 힘들까? K자형 양극화의 진짜 현실 | 김광석의 북리뷰 | 어떻게 살아낼 것인가 [1편]",
-      "publishedAt": "2026-07-14T21:41:13+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=3-bVy6O_6hU",
+      "thumbUrl": "https://i.ytimg.com/vi/3-bVy6O_6hU/hqdefault.jpg",
+      "videoTitle": "대표 영상",
+      "publishedAt": ""
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=ityvCMGBIow",
-      "thumbUrl": "https://i.ytimg.com/vi/ityvCMGBIow/hqdefault.jpg",
-      "videoTitle": "[김종학의 뉴욕, 지금-7월15일] SK하이닉스 본주-ADR 괴리율 51% | 호르무즈 통행료 20% '없던 일' | CPI 6년 만에 '마이너스' | IBM, 핵심 사업 '흔들'",
-      "publishedAt": "2026-07-14T21:29:10+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=s-iNcadU6Ig",
+      "thumbUrl": "https://i.ytimg.com/vi/s-iNcadU6Ig/hqdefault.jpg",
+      "videoTitle": "대표 영상",
+      "publishedAt": ""
     },
     {
       "id": "moneyinside",
@@ -56,10 +56,10 @@ window.YOUTUBE_DATA = {
       "name": "간단경제한스푼",
       "channelUrl": "https://www.youtube.com/channel/UChuu3KaoDnyttfN10GG169Q",
       "latestUrl": "https://www.youtube.com/@%EA%B0%84%EB%8B%A8%EA%B2%BD%EC%A0%9C%ED%95%9C%EC%8A%A4%ED%91%BC/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=E-3hzmaA7Wk",
-      "thumbUrl": "https://i.ytimg.com/vi/E-3hzmaA7Wk/hqdefault.jpg",
-      "videoTitle": "한국과 몽골이 연합하면 보게 될 무시무시한 상황 아시아 최강 연합의 탄생?",
-      "publishedAt": "2026-07-14T11:15:20+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=JLZ_MI5GPJ0",
+      "thumbUrl": "https://i.ytimg.com/vi/JLZ_MI5GPJ0/hqdefault.jpg",
+      "videoTitle": "대표 영상",
+      "publishedAt": ""
     }
   ]
 };
