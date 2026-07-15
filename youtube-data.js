@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.07.14 20:16 KST (자동 업데이트)",
+  "updatedAt": "2026.07.15 09:06 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=_3QQxJxHVGM",
-      "thumbUrl": "https://i.ytimg.com/vi/_3QQxJxHVGM/hqdefault.jpg",
-      "videoTitle": "미국은 이미 중국을 이기기 어렵다? 미중 패권전쟁의 진짜 본질 | 경읽남과 토론합시다 | 진재일 교수 [2편]",
-      "publishedAt": "2026-07-14T09:05:24+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=8wvbHkvzQzI",
+      "thumbUrl": "https://i.ytimg.com/vi/8wvbHkvzQzI/hqdefault.jpg",
+      "videoTitle": "경제는 호황이라는데 왜 나만 힘들까? K자형 양극화의 진짜 현실 | 김광석의 북리뷰 | 어떻게 살아낼 것인가 [1편]",
+      "publishedAt": "2026-07-14T21:41:13+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=bWjmVv31Edc",
-      "thumbUrl": "https://i.ytimg.com/vi/bWjmVv31Edc/hqdefault.jpg",
-      "videoTitle": "실적 좋아도 빠지는 반도체, 2분기 실적시즌에서 확인할 것은ㅣ빈난새의 빈틈없이월가",
-      "publishedAt": "2026-07-14T01:00:21+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=ityvCMGBIow",
+      "thumbUrl": "https://i.ytimg.com/vi/ityvCMGBIow/hqdefault.jpg",
+      "videoTitle": "[김종학의 뉴욕, 지금-7월15일] SK하이닉스 본주-ADR 괴리율 51% | 호르무즈 통행료 20% '없던 일' | CPI 6년 만에 '마이너스' | IBM, 핵심 사업 '흔들'",
+      "publishedAt": "2026-07-14T21:29:10+00:00"
     },
     {
       "id": "moneyinside",
