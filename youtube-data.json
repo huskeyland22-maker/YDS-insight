@@ -1,15 +1,15 @@
 {
-  "updatedAt": "2026.07.16 20:25 KST (자동 업데이트)",
+  "updatedAt": "2026.07.17 09:13 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=Te1SUm9moGc",
-      "thumbUrl": "https://i.ytimg.com/vi/Te1SUm9moGc/hqdefault.jpg",
-      "videoTitle": "\"환율이 흔들린다\" 김광석 교수가 짚은 '더 큰 위험'의 정체 | 채널 50만 특별영상 | 취중전망 [1편]",
-      "publishedAt": "2026-07-16T09:05:04+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=PrHLPwzzgWc",
+      "thumbUrl": "https://i.ytimg.com/vi/PrHLPwzzgWc/hqdefault.jpg",
+      "videoTitle": "인생의 절벽을 만났을 때, 결국 살아내는 사람들의 공통점 | 김광석의 북리뷰 | 어떻게 살아낼 것인가 [3편]",
+      "publishedAt": "2026-07-16T21:05:01+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=tlR8C3UHiiE",
-      "thumbUrl": "https://i.ytimg.com/vi/tlR8C3UHiiE/hqdefault.jpg",
-      "videoTitle": "[김종학의 뉴욕, 지금-7월16일] 애플, 알리바바 손잡고 중국서 AI 서비스 인가 | ASML 호실적에도 반도체 또 무더기 하락 | 마이크론 -8%, SK하이닉스 -9%",
-      "publishedAt": "2026-07-15T21:24:14+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=pNPPkVNdMEk",
+      "thumbUrl": "https://i.ytimg.com/vi/pNPPkVNdMEk/hqdefault.jpg",
+      "videoTitle": "[김종학의 뉴욕, 지금-7월17일] 더 깊어진 AI 지출 공포 | 반도체 지수 4% 하락 | 애플-엔비디아 시총 격차 축소 | 구글, 제미나이 출시 차질 |넷플릭스 급락",
+      "publishedAt": "2026-07-16T21:23:08+00:00"
     },
     {
       "id": "moneyinside",
