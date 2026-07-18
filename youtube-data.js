@@ -1,5 +1,5 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.07.18 09:10 KST (자동 업데이트)",
+  "updatedAt": "2026.07.18 14:40 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=ldIuyqu6IEQ",
-      "thumbUrl": "https://i.ytimg.com/vi/ldIuyqu6IEQ/hqdefault.jpg",
-      "videoTitle": "[김종학의 뉴욕, 지금-7월18일] 중국 '키미 모먼트' | 메타 데이터센터 진출 준비 | 스페이스X, 미 정부에 컴퓨팅 제공 논의 | 트럼프, '캐나다 산불 배상' 관세 시사",
-      "publishedAt": "2026-07-17T21:15:39+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=qeiUkOMtq30",
+      "thumbUrl": "https://i.ytimg.com/vi/qeiUkOMtq30/hqdefault.jpg",
+      "videoTitle": "중국산 AI의 역습, 메모리는 피해 갔다?ㅣ월가백브리핑",
+      "publishedAt": "2026-07-18T03:00:18+00:00"
     },
     {
       "id": "moneyinside",
