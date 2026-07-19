@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.07.19 09:11 KST (자동 업데이트)",
+  "updatedAt": "2026.07.19 15:12 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=oe-l6XIvcr0",
-      "thumbUrl": "https://i.ytimg.com/vi/oe-l6XIvcr0/hqdefault.jpg",
-      "videoTitle": "역대급 실적발표에도 반도체 주가가 폭락하는 '진짜 이유' [즉시분석]",
-      "publishedAt": "2026-07-18T23:05:29+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=zIxP3jL2Yzw",
+      "thumbUrl": "https://i.ytimg.com/vi/zIxP3jL2Yzw/hqdefault.jpg",
+      "videoTitle": "'삼전닉스' 레버리지 한달간 7조원 흡수…보완대책 통할까 [즉시분석]",
+      "publishedAt": "2026-07-19T03:05:17+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=qeiUkOMtq30",
-      "thumbUrl": "https://i.ytimg.com/vi/qeiUkOMtq30/hqdefault.jpg",
-      "videoTitle": "중국산 AI의 역습, 메모리는 피해 갔다?ㅣ월가백브리핑",
-      "publishedAt": "2026-07-18T03:00:18+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=B7_79z8GHSA",
+      "thumbUrl": "https://i.ytimg.com/vi/B7_79z8GHSA/hqdefault.jpg",
+      "videoTitle": "월가 덮친 코리아 리스크, 모든 것은 빅테크에 달렸다ㅣ월가백브리핑",
+      "publishedAt": "2026-07-19T03:00:19+00:00"
     },
     {
       "id": "moneyinside",
@@ -56,10 +56,10 @@ window.YOUTUBE_DATA = {
       "name": "간단경제한스푼",
       "channelUrl": "https://www.youtube.com/channel/UChuu3KaoDnyttfN10GG169Q",
       "latestUrl": "https://www.youtube.com/@%EA%B0%84%EB%8B%A8%EA%B2%BD%EC%A0%9C%ED%95%9C%EC%8A%A4%ED%91%BC/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=iYvretX1XO8",
-      "thumbUrl": "https://i.ytimg.com/vi/iYvretX1XO8/hqdefault.jpg",
-      "videoTitle": "한·미·일 SMR 삼각 동맹 그 심장이 대한민국인 이유",
-      "publishedAt": "2026-07-18T11:30:23+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=JLZ_MI5GPJ0",
+      "thumbUrl": "https://i.ytimg.com/vi/JLZ_MI5GPJ0/hqdefault.jpg",
+      "videoTitle": "대표 영상",
+      "publishedAt": ""
     }
   ]
 };
