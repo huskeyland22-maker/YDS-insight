@@ -1,5 +1,5 @@
 window.OVERSEAS_DATA = {
-  "updatedAt": "2026.07.19 22:24 KST (자동 업데이트)",
+  "updatedAt": "2026.07.20 02:01 KST (자동 업데이트)",
   "items": [
     {
       "symbol": "SOXL",
@@ -7,7 +7,7 @@ window.OVERSEAS_DATA = {
       "p1w": "-29.54%",
       "p1m": "-40.11%",
       "mdd": "-54.96%",
-      "updatedAt": "2026.07.19"
+      "updatedAt": "2026.07.20"
     },
     {
       "symbol": "TQQQ",
@@ -15,7 +15,7 @@ window.OVERSEAS_DATA = {
       "p1w": "-12.33%",
       "p1m": "-15.51%",
       "mdd": "-22.58%",
-      "updatedAt": "2026.07.19"
+      "updatedAt": "2026.07.20"
     },
     {
       "symbol": "SSO",
@@ -23,11 +23,11 @@ window.OVERSEAS_DATA = {
       "p1w": "-3.20%",
       "p1m": "-2.23%",
       "mdd": "-4.93%",
-      "updatedAt": "2026.07.19"
+      "updatedAt": "2026.07.20"
     }
   ],
   "flow": {
-    "updatedAt": "2026.07.19 22:24 KST (자동 업데이트)",
+    "updatedAt": "2026.07.20 02:01 KST (자동 업데이트)",
     "items": [
       {
         "id": "usdjpy",
@@ -71,10 +71,6 @@ window.OVERSEAS_DATA = {
       "action": "중립 비중 유지, 이벤트 확인 후 대응",
       "history": [
         {
-          "d": "2026.07.13",
-          "s": 90
-        },
-        {
           "d": "2026.07.14",
           "s": 74
         },
@@ -96,6 +92,10 @@ window.OVERSEAS_DATA = {
         },
         {
           "d": "2026.07.19",
+          "s": 58
+        },
+        {
+          "d": "2026.07.20",
           "s": 58
         }
       ]
