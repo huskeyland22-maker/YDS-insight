@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.07.19 20:02 KST (자동 업데이트)",
+  "updatedAt": "2026.07.20 09:13 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=UlTktMnF7eA",
-      "thumbUrl": "https://i.ytimg.com/vi/UlTktMnF7eA/hqdefault.jpg",
-      "videoTitle": "“코로나 때보다 심각하다”… 자영업 폐업이 15년 만에 쏟아진 진짜 이유 | 채널 50만 특별영상 | 취중전망 [4편]",
-      "publishedAt": "2026-07-19T09:05:19+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=gIzOMbW8HYw",
+      "thumbUrl": "https://i.ytimg.com/vi/gIzOMbW8HYw/hqdefault.jpg",
+      "videoTitle": "“AI는 아직 시작도 안 했다” 2026년 진짜 본게임이 시작되는 이유 | 50만 특집 경읽남과 토론합시다 | 김대식x이광용 [1편]",
+      "publishedAt": "2026-07-19T21:05:37+00:00"
     },
     {
       "id": "sbs-explained",
@@ -56,10 +56,10 @@ window.YOUTUBE_DATA = {
       "name": "간단경제한스푼",
       "channelUrl": "https://www.youtube.com/channel/UChuu3KaoDnyttfN10GG169Q",
       "latestUrl": "https://www.youtube.com/@%EA%B0%84%EB%8B%A8%EA%B2%BD%EC%A0%9C%ED%95%9C%EC%8A%A4%ED%91%BC/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=kzQfLmf5oKk",
-      "thumbUrl": "https://i.ytimg.com/vi/kzQfLmf5oKk/hqdefault.jpg",
-      "videoTitle": "차세대 고체수소 세계 최초 실증 성공! 한국이 수소 주도권을 잡습니다.",
-      "publishedAt": "2026-07-19T10:00:07+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=mS5NECl4ZYE",
+      "thumbUrl": "https://i.ytimg.com/vi/mS5NECl4ZYE/hqdefault.jpg",
+      "videoTitle": "세계 최강 미국이 100년 된 기술 하나 때문에 멈췄고, 그 빈자리를 한국이 채우는 중입니다",
+      "publishedAt": "2026-07-19T11:30:02+00:00"
     }
   ]
 };
