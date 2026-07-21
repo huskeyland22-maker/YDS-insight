@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.07.21 15:09 KST (자동 업데이트)",
+  "updatedAt": "2026.07.21 20:41 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=3-bVy6O_6hU",
-      "thumbUrl": "https://i.ytimg.com/vi/3-bVy6O_6hU/hqdefault.jpg",
-      "videoTitle": "대표 영상",
-      "publishedAt": ""
+      "videoUrl": "https://www.youtube.com/watch?v=MRzcr6OxEaU",
+      "thumbUrl": "https://i.ytimg.com/vi/MRzcr6OxEaU/hqdefault.jpg",
+      "videoTitle": "AI가 일자리를 없앤 뒤, 돈은 결국 ‘이쪽’으로 몰립니다 | 50만 특집 경읽남과 토론합시다 | 김대식x이광용 [3편]",
+      "publishedAt": "2026-07-21T09:05:25+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=s-iNcadU6Ig",
-      "thumbUrl": "https://i.ytimg.com/vi/s-iNcadU6Ig/hqdefault.jpg",
-      "videoTitle": "대표 영상",
-      "publishedAt": ""
+      "videoUrl": "https://www.youtube.com/watch?v=gNbjV--PHcg",
+      "thumbUrl": "https://i.ytimg.com/vi/gNbjV--PHcg/hqdefault.jpg",
+      "videoTitle": "역대급 실적에도 주가는 왜 못 오를까 | 금리·달러 안 꺾이는 네가지 이유 | 빈난새의 빈틈없이월가",
+      "publishedAt": "2026-07-21T01:00:09+00:00"
     },
     {
       "id": "moneyinside",
@@ -56,10 +56,10 @@ window.YOUTUBE_DATA = {
       "name": "간단경제한스푼",
       "channelUrl": "https://www.youtube.com/channel/UChuu3KaoDnyttfN10GG169Q",
       "latestUrl": "https://www.youtube.com/@%EA%B0%84%EB%8B%A8%EA%B2%BD%EC%A0%9C%ED%95%9C%EC%8A%A4%ED%91%BC/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=JLZ_MI5GPJ0",
-      "thumbUrl": "https://i.ytimg.com/vi/JLZ_MI5GPJ0/hqdefault.jpg",
-      "videoTitle": "대표 영상",
-      "publishedAt": ""
+      "videoUrl": "https://www.youtube.com/watch?v=_sqzI2MeQvI",
+      "thumbUrl": "https://i.ytimg.com/vi/_sqzI2MeQvI/hqdefault.jpg",
+      "videoTitle": "미국인들이 비행기표까지 끊고 한국으로 몰려오는 진짜 이유 미국 34.5일 vs 한국 하루, 두 나라 의료 시스템의 결정적 차이",
+      "publishedAt": "2026-07-21T11:15:30+00:00"
     }
   ]
 };
