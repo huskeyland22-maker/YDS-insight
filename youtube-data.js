@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.07.20 21:08 KST (자동 업데이트)",
+  "updatedAt": "2026.07.21 09:10 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=EnK26ZPpfzg",
-      "thumbUrl": "https://i.ytimg.com/vi/EnK26ZPpfzg/hqdefault.jpg",
-      "videoTitle": "2026년 환율 전망 : 8월 이후 반전 올까? [경읽남 254화]",
-      "publishedAt": "2026-07-20T09:05:33+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=0J0wE7bgQc8",
+      "thumbUrl": "https://i.ytimg.com/vi/0J0wE7bgQc8/hqdefault.jpg",
+      "videoTitle": "AI가 일자리를 뺏는 순간, 경제는 성장해도 사람은 밀려납니다 | 50만 특집 경읽남과 토론합시다 | 김대식x이광용 [2편]",
+      "publishedAt": "2026-07-20T21:05:35+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=_RQtP1PJuFk",
-      "thumbUrl": "https://i.ytimg.com/vi/_RQtP1PJuFk/hqdefault.jpg",
-      "videoTitle": "\"신분증 확인이 어려워?\" 부정선거론 불붙인 트럼프 | 이상은의 워싱턴나우",
-      "publishedAt": "2026-07-20T03:35:10+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=S8Ww3ztKA9Y",
+      "thumbUrl": "https://i.ytimg.com/vi/S8Ww3ztKA9Y/hqdefault.jpg",
+      "videoTitle": "[김종학의 뉴욕, 지금-7월21일] 미군 전사자 누적 17명..트럼프는 보복 예고 | 국제유가 지난주 16% 상승 | 알파벳, MSFT, 알리바바, AMD, 아이렌, 루멘텀, 메타",
+      "publishedAt": "2026-07-20T21:17:06+00:00"
     },
     {
       "id": "moneyinside",
