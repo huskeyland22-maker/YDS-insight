@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.07.23 09:13 KST (자동 업데이트)",
+  "updatedAt": "2026.07.23 15:14 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=LkjB69zz2Eg",
-      "thumbUrl": "https://i.ytimg.com/vi/LkjB69zz2Eg/hqdefault.jpg",
-      "videoTitle": "[속보] 데이터센터 자본지출(CaPex) 급증. 잉여현금흐름(FCF) 마이너스 전환. 삼성전자-SK하이닉스 폭등랠리 오나? [즉시분석]",
-      "publishedAt": "2026-07-22T20:54:42+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=3-bVy6O_6hU",
+      "thumbUrl": "https://i.ytimg.com/vi/3-bVy6O_6hU/hqdefault.jpg",
+      "videoTitle": "대표 영상",
+      "publishedAt": ""
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=CfCQVQFkYQI",
-      "thumbUrl": "https://i.ytimg.com/vi/CfCQVQFkYQI/hqdefault.jpg",
-      "videoTitle": "[김종학의 뉴욕, 지금-7월23일] 구글 실적 정리 | 유가 배럴당 90달러 돌파..미 장기금리 급등 | 서비스나우, IBM, 테슬라, 텍사스인스트루먼트, 사우스웨스트항공, AMD",
-      "publishedAt": "2026-07-22T21:20:17+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=s-iNcadU6Ig",
+      "thumbUrl": "https://i.ytimg.com/vi/s-iNcadU6Ig/hqdefault.jpg",
+      "videoTitle": "대표 영상",
+      "publishedAt": ""
     },
     {
       "id": "moneyinside",
@@ -56,10 +56,10 @@ window.YOUTUBE_DATA = {
       "name": "간단경제한스푼",
       "channelUrl": "https://www.youtube.com/channel/UChuu3KaoDnyttfN10GG169Q",
       "latestUrl": "https://www.youtube.com/@%EA%B0%84%EB%8B%A8%EA%B2%BD%EC%A0%9C%ED%95%9C%EC%8A%A4%ED%91%BC/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=-ENk2Nq-KGM",
-      "thumbUrl": "https://i.ytimg.com/vi/-ENk2Nq-KGM/hqdefault.jpg",
-      "videoTitle": "영화 속 홀로그램이 현실로, 일본 15년 독점을 무너트린 공중 홀로그램 부품 국산화 ETRI",
-      "publishedAt": "2026-07-22T11:15:35+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=JLZ_MI5GPJ0",
+      "thumbUrl": "https://i.ytimg.com/vi/JLZ_MI5GPJ0/hqdefault.jpg",
+      "videoTitle": "대표 영상",
+      "publishedAt": ""
     }
   ]
 };
