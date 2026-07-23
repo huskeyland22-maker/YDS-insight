@@ -1,15 +1,15 @@
 {
-  "updatedAt": "2026.07.23 15:14 KST (자동 업데이트)",
+  "updatedAt": "2026.07.23 20:44 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=3-bVy6O_6hU",
-      "thumbUrl": "https://i.ytimg.com/vi/3-bVy6O_6hU/hqdefault.jpg",
-      "videoTitle": "대표 영상",
-      "publishedAt": ""
+      "videoUrl": "https://www.youtube.com/watch?v=zfVbKnjyp_4",
+      "thumbUrl": "https://i.ytimg.com/vi/zfVbKnjyp_4/hqdefault.jpg",
+      "videoTitle": "6·7월 조정의 진짜 이유 5가지, 그리고 8월 유동성 장세 전망 | 김광석의 경제강의",
+      "publishedAt": "2026-07-23T09:05:06+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=s-iNcadU6Ig",
-      "thumbUrl": "https://i.ytimg.com/vi/s-iNcadU6Ig/hqdefault.jpg",
-      "videoTitle": "대표 영상",
-      "publishedAt": ""
+      "videoUrl": "https://www.youtube.com/watch?v=CfCQVQFkYQI",
+      "thumbUrl": "https://i.ytimg.com/vi/CfCQVQFkYQI/hqdefault.jpg",
+      "videoTitle": "[김종학의 뉴욕, 지금-7월23일] 구글 실적 정리 | 유가 배럴당 90달러 돌파..미 장기금리 급등 | 서비스나우, IBM, 테슬라, 텍사스인스트루먼트, 사우스웨스트항공, AMD",
+      "publishedAt": "2026-07-22T21:20:17+00:00"
     },
     {
       "id": "moneyinside",
@@ -56,10 +56,10 @@
       "name": "간단경제한스푼",
       "channelUrl": "https://www.youtube.com/channel/UChuu3KaoDnyttfN10GG169Q",
       "latestUrl": "https://www.youtube.com/@%EA%B0%84%EB%8B%A8%EA%B2%BD%EC%A0%9C%ED%95%9C%EC%8A%A4%ED%91%BC/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=JLZ_MI5GPJ0",
-      "thumbUrl": "https://i.ytimg.com/vi/JLZ_MI5GPJ0/hqdefault.jpg",
-      "videoTitle": "대표 영상",
-      "publishedAt": ""
+      "videoUrl": "https://www.youtube.com/watch?v=eGLbKu9T2N0",
+      "thumbUrl": "https://i.ytimg.com/vi/eGLbKu9T2N0/hqdefault.jpg",
+      "videoTitle": "전기 없이 바닷물이 식수로? 나무 한 조각이 일으킨 대반전",
+      "publishedAt": "2026-07-23T11:30:32+00:00"
     }
   ]
 }
