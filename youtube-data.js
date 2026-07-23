@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.07.22 20:41 KST (자동 업데이트)",
+  "updatedAt": "2026.07.23 09:13 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=Tz-ux4kTWkE",
-      "thumbUrl": "https://i.ytimg.com/vi/Tz-ux4kTWkE/hqdefault.jpg",
-      "videoTitle": "AI와 경쟁할 첫 세대, 지금 아이들에게 필요한 진짜 교육 | 50만 특집 경읽남과 토론합시다 | 김대식x이광용 [4편]",
-      "publishedAt": "2026-07-22T09:05:35+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=LkjB69zz2Eg",
+      "thumbUrl": "https://i.ytimg.com/vi/LkjB69zz2Eg/hqdefault.jpg",
+      "videoTitle": "[속보] 데이터센터 자본지출(CaPex) 급증. 잉여현금흐름(FCF) 마이너스 전환. 삼성전자-SK하이닉스 폭등랠리 오나? [즉시분석]",
+      "publishedAt": "2026-07-22T20:54:42+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=xqg_V0EBvEc",
-      "thumbUrl": "https://i.ytimg.com/vi/xqg_V0EBvEc/hqdefault.jpg",
-      "videoTitle": "트럭 적재 ‘슈퍼로봇’ 덱스터리티 본사 가봤습니다ㅣ김인엽의 실리콘밸리나우",
-      "publishedAt": "2026-07-22T10:00:07+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=CfCQVQFkYQI",
+      "thumbUrl": "https://i.ytimg.com/vi/CfCQVQFkYQI/hqdefault.jpg",
+      "videoTitle": "[김종학의 뉴욕, 지금-7월23일] 구글 실적 정리 | 유가 배럴당 90달러 돌파..미 장기금리 급등 | 서비스나우, IBM, 테슬라, 텍사스인스트루먼트, 사우스웨스트항공, AMD",
+      "publishedAt": "2026-07-22T21:20:17+00:00"
     },
     {
       "id": "moneyinside",
