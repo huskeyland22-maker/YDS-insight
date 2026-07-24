@@ -1,15 +1,15 @@
 {
-  "updatedAt": "2026.07.24 15:07 KST (자동 업데이트)",
+  "updatedAt": "2026.07.24 20:29 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=3-bVy6O_6hU",
-      "thumbUrl": "https://i.ytimg.com/vi/3-bVy6O_6hU/hqdefault.jpg",
-      "videoTitle": "대표 영상",
-      "publishedAt": ""
+      "videoUrl": "https://www.youtube.com/watch?v=l2xTbnjIIDE",
+      "thumbUrl": "https://i.ytimg.com/vi/l2xTbnjIIDE/hqdefault.jpg",
+      "videoTitle": "[속보] SK 주가하락하고, SK텔레콤 상승한 이유.  재산분할금 9440억원 [즉시분석]",
+      "publishedAt": "2026-07-24T08:27:00+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=s-iNcadU6Ig",
-      "thumbUrl": "https://i.ytimg.com/vi/s-iNcadU6Ig/hqdefault.jpg",
-      "videoTitle": "대표 영상",
-      "publishedAt": ""
+      "videoUrl": "https://www.youtube.com/watch?v=Wr8-UEAQgQ8",
+      "thumbUrl": "https://i.ytimg.com/vi/Wr8-UEAQgQ8/hqdefault.jpg",
+      "videoTitle": "[마지막화] 메모리 부족은 시작일 뿐? 돈이 고이는 AI의 병목들  | 빈난새의 빈틈없이월가",
+      "publishedAt": "2026-07-24T01:00:30+00:00"
     },
     {
       "id": "moneyinside",
@@ -56,10 +56,10 @@
       "name": "간단경제한스푼",
       "channelUrl": "https://www.youtube.com/channel/UChuu3KaoDnyttfN10GG169Q",
       "latestUrl": "https://www.youtube.com/@%EA%B0%84%EB%8B%A8%EA%B2%BD%EC%A0%9C%ED%95%9C%EC%8A%A4%ED%91%BC/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=JLZ_MI5GPJ0",
-      "thumbUrl": "https://i.ytimg.com/vi/JLZ_MI5GPJ0/hqdefault.jpg",
-      "videoTitle": "대표 영상",
-      "publishedAt": ""
+      "videoUrl": "https://www.youtube.com/watch?v=9IswmxoufZw",
+      "thumbUrl": "https://i.ytimg.com/vi/9IswmxoufZw/hqdefault.jpg",
+      "videoTitle": "웹툰이 당신 방으로 걸어 나온다 그 문을 세계 최초로 연 것은 바로 대한민국 카이스트",
+      "publishedAt": "2026-07-24T11:15:29+00:00"
     }
   ]
 }
