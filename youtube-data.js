@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.07.23 20:44 KST (자동 업데이트)",
+  "updatedAt": "2026.07.24 09:11 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=zfVbKnjyp_4",
-      "thumbUrl": "https://i.ytimg.com/vi/zfVbKnjyp_4/hqdefault.jpg",
-      "videoTitle": "6·7월 조정의 진짜 이유 5가지, 그리고 8월 유동성 장세 전망 | 김광석의 경제강의",
-      "publishedAt": "2026-07-23T09:05:06+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=DaBsEWyR75M",
+      "thumbUrl": "https://i.ytimg.com/vi/DaBsEWyR75M/hqdefault.jpg",
+      "videoTitle": "[속보] 인텔 15년 만에 최대 매출 증가. 턴어라운드 성공. 데이터센터 및 AI 부문 실적 회복. 파운드리 부문 성장. 삼성전자-SK하이닉스 폭등랠리 오나? [즉시분석]",
+      "publishedAt": "2026-07-23T20:52:07+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=CfCQVQFkYQI",
-      "thumbUrl": "https://i.ytimg.com/vi/CfCQVQFkYQI/hqdefault.jpg",
-      "videoTitle": "[김종학의 뉴욕, 지금-7월23일] 구글 실적 정리 | 유가 배럴당 90달러 돌파..미 장기금리 급등 | 서비스나우, IBM, 테슬라, 텍사스인스트루먼트, 사우스웨스트항공, AMD",
-      "publishedAt": "2026-07-22T21:20:17+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=OvsBgjKg0A8",
+      "thumbUrl": "https://i.ytimg.com/vi/OvsBgjKg0A8/hqdefault.jpg",
+      "videoTitle": "[김종학의 뉴욕, 지금-7월24일] 유가 장중 100달러 돌파..10년물 1년반 만에 최고 | 인텔, 테슬라, 알파벳, 스페이스X, 세레브라스, SK하이닉스, 록히드마틴, 노키아",
+      "publishedAt": "2026-07-23T21:23:42+00:00"
     },
     {
       "id": "moneyinside",
