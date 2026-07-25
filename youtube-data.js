@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.07.25 14:59 KST (자동 업데이트)",
+  "updatedAt": "2026.07.25 20:02 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=3-bVy6O_6hU",
-      "thumbUrl": "https://i.ytimg.com/vi/3-bVy6O_6hU/hqdefault.jpg",
-      "videoTitle": "대표 영상",
-      "publishedAt": ""
+      "videoUrl": "https://www.youtube.com/watch?v=hWlqndRmCxI",
+      "thumbUrl": "https://i.ytimg.com/vi/hWlqndRmCxI/hqdefault.jpg",
+      "videoTitle": "슈퍼개미가 말하는 변동성 장세에서 살아남는 법 | 경읽남과 토론합시다 | 이정윤 세무사 [1편]",
+      "publishedAt": "2026-07-25T09:05:11+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=s-iNcadU6Ig",
-      "thumbUrl": "https://i.ytimg.com/vi/s-iNcadU6Ig/hqdefault.jpg",
-      "videoTitle": "대표 영상",
-      "publishedAt": ""
+      "videoUrl": "https://www.youtube.com/watch?v=EYcKxWoXPxs",
+      "thumbUrl": "https://i.ytimg.com/vi/EYcKxWoXPxs/hqdefault.jpg",
+      "videoTitle": "2분기 실적 좋아도 주가 안 오르는 이유는 | 월가백브리핑",
+      "publishedAt": "2026-07-25T03:00:05+00:00"
     },
     {
       "id": "moneyinside",
@@ -56,10 +56,10 @@ window.YOUTUBE_DATA = {
       "name": "간단경제한스푼",
       "channelUrl": "https://www.youtube.com/channel/UChuu3KaoDnyttfN10GG169Q",
       "latestUrl": "https://www.youtube.com/@%EA%B0%84%EB%8B%A8%EA%B2%BD%EC%A0%9C%ED%95%9C%EC%8A%A4%ED%91%BC/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=JLZ_MI5GPJ0",
-      "thumbUrl": "https://i.ytimg.com/vi/JLZ_MI5GPJ0/hqdefault.jpg",
-      "videoTitle": "대표 영상",
-      "publishedAt": ""
+      "videoUrl": "https://www.youtube.com/watch?v=Kb_9tpCxLSU",
+      "thumbUrl": "https://i.ytimg.com/vi/Kb_9tpCxLSU/hqdefault.jpg",
+      "videoTitle": "7개국이 매달린 인공태양, 1억 도를 견디는 400톤 심장을 한국이 만들었다",
+      "publishedAt": "2026-07-25T10:45:06+00:00"
     }
   ]
 };
