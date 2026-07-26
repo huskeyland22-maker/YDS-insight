@@ -6,28 +6,28 @@
   },
   {
     "symbol": "DOW",
-    "price": 51947.25,
-    "change": 0.46
+    "price": 51711.65,
+    "change": -0.97
   },
   {
     "symbol": "SP500",
-    "price": 7411.98,
-    "change": 0.05
+    "price": 7408.3,
+    "change": -1.21
   },
   {
     "symbol": "NASDAQ",
-    "price": 28128.34,
-    "change": -1.15
+    "price": 28454.81,
+    "change": -1.87
   },
   {
     "symbol": "DXY",
-    "price": 101.47,
-    "change": 0.04
+    "price": 101.43,
+    "change": 0.29
   },
   {
     "symbol": "US10Y",
     "price": 0.47,
-    "change": -0.51
+    "change": 0.99
   },
   {
     "symbol": "VIX",
