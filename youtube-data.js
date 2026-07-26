@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.07.26 15:19 KST (자동 업데이트)",
+  "updatedAt": "2026.07.26 20:12 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=4P9cgTy7iVc",
-      "thumbUrl": "https://i.ytimg.com/vi/4P9cgTy7iVc/hqdefault.jpg",
-      "videoTitle": "어닝 서프라이즈에도 주가가 빠진 이유, 슈퍼개미는 이렇게 봤습니다 | 경읽남과 토론합시다 | 이정윤 세무사 [2편]",
-      "publishedAt": "2026-07-26T03:05:11+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=ZU3fTmbAOpc",
+      "thumbUrl": "https://i.ytimg.com/vi/ZU3fTmbAOpc/hqdefault.jpg",
+      "videoTitle": "[풀버전] 2026 하반기, 돈의 흐름이 완전히 바뀝니다. 환율·금·비트코인·자영업까지 | 채널 50만 특별영상 | 취중전망",
+      "publishedAt": "2026-07-26T09:05:02+00:00"
     },
     {
       "id": "sbs-explained",
@@ -56,10 +56,10 @@ window.YOUTUBE_DATA = {
       "name": "간단경제한스푼",
       "channelUrl": "https://www.youtube.com/channel/UChuu3KaoDnyttfN10GG169Q",
       "latestUrl": "https://www.youtube.com/@%EA%B0%84%EB%8B%A8%EA%B2%BD%EC%A0%9C%ED%95%9C%EC%8A%A4%ED%91%BC/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=Kb_9tpCxLSU",
-      "thumbUrl": "https://i.ytimg.com/vi/Kb_9tpCxLSU/hqdefault.jpg",
-      "videoTitle": "7개국이 매달린 인공태양, 1억 도를 견디는 400톤 심장을 한국이 만들었다",
-      "publishedAt": "2026-07-25T10:45:06+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=Y2xsPUgrSbI",
+      "thumbUrl": "https://i.ytimg.com/vi/Y2xsPUgrSbI/hqdefault.jpg",
+      "videoTitle": "철강 도시 포항이 AI의 심장이 된 이유, 데이터센터가 바꿀 대한민국의 다음 10년. 전 세계 빅테크가 몰려옵니다.",
+      "publishedAt": "2026-07-26T11:00:19+00:00"
     }
   ]
 };
