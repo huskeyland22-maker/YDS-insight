@@ -8,8 +8,8 @@
     "change": 0.46
   },
   "sp500": {
-    "value": 7411.98,
-    "change": 0.05
+    "value": 7408.3,
+    "change": -1.21
   },
   "nasdaq": {
     "value": 28128.34,
@@ -36,8 +36,8 @@
     "change": 854000
   },
   "dxy": {
-    "value": 101.47,
-    "change": 0.04
+    "value": 101.43,
+    "change": 0.29
   },
-  "updatedAt": "2026-07-26T11:12:32.673Z"
+  "updatedAt": "2026-07-26T13:36:28.605Z"
 }

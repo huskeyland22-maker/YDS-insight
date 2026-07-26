@@ -11,8 +11,8 @@
   },
   {
     "symbol": "SP500",
-    "price": 7411.98,
-    "change": 0.05
+    "price": 7408.3,
+    "change": -1.21
   },
   {
     "symbol": "NASDAQ",
@@ -21,8 +21,8 @@
   },
   {
     "symbol": "DXY",
-    "price": 101.47,
-    "change": 0.04
+    "price": 101.43,
+    "change": 0.29
   },
   {
     "symbol": "US10Y",
