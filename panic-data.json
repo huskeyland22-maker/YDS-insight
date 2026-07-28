@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026.07.28 15:06 KST (자동 업데이트 · Python)",
+  "updatedAt": "2026.07.28 20:49 KST (자동 업데이트 · Python)",
   "signalExtras": {
     "t10y2y": null
   },
@@ -21,8 +21,8 @@
     {
       "id": "fng",
       "label": "CNN F&G",
-      "value": "40",
-      "delta": "➡️ 0",
+      "value": "41",
+      "delta": "📈 +1",
       "status": "🟢 중립",
       "tone": "stable",
       "weekTrend": "하락",
@@ -112,15 +112,15 @@
       "id": "vxn",
       "label": "VXN Index",
       "value": "28.65",
-      "delta": "📈 +0.59",
+      "delta": "📈 +0.26",
       "status": "🟡 주의",
       "tone": "watch",
-      "weekTrend": "하락",
+      "weekTrend": "보합",
       "actionGuide": "분할매수",
       "trendUrl": "https://www.cboe.com/tradable_products/vix/vxn/",
       "source": "yahoo",
-      "previousClose": 28.06,
-      "change": 0.59
+      "previousClose": 28.39,
+      "change": 0.26
     }
   ],
   "asOfDateET": "2026-07-27"
