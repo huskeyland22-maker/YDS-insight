@@ -1,5 +1,5 @@
 window.OVERSEAS_DATA = {
-  "updatedAt": "2026.07.28 15:29 KST (자동 업데이트)",
+  "updatedAt": "2026.07.28 19:38 KST (자동 업데이트)",
   "items": [
     {
       "symbol": "SOXL",
@@ -27,7 +27,7 @@ window.OVERSEAS_DATA = {
     }
   ],
   "flow": {
-    "updatedAt": "2026.07.28 15:29 KST (자동 업데이트)",
+    "updatedAt": "2026.07.28 19:38 KST (자동 업데이트)",
     "items": [
       {
         "id": "usdjpy",
@@ -54,7 +54,7 @@ window.OVERSEAS_DATA = {
         "id": "hyg_lqd",
         "label": "신용 체력",
         "value": "HYG/LQD 0.744",
-        "delta": "-0.18%",
+        "delta": "-0.21%",
         "tone": "down"
       },
       {
