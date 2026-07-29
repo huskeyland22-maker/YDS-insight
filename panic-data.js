@@ -1,5 +1,5 @@
 window.PANIC_DATA = {
-  "updatedAt": "2026.07.29 09:10 KST (자동 업데이트 · Python)",
+  "updatedAt": "2026.07.29 15:12 KST (자동 업데이트 · Python)",
   "signalExtras": {
     "t10y2y": null
   },
@@ -7,22 +7,22 @@ window.PANIC_DATA = {
     {
       "id": "vix",
       "label": "VIX Index",
-      "value": "18.21",
-      "delta": "📉 -0.46",
+      "value": "18.67",
+      "delta": "📉 -0.03",
       "status": "🟢 안정",
       "tone": "stable",
-      "weekTrend": "상승",
+      "weekTrend": "하락",
       "actionGuide": "관망",
       "trendUrl": "https://www.macrotrends.net/2603/vix-volatility-index-historical-chart",
       "source": "yahoo",
-      "previousClose": 18.67,
-      "change": -0.46
+      "previousClose": 18.7,
+      "change": -0.03
     },
     {
       "id": "fng",
       "label": "CNN F&G",
-      "value": "38",
-      "delta": "📉 -1",
+      "value": "39",
+      "delta": "➡️ 0",
       "status": "🟢 중립",
       "tone": "stable",
       "weekTrend": "하락",
@@ -45,16 +45,16 @@ window.PANIC_DATA = {
     {
       "id": "skew",
       "label": "SKEW Index",
-      "value": "142.98",
-      "delta": "📉 -3.62",
-      "status": "🟡 주의",
-      "tone": "watch",
+      "value": "146.60",
+      "delta": "📈 +0.65",
+      "status": "🔴 위험",
+      "tone": "alert",
       "weekTrend": "하락",
-      "actionGuide": "분할매수",
+      "actionGuide": "헤지점검",
       "trendUrl": "https://www.cboe.com/tradable_products/vix/vix_historical_data/",
       "source": "yahoo",
-      "previousClose": 146.6,
-      "change": -3.62
+      "previousClose": 145.95,
+      "change": 0.65
     },
     {
       "id": "putcall",
@@ -97,31 +97,31 @@ window.PANIC_DATA = {
     {
       "id": "move",
       "label": "MOVE Index",
-      "value": "76.09",
-      "delta": "📈 +5.21",
+      "value": "70.88",
+      "delta": "📈 +2.72",
       "status": "🟢 안정",
       "tone": "stable",
-      "weekTrend": "하락",
+      "weekTrend": "상승",
       "actionGuide": "관망",
       "trendUrl": "https://fred.stlouisfed.org/series/MOVE",
       "source": "yahoo",
-      "previousClose": 70.88,
-      "change": 5.21
+      "previousClose": 68.16,
+      "change": 2.72
     },
     {
       "id": "vxn",
       "label": "VXN Index",
-      "value": "28.61",
-      "delta": "📉 -0.04",
+      "value": "28.65",
+      "delta": "📈 +0.59",
       "status": "🟡 주의",
       "tone": "watch",
-      "weekTrend": "상승",
+      "weekTrend": "하락",
       "actionGuide": "분할매수",
       "trendUrl": "https://www.cboe.com/tradable_products/vix/vxn/",
       "source": "yahoo",
-      "previousClose": 28.65,
-      "change": -0.04
+      "previousClose": 28.06,
+      "change": 0.59
     }
   ],
-  "asOfDateET": "2026-07-28"
+  "asOfDateET": "2026-07-27"
 };
