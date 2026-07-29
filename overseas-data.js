@@ -1,5 +1,5 @@
 window.OVERSEAS_DATA = {
-  "updatedAt": "2026.07.29 20:52 KST (자동 업데이트)",
+  "updatedAt": "2026.07.29 23:18 KST (자동 업데이트)",
   "items": [
     {
       "symbol": "SOXL",
@@ -27,7 +27,7 @@ window.OVERSEAS_DATA = {
     }
   ],
   "flow": {
-    "updatedAt": "2026.07.29 20:52 KST (자동 업데이트)",
+    "updatedAt": "2026.07.29 23:18 KST (자동 업데이트)",
     "items": [
       {
         "id": "usdjpy",
@@ -39,8 +39,8 @@ window.OVERSEAS_DATA = {
       {
         "id": "dxy",
         "label": "달러 유동성",
-        "value": "Dollar Index 101.51",
-        "delta": "+0.08%",
+        "value": "Dollar Index 101.38",
+        "delta": "-0.09%",
         "tone": "up"
       },
       {
@@ -107,19 +107,19 @@ window.OVERSEAS_DATA = {
         "id": "financials",
         "label": "금융",
         "symbol": "XLF",
-        "p1d": "+1.01%",
+        "p1d": "+1.27%",
         "p1w": "+1.50%",
         "p1m": "+6.42%",
-        "score": 3.6
+        "score": 3.7
       },
       {
         "id": "energy",
         "label": "에너지",
         "symbol": "XLE",
-        "p1d": "-1.35%",
-        "p1w": "-1.59%",
-        "p1m": "+6.93%",
-        "score": 2.3
+        "p1d": "-2.11%",
+        "p1w": "+0.72%",
+        "p1m": "+7.89%",
+        "score": 3.4
       },
       {
         "id": "ai-growth",
@@ -135,15 +135,15 @@ window.OVERSEAS_DATA = {
         "label": "반도체",
         "symbol": "SOXX",
         "p1d": "-4.80%",
-        "p1w": "-1.51%",
-        "p1m": "-17.43%",
-        "score": -9.3
+        "p1w": "-11.08%",
+        "p1m": "-16.69%",
+        "score": -12.3
       }
     ],
     "weeklySummary": [
       "국면: Neutral (58/100) · 중립 비중 유지, 이벤트 확인 후 대응",
       "강세 섹터: 금융(XLF) +1.50% / +6.42%",
-      "약세 섹터: 반도체(SOXX) -1.51% / -17.43%"
+      "약세 섹터: 반도체(SOXX) -11.08% / -16.69%"
     ]
   }
 };
