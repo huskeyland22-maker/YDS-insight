@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.07.30 20:44 KST (자동 업데이트)",
+  "updatedAt": "2026.07.31 09:15 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=XH--EUnegg4",
-      "thumbUrl": "https://i.ytimg.com/vi/XH--EUnegg4/hqdefault.jpg",
-      "videoTitle": "[LIVE] PCE 물가쇼크 오는가? [즉시분석]",
-      "publishedAt": "2026-07-30T11:35:29+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=Z9ZZwjLfGls",
+      "thumbUrl": "https://i.ytimg.com/vi/Z9ZZwjLfGls/hqdefault.jpg",
+      "videoTitle": "[속보] 시총1위 애플, 시총5위 아마존, 데이터센터 자본지출(CaPex) 늘어, 잉여현금흐름 마이너스 전환 [즉시분석]",
+      "publishedAt": "2026-07-30T22:40:20+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=i9Gcc9tUCyM",
-      "thumbUrl": "https://i.ytimg.com/vi/i9Gcc9tUCyM/hqdefault.jpg",
-      "videoTitle": "엔비디아 독주 흔드는 AMD의 반격ㅣ김인엽의 실리콘밸리나우",
-      "publishedAt": "2026-07-30T09:00:04+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=EPmytePgKt0",
+      "thumbUrl": "https://i.ytimg.com/vi/EPmytePgKt0/hqdefault.jpg",
+      "videoTitle": "[김종학의 뉴욕, 지금-7월31일] 반도체 가격 상승 영향..성장률 둔화 | 아마존, 애플, 마이크로소프트, 메타, 퍼스트솔라, 덱스컴, 알파벳, 리비안, 레딧, 코인베이스",
+      "publishedAt": "2026-07-30T21:23:16+00:00"
     },
     {
       "id": "moneyinside",
