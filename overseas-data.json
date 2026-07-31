@@ -1,9 +1,62 @@
 {
-  "updatedAt": "2026.07.31 09:15 KST (자동 업데이트)",
-  "items": [],
+  "updatedAt": "2026.07.31 12:20 KST (자동 업데이트)",
+  "items": [
+    {
+      "symbol": "SOXL",
+      "p1d": "+24.71%",
+      "p1w": "-27.16%",
+      "p1m": "-56.99%",
+      "mdd": "-61.86%",
+      "updatedAt": "2026.07.31"
+    },
+    {
+      "symbol": "TQQQ",
+      "p1d": "+9.61%",
+      "p1w": "-4.52%",
+      "p1m": "-21.85%",
+      "mdd": "-27.42%",
+      "updatedAt": "2026.07.31"
+    },
+    {
+      "symbol": "SSO",
+      "p1d": "+3.27%",
+      "p1w": "+0.75%",
+      "p1m": "-1.90%",
+      "mdd": "-5.53%",
+      "updatedAt": "2026.07.31"
+    }
+  ],
   "flow": {
-    "updatedAt": "2026.07.31 09:15 KST (자동 업데이트)",
+    "updatedAt": "2026.07.31 12:20 KST (자동 업데이트)",
     "items": [
+      {
+        "id": "usdjpy",
+        "label": "엔캐리 압력",
+        "value": "USDJPY 160.78",
+        "delta": "-1.54%",
+        "tone": "up"
+      },
+      {
+        "id": "dxy",
+        "label": "달러 유동성",
+        "value": "Dollar Index 100.18",
+        "delta": "+0.17%",
+        "tone": "up"
+      },
+      {
+        "id": "qqq_tlt",
+        "label": "기관 프록시",
+        "value": "QQQ/TLT 8.255",
+        "delta": "+3.36%",
+        "tone": "up"
+      },
+      {
+        "id": "hyg_lqd",
+        "label": "신용 체력",
+        "value": "HYG/LQD 0.747",
+        "delta": "+0.11%",
+        "tone": "up"
+      },
       {
         "id": "vix_hy",
         "label": "리스크 선호",
@@ -13,9 +66,9 @@
       }
     ],
     "regime": {
-      "score": 58,
-      "state": "Neutral",
-      "action": "중립 비중 유지, 이벤트 확인 후 대응",
+      "score": 90,
+      "state": "Risk-on",
+      "action": "성장/섹터 ETF는 눌림 분할 접근",
       "history": [
         {
           "d": "2026.07.25",
@@ -43,15 +96,54 @@
         },
         {
           "d": "2026.07.31",
-          "s": 58
+          "s": 90
         }
       ]
     }
   },
   "insight": {
-    "sectorStrength": [],
+    "sectorStrength": [
+      {
+        "id": "energy",
+        "label": "에너지",
+        "symbol": "XLE",
+        "p1d": "+0.53%",
+        "p1w": "-0.71%",
+        "p1m": "+11.01%",
+        "score": 4.8
+      },
+      {
+        "id": "financials",
+        "label": "금융",
+        "symbol": "XLF",
+        "p1d": "+0.56%",
+        "p1w": "+2.10%",
+        "p1m": "+6.32%",
+        "score": 3.7
+      },
+      {
+        "id": "ai-growth",
+        "label": "AI/성장",
+        "symbol": "QQQ",
+        "p1d": "+3.30%",
+        "p1w": "-1.22%",
+        "p1m": "-7.18%",
+        "score": -3
+      },
+      {
+        "id": "semiconductor",
+        "label": "반도체",
+        "symbol": "SOXX",
+        "p1d": "+8.50%",
+        "p1w": "-8.47%",
+        "p1m": "-21.26%",
+        "score": -10.8
+      }
+    ],
     "weeklySummary": [
-      "국면: Neutral (58/100) · 중립 비중 유지, 이벤트 확인 후 대응"
+      "국면: Risk-on (90/100) · 성장/섹터 ETF는 눌림 분할 접근",
+      "강세 섹터: 에너지(XLE) -0.71% / +11.01%",
+      "약세 섹터: 반도체(SOXX) -8.47% / -21.26%"
     ]
   }
 }
