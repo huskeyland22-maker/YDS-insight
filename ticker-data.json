@@ -1,17 +1,17 @@
 {
-  "updatedAt": "2026.08.01 09:11 KST (자동 업데이트)",
+  "updatedAt": "2026.08.01 12:18 KST (자동 업데이트)",
   "items": [
     {
       "label": "KOSPI",
-      "value": "5,593.56",
-      "delta": "-1.23%",
-      "direction": "down"
+      "value": "6,595.45",
+      "delta": "+17.91%",
+      "direction": "up"
     },
     {
       "label": "KOSDAQ",
-      "value": "644.78",
-      "delta": "-2.70%",
-      "direction": "down"
+      "value": "719.76",
+      "delta": "+11.63%",
+      "direction": "up"
     },
     {
       "label": "KOSPI200",
