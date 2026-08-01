@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.08.01 15:13 KST (자동 업데이트)",
+  "updatedAt": "2026.08.01 20:09 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=3-bVy6O_6hU",
-      "thumbUrl": "https://i.ytimg.com/vi/3-bVy6O_6hU/hqdefault.jpg",
-      "videoTitle": "대표 영상",
-      "publishedAt": ""
+      "videoUrl": "https://www.youtube.com/watch?v=lTE7eFH9Qtg",
+      "thumbUrl": "https://i.ytimg.com/vi/lTE7eFH9Qtg/hqdefault.jpg",
+      "videoTitle": "[풀버전] 슈퍼개미가 말하는 진짜 매도 원칙 이익은 길게, 손실은 짧게 | 경읽남과 토론합시다 | 이정윤 세무사",
+      "publishedAt": "2026-08-01T09:05:31+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=s-iNcadU6Ig",
-      "thumbUrl": "https://i.ytimg.com/vi/s-iNcadU6Ig/hqdefault.jpg",
-      "videoTitle": "대표 영상",
-      "publishedAt": ""
+      "videoUrl": "https://www.youtube.com/watch?v=UxVSXWFny7A",
+      "thumbUrl": "https://i.ytimg.com/vi/UxVSXWFny7A/hqdefault.jpg",
+      "videoTitle": "레버리지 청산 끝..이 모든 건 시타델의 작전이었던 걸까 | 월가백브리핑",
+      "publishedAt": "2026-08-01T03:00:28+00:00"
     },
     {
       "id": "moneyinside",
@@ -56,10 +56,10 @@ window.YOUTUBE_DATA = {
       "name": "간단경제한스푼",
       "channelUrl": "https://www.youtube.com/channel/UChuu3KaoDnyttfN10GG169Q",
       "latestUrl": "https://www.youtube.com/@%EA%B0%84%EB%8B%A8%EA%B2%BD%EC%A0%9C%ED%95%9C%EC%8A%A4%ED%91%BC/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=JLZ_MI5GPJ0",
-      "thumbUrl": "https://i.ytimg.com/vi/JLZ_MI5GPJ0/hqdefault.jpg",
-      "videoTitle": "대표 영상",
-      "publishedAt": ""
+      "videoUrl": "https://www.youtube.com/watch?v=7cue07HMKvE",
+      "thumbUrl": "https://i.ytimg.com/vi/7cue07HMKvE/hqdefault.jpg",
+      "videoTitle": "드디어 뜬다, 제주 하늘 가른 진짜 하늘택시…2028년 상용화 확정",
+      "publishedAt": "2026-08-01T10:00:29+00:00"
     }
   ]
 };
