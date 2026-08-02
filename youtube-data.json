@@ -1,15 +1,15 @@
 {
-  "updatedAt": "2026.08.02 09:13 KST (자동 업데이트)",
+  "updatedAt": "2026.08.02 15:16 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=vs7F08fswoQ",
-      "thumbUrl": "https://i.ytimg.com/vi/vs7F08fswoQ/hqdefault.jpg",
-      "videoTitle": "[풀버전] 8월 시장이 바뀝니다…변동성·유가·반도체·유동성 장세까지 한 번에 정리 | 경제학교 오프라인 특강",
-      "publishedAt": "2026-08-01T21:05:04+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=j4-eMOUULMY",
+      "thumbUrl": "https://i.ytimg.com/vi/j4-eMOUULMY/hqdefault.jpg",
+      "videoTitle": "사람들은 제품이 아니라 ‘감정’을 삽니다 | 경읽남X만권당TV | 이동철 작가",
+      "publishedAt": "2026-08-02T03:05:27+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=UxVSXWFny7A",
-      "thumbUrl": "https://i.ytimg.com/vi/UxVSXWFny7A/hqdefault.jpg",
-      "videoTitle": "레버리지 청산 끝..이 모든 건 시타델의 작전이었던 걸까 | 월가백브리핑",
-      "publishedAt": "2026-08-01T03:00:28+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=GnvOL9FVbu4",
+      "thumbUrl": "https://i.ytimg.com/vi/GnvOL9FVbu4/hqdefault.jpg",
+      "videoTitle": "심판일까 공일까..워시의 정체는 | 월가백브리핑",
+      "publishedAt": "2026-08-02T03:00:38+00:00"
     },
     {
       "id": "moneyinside",
