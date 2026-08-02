@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.08.01 20:09 KST (자동 업데이트)",
+  "updatedAt": "2026.08.02 09:13 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=lTE7eFH9Qtg",
-      "thumbUrl": "https://i.ytimg.com/vi/lTE7eFH9Qtg/hqdefault.jpg",
-      "videoTitle": "[풀버전] 슈퍼개미가 말하는 진짜 매도 원칙 이익은 길게, 손실은 짧게 | 경읽남과 토론합시다 | 이정윤 세무사",
-      "publishedAt": "2026-08-01T09:05:31+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=vs7F08fswoQ",
+      "thumbUrl": "https://i.ytimg.com/vi/vs7F08fswoQ/hqdefault.jpg",
+      "videoTitle": "[풀버전] 8월 시장이 바뀝니다…변동성·유가·반도체·유동성 장세까지 한 번에 정리 | 경제학교 오프라인 특강",
+      "publishedAt": "2026-08-01T21:05:04+00:00"
     },
     {
       "id": "sbs-explained",
@@ -56,10 +56,10 @@ window.YOUTUBE_DATA = {
       "name": "간단경제한스푼",
       "channelUrl": "https://www.youtube.com/channel/UChuu3KaoDnyttfN10GG169Q",
       "latestUrl": "https://www.youtube.com/@%EA%B0%84%EB%8B%A8%EA%B2%BD%EC%A0%9C%ED%95%9C%EC%8A%A4%ED%91%BC/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=7cue07HMKvE",
-      "thumbUrl": "https://i.ytimg.com/vi/7cue07HMKvE/hqdefault.jpg",
-      "videoTitle": "드디어 뜬다, 제주 하늘 가른 진짜 하늘택시…2028년 상용화 확정",
-      "publishedAt": "2026-08-01T10:00:29+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=K3ixSuB-NUo",
+      "thumbUrl": "https://i.ytimg.com/vi/K3ixSuB-NUo/hqdefault.jpg",
+      "videoTitle": "버려진 땅의 대반전, 세계가 한국의 갯벌을 지키기로 한 이유. 유네스코 세계유산 확대 등재",
+      "publishedAt": "2026-08-01T11:15:07+00:00"
     }
   ]
 };
