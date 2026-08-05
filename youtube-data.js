@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.08.05 15:05 KST (자동 업데이트)",
+  "updatedAt": "2026.08.05 20:50 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=3-bVy6O_6hU",
-      "thumbUrl": "https://i.ytimg.com/vi/3-bVy6O_6hU/hqdefault.jpg",
-      "videoTitle": "대표 영상",
-      "publishedAt": ""
+      "videoUrl": "https://www.youtube.com/watch?v=-8rN-_19Abw",
+      "thumbUrl": "https://i.ytimg.com/vi/-8rN-_19Abw/hqdefault.jpg",
+      "videoTitle": "\"삼성전자가 다시 세계 1등 되는 방법\" 김정호 교수가 말한 AI 반도체의 미래 | 경읽남과 토론합시다 | 김정호 교수님 [2편]",
+      "publishedAt": "2026-08-05T09:05:22+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=s-iNcadU6Ig",
-      "thumbUrl": "https://i.ytimg.com/vi/s-iNcadU6Ig/hqdefault.jpg",
-      "videoTitle": "대표 영상",
-      "publishedAt": ""
+      "videoUrl": "https://www.youtube.com/watch?v=PiW3NKCU0NM",
+      "thumbUrl": "https://i.ytimg.com/vi/PiW3NKCU0NM/hqdefault.jpg",
+      "videoTitle": "[박신영의 개장전요것만-8월4일] 다시 시동 거는 AI랠리 | 월가 \"스페이스X는 떨어지는 칼날\"",
+      "publishedAt": "2026-08-04T14:30:50+00:00"
     },
     {
       "id": "moneyinside",
@@ -56,10 +56,10 @@ window.YOUTUBE_DATA = {
       "name": "간단경제한스푼",
       "channelUrl": "https://www.youtube.com/channel/UChuu3KaoDnyttfN10GG169Q",
       "latestUrl": "https://www.youtube.com/@%EA%B0%84%EB%8B%A8%EA%B2%BD%EC%A0%9C%ED%95%9C%EC%8A%A4%ED%91%BC/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=JLZ_MI5GPJ0",
-      "thumbUrl": "https://i.ytimg.com/vi/JLZ_MI5GPJ0/hqdefault.jpg",
-      "videoTitle": "대표 영상",
-      "publishedAt": ""
+      "videoUrl": "https://www.youtube.com/watch?v=Ip9E3PepASI",
+      "thumbUrl": "https://i.ytimg.com/vi/Ip9E3PepASI/hqdefault.jpg",
+      "videoTitle": "미국인들이 없어서 못 사는 한국차. 웃 돈까지 붙어 팔리는 이유",
+      "publishedAt": "2026-08-05T10:30:22+00:00"
     }
   ]
 };
