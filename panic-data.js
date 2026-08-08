@@ -1,5 +1,5 @@
 window.PANIC_DATA = {
-  "updatedAt": "2026.08.08 08:48 KST (자동 업데이트 · Python)",
+  "updatedAt": "2026.08.08 13:32 KST (자동 업데이트 · Python)",
   "signalExtras": {
     "t10y2y": null
   },
@@ -97,16 +97,16 @@ window.PANIC_DATA = {
     {
       "id": "move",
       "label": "MOVE Index",
-      "value": "72.03",
-      "delta": "📈 +1.15",
+      "value": "70.88",
+      "delta": "📈 +2.72",
       "status": "🟢 안정",
       "tone": "stable",
-      "weekTrend": "하락",
+      "weekTrend": "상승",
       "actionGuide": "관망",
       "trendUrl": "https://fred.stlouisfed.org/series/MOVE",
       "source": "yahoo",
-      "previousClose": 70.88,
-      "change": 1.15
+      "previousClose": 68.16,
+      "change": 2.72
     },
     {
       "id": "vxn",
