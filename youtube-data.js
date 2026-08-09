@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.08.09 13:43 KST (자동 업데이트)",
+  "updatedAt": "2026.08.09 19:21 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=QoHMsEwFSVE",
-      "thumbUrl": "https://i.ytimg.com/vi/QoHMsEwFSVE/hqdefault.jpg",
-      "videoTitle": "중국이 AI 벨류체인 국산화(자립화)를 완성하고 있다. 삼성전자-SK하이닉스에 가져올 파장 [즉시분석]",
-      "publishedAt": "2026-08-09T03:05:29+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=qo59ldjq5xU",
+      "thumbUrl": "https://i.ytimg.com/vi/qo59ldjq5xU/hqdefault.jpg",
+      "videoTitle": "중국이 AI-반도체 벨류체인을 자립화해도, 디플레이션의 늪에서 빠져나오지 못하는 이유 [즉시분석]",
+      "publishedAt": "2026-08-09T09:02:36+00:00"
     },
     {
       "id": "sbs-explained",
@@ -56,10 +56,10 @@ window.YOUTUBE_DATA = {
       "name": "간단경제한스푼",
       "channelUrl": "https://www.youtube.com/channel/UChuu3KaoDnyttfN10GG169Q",
       "latestUrl": "https://www.youtube.com/@%EA%B0%84%EB%8B%A8%EA%B2%BD%EC%A0%9C%ED%95%9C%EC%8A%A4%ED%91%BC/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=qLfzKp14Bhw",
-      "thumbUrl": "https://i.ytimg.com/vi/qLfzKp14Bhw/hqdefault.jpg",
-      "videoTitle": "집도 홈쇼핑서 파는 시대, 건설사가 짓던 집을 이제 공장에서 찍어냅니다. 수백 년 건설판이 무너진 이유",
-      "publishedAt": "2026-08-09T00:00:25+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=wtMWH8QAGKk",
+      "thumbUrl": "https://i.ytimg.com/vi/wtMWH8QAGKk/hqdefault.jpg",
+      "videoTitle": "죽음의 강이 야생동물 천국으로... 한강에서 벌어진 20년의 기적",
+      "publishedAt": "2026-08-09T09:15:08+00:00"
     }
   ]
 };
