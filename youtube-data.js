@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.08.09 19:21 KST (자동 업데이트)",
+  "updatedAt": "2026.08.10 08:47 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=qo59ldjq5xU",
-      "thumbUrl": "https://i.ytimg.com/vi/qo59ldjq5xU/hqdefault.jpg",
-      "videoTitle": "중국이 AI-반도체 벨류체인을 자립화해도, 디플레이션의 늪에서 빠져나오지 못하는 이유 [즉시분석]",
-      "publishedAt": "2026-08-09T09:02:36+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=y7VofMtVzEU",
+      "thumbUrl": "https://i.ytimg.com/vi/y7VofMtVzEU/hqdefault.jpg",
+      "videoTitle": "\"반도체는 끝났을까?\" 반도체 다음 돈 몰릴 곳, '피지컬AI' | 클로즈업 |",
+      "publishedAt": "2026-08-09T21:05:22+00:00"
     },
     {
       "id": "sbs-explained",
@@ -56,10 +56,10 @@ window.YOUTUBE_DATA = {
       "name": "간단경제한스푼",
       "channelUrl": "https://www.youtube.com/channel/UChuu3KaoDnyttfN10GG169Q",
       "latestUrl": "https://www.youtube.com/@%EA%B0%84%EB%8B%A8%EA%B2%BD%EC%A0%9C%ED%95%9C%EC%8A%A4%ED%91%BC/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=wtMWH8QAGKk",
-      "thumbUrl": "https://i.ytimg.com/vi/wtMWH8QAGKk/hqdefault.jpg",
-      "videoTitle": "죽음의 강이 야생동물 천국으로... 한강에서 벌어진 20년의 기적",
-      "publishedAt": "2026-08-09T09:15:08+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=SWy1hT-i_Lo",
+      "thumbUrl": "https://i.ytimg.com/vi/SWy1hT-i_Lo/hqdefault.jpg",
+      "videoTitle": "경유지에서 목적지로, 지구 반대편이 한국에 열광하는 진짜 이유",
+      "publishedAt": "2026-08-09T10:45:15+00:00"
     }
   ]
 };
