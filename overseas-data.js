@@ -1,60 +1,60 @@
 window.OVERSEAS_DATA = {
-  "updatedAt": "2026.08.11 01:56 KST (자동 업데이트)",
+  "updatedAt": "2026.08.11 05:46 KST (자동 업데이트)",
   "items": [
     {
       "symbol": "SOXL",
-      "p1d": "+5.99%",
-      "p1w": "+22.25%",
-      "p1m": "-27.12%",
-      "mdd": "-53.37%",
+      "p1d": "-7.31%",
+      "p1w": "+11.39%",
+      "p1m": "-32.38%",
+      "mdd": "-56.78%",
       "updatedAt": "2026.08.11"
     },
     {
       "symbol": "TQQQ",
-      "p1d": "+3.39%",
-      "p1w": "+15.24%",
-      "p1m": "-2.45%",
-      "mdd": "-14.62%",
+      "p1d": "-0.90%",
+      "p1w": "+8.59%",
+      "p1m": "-4.19%",
+      "mdd": "-15.39%",
       "updatedAt": "2026.08.11"
     },
     {
       "symbol": "SSO",
-      "p1d": "+1.13%",
-      "p1w": "+7.00%",
-      "p1m": "+5.15%",
-      "mdd": "0.00%",
+      "p1d": "-0.03%",
+      "p1w": "+3.95%",
+      "p1m": "+4.28%",
+      "mdd": "-0.03%",
       "updatedAt": "2026.08.11"
     }
   ],
   "flow": {
-    "updatedAt": "2026.08.11 01:56 KST (자동 업데이트)",
+    "updatedAt": "2026.08.11 05:46 KST (자동 업데이트)",
     "items": [
       {
         "id": "usdjpy",
         "label": "엔캐리 압력",
-        "value": "USDJPY 158.41",
-        "delta": "+0.51%",
-        "tone": "up"
+        "value": "USDJPY 159.31",
+        "delta": "+0.90%",
+        "tone": "down"
       },
       {
         "id": "dxy",
         "label": "달러 유동성",
-        "value": "Dollar Index 99.60",
-        "delta": "-0.37%",
+        "value": "Dollar Index 99.82",
+        "delta": "+0.22%",
         "tone": "up"
       },
       {
         "id": "qqq_tlt",
         "label": "기관 프록시",
-        "value": "QQQ/TLT 8.736",
-        "delta": "+0.88%",
+        "value": "QQQ/TLT 8.785",
+        "delta": "+0.55%",
         "tone": "up"
       },
       {
         "id": "hyg_lqd",
         "label": "신용 체력",
-        "value": "HYG/LQD 0.747",
-        "delta": "+0.01%",
+        "value": "HYG/LQD 0.750",
+        "delta": "+0.39%",
         "tone": "up"
       },
       {
@@ -66,7 +66,7 @@ window.OVERSEAS_DATA = {
       }
     ],
     "regime": {
-      "score": 90,
+      "score": 74,
       "state": "Risk-on",
       "action": "성장/섹터 ETF는 눌림 분할 접근",
       "history": [
@@ -96,7 +96,7 @@ window.OVERSEAS_DATA = {
         },
         {
           "d": "2026.08.11",
-          "s": 90
+          "s": 74
         }
       ]
     }
@@ -104,46 +104,46 @@ window.OVERSEAS_DATA = {
   "insight": {
     "sectorStrength": [
       {
-        "id": "ai-growth",
-        "label": "AI/성장",
-        "symbol": "QQQ",
-        "p1d": "+1.17%",
-        "p1w": "+5.09%",
-        "p1m": "-0.03%",
-        "score": 2
+        "id": "energy",
+        "label": "에너지",
+        "symbol": "XLE",
+        "p1d": "+4.66%",
+        "p1w": "+2.36%",
+        "p1m": "+9.26%",
+        "score": 5.9
       },
       {
         "id": "financials",
         "label": "금융",
         "symbol": "XLF",
-        "p1d": "-0.36%",
-        "p1w": "+1.16%",
-        "p1m": "+3.71%",
+        "p1d": "+0.36%",
+        "p1w": "+0.75%",
+        "p1m": "+3.77%",
         "score": 2
       },
       {
-        "id": "energy",
-        "label": "에너지",
-        "symbol": "XLE",
-        "p1d": "-1.13%",
-        "p1w": "-3.44%",
-        "p1m": "+4.89%",
-        "score": 0.8
+        "id": "ai-growth",
+        "label": "AI/성장",
+        "symbol": "QQQ",
+        "p1d": "-0.30%",
+        "p1w": "+2.97%",
+        "p1m": "-0.64%",
+        "score": 0.7
       },
       {
         "id": "semiconductor",
         "label": "반도체",
         "symbol": "SOXX",
-        "p1d": "+2.02%",
-        "p1w": "+7.60%",
-        "p1m": "-6.61%",
-        "score": 0.1
+        "p1d": "-2.55%",
+        "p1w": "+4.28%",
+        "p1m": "-8.94%",
+        "score": -3
       }
     ],
     "weeklySummary": [
-      "국면: Risk-on (90/100) · 성장/섹터 ETF는 눌림 분할 접근",
-      "강세 섹터: AI/성장(QQQ) +5.09% / -0.03%",
-      "약세 섹터: 반도체(SOXX) +7.60% / -6.61%"
+      "국면: Risk-on (74/100) · 성장/섹터 ETF는 눌림 분할 접근",
+      "강세 섹터: 에너지(XLE) +2.36% / +9.26%",
+      "약세 섹터: 반도체(SOXX) +4.28% / -8.94%"
     ]
   }
 };
