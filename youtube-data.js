@@ -1,5 +1,5 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.08.10 08:47 KST (자동 업데이트)",
+  "updatedAt": "2026.08.10 14:02 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=KhSNUEGPtF0",
-      "thumbUrl": "https://i.ytimg.com/vi/KhSNUEGPtF0/hqdefault.jpg",
-      "videoTitle": "[박신영의 개장전요것만-8월7일] 애플 2주 뒤 수익률 상승? | 中 매입 소식에 금값 기지개",
-      "publishedAt": "2026-08-07T14:10:20+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=YnCfaLcs1_g",
+      "thumbUrl": "https://i.ytimg.com/vi/YnCfaLcs1_g/hqdefault.jpg",
+      "videoTitle": "\"이건 조선업 쇼\" 마스가 회의론?ㅣ이상은의 워싱턴나우",
+      "publishedAt": "2026-08-10T03:00:06+00:00"
     },
     {
       "id": "moneyinside",
