@@ -1,7 +1,7 @@
 {
   "vix": {
-    "now": 14.9,
-    "prev": 15.15
+    "now": 15.46,
+    "prev": 14.9
   },
   "putCall": {
     "now": 0.5,
@@ -16,18 +16,18 @@
     "prev": 6.3
   },
   "highYield": {
-    "now": 2.71,
-    "prev": 2.75
+    "now": 2.7,
+    "prev": 2.71
   },
   "liquidity": {
-    "now": -1.58,
-    "prev": -1.51
+    "now": -1.68,
+    "prev": -1.58
   },
-  "dollar": 99.82,
+  "dollar": 99.8,
   "yieldCurve": null,
   "rate": {
     "now": 0.47,
     "prev": 0.47
   },
-  "updatedAt": "2026-08-11 05:46 KST · success"
+  "updatedAt": "2026-08-11 08:51 KST · success"
 }
