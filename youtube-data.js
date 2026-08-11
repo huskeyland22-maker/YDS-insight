@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.08.11 13:47 KST (자동 업데이트)",
+  "updatedAt": "2026.08.11 19:40 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=3-bVy6O_6hU",
-      "thumbUrl": "https://i.ytimg.com/vi/3-bVy6O_6hU/hqdefault.jpg",
-      "videoTitle": "대표 영상",
-      "publishedAt": ""
+      "videoUrl": "https://www.youtube.com/watch?v=92QpMcykUls",
+      "thumbUrl": "https://i.ytimg.com/vi/92QpMcykUls/hqdefault.jpg",
+      "videoTitle": "\"반도체는 아직 끝이 아닙니다\" 삼성전자·SK하이닉스, 지금부터 진짜 시작인 이유 | 경읽남과 토론합시다 | 문현철 작가 [2편]",
+      "publishedAt": "2026-08-11T09:05:25+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=s-iNcadU6Ig",
-      "thumbUrl": "https://i.ytimg.com/vi/s-iNcadU6Ig/hqdefault.jpg",
-      "videoTitle": "대표 영상",
-      "publishedAt": ""
+      "videoUrl": "https://www.youtube.com/watch?v=hJrKapqGj0s",
+      "thumbUrl": "https://i.ytimg.com/vi/hJrKapqGj0s/hqdefault.jpg",
+      "videoTitle": "[박신영의 개장전요것만-8월10일] 머스크가 GPU 싹쓸이 하나..코어위브·네비우스 긴장 | 로켓랩 실적, 주목할 3가지",
+      "publishedAt": "2026-08-10T14:58:58+00:00"
     },
     {
       "id": "moneyinside",
@@ -56,10 +56,10 @@ window.YOUTUBE_DATA = {
       "name": "간단경제한스푼",
       "channelUrl": "https://www.youtube.com/channel/UChuu3KaoDnyttfN10GG169Q",
       "latestUrl": "https://www.youtube.com/@%EA%B0%84%EB%8B%A8%EA%B2%BD%EC%A0%9C%ED%95%9C%EC%8A%A4%ED%91%BC/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=JLZ_MI5GPJ0",
-      "thumbUrl": "https://i.ytimg.com/vi/JLZ_MI5GPJ0/hqdefault.jpg",
-      "videoTitle": "대표 영상",
-      "publishedAt": ""
+      "videoUrl": "https://www.youtube.com/watch?v=hQ1Wonkbgwg",
+      "thumbUrl": "https://i.ytimg.com/vi/hQ1Wonkbgwg/hqdefault.jpg",
+      "videoTitle": "창호지가 CT를 대신한다고? 전통 한지에 숨어 있던 최첨단 의료 기술의 비밀",
+      "publishedAt": "2026-08-11T09:45:24+00:00"
     }
   ]
 };
