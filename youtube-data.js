@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.08.12 19:49 KST (자동 업데이트)",
+  "updatedAt": "2026.08.13 08:59 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=YXAfw0FSTeA",
-      "thumbUrl": "https://i.ytimg.com/vi/YXAfw0FSTeA/hqdefault.jpg",
-      "videoTitle": "[M·AX 4화] 테슬라도, 중국도 뛰고 있다… 한국 자율주행의 마지막 승부수 | 경읽남과 토론합시다 | 전병욱 소장",
-      "publishedAt": "2026-08-12T09:05:39+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=QrA1tVxBUHA",
+      "thumbUrl": "https://i.ytimg.com/vi/QrA1tVxBUHA/hqdefault.jpg",
+      "videoTitle": "\"IMF보다 더 무너졌습니다\" 이제 한국 증시에서 벌어질 일은? | 경읽남과 토론합시다 | 목대균 대표님 [1편]",
+      "publishedAt": "2026-08-12T21:05:28+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=SUDk-BvbCy4",
-      "thumbUrl": "https://i.ytimg.com/vi/SUDk-BvbCy4/hqdefault.jpg",
-      "videoTitle": "[김현석의 브레이킹 뉴스] 7월 소비자물가지수(CPI) 발표! 8월 12일 오후 9시 30분 L.I.V.E",
-      "publishedAt": "2026-08-11T22:10:15+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=s0UZeF1a0Mg",
+      "thumbUrl": "https://i.ytimg.com/vi/s0UZeF1a0Mg/hqdefault.jpg",
+      "videoTitle": "[박신영의 개장전요것만-8월12일] 네비우스, 클라우드 매출 500%↑ | \"스페이스X 두 배 이상 간다\"",
+      "publishedAt": "2026-08-12T14:16:18+00:00"
     },
     {
       "id": "moneyinside",
@@ -56,10 +56,10 @@ window.YOUTUBE_DATA = {
       "name": "간단경제한스푼",
       "channelUrl": "https://www.youtube.com/channel/UChuu3KaoDnyttfN10GG169Q",
       "latestUrl": "https://www.youtube.com/@%EA%B0%84%EB%8B%A8%EA%B2%BD%EC%A0%9C%ED%95%9C%EC%8A%A4%ED%91%BC/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=kS-lIeJWULs",
-      "thumbUrl": "https://i.ytimg.com/vi/kS-lIeJWULs/hqdefault.jpg",
-      "videoTitle": "빌 게이츠가 짐 싸서 한국으로 날아온 진짜 이유 빌 게이츠가 20년 공들인 원자로 미국 아닌 한국 조선소를 찾게된 이유",
-      "publishedAt": "2026-08-12T09:30:09+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=nuuWBKvA06U",
+      "thumbUrl": "https://i.ytimg.com/vi/nuuWBKvA06U/hqdefault.jpg",
+      "videoTitle": "반도체처럼 찍어낸다, 서울대가 세계 최초로 뚫은 6G의 벽",
+      "publishedAt": "2026-08-12T11:00:02+00:00"
     }
   ]
 };
