@@ -1,5 +1,5 @@
 window.OVERSEAS_DATA = {
-  "updatedAt": "2026.08.13 22:18 KST (자동 업데이트)",
+  "updatedAt": "2026.08.14 01:58 KST (자동 업데이트)",
   "items": [
     {
       "symbol": "SOXL",
@@ -7,7 +7,7 @@ window.OVERSEAS_DATA = {
       "p1w": "+7.64%",
       "p1m": "-19.53%",
       "mdd": "-52.73%",
-      "updatedAt": "2026.08.13"
+      "updatedAt": "2026.08.14"
     },
     {
       "symbol": "TQQQ",
@@ -15,7 +15,7 @@ window.OVERSEAS_DATA = {
       "p1w": "+2.42%",
       "p1m": "-0.56%",
       "mdd": "-14.47%",
-      "updatedAt": "2026.08.13"
+      "updatedAt": "2026.08.14"
     },
     {
       "symbol": "SSO",
@@ -23,11 +23,11 @@ window.OVERSEAS_DATA = {
       "p1w": "+0.59%",
       "p1m": "+4.97%",
       "mdd": "-0.20%",
-      "updatedAt": "2026.08.13"
+      "updatedAt": "2026.08.14"
     }
   ],
   "flow": {
-    "updatedAt": "2026.08.13 22:18 KST (자동 업데이트)",
+    "updatedAt": "2026.08.14 01:58 KST (자동 업데이트)",
     "items": [
       {
         "id": "usdjpy",
@@ -71,10 +71,6 @@ window.OVERSEAS_DATA = {
       "action": "성장/섹터 ETF는 눌림 분할 접근",
       "history": [
         {
-          "d": "2026.08.07",
-          "s": 90
-        },
-        {
           "d": "2026.08.08",
           "s": 90
         },
@@ -96,6 +92,10 @@ window.OVERSEAS_DATA = {
         },
         {
           "d": "2026.08.13",
+          "s": 90
+        },
+        {
+          "d": "2026.08.14",
           "s": 90
         }
       ]
