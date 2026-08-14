@@ -1,5 +1,5 @@
 window.TICKER_DATA = {
-  "updatedAt": "2026.08.14 19:47 KST (자동 업데이트)",
+  "updatedAt": "2026.08.14 22:13 KST (자동 업데이트)",
   "items": [
     {
       "label": "KOSPI",
@@ -11,6 +11,12 @@ window.TICKER_DATA = {
       "label": "KOSDAQ",
       "value": "864.65",
       "delta": "+0.38%",
+      "direction": "up"
+    },
+    {
+      "label": "KOSPI200",
+      "value": "1,098.18",
+      "delta": "+1.65%",
       "direction": "up"
     },
     {
@@ -39,7 +45,7 @@ window.TICKER_DATA = {
     },
     {
       "label": "USD/KRW",
-      "value": "1,412.19",
+      "value": "1,412.25",
       "delta": "-0.30%",
       "direction": "down"
     },
