@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.08.15 13:00 KST (자동 업데이트)",
+  "updatedAt": "2026.08.15 19:11 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=2jhAYRj-W6U",
-      "thumbUrl": "https://i.ytimg.com/vi/2jhAYRj-W6U/hqdefault.jpg",
-      "videoTitle": "집값, 세금으로 잡힐까? 2026 부동산 세제개편의 진짜 효과와 부작용 | 경읽남X재정경제부 콜라보",
-      "publishedAt": "2026-08-15T03:05:14+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=UsJS1dpTj2s",
+      "thumbUrl": "https://i.ytimg.com/vi/UsJS1dpTj2s/hqdefault.jpg",
+      "videoTitle": "미중 AI 패권전쟁 : 중국이 미국의 AI-반도체 벨류체인을 추격하고 있다 [즉시분석]",
+      "publishedAt": "2026-08-15T09:05:07+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=s-iNcadU6Ig",
-      "thumbUrl": "https://i.ytimg.com/vi/s-iNcadU6Ig/hqdefault.jpg",
-      "videoTitle": "대표 영상",
-      "publishedAt": ""
+      "videoUrl": "https://www.youtube.com/watch?v=Xl69Bw2qzvM",
+      "thumbUrl": "https://i.ytimg.com/vi/Xl69Bw2qzvM/hqdefault.jpg",
+      "videoTitle": "집 보다 칩 시대 온다? | 170억 베팅한 립부 탄의 확신은 | 월가백브리핑",
+      "publishedAt": "2026-08-15T03:00:23+00:00"
     },
     {
       "id": "moneyinside",
@@ -56,10 +56,10 @@ window.YOUTUBE_DATA = {
       "name": "간단경제한스푼",
       "channelUrl": "https://www.youtube.com/channel/UChuu3KaoDnyttfN10GG169Q",
       "latestUrl": "https://www.youtube.com/@%EA%B0%84%EB%8B%A8%EA%B2%BD%EC%A0%9C%ED%95%9C%EC%8A%A4%ED%91%BC/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=JLZ_MI5GPJ0",
-      "thumbUrl": "https://i.ytimg.com/vi/JLZ_MI5GPJ0/hqdefault.jpg",
-      "videoTitle": "대표 영상",
-      "publishedAt": ""
+      "videoUrl": "https://www.youtube.com/watch?v=opVs40z-GNo",
+      "thumbUrl": "https://i.ytimg.com/vi/opVs40z-GNo/hqdefault.jpg",
+      "videoTitle": "배터리도 전선도 없다, 햇빛만으로 상처 꿰매는 한국 패치",
+      "publishedAt": "2026-08-15T10:00:38+00:00"
     }
   ]
 };
