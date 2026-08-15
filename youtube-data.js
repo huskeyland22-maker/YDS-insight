@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.08.15 08:37 KST (자동 업데이트)",
+  "updatedAt": "2026.08.15 13:00 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=rYzVzdMJbLM",
-      "thumbUrl": "https://i.ytimg.com/vi/rYzVzdMJbLM/hqdefault.jpg",
-      "videoTitle": "[풀버전] \"삼성전자만 사는 이유가 있습니다\" 끝까지 믿는 투자 원칙 | 경읽남과 토론합시다 | 문현철 작가",
-      "publishedAt": "2026-08-14T21:05:31+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=2jhAYRj-W6U",
+      "thumbUrl": "https://i.ytimg.com/vi/2jhAYRj-W6U/hqdefault.jpg",
+      "videoTitle": "집값, 세금으로 잡힐까? 2026 부동산 세제개편의 진짜 효과와 부작용 | 경읽남X재정경제부 콜라보",
+      "publishedAt": "2026-08-15T03:05:14+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=CGNc0PEfhUo",
-      "thumbUrl": "https://i.ytimg.com/vi/CGNc0PEfhUo/hqdefault.jpg",
-      "videoTitle": "[박신영의 개장전요것만-8월14일] CPU 시장 10배 커진다 | 다시 탄력받는 인텔",
-      "publishedAt": "2026-08-14T13:55:52+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=s-iNcadU6Ig",
+      "thumbUrl": "https://i.ytimg.com/vi/s-iNcadU6Ig/hqdefault.jpg",
+      "videoTitle": "대표 영상",
+      "publishedAt": ""
     },
     {
       "id": "moneyinside",
@@ -56,10 +56,10 @@ window.YOUTUBE_DATA = {
       "name": "간단경제한스푼",
       "channelUrl": "https://www.youtube.com/channel/UChuu3KaoDnyttfN10GG169Q",
       "latestUrl": "https://www.youtube.com/@%EA%B0%84%EB%8B%A8%EA%B2%BD%EC%A0%9C%ED%95%9C%EC%8A%A4%ED%91%BC/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=HvZ8tVOvNoE",
-      "thumbUrl": "https://i.ytimg.com/vi/HvZ8tVOvNoE/hqdefault.jpg",
-      "videoTitle": "카메라도 배우도 없었다, 방송·영화를 삼킨 AI의 진짜 정체",
-      "publishedAt": "2026-08-14T11:30:36+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=JLZ_MI5GPJ0",
+      "thumbUrl": "https://i.ytimg.com/vi/JLZ_MI5GPJ0/hqdefault.jpg",
+      "videoTitle": "대표 영상",
+      "publishedAt": ""
     }
   ]
 };
