@@ -1,5 +1,5 @@
 window.OVERSEAS_DATA = {
-  "updatedAt": "2026.08.18 05:30 KST (자동 업데이트)",
+  "updatedAt": "2026.08.18 08:37 KST (자동 업데이트)",
   "items": [
     {
       "symbol": "SOXL",
@@ -27,20 +27,20 @@ window.OVERSEAS_DATA = {
     }
   ],
   "flow": {
-    "updatedAt": "2026.08.18 05:30 KST (자동 업데이트)",
+    "updatedAt": "2026.08.18 08:37 KST (자동 업데이트)",
     "items": [
       {
         "id": "usdjpy",
         "label": "엔캐리 압력",
-        "value": "USDJPY 159.48",
-        "delta": "+0.16%",
+        "value": "USDJPY 159.35",
+        "delta": "+0.08%",
         "tone": "up"
       },
       {
         "id": "dxy",
         "label": "달러 유동성",
-        "value": "Dollar Index 99.59",
-        "delta": "-0.08%",
+        "value": "Dollar Index 99.58",
+        "delta": "-0.09%",
         "tone": "up"
       },
       {
@@ -60,8 +60,8 @@ window.OVERSEAS_DATA = {
       {
         "id": "vix_hy",
         "label": "리스크 선호",
-        "value": "VIX 14.25 / HY 2.71%",
-        "delta": "VIX -0.38% · HY 0.00%",
+        "value": "VIX 15.19 / HY 2.67%",
+        "delta": "VIX +0.94% · HY -0.04%",
         "tone": "up"
       }
     ],
@@ -116,10 +116,10 @@ window.OVERSEAS_DATA = {
         "id": "energy",
         "label": "에너지",
         "symbol": "XLE",
-        "p1d": "+1.10%",
-        "p1w": "+4.00%",
-        "p1m": "+8.51%",
-        "score": 5.5
+        "p1d": "+1.08%",
+        "p1w": "+3.99%",
+        "p1m": "+8.50%",
+        "score": 5.4
       },
       {
         "id": "ai-growth",
@@ -134,16 +134,16 @@ window.OVERSEAS_DATA = {
         "id": "financials",
         "label": "금융",
         "symbol": "XLF",
-        "p1d": "-0.98%",
-        "p1w": "-0.38%",
-        "p1m": "+2.36%",
+        "p1d": "-1.00%",
+        "p1w": "-0.40%",
+        "p1m": "+2.35%",
         "score": 0.7
       }
     ],
     "weeklySummary": [
       "국면: Risk-on (90/100) · 성장/섹터 ETF는 눌림 분할 접근",
       "강세 섹터: 반도체(SOXX) +5.62% / +7.15%",
-      "약세 섹터: 금융(XLF) -0.38% / +2.36%"
+      "약세 섹터: 금융(XLF) -0.40% / +2.35%"
     ]
   }
 };
