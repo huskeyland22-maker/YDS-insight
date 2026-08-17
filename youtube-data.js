@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.08.17 08:34 KST (자동 업데이트)",
+  "updatedAt": "2026.08.17 13:09 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=jLf0dyhETM4",
-      "thumbUrl": "https://i.ytimg.com/vi/jLf0dyhETM4/hqdefault.jpg",
-      "videoTitle": "[모아보기] 중국이 AI 벨류체인 국산화(자립화)를 완성하고 있다. 삼성전자-SK하이닉스에 가져올 파장",
-      "publishedAt": "2026-08-16T21:05:08+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=4_TDVKNN_t8",
+      "thumbUrl": "https://i.ytimg.com/vi/4_TDVKNN_t8/hqdefault.jpg",
+      "videoTitle": "SK하이닉스 과열 시그널 적중… 지금 한국 증시는 어디로 갈까? | 경읽남과 토론합시다 | 이재만 실장 [1편]",
+      "publishedAt": "2026-08-17T03:05:25+00:00"
     },
     {
       "id": "sbs-explained",
