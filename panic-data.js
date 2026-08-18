@@ -1,5 +1,5 @@
 window.PANIC_DATA = {
-  "updatedAt": "2026.08.18 08:37 KST (자동 업데이트 · Python)",
+  "updatedAt": "2026.08.18 13:04 KST (자동 업데이트 · Python)",
   "signalExtras": {
     "t10y2y": null
   },
@@ -45,16 +45,16 @@ window.PANIC_DATA = {
     {
       "id": "skew",
       "label": "SKEW Index",
-      "value": "142.91",
-      "delta": "📈 +4.55",
+      "value": "138.36",
+      "delta": "📈 +3.99",
       "status": "🟡 주의",
       "tone": "watch",
       "weekTrend": "상승",
       "actionGuide": "분할매수",
       "trendUrl": "https://www.cboe.com/tradable_products/vix/vix_historical_data/",
       "source": "yahoo",
-      "previousClose": 138.36,
-      "change": 4.55
+      "previousClose": 134.37,
+      "change": 3.99
     },
     {
       "id": "putcall",
@@ -111,16 +111,16 @@ window.PANIC_DATA = {
     {
       "id": "vxn",
       "label": "VXN Index",
-      "value": "21.51",
-      "delta": "📈 +0.79",
+      "value": "20.72",
+      "delta": "📉 -0.51",
       "status": "🟢 안정",
       "tone": "stable",
       "weekTrend": "하락",
       "actionGuide": "관망",
       "trendUrl": "https://www.cboe.com/tradable_products/vix/vxn/",
       "source": "yahoo",
-      "previousClose": 20.72,
-      "change": 0.79
+      "previousClose": 21.23,
+      "change": -0.51
     }
   ],
   "asOfDateET": "2026-08-17"

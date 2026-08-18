@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.08.18 08:38 KST (자동 업데이트)",
+  "updatedAt": "2026.08.18 13:04 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=C65-y7BcSYY",
-      "thumbUrl": "https://i.ytimg.com/vi/C65-y7BcSYY/hqdefault.jpg",
-      "videoTitle": "미국 증시가 다시 강해지는 이유, 하반기 최대 변수는 이것입니다 | 경읽남과 토론합시다 | 이재만 실장 [2편]",
-      "publishedAt": "2026-08-17T21:05:13+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=3-bVy6O_6hU",
+      "thumbUrl": "https://i.ytimg.com/vi/3-bVy6O_6hU/hqdefault.jpg",
+      "videoTitle": "대표 영상",
+      "publishedAt": ""
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=jYJjcbOQbhA",
-      "thumbUrl": "https://i.ytimg.com/vi/jYJjcbOQbhA/hqdefault.jpg",
-      "videoTitle": "[박신영의 개장전요것만-8월17일] 알파벳 쓸어담는 월가 구루들 | 공포지수 '최저'에도 불안한 시장",
-      "publishedAt": "2026-08-17T14:27:55+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=s-iNcadU6Ig",
+      "thumbUrl": "https://i.ytimg.com/vi/s-iNcadU6Ig/hqdefault.jpg",
+      "videoTitle": "대표 영상",
+      "publishedAt": ""
     },
     {
       "id": "moneyinside",
@@ -56,10 +56,10 @@ window.YOUTUBE_DATA = {
       "name": "간단경제한스푼",
       "channelUrl": "https://www.youtube.com/channel/UChuu3KaoDnyttfN10GG169Q",
       "latestUrl": "https://www.youtube.com/@%EA%B0%84%EB%8B%A8%EA%B2%BD%EC%A0%9C%ED%95%9C%EC%8A%A4%ED%91%BC/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=9eJYOQhDAo4",
-      "thumbUrl": "https://i.ytimg.com/vi/9eJYOQhDAo4/hqdefault.jpg",
-      "videoTitle": "미국 일본이 70년간 숨겨온 우주의 진짜 비밀 소재 없이는 우주도 없다, 대한민국의 도전이 시작됐습니다",
-      "publishedAt": "2026-08-17T11:15:04+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=JLZ_MI5GPJ0",
+      "thumbUrl": "https://i.ytimg.com/vi/JLZ_MI5GPJ0/hqdefault.jpg",
+      "videoTitle": "대표 영상",
+      "publishedAt": ""
     }
   ]
 };
