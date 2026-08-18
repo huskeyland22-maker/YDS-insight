@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.08.18 19:17 KST (자동 업데이트)",
+  "updatedAt": "2026.08.19 08:37 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=2CrXifJgF_Q",
-      "thumbUrl": "https://i.ytimg.com/vi/2CrXifJgF_Q/hqdefault.jpg",
-      "videoTitle": "금리 인상일까? 인하 기대일까? 잭슨홀 최대 관전포인트 | 경읽남과 토론합시다 | 이재만 실장 [3편]",
-      "publishedAt": "2026-08-18T09:05:34+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=Y10GgNBzkNM",
+      "thumbUrl": "https://i.ytimg.com/vi/Y10GgNBzkNM/hqdefault.jpg",
+      "videoTitle": "집값 잡으려다 전세가 터진다? 전문가들이 경고한 부동산 정책의 역설 | 경읽남과 토론합시다 | 3인토론 김대호x홍춘욱x김광석 [1편]",
+      "publishedAt": "2026-08-18T21:05:21+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=jYJjcbOQbhA",
-      "thumbUrl": "https://i.ytimg.com/vi/jYJjcbOQbhA/hqdefault.jpg",
-      "videoTitle": "[박신영의 개장전요것만-8월17일] 알파벳 쓸어담는 월가 구루들 | 공포지수 '최저'에도 불안한 시장",
-      "publishedAt": "2026-08-17T14:27:55+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=OSDOJt27ufc",
+      "thumbUrl": "https://i.ytimg.com/vi/OSDOJt27ufc/hqdefault.jpg",
+      "videoTitle": "[박신영의 개장전요것만-8월18일] 채권자경단, 패닉 버튼 누를까 | 월가 '반도체 조정장 다시 오나' 긴장",
+      "publishedAt": "2026-08-18T14:18:38+00:00"
     },
     {
       "id": "moneyinside",
