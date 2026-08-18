@@ -1,5 +1,5 @@
 window.PANIC_DATA = {
-  "updatedAt": "2026.08.18 13:04 KST (자동 업데이트 · Python)",
+  "updatedAt": "2026.08.18 19:16 KST (자동 업데이트 · Python)",
   "signalExtras": {
     "t10y2y": null
   },
@@ -7,25 +7,25 @@ window.PANIC_DATA = {
     {
       "id": "vix",
       "label": "VIX Index",
-      "value": "15.19",
-      "delta": "📈 +0.94",
+      "value": "14.25",
+      "delta": "📉 -0.38",
       "status": "🟢 안정",
       "tone": "stable",
       "weekTrend": "하락",
       "actionGuide": "관망",
       "trendUrl": "https://www.macrotrends.net/2603/vix-volatility-index-historical-chart",
       "source": "yahoo",
-      "previousClose": 14.25,
-      "change": 0.94
+      "previousClose": 14.63,
+      "change": -0.38
     },
     {
       "id": "fng",
       "label": "CNN F&G",
-      "value": "60",
-      "delta": "📉 -5",
+      "value": "59",
+      "delta": "➡️ 0",
       "status": "🟢 중립",
       "tone": "stable",
-      "weekTrend": "하락",
+      "weekTrend": "보합",
       "actionGuide": "관망",
       "trendUrl": "https://edition.cnn.com/markets/fear-and-greed",
       "source": "cnn"
@@ -97,16 +97,16 @@ window.PANIC_DATA = {
     {
       "id": "move",
       "label": "MOVE Index",
-      "value": "75.63",
-      "delta": "📈 +4.75",
+      "value": "70.88",
+      "delta": "📈 +2.72",
       "status": "🟢 안정",
       "tone": "stable",
-      "weekTrend": "하락",
+      "weekTrend": "상승",
       "actionGuide": "관망",
       "trendUrl": "https://fred.stlouisfed.org/series/MOVE",
       "source": "yahoo",
-      "previousClose": 70.88,
-      "change": 4.75
+      "previousClose": 68.16,
+      "change": 2.72
     },
     {
       "id": "vxn",
@@ -123,5 +123,5 @@ window.PANIC_DATA = {
       "change": -0.51
     }
   ],
-  "asOfDateET": "2026-08-17"
+  "asOfDateET": "2026-08-14"
 };
