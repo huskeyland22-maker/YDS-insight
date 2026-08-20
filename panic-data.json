@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026.08.20 13:04 KST (자동 업데이트 · Python)",
+  "updatedAt": "2026.08.20 19:18 KST (자동 업데이트 · Python)",
   "signalExtras": {
     "t10y2y": null
   },
@@ -21,8 +21,8 @@
     {
       "id": "fng",
       "label": "CNN F&G",
-      "value": "56",
-      "delta": "📈 +2",
+      "value": "57",
+      "delta": "📈 +1",
       "status": "🟢 중립",
       "tone": "stable",
       "weekTrend": "하락",

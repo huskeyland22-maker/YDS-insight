@@ -1,5 +1,5 @@
 window.TICKER_DATA = {
-  "updatedAt": "2026.08.20 17:41 KST (자동 업데이트)",
+  "updatedAt": "2026.08.20 19:18 KST (자동 업데이트)",
   "items": [
     {
       "label": "KOSPI",
@@ -39,8 +39,8 @@ window.TICKER_DATA = {
     },
     {
       "label": "USD/KRW",
-      "value": "1,393.40",
-      "delta": "-1.43%",
+      "value": "1,393.57",
+      "delta": "-1.42%",
       "direction": "down"
     },
     {
