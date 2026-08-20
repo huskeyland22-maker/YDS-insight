@@ -1,16 +1,16 @@
 {
-  "updatedAt": "2026.08.20 13:04 KST (자동 업데이트)",
+  "updatedAt": "2026.08.20 13:40 KST (자동 업데이트)",
   "items": [
     {
       "label": "KOSPI",
-      "value": "6,862.18",
-      "delta": "+6.04%",
+      "value": "6,900.64",
+      "delta": "+6.64%",
       "direction": "up"
     },
     {
       "label": "KOSDAQ",
-      "value": "841.96",
-      "delta": "+2.12%",
+      "value": "842.03",
+      "delta": "+2.13%",
       "direction": "up"
     },
     {
@@ -27,8 +27,8 @@
     },
     {
       "label": "Dollar Index",
-      "value": "98.83",
-      "delta": "-0.82%",
+      "value": "98.82",
+      "delta": "-0.01%",
       "direction": "down"
     },
     {
@@ -39,8 +39,8 @@
     },
     {
       "label": "USD/KRW",
-      "value": "1,393.83",
-      "delta": "-1.40%",
+      "value": "1,394.58",
+      "delta": "-1.34%",
       "direction": "down"
     },
     {
