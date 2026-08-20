@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.08.20 19:18 KST (자동 업데이트)",
+  "updatedAt": "2026.08.21 08:41 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=81YW5JFpoWs",
-      "thumbUrl": "https://i.ytimg.com/vi/81YW5JFpoWs/hqdefault.jpg",
-      "videoTitle": "집값 잡기 99% 가능 vs 99% 불가능…전문가 3인 제대로 붙었다 | 경읽남과 토론합시다 | 3자토론 김인만x한문도x김광석 [1편]",
-      "publishedAt": "2026-08-20T09:05:12+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=s0rYhgvjhK0",
+      "thumbUrl": "https://i.ytimg.com/vi/s0rYhgvjhK0/hqdefault.jpg",
+      "videoTitle": "“전세대출이 집값 폭등의 출발지입니다” 부동산 전문가가 지목한 진짜 원인 | 경읽남과 토론합시다 | 3자토론 김인만x한문도x김광석 [2편]",
+      "publishedAt": "2026-08-20T21:05:24+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=ZegvKEBDjfI",
-      "thumbUrl": "https://i.ytimg.com/vi/ZegvKEBDjfI/hqdefault.jpg",
-      "videoTitle": "3년 뒤 디즈니의 미래가 보이는 곳, 팬 페스티벌 D23 다녀왔습니다 | 김인엽의 실리콘밸리나우",
-      "publishedAt": "2026-08-20T09:00:22+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=sRzFMAcQT9o",
+      "thumbUrl": "https://i.ytimg.com/vi/sRzFMAcQT9o/hqdefault.jpg",
+      "videoTitle": "[박신영의 개장전요것만-8월20일] 국채금리 도로 상승, 시장에 패배한 베선트..암호화폐의 부활?",
+      "publishedAt": "2026-08-20T14:02:12+00:00"
     },
     {
       "id": "moneyinside",
