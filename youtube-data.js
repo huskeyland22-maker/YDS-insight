@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.08.21 19:18 KST (자동 업데이트)",
+  "updatedAt": "2026.08.22 08:40 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=KD63i7FuXyM",
-      "thumbUrl": "https://i.ytimg.com/vi/KD63i7FuXyM/hqdefault.jpg",
-      "videoTitle": "“이대로 통과되면 전세대란 옵니다” 집값 잡으려다 세입자가 직격탄 맞는다 | 경읽남과 토론합시다 | 3자토론 김인만x한문도x김광석 [3편]",
-      "publishedAt": "2026-08-21T09:05:05+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=UW-KwU8J4GU",
+      "thumbUrl": "https://i.ytimg.com/vi/UW-KwU8J4GU/hqdefault.jpg",
+      "videoTitle": "[풀버전] 집값 잡으려다 전세가 터진다? 전문가들이 경고한 부동산 정책의 역설 | 경읽남과 토론합시다 | 3자토론 김대호x홍춘욱x김광석",
+      "publishedAt": "2026-08-21T21:05:40+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=6is5_Lkl8Mc",
-      "thumbUrl": "https://i.ytimg.com/vi/6is5_Lkl8Mc/hqdefault.jpg",
-      "videoTitle": "미국 재무부의 바이백이 가져올 후폭풍을 짚어봤습니다 | 박신영의 월가아나토미",
-      "publishedAt": "2026-08-21T01:00:39+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=yOdCFYNu4ww",
+      "thumbUrl": "https://i.ytimg.com/vi/yOdCFYNu4ww/hqdefault.jpg",
+      "videoTitle": "[박신영의 개장전요것만-8월21일] 횡비디아, 월가는 실적보다 이것에 더 관심 | 날개 단 비트코인, 미국 증시 떠받쳐",
+      "publishedAt": "2026-08-21T14:02:49+00:00"
     },
     {
       "id": "moneyinside",
