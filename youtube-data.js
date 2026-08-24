@@ -1,5 +1,5 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.08.24 08:36 KST (자동 업데이트)",
+  "updatedAt": "2026.08.24 13:12 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=gxf4FKDZC-A",
-      "thumbUrl": "https://i.ytimg.com/vi/gxf4FKDZC-A/hqdefault.jpg",
-      "videoTitle": "다음 주 엔비디아 실적 발표보다 중요한 것은 | 월가백브리핑",
-      "publishedAt": "2026-08-23T03:00:30+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=rTF7RDjJNSM",
+      "thumbUrl": "https://i.ytimg.com/vi/rTF7RDjJNSM/hqdefault.jpg",
+      "videoTitle": "\"중국 막으려면 관세장벽 필수\"..바이든 정부 핵심인사의 고백ㅣ이상은의 워싱턴나우",
+      "publishedAt": "2026-08-24T03:00:28+00:00"
     },
     {
       "id": "moneyinside",
