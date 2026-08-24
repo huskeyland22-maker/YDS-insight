@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.08.24 19:27 KST (자동 업데이트)",
+  "updatedAt": "2026.08.25 08:36 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=DlNuVj7W7iY",
-      "thumbUrl": "https://i.ytimg.com/vi/DlNuVj7W7iY/hqdefault.jpg",
-      "videoTitle": "[잭슨홀 미팅 프리뷰] 증시 방향 바꿀까? 장기채 금리 떨어질까? 워시의 잭슨홀 연설 중대 시험대 [경읽남 259화]",
-      "publishedAt": "2026-08-24T09:05:26+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=JXefmUdPpEI",
+      "thumbUrl": "https://i.ytimg.com/vi/JXefmUdPpEI/hqdefault.jpg",
+      "videoTitle": "“중간선거 전 어떻게든 돈 풀 겁니다” 미국 증시 다시 한 번 폭발하나 | 경읽남과 토론합시다 | 3자토론 김대호x홍춘욱x김광석 [5편]",
+      "publishedAt": "2026-08-24T21:05:18+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=rTF7RDjJNSM",
-      "thumbUrl": "https://i.ytimg.com/vi/rTF7RDjJNSM/hqdefault.jpg",
-      "videoTitle": "\"중국 막으려면 관세장벽 필수\"..바이든 정부 핵심인사의 고백ㅣ이상은의 워싱턴나우",
-      "publishedAt": "2026-08-24T03:00:28+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=GuaJkS0PT4o",
+      "thumbUrl": "https://i.ytimg.com/vi/GuaJkS0PT4o/hqdefault.jpg",
+      "videoTitle": "[박신영의 개장전요것만-8월24일] 팔란티어의 저주 현실로? | 오픈웨이트AI 토큰량 급증 | 위협받는 앤트로픽",
+      "publishedAt": "2026-08-24T14:42:41+00:00"
     },
     {
       "id": "moneyinside",
