@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026.08.26 05:32 KST (자동 업데이트)",
+  "updatedAt": "2026.08.26 08:39 KST (자동 업데이트)",
   "items": [
     {
       "label": "KOSPI",
@@ -27,8 +27,8 @@
     },
     {
       "label": "Dollar Index",
-      "value": "98.88",
-      "delta": "-0.12%",
+      "value": "98.90",
+      "delta": "-0.10%",
       "direction": "down"
     },
     {
@@ -39,8 +39,8 @@
     },
     {
       "label": "USD/KRW",
-      "value": "1,382.09",
-      "delta": "+0.10%",
+      "value": "1,381.96",
+      "delta": "+0.09%",
       "direction": "up"
     },
     {
