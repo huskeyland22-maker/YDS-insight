@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.08.26 08:39 KST (자동 업데이트)",
+  "updatedAt": "2026.08.26 13:08 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=BZqoglrx10w",
-      "thumbUrl": "https://i.ytimg.com/vi/BZqoglrx10w/hqdefault.jpg",
-      "videoTitle": "“오라클 디폴트 나면 회사채 시장 붕괴됩니다” AI 버블의 진짜 위험 신호 | 경읽남과 토론합시다 | 3자토론 김대호x홍춘욱x김광석 [6편]",
-      "publishedAt": "2026-08-25T21:05:20+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=3-bVy6O_6hU",
+      "thumbUrl": "https://i.ytimg.com/vi/3-bVy6O_6hU/hqdefault.jpg",
+      "videoTitle": "대표 영상",
+      "publishedAt": ""
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=07gk3cngKx0",
-      "thumbUrl": "https://i.ytimg.com/vi/07gk3cngKx0/hqdefault.jpg",
-      "videoTitle": "[김현석의 브레이킹 뉴스] 7월 PCE(개인소비지출) 물가 발표! 8월 26일 오후 9시30분 L.I.V.E",
-      "publishedAt": "2026-08-25T22:13:21+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=s-iNcadU6Ig",
+      "thumbUrl": "https://i.ytimg.com/vi/s-iNcadU6Ig/hqdefault.jpg",
+      "videoTitle": "대표 영상",
+      "publishedAt": ""
     },
     {
       "id": "moneyinside",
@@ -56,10 +56,10 @@ window.YOUTUBE_DATA = {
       "name": "간단경제한스푼",
       "channelUrl": "https://www.youtube.com/channel/UChuu3KaoDnyttfN10GG169Q",
       "latestUrl": "https://www.youtube.com/@%EA%B0%84%EB%8B%A8%EA%B2%BD%EC%A0%9C%ED%95%9C%EC%8A%A4%ED%91%BC/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=9eJYOQhDAo4",
-      "thumbUrl": "https://i.ytimg.com/vi/9eJYOQhDAo4/hqdefault.jpg",
-      "videoTitle": "미국 일본이 70년간 숨겨온 우주의 진짜 비밀 소재 없이는 우주도 없다, 대한민국의 도전이 시작됐습니다",
-      "publishedAt": "2026-08-17T11:15:04+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=JLZ_MI5GPJ0",
+      "thumbUrl": "https://i.ytimg.com/vi/JLZ_MI5GPJ0/hqdefault.jpg",
+      "videoTitle": "대표 영상",
+      "publishedAt": ""
     }
   ]
 };
