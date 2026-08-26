@@ -1,61 +1,61 @@
 {
-  "updatedAt": "2026.08.27 01:49 KST (자동 업데이트)",
+  "updatedAt": "2026.08.27 07:54 KST (자동 업데이트)",
   "items": [
     {
       "symbol": "SOXL",
-      "p1d": "+4.06%",
-      "p1w": "-10.40%",
-      "p1m": "-9.74%",
-      "mdd": "-61.54%",
+      "p1d": "+0.80%",
+      "p1w": "-3.43%",
+      "p1m": "+6.45%",
+      "mdd": "-61.23%",
       "updatedAt": "2026.08.27"
     },
     {
       "symbol": "TQQQ",
-      "p1d": "+1.83%",
-      "p1w": "-3.12%",
-      "p1m": "+10.84%",
-      "mdd": "-19.43%",
+      "p1d": "+0.28%",
+      "p1w": "-2.21%",
+      "p1m": "+14.47%",
+      "mdd": "-19.20%",
       "updatedAt": "2026.08.27"
     },
     {
       "symbol": "SSO",
-      "p1d": "+0.60%",
-      "p1w": "-0.54%",
-      "p1m": "+6.77%",
-      "mdd": "-3.27%",
+      "p1d": "+0.01%",
+      "p1w": "-0.92%",
+      "p1m": "+6.34%",
+      "mdd": "-3.25%",
       "updatedAt": "2026.08.27"
     }
   ],
   "flow": {
-    "updatedAt": "2026.08.27 01:49 KST (자동 업데이트)",
+    "updatedAt": "2026.08.27 07:54 KST (자동 업데이트)",
     "items": [
       {
         "id": "usdjpy",
         "label": "엔캐리 압력",
-        "value": "USDJPY 159.14",
-        "delta": "+0.15%",
+        "value": "USDJPY 159.25",
+        "delta": "+0.02%",
         "tone": "up"
       },
       {
         "id": "dxy",
         "label": "달러 유동성",
-        "value": "Dollar Index 98.92",
-        "delta": "-0.08%",
+        "value": "Dollar Index 99.13",
+        "delta": "+0.22%",
         "tone": "up"
       },
       {
         "id": "qqq_tlt",
         "label": "기관 프록시",
-        "value": "QQQ/TLT 8.515",
-        "delta": "-0.47%",
-        "tone": "down"
+        "value": "QQQ/TLT 8.540",
+        "delta": "+0.30%",
+        "tone": "up"
       },
       {
         "id": "hyg_lqd",
         "label": "신용 체력",
         "value": "HYG/LQD 0.748",
-        "delta": "-0.36%",
-        "tone": "down"
+        "delta": "+0.05%",
+        "tone": "up"
       },
       {
         "id": "vix_hy",
@@ -66,9 +66,9 @@
       }
     ],
     "regime": {
-      "score": 58,
-      "state": "Neutral",
-      "action": "중립 비중 유지, 이벤트 확인 후 대응",
+      "score": 90,
+      "state": "Risk-on",
+      "action": "성장/섹터 ETF는 눌림 분할 접근",
       "history": [
         {
           "d": "2026.08.21",
@@ -96,7 +96,7 @@
         },
         {
           "d": "2026.08.27",
-          "s": 58
+          "s": 90
         }
       ]
     }
@@ -104,46 +104,46 @@
   "insight": {
     "sectorStrength": [
       {
-        "id": "ai-growth",
-        "label": "AI/성장",
-        "symbol": "QQQ",
-        "p1d": "+0.62%",
-        "p1w": "-0.95%",
-        "p1m": "+4.19%",
-        "score": 1.7
-      },
-      {
         "id": "energy",
         "label": "에너지",
         "symbol": "XLE",
-        "p1d": "-1.66%",
-        "p1w": "-2.54%",
-        "p1m": "+6.34%",
-        "score": 1.6
+        "p1d": "+0.60%",
+        "p1w": "-1.81%",
+        "p1m": "+8.44%",
+        "score": 3.3
       },
       {
-        "id": "financials",
-        "label": "금융",
-        "symbol": "XLF",
-        "p1d": "+0.15%",
-        "p1w": "+0.81%",
-        "p1m": "+2.51%",
-        "score": 1.4
+        "id": "ai-growth",
+        "label": "AI/성장",
+        "symbol": "QQQ",
+        "p1d": "+0.09%",
+        "p1w": "-0.66%",
+        "p1m": "+5.31%",
+        "score": 2.2
       },
       {
         "id": "semiconductor",
         "label": "반도체",
         "symbol": "SOXX",
-        "p1d": "+1.56%",
-        "p1w": "-3.26%",
-        "p1m": "-0.42%",
-        "score": -1
+        "p1d": "+0.26%",
+        "p1w": "-0.82%",
+        "p1m": "+4.87%",
+        "score": 2
+      },
+      {
+        "id": "financials",
+        "label": "금융",
+        "symbol": "XLF",
+        "p1d": "-0.09%",
+        "p1w": "+1.36%",
+        "p1m": "+1.15%",
+        "score": 1
       }
     ],
     "weeklySummary": [
-      "국면: Neutral (58/100) · 중립 비중 유지, 이벤트 확인 후 대응",
-      "강세 섹터: AI/성장(QQQ) -0.95% / +4.19%",
-      "약세 섹터: 반도체(SOXX) -3.26% / -0.42%"
+      "국면: Risk-on (90/100) · 성장/섹터 ETF는 눌림 분할 접근",
+      "강세 섹터: 에너지(XLE) -1.81% / +8.44%",
+      "약세 섹터: 금융(XLF) +1.36% / +1.15%"
     ]
   }
 }
