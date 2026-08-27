@@ -1,5 +1,5 @@
 window.OVERSEAS_DATA = {
-  "updatedAt": "2026.08.27 23:23 KST (자동 업데이트)",
+  "updatedAt": "2026.08.28 05:02 KST (자동 업데이트)",
   "items": [
     {
       "symbol": "SOXL",
@@ -7,7 +7,7 @@ window.OVERSEAS_DATA = {
       "p1w": "-3.43%",
       "p1m": "+6.45%",
       "mdd": "-61.23%",
-      "updatedAt": "2026.08.27"
+      "updatedAt": "2026.08.28"
     },
     {
       "symbol": "TQQQ",
@@ -15,7 +15,7 @@ window.OVERSEAS_DATA = {
       "p1w": "-2.21%",
       "p1m": "+14.47%",
       "mdd": "-19.20%",
-      "updatedAt": "2026.08.27"
+      "updatedAt": "2026.08.28"
     },
     {
       "symbol": "SSO",
@@ -23,17 +23,17 @@ window.OVERSEAS_DATA = {
       "p1w": "-0.92%",
       "p1m": "+6.34%",
       "mdd": "-3.25%",
-      "updatedAt": "2026.08.27"
+      "updatedAt": "2026.08.28"
     }
   ],
   "flow": {
-    "updatedAt": "2026.08.27 23:23 KST (자동 업데이트)",
+    "updatedAt": "2026.08.28 05:02 KST (자동 업데이트)",
     "items": [
       {
         "id": "usdjpy",
         "label": "엔캐리 압력",
-        "value": "USDJPY 159.22",
-        "delta": "+0.05%",
+        "value": "USDJPY 159.26",
+        "delta": "+0.02%",
         "tone": "up"
       },
       {
@@ -71,10 +71,6 @@ window.OVERSEAS_DATA = {
       "action": "성장/섹터 ETF는 눌림 분할 접근",
       "history": [
         {
-          "d": "2026.08.21",
-          "s": 90
-        },
-        {
           "d": "2026.08.22",
           "s": 90
         },
@@ -96,6 +92,10 @@ window.OVERSEAS_DATA = {
         },
         {
           "d": "2026.08.27",
+          "s": 90
+        },
+        {
+          "d": "2026.08.28",
           "s": 90
         }
       ]
