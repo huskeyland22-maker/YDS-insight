@@ -1,5 +1,5 @@
 window.OVERSEAS_DATA = {
-  "updatedAt": "2026.08.28 19:22 KST (자동 업데이트)",
+  "updatedAt": "2026.08.29 00:32 KST (자동 업데이트)",
   "items": [
     {
       "symbol": "SOXL",
@@ -7,7 +7,7 @@ window.OVERSEAS_DATA = {
       "p1w": "+0.69%",
       "p1m": "+33.76%",
       "mdd": "-59.09%",
-      "updatedAt": "2026.08.28"
+      "updatedAt": "2026.08.29"
     },
     {
       "symbol": "TQQQ",
@@ -15,7 +15,7 @@ window.OVERSEAS_DATA = {
       "p1w": "+4.00%",
       "p1m": "+26.93%",
       "mdd": "-15.96%",
-      "updatedAt": "2026.08.28"
+      "updatedAt": "2026.08.29"
     },
     {
       "symbol": "SSO",
@@ -23,11 +23,11 @@ window.OVERSEAS_DATA = {
       "p1w": "+2.10%",
       "p1m": "+11.03%",
       "mdd": "-2.00%",
-      "updatedAt": "2026.08.28"
+      "updatedAt": "2026.08.29"
     }
   ],
   "flow": {
-    "updatedAt": "2026.08.28 19:22 KST (자동 업데이트)",
+    "updatedAt": "2026.08.29 00:32 KST (자동 업데이트)",
     "items": [
       {
         "id": "usdjpy",
@@ -60,8 +60,8 @@ window.OVERSEAS_DATA = {
       {
         "id": "vix_hy",
         "label": "리스크 선호",
-        "value": "VIX 14.51 / HY 2.67%",
-        "delta": "VIX -0.70% · HY -0.03%",
+        "value": "VIX 14.51 / HY 2.63%",
+        "delta": "VIX -0.70% · HY -0.04%",
         "tone": "up"
       }
     ],
@@ -70,10 +70,6 @@ window.OVERSEAS_DATA = {
       "state": "Risk-on",
       "action": "성장/섹터 ETF는 눌림 분할 접근",
       "history": [
-        {
-          "d": "2026.08.22",
-          "s": 90
-        },
         {
           "d": "2026.08.23",
           "s": 90
@@ -96,6 +92,10 @@ window.OVERSEAS_DATA = {
         },
         {
           "d": "2026.08.28",
+          "s": 90
+        },
+        {
+          "d": "2026.08.29",
           "s": 90
         }
       ]
