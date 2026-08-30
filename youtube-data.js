@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.08.29 23:46 KST (자동 업데이트)",
+  "updatedAt": "2026.08.30 10:16 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=Mm4TJnonp5E",
-      "thumbUrl": "https://i.ytimg.com/vi/Mm4TJnonp5E/hqdefault.jpg",
-      "videoTitle": "[5편] “공급만 늘리면 전 인구가 서울에 살 겁니다” 집값 못 잡는 진짜 이유 | 경읽남과 토론합시다 | 3자토론 김인만x한문도x김광석",
-      "publishedAt": "2026-08-29T09:05:13+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=YD4YVsx9AYY",
+      "thumbUrl": "https://i.ytimg.com/vi/YD4YVsx9AYY/hqdefault.jpg",
+      "videoTitle": "[풀버전] “국채금리·달러 찍어 누르는 진짜 이유” 결국 돈은 AI로 몰립니다 | 김광석의 경제학교 | 8월 월간특강",
+      "publishedAt": "2026-08-29T21:05:27+00:00"
     },
     {
       "id": "sbs-explained",
