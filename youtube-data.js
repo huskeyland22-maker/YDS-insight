@@ -1,5 +1,5 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.08.31 18:57 KST (자동 업데이트)",
+  "updatedAt": "2026.09.01 02:17 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=fnaYkJ-XqII",
-      "thumbUrl": "https://i.ytimg.com/vi/fnaYkJ-XqII/hqdefault.jpg",
-      "videoTitle": "서로 한방씩 주고받은 베선트 vs 워시…싸울 일만 남았다ㅣ이상은의 워싱턴나우",
-      "publishedAt": "2026-08-31T03:00:45+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=W2wopIRG_oM",
+      "thumbUrl": "https://i.ytimg.com/vi/W2wopIRG_oM/hqdefault.jpg",
+      "videoTitle": "[박신영의 개장전요것만-8월31일] 세일즈포스, 9~10월에 더 오른다? | 엔비디아, GPU 덜 팔려도 괜찮은 이유",
+      "publishedAt": "2026-08-31T14:30:41+00:00"
     },
     {
       "id": "moneyinside",
