@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.08.31 10:23 KST (자동 업데이트)",
+  "updatedAt": "2026.08.31 18:57 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=0CJQouj-qEo",
-      "thumbUrl": "https://i.ytimg.com/vi/0CJQouj-qEo/hqdefault.jpg",
-      "videoTitle": "“미국 부채폭탄 터지기 전 돈은 더 풀립니다” 이후 세계질서 바꿀 3가지 시나리오 | 김광석의 북리뷰 | 트럼프 이후의 질서 [3편]",
-      "publishedAt": "2026-08-30T21:05:03+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=infJR6ivA3I",
+      "thumbUrl": "https://i.ytimg.com/vi/infJR6ivA3I/hqdefault.jpg",
+      "videoTitle": "중간선거 작전에 들어간다. 바이백, TGA 잔고, 스테이블코인으로 유동성 풀리나? [경읽남 260화]",
+      "publishedAt": "2026-08-31T09:05:04+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=fQLpvhNjAN4",
-      "thumbUrl": "https://i.ytimg.com/vi/fQLpvhNjAN4/hqdefault.jpg",
-      "videoTitle": "믿었던 미국에 '크랙'이 생겼다ㅣ김현석의 월나우 위클리Q",
-      "publishedAt": "2026-08-30T21:30:15+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=fnaYkJ-XqII",
+      "thumbUrl": "https://i.ytimg.com/vi/fnaYkJ-XqII/hqdefault.jpg",
+      "videoTitle": "서로 한방씩 주고받은 베선트 vs 워시…싸울 일만 남았다ㅣ이상은의 워싱턴나우",
+      "publishedAt": "2026-08-31T03:00:45+00:00"
     },
     {
       "id": "moneyinside",

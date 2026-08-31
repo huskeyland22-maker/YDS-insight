@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026.08.31 13:36 KST (자동 업데이트)",
+  "updatedAt": "2026.08.31 18:57 KST (자동 업데이트)",
   "items": [
     {
       "symbol": "SOXL",
@@ -27,21 +27,21 @@
     }
   ],
   "flow": {
-    "updatedAt": "2026.08.31 13:36 KST (자동 업데이트)",
+    "updatedAt": "2026.08.31 18:57 KST (자동 업데이트)",
     "items": [
       {
         "id": "usdjpy",
         "label": "엔캐리 압력",
-        "value": "USDJPY 159.79",
-        "delta": "+0.30%",
+        "value": "USDJPY 159.32",
+        "delta": "+0.04%",
         "tone": "up"
       },
       {
         "id": "dxy",
         "label": "달러 유동성",
-        "value": "Dollar Index 99.60",
-        "delta": "-0.10%",
-        "tone": "up"
+        "value": "Dollar Index 99.70",
+        "delta": "+0.54%",
+        "tone": "down"
       },
       {
         "id": "qqq_tlt",
@@ -66,9 +66,9 @@
       }
     ],
     "regime": {
-      "score": 74,
-      "state": "Risk-on",
-      "action": "성장/섹터 ETF는 눌림 분할 접근",
+      "score": 58,
+      "state": "Neutral",
+      "action": "중립 비중 유지, 이벤트 확인 후 대응",
       "history": [
         {
           "d": "2026.08.25",
@@ -96,7 +96,7 @@
         },
         {
           "d": "2026.08.31",
-          "s": 74
+          "s": 58
         }
       ]
     }
@@ -141,7 +141,7 @@
       }
     ],
     "weeklySummary": [
-      "국면: Risk-on (74/100) · 성장/섹터 ETF는 눌림 분할 접근",
+      "국면: Neutral (58/100) · 중립 비중 유지, 이벤트 확인 후 대응",
       "강세 섹터: 에너지(XLE) -1.51% / +6.31%",
       "약세 섹터: 반도체(SOXX) -2.20% / +0.81%"
     ]
