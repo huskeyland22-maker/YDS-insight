@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026.09.01 17:48 KST (자동 업데이트)",
+  "updatedAt": "2026.09.01 22:16 KST (자동 업데이트)",
   "items": [
     {
       "symbol": "SOXL",
@@ -19,15 +19,15 @@
     },
     {
       "symbol": "SSO",
-      "p1d": "-0.64%",
-      "p1w": "+0.80%",
-      "p1m": "+4.93%",
+      "p1d": "-1.10%",
+      "p1w": "+0.20%",
+      "p1m": "+6.34%",
       "mdd": "-3.08%",
       "updatedAt": "2026.09.01"
     }
   ],
   "flow": {
-    "updatedAt": "2026.09.01 17:48 KST (자동 업데이트)",
+    "updatedAt": "2026.09.01 22:16 KST (자동 업데이트)",
     "items": [
       {
         "id": "usdjpy",
@@ -40,21 +40,21 @@
         "id": "dxy",
         "label": "달러 유동성",
         "value": "Dollar Index 99.43",
-        "delta": "-0.27%",
+        "delta": "+0.27%",
         "tone": "up"
       },
       {
         "id": "qqq_tlt",
         "label": "기관 프록시",
         "value": "QQQ/TLT 8.686",
-        "delta": "+0.48%",
+        "delta": "+0.79%",
         "tone": "up"
       },
       {
         "id": "hyg_lqd",
         "label": "신용 체력",
         "value": "HYG/LQD 0.751",
-        "delta": "+0.22%",
+        "delta": "+0.41%",
         "tone": "up"
       },
       {
