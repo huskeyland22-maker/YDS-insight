@@ -1,5 +1,5 @@
 window.OVERSEAS_DATA = {
-  "updatedAt": "2026.09.01 22:16 KST (자동 업데이트)",
+  "updatedAt": "2026.09.01 23:22 KST (자동 업데이트)",
   "items": [
     {
       "symbol": "SOXL",
@@ -27,7 +27,7 @@ window.OVERSEAS_DATA = {
     }
   ],
   "flow": {
-    "updatedAt": "2026.09.01 22:16 KST (자동 업데이트)",
+    "updatedAt": "2026.09.01 23:22 KST (자동 업데이트)",
     "items": [
       {
         "id": "usdjpy",
@@ -61,7 +61,7 @@ window.OVERSEAS_DATA = {
         "id": "vix_hy",
         "label": "리스크 선호",
         "value": "VIX 14.92 / HY 2.60%",
-        "delta": "VIX +0.49% · HY -0.03%",
+        "delta": "VIX +0.41% · HY -0.03%",
         "tone": "up"
       }
     ],
