@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.09.02 17:01 KST (자동 업데이트)",
+  "updatedAt": "2026.09.02 22:56 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=7MTukCB3xFU",
-      "thumbUrl": "https://i.ytimg.com/vi/7MTukCB3xFU/hqdefault.jpg",
-      "videoTitle": "[3편] “2027년 세계경제는 반등, 한국은 주춤합니다” 돈의 흐름 뒤집을 거대한 변수 | 클로즈업 | 2027년 경제전망 강의",
-      "publishedAt": "2026-09-01T21:05:04+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=iqkWoeJGUoo",
+      "thumbUrl": "https://i.ytimg.com/vi/iqkWoeJGUoo/hqdefault.jpg",
+      "videoTitle": "“AI 거품? 실물경제는 안 꺼집니다” 2027년 반도체 슈퍼사이클이 더 강해지는 이유 | 클로즈업 | 2027 경제전망 강의 [4편]",
+      "publishedAt": "2026-09-02T09:05:31+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=wPkt3_elsgM",
-      "thumbUrl": "https://i.ytimg.com/vi/wPkt3_elsgM/hqdefault.jpg",
-      "videoTitle": "한국이 기술 강국 미국과 일본을 제치고 AI 메모리 패권을 쥐게 된 배경이 무엇인지 알아보았습니다 | 박신영의 월가아나토미",
-      "publishedAt": "2026-09-02T01:00:08+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=jXfjM9VPK78",
+      "thumbUrl": "https://i.ytimg.com/vi/jXfjM9VPK78/hqdefault.jpg",
+      "videoTitle": "[박신영의 개장전요것만-9월2일] 미국장 개장전 알아야 할 특징주 및 주요 뉴스",
+      "publishedAt": "2026-09-02T12:54:13+00:00"
     },
     {
       "id": "moneyinside",
