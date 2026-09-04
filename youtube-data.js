@@ -1,5 +1,5 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.09.04 09:59 KST (자동 업데이트)",
+  "updatedAt": "2026.09.04 17:06 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
@@ -8,7 +8,7 @@ window.YOUTUBE_DATA = {
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
       "videoUrl": "https://www.youtube.com/watch?v=veCa3LF-5cw",
       "thumbUrl": "https://i.ytimg.com/vi/veCa3LF-5cw/hqdefault.jpg",
-      "videoTitle": "트럼프가 국채금리를 일부러 누른다? 지금 시작되는 ‘유동성 폭발 작전’ | 경읽남과 토론합시다 | 3자토론 문홍철x성상현x김광석 [2편]",
+      "videoTitle": "[2편] 트럼프가 국채금리를 일부러 누른다? 지금 시작되는 ‘유동성 폭발 작전’ | 경읽남과 토론합시다 | 3자토론 문홍철x성상현x김광석",
       "publishedAt": "2026-09-03T21:05:03+00:00"
     },
     {
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=0PcrGAduHKk",
-      "thumbUrl": "https://i.ytimg.com/vi/0PcrGAduHKk/hqdefault.jpg",
-      "videoTitle": "[김현석의 브레이킹 뉴스] 8월 고용보고서 발표! 9월 4일 오후 9시 30분 L.I.V.E",
-      "publishedAt": "2026-09-03T22:13:45+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=22ecgqFvM_o",
+      "thumbUrl": "https://i.ytimg.com/vi/22ecgqFvM_o/hqdefault.jpg",
+      "videoTitle": "각 국이 미국에서 금을 옮기고, 전체 금 매입을 늘리는 이유를살펴봤습니다 | 박신영의 월가아나토미",
+      "publishedAt": "2026-09-04T01:00:21+00:00"
     },
     {
       "id": "moneyinside",
