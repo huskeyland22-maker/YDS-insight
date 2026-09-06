@@ -1,5 +1,5 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.09.06 09:59 KST (자동 업데이트)",
+  "updatedAt": "2026.09.06 17:01 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=mTiybxvCZpI",
-      "thumbUrl": "https://i.ytimg.com/vi/mTiybxvCZpI/hqdefault.jpg",
-      "videoTitle": "트럼프가 저금리에 집착하는 이유",
-      "publishedAt": "2026-09-05T12:00:02+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=Xuh70VQwd_k",
+      "thumbUrl": "https://i.ytimg.com/vi/Xuh70VQwd_k/hqdefault.jpg",
+      "videoTitle": "반도체 모멘텀은 꺾어진 걸까 | 월가백브리핑",
+      "publishedAt": "2026-09-06T03:00:27+00:00"
     },
     {
       "id": "moneyinside",
