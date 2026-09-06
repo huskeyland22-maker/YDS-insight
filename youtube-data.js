@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.09.05 22:05 KST (자동 업데이트)",
+  "updatedAt": "2026.09.06 09:59 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=Wdus_v_hm7U",
-      "thumbUrl": "https://i.ytimg.com/vi/Wdus_v_hm7U/hqdefault.jpg",
-      "videoTitle": "[풀버전] “중간선거 전 어떻게든 돈 풀 겁니다” 미국 증시 다시 한 번 폭발하나 | 경읽남과 토론합시다 | 3자토론 김대호x홍춘욱x김광석",
-      "publishedAt": "2026-09-04T21:05:23+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=cF1lywJ1AlI",
+      "thumbUrl": "https://i.ytimg.com/vi/cF1lywJ1AlI/hqdefault.jpg",
+      "videoTitle": "[풀버전] “중간선거 앞두고 돈 대대적으로 풉니다” 미국 증시 다시 달릴까 | 클로즈업 | 2027년 경제전망 강의",
+      "publishedAt": "2026-09-05T21:05:19+00:00"
     },
     {
       "id": "sbs-explained",
