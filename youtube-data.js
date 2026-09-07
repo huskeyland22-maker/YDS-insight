@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.09.07 17:31 KST (자동 업데이트)",
+  "updatedAt": "2026.09.08 00:22 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=E2QuP2e85gk",
-      "thumbUrl": "https://i.ytimg.com/vi/E2QuP2e85gk/hqdefault.jpg",
-      "videoTitle": "“2년 뒤 AI 충격 옵니다” 대체되는 사람과 살아남는 사람의 결정적 차이| 김광석의 북리뷰 | 문해 내공 [1편]",
-      "publishedAt": "2026-09-06T21:05:35+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=jodjEqxChgc",
+      "thumbUrl": "https://i.ytimg.com/vi/jodjEqxChgc/hqdefault.jpg",
+      "videoTitle": "[생방송] 9월 금리인상 오는가? [즉시분석]",
+      "publishedAt": "2026-09-07T14:32:14+00:00"
     },
     {
       "id": "sbs-explained",
