@@ -1,5 +1,5 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.09.07 10:02 KST (자동 업데이트)",
+  "updatedAt": "2026.09.07 17:31 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=NP16rOD8A5g",
-      "thumbUrl": "https://i.ytimg.com/vi/NP16rOD8A5g/hqdefault.jpg",
-      "videoTitle": "중간선거 앞둔 증시 향방은ㅣ김현석의 월나우 위클리Q",
-      "publishedAt": "2026-09-06T21:30:17+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=yNMf5kdMPUA",
+      "thumbUrl": "https://i.ytimg.com/vi/yNMf5kdMPUA/hqdefault.jpg",
+      "videoTitle": "경제학과 싸우는 트럼프 예스맨이 된 관료들 | 이상은의 워싱턴나우",
+      "publishedAt": "2026-09-07T03:00:21+00:00"
     },
     {
       "id": "moneyinside",

@@ -1,5 +1,5 @@
 window.OVERSEAS_DATA = {
-  "updatedAt": "2026.09.07 12:42 KST (자동 업데이트)",
+  "updatedAt": "2026.09.07 17:31 KST (자동 업데이트)",
   "items": [
     {
       "symbol": "SOXL",
@@ -27,20 +27,20 @@ window.OVERSEAS_DATA = {
     }
   ],
   "flow": {
-    "updatedAt": "2026.09.07 12:42 KST (자동 업데이트)",
+    "updatedAt": "2026.09.07 17:31 KST (자동 업데이트)",
     "items": [
       {
         "id": "usdjpy",
         "label": "엔캐리 압력",
-        "value": "USDJPY 156.12",
-        "delta": "+0.29%",
+        "value": "USDJPY 155.66",
+        "delta": "-2.05%",
         "tone": "up"
       },
       {
         "id": "dxy",
         "label": "달러 유동성",
-        "value": "Dollar Index 99.17",
-        "delta": "+0.01%",
+        "value": "Dollar Index 99.16",
+        "delta": "+0.16%",
         "tone": "up"
       },
       {
