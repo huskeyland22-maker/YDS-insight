@@ -1,7 +1,7 @@
 {
   "vix": {
-    "now": 14.53,
-    "prev": 14.32
+    "now": 15.3,
+    "prev": 14.53
   },
   "putCall": {
     "now": 0.5,
@@ -29,5 +29,5 @@
     "now": 0.48,
     "prev": 0.48
   },
-  "updatedAt": "2026-09-08 07:38 KST · success"
+  "updatedAt": "2026-09-08 10:13 KST · success"
 }

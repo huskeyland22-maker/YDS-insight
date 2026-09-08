@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.09.08 00:22 KST (자동 업데이트)",
+  "updatedAt": "2026.09.08 10:13 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=jodjEqxChgc",
-      "thumbUrl": "https://i.ytimg.com/vi/jodjEqxChgc/hqdefault.jpg",
-      "videoTitle": "[생방송] 9월 금리인상 오는가? [즉시분석]",
-      "publishedAt": "2026-09-07T14:32:14+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=X8mIcPVOPxI",
+      "thumbUrl": "https://i.ytimg.com/vi/X8mIcPVOPxI/hqdefault.jpg",
+      "videoTitle": "“AI가 일자리를 다 뺏는 게 아닙니다” 앞으로 사라지는 일과 더 중요해지는 일 | 김광석의 북리뷰 | 문해 내공 [2편]",
+      "publishedAt": "2026-09-07T21:05:12+00:00"
     },
     {
       "id": "sbs-explained",
