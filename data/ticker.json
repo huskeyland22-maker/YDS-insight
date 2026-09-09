@@ -6,7 +6,7 @@
   },
   {
     "symbol": "DOW",
-    "price": 52786.07,
+    "price": 52786.1,
     "change": -1.18
   },
   {
@@ -21,8 +21,8 @@
   },
   {
     "symbol": "DXY",
-    "price": 98.8,
-    "change": -0.37
+    "price": 98.76,
+    "change": -0.08
   },
   {
     "symbol": "US10Y",
