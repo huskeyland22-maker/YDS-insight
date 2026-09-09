@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.09.08 22:58 KST (자동 업데이트)",
+  "updatedAt": "2026.09.09 10:15 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=0K9jddt7bT8",
-      "thumbUrl": "https://i.ytimg.com/vi/0K9jddt7bT8/hqdefault.jpg",
-      "videoTitle": "“미국 부채 40조 달러보다 더 무서운 것” 재정적자가 아니라 ‘재정흑자’를 봐야 하는 이유 | 경읽남과 토론합시다 | 3자토론 문홍철x성상현x김광석 [4편]",
-      "publishedAt": "2026-09-08T09:05:02+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=vfSIZSuxCnk",
+      "thumbUrl": "https://i.ytimg.com/vi/vfSIZSuxCnk/hqdefault.jpg",
+      "videoTitle": "“AI를 쓰는 사람과 AI에게 쓰이는 사람” 결국 ‘이 능력’에서 갈립니다 | 김광석의 북리뷰 | 문해 내공 [3편]",
+      "publishedAt": "2026-09-08T21:05:40+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=f0E-q837jfo",
-      "thumbUrl": "https://i.ytimg.com/vi/f0E-q837jfo/hqdefault.jpg",
-      "videoTitle": "[박신영의 개장전요것만-9월8일] 앤트로픽 IPO, 하락 위험 종목은..오라클의 시간 오나",
-      "publishedAt": "2026-09-08T12:54:28+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=wjSGdpRMs1I",
+      "thumbUrl": "https://i.ytimg.com/vi/wjSGdpRMs1I/hqdefault.jpg",
+      "videoTitle": "AI 투자에 소극적인 모습을 보여온 애플이 지금과 같은 시장 지배력을 지킬 수 있을지 살펴봤습니다 | 박신영의 월가아나토미",
+      "publishedAt": "2026-09-09T01:00:27+00:00"
     },
     {
       "id": "moneyinside",
