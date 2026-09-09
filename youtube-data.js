@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.09.09 17:17 KST (자동 업데이트)",
+  "updatedAt": "2026.09.09 23:00 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=vfSIZSuxCnk",
-      "thumbUrl": "https://i.ytimg.com/vi/vfSIZSuxCnk/hqdefault.jpg",
-      "videoTitle": "“AI를 쓰는 사람과 AI에게 쓰이는 사람” 결국 ‘이 능력’에서 갈립니다 | 김광석의 북리뷰 | 문해 내공 [3편]",
-      "publishedAt": "2026-09-08T21:05:40+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=kZDBrIbe3q0",
+      "thumbUrl": "https://i.ytimg.com/vi/kZDBrIbe3q0/hqdefault.jpg",
+      "videoTitle": "“금리인상 겁먹은 시장이 틀렸습니다?” 케빈 워시 발언의 진짜 의미는 정반대였다 | 경읽남과 토론합시다 | 3자토론 문홍철x성상현x김광석 [5편]",
+      "publishedAt": "2026-09-09T09:05:37+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=wjSGdpRMs1I",
-      "thumbUrl": "https://i.ytimg.com/vi/wjSGdpRMs1I/hqdefault.jpg",
-      "videoTitle": "AI 투자에 소극적인 모습을 보여온 애플이 지금과 같은 시장 지배력을 지킬 수 있을지 살펴봤습니다 | 박신영의 월가아나토미",
-      "publishedAt": "2026-09-09T01:00:27+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=kTalKXMeX8k",
+      "thumbUrl": "https://i.ytimg.com/vi/kTalKXMeX8k/hqdefault.jpg",
+      "videoTitle": "[박신영의 개장전요것만-9월9일] 미국장 개장전 알아야 할 특징주 및 주요 뉴스",
+      "publishedAt": "2026-09-09T12:59:52+00:00"
     },
     {
       "id": "moneyinside",
