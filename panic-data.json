@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026.09.11 22:55 KST (자동 업데이트 · Python)",
+  "updatedAt": "2026.09.12 10:07 KST (자동 업데이트 · Python)",
   "signalExtras": {
     "t10y2y": null
   },
@@ -7,22 +7,22 @@
     {
       "id": "vix",
       "label": "VIX Index",
-      "value": "17.84",
-      "delta": "📈 +1.38",
+      "value": "15.84",
+      "delta": "📉 -2.00",
       "status": "🟢 안정",
       "tone": "stable",
       "weekTrend": "상승",
       "actionGuide": "관망",
       "trendUrl": "https://www.macrotrends.net/2603/vix-volatility-index-historical-chart",
       "source": "yahoo",
-      "previousClose": 16.46,
-      "change": 1.38
+      "previousClose": 17.84,
+      "change": -2
     },
     {
       "id": "fng",
       "label": "CNN F&G",
-      "value": "36",
-      "delta": "📈 +3",
+      "value": "33",
+      "delta": "➡️ 0",
       "status": "🟢 중립",
       "tone": "stable",
       "weekTrend": "하락",
@@ -45,16 +45,16 @@
     {
       "id": "skew",
       "label": "SKEW Index",
-      "value": "147.02",
-      "delta": "📉 -2.23",
+      "value": "154.49",
+      "delta": "📈 +7.47",
       "status": "🔴 위험",
       "tone": "alert",
       "weekTrend": "상승",
       "actionGuide": "헤지점검",
       "trendUrl": "https://www.cboe.com/tradable_products/vix/vix_historical_data/",
       "source": "yahoo",
-      "previousClose": 149.25,
-      "change": -2.23
+      "previousClose": 147.02,
+      "change": 7.47
     },
     {
       "id": "putcall",
@@ -71,16 +71,16 @@
     {
       "id": "hy",
       "label": "HY 금리 스프레드",
-      "value": "2.71%",
-      "delta": "📈 +0.04%",
+      "value": "2.70%",
+      "delta": "📉 -0.01%",
       "status": "🟢 안정",
       "tone": "stable",
       "weekTrend": "보합",
       "actionGuide": "관망",
       "trendUrl": "https://fred.stlouisfed.org/series/BAMLH0A0HYM2",
       "source": "fred",
-      "previousClose": 2.67,
-      "change": 0.04
+      "previousClose": 2.71,
+      "change": -0.01
     },
     {
       "id": "gsbb",
@@ -97,31 +97,31 @@
     {
       "id": "move",
       "label": "MOVE Index",
-      "value": "82.09",
-      "delta": "📈 +5.35",
+      "value": "82.21",
+      "delta": "📈 +0.12",
       "status": "🟢 안정",
       "tone": "stable",
       "weekTrend": "상승",
       "actionGuide": "관망",
       "trendUrl": "https://fred.stlouisfed.org/series/MOVE",
       "source": "yahoo",
-      "previousClose": 76.74,
-      "change": 5.35
+      "previousClose": 82.09,
+      "change": 0.12
     },
     {
       "id": "vxn",
       "label": "VXN Index",
-      "value": "23.33",
-      "delta": "📈 +1.01",
+      "value": "21.02",
+      "delta": "📉 -2.31",
       "status": "🟢 안정",
       "tone": "stable",
       "weekTrend": "상승",
       "actionGuide": "관망",
       "trendUrl": "https://www.cboe.com/tradable_products/vix/vxn/",
       "source": "yahoo",
-      "previousClose": 22.32,
-      "change": 1.01
+      "previousClose": 23.33,
+      "change": -2.31
     }
   ],
-  "asOfDateET": "2026-09-10"
+  "asOfDateET": "2026-09-11"
 }
