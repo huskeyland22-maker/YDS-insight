@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.09.13 17:27 KST (자동 업데이트)",
+  "updatedAt": "2026.09.13 22:57 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=ykDx5wr4gVQ",
-      "thumbUrl": "https://i.ytimg.com/vi/ykDx5wr4gVQ/hqdefault.jpg",
-      "videoTitle": "[풀버전] 코스피 9300에서 무너진 이유, 행동경제학적 관점 | 김광석의 북리뷰 | 어떻게 경제학을 사랑하지 않을 수 있을까?",
-      "publishedAt": "2026-09-12T21:05:15+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=W3pIlHYsa1E",
+      "thumbUrl": "https://i.ytimg.com/vi/W3pIlHYsa1E/hqdefault.jpg",
+      "videoTitle": "[생방송] 9월 FOMC '금리인상 급선회' 사실인가? [즉시분석]",
+      "publishedAt": "2026-09-13T12:06:36+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=XpubPMH0dA4",
-      "thumbUrl": "https://i.ytimg.com/vi/XpubPMH0dA4/hqdefault.jpg",
-      "videoTitle": "AI 인류 멸망론은 진짜일까 | 월가백브리핑",
-      "publishedAt": "2026-09-13T03:00:16+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=tA-XCLAHdy8",
+      "thumbUrl": "https://i.ytimg.com/vi/tA-XCLAHdy8/hqdefault.jpg",
+      "videoTitle": "본전까지 딱 1년",
+      "publishedAt": "2026-09-13T12:00:14+00:00"
     },
     {
       "id": "moneyinside",
