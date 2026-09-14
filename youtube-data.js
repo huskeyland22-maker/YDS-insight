@@ -1,5 +1,5 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.09.14 18:08 KST (자동 업데이트)",
+  "updatedAt": "2026.09.15 01:02 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
@@ -8,7 +8,7 @@ window.YOUTUBE_DATA = {
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
       "videoUrl": "https://www.youtube.com/watch?v=Kz9rZvMD9V4",
       "thumbUrl": "https://i.ytimg.com/vi/Kz9rZvMD9V4/hqdefault.jpg",
-      "videoTitle": "2027년 주도주가 바뀐다. 돈은 쏠리는 곳은? [경읽남 262화]",
+      "videoTitle": "2027년 주도주가 바뀐다. 돈이 쏠리는 곳은? [경읽남 262화]",
       "publishedAt": "2026-09-14T09:05:11+00:00"
     },
     {
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=Jl-igqPuNGY",
-      "thumbUrl": "https://i.ytimg.com/vi/Jl-igqPuNGY/hqdefault.jpg",
-      "videoTitle": "경유 정제마진 사상최대…불붙은 기름값ㅣ이상은의 워싱턴나우",
-      "publishedAt": "2026-09-14T03:00:10+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=2PWISwIlt_4",
+      "thumbUrl": "https://i.ytimg.com/vi/2PWISwIlt_4/hqdefault.jpg",
+      "videoTitle": "[박신영의 개장전요것만-9월14일] 월가에 몰려온 3개의 폭풍",
+      "publishedAt": "2026-09-14T14:15:34+00:00"
     },
     {
       "id": "moneyinside",
