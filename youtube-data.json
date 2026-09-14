@@ -1,15 +1,15 @@
 {
-  "updatedAt": "2026.09.13 22:57 KST (자동 업데이트)",
+  "updatedAt": "2026.09.14 10:06 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=W3pIlHYsa1E",
-      "thumbUrl": "https://i.ytimg.com/vi/W3pIlHYsa1E/hqdefault.jpg",
-      "videoTitle": "[생방송] 9월 FOMC '금리인상 급선회' 사실인가? [즉시분석]",
-      "publishedAt": "2026-09-13T12:06:36+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=2VDXzCz9s5E",
+      "thumbUrl": "https://i.ytimg.com/vi/2VDXzCz9s5E/hqdefault.jpg",
+      "videoTitle": "금리인상 Vs 금리동결. 통화정책 메커니즘으로 본 9월 FOMC [즉시분석]",
+      "publishedAt": "2026-09-13T21:05:27+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=tA-XCLAHdy8",
-      "thumbUrl": "https://i.ytimg.com/vi/tA-XCLAHdy8/hqdefault.jpg",
-      "videoTitle": "본전까지 딱 1년",
-      "publishedAt": "2026-09-13T12:00:14+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=gi_VcRUycUo",
+      "thumbUrl": "https://i.ytimg.com/vi/gi_VcRUycUo/hqdefault.jpg",
+      "videoTitle": "고금리에도 반도체주는 괜찮을까ㅣ김현석의 월나우 위클리Q",
+      "publishedAt": "2026-09-13T21:30:01+00:00"
     },
     {
       "id": "moneyinside",
