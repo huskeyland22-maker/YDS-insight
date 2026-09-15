@@ -1,4 +1,4 @@
-﻿﻿window.SITE_VERSION = "20260915-0850";
+﻿﻿window.SITE_VERSION = "20260915-1317";
 
 (function () {
   function isExternalHref(url) {
