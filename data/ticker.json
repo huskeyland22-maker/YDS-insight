@@ -1,33 +1,33 @@
 [
   {
     "symbol": "USDKRW",
-    "price": 1375.01,
-    "change": 2.18
+    "price": 1376.63,
+    "change": 0.96
   },
   {
     "symbol": "DOW",
-    "price": 52093.11,
-    "change": -0.63
+    "price": 51461.9,
+    "change": -1.21
   },
   {
     "symbol": "SP500",
-    "price": 7585.73,
+    "price": 7551.81,
     "change": -0.45
   },
   {
     "symbol": "NASDAQ",
-    "price": 28937.84,
-    "change": -0.65
+    "price": 28945.06,
+    "change": 0.02
   },
   {
     "symbol": "DXY",
-    "price": 99.65,
-    "change": 0.19
+    "price": 100.34,
+    "change": 0.69
   },
   {
     "symbol": "US10Y",
     "price": 0.5,
-    "change": 0.71
+    "change": 0.2
   },
   {
     "symbol": "VIX",
