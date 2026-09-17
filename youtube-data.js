@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.09.17 17:47 KST (자동 업데이트)",
+  "updatedAt": "2026.09.17 23:31 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=rVHT4o-VRCk",
-      "thumbUrl": "https://i.ytimg.com/vi/rVHT4o-VRCk/hqdefault.jpg",
-      "videoTitle": "미국 부채 40조 달러… 금값이 오르는 진짜 이유는 따로 있습니다 | 김광석의 북리뷰 | 이효석의 21세기 투자법 [2편]",
-      "publishedAt": "2026-09-17T03:05:17+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=3i5CnP1YdcQ",
+      "thumbUrl": "https://i.ytimg.com/vi/3i5CnP1YdcQ/hqdefault.jpg",
+      "videoTitle": "관세 전쟁 다음은 중간선거 전까지 환율 전쟁입니다 | 경제 한 접시 | 환율 [1편]",
+      "publishedAt": "2026-09-17T09:05:10+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=3UA7xwbfQPI",
-      "thumbUrl": "https://i.ytimg.com/vi/3UA7xwbfQPI/hqdefault.jpg",
-      "videoTitle": "[9월 FOMC 생중계] 워시 의장 기자회견 집중분석 | 해설 김현석·박신영 뉴욕특파원",
-      "publishedAt": "2026-09-16T19:46:51+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=3uxzvAib7dg",
+      "thumbUrl": "https://i.ytimg.com/vi/3uxzvAib7dg/hqdefault.jpg",
+      "videoTitle": "[박신영의 개장전요것만-9월17일] 아마존의 AI전력 수혜주는? | 추락하는 나이키",
+      "publishedAt": "2026-09-17T14:09:20+00:00"
     },
     {
       "id": "moneyinside",
