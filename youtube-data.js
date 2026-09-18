@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.09.18 17:23 KST (자동 업데이트)",
+  "updatedAt": "2026.09.18 22:57 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=s039e9JGpnQ",
-      "thumbUrl": "https://i.ytimg.com/vi/s039e9JGpnQ/hqdefault.jpg",
-      "videoTitle": "[속보] BOJ 정책금리 1.25%(0.25%P 인상). 일본 31년 만에 최고 수준 [즉시분석]",
-      "publishedAt": "2026-09-18T03:01:14+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=Z4Ks-9IuWiA",
+      "thumbUrl": "https://i.ytimg.com/vi/Z4Ks-9IuWiA/hqdefault.jpg",
+      "videoTitle": "매출은 줄고 금리까지 오른다… 지금 창업한다면 반드시 지켜야 할 3가지 | 경제 한 접시 | 자영업 [2편]",
+      "publishedAt": "2026-09-18T09:05:35+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=mjJ6bbNvc1I",
-      "thumbUrl": "https://i.ytimg.com/vi/mjJ6bbNvc1I/hqdefault.jpg",
-      "videoTitle": "AI 주가를 가로막는 리스크가 무엇인지 알아보았습니다 | 박신영의 월가아나토미",
-      "publishedAt": "2026-09-18T01:00:14+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=ci2x289vdVA",
+      "thumbUrl": "https://i.ytimg.com/vi/ci2x289vdVA/hqdefault.jpg",
+      "videoTitle": "워시는 언제, 얼마나 더 올릴까 | 이란, 유가..그리고 다음주 | AI 모멘텀 되살아나나 | 월가백브리핑",
+      "publishedAt": "2026-09-18T13:36:51+00:00"
     },
     {
       "id": "moneyinside",
