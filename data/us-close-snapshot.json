@@ -1,7 +1,7 @@
 {
   "usdkrw": {
-    "value": 1385.95,
-    "change": 0.47
+    "value": 1385,
+    "change": 0.4
   },
   "dow": {
     "value": 51682.64,
@@ -39,5 +39,5 @@
     "value": 100.21,
     "change": 0
   },
-  "updatedAt": "2026-09-19T01:11:50.299Z"
+  "updatedAt": "2026-09-19T03:52:15.876Z"
 }
