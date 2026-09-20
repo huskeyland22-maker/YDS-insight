@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.09.20 17:43 KST (자동 업데이트)",
+  "updatedAt": "2026.09.20 22:47 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=bc613R2bJAc",
-      "thumbUrl": "https://i.ytimg.com/vi/bc613R2bJAc/hqdefault.jpg",
-      "videoTitle": "[통합 풀버전] 9월 돈이 빠지고 10월 다시 풀린다… 지금부터 봐야 할 ‘유동성의 변곡점’ | 경읽남과 토론합시다 | 3자토론 문홍철x성상현x김광석",
-      "publishedAt": "2026-09-19T21:05:28+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=HtpK33Gd_GA",
+      "thumbUrl": "https://i.ytimg.com/vi/HtpK33Gd_GA/hqdefault.jpg",
+      "videoTitle": "[풀버전] 관세전쟁 다음은 ‘환율전쟁’입니다… 매출은 줄고 금리까지 오르는 자영업, 지금 살아남는 법 | 경제 한 접시 | 환율·자영업",
+      "publishedAt": "2026-09-20T09:05:27+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=dWPmlWirdf4",
-      "thumbUrl": "https://i.ytimg.com/vi/dWPmlWirdf4/hqdefault.jpg",
-      "videoTitle": "반도체 오르는 이유는 아셴브레너의 복귀 신호인 걸까 | 월가백브리핑",
-      "publishedAt": "2026-09-20T03:00:28+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=-d2aplBixwI",
+      "thumbUrl": "https://i.ytimg.com/vi/-d2aplBixwI/hqdefault.jpg",
+      "videoTitle": "트럼프가 워시를 비판하지 못하는 이유",
+      "publishedAt": "2026-09-20T12:00:23+00:00"
     },
     {
       "id": "moneyinside",
