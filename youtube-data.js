@@ -1,5 +1,5 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.09.21 18:10 KST (자동 업데이트)",
+  "updatedAt": "2026.09.22 01:04 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=g0FiyGQCVMc",
-      "thumbUrl": "https://i.ytimg.com/vi/g0FiyGQCVMc/hqdefault.jpg",
-      "videoTitle": "미중정상회담 D-2…전쟁을 준비하는 中, 무역을 기대하는 美 | 이상은의 워싱턴나우",
-      "publishedAt": "2026-09-21T03:00:34+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=oqJ3hZsycus",
+      "thumbUrl": "https://i.ytimg.com/vi/oqJ3hZsycus/hqdefault.jpg",
+      "videoTitle": "[박신영의 개장전요것만-9월21일] 지금 맞서면 안되는 3가지...급등한 그린란드 관련주는 어디?",
+      "publishedAt": "2026-09-21T14:28:08+00:00"
     },
     {
       "id": "moneyinside",
