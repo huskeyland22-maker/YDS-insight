@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.09.20 22:47 KST (자동 업데이트)",
+  "updatedAt": "2026.09.21 10:07 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=HtpK33Gd_GA",
-      "thumbUrl": "https://i.ytimg.com/vi/HtpK33Gd_GA/hqdefault.jpg",
-      "videoTitle": "[풀버전] 관세전쟁 다음은 ‘환율전쟁’입니다… 매출은 줄고 금리까지 오르는 자영업, 지금 살아남는 법 | 경제 한 접시 | 환율·자영업",
-      "publishedAt": "2026-09-20T09:05:27+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=koDFSiq3ZEE",
+      "thumbUrl": "https://i.ytimg.com/vi/koDFSiq3ZEE/hqdefault.jpg",
+      "videoTitle": "“시장은 예측하는 게 아닙니다” 존리가 말하는 진짜 주식 투자법 | 경읽남과 토론합시다 | 존리 대표님 [1편]",
+      "publishedAt": "2026-09-20T21:05:39+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=-d2aplBixwI",
-      "thumbUrl": "https://i.ytimg.com/vi/-d2aplBixwI/hqdefault.jpg",
-      "videoTitle": "트럼프가 워시를 비판하지 못하는 이유",
-      "publishedAt": "2026-09-20T12:00:23+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=Q5lThKLnPLM",
+      "thumbUrl": "https://i.ytimg.com/vi/Q5lThKLnPLM/hqdefault.jpg",
+      "videoTitle": "10월 증시 반등할까ㅣ김현석의 월나우 위클리Q",
+      "publishedAt": "2026-09-20T21:30:29+00:00"
     },
     {
       "id": "moneyinside",
