@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.09.22 17:41 KST (자동 업데이트)",
+  "updatedAt": "2026.09.22 23:14 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=B38N-7Jz50I",
-      "thumbUrl": "https://i.ytimg.com/vi/B38N-7Jz50I/hqdefault.jpg",
-      "videoTitle": "트럼프, \"이란 대통령 만날것\". 국제유가와 국채금리 급락, 나스닥과 비트코인 급등 [즉시분석]",
-      "publishedAt": "2026-09-22T04:50:29+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=J7fWuCAma_0",
+      "thumbUrl": "https://i.ytimg.com/vi/J7fWuCAma_0/hqdefault.jpg",
+      "videoTitle": "금리만 보면 틀립니다… 2027년 시장을 움직일 진짜 돈은 ‘재정’입니다 | 경제학교 월간특강 | 2027경제전망 '북콘서트' [1편]",
+      "publishedAt": "2026-09-22T09:05:37+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=oqJ3hZsycus",
-      "thumbUrl": "https://i.ytimg.com/vi/oqJ3hZsycus/hqdefault.jpg",
-      "videoTitle": "[박신영의 개장전요것만-9월21일] 지금 맞서면 안되는 3가지...급등한 그린란드 관련주는 어디?",
-      "publishedAt": "2026-09-21T14:28:08+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=RgO2vSLHR8M",
+      "thumbUrl": "https://i.ytimg.com/vi/RgO2vSLHR8M/hqdefault.jpg",
+      "videoTitle": "[박신영의 개장전요것만-9월22일]글로벌 자금은 美·中가리지 않았다...엔비디아는 가치 재평가?",
+      "publishedAt": "2026-09-22T12:50:05+00:00"
     },
     {
       "id": "moneyinside",
