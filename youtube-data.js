@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.09.24 23:30 KST (자동 업데이트)",
+  "updatedAt": "2026.09.25 10:32 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=eDwVr8AOfq0",
-      "thumbUrl": "https://i.ytimg.com/vi/eDwVr8AOfq0/hqdefault.jpg",
-      "videoTitle": "“집값 떨어질 때 사겠다?” 그때는 못 삽니다… 서울 부동산의 구조가 바뀌었습니다 | 경제학교 월간특강 | 김인만 소장님 '부동산' [3편]",
-      "publishedAt": "2026-09-24T09:05:12+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=w3fG-vzBZAI",
+      "thumbUrl": "https://i.ytimg.com/vi/w3fG-vzBZAI/hqdefault.jpg",
+      "videoTitle": "대통령도 국민연금 투자에 손댈 수 없다? 1,800조 의사결정 구조 | 경읽남과 토론합시다 | 국민연금 김성주 이사장 [2편]",
+      "publishedAt": "2026-09-24T21:05:27+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=67RT7rWa64A",
-      "thumbUrl": "https://i.ytimg.com/vi/67RT7rWa64A/hqdefault.jpg",
-      "videoTitle": "[박신영의 개장전요것만-9월24일] 데이터센터 건설 지연...AI기업에 타격 시작 | 답이 안보이는 美 국채금리",
-      "publishedAt": "2026-09-24T14:15:07+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=s-iNcadU6Ig",
+      "thumbUrl": "https://i.ytimg.com/vi/s-iNcadU6Ig/hqdefault.jpg",
+      "videoTitle": "대표 영상",
+      "publishedAt": ""
     },
     {
       "id": "moneyinside",
