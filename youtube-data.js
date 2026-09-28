@@ -1,5 +1,5 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.09.28 19:01 KST (자동 업데이트)",
+  "updatedAt": "2026.09.29 02:51 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=bjrKtOuZB2E",
-      "thumbUrl": "https://i.ytimg.com/vi/bjrKtOuZB2E/hqdefault.jpg",
-      "videoTitle": "사흘간 여섯 번 만남, 무엇을 남겼나ㅣ이상은의 워싱턴나우",
-      "publishedAt": "2026-09-28T03:10:34+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=PuD9QoT_goM",
+      "thumbUrl": "https://i.ytimg.com/vi/PuD9QoT_goM/hqdefault.jpg",
+      "videoTitle": "[박신영의 개장전요것만-9월28일] AI 증시 체력 시험 주간 | \"유가 내려도 고금리 유지\" | 뮤즈 AI가 뱅크런 촉발?",
+      "publishedAt": "2026-09-28T14:18:22+00:00"
     },
     {
       "id": "moneyinside",
