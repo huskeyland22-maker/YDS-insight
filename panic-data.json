@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026.10.01 19:19 KST (자동 업데이트 · Python)",
+  "updatedAt": "2026.10.02 01:46 KST (자동 업데이트 · Python)",
   "signalExtras": {
     "t10y2y": null
   },
@@ -21,8 +21,8 @@
     {
       "id": "fng",
       "label": "CNN F&G",
-      "value": "31",
-      "delta": "➡️ 0",
+      "value": "27",
+      "delta": "📉 -4",
       "status": "🟢 중립",
       "tone": "stable",
       "weekTrend": "하락",
@@ -71,16 +71,16 @@
     {
       "id": "hy",
       "label": "HY 금리 스프레드",
-      "value": "3.08%",
-      "delta": "📈 +0.06%",
+      "value": "3.12%",
+      "delta": "📈 +0.04%",
       "status": "🟢 안정",
       "tone": "stable",
       "weekTrend": "상승",
       "actionGuide": "관망",
       "trendUrl": "https://fred.stlouisfed.org/series/BAMLH0A0HYM2",
       "source": "fred",
-      "previousClose": 3.02,
-      "change": 0.06
+      "previousClose": 3.08,
+      "change": 0.04
     },
     {
       "id": "gsbb",
