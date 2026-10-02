@@ -1,5 +1,5 @@
 window.OVERSEAS_DATA = {
-  "updatedAt": "2026.10.02 23:34 KST (자동 업데이트)",
+  "updatedAt": "2026.10.03 01:00 KST (자동 업데이트)",
   "items": [
     {
       "symbol": "SOXL",
@@ -7,7 +7,7 @@ window.OVERSEAS_DATA = {
       "p1w": "+5.03%",
       "p1m": "+45.11%",
       "mdd": "-48.90%",
-      "updatedAt": "2026.10.02"
+      "updatedAt": "2026.10.03"
     },
     {
       "symbol": "TQQQ",
@@ -15,7 +15,7 @@ window.OVERSEAS_DATA = {
       "p1w": "+0.19%",
       "p1m": "+13.85%",
       "mdd": "-9.73%",
-      "updatedAt": "2026.10.02"
+      "updatedAt": "2026.10.03"
     },
     {
       "symbol": "SSO",
@@ -23,11 +23,11 @@ window.OVERSEAS_DATA = {
       "p1w": "-0.95%",
       "p1m": "+0.40%",
       "mdd": "-4.04%",
-      "updatedAt": "2026.10.02"
+      "updatedAt": "2026.10.03"
     }
   ],
   "flow": {
-    "updatedAt": "2026.10.02 23:34 KST (자동 업데이트)",
+    "updatedAt": "2026.10.03 01:00 KST (자동 업데이트)",
     "items": [
       {
         "id": "usdjpy",
@@ -60,8 +60,8 @@ window.OVERSEAS_DATA = {
       {
         "id": "vix_hy",
         "label": "리스크 선호",
-        "value": "VIX 16.39 / HY 3.12%",
-        "delta": "VIX +0.05% · HY +0.04%",
+        "value": "VIX 16.39 / HY 3.24%",
+        "delta": "VIX +0.05% · HY +0.12%",
         "tone": "up"
       }
     ],
@@ -70,10 +70,6 @@ window.OVERSEAS_DATA = {
       "state": "Neutral",
       "action": "중립 비중 유지, 이벤트 확인 후 대응",
       "history": [
-        {
-          "d": "2026.09.26",
-          "s": 74
-        },
         {
           "d": "2026.09.27",
           "s": 74
@@ -96,6 +92,10 @@ window.OVERSEAS_DATA = {
         },
         {
           "d": "2026.10.02",
+          "s": 58
+        },
+        {
+          "d": "2026.10.03",
           "s": 58
         }
       ]

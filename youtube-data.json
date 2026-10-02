@@ -1,15 +1,15 @@
 {
-  "updatedAt": "2026.10.02 18:57 KST (자동 업데이트)",
+  "updatedAt": "2026.10.03 01:00 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=HYbrkAO9OPQ",
-      "thumbUrl": "https://i.ytimg.com/vi/HYbrkAO9OPQ/hqdefault.jpg",
-      "videoTitle": "트럼프가 중국을 키워줬다? 미중 정상회담에서 바뀐 ‘힘의 균형’ | 경읽남과 토론합시다 | 안유화 교수 [1편]",
-      "publishedAt": "2026-10-02T09:05:01+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=ap6La5HTfFA",
+      "thumbUrl": "https://i.ytimg.com/vi/ap6La5HTfFA/hqdefault.jpg",
+      "videoTitle": "[속보] 미국 9월 고용 예상치 크게 밑돌아 : 연준 추가금리 인상 제동? [즉시분석]",
+      "publishedAt": "2026-10-02T13:07:33+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=SNjvo56xCRQ",
-      "thumbUrl": "https://i.ytimg.com/vi/SNjvo56xCRQ/hqdefault.jpg",
-      "videoTitle": "미 소비자의 돈이 지갑 밖으로 어떻게 나오는지 살펴봤습니다 | 박신영의 월가아나토미",
-      "publishedAt": "2026-10-02T01:00:23+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=c6mHh3VQa-I",
+      "thumbUrl": "https://i.ytimg.com/vi/c6mHh3VQa-I/hqdefault.jpg",
+      "videoTitle": "[박신영의 개장전요것만-10월2일] \"GPU, 항공기처럼 평가 필요\"...거기까진 아니라는 월가 | 2028년 이후 메모리 예측은?",
+      "publishedAt": "2026-10-02T14:07:05+00:00"
     },
     {
       "id": "moneyinside",
