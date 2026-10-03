@@ -1,5 +1,5 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.10.03 18:19 KST (자동 업데이트)",
+  "updatedAt": "2026.10.03 23:27 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=C1bwiEinWi8",
-      "thumbUrl": "https://i.ytimg.com/vi/C1bwiEinWi8/hqdefault.jpg",
-      "videoTitle": "미국 증시가 무너질 때까지 금리는 오른다? | 월가백브리핑",
-      "publishedAt": "2026-10-03T03:00:20+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=LQMbUa_toqM",
+      "thumbUrl": "https://i.ytimg.com/vi/LQMbUa_toqM/hqdefault.jpg",
+      "videoTitle": "10월 바닥 기다리는 월가...닷컴버블때도 그랬다는데 | 월가백브리핑",
+      "publishedAt": "2026-10-03T11:00:38+00:00"
     },
     {
       "id": "moneyinside",
