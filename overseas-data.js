@@ -1,5 +1,5 @@
 window.OVERSEAS_DATA = {
-  "updatedAt": "2026.10.03 10:59 KST (자동 업데이트)",
+  "updatedAt": "2026.10.03 13:31 KST (자동 업데이트)",
   "items": [
     {
       "symbol": "SOXL",
@@ -27,7 +27,7 @@ window.OVERSEAS_DATA = {
     }
   ],
   "flow": {
-    "updatedAt": "2026.10.03 10:59 KST (자동 업데이트)",
+    "updatedAt": "2026.10.03 13:31 KST (자동 업데이트)",
     "items": [
       {
         "id": "usdjpy",
@@ -39,7 +39,7 @@ window.OVERSEAS_DATA = {
       {
         "id": "dxy",
         "label": "달러 유동성",
-        "value": "Dollar Index 101.92",
+        "value": "Dollar Index 101.93",
         "delta": "-0.17%",
         "tone": "up"
       },
