@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026.10.03 05:29 KST (자동 업데이트)",
+  "updatedAt": "2026.10.03 10:59 KST (자동 업데이트)",
   "items": [
     {
       "symbol": "SOXL",
@@ -27,20 +27,20 @@
     }
   ],
   "flow": {
-    "updatedAt": "2026.10.03 05:29 KST (자동 업데이트)",
+    "updatedAt": "2026.10.03 10:59 KST (자동 업데이트)",
     "items": [
       {
         "id": "usdjpy",
         "label": "엔캐리 압력",
-        "value": "USDJPY 157.82",
-        "delta": "-0.07%",
+        "value": "USDJPY 157.83",
+        "delta": "-0.06%",
         "tone": "up"
       },
       {
         "id": "dxy",
         "label": "달러 유동성",
-        "value": "Dollar Index 101.90",
-        "delta": "-0.20%",
+        "value": "Dollar Index 101.92",
+        "delta": "-0.17%",
         "tone": "up"
       },
       {
@@ -60,8 +60,8 @@
       {
         "id": "vix_hy",
         "label": "리스크 선호",
-        "value": "VIX 16.39 / HY 3.24%",
-        "delta": "VIX +0.05% · HY +0.12%",
+        "value": "VIX 15.31 / HY 3.24%",
+        "delta": "VIX -1.08% · HY +0.12%",
         "tone": "up"
       }
     ],
@@ -125,10 +125,10 @@
         "id": "energy",
         "label": "에너지",
         "symbol": "XLE",
-        "p1d": "+0.40%",
-        "p1w": "+1.47%",
-        "p1m": "-3.30%",
-        "score": -0.9
+        "p1d": "+0.19%",
+        "p1w": "+1.26%",
+        "p1m": "-3.50%",
+        "score": -1.1
       },
       {
         "id": "financials",
