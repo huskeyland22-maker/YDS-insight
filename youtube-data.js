@@ -1,5 +1,5 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.10.04 18:58 KST (자동 업데이트)",
+  "updatedAt": "2026.10.05 00:01 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=rwc26W3BrmQ",
-      "thumbUrl": "https://i.ytimg.com/vi/rwc26W3BrmQ/hqdefault.jpg",
-      "videoTitle": "애플·뱅크 잡는 에이전트AI, 뮤즈 | 월가백브리핑",
-      "publishedAt": "2026-10-04T03:00:30+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=qtixD6sbvYU",
+      "thumbUrl": "https://i.ytimg.com/vi/qtixD6sbvYU/hqdefault.jpg",
+      "videoTitle": "불신 투자법",
+      "publishedAt": "2026-10-04T12:30:38+00:00"
     },
     {
       "id": "moneyinside",
