@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.10.05 19:42 KST (자동 업데이트)",
+  "updatedAt": "2026.10.06 04:01 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=3qiWGfDIPZQ",
-      "thumbUrl": "https://i.ytimg.com/vi/3qiWGfDIPZQ/hqdefault.jpg",
-      "videoTitle": "국채금리 오르는 '5가지 이유.' 국채 손바뀜이 일어난다. 나스닥은 왜 최고치를 경신하나  [경읽남 265화]",
-      "publishedAt": "2026-10-05T09:05:39+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=nWEcPotJ9wE",
+      "thumbUrl": "https://i.ytimg.com/vi/nWEcPotJ9wE/hqdefault.jpg",
+      "videoTitle": "[생방송] 국채금리 더 치솟을까? '국채 손바뀜'이 가져올 효과 [즉시분석]",
+      "publishedAt": "2026-10-05T15:14:56+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=0eG5Ga8j8Mw",
-      "thumbUrl": "https://i.ytimg.com/vi/0eG5Ga8j8Mw/hqdefault.jpg",
-      "videoTitle": "'2006년 악몽 재현' 경고에…상원도 뺏길라 조바심 내는 美 공화당 | 이상은의 워싱턴나우",
-      "publishedAt": "2026-10-05T03:00:20+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=-4V9HpvXs44",
+      "thumbUrl": "https://i.ytimg.com/vi/-4V9HpvXs44/hqdefault.jpg",
+      "videoTitle": "[박신영의 개장전요것만-10월5일] \"반도체주 아직도 싸다?\"...그래도 불안하면 이 종목 주목",
+      "publishedAt": "2026-10-05T14:15:25+00:00"
     },
     {
       "id": "moneyinside",

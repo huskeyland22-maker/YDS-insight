@@ -8,16 +8,16 @@
     "prev": 0.5
   },
   "fearGreed": {
-    "now": 38,
-    "prev": 38
+    "now": 44,
+    "prev": 44
   },
   "bofa": {
     "now": 6.3,
     "prev": 6.3
   },
   "highYield": {
-    "now": 3.24,
-    "prev": 3.12
+    "now": 3.1,
+    "prev": 3.24
   },
   "liquidity": {
     "now": -2.38,
@@ -29,5 +29,5 @@
     "now": 0.53,
     "prev": 0.53
   },
-  "updatedAt": "2026-10-06 01:56 KST · success"
+  "updatedAt": "2026-10-06 04:01 KST · success"
 }
