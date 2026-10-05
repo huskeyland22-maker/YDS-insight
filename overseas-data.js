@@ -1,5 +1,5 @@
 window.OVERSEAS_DATA = {
-  "updatedAt": "2026.10.05 11:02 KST (자동 업데이트)",
+  "updatedAt": "2026.10.05 13:48 KST (자동 업데이트)",
   "items": [
     {
       "symbol": "SOXL",
@@ -27,21 +27,21 @@ window.OVERSEAS_DATA = {
     }
   ],
   "flow": {
-    "updatedAt": "2026.10.05 11:02 KST (자동 업데이트)",
+    "updatedAt": "2026.10.05 13:48 KST (자동 업데이트)",
     "items": [
       {
         "id": "usdjpy",
         "label": "엔캐리 압력",
-        "value": "USDJPY 157.60",
-        "delta": "-0.20%",
+        "value": "USDJPY 158.08",
+        "delta": "+0.10%",
         "tone": "up"
       },
       {
         "id": "dxy",
         "label": "달러 유동성",
-        "value": "Dollar Index 102.04",
-        "delta": "+0.10%",
-        "tone": "up"
+        "value": "Dollar Index 102.45",
+        "delta": "+0.51%",
+        "tone": "down"
       },
       {
         "id": "qqq_tlt",
@@ -66,7 +66,7 @@ window.OVERSEAS_DATA = {
       }
     ],
     "regime": {
-      "score": 90,
+      "score": 74,
       "state": "Risk-on",
       "action": "성장/섹터 ETF는 눌림 분할 접근",
       "history": [
@@ -96,7 +96,7 @@ window.OVERSEAS_DATA = {
         },
         {
           "d": "2026.10.05",
-          "s": 90
+          "s": 74
         }
       ]
     }
@@ -141,7 +141,7 @@ window.OVERSEAS_DATA = {
       }
     ],
     "weeklySummary": [
-      "국면: Risk-on (90/100) · 성장/섹터 ETF는 눌림 분할 접근",
+      "국면: Risk-on (74/100) · 성장/섹터 ETF는 눌림 분할 접근",
       "강세 섹터: 반도체(SOXX) +2.83% / +17.44%",
       "약세 섹터: 금융(XLF) -2.46% / -7.23%"
     ]
