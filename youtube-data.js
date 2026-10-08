@@ -1,5 +1,5 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.10.08 19:47 KST (자동 업데이트)",
+  "updatedAt": "2026.10.09 02:04 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=jLRBWNtkVhI",
-      "thumbUrl": "https://i.ytimg.com/vi/jLRBWNtkVhI/hqdefault.jpg",
-      "videoTitle": "지는 뉴욕, 뜨는 텍사스② | 김인엽의 실리콘밸리나우",
-      "publishedAt": "2026-10-08T09:00:01+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=jwD6Vrj8zf8",
+      "thumbUrl": "https://i.ytimg.com/vi/jwD6Vrj8zf8/hqdefault.jpg",
+      "videoTitle": "[박신영의 개장전요것만-10월8일] “앤트로픽 2조달러 안된다”...IPO는 기존 투자자만 이득 | 메모리 실적 9배...시장은 냉담",
+      "publishedAt": "2026-10-08T14:24:18+00:00"
     },
     {
       "id": "moneyinside",
