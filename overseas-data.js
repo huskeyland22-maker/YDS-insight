@@ -1,5 +1,5 @@
 window.OVERSEAS_DATA = {
-  "updatedAt": "2026.10.08 11:42 KST (자동 업데이트)",
+  "updatedAt": "2026.10.08 14:16 KST (자동 업데이트)",
   "items": [
     {
       "symbol": "SOXL",
@@ -27,21 +27,21 @@ window.OVERSEAS_DATA = {
     }
   ],
   "flow": {
-    "updatedAt": "2026.10.08 11:42 KST (자동 업데이트)",
+    "updatedAt": "2026.10.08 14:16 KST (자동 업데이트)",
     "items": [
       {
         "id": "usdjpy",
         "label": "엔캐리 압력",
-        "value": "USDJPY 158.04",
-        "delta": "-0.16%",
+        "value": "USDJPY 158.30",
+        "delta": "+0.21%",
         "tone": "up"
       },
       {
         "id": "dxy",
         "label": "달러 유동성",
-        "value": "Dollar Index 102.18",
-        "delta": "-0.06%",
-        "tone": "up"
+        "value": "Dollar Index 102.24",
+        "delta": "+0.40%",
+        "tone": "down"
       },
       {
         "id": "qqq_tlt",
@@ -66,7 +66,7 @@ window.OVERSEAS_DATA = {
       }
     ],
     "regime": {
-      "score": 58,
+      "score": 42,
       "state": "Neutral",
       "action": "중립 비중 유지, 이벤트 확인 후 대응",
       "history": [
@@ -96,7 +96,7 @@ window.OVERSEAS_DATA = {
         },
         {
           "d": "2026.10.08",
-          "s": 58
+          "s": 42
         }
       ]
     }
@@ -141,7 +141,7 @@ window.OVERSEAS_DATA = {
       }
     ],
     "weeklySummary": [
-      "국면: Neutral (58/100) · 중립 비중 유지, 이벤트 확인 후 대응",
+      "국면: Neutral (42/100) · 중립 비중 유지, 이벤트 확인 후 대응",
       "강세 섹터: 반도체(SOXX) +2.49% / +10.30%",
       "약세 섹터: 금융(XLF) +0.66% / -6.20%"
     ]
