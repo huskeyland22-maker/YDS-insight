@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.10.09 11:56 KST (자동 업데이트)",
+  "updatedAt": "2026.10.09 19:46 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=McTbA8a8L_U",
-      "thumbUrl": "https://i.ytimg.com/vi/McTbA8a8L_U/hqdefault.jpg",
-      "videoTitle": "“100만 명이 문 닫았습니다” 주식시장과 실물경제가 완전히 갈라진 이유 | 경읽남과 토론합시다 | 박기태 변호사 [1편]",
-      "publishedAt": "2026-10-08T21:05:37+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=NFJBkYfKWaM",
+      "thumbUrl": "https://i.ytimg.com/vi/NFJBkYfKWaM/hqdefault.jpg",
+      "videoTitle": "금리는 올리는데 돈은 푼다…지금 시장이 이상하게 움직이는 이유 | 클로즈업 | 국채불안 [2편]",
+      "publishedAt": "2026-10-09T09:05:08+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=s-iNcadU6Ig",
-      "thumbUrl": "https://i.ytimg.com/vi/s-iNcadU6Ig/hqdefault.jpg",
-      "videoTitle": "대표 영상",
-      "publishedAt": ""
+      "videoUrl": "https://www.youtube.com/watch?v=jwD6Vrj8zf8",
+      "thumbUrl": "https://i.ytimg.com/vi/jwD6Vrj8zf8/hqdefault.jpg",
+      "videoTitle": "[박신영의 개장전요것만-10월8일] “앤트로픽 2조달러 안된다”...IPO는 기존 투자자만 이득 | 메모리 실적 9배...시장은 냉담",
+      "publishedAt": "2026-10-08T14:24:18+00:00"
     },
     {
       "id": "moneyinside",
