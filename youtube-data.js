@@ -1,5 +1,5 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.10.10 19:01 KST (자동 업데이트)",
+  "updatedAt": "2026.10.11 00:37 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=KW5i4ZExcyM",
-      "thumbUrl": "https://i.ytimg.com/vi/KW5i4ZExcyM/hqdefault.jpg",
-      "videoTitle": "오픈AI發 버블 논쟁...가장 좋은 헤지는 | 월가백브리핑",
-      "publishedAt": "2026-10-10T03:00:19+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=BukzsT-Gxss",
+      "thumbUrl": "https://i.ytimg.com/vi/BukzsT-Gxss/hqdefault.jpg",
+      "videoTitle": "다음 주 3분기 실적 시즌 개막...월가는 왜 걱정할까 | 월가백브리핑",
+      "publishedAt": "2026-10-10T11:00:10+00:00"
     },
     {
       "id": "moneyinside",
