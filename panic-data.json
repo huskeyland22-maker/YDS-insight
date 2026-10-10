@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026.10.10 01:41 KST (자동 업데이트 · Python)",
+  "updatedAt": "2026.10.10 11:21 KST (자동 업데이트 · Python)",
   "signalExtras": {
     "t10y2y": null
   },
@@ -7,16 +7,16 @@
     {
       "id": "vix",
       "label": "VIX Index",
-      "value": "15.41",
-      "delta": "📈 +0.33",
+      "value": "14.84",
+      "delta": "📉 -0.57",
       "status": "🟢 안정",
       "tone": "stable",
       "weekTrend": "하락",
       "actionGuide": "관망",
       "trendUrl": "https://www.macrotrends.net/2603/vix-volatility-index-historical-chart",
       "source": "yahoo",
-      "previousClose": 15.08,
-      "change": 0.33
+      "previousClose": 15.41,
+      "change": -0.57
     },
     {
       "id": "fng",
@@ -45,16 +45,16 @@
     {
       "id": "skew",
       "label": "SKEW Index",
-      "value": "149.19",
-      "delta": "📈 +7.35",
+      "value": "154.34",
+      "delta": "📈 +5.15",
       "status": "🔴 위험",
       "tone": "alert",
       "weekTrend": "상승",
       "actionGuide": "헤지점검",
       "trendUrl": "https://www.cboe.com/tradable_products/vix/vix_historical_data/",
       "source": "yahoo",
-      "previousClose": 141.84,
-      "change": 7.35
+      "previousClose": 149.19,
+      "change": 5.15
     },
     {
       "id": "putcall",
@@ -97,31 +97,31 @@
     {
       "id": "move",
       "label": "MOVE Index",
-      "value": "100.70",
-      "delta": "📉 -1.86",
+      "value": "98.47",
+      "delta": "📉 -2.23",
       "status": "🟢 안정",
       "tone": "stable",
       "weekTrend": "하락",
       "actionGuide": "관망",
       "trendUrl": "https://fred.stlouisfed.org/series/MOVE",
       "source": "yahoo",
-      "previousClose": 102.56,
-      "change": -1.86
+      "previousClose": 100.7,
+      "change": -2.23
     },
     {
       "id": "vxn",
       "label": "VXN Index",
-      "value": "21.98",
-      "delta": "📈 +0.98",
+      "value": "20.55",
+      "delta": "📉 -1.43",
       "status": "🟢 안정",
       "tone": "stable",
       "weekTrend": "하락",
       "actionGuide": "관망",
       "trendUrl": "https://www.cboe.com/tradable_products/vix/vxn/",
       "source": "yahoo",
-      "previousClose": 21,
-      "change": 0.98
+      "previousClose": 21.98,
+      "change": -1.43
     }
   ],
-  "asOfDateET": "2026-10-08"
+  "asOfDateET": "2026-10-09"
 }
