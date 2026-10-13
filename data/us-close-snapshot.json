@@ -1,10 +1,10 @@
 {
   "usdkrw": {
-    "value": 1343.37,
-    "change": 0.03
+    "value": 1339.99,
+    "change": -0.22
   },
   "dow": {
-    "value": 51850.6,
+    "value": 51850.55,
     "change": 0.38
   },
   "sp500": {
@@ -36,8 +36,8 @@
     "change": 854000
   },
   "dxy": {
-    "value": 102.42,
-    "change": -0.16
+    "value": 102.58,
+    "change": 0.36
   },
-  "updatedAt": "2026-10-13T03:35:11.234Z"
+  "updatedAt": "2026-10-13T10:51:29.108Z"
 }
