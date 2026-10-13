@@ -1,10 +1,10 @@
 {
   "usdkrw": {
-    "value": 1338.3,
-    "change": -0.35
+    "value": 1343.37,
+    "change": 0.03
   },
   "dow": {
-    "value": 51850.55,
+    "value": 51850.6,
     "change": 0.38
   },
   "sp500": {
@@ -24,8 +24,8 @@
     "change": -0.5
   },
   "vix": {
-    "value": 14.84,
-    "change": -0.57
+    "value": 15.21,
+    "change": 0.37
   },
   "us10y": {
     "value": 4.388,
@@ -36,8 +36,8 @@
     "change": 854000
   },
   "dxy": {
-    "value": 102.49,
-    "change": -0.09
+    "value": 102.42,
+    "change": -0.16
   },
-  "updatedAt": "2026-10-13T01:53:50.791Z"
+  "updatedAt": "2026-10-13T03:35:11.234Z"
 }

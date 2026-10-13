@@ -1,5 +1,5 @@
 window.PANIC_DATA = {
-  "updatedAt": "2026.10.13 04:29 KST (자동 업데이트 · Python)",
+  "updatedAt": "2026.10.13 12:35 KST (자동 업데이트 · Python)",
   "signalExtras": {
     "t10y2y": null
   },
@@ -7,22 +7,22 @@ window.PANIC_DATA = {
     {
       "id": "vix",
       "label": "VIX Index",
-      "value": "14.84",
-      "delta": "📉 -0.57",
+      "value": "15.21",
+      "delta": "📈 +0.37",
       "status": "🟢 안정",
       "tone": "stable",
       "weekTrend": "하락",
       "actionGuide": "관망",
       "trendUrl": "https://www.macrotrends.net/2603/vix-volatility-index-historical-chart",
       "source": "yahoo",
-      "previousClose": 15.41,
-      "change": -0.57
+      "previousClose": 14.84,
+      "change": 0.37
     },
     {
       "id": "fng",
       "label": "CNN F&G",
-      "value": "45",
-      "delta": "➡️ 0",
+      "value": "46",
+      "delta": "📈 +1",
       "status": "🟢 중립",
       "tone": "stable",
       "weekTrend": "보합",
@@ -45,16 +45,16 @@ window.PANIC_DATA = {
     {
       "id": "skew",
       "label": "SKEW Index",
-      "value": "154.34",
-      "delta": "📈 +5.15",
+      "value": "155.06",
+      "delta": "📈 +0.72",
       "status": "🔴 위험",
       "tone": "alert",
       "weekTrend": "상승",
       "actionGuide": "헤지점검",
       "trendUrl": "https://www.cboe.com/tradable_products/vix/vix_historical_data/",
       "source": "yahoo",
-      "previousClose": 149.19,
-      "change": 5.15
+      "previousClose": 154.34,
+      "change": 0.72
     },
     {
       "id": "putcall",
@@ -111,17 +111,17 @@ window.PANIC_DATA = {
     {
       "id": "vxn",
       "label": "VXN Index",
-      "value": "20.55",
-      "delta": "📉 -1.43",
+      "value": "20.84",
+      "delta": "📈 +0.29",
       "status": "🟢 안정",
       "tone": "stable",
       "weekTrend": "하락",
       "actionGuide": "관망",
       "trendUrl": "https://www.cboe.com/tradable_products/vix/vxn/",
       "source": "yahoo",
-      "previousClose": 21.98,
-      "change": -1.43
+      "previousClose": 20.55,
+      "change": 0.29
     }
   ],
-  "asOfDateET": "2026-10-09"
+  "asOfDateET": "2026-10-12"
 };
