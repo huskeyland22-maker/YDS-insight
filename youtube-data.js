@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.10.14 02:13 KST (자동 업데이트)",
+  "updatedAt": "2026.10.14 10:55 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=MDuPiPgFJok",
-      "thumbUrl": "https://i.ytimg.com/vi/MDuPiPgFJok/hqdefault.jpg",
-      "videoTitle": "'AI 속도조절론'의 진짜 이유…옥석 가리기 끝나면 주도주가 바뀐다 | 클로즈업 | AI 산업 재편",
-      "publishedAt": "2026-10-13T09:05:26+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=3-bVy6O_6hU",
+      "thumbUrl": "https://i.ytimg.com/vi/3-bVy6O_6hU/hqdefault.jpg",
+      "videoTitle": "대표 영상",
+      "publishedAt": ""
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=DjkGddjliZA",
-      "thumbUrl": "https://i.ytimg.com/vi/DjkGddjliZA/hqdefault.jpg",
-      "videoTitle": "푸틴과 딜 하려는 트럼프, 갈림길에 선 우크라ㅣ이상은의 워싱턴나우",
-      "publishedAt": "2026-10-12T09:00:31+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=s-iNcadU6Ig",
+      "thumbUrl": "https://i.ytimg.com/vi/s-iNcadU6Ig/hqdefault.jpg",
+      "videoTitle": "대표 영상",
+      "publishedAt": ""
     },
     {
       "id": "moneyinside",
@@ -56,10 +56,10 @@ window.YOUTUBE_DATA = {
       "name": "간단경제한스푼",
       "channelUrl": "https://www.youtube.com/channel/UChuu3KaoDnyttfN10GG169Q",
       "latestUrl": "https://www.youtube.com/@%EA%B0%84%EB%8B%A8%EA%B2%BD%EC%A0%9C%ED%95%9C%EC%8A%A4%ED%91%BC/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=9eJYOQhDAo4",
-      "thumbUrl": "https://i.ytimg.com/vi/9eJYOQhDAo4/hqdefault.jpg",
-      "videoTitle": "미국 일본이 70년간 숨겨온 우주의 진짜 비밀 소재 없이는 우주도 없다, 대한민국의 도전이 시작됐습니다",
-      "publishedAt": "2026-08-17T11:15:04+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=JLZ_MI5GPJ0",
+      "thumbUrl": "https://i.ytimg.com/vi/JLZ_MI5GPJ0/hqdefault.jpg",
+      "videoTitle": "대표 영상",
+      "publishedAt": ""
     }
   ]
 };
