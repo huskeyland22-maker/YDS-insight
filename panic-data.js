@@ -1,5 +1,5 @@
 window.PANIC_DATA = {
-  "updatedAt": "2026.10.16 23:23 KST (자동 업데이트 · Python)",
+  "updatedAt": "2026.10.17 10:19 KST (자동 업데이트 · Python)",
   "signalExtras": {
     "t10y2y": null
   },
@@ -7,26 +7,26 @@ window.PANIC_DATA = {
     {
       "id": "vix",
       "label": "VIX Index",
-      "value": "16.46",
-      "delta": "📉 -0.41",
+      "value": "19.99",
+      "delta": "📈 +3.53",
       "status": "🟢 안정",
       "tone": "stable",
       "weekTrend": "상승",
       "actionGuide": "관망",
       "trendUrl": "https://www.macrotrends.net/2603/vix-volatility-index-historical-chart",
       "source": "yahoo",
-      "previousClose": 16.87,
-      "change": -0.41
+      "previousClose": 16.46,
+      "change": 3.53
     },
     {
       "id": "fng",
       "label": "CNN F&G",
-      "value": "29",
-      "delta": "📉 -2",
-      "status": "🟢 중립",
-      "tone": "stable",
+      "value": "18",
+      "delta": "📉 -14",
+      "status": "🔴 공포",
+      "tone": "alert",
       "weekTrend": "하락",
-      "actionGuide": "관망",
+      "actionGuide": "헤지점검",
       "trendUrl": "https://edition.cnn.com/markets/fear-and-greed",
       "source": "cnn"
     },
@@ -45,16 +45,16 @@ window.PANIC_DATA = {
     {
       "id": "skew",
       "label": "SKEW Index",
-      "value": "160.45",
-      "delta": "📈 +3.15",
+      "value": "168.59",
+      "delta": "📈 +8.14",
       "status": "🔴 위험",
       "tone": "alert",
       "weekTrend": "상승",
       "actionGuide": "헤지점검",
       "trendUrl": "https://www.cboe.com/tradable_products/vix/vix_historical_data/",
       "source": "yahoo",
-      "previousClose": 157.3,
-      "change": 3.15
+      "previousClose": 160.45,
+      "change": 8.14
     },
     {
       "id": "putcall",
@@ -97,16 +97,16 @@ window.PANIC_DATA = {
     {
       "id": "move",
       "label": "MOVE Index",
-      "value": "102.49",
-      "delta": "📈 +3.43",
+      "value": "101.10",
+      "delta": "📉 -1.39",
       "status": "🟢 안정",
       "tone": "stable",
       "weekTrend": "보합",
       "actionGuide": "관망",
       "trendUrl": "https://fred.stlouisfed.org/series/MOVE",
       "source": "yahoo",
-      "previousClose": 99.06,
-      "change": 3.43
+      "previousClose": 102.49,
+      "change": -1.39
     },
     {
       "id": "vxn",
@@ -123,5 +123,5 @@ window.PANIC_DATA = {
       "change": 0.19
     }
   ],
-  "asOfDateET": "2026-10-15"
+  "asOfDateET": "2026-10-16"
 };
