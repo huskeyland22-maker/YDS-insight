@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.10.18 17:12 KST (자동 업데이트)",
+  "updatedAt": "2026.10.18 22:39 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=-kFSsGzhgIM",
-      "thumbUrl": "https://i.ytimg.com/vi/-kFSsGzhgIM/hqdefault.jpg",
-      "videoTitle": "[풀버전] 금리는 올리는데 돈은 푼다…지금 시장이 이상하게 움직이는 이유 | 클로즈업 | 국채불안",
-      "publishedAt": "2026-10-17T21:05:01+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=4OSmNrNsM6k",
+      "thumbUrl": "https://i.ytimg.com/vi/4OSmNrNsM6k/hqdefault.jpg",
+      "videoTitle": "[풀버전] 반도체 가격 정점이 온다…다음 Q사이클, 문제는 ‘돈’이다 | 경읽남과 토론합시다 | 3자토론 이형수x장우진x김광석",
+      "publishedAt": "2026-10-18T09:05:05+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=7YCLtirCyd4",
-      "thumbUrl": "https://i.ytimg.com/vi/7YCLtirCyd4/hqdefault.jpg",
-      "videoTitle": "연말 랠리의 운명은 | 월가백브리핑",
-      "publishedAt": "2026-10-18T03:00:06+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=igluu2vKOQc",
+      "thumbUrl": "https://i.ytimg.com/vi/igluu2vKOQc/hqdefault.jpg",
+      "videoTitle": "원화 강세의 배신",
+      "publishedAt": "2026-10-18T12:30:39+00:00"
     },
     {
       "id": "moneyinside",
