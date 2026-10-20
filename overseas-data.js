@@ -1,61 +1,61 @@
 window.OVERSEAS_DATA = {
-  "updatedAt": "2026.10.21 04:54 KST (자동 업데이트)",
+  "updatedAt": "2026.10.21 08:01 KST (자동 업데이트)",
   "items": [
     {
       "symbol": "SOXL",
-      "p1d": "+5.32%",
-      "p1w": "-23.17%",
-      "p1m": "-20.23%",
-      "mdd": "-67.20%",
+      "p1d": "-1.12%",
+      "p1w": "-23.53%",
+      "p1m": "-31.27%",
+      "mdd": "-67.57%",
       "updatedAt": "2026.10.21"
     },
     {
       "symbol": "TQQQ",
-      "p1d": "+3.56%",
-      "p1w": "-11.27%",
-      "p1m": "-2.75%",
-      "mdd": "-19.01%",
+      "p1d": "-0.33%",
+      "p1w": "-10.66%",
+      "p1m": "-10.77%",
+      "mdd": "-19.27%",
       "updatedAt": "2026.10.21"
     },
     {
       "symbol": "SSO",
-      "p1d": "+0.84%",
-      "p1w": "-3.07%",
-      "p1m": "+0.63%",
-      "mdd": "-3.71%",
+      "p1d": "+0.63%",
+      "p1w": "-2.44%",
+      "p1m": "-1.79%",
+      "mdd": "-3.10%",
       "updatedAt": "2026.10.21"
     }
   ],
   "flow": {
-    "updatedAt": "2026.10.21 04:54 KST (자동 업데이트)",
+    "updatedAt": "2026.10.21 08:01 KST (자동 업데이트)",
     "items": [
       {
         "id": "usdjpy",
         "label": "엔캐리 압력",
-        "value": "USDJPY 157.81",
-        "delta": "-0.21%",
+        "value": "USDJPY 158.28",
+        "delta": "-0.15%",
         "tone": "up"
       },
       {
         "id": "dxy",
         "label": "달러 유동성",
-        "value": "Dollar Index 101.98",
-        "delta": "+0.14%",
+        "value": "Dollar Index 101.73",
+        "delta": "-0.25%",
         "tone": "up"
       },
       {
         "id": "qqq_tlt",
         "label": "기관 프록시",
-        "value": "QQQ/TLT 9.041",
-        "delta": "+1.96%",
-        "tone": "up"
+        "value": "QQQ/TLT 8.956",
+        "delta": "-0.94%",
+        "tone": "down"
       },
       {
         "id": "hyg_lqd",
         "label": "신용 체력",
-        "value": "HYG/LQD 0.747",
-        "delta": "+0.47%",
-        "tone": "up"
+        "value": "HYG/LQD 0.744",
+        "delta": "-0.33%",
+        "tone": "down"
       },
       {
         "id": "vix_hy",
@@ -66,9 +66,9 @@ window.OVERSEAS_DATA = {
       }
     ],
     "regime": {
-      "score": 90,
-      "state": "Risk-on",
-      "action": "성장/섹터 ETF는 눌림 분할 접근",
+      "score": 58,
+      "state": "Neutral",
+      "action": "중립 비중 유지, 이벤트 확인 후 대응",
       "history": [
         {
           "d": "2026.10.15",
@@ -96,7 +96,7 @@ window.OVERSEAS_DATA = {
         },
         {
           "d": "2026.10.21",
-          "s": 90
+          "s": 58
         }
       ]
     }
@@ -107,43 +107,43 @@ window.OVERSEAS_DATA = {
         "id": "energy",
         "label": "에너지",
         "symbol": "XLE",
-        "p1d": "-0.64%",
-        "p1w": "+2.71%",
-        "p1m": "+5.43%",
-        "score": 3.3
+        "p1d": "+0.25%",
+        "p1w": "+1.15%",
+        "p1m": "+8.82%",
+        "score": 4.4
       },
       {
         "id": "financials",
         "label": "금융",
         "symbol": "XLF",
-        "p1d": "-0.83%",
-        "p1w": "+0.02%",
-        "p1m": "-1.43%",
-        "score": -0.8
+        "p1d": "+1.20%",
+        "p1w": "+1.64%",
+        "p1m": "-0.32%",
+        "score": 0.7
       },
       {
         "id": "ai-growth",
         "label": "AI/성장",
         "symbol": "QQQ",
-        "p1d": "+1.21%",
-        "p1w": "-3.71%",
-        "p1m": "-0.43%",
-        "score": -1.3
+        "p1d": "-0.10%",
+        "p1w": "-3.49%",
+        "p1m": "-3.22%",
+        "score": -2.7
       },
       {
         "id": "semiconductor",
         "label": "반도체",
         "symbol": "SOXX",
-        "p1d": "+1.73%",
-        "p1w": "-7.88%",
-        "p1m": "-5.84%",
-        "score": -5
+        "p1d": "-0.38%",
+        "p1w": "-8.07%",
+        "p1m": "-10.61%",
+        "score": -7.7
       }
     ],
     "weeklySummary": [
-      "국면: Risk-on (90/100) · 성장/섹터 ETF는 눌림 분할 접근",
-      "강세 섹터: 에너지(XLE) +2.71% / +5.43%",
-      "약세 섹터: 반도체(SOXX) -7.88% / -5.84%"
+      "국면: Neutral (58/100) · 중립 비중 유지, 이벤트 확인 후 대응",
+      "강세 섹터: 에너지(XLE) +1.15% / +8.82%",
+      "약세 섹터: 반도체(SOXX) -8.07% / -10.61%"
     ]
   }
 };
