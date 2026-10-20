@@ -1,7 +1,7 @@
 {
   "usdkrw": {
-    "value": 1327.45,
-    "change": -0.45
+    "value": 1328.84,
+    "change": -0.34
   },
   "dow": {
     "value": 51966.03,
@@ -12,7 +12,7 @@
     "change": 0.41
   },
   "nasdaq": {
-    "value": 29529.34,
+    "value": 29529.35,
     "change": 1.17
   },
   "wti": {
@@ -36,8 +36,8 @@
     "change": 854000
   },
   "dxy": {
-    "value": 101.95,
-    "change": -0.03
+    "value": 101.98,
+    "change": 0.14
   },
-  "updatedAt": "2026-10-20T01:51:16.220Z"
+  "updatedAt": "2026-10-20T04:07:19.954Z"
 }
