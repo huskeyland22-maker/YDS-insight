@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.10.21 17:45 KST (자동 업데이트)",
+  "updatedAt": "2026.10.21 23:44 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=gwH7u48k9hY",
-      "thumbUrl": "https://i.ytimg.com/vi/gwH7u48k9hY/hqdefault.jpg",
-      "videoTitle": "코스피 조정 아직 안 끝났다…중국 AI가 판을 흔들고 있다 | 경읽남과 토론합시다 | 3자토론 이효석x김단테x김광석 [1편]",
-      "publishedAt": "2026-10-20T21:05:14+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=c4jgyqIj9f0",
+      "thumbUrl": "https://i.ytimg.com/vi/c4jgyqIj9f0/hqdefault.jpg",
+      "videoTitle": "AI 조정 곧 끝날까…2027년부터 판이 바뀔 수 있다 | 경읽남과 토론합시다 | 3자토론 이효석x김단테x김광석 [2편]",
+      "publishedAt": "2026-10-21T09:05:12+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=cx_0RmUhE1E",
-      "thumbUrl": "https://i.ytimg.com/vi/cx_0RmUhE1E/hqdefault.jpg",
-      "videoTitle": "AI 폭락 시그널? 닷컴버블 때와 '이게' 같고, '이게' 다릅니다 | 박신영의 월가아나토미",
-      "publishedAt": "2026-10-21T01:00:09+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=2VAEbYCMTqk",
+      "thumbUrl": "https://i.ytimg.com/vi/2VAEbYCMTqk/hqdefault.jpg",
+      "videoTitle": "[박신영의 개장전요것만-10월21일] \"버블 터지든 아니든 단기반등 기회 잡아야\"",
+      "publishedAt": "2026-10-21T14:01:23+00:00"
     },
     {
       "id": "moneyinside",
