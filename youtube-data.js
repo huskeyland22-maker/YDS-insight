@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.10.22 17:47 KST (자동 업데이트)",
+  "updatedAt": "2026.10.22 23:44 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=IUhxtGljaOI",
-      "thumbUrl": "https://i.ytimg.com/vi/IUhxtGljaOI/hqdefault.jpg",
-      "videoTitle": "[속보] 한국은행 '숨고르기' 기준금리 동결. \"금리인상 남아 있다\" [즉시분석]",
-      "publishedAt": "2026-10-22T00:51:09+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=h6NyILhYreI",
+      "thumbUrl": "https://i.ytimg.com/vi/h6NyILhYreI/hqdefault.jpg",
+      "videoTitle": "삼전닉스 주도주 끝났다? 다음 돈은 ‘이곳’으로 간다 | 경읽남과 토론합시다 | 3자토론 이효석x김단테x김광석 [3편]",
+      "publishedAt": "2026-10-22T09:05:37+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=2VAEbYCMTqk",
-      "thumbUrl": "https://i.ytimg.com/vi/2VAEbYCMTqk/hqdefault.jpg",
-      "videoTitle": "[박신영의 개장전요것만-10월21일] \"버블 터지든 아니든 단기반등 기회 잡아야\"",
-      "publishedAt": "2026-10-21T14:01:23+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=SU4sptNV9Qg",
+      "thumbUrl": "https://i.ytimg.com/vi/SU4sptNV9Qg/hqdefault.jpg",
+      "videoTitle": "[박신영의 개장전요것만-10월22일] 미국장 개장전 알아야 할 특징주 및 주요 뉴스",
+      "publishedAt": "2026-10-22T14:18:14+00:00"
     },
     {
       "id": "moneyinside",
