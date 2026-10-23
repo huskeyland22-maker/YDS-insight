@@ -1,5 +1,5 @@
 window.PANIC_DATA = {
-  "updatedAt": "2026.10.23 10:32 KST (자동 업데이트 · Python)",
+  "updatedAt": "2026.10.23 17:43 KST (자동 업데이트 · Python)",
   "signalExtras": {
     "t10y2y": null
   },
@@ -21,11 +21,11 @@ window.PANIC_DATA = {
     {
       "id": "fng",
       "label": "CNN F&G",
-      "value": "20",
-      "delta": "📉 -12",
+      "value": "22",
+      "delta": "📈 +2",
       "status": "🔴 공포",
       "tone": "alert",
-      "weekTrend": "하락",
+      "weekTrend": "보합",
       "actionGuide": "헤지점검",
       "trendUrl": "https://edition.cnn.com/markets/fear-and-greed",
       "source": "cnn"
