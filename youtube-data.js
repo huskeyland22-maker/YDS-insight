@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.10.25 17:36 KST (자동 업데이트)",
+  "updatedAt": "2026.10.25 23:00 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=zEgdlB7vj8U",
-      "thumbUrl": "https://i.ytimg.com/vi/zEgdlB7vj8U/hqdefault.jpg",
-      "videoTitle": "[풀버전] 코스피 조정 아직 안 끝났다…중국 AI가 판을 흔들고 있다 | 경읽남과 토론합시다 | 3자토론 이효석x김단테x김광석",
-      "publishedAt": "2026-10-24T21:05:06+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=aOuqaENoieQ",
+      "thumbUrl": "https://i.ytimg.com/vi/aOuqaENoieQ/hqdefault.jpg",
+      "videoTitle": "[풀버전] 국채금리 꺾이면 돈은 어디로 갈까…금·은이 먼저 움직일 수 있다 | 경읽남과 토론합시다 | 박재훈 전무님",
+      "publishedAt": "2026-10-25T09:05:23+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=5hrxzHh5evk",
-      "thumbUrl": "https://i.ytimg.com/vi/5hrxzHh5evk/hqdefault.jpg",
-      "videoTitle": "모든 건 유가에 달렸다? 젤렌스키의 큰 그림은 | 월가백브리핑",
-      "publishedAt": "2026-10-25T03:00:28+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=zPHo12Jn4pA",
+      "thumbUrl": "https://i.ytimg.com/vi/zPHo12Jn4pA/hqdefault.jpg",
+      "videoTitle": "금리보다 중요한 연준의 한마디",
+      "publishedAt": "2026-10-25T12:30:39+00:00"
     },
     {
       "id": "moneyinside",
