@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.10.25 23:00 KST (자동 업데이트)",
+  "updatedAt": "2026.10.26 10:12 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=aOuqaENoieQ",
-      "thumbUrl": "https://i.ytimg.com/vi/aOuqaENoieQ/hqdefault.jpg",
-      "videoTitle": "[풀버전] 국채금리 꺾이면 돈은 어디로 갈까…금·은이 먼저 움직일 수 있다 | 경읽남과 토론합시다 | 박재훈 전무님",
-      "publishedAt": "2026-10-25T09:05:23+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=3-bVy6O_6hU",
+      "thumbUrl": "https://i.ytimg.com/vi/3-bVy6O_6hU/hqdefault.jpg",
+      "videoTitle": "대표 영상",
+      "publishedAt": ""
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=zPHo12Jn4pA",
-      "thumbUrl": "https://i.ytimg.com/vi/zPHo12Jn4pA/hqdefault.jpg",
-      "videoTitle": "금리보다 중요한 연준의 한마디",
-      "publishedAt": "2026-10-25T12:30:39+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=dRvE3GG9GBM",
+      "thumbUrl": "https://i.ytimg.com/vi/dRvE3GG9GBM/hqdefault.jpg",
+      "videoTitle": "FOMC보다 중요한 연준의 다음 메시지",
+      "publishedAt": "2026-10-25T21:30:21+00:00"
     },
     {
       "id": "moneyinside",
