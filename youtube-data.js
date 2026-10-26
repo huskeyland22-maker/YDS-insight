@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.10.26 18:12 KST (자동 업데이트)",
+  "updatedAt": "2026.10.27 01:21 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=UTOJ4uLE4h4",
-      "thumbUrl": "https://i.ytimg.com/vi/UTOJ4uLE4h4/hqdefault.jpg",
-      "videoTitle": "“한국은행이 필요 없어질 수도” 달러 스테이블코인이 무서운 이유 | 경읽남과 토론합시다 | 3자토론 정구태x김동환x김광석 [4편]",
-      "publishedAt": "2026-10-25T21:05:23+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=gQiZ0TC4wIo",
+      "thumbUrl": "https://i.ytimg.com/vi/gQiZ0TC4wIo/hqdefault.jpg",
+      "videoTitle": "IMF의 경제전망 : 한국 잠재성장률 2년 연속 반등, AI가 가져온 돈의 역류 [경읽남 268화]",
+      "publishedAt": "2026-10-26T09:05:20+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=TNcwiTZtCb0",
-      "thumbUrl": "https://i.ytimg.com/vi/TNcwiTZtCb0/hqdefault.jpg",
-      "videoTitle": "조촐한 미국의 ‘대잔치’…미국 경제, 정말 좋은 걸까ㅣ이상은의 워싱턴나우",
-      "publishedAt": "2026-10-26T03:20:04+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=SG8_HAeT4PU",
+      "thumbUrl": "https://i.ytimg.com/vi/SG8_HAeT4PU/hqdefault.jpg",
+      "videoTitle": "[박신영의 개장전요것만-10월26일] “네오클라우드 200곳 몰락”...머스크 저주에도 코어위브 상승, “기업 AI 최종승자는 MS”",
+      "publishedAt": "2026-10-26T14:03:38+00:00"
     },
     {
       "id": "moneyinside",
