@@ -16,8 +16,8 @@
     "prev": 6.3
   },
   "highYield": {
-    "now": 3.18,
-    "prev": 3.3
+    "now": 3.14,
+    "prev": 3.18
   },
   "liquidity": {
     "now": -2.1,
@@ -29,5 +29,5 @@
     "now": 0.5,
     "prev": 0.5
   },
-  "updatedAt": "2026-10-30 00:01 KST · success"
+  "updatedAt": "2026-10-30 01:29 KST · success"
 }

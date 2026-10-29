@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.10.29 19:15 KST (자동 업데이트)",
+  "updatedAt": "2026.10.30 01:29 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=OmwPEbrKVqg",
-      "thumbUrl": "https://i.ytimg.com/vi/OmwPEbrKVqg/hqdefault.jpg",
-      "videoTitle": "AI 데이터센터보다 전력이 부족하다…빅테크가 변압기부터 사들이는 이유 | 경제학교 월간특강 [3편]",
-      "publishedAt": "2026-10-29T09:05:33+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=FpisXhruTgQ",
+      "thumbUrl": "https://i.ytimg.com/vi/FpisXhruTgQ/hqdefault.jpg",
+      "videoTitle": "[생방송] '삼성전자 쇼크'의 진짜 이유 / 미국 PCE 심층분석 [즉시분석]",
+      "publishedAt": "2026-10-29T13:07:40+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=y_YEJ_uTzTc",
-      "thumbUrl": "https://i.ytimg.com/vi/y_YEJ_uTzTc/hqdefault.jpg",
-      "videoTitle": "구글이 망한 항공사 데이터에 1000만달러 베팅한 이유 | 김인엽의 실리콘밸리나우",
-      "publishedAt": "2026-10-29T09:00:01+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=XTimReAM6rw",
+      "thumbUrl": "https://i.ytimg.com/vi/XTimReAM6rw/hqdefault.jpg",
+      "videoTitle": "[박신영의 개장전요것만-10월29일] AI가 뒤집은 빅테크 권력지형...애플과 구글의 몰락 예고?",
+      "publishedAt": "2026-10-29T14:04:05+00:00"
     },
     {
       "id": "moneyinside",
