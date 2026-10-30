@@ -1,5 +1,5 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.10.30 19:17 KST (자동 업데이트)",
+  "updatedAt": "2026.10.31 01:21 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=vGLUmpeBHHA",
-      "thumbUrl": "https://i.ytimg.com/vi/vGLUmpeBHHA/hqdefault.jpg",
-      "videoTitle": "오라클의 공격적인 성장 전략, AI에서도 먹힐까 | 박신영의 월가아나토미",
-      "publishedAt": "2026-10-30T01:00:04+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=EGj5M7AbN_Y",
+      "thumbUrl": "https://i.ytimg.com/vi/EGj5M7AbN_Y/hqdefault.jpg",
+      "videoTitle": "[박신영의 개장전요것만-10월30일] 다가오는 앤트로픽 IPO...AI주 사려고 AI주 판다?",
+      "publishedAt": "2026-10-30T13:50:52+00:00"
     },
     {
       "id": "moneyinside",
