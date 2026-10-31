@@ -1,12 +1,12 @@
 window.OVERSEAS_DATA = {
-  "updatedAt": "2026.10.31 05:33 KST (자동 업데이트)",
+  "updatedAt": "2026.10.31 11:24 KST (자동 업데이트)",
   "items": [
     {
       "symbol": "SOXL",
-      "p1d": "-25.24%",
-      "p1w": "-8.39%",
-      "p1m": "-50.19%",
-      "mdd": "-74.55%",
+      "p1d": "-24.75%",
+      "p1w": "-7.79%",
+      "p1m": "-49.87%",
+      "mdd": "-74.38%",
       "updatedAt": "2026.10.31"
     },
     {
@@ -19,28 +19,28 @@ window.OVERSEAS_DATA = {
     },
     {
       "symbol": "SSO",
-      "p1d": "-3.67%",
-      "p1w": "-1.27%",
-      "p1m": "-2.79%",
-      "mdd": "-6.72%",
+      "p1d": "-3.65%",
+      "p1w": "-1.24%",
+      "p1m": "-2.76%",
+      "mdd": "-6.69%",
       "updatedAt": "2026.10.31"
     }
   ],
   "flow": {
-    "updatedAt": "2026.10.31 05:33 KST (자동 업데이트)",
+    "updatedAt": "2026.10.31 11:24 KST (자동 업데이트)",
     "items": [
       {
         "id": "usdjpy",
         "label": "엔캐리 압력",
-        "value": "USDJPY 157.56",
-        "delta": "-0.17%",
+        "value": "USDJPY 157.80",
+        "delta": "-0.02%",
         "tone": "up"
       },
       {
         "id": "dxy",
         "label": "달러 유동성",
-        "value": "Dollar Index 101.92",
-        "delta": "-0.12%",
+        "value": "Dollar Index 101.96",
+        "delta": "-0.07%",
         "tone": "up"
       },
       {
@@ -60,8 +60,8 @@ window.OVERSEAS_DATA = {
       {
         "id": "vix_hy",
         "label": "리스크 선호",
-        "value": "VIX 17.20 / HY 3.26%",
-        "delta": "VIX +0.29% · HY +0.12%",
+        "value": "VIX 19.42 / HY 3.26%",
+        "delta": "VIX +2.22% · HY +0.12%",
         "tone": "up"
       }
     ],
@@ -134,16 +134,16 @@ window.OVERSEAS_DATA = {
         "id": "semiconductor",
         "label": "반도체",
         "symbol": "SOXX",
-        "p1d": "-8.39%",
-        "p1w": "-1.56%",
-        "p1m": "-18.32%",
-        "score": -10.5
+        "p1d": "-8.24%",
+        "p1w": "-1.40%",
+        "p1m": "-18.19%",
+        "score": -10.3
       }
     ],
     "weeklySummary": [
       "국면: Neutral (58/100) · 중립 비중 유지, 이벤트 확인 후 대응",
       "강세 섹터: 에너지(XLE) +1.00% / +11.67%",
-      "약세 섹터: 반도체(SOXX) -1.56% / -18.32%"
+      "약세 섹터: 반도체(SOXX) -1.40% / -18.19%"
     ]
   }
 };
