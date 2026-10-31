@@ -1,5 +1,5 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.10.31 18:51 KST (자동 업데이트)",
+  "updatedAt": "2026.11.01 00:31 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=xIQFdrHGaqo",
-      "thumbUrl": "https://i.ytimg.com/vi/xIQFdrHGaqo/hqdefault.jpg",
-      "videoTitle": "'기술주 탈출' 헤지펀드의 속내는 | 월가백브리핑",
-      "publishedAt": "2026-10-31T03:00:18+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=Rckv2rouQH8",
+      "thumbUrl": "https://i.ytimg.com/vi/Rckv2rouQH8/hqdefault.jpg",
+      "videoTitle": "중간선거 뒤 이란 때린다 vs 안 때린다 | 월가백브리핑",
+      "publishedAt": "2026-10-31T11:30:21+00:00"
     },
     {
       "id": "moneyinside",
