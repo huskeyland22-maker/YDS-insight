@@ -1,5 +1,5 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.11.02 20:30 KST (자동 업데이트)",
+  "updatedAt": "2026.11.03 04:52 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=vEZ_uZ6MEsU",
-      "thumbUrl": "https://i.ytimg.com/vi/vEZ_uZ6MEsU/hqdefault.jpg",
-      "videoTitle": "트럼프 '수퍼 레임덕' 오나... 블루웨이브 기대하는 美 민주당ㅣ이상은의 워싱턴나우",
-      "publishedAt": "2026-11-02T03:53:28+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=ozMJS8ChedM",
+      "thumbUrl": "https://i.ytimg.com/vi/ozMJS8ChedM/hqdefault.jpg",
+      "videoTitle": "[박신영의 개장전요것만-11월2일] \"인텔 저가매수 신중해야\" | 팔란티어, 월가는 긍정 vs 개인 심리 '약세'",
+      "publishedAt": "2026-11-02T15:04:03+00:00"
     },
     {
       "id": "moneyinside",
