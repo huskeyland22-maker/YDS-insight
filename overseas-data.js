@@ -1,5 +1,5 @@
 window.OVERSEAS_DATA = {
-  "updatedAt": "2026.11.04 02:25 KST (자동 업데이트)",
+  "updatedAt": "2026.11.04 04:15 KST (자동 업데이트)",
   "items": [
     {
       "symbol": "SOXL",
@@ -27,14 +27,14 @@ window.OVERSEAS_DATA = {
     }
   ],
   "flow": {
-    "updatedAt": "2026.11.04 02:25 KST (자동 업데이트)",
+    "updatedAt": "2026.11.04 04:15 KST (자동 업데이트)",
     "items": [
       {
         "id": "usdjpy",
         "label": "엔캐리 압력",
-        "value": "USDJPY 158.52",
-        "delta": "+0.53%",
-        "tone": "up"
+        "value": "USDJPY 158.70",
+        "delta": "+0.65%",
+        "tone": "down"
       },
       {
         "id": "dxy",
@@ -66,9 +66,9 @@ window.OVERSEAS_DATA = {
       }
     ],
     "regime": {
-      "score": 50,
-      "state": "Neutral",
-      "action": "중립 비중 유지, 이벤트 확인 후 대응",
+      "score": 34,
+      "state": "Risk-off",
+      "action": "현금/헤지 비중 우선, 레버리지 축소",
       "history": [
         {
           "d": "2026.10.29",
@@ -96,7 +96,7 @@ window.OVERSEAS_DATA = {
         },
         {
           "d": "2026.11.04",
-          "s": 50
+          "s": 34
         }
       ]
     }
@@ -141,7 +141,7 @@ window.OVERSEAS_DATA = {
       }
     ],
     "weeklySummary": [
-      "국면: Neutral (50/100) · 중립 비중 유지, 이벤트 확인 후 대응",
+      "국면: Risk-off (34/100) · 현금/헤지 비중 우선, 레버리지 축소",
       "강세 섹터: 금융(XLF) +2.75% / +7.61%",
       "약세 섹터: 반도체(SOXX) -7.76% / -22.97%"
     ]
