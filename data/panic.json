@@ -8,8 +8,8 @@
     "prev": 0.5
   },
   "fearGreed": {
-    "now": 23,
-    "prev": 23
+    "now": 19,
+    "prev": 19
   },
   "bofa": {
     "now": 6.3,
@@ -23,11 +23,11 @@
     "now": -2.23,
     "prev": -2.23
   },
-  "dollar": 101.8,
+  "dollar": 101.75,
   "yieldCurve": null,
   "rate": {
     "now": 0.49,
     "prev": 0.49
   },
-  "updatedAt": "2026-11-03 12:56 KST · success"
+  "updatedAt": "2026-11-03 20:08 KST · success"
 }
