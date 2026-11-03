@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.11.03 20:08 KST (자동 업데이트)",
+  "updatedAt": "2026.11.04 02:25 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=Tjj11WHpGrg",
-      "thumbUrl": "https://i.ytimg.com/vi/Tjj11WHpGrg/hqdefault.jpg",
-      "videoTitle": "한국경제 3% 성장의 착시…반도체 꺾이면 같이 꺾인다 | 경읽남 콜라보 | 조세일보 인터뷰 [1편]",
-      "publishedAt": "2026-11-03T09:05:32+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=6T-2crlln2I",
+      "thumbUrl": "https://i.ytimg.com/vi/6T-2crlln2I/hqdefault.jpg",
+      "videoTitle": "[생방송] 중간선거, 증시 분기점 될까? [즉시분석]",
+      "publishedAt": "2026-11-03T15:36:42+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=qMIF3dfOBCo",
-      "thumbUrl": "https://i.ytimg.com/vi/qMIF3dfOBCo/hqdefault.jpg",
-      "videoTitle": "[박신영의 클로징벨 요것만-11월3일] 나스닥 1% 급락 | 오라클·마벨·루멘텀 동반 폭락 | 전통 산업주로 순환매",
-      "publishedAt": "2026-11-02T21:43:06+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=N_JXlcBFB5M",
+      "thumbUrl": "https://i.ytimg.com/vi/N_JXlcBFB5M/hqdefault.jpg",
+      "videoTitle": "[박신영의 개장전 요것만-11월3일] 저가매수 유입...반도체 생명력 어디까지?",
+      "publishedAt": "2026-11-03T14:53:12+00:00"
     },
     {
       "id": "moneyinside",
