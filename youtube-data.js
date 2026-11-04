@@ -1,5 +1,5 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.11.04 20:19 KST (자동 업데이트)",
+  "updatedAt": "2026.11.05 02:38 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=N_JXlcBFB5M",
-      "thumbUrl": "https://i.ytimg.com/vi/N_JXlcBFB5M/hqdefault.jpg",
-      "videoTitle": "[박신영의 개장전 요것만-11월3일] 저가매수 유입...반도체 생명력 어디까지?",
-      "publishedAt": "2026-11-03T14:53:12+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=GHT2uEfRoz8",
+      "thumbUrl": "https://i.ytimg.com/vi/GHT2uEfRoz8/hqdefault.jpg",
+      "videoTitle": "[박신영의 개장전 요것만-11월4일] 돌아온 매수 기회?...AMD 실적이 증거, 테슬라와 스페이스X는 위험",
+      "publishedAt": "2026-11-04T14:50:30+00:00"
     },
     {
       "id": "moneyinside",
