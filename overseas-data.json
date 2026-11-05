@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026.11.06 02:44 KST (자동 업데이트)",
+  "updatedAt": "2026.11.06 04:50 KST (자동 업데이트)",
   "items": [
     {
       "symbol": "SOXL",
@@ -27,13 +27,13 @@
     }
   ],
   "flow": {
-    "updatedAt": "2026.11.06 02:44 KST (자동 업데이트)",
+    "updatedAt": "2026.11.06 04:50 KST (자동 업데이트)",
     "items": [
       {
         "id": "usdjpy",
         "label": "엔캐리 압력",
-        "value": "USDJPY 157.71",
-        "delta": "-0.48%",
+        "value": "USDJPY 157.80",
+        "delta": "-0.42%",
         "tone": "up"
       },
       {
@@ -104,6 +104,15 @@
   "insight": {
     "sectorStrength": [
       {
+        "id": "semiconductor",
+        "label": "반도체",
+        "symbol": "SOXX",
+        "p1d": "-3.14%",
+        "p1w": "+158.89%",
+        "p1m": "+129.24%",
+        "score": 113.1
+      },
+      {
         "id": "financials",
         "label": "금융",
         "symbol": "XLF",
@@ -129,21 +138,12 @@
         "p1w": "-4.64%",
         "p1m": "-8.91%",
         "score": -5.4
-      },
-      {
-        "id": "semiconductor",
-        "label": "반도체",
-        "symbol": "SOXX",
-        "p1d": "-3.14%",
-        "p1w": "-13.70%",
-        "p1m": "-23.59%",
-        "score": -16
       }
     ],
     "weeklySummary": [
       "국면: Risk-on (74/100) · 성장/섹터 ETF는 눌림 분할 접근",
-      "강세 섹터: 금융(XLF) +5.47% / +9.61%",
-      "약세 섹터: 반도체(SOXX) -13.70% / -23.59%"
+      "강세 섹터: 반도체(SOXX) +158.89% / +129.24%",
+      "약세 섹터: AI/성장(QQQ) -4.64% / -8.91%"
     ]
   }
 }
