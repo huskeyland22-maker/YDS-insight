@@ -1,52 +1,52 @@
 window.TICKER_DATA = {
-  "updatedAt": "2026.11.06 04:50 KST (자동 업데이트)",
+  "updatedAt": "2026.11.06 09:53 KST (자동 업데이트)",
   "items": [
     {
       "label": "KOSPI",
-      "value": "5,683.80",
-      "delta": "+0.62%",
-      "direction": "up"
+      "value": "4,923.47",
+      "delta": "-13.38%",
+      "direction": "down"
     },
     {
       "label": "KOSDAQ",
-      "value": "714.95",
-      "delta": "+1.50%",
-      "direction": "up"
+      "value": "634.60",
+      "delta": "-11.24%",
+      "direction": "down"
     },
     {
       "label": "DOW",
-      "value": "53,356.12",
-      "delta": "+3.03%",
-      "direction": "up"
+      "value": "51,523.06",
+      "delta": "-3.44%",
+      "direction": "down"
     },
     {
       "label": "S&P 500",
-      "value": "7,688.62",
-      "delta": "+1.58%",
-      "direction": "up"
+      "value": "7,353.73",
+      "delta": "-4.36%",
+      "direction": "down"
     },
     {
       "label": "Dollar Index",
-      "value": "101.51",
-      "delta": "-0.35%",
+      "value": "101.49",
+      "delta": "-0.02%",
       "direction": "down"
     },
     {
       "label": "NASDAQ 100",
-      "value": "28,437.17",
-      "delta": "+0.91%",
-      "direction": "up"
+      "value": "26,629.81",
+      "delta": "-6.36%",
+      "direction": "down"
     },
     {
       "label": "USD/KRW",
-      "value": "1,356.24",
-      "delta": "+0.99%",
+      "value": "1,356.41",
+      "delta": "+1.22%",
       "direction": "up"
     },
     {
       "label": "US 10Y",
-      "value": "0.49%",
-      "delta": "-1.17%p",
+      "value": "0.48%",
+      "delta": "-1.16%p",
       "direction": "down"
     }
   ]
