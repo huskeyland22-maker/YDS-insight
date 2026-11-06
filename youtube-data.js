@@ -1,5 +1,5 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.11.06 20:14 KST (자동 업데이트)",
+  "updatedAt": "2026.11.07 01:59 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
@@ -9,7 +9,7 @@ window.YOUTUBE_DATA = {
       "videoUrl": "https://www.youtube.com/watch?v=CDHLMwDd2C8",
       "thumbUrl": "https://i.ytimg.com/vi/CDHLMwDd2C8/hqdefault.jpg",
       "videoTitle": "[생방송] 미국 고용지표 심층분석 : 증시에 추가 충격 가져올까? [즉시분석]",
-      "publishedAt": "2026-11-06T10:19:39+00:00"
+      "publishedAt": "2026-11-06T14:22:43+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=PA82jotR7DI",
-      "thumbUrl": "https://i.ytimg.com/vi/PA82jotR7DI/hqdefault.jpg",
-      "videoTitle": "[김현석의 브레이킹 뉴스] 10월 고용보고서 발표! 11월 6일 22시 30분 L.I.V.E",
-      "publishedAt": "2026-11-05T22:50:33+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=pIOco5Fk_eI",
+      "thumbUrl": "https://i.ytimg.com/vi/pIOco5Fk_eI/hqdefault.jpg",
+      "videoTitle": "[박신영의 개장전 요것만-11월6일] 엔비디아 살까, 말까? | 앤트로픽 IPO 고비는 넘겨야",
+      "publishedAt": "2026-11-06T15:16:42+00:00"
     },
     {
       "id": "moneyinside",
