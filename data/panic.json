@@ -1,15 +1,15 @@
 {
   "vix": {
-    "now": 28.18,
-    "prev": 16.61
+    "now": 25.64,
+    "prev": 28.18
   },
   "putCall": {
     "now": 0.5,
     "prev": 0.5
   },
   "fearGreed": {
-    "now": 25,
-    "prev": 25
+    "now": 22,
+    "prev": 22
   },
   "bofa": {
     "now": 6.3,
@@ -20,8 +20,8 @@
     "prev": 3.32
   },
   "liquidity": {
-    "now": -2.18,
-    "prev": -2.09
+    "now": -2.06,
+    "prev": -2.18
   },
   "dollar": 102.28,
   "yieldCurve": null,
@@ -29,5 +29,5 @@
     "now": 0.49,
     "prev": 0.49
   },
-  "updatedAt": "2026-11-07 08:59 KST · success"
+  "updatedAt": "2026-11-07 11:49 KST · success"
 }
