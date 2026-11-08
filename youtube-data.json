@@ -1,15 +1,15 @@
 {
-  "updatedAt": "2026.11.08 00:57 KST (자동 업데이트)",
+  "updatedAt": "2026.11.08 11:30 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=q1UgfcKNAkQ",
-      "thumbUrl": "https://i.ytimg.com/vi/q1UgfcKNAkQ/hqdefault.jpg",
-      "videoTitle": "AI로 돈이 한쪽에 몰린다…자산 격차 190배 시대가 온 이유 | 경읽남 콜라보 | 조세일보 인터뷰 [3편]",
-      "publishedAt": "2026-11-07T09:05:26+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=3-bVy6O_6hU",
+      "thumbUrl": "https://i.ytimg.com/vi/3-bVy6O_6hU/hqdefault.jpg",
+      "videoTitle": "대표 영상",
+      "publishedAt": ""
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=bqknPig-Tq0",
-      "thumbUrl": "https://i.ytimg.com/vi/bqknPig-Tq0/hqdefault.jpg",
-      "videoTitle": "버크셔도 물렸다...그리고, 엔트로픽에 달렸다 | 월가백브리핑",
-      "publishedAt": "2026-11-07T03:00:18+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=s-iNcadU6Ig",
+      "thumbUrl": "https://i.ytimg.com/vi/s-iNcadU6Ig/hqdefault.jpg",
+      "videoTitle": "대표 영상",
+      "publishedAt": ""
     },
     {
       "id": "moneyinside",
