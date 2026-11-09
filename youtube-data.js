@@ -1,5 +1,5 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.11.09 20:54 KST (자동 업데이트)",
+  "updatedAt": "2026.11.10 05:15 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=tKwWCma33PM",
-      "thumbUrl": "https://i.ytimg.com/vi/tKwWCma33PM/hqdefault.jpg",
-      "videoTitle": "\"100년만의 대승리\" 美 민주 환호…트럼프 \"대통령은 아직 나야\"ㅣ이상은의 워싱턴나우",
-      "publishedAt": "2026-11-09T03:20:07+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=xH7Oa8WzppU",
+      "thumbUrl": "https://i.ytimg.com/vi/xH7Oa8WzppU/hqdefault.jpg",
+      "videoTitle": "[박신영의 개장전 요것만-11월9일] 젠슨 황 스캔들에 떨고있는 네오클라우드...코어위브는 파멸의 악순환?",
+      "publishedAt": "2026-11-09T14:56:47+00:00"
     },
     {
       "id": "moneyinside",
