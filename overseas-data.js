@@ -1,5 +1,5 @@
 window.OVERSEAS_DATA = {
-  "updatedAt": "2026.11.09 14:26 KST (자동 업데이트)",
+  "updatedAt": "2026.11.09 20:54 KST (자동 업데이트)",
   "items": [
     {
       "symbol": "SOXL",
@@ -27,21 +27,21 @@ window.OVERSEAS_DATA = {
     }
   ],
   "flow": {
-    "updatedAt": "2026.11.09 14:26 KST (자동 업데이트)",
+    "updatedAt": "2026.11.09 20:54 KST (자동 업데이트)",
     "items": [
       {
         "id": "usdjpy",
         "label": "엔캐리 압력",
-        "value": "USDJPY 158.26",
-        "delta": "+0.48%",
+        "value": "USDJPY 157.50",
+        "delta": "-0.54%",
         "tone": "up"
       },
       {
         "id": "dxy",
         "label": "달러 유동성",
-        "value": "Dollar Index 102.11",
-        "delta": "-0.18%",
-        "tone": "up"
+        "value": "Dollar Index 102.30",
+        "delta": "+0.74%",
+        "tone": "down"
       },
       {
         "id": "qqq_tlt",
@@ -66,9 +66,9 @@ window.OVERSEAS_DATA = {
       }
     ],
     "regime": {
-      "score": 74,
-      "state": "Risk-on",
-      "action": "성장/섹터 ETF는 눌림 분할 접근",
+      "score": 58,
+      "state": "Neutral",
+      "action": "중립 비중 유지, 이벤트 확인 후 대응",
       "history": [
         {
           "d": "2026.11.03",
@@ -96,7 +96,7 @@ window.OVERSEAS_DATA = {
         },
         {
           "d": "2026.11.09",
-          "s": 74
+          "s": 58
         }
       ]
     }
@@ -141,7 +141,7 @@ window.OVERSEAS_DATA = {
       }
     ],
     "weeklySummary": [
-      "국면: Risk-on (74/100) · 성장/섹터 ETF는 눌림 분할 접근",
+      "국면: Neutral (58/100) · 중립 비중 유지, 이벤트 확인 후 대응",
       "강세 섹터: 금융(XLF) +1.15% / +5.40%",
       "약세 섹터: 반도체(SOXX) -13.13% / -27.28%"
     ]
