@@ -1,5 +1,5 @@
 window.PANIC_DATA = {
-  "updatedAt": "2026.11.10 20:28 KST (자동 업데이트 · Python)",
+  "updatedAt": "2026.11.11 02:21 KST (자동 업데이트 · Python)",
   "signalExtras": {
     "t10y2y": null
   },
@@ -71,16 +71,16 @@ window.PANIC_DATA = {
     {
       "id": "hy",
       "label": "HY 금리 스프레드",
-      "value": "3.42%",
-      "delta": "📉 -0.06%",
+      "value": "3.34%",
+      "delta": "📉 -0.08%",
       "status": "🟢 안정",
       "tone": "stable",
-      "weekTrend": "보합",
+      "weekTrend": "하락",
       "actionGuide": "관망",
       "trendUrl": "https://fred.stlouisfed.org/series/BAMLH0A0HYM2",
       "source": "fred",
-      "previousClose": 3.48,
-      "change": -0.06
+      "previousClose": 3.42,
+      "change": -0.08
     },
     {
       "id": "gsbb",

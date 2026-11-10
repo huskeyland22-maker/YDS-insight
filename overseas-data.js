@@ -1,5 +1,5 @@
 window.OVERSEAS_DATA = {
-  "updatedAt": "2026.11.10 21:18 KST (자동 업데이트)",
+  "updatedAt": "2026.11.11 02:21 KST (자동 업데이트)",
   "items": [
     {
       "symbol": "SOXL",
@@ -7,7 +7,7 @@ window.OVERSEAS_DATA = {
       "p1w": "-17.56%",
       "p1m": "-59.79%",
       "mdd": "-81.31%",
-      "updatedAt": "2026.11.10"
+      "updatedAt": "2026.11.11"
     },
     {
       "symbol": "TQQQ",
@@ -15,7 +15,7 @@ window.OVERSEAS_DATA = {
       "p1w": "-3.16%",
       "p1m": "-29.16%",
       "mdd": "-33.98%",
-      "updatedAt": "2026.11.10"
+      "updatedAt": "2026.11.11"
     },
     {
       "symbol": "SSO",
@@ -23,17 +23,17 @@ window.OVERSEAS_DATA = {
       "p1w": "-0.25%",
       "p1m": "-7.31%",
       "mdd": "-7.82%",
-      "updatedAt": "2026.11.10"
+      "updatedAt": "2026.11.11"
     }
   ],
   "flow": {
-    "updatedAt": "2026.11.10 21:18 KST (자동 업데이트)",
+    "updatedAt": "2026.11.11 02:21 KST (자동 업데이트)",
     "items": [
       {
         "id": "usdjpy",
         "label": "엔캐리 압력",
-        "value": "USDJPY 158.21",
-        "delta": "-0.05%",
+        "value": "USDJPY 158.77",
+        "delta": "+0.30%",
         "tone": "up"
       },
       {
@@ -60,20 +60,16 @@ window.OVERSEAS_DATA = {
       {
         "id": "vix_hy",
         "label": "리스크 선호",
-        "value": "VIX 19.92 / HY 3.42%",
-        "delta": "VIX -5.72% · HY -0.06%",
-        "tone": "flat"
+        "value": "VIX 19.92 / HY 3.34%",
+        "delta": "VIX -5.72% · HY -0.08%",
+        "tone": "up"
       }
     ],
     "regime": {
-      "score": 82,
+      "score": 90,
       "state": "Risk-on",
       "action": "성장/섹터 ETF는 눌림 분할 접근",
       "history": [
-        {
-          "d": "2026.11.04",
-          "s": 82
-        },
         {
           "d": "2026.11.05",
           "s": 74
@@ -97,6 +93,10 @@ window.OVERSEAS_DATA = {
         {
           "d": "2026.11.10",
           "s": 82
+        },
+        {
+          "d": "2026.11.11",
+          "s": 90
         }
       ]
     }
@@ -141,7 +141,7 @@ window.OVERSEAS_DATA = {
       }
     ],
     "weeklySummary": [
-      "국면: Risk-on (82/100) · 성장/섹터 ETF는 눌림 분할 접근",
+      "국면: Risk-on (90/100) · 성장/섹터 ETF는 눌림 분할 접근",
       "강세 섹터: 금융(XLF) +0.75% / +5.96%",
       "약세 섹터: 반도체(SOXX) -2.95% / -21.29%"
     ]
