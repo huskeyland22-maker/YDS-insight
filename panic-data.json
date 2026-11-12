@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026.11.12 02:32 KST (자동 업데이트 · Python)",
+  "updatedAt": "2026.11.12 12:49 KST (자동 업데이트 · Python)",
   "signalExtras": {
     "t10y2y": null
   },
@@ -7,21 +7,21 @@
     {
       "id": "vix",
       "label": "VIX Index",
-      "value": "19.46",
-      "delta": "📉 -0.46",
+      "value": "17.49",
+      "delta": "📉 -1.97",
       "status": "🟢 안정",
       "tone": "stable",
-      "weekTrend": "하락",
+      "weekTrend": "상승",
       "actionGuide": "관망",
       "trendUrl": "https://www.macrotrends.net/2603/vix-volatility-index-historical-chart",
       "source": "yahoo",
-      "previousClose": 19.92,
-      "change": -0.46
+      "previousClose": 19.46,
+      "change": -1.97
     },
     {
       "id": "fng",
       "label": "CNN F&G",
-      "value": "38",
+      "value": "37",
       "delta": "📈 +4",
       "status": "🟢 중립",
       "tone": "stable",
@@ -45,16 +45,16 @@
     {
       "id": "skew",
       "label": "SKEW Index",
-      "value": "151.12",
-      "delta": "📈 +0.78",
+      "value": "149.09",
+      "delta": "📉 -2.03",
       "status": "🔴 위험",
       "tone": "alert",
-      "weekTrend": "상승",
+      "weekTrend": "하락",
       "actionGuide": "헤지점검",
       "trendUrl": "https://www.cboe.com/tradable_products/vix/vix_historical_data/",
       "source": "yahoo",
-      "previousClose": 150.34,
-      "change": 0.78
+      "previousClose": 151.12,
+      "change": -2.03
     },
     {
       "id": "putcall",
@@ -111,17 +111,17 @@
     {
       "id": "vxn",
       "label": "VXN Index",
-      "value": "28.57",
-      "delta": "📉 -0.40",
+      "value": "26.74",
+      "delta": "📉 -1.83",
       "status": "🟡 주의",
       "tone": "watch",
-      "weekTrend": "하락",
+      "weekTrend": "상승",
       "actionGuide": "분할매수",
       "trendUrl": "https://www.cboe.com/tradable_products/vix/vxn/",
       "source": "yahoo",
-      "previousClose": 28.97,
-      "change": -0.4
+      "previousClose": 28.57,
+      "change": -1.83
     }
   ],
-  "asOfDateET": "2026-11-10"
+  "asOfDateET": "2026-11-11"
 }
