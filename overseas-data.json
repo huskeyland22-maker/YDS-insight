@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026.11.13 01:40 KST (자동 업데이트)",
+  "updatedAt": "2026.11.13 02:47 KST (자동 업데이트)",
   "items": [
     {
       "symbol": "SOXL",
@@ -27,13 +27,13 @@
     }
   ],
   "flow": {
-    "updatedAt": "2026.11.13 01:40 KST (자동 업데이트)",
+    "updatedAt": "2026.11.13 02:47 KST (자동 업데이트)",
     "items": [
       {
         "id": "usdjpy",
         "label": "엔캐리 압력",
-        "value": "USDJPY 159.99",
-        "delta": "+0.81%",
+        "value": "USDJPY 159.79",
+        "delta": "+0.68%",
         "tone": "down"
       },
       {
@@ -60,8 +60,8 @@
       {
         "id": "vix_hy",
         "label": "리스크 선호",
-        "value": "VIX 17.49 / HY 3.34%",
-        "delta": "VIX -1.97% · HY -0.08%",
+        "value": "VIX 17.49 / HY 3.30%",
+        "delta": "VIX -1.97% · HY -0.04%",
         "tone": "up"
       }
     ],

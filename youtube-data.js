@@ -1,5 +1,5 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.11.12 20:35 KST (자동 업데이트)",
+  "updatedAt": "2026.11.13 02:47 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=65EO7MrOoh8",
-      "thumbUrl": "https://i.ytimg.com/vi/65EO7MrOoh8/hqdefault.jpg",
-      "videoTitle": "AI칩에 살아있는 뇌세포를 연결하면 벌어지는 일 | 김인엽의 실리콘밸리나우",
-      "publishedAt": "2026-11-12T09:00:30+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=JV2z8Eku3i4",
+      "thumbUrl": "https://i.ytimg.com/vi/JV2z8Eku3i4/hqdefault.jpg",
+      "videoTitle": "[박신영의 개장전 요것만-11월12일] 젠슨 황, 엔비디아 사임",
+      "publishedAt": "2026-11-12T14:36:48+00:00"
     },
     {
       "id": "moneyinside",
