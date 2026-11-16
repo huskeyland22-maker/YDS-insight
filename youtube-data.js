@@ -1,5 +1,5 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.11.16 20:50 KST (자동 업데이트)",
+  "updatedAt": "2026.11.17 04:55 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=SzHeL8Nj1jE",
-      "thumbUrl": "https://i.ytimg.com/vi/SzHeL8Nj1jE/hqdefault.jpg",
-      "videoTitle": "반도체 수출통제 '칼날' 벼리는 美 의회..韓 기업도 영향권 | 이상은의 워싱턴나우",
-      "publishedAt": "2026-11-16T03:30:39+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=blDGIYqWsIo",
+      "thumbUrl": "https://i.ytimg.com/vi/blDGIYqWsIo/hqdefault.jpg",
+      "videoTitle": "[박신영의 개장전 요것만-11월16일] \"젠슨 황 돌려달라\"...커지는 투자자 목소리 | 악재 겹친 인텔과 아마존",
+      "publishedAt": "2026-11-16T15:01:08+00:00"
     },
     {
       "id": "moneyinside",
