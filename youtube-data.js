@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.11.17 14:05 KST (자동 업데이트)",
+  "updatedAt": "2026.11.17 21:11 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=qHZllojSGtM",
-      "thumbUrl": "https://i.ytimg.com/vi/qHZllojSGtM/hqdefault.jpg",
-      "videoTitle": "달러 패권의 진짜 비밀은 따로 있다…미국이 무너지기 시작하는 신호 | 경읽남과 토론합시다 | 김창익 작가 [2편]",
-      "publishedAt": "2026-11-16T21:05:37+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=vb60Y8hT9wU",
+      "thumbUrl": "https://i.ytimg.com/vi/vb60Y8hT9wU/hqdefault.jpg",
+      "videoTitle": "젠슨 황 퇴진이 끝이 아니다…데이터센터·반도체 판이 바뀐다 | 경제학교 월간특강 [1편]",
+      "publishedAt": "2026-11-17T09:05:22+00:00"
     },
     {
       "id": "sbs-explained",
