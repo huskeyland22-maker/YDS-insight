@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.11.17 21:11 KST (자동 업데이트)",
+  "updatedAt": "2026.11.18 03:51 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=vb60Y8hT9wU",
-      "thumbUrl": "https://i.ytimg.com/vi/vb60Y8hT9wU/hqdefault.jpg",
-      "videoTitle": "젠슨 황 퇴진이 끝이 아니다…데이터센터·반도체 판이 바뀐다 | 경제학교 월간특강 [1편]",
-      "publishedAt": "2026-11-17T09:05:22+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=eQUnyHrMYm8",
+      "thumbUrl": "https://i.ytimg.com/vi/eQUnyHrMYm8/hqdefault.jpg",
+      "videoTitle": "젠슨 황도 멈추지 못했다…부자가 될수록 더 위험해지는 이유 | 김광석의 북리뷰 | 부자의 5가지 철학 [1편]",
+      "publishedAt": "2026-11-17T15:05:39+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=bc2-Rv4KpQ8",
-      "thumbUrl": "https://i.ytimg.com/vi/bc2-Rv4KpQ8/hqdefault.jpg",
-      "videoTitle": "[박신영의 클로징벨 요것만-11월17일] 엔비디아 쇼크에 나스닥 2.5% 급락",
-      "publishedAt": "2026-11-16T21:46:21+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=x-2Vpsnl134",
+      "thumbUrl": "https://i.ytimg.com/vi/x-2Vpsnl134/hqdefault.jpg",
+      "videoTitle": "[박신영의 개장전 요것만-11월17일] 中 장악한 AI 인프라 무기는 '이것' | 아마존·구글·메타 \"대비 10년 걸려\"",
+      "publishedAt": "2026-11-17T14:58:48+00:00"
     },
     {
       "id": "moneyinside",
