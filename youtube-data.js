@@ -1,5 +1,5 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.11.18 21:00 KST (자동 업데이트)",
+  "updatedAt": "2026.11.19 03:29 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=vhOKWCD9SZY",
-      "thumbUrl": "https://i.ytimg.com/vi/vhOKWCD9SZY/hqdefault.jpg",
-      "videoTitle": "[플러스 라이브] 엔비디아 \"젠슨 황 복귀 없다\"...\"네오클라우드 지원 신중\"",
-      "publishedAt": "2026-11-17T23:10:17+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=-iiS_1t8enU",
+      "thumbUrl": "https://i.ytimg.com/vi/-iiS_1t8enU/hqdefault.jpg",
+      "videoTitle": "[박신영의 개장전 요것만-11월18일] 엔비디아 어닝서프라이즈에도 여전히 불안한 시장...네오클라우드도 안심하기 일러",
+      "publishedAt": "2026-11-18T14:57:55+00:00"
     },
     {
       "id": "moneyinside",
