@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.11.19 13:12 KST (자동 업데이트)",
+  "updatedAt": "2026.11.19 20:57 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=aa_keyVOD64",
-      "thumbUrl": "https://i.ytimg.com/vi/aa_keyVOD64/hqdefault.jpg",
-      "videoTitle": "돈이 많아져도 왜 계속 가난할까? 부자가 되려면 먼저 ‘충분함’을 정해야 합니다 | 김광석의 북리뷰 | 부자의 5가지 철학 [2편]",
-      "publishedAt": "2026-11-18T21:05:33+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=y4GUdqO_LQE",
+      "thumbUrl": "https://i.ytimg.com/vi/y4GUdqO_LQE/hqdefault.jpg",
+      "videoTitle": "스페이스X, 이제 우주기업이 아니다…AI가 주가를 움직이는 이유 | 경제학교 월간특강-정의훈 연구원 [3편]",
+      "publishedAt": "2026-11-19T09:05:13+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=NP6j34pcd9c",
-      "thumbUrl": "https://i.ytimg.com/vi/NP6j34pcd9c/hqdefault.jpg",
-      "videoTitle": "[박신영의 클로징벨 요것만-11월19일] 엔비디아 2.9% 하락...앤트로픽 공모가 83달러",
-      "publishedAt": "2026-11-18T21:53:55+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=uOQKfOjyBcI",
+      "thumbUrl": "https://i.ytimg.com/vi/uOQKfOjyBcI/hqdefault.jpg",
+      "videoTitle": "2900억 주고 폐공장 사들이는 미국 기업들…AI 투자 판이 바뀐다 | 김인엽의 실리콘밸리나우",
+      "publishedAt": "2026-11-19T09:00:07+00:00"
     },
     {
       "id": "moneyinside",
