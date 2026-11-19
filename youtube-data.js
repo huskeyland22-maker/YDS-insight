@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.11.19 03:29 KST (자동 업데이트)",
+  "updatedAt": "2026.11.19 13:12 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=PozFDkmVkG8",
-      "thumbUrl": "https://i.ytimg.com/vi/PozFDkmVkG8/hqdefault.jpg",
-      "videoTitle": "왜 내가 사면 떨어질까? FOMO에 들어가고 공포에 나오는 투자자의 함정 | 경제학교 월간특강 [2편]",
-      "publishedAt": "2026-11-18T09:05:08+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=aa_keyVOD64",
+      "thumbUrl": "https://i.ytimg.com/vi/aa_keyVOD64/hqdefault.jpg",
+      "videoTitle": "돈이 많아져도 왜 계속 가난할까? 부자가 되려면 먼저 ‘충분함’을 정해야 합니다 | 김광석의 북리뷰 | 부자의 5가지 철학 [2편]",
+      "publishedAt": "2026-11-18T21:05:33+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=-iiS_1t8enU",
-      "thumbUrl": "https://i.ytimg.com/vi/-iiS_1t8enU/hqdefault.jpg",
-      "videoTitle": "[박신영의 개장전 요것만-11월18일] 엔비디아 어닝서프라이즈에도 여전히 불안한 시장...네오클라우드도 안심하기 일러",
-      "publishedAt": "2026-11-18T14:57:55+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=NP6j34pcd9c",
+      "thumbUrl": "https://i.ytimg.com/vi/NP6j34pcd9c/hqdefault.jpg",
+      "videoTitle": "[박신영의 클로징벨 요것만-11월19일] 엔비디아 2.9% 하락...앤트로픽 공모가 83달러",
+      "publishedAt": "2026-11-18T21:53:55+00:00"
     },
     {
       "id": "moneyinside",

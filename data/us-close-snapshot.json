@@ -4,7 +4,7 @@
     "change": -0.13
   },
   "dow": {
-    "value": 50198.17,
+    "value": 50198.2,
     "change": -1.11
   },
   "sp500": {
@@ -24,8 +24,8 @@
     "change": -0.5
   },
   "vix": {
-    "value": 25.46,
-    "change": 2.55
+    "value": 24.56,
+    "change": -0.9
   },
   "us10y": {
     "value": 4.388,
@@ -36,8 +36,8 @@
     "change": 854000
   },
   "dxy": {
-    "value": 103.81,
-    "change": 0.31
+    "value": 103.95,
+    "change": 0.09
   },
-  "updatedAt": "2026-11-19T01:46:28.680Z"
+  "updatedAt": "2026-11-19T04:12:26.277Z"
 }
