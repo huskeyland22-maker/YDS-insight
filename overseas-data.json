@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026.11.20 07:56 KST (자동 업데이트)",
+  "updatedAt": "2026.11.20 12:59 KST (자동 업데이트)",
   "items": [
     {
       "symbol": "SOXL",
@@ -27,20 +27,20 @@
     }
   ],
   "flow": {
-    "updatedAt": "2026.11.20 07:56 KST (자동 업데이트)",
+    "updatedAt": "2026.11.20 12:59 KST (자동 업데이트)",
     "items": [
       {
         "id": "usdjpy",
         "label": "엔캐리 압력",
-        "value": "USDJPY 159.62",
-        "delta": "+0.07%",
+        "value": "USDJPY 159.22",
+        "delta": "-0.10%",
         "tone": "up"
       },
       {
         "id": "dxy",
         "label": "달러 유동성",
-        "value": "Dollar Index 103.93",
-        "delta": "+0.07%",
+        "value": "Dollar Index 103.83",
+        "delta": "-0.07%",
         "tone": "up"
       },
       {
@@ -60,13 +60,13 @@
       {
         "id": "vix_hy",
         "label": "리스크 선호",
-        "value": "VIX 24.56 / HY 3.47%",
-        "delta": "VIX -0.90% · HY +0.04%",
-        "tone": "flat"
+        "value": "VIX 28.44 / HY 3.47%",
+        "delta": "VIX +3.88% · HY +0.04%",
+        "tone": "down"
       }
     ],
     "regime": {
-      "score": 50,
+      "score": 42,
       "state": "Neutral",
       "action": "중립 비중 유지, 이벤트 확인 후 대응",
       "history": [
@@ -96,7 +96,7 @@
         },
         {
           "d": "2026.11.20",
-          "s": 50
+          "s": 42
         }
       ]
     }
@@ -141,7 +141,7 @@
       }
     ],
     "weeklySummary": [
-      "국면: Neutral (50/100) · 중립 비중 유지, 이벤트 확인 후 대응",
+      "국면: Neutral (42/100) · 중립 비중 유지, 이벤트 확인 후 대응",
       "강세 섹터: 금융(XLF) -4.52% / -0.82%",
       "약세 섹터: 반도체(SOXX) -10.99% / -18.91%"
     ]
