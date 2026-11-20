@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.11.20 12:59 KST (자동 업데이트)",
+  "updatedAt": "2026.11.20 20:58 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=9k4K_F_G_6k",
-      "thumbUrl": "https://i.ytimg.com/vi/9k4K_F_G_6k/hqdefault.jpg",
-      "videoTitle": "투자보다 더 위험한 건 ‘투자하지 않는 것’입니다…부자가 되는 3단계 | 김광석의 북리뷰 | 부자의 5가지 철학 [3편]",
-      "publishedAt": "2026-11-19T21:05:26+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=f_TIWYq6hfI",
+      "thumbUrl": "https://i.ytimg.com/vi/f_TIWYq6hfI/hqdefault.jpg",
+      "videoTitle": "프랑스 사태는 시작일 뿐이다…한국도 ‘제2의 IMF’ 피할 수 없나 | 경읽남과 토론합시다 | 김창익 작가 [3편]",
+      "publishedAt": "2026-11-20T09:05:09+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=8FOswbiwPrQ",
-      "thumbUrl": "https://i.ytimg.com/vi/8FOswbiwPrQ/hqdefault.jpg",
-      "videoTitle": "[박신영의 클로징벨 요것만-11월20일] 앤트로픽 주가 상승에 쏟아진 차익실현...3대지수 2% 넘게 급락 | AMD도 中 리스크 노출",
-      "publishedAt": "2026-11-19T21:52:11+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=P76jZE8gOWI",
+      "thumbUrl": "https://i.ytimg.com/vi/P76jZE8gOWI/hqdefault.jpg",
+      "videoTitle": "앤트로픽 상장, 함께 주목할 수혜주",
+      "publishedAt": "2026-11-20T06:46:07+00:00"
     },
     {
       "id": "moneyinside",

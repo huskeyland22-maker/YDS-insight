@@ -8,8 +8,8 @@
     "prev": 0.5
   },
   "fearGreed": {
-    "now": 19,
-    "prev": 19
+    "now": 17,
+    "prev": 17
   },
   "bofa": {
     "now": 6.3,
@@ -29,5 +29,5 @@
     "now": 0.51,
     "prev": 0.51
   },
-  "updatedAt": "2026-11-20 15:26 KST · success"
+  "updatedAt": "2026-11-20 20:58 KST · success"
 }
