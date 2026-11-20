@@ -1,41 +1,9 @@
 window.OVERSEAS_DATA = {
-  "updatedAt": "2026.11.21 01:48 KST (자동 업데이트)",
-  "items": [
-    {
-      "symbol": "SOXL",
-      "p1d": "-8.04%",
-      "p1w": "-30.87%",
-      "p1m": "-56.12%",
-      "mdd": "-84.94%",
-      "updatedAt": "2026.11.21"
-    },
-    {
-      "symbol": "TQQQ",
-      "p1d": "-6.54%",
-      "p1w": "-18.15%",
-      "p1m": "-32.50%",
-      "mdd": "-43.81%",
-      "updatedAt": "2026.11.21"
-    },
-    {
-      "symbol": "SSO",
-      "p1d": "-3.96%",
-      "p1w": "-10.78%",
-      "p1m": "-15.04%",
-      "mdd": "-16.82%",
-      "updatedAt": "2026.11.21"
-    }
-  ],
+  "updatedAt": "2026.11.21 03:05 KST (자동 업데이트)",
+  "items": [],
   "flow": {
-    "updatedAt": "2026.11.21 01:48 KST (자동 업데이트)",
+    "updatedAt": "2026.11.21 03:05 KST (자동 업데이트)",
     "items": [
-      {
-        "id": "usdjpy",
-        "label": "엔캐리 압력",
-        "value": "USDJPY 158.68",
-        "delta": "-0.44%",
-        "tone": "up"
-      },
       {
         "id": "dxy",
         "label": "달러 유동성",
@@ -44,29 +12,15 @@ window.OVERSEAS_DATA = {
         "tone": "up"
       },
       {
-        "id": "qqq_tlt",
-        "label": "기관 프록시",
-        "value": "QQQ/TLT 8.028",
-        "delta": "-2.35%",
-        "tone": "down"
-      },
-      {
-        "id": "hyg_lqd",
-        "label": "신용 체력",
-        "value": "HYG/LQD 0.742",
-        "delta": "-0.09%",
-        "tone": "down"
-      },
-      {
         "id": "vix_hy",
         "label": "리스크 선호",
-        "value": "VIX 28.44 / HY 3.47%",
-        "delta": "VIX +3.88% · HY +0.04%",
+        "value": "VIX 28.44 / HY 3.52%",
+        "delta": "VIX +3.88% · HY +0.05%",
         "tone": "down"
       }
     ],
     "regime": {
-      "score": 42,
+      "score": 50,
       "state": "Neutral",
       "action": "중립 비중 유지, 이벤트 확인 후 대응",
       "history": [
@@ -96,54 +50,15 @@ window.OVERSEAS_DATA = {
         },
         {
           "d": "2026.11.21",
-          "s": 42
+          "s": 50
         }
       ]
     }
   },
   "insight": {
-    "sectorStrength": [
-      {
-        "id": "financials",
-        "label": "금융",
-        "symbol": "XLF",
-        "p1d": "-1.49%",
-        "p1w": "-4.52%",
-        "p1m": "-0.82%",
-        "score": -2.2
-      },
-      {
-        "id": "energy",
-        "label": "에너지",
-        "symbol": "XLE",
-        "p1d": "-0.65%",
-        "p1w": "-5.35%",
-        "p1m": "-10.67%",
-        "score": -6.8
-      },
-      {
-        "id": "ai-growth",
-        "label": "AI/성장",
-        "symbol": "QQQ",
-        "p1d": "-2.19%",
-        "p1w": "-6.27%",
-        "p1m": "-11.05%",
-        "score": -7.6
-      },
-      {
-        "id": "semiconductor",
-        "label": "반도체",
-        "symbol": "SOXX",
-        "p1d": "-2.75%",
-        "p1w": "-10.99%",
-        "p1m": "-18.91%",
-        "score": -12.9
-      }
-    ],
+    "sectorStrength": [],
     "weeklySummary": [
-      "국면: Neutral (42/100) · 중립 비중 유지, 이벤트 확인 후 대응",
-      "강세 섹터: 금융(XLF) -4.52% / -0.82%",
-      "약세 섹터: 반도체(SOXX) -10.99% / -18.91%"
+      "국면: Neutral (50/100) · 중립 비중 유지, 이벤트 확인 후 대응"
     ]
   }
 };

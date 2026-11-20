@@ -1,5 +1,5 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.11.20 20:58 KST (자동 업데이트)",
+  "updatedAt": "2026.11.21 03:06 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=P76jZE8gOWI",
-      "thumbUrl": "https://i.ytimg.com/vi/P76jZE8gOWI/hqdefault.jpg",
-      "videoTitle": "앤트로픽 상장, 함께 주목할 수혜주",
-      "publishedAt": "2026-11-20T06:46:07+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=7EHcrP6Wn0U",
+      "thumbUrl": "https://i.ytimg.com/vi/7EHcrP6Wn0U/hqdefault.jpg",
+      "videoTitle": "[박신영의 개장전 요것만-11월20일] 앤트로픽도 쓸어간 AI 매도세...애플 참전에 AI 경쟁 격화",
+      "publishedAt": "2026-11-20T14:50:38+00:00"
     },
     {
       "id": "moneyinside",
