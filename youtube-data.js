@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.11.21 03:06 KST (자동 업데이트)",
+  "updatedAt": "2026.11.21 12:59 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=f_TIWYq6hfI",
-      "thumbUrl": "https://i.ytimg.com/vi/f_TIWYq6hfI/hqdefault.jpg",
-      "videoTitle": "프랑스 사태는 시작일 뿐이다…한국도 ‘제2의 IMF’ 피할 수 없나 | 경읽남과 토론합시다 | 김창익 작가 [3편]",
-      "publishedAt": "2026-11-20T09:05:09+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=ppTiD9ePF2g",
+      "thumbUrl": "https://i.ytimg.com/vi/ppTiD9ePF2g/hqdefault.jpg",
+      "videoTitle": "[풀버전] 젠슨 황도 멈추지 못했다…부자가 될수록 더 위험해지는 이유 | 김광석의 북리뷰 | 부자의 5가지 철학",
+      "publishedAt": "2026-11-20T22:05:36+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=7EHcrP6Wn0U",
-      "thumbUrl": "https://i.ytimg.com/vi/7EHcrP6Wn0U/hqdefault.jpg",
-      "videoTitle": "[박신영의 개장전 요것만-11월20일] 앤트로픽도 쓸어간 AI 매도세...애플 참전에 AI 경쟁 격화",
-      "publishedAt": "2026-11-20T14:50:38+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=XbM2AbJXeUQ",
+      "thumbUrl": "https://i.ytimg.com/vi/XbM2AbJXeUQ/hqdefault.jpg",
+      "videoTitle": "악재는 계속 겹치는데 앤트로픽은 혼자만 먹고 튀었다? | 월가백브리핑",
+      "publishedAt": "2026-11-21T03:00:16+00:00"
     },
     {
       "id": "moneyinside",
