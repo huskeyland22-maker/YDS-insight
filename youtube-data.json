@@ -1,15 +1,15 @@
 {
-  "updatedAt": "2026.11.22 02:00 KST (자동 업데이트)",
+  "updatedAt": "2026.11.22 12:11 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=pZBhnbpjr-s",
-      "thumbUrl": "https://i.ytimg.com/vi/pZBhnbpjr-s/hqdefault.jpg",
-      "videoTitle": "[모아보기] 2억이 30억 됐다…마이너스 80%에서 배운 투자 원칙 | 경읽남과 토론합시다 | 최서연x송태헌x김원장",
-      "publishedAt": "2026-11-21T09:05:26+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=4vM6YwYXhtI",
+      "thumbUrl": "https://i.ytimg.com/vi/4vM6YwYXhtI/hqdefault.jpg",
+      "videoTitle": "[풀버전] 왜 내가 사면 떨어질까? FOMO에 들어가고 공포에 나오는 투자자의 함정 | 경제학교 월간특강",
+      "publishedAt": "2026-11-21T21:05:32+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=XbM2AbJXeUQ",
-      "thumbUrl": "https://i.ytimg.com/vi/XbM2AbJXeUQ/hqdefault.jpg",
-      "videoTitle": "악재는 계속 겹치는데 앤트로픽은 혼자만 먹고 튀었다? | 월가백브리핑",
-      "publishedAt": "2026-11-21T03:00:16+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=Qbohameg3R0",
+      "thumbUrl": "https://i.ytimg.com/vi/Qbohameg3R0/hqdefault.jpg",
+      "videoTitle": "메모리 슈퍼사이클은 이제 끝물인 걸까 | 월가백브리핑",
+      "publishedAt": "2026-11-22T03:00:29+00:00"
     },
     {
       "id": "moneyinside",
