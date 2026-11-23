@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.11.23 02:28 KST (자동 업데이트)",
+  "updatedAt": "2026.11.23 12:43 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=tvxhRcd8H40",
-      "thumbUrl": "https://i.ytimg.com/vi/tvxhRcd8H40/hqdefault.jpg",
-      "videoTitle": "[🔴생방송] 코스피 -45%, 'AI 거품 붕괴' 시작인가? 끝인가? [즉시분석]",
-      "publishedAt": "2026-11-22T13:51:55+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=VlZMZ9gZbUg",
+      "thumbUrl": "https://i.ytimg.com/vi/VlZMZ9gZbUg/hqdefault.jpg",
+      "videoTitle": "AI 데이터센터 더 못 짓는다? 결국 전력이 발목 잡는다 | 경읽남과 토론합시다 | 양수영 사장 [1편]",
+      "publishedAt": "2026-11-23T03:05:12+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=Qbohameg3R0",
-      "thumbUrl": "https://i.ytimg.com/vi/Qbohameg3R0/hqdefault.jpg",
-      "videoTitle": "메모리 슈퍼사이클은 이제 끝물인 걸까 | 월가백브리핑",
-      "publishedAt": "2026-11-22T03:00:29+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=8-A1yMnC06E",
+      "thumbUrl": "https://i.ytimg.com/vi/8-A1yMnC06E/hqdefault.jpg",
+      "videoTitle": "3자회담 '홈런' 친 푸틴…그 뒤에서 웃는 시진핑 | 이상은의 워싱턴나우",
+      "publishedAt": "2026-11-23T03:30:08+00:00"
     },
     {
       "id": "moneyinside",
