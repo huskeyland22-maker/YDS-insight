@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.11.23 22:22 KST (자동 업데이트)",
+  "updatedAt": "2026.11.24 06:48 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=cI-Ncg0mNVY",
-      "thumbUrl": "https://i.ytimg.com/vi/cI-Ncg0mNVY/hqdefault.jpg",
-      "videoTitle": "한국 경제 40년 만에 살아났다는데…왜 우리는 더 가난해졌을까? | 김광석의 야외수업 [1편]",
-      "publishedAt": "2026-11-23T09:05:17+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=3xB7MS8X7vc",
+      "thumbUrl": "https://i.ytimg.com/vi/3xB7MS8X7vc/hqdefault.jpg",
+      "videoTitle": "석유 고갈보다 더 무서운 건 따로 있다…초고유가 시대가 먼저 온다 | 경읽남과 토론합시다 | 양수영 사장 [2편]",
+      "publishedAt": "2026-11-23T21:05:16+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=8-A1yMnC06E",
-      "thumbUrl": "https://i.ytimg.com/vi/8-A1yMnC06E/hqdefault.jpg",
-      "videoTitle": "3자회담 '홈런' 친 푸틴…그 뒤에서 웃는 시진핑 | 이상은의 워싱턴나우",
-      "publishedAt": "2026-11-23T03:30:08+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=SlogffV3wZE",
+      "thumbUrl": "https://i.ytimg.com/vi/SlogffV3wZE/hqdefault.jpg",
+      "videoTitle": "[박신영의 클로징벨 요것만-11월24일] 젠슨 황 복귀에 엔비디아 31.6% 폭등, AI 인프라주도 급등...앤트로픽만 랠리에서 제외",
+      "publishedAt": "2026-11-23T21:06:51+00:00"
     },
     {
       "id": "moneyinside",
