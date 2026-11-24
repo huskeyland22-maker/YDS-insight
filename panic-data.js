@@ -1,5 +1,5 @@
 window.PANIC_DATA = {
-  "updatedAt": "2026.11.24 06:47 KST (자동 업데이트 · Python)",
+  "updatedAt": "2026.11.24 15:57 KST (자동 업데이트 · Python)",
   "signalExtras": {
     "t10y2y": null
   },
@@ -22,7 +22,7 @@ window.PANIC_DATA = {
       "id": "fng",
       "label": "CNN F&G",
       "value": "17",
-      "delta": "📈 +7",
+      "delta": "➡️ 0",
       "status": "🔴 공포",
       "tone": "alert",
       "weekTrend": "하락",
@@ -45,16 +45,16 @@ window.PANIC_DATA = {
     {
       "id": "skew",
       "label": "SKEW Index",
-      "value": "138.84",
-      "delta": "📉 -2.02",
+      "value": "140.37",
+      "delta": "📈 +1.53",
       "status": "🟡 주의",
       "tone": "watch",
       "weekTrend": "하락",
       "actionGuide": "분할매수",
       "trendUrl": "https://www.cboe.com/tradable_products/vix/vix_historical_data/",
       "source": "yahoo",
-      "previousClose": 140.86,
-      "change": -2.02
+      "previousClose": 138.84,
+      "change": 1.53
     },
     {
       "id": "putcall",
