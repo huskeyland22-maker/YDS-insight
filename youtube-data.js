@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.11.24 15:57 KST (자동 업데이트)",
+  "updatedAt": "2026.11.24 23:02 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=TaNKqZMeo6Y",
-      "thumbUrl": "https://i.ytimg.com/vi/TaNKqZMeo6Y/hqdefault.jpg",
-      "videoTitle": "[속보] '향후 증시의 3가지 쟁점' 젠슨황의 복귀는 산타랠리 신호인가? 일시적 반등인가? [즉시분석]",
-      "publishedAt": "2026-11-24T03:02:38+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=MB2wXvtQ9vo",
+      "thumbUrl": "https://i.ytimg.com/vi/MB2wXvtQ9vo/hqdefault.jpg",
+      "videoTitle": "AI 데이터센터 정말 멈출까? 미국도 결국 못 멈추는 이유 [경읽남 272화]",
+      "publishedAt": "2026-11-24T09:05:39+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=SlogffV3wZE",
-      "thumbUrl": "https://i.ytimg.com/vi/SlogffV3wZE/hqdefault.jpg",
-      "videoTitle": "[박신영의 클로징벨 요것만-11월24일] 젠슨 황 복귀에 엔비디아 31.6% 폭등, AI 인프라주도 급등...앤트로픽만 랠리에서 제외",
-      "publishedAt": "2026-11-23T21:51:00+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=Qf534kSg86A",
+      "thumbUrl": "https://i.ytimg.com/vi/Qf534kSg86A/hqdefault.jpg",
+      "videoTitle": "[박신영의 개장전 요것만-11월24일] 뉴욕증시, 걱정의 벽 타고 오를까 vs 희망의 비탈길로 내려올까",
+      "publishedAt": "2026-11-24T13:48:01+00:00"
     },
     {
       "id": "moneyinside",
