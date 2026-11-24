@@ -1,5 +1,5 @@
 window.OVERSEAS_DATA = {
-  "updatedAt": "2026.11.24 23:40 KST (자동 업데이트)",
+  "updatedAt": "2026.11.25 05:25 KST (자동 업데이트)",
   "items": [
     {
       "symbol": "SOXL",
@@ -7,7 +7,7 @@ window.OVERSEAS_DATA = {
       "p1w": "-11.38%",
       "p1m": "-48.29%",
       "mdd": "-85.63%",
-      "updatedAt": "2026.11.24"
+      "updatedAt": "2026.11.25"
     },
     {
       "symbol": "TQQQ",
@@ -15,7 +15,7 @@ window.OVERSEAS_DATA = {
       "p1w": "-7.41%",
       "p1m": "-25.93%",
       "mdd": "-43.71%",
-      "updatedAt": "2026.11.24"
+      "updatedAt": "2026.11.25"
     },
     {
       "symbol": "SSO",
@@ -23,16 +23,16 @@ window.OVERSEAS_DATA = {
       "p1w": "-5.24%",
       "p1m": "-10.76%",
       "mdd": "-15.68%",
-      "updatedAt": "2026.11.24"
+      "updatedAt": "2026.11.25"
     }
   ],
   "flow": {
-    "updatedAt": "2026.11.24 23:40 KST (자동 업데이트)",
+    "updatedAt": "2026.11.25 05:25 KST (자동 업데이트)",
     "items": [
       {
         "id": "usdjpy",
         "label": "엔캐리 압력",
-        "value": "USDJPY 159.18",
+        "value": "USDJPY 159.19",
         "delta": "+0.16%",
         "tone": "up"
       },
@@ -60,8 +60,8 @@ window.OVERSEAS_DATA = {
       {
         "id": "vix_hy",
         "label": "리스크 선호",
-        "value": "VIX 26.62 / HY 3.76%",
-        "delta": "VIX -9.27% · HY +0.24%",
+        "value": "VIX 26.62 / HY 3.63%",
+        "delta": "VIX -9.27% · HY -0.13%",
         "tone": "down"
       }
     ],
@@ -70,10 +70,6 @@ window.OVERSEAS_DATA = {
       "state": "Neutral",
       "action": "중립 비중 유지, 이벤트 확인 후 대응",
       "history": [
-        {
-          "d": "2026.11.18",
-          "s": 42
-        },
         {
           "d": "2026.11.19",
           "s": 50
@@ -96,6 +92,10 @@ window.OVERSEAS_DATA = {
         },
         {
           "d": "2026.11.24",
+          "s": 58
+        },
+        {
+          "d": "2026.11.25",
           "s": 58
         }
       ]
