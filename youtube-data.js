@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.11.25 14:27 KST (자동 업데이트)",
+  "updatedAt": "2026.11.25 22:16 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=j1dsX6R7phI",
-      "thumbUrl": "https://i.ytimg.com/vi/j1dsX6R7phI/hqdefault.jpg",
-      "videoTitle": "미국의 에너지 패권도 10년 남았다? 한국이 지금 준비해야 하는 이유 | 경읽남과 토론합시다 | 양수영 사장 [3편]",
-      "publishedAt": "2026-11-24T21:05:29+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=-Q0lpJbBw0c",
+      "thumbUrl": "https://i.ytimg.com/vi/-Q0lpJbBw0c/hqdefault.jpg",
+      "videoTitle": "[🔴생방송] 미국 10월 PCE 물가 : 인플레 쇼크와 빅스텝 공포 오나? [즉시분석]",
+      "publishedAt": "2026-11-25T11:58:37+00:00"
     },
     {
       "id": "sbs-explained",
