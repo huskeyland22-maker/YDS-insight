@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026.11.25 22:16 KST (자동 업데이트)",
+  "updatedAt": "2026.11.25 22:59 KST (자동 업데이트)",
   "items": [
     {
       "symbol": "SOXL",
@@ -27,13 +27,13 @@
     }
   ],
   "flow": {
-    "updatedAt": "2026.11.25 22:16 KST (자동 업데이트)",
+    "updatedAt": "2026.11.25 22:59 KST (자동 업데이트)",
     "items": [
       {
         "id": "usdjpy",
         "label": "엔캐리 압력",
-        "value": "USDJPY 159.28",
-        "delta": "+0.17%",
+        "value": "USDJPY 159.37",
+        "delta": "+0.22%",
         "tone": "up"
       },
       {
