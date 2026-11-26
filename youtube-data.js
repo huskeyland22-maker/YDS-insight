@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.11.26 04:39 KST (자동 업데이트)",
+  "updatedAt": "2026.11.26 14:06 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=-Q0lpJbBw0c",
-      "thumbUrl": "https://i.ytimg.com/vi/-Q0lpJbBw0c/hqdefault.jpg",
-      "videoTitle": "[🔴생방송] 미국 10월 PCE 물가 : 인플레 쇼크와 빅스텝 공포 오나? [즉시분석]",
-      "publishedAt": "2026-11-25T14:45:28+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=HzOYFPT_HdQ",
+      "thumbUrl": "https://i.ytimg.com/vi/HzOYFPT_HdQ/hqdefault.jpg",
+      "videoTitle": "[속보] 한국은행 올해 마지막 금통위 3번째 금리인상. 내년 추가 금리인상 예고 [즉시분석]",
+      "publishedAt": "2026-11-26T00:55:18+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=CsIkZEzNxiY",
-      "thumbUrl": "https://i.ytimg.com/vi/CsIkZEzNxiY/hqdefault.jpg",
-      "videoTitle": "[플러스 라이브] 인플레에도 국채금리 급락...\"AI 채권 살 때\"",
-      "publishedAt": "2026-11-25T17:40:08+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=T1_B5WH4YNo",
+      "thumbUrl": "https://i.ytimg.com/vi/T1_B5WH4YNo/hqdefault.jpg",
+      "videoTitle": "[박신영의 클로징벨 요것만-11월26일] '롱'으로 돌아선 마이클 버리...낙폭 줄였지만 AI 매도세 여전",
+      "publishedAt": "2026-11-25T21:43:24+00:00"
     },
     {
       "id": "moneyinside",
