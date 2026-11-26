@@ -1,5 +1,5 @@
 window.OVERSEAS_DATA = {
-  "updatedAt": "2026.11.26 22:39 KST (자동 업데이트)",
+  "updatedAt": "2026.11.27 04:19 KST (자동 업데이트)",
   "items": [
     {
       "symbol": "SOXL",
@@ -7,7 +7,7 @@ window.OVERSEAS_DATA = {
       "p1w": "-35.00%",
       "p1m": "-68.32%",
       "mdd": "-89.35%",
-      "updatedAt": "2026.11.26"
+      "updatedAt": "2026.11.27"
     },
     {
       "symbol": "TQQQ",
@@ -15,7 +15,7 @@ window.OVERSEAS_DATA = {
       "p1w": "-13.65%",
       "p1m": "-36.26%",
       "mdd": "-48.09%",
-      "updatedAt": "2026.11.26"
+      "updatedAt": "2026.11.27"
     },
     {
       "symbol": "SSO",
@@ -23,17 +23,17 @@ window.OVERSEAS_DATA = {
       "p1w": "-4.19%",
       "p1m": "-14.37%",
       "mdd": "-17.02%",
-      "updatedAt": "2026.11.26"
+      "updatedAt": "2026.11.27"
     }
   ],
   "flow": {
-    "updatedAt": "2026.11.26 22:39 KST (자동 업데이트)",
+    "updatedAt": "2026.11.27 04:19 KST (자동 업데이트)",
     "items": [
       {
         "id": "usdjpy",
         "label": "엔캐리 압력",
-        "value": "USDJPY 159.23",
-        "delta": "-0.02%",
+        "value": "USDJPY 159.26",
+        "delta": "-0.00%",
         "tone": "up"
       },
       {
@@ -71,10 +71,6 @@ window.OVERSEAS_DATA = {
       "action": "중립 비중 유지, 이벤트 확인 후 대응",
       "history": [
         {
-          "d": "2026.11.20",
-          "s": 42
-        },
-        {
           "d": "2026.11.21",
           "s": 42
         },
@@ -96,6 +92,10 @@ window.OVERSEAS_DATA = {
         },
         {
           "d": "2026.11.26",
+          "s": 42
+        },
+        {
+          "d": "2026.11.27",
           "s": 42
         }
       ]
