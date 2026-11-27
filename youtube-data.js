@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.11.27 04:19 KST (자동 업데이트)",
+  "updatedAt": "2026.11.27 14:04 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=8Vom26Sgs1E",
-      "thumbUrl": "https://i.ytimg.com/vi/8Vom26Sgs1E/hqdefault.jpg",
-      "videoTitle": "모두가 주식시장을 떠나려 한다…진짜 바닥에서 나타나는 '신호' | 경읽남과 토론합시다 | 이대호 기자 [3편]",
-      "publishedAt": "2026-11-26T09:05:25+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=Xy5EuoIdxUc",
+      "thumbUrl": "https://i.ytimg.com/vi/Xy5EuoIdxUc/hqdefault.jpg",
+      "videoTitle": "삼성전자·SK하이닉스 슈퍼사이클은 계속되는데... 2027년 주가가 위험한 이유 | 김광석의 야외수업 [2편]",
+      "publishedAt": "2026-11-26T21:05:23+00:00"
     },
     {
       "id": "sbs-explained",

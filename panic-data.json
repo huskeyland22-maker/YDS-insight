@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026.11.27 04:19 KST (자동 업데이트 · Python)",
+  "updatedAt": "2026.11.27 14:04 KST (자동 업데이트 · Python)",
   "signalExtras": {
     "t10y2y": null
   },
@@ -7,16 +7,16 @@
     {
       "id": "vix",
       "label": "VIX Index",
-      "value": "28.29",
-      "delta": "📈 +1.93",
-      "status": "🔴 위험",
-      "tone": "alert",
-      "weekTrend": "상승",
-      "actionGuide": "헤지점검",
+      "value": "26.80",
+      "delta": "📉 -1.49",
+      "status": "🟡 주의",
+      "tone": "watch",
+      "weekTrend": "하락",
+      "actionGuide": "분할매수",
       "trendUrl": "https://www.macrotrends.net/2603/vix-volatility-index-historical-chart",
       "source": "yahoo",
-      "previousClose": 26.36,
-      "change": 1.93
+      "previousClose": 28.29,
+      "change": -1.49
     },
     {
       "id": "fng",
@@ -123,5 +123,5 @@
       "change": 2.11
     }
   ],
-  "asOfDateET": "2026-11-25"
+  "asOfDateET": "2026-11-26"
 }
