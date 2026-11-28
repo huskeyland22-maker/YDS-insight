@@ -1,5 +1,5 @@
 window.TICKER_DATA = {
-  "updatedAt": "2026.11.28 13:44 KST (자동 업데이트)",
+  "updatedAt": "2026.11.28 16:29 KST (자동 업데이트)",
   "items": [
     {
       "label": "KOSPI",
@@ -15,7 +15,7 @@ window.TICKER_DATA = {
     },
     {
       "label": "DOW",
-      "value": "50,774.90",
+      "value": "50,774.94",
       "delta": "+1.18%",
       "direction": "up"
     },
