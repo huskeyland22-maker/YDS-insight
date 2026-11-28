@@ -1,15 +1,15 @@
 window.YOUTUBE_DATA = {
-  "updatedAt": "2026.11.28 04:14 KST (자동 업데이트)",
+  "updatedAt": "2026.11.28 13:44 KST (자동 업데이트)",
   "items": [
     {
       "id": "kyungiknam",
       "name": "경제 읽어주는 남자",
       "channelUrl": "https://www.youtube.com/channel/UC3pfEoxaRDT6hvZZjpHu7Tg",
       "latestUrl": "https://www.youtube.com/@%EA%B2%BD%EC%9D%BD%EB%82%A8_%EA%B9%80%EA%B4%91%EC%84%9DTV/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=PImE9qZnNL8",
-      "thumbUrl": "https://i.ytimg.com/vi/PImE9qZnNL8/hqdefault.jpg",
-      "videoTitle": "천만 관객 영화가 나와도 영화계는 무너진다…조성하·송일곤이 말하는 한국 영화의 현실 | 경읽남과 토론합시다 | 3자토론 조성하x송일곤x김광석 [1편]",
-      "publishedAt": "2026-11-27T09:05:24+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=zS7jY_sftEk",
+      "thumbUrl": "https://i.ytimg.com/vi/zS7jY_sftEk/hqdefault.jpg",
+      "videoTitle": "[풀버전] 삼성전자·SK하이닉스 슈퍼사이클은 계속되는데... 2027년 주가가 위험한 이유 | 김광석의 야외수업",
+      "publishedAt": "2026-11-27T22:05:10+00:00"
     },
     {
       "id": "sbs-explained",
@@ -26,10 +26,10 @@ window.YOUTUBE_DATA = {
       "name": "한경 글로벌 마켓",
       "channelUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA",
       "latestUrl": "https://www.youtube.com/channel/UCWskYkV4c4S9D__rsfOl2JA/videos",
-      "videoUrl": "https://www.youtube.com/watch?v=_CgyHlZytc4",
-      "thumbUrl": "https://i.ytimg.com/vi/_CgyHlZytc4/hqdefault.jpg",
-      "videoTitle": "[박신영의 개장전 요것만-11월27일] AI 셀오프 끝?...\"안심하긴 일러\" | 스페이스X·테슬라 합병의 함정?",
-      "publishedAt": "2026-11-27T14:55:21+00:00"
+      "videoUrl": "https://www.youtube.com/watch?v=YhxppNV2IQc",
+      "thumbUrl": "https://i.ytimg.com/vi/YhxppNV2IQc/hqdefault.jpg",
+      "videoTitle": "아셴브레너의 AI 초지능 경고...\"SI 파괴, 머스크도 못 피해\" | 월가백브리핑",
+      "publishedAt": "2026-11-28T03:00:39+00:00"
     },
     {
       "id": "moneyinside",
